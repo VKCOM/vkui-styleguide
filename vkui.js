@@ -3711,7 +3711,7 @@ var Slider = function (_Component) {
         { className: baseClassNames, ref: this.getRef },
         _react2.default.createElement(
           _Touch2.default,
-          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, className: 'Slider__in' },
+          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, useCapture: false, className: 'Slider__in' },
           _react2.default.createElement(
             'div',
             { className: 'Slider__dragger', style: { width: this.state.percentPosition + '%' } },
@@ -6918,7 +6918,7 @@ var RangeSlider = function (_Slider) {
         { className: baseClassNames, ref: this.getRef },
         _react2.default.createElement(
           _Touch2.default,
-          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, className: 'Slider__in' },
+          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, useCapture: false, className: 'Slider__in' },
           _react2.default.createElement(
             'div',
             {
@@ -9750,7 +9750,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.colors = _colors.values;
 exports.fontFamilies = _fonts.families;
-var v = exports.v = "1.3.8";
+var v = exports.v = "1.3.9";
 
 /***/ }),
 /* 74 */
