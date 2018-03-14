@@ -3796,15 +3796,15 @@ body.locked {
             align-items: center;
     }
 
-.ButtonNew--type-list {
+.ButtonNew--type-cell {
   display: block;
   }
 
-.ButtonNew--type-list.ButtonNew--level-primary {
+.ButtonNew--type-cell.ButtonNew--level-primary {
   color: #528BCC;
   }
 
-.ButtonNew--type-list.ButtonNew--level-danger {
+.ButtonNew--type-cell.ButtonNew--level-danger {
   color: #E64646;
   }
 
@@ -3947,38 +3947,18 @@ body.locked {
   border-radius: 10px;
   }
 
-.ButtonNew--ios.ButtonNew--type-list {
+.ButtonNew--ios.ButtonNew--type-cell {
   padding: 0 15px;
   position: relative;
   }
 
-.ButtonNew--ios.ButtonNew--type-list::before {
-    position: absolute;
-    bottom: 0;
-    left: 15px;
-    width: 100vw;
-    height: 1px;
-    background: #dfdfdf;
-    content: '';
-    }
-
-@media
-  (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    .ButtonNew--ios.ButtonNew--type-list::before {
-      background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #c8c7cc), color-stop(50%, transparent));
-      background: -webkit-linear-gradient(bottom, #c8c7cc 50%, transparent 50%);
-      background: -o-linear-gradient(bottom, #c8c7cc 50%, transparent 50%);
-      background: linear-gradient(to top, #c8c7cc 50%, transparent 50%);
-      }
-    }
-
-.ButtonNew--ios.ButtonNew--type-list .ButtonNew__content {
+.ButtonNew--ios.ButtonNew--type-cell .ButtonNew__content {
     line-height: 20px;
     font-size: 17px;
     padding: 12px 0;
     }
 
-.ButtonNew--ios.ButtonNew--type-list .ButtonNew__before .Icon {
+.ButtonNew--ios.ButtonNew--type-cell .ButtonNew__before .Icon {
       margin-right: 12px;
       }
 
@@ -3986,17 +3966,17 @@ body.locked {
   border-radius: 4px;
   }
 
-.ButtonNew--android.ButtonNew--type-list {
+.ButtonNew--android.ButtonNew--type-cell {
   padding: 0 16px;
   }
 
-.ButtonNew--android.ButtonNew--type-list .ButtonNew__content {
+.ButtonNew--android.ButtonNew--type-cell .ButtonNew__content {
     font-size: 16px;
     line-height: 20px;
     padding: 14px 0;
     }
 
-.ButtonNew--android.ButtonNew--type-list .ButtonNew__before .Icon {
+.ButtonNew--android.ButtonNew--type-cell .ButtonNew__before .Icon {
     margin-right: 12px;
     }
 html,
@@ -5703,6 +5683,10 @@ body.locked {
 .FixedTabs--android.FixedTabs--blue {
   background-color: #5181B8;
   }
+.Link {
+  color: #528BCC;
+  text-decoration: none;
+  }
 html,
 body,
 div#root {
@@ -6390,6 +6374,7 @@ body.locked {
     min-height: 86px;
     max-height: 198px;
     border: none;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
     }
 
 .TextareaNew--ios {
