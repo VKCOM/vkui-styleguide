@@ -16,7 +16,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -346,7 +346,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -1465,7 +1465,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -1734,7 +1734,7 @@ body.locked {
   bottom: 0;
   }
 
-.FixedLayout--ios .FixedLayout__in {
+.FixedLayout--ios.FixedLayout--bottom .FixedLayout__in {
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
     }
@@ -1756,7 +1756,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -2212,7 +2212,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -2416,7 +2416,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -2784,7 +2784,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -3121,7 +3121,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -3330,7 +3330,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -3538,7 +3538,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -3709,7 +3709,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -3997,7 +3997,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -4447,7 +4447,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -4613,7 +4613,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -4782,7 +4782,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -4923,7 +4923,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -5023,9 +5023,8 @@ body.locked {
 
 .ListItem__before {
       position: relative;
-      -webkit-box-flex: 0;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -5050,12 +5049,24 @@ body.locked {
 
 .ListItem__main {
       -webkit-box-flex: 1;
-          -ms-flex: 1 0 auto;
-              flex: 1 0 auto;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
       overflow: hidden;
       -o-text-overflow: ellipsis;
          text-overflow: ellipsis;
+      max-width: 100%;
+      -ms-flex-item-align: center;
+          align-self: center;
       }
+
+.ListItem--multiline .ListItem__main {
+      white-space: normal;
+      word-wrap: break-word;
+      }
+
+.ListItem__description {
+        color: #909499;
+        }
 
 .ListItem__indicator,
     .ListItem__aside {
@@ -5065,20 +5076,18 @@ body.locked {
       text-align: right;
       -o-text-overflow: ellipsis;
          text-overflow: ellipsis;
+      -ms-flex-item-align: center;
+          align-self: center;
     }
 
-.ListItem__indicator {
-      -webkit-box-flex: 0;
-          -ms-flex: 0 1 auto;
-              flex: 0 1 auto;
+.ListItem__aside {
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      overflow: visible;
       }
 
-.ListItem__aside {
-      -webkit-box-flex: 0;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto;
-      padding: 0;
-      overflow: visible;
+.ListItem__indicator + .ListItem__aside:not(:empty) {
+      padding-left: .5em;
       }
 
 /* iOS */
@@ -5151,13 +5160,18 @@ body.locked {
 
 .ListItem--ios .ListItem__main {
       padding: 11px .5em 12px 0;
-      -ms-flex-item-align: center;
-          align-self: center;
       }
+
+.ListItem--ios .ListItem__description {
+        margin-top: 2px;
+        font-size: 13px;
+        line-height: 15px;
+        }
 
 .ListItem--ios .ListItem__indicator,
     .ListItem--ios .ListItem__aside {
-      padding: 11px 0 12px;
+      padding-top: 11px;
+      padding-bottom: 12px;
       }
 
 /* Android */
@@ -5169,6 +5183,7 @@ body.locked {
 
 .ListItem--android .ListItem__in {
     padding: 0 16px;
+    background: #fff;
     }
 
 .ListItem--android .ListItem__before .Icon {
@@ -5183,6 +5198,12 @@ body.locked {
       padding: 16px .5em 17px 0;
       }
 
+.ListItem--android .ListItem__description {
+        margin-top: 1px;
+        font-size: 14px;
+        line-height: 18px;
+        }
+
 .ListItem--android .ListItem__checkbox-marker {
       width: 24px;
       height: 24px;
@@ -5195,7 +5216,8 @@ body.locked {
 
 .ListItem--android .ListItem__indicator,
     .ListItem--android .ListItem__aside {
-      padding: 16px 0 17px;
+      padding-top: 16px;
+      padding-bottom: 17px;
       }
 .InfoRow {
 
@@ -5277,7 +5299,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -5705,7 +5727,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -5941,7 +5963,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -6129,7 +6151,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -6280,7 +6302,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -6464,7 +6486,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -6697,7 +6719,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -6818,7 +6840,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -6907,10 +6929,10 @@ body.locked {
     outline: none;
     line-height: 19px;
     font-size: 16px;
-    color: #000;
-    padding: 12px;
+    padding: 12px 40px 12px 12px;
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
+    color: #000;
     }
 
 .SelectNew--ios select {
@@ -6987,7 +7009,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
@@ -7145,7 +7167,7 @@ div#root {
 }
 
 html {
-  background: #efeff4;
+  background: #EBEDF0;
 }
 
 html[theme="white"] {
