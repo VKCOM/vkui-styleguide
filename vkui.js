@@ -100,7 +100,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = getClassname;
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _classnames2 = __webpack_require__(3);
 
@@ -168,30 +168,6 @@ function classNames() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = removeObjectKeys;
-function removeObjectKeys() {
-  var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var keys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-
-  var newObj = Object.assign({}, obj);
-
-  keys.forEach(function (key) {
-    return delete newObj[key];
-  });
-
-  return newObj;
-}
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 exports.platform = platform;
 var ANDROID = exports.ANDROID = 'android';
 var IOS = exports.IOS = 'ios';
@@ -208,6 +184,30 @@ function platform(useragent) {
   }
 
   return platformName;
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = removeObjectKeys;
+function removeObjectKeys() {
+  var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var keys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+
+  var newObj = Object.assign({}, obj);
+
+  keys.forEach(function (key) {
+    return delete newObj[key];
+  });
+
+  return newObj;
 }
 
 /***/ }),
@@ -248,11 +248,11 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _offset = __webpack_require__(30);
 
@@ -355,7 +355,6 @@ var Tappable = function (_Component) {
         }
       } else if (!_this.isSlide) {
         // Очень короткий тап, включаем подсветку
-
         _this.start();
 
         var _timeout = setTimeout(_this.stop, _this.props.activeEffectDelay);
@@ -367,8 +366,6 @@ var Tappable = function (_Component) {
           _this.timeout = _timeout;
         }
       }
-
-      _this.callback(originalEvent);
 
       _this.isSlide = false;
     };
@@ -401,16 +398,7 @@ var Tappable = function (_Component) {
     };
 
     _this.onClick = function (e) {
-      if (_this.props.propagation === false) {
-        e.stopPropagation();
-        e.preventDefault();
-      }
-    };
-
-    _this.callback = function (originalEvent) {
-      if (_this.props.onClick) {
-        _this.props.onClick(originalEvent);
-      }
+      _this.props.onClick && _this.props.onClick(e);
     };
 
     _this.start = function () {
@@ -478,13 +466,6 @@ var Tappable = function (_Component) {
 
   /**
    * Реализует эффект при тапе для Андроида
-   *
-   * @returns {void}
-   */
-
-
-  /**
-   * Вызывает колбек, переданный родителем
    *
    * @returns {void}
    */
@@ -577,7 +558,6 @@ var Tappable = function (_Component) {
 Tappable.defaultProps = {
   component: 'div',
   role: 'button',
-  propagation: true,
   activeEffectDelay: ACTIVE_EFFECT_DELAY
 };
 exports.default = Tappable;
@@ -1893,7 +1873,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _touch = __webpack_require__(33);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -2058,9 +2038,9 @@ var Touch = function (_Component) {
 
         return e.preventDefault();
       }
+      _this.props.onClick && _this.props.onClick(e);
     }, _this.getRef = function (container) {
-      _this.container = container;
-      return;
+      return _this.container = container;
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -2148,7 +2128,7 @@ var Touch = function (_Component) {
 Touch.defaultProps = {
   component: 'div',
   children: '',
-  useCapture: true
+  useCapture: false
 };
 Touch.contextTypes = {
   document: _propTypes2.default.any
@@ -2308,13 +2288,13 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
 __webpack_require__(105);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2467,7 +2447,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 __webpack_require__(80);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _transitionEvents = __webpack_require__(14);
 
@@ -2689,10 +2669,9 @@ var Alert = function (_Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Alert.__proto__ || Object.getPrototypeOf(Alert)).call.apply(_ref, [this].concat(args))), _this), _this.onItemClick = function (item) {
-      return function (e) {
+      return function () {
         item.autoclose && _this.props.onClose();
         item.action && item.action();
-        e.preventDefault();
       };
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -3058,15 +3037,13 @@ var _classnames2 = __webpack_require__(3);
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _removeObjectKeys = __webpack_require__(4);
-
-var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
-
 var _View = __webpack_require__(27);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3136,20 +3113,26 @@ var FixedLayout = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var _props = this.props,
+          className = _props.className,
+          children = _props.children,
+          style = _props.style,
+          vertical = _props.vertical,
+          restProps = _objectWithoutProperties(_props, ['className', 'children', 'style', 'vertical']);
+
       return _react2.default.createElement(
         'div',
         _extends({
           ref: function ref(el) {
             return _this2.el = el;
-          }
-        }, (0, _removeObjectKeys2.default)(this.props, ['className', 'children', 'panel', 'vertical']), {
-          className: (0, _classnames3.default)(baseClassNames, _defineProperty({}, 'FixedLayout--' + this.props.vertical, true), this.props.className),
-          style: Object.assign({}, this.props.style, this.state.paddings, this.state.transition ? { position: 'absolute', top: this.state.topOffset } : {})
-        }),
+          },
+          className: (0, _classnames3.default)(baseClassNames, _defineProperty({}, 'FixedLayout--' + vertical, true), className),
+          style: Object.assign({}, style, this.state.paddings, this.state.transition ? { position: 'absolute', top: this.state.topOffset } : {})
+        }, restProps),
         _react2.default.createElement(
           'div',
           { className: 'FixedLayout__in' },
-          this.props.children
+          children
         )
       );
     }
@@ -3353,10 +3336,6 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _removeObjectKeys = __webpack_require__(4);
-
-var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
-
 var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -3365,11 +3344,13 @@ var _requestAnimationFrame = __webpack_require__(10);
 
 var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3397,6 +3378,7 @@ var Input = function (_Component) {
     };
 
     _this.getRef = function (element) {
+      _this.props.getRef && _this.props.getRef(element);
       _this.element = element;
     };
 
@@ -3404,7 +3386,7 @@ var Input = function (_Component) {
       _this.isControlledOutside = true;
     } else {
       _this.state = {
-        value: props.initialValue || ''
+        value: props.defaultValue || props.initialValue || ''
       };
     }
     return _this;
@@ -3427,8 +3409,18 @@ var Input = function (_Component) {
     value: function render() {
       var _modifiers;
 
-      var alignment = this.props.alignment;
-
+      var _props = this.props,
+          onChange = _props.onChange,
+          initialValue = _props.initialValue,
+          defaultValue = _props.defaultValue,
+          alignment = _props.alignment,
+          placeholder = _props.placeholder,
+          v = _props.v,
+          value = _props.value,
+          status = _props.status,
+          getRef = _props.getRef,
+          className = _props.className,
+          restProps = _objectWithoutProperties(_props, ['onChange', 'initialValue', 'defaultValue', 'alignment', 'placeholder', 'v', 'value', 'status', 'getRef', 'className']);
 
       var modifiers = (_modifiers = {}, _defineProperty(_modifiers, this.baseClass + '--left', alignment === 'left'), _defineProperty(_modifiers, this.baseClass + '--center', alignment === 'center'), _defineProperty(_modifiers, this.baseClass + '--right', alignment === 'right'), _defineProperty(_modifiers, this.baseClass + '--s-' + this.props.status, true), _modifiers);
 
@@ -3436,16 +3428,15 @@ var Input = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: (0, _classnames2.default)((0, _getClassName2.default)(this.baseClass), modifiers) },
+        { className: (0, _classnames2.default)((0, _getClassName2.default)(this.baseClass), modifiers, className) },
         _react2.default.createElement('input', _extends({
           style: { transition: 'transform ' },
-          className: this.baseClass + '__el'
-        }, (0, _removeObjectKeys2.default)(this.props, ['onChange', 'initialValue', 'alignment', 'placeholder', 'v', 'value', 'status']), {
+          className: this.baseClass + '__el',
           ref: this.getRef,
           value: this.value,
           onChange: this.onChange,
           placeholder: customPlaceolder ? null : this.props.placeholder
-        })),
+        }, restProps)),
         osname === _platform.ANDROID && _react2.default.createElement('div', { className: this.baseClass + '-underline' }),
         customPlaceolder && !this.value && _react2.default.createElement(
           'div',
@@ -3471,9 +3462,9 @@ var Input = function (_Component) {
 
 Input.defaultProps = {
   type: 'text',
-  initialValue: '',
   alignment: 'left',
   v: 'old',
+  defaultValue: '',
   status: 'default'
 };
 Input.contextTypes = {
@@ -3668,10 +3659,10 @@ var Slider = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: baseClassNames, ref: this.getRef },
+        { className: (0, _classnames2.default)(baseClassNames, this.props.className), ref: this.getRef, style: this.props.style },
         _react2.default.createElement(
           _Touch2.default,
-          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, useCapture: false, className: 'Slider__in' },
+          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, className: 'Slider__in' },
           _react2.default.createElement(
             'div',
             { className: 'Slider__dragger', style: { width: this.state.percentPosition + '%' } },
@@ -3734,7 +3725,7 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _classnames = __webpack_require__(3);
 
@@ -3845,7 +3836,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 __webpack_require__(117);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3871,17 +3862,18 @@ var Tabs = function (_React$Component) {
   _createClass(Tabs, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _props = this.props,
+          className = _props.className,
+          children = _props.children,
+          theme = _props.theme,
+          style = _props.style;
 
-      var className = (0, _classnames2.default)(baseClassName, this.props.className);
 
       return _react2.default.createElement(
         'div',
-        { className: className },
-        _react2.default.Children.map(this.props.children, function (Child) {
-          return _react2.default.cloneElement(Child, {
-            theme: _this2.props.theme
-          });
+        { className: (0, _classnames2.default)(baseClassName, className), style: style },
+        _react2.default.Children.map(children, function (Child) {
+          return _react2.default.cloneElement(Child, { theme: theme });
         })
       );
     }
@@ -3932,13 +3924,13 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _Touch = __webpack_require__(9);
 
 var _Touch2 = _interopRequireDefault(_Touch);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -4856,7 +4848,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _classnames = __webpack_require__(3);
 
@@ -4866,7 +4858,7 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -5030,7 +5022,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _classnames = __webpack_require__(3);
 
@@ -5040,7 +5032,7 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -5090,7 +5082,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -5214,7 +5206,7 @@ var _Tabs = __webpack_require__(26);
 
 var _Tabs2 = _interopRequireDefault(_Tabs);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _classnames2 = __webpack_require__(3);
 
@@ -5300,7 +5292,7 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -5663,7 +5655,6 @@ var Gallery = function (_Component) {
         _react2.default.createElement(
           _Touch2.default,
           {
-            useCapture: true,
             className: 'Gallery__viewport',
             onStartX: this.onStart,
             onMoveX: this.onMove,
@@ -5858,6 +5849,10 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
+var _classnames = __webpack_require__(3);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5883,12 +5878,13 @@ var Group = function (_Component) {
       var _props = this.props,
           style = _props.style,
           title = _props.title,
-          description = _props.description;
+          description = _props.description,
+          className = _props.className;
 
 
       return _react2.default.createElement(
         'div',
-        { className: baseClassNames, style: style },
+        { className: (0, _classnames2.default)(baseClassNames, className), style: style },
         title && _react2.default.createElement(
           'h3',
           { className: 'Group__title' },
@@ -6022,10 +6018,11 @@ var baseClassName = (0, _getClassName2.default)('InfoRow');
 var InfoRow = function InfoRow(_ref) {
   var title = _ref.title,
       className = _ref.className,
-      children = _ref.children;
+      children = _ref.children,
+      style = _ref.style;
   return _react2.default.createElement(
     'div',
-    { className: (0, _classnames2.default)(baseClassName, className) },
+    { className: (0, _classnames2.default)(baseClassName, className), style: style },
     _react2.default.createElement(
       'div',
       { className: 'InfoRow__title' },
@@ -6152,16 +6149,14 @@ var List = function (_Component) {
     value: function render() {
       var _props = this.props,
           style = _props.style,
-          indented = _props.indented;
+          className = _props.className,
+          children = _props.children;
 
-      var modifiers = {
-        'List--indented': indented
-      };
 
       return _react2.default.createElement(
         'ul',
-        { className: (0, _classnames2.default)(baseClassNames, modifiers), style: { style: style } },
-        this.props.children
+        { className: (0, _classnames2.default)(baseClassNames, className), style: style },
+        children
       );
     }
   }]);
@@ -6171,7 +6166,6 @@ var List = function (_Component) {
 
 List.defaultProps = {
   style: {},
-  indented: false,
   children: ''
 };
 exports.default = List;
@@ -6213,7 +6207,7 @@ var _Tappable = __webpack_require__(6);
 
 var _Tappable2 = _interopRequireDefault(_Tappable);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6277,7 +6271,8 @@ var ListItem = function (_Component) {
           selectable = _props.selectable,
           multiline = _props.multiline,
           onChange = _props.onChange,
-          restProps = _objectWithoutProperties(_props, ['before', 'indicator', 'asideContent', 'expandable', 'onClick', 'children', 'description', 'value', 'name', 'checked', 'defaultChecked', 'initialChecked', 'selectable', 'multiline', 'onChange']);
+          className = _props.className,
+          restProps = _objectWithoutProperties(_props, ['before', 'indicator', 'asideContent', 'expandable', 'onClick', 'children', 'description', 'value', 'name', 'checked', 'defaultChecked', 'initialChecked', 'selectable', 'multiline', 'onChange', 'className']);
 
       var modifiers = {
         'ListItem--expandable': expandable,
@@ -6286,7 +6281,7 @@ var ListItem = function (_Component) {
 
       return _react2.default.createElement(
         'li',
-        _extends({ className: (0, _classnames2.default)(baseClassNames, modifiers) }, restProps),
+        _extends({ className: (0, _classnames2.default)(baseClassNames, modifiers, className) }, restProps),
         _react2.default.createElement(
           _Tappable2.default,
           { component: selectable ? 'label' : 'div', className: 'ListItem__in', onClick: selectable ? this.emptyClickHandler : onClick },
@@ -6369,7 +6364,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -6666,19 +6661,18 @@ var baseClassName = (0, _getClassName2.default)('Progress');
 
 var Progress = function Progress(_ref) {
   var value = _ref.value,
-      style = _ref.style,
       className = _ref.className,
       color = _ref.color,
-      props = _objectWithoutProperties(_ref, ['value', 'style', 'className', 'color']);
+      restProps = _objectWithoutProperties(_ref, ['value', 'className', 'color']);
 
   return _react2.default.createElement(
     'div',
     _extends({
       className: (0, _classnames2.default)(baseClassName, className)
-    }, props),
+    }, restProps),
     _react2.default.createElement('div', {
       className: 'Progress__in',
-      style: _extends({}, style, { width: value + '%', backgroundColor: color })
+      style: { width: value + '%', backgroundColor: color }
     })
   );
 };
@@ -6721,6 +6715,10 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
+var _classnames = __webpack_require__(3);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -6730,11 +6728,12 @@ var baseClassNames = (0, _getClassName2.default)('Radio');
 var Radio = function Radio(_ref) {
   var children = _ref.children,
       description = _ref.description,
-      restProps = _objectWithoutProperties(_ref, ['children', 'description']);
+      className = _ref.className,
+      restProps = _objectWithoutProperties(_ref, ['children', 'description', 'className']);
 
   return _react2.default.createElement(
     _Tappable2.default,
-    { component: 'label', onClick: function onClick() {}, className: baseClassNames },
+    { component: 'label', onClick: function onClick() {}, className: (0, _classnames2.default)(baseClassNames, className) },
     _react2.default.createElement('input', _extends({
       type: 'radio',
       className: 'Radio__self'
@@ -6940,10 +6939,10 @@ var RangeSlider = function (_Slider) {
 
       return _react2.default.createElement(
         'div',
-        { className: baseClassNames, ref: this.getRef },
+        { className: (0, _classnames2.default)(baseClassNames, this.props.className), ref: this.getRef, style: this.props.style },
         _react2.default.createElement(
           _Touch2.default,
-          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, useCapture: false, className: 'Slider__in' },
+          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, className: 'Slider__in' },
           _react2.default.createElement(
             'div',
             {
@@ -7031,7 +7030,7 @@ var _transitionEvents = __webpack_require__(14);
 
 var _transitionEvents2 = _interopRequireDefault(_transitionEvents);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7244,7 +7243,7 @@ var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -7299,7 +7298,7 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -7426,7 +7425,7 @@ var _classnames3 = _interopRequireDefault(_classnames2);
 
 __webpack_require__(111);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 var _HeaderButton = __webpack_require__(22);
 
@@ -7465,6 +7464,15 @@ var SearchIOS = function (_React$Component) {
     _classCallCheck(this, SearchIOS);
 
     var _this = _possibleConstructorReturn(this, (SearchIOS.__proto__ || Object.getPrototypeOf(SearchIOS)).call(this, props));
+
+    _this.calcSizes = function () {
+      _this.setState({
+        afterWidth: _this.afterEl.offsetWidth,
+        placeholderWidth: _this.placeholderEl.offsetWidth,
+        controlWidth: _this.controlEl.offsetWidth,
+        placeholderOffset: (_this.controlEl.offsetWidth - (_this.state.showAfter ? _this.afterEl.offsetWidth + 12 : 0) - _this.placeholderEl.offsetWidth) / 2
+      });
+    };
 
     _this.onFocus = function (e) {
       _this.setState({ focused: true, showAfter: true }, function () {
@@ -7515,11 +7523,14 @@ var SearchIOS = function (_React$Component) {
   _createClass(SearchIOS, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.setState({
-        afterWidth: this.afterEl.offsetWidth,
-        controlWidth: this.controlEl.offsetWidth,
-        placeholderOffset: (this.controlEl.offsetWidth - (this.state.showAfter ? this.afterEl.offsetWidth + 12 : 0) - this.placeholderEl.offsetWidth) / 2
-      });
+      this.calcSizes();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.state.afterWidth !== this.afterEl.offsetWidth || this.state.placeholderWidth !== this.placeholderEl.offsetWidth) {
+        this.calcSizes();
+      }
     }
   }, {
     key: 'render',
@@ -7589,9 +7600,7 @@ var SearchIOS = function (_React$Component) {
             },
             className: 'Search__after',
             onClick: this.onCancel,
-            style: {
-              marginLeft: 12
-            }
+            style: { marginLeft: 12 }
           },
           this.props.after
         )
@@ -7608,7 +7617,7 @@ var SearchIOS = function (_React$Component) {
 }(_react2.default.Component);
 
 SearchIOS.defaultProps = {
-  after: osname === _platform.IOS ? 'Отменить' : '',
+  after: 'Отменить',
   theme: 'default',
   placeholder: 'Поиск'
 };
@@ -7781,10 +7790,6 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _removeObjectKeys = __webpack_require__(4);
-
-var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
-
 var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
@@ -7797,13 +7802,15 @@ var _dropdown = __webpack_require__(69);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -7830,6 +7837,10 @@ var Select = function (_Component) {
       }
     };
 
+    _this.getRef = function (el) {
+      _this.props.getRef && _this.props.getRef(el);
+    };
+
     if (typeof props.value !== 'undefined') {
       _this.isControlledOutside = true;
     } else {
@@ -7845,24 +7856,32 @@ var Select = function (_Component) {
     value: function render() {
       var _props = this.props,
           style = _props.style,
-          label = _props.label;
-
-
-      var options = this.options;
+          label = _props.label,
+          onChange = _props.onChange,
+          options = _props.options,
+          value = _props.value,
+          defaultValue = _props.defaultValue,
+          placeholder = _props.placeholder,
+          children = _props.children,
+          className = _props.className,
+          v = _props.v,
+          getRef = _props.getRef,
+          restProps = _objectWithoutProperties(_props, ['style', 'label', 'onChange', 'options', 'value', 'defaultValue', 'placeholder', 'children', 'className', 'v', 'getRef']);
 
       return _react2.default.createElement(
         'label',
         {
-          className: (0, _classnames3.default)((0, _getClassName2.default)(this.baseClass), _defineProperty({}, this.baseClass + '--not-selected', this.value === '')),
+          className: (0, _classnames3.default)((0, _getClassName2.default)(this.baseClass), _defineProperty({}, this.baseClass + '--not-selected', this.value === ''), className),
           style: style
         },
         _react2.default.createElement(
           'select',
           _extends({
             onChange: this.onChange,
-            value: this.value
-          }, (0, _removeObjectKeys2.default)(this.props, ['onChange', 'label', 'options', 'value', 'defaultValue', 'style', 'className', 'v'])),
-          Array.isArray(options) && options.length && options.map(function (option, i) {
+            value: this.value,
+            ref: this.getRef
+          }, restProps),
+          Array.isArray(this.options) && this.options.length && this.options.map(function (option, i) {
             var isString = typeof option === 'string';
             var value = isString ? option : typeof option.value === 'string' ? option.value : option.text;
             var key = !isString && option.id;
@@ -7873,15 +7892,15 @@ var Select = function (_Component) {
               isString ? option : option.text
             );
           }),
-          this.props.placeholder && !this.props.options && _react2.default.createElement(
+          placeholder && !this.options && _react2.default.createElement(
             'option',
             { value: '' },
-            this.props.placeholder
+            placeholder
           ),
-          this.props.children
+          children
         ),
-        this.props.v === 'new' && osname === _platform.ANDROID && _react2.default.createElement('div', { className: this.baseClass + '-underline' }),
-        this.props.v === 'new' && _react2.default.createElement(_dropdown2.default, null)
+        v === 'new' && osname === _platform.ANDROID && _react2.default.createElement('div', { className: this.baseClass + '-underline' }),
+        v === 'new' && _react2.default.createElement(_dropdown2.default, null)
       );
     }
   }, {
@@ -7931,8 +7950,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 __webpack_require__(116);
 
 var _react = __webpack_require__(0);
@@ -7943,73 +7960,33 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _removeObjectKeys = __webpack_require__(4);
-
-var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
-
 var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
+var _classnames = __webpack_require__(3);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 var baseClassNames = (0, _getClassName2.default)('Switch');
 
-var Switch = function (_Component) {
-  _inherits(Switch, _Component);
+var Switch = function Switch(_ref) {
+  var style = _ref.style,
+      className = _ref.className,
+      restProps = _objectWithoutProperties(_ref, ['style', 'className']);
 
-  function Switch(props) {
-    _classCallCheck(this, Switch);
-
-    var _this = _possibleConstructorReturn(this, (Switch.__proto__ || Object.getPrototypeOf(Switch)).call(this, props));
-
-    _this.changeHandler = function (e) {
-      _this.setState({ checked: e.target.checked });
-      if (_this.props.onChange) {
-        _this.props.onChange(e);
-      }
-    };
-
-    _this.state = {
-      checked: !!props.checked
-    };
-    return _this;
-  }
-
-  _createClass(Switch, [{
-    key: 'render',
-    value: function render() {
-      var style = this.props.style;
-
-
-      return _react2.default.createElement(
-        'label',
-        { className: baseClassNames, style: style },
-        _react2.default.createElement('input', _extends({}, (0, _removeObjectKeys2.default)(this.props, ['onChange']), {
-          type: 'checkbox',
-          className: 'Switch__self',
-          checked: this.state.checked,
-          onChange: this.changeHandler
-        })),
-        _react2.default.createElement('span', { className: 'Switch__pseudo' })
-      );
-    }
-  }]);
-
-  return Switch;
-}(_react.Component);
-
-Switch.defaultProps = {
-  style: {},
-  checked: false,
-  onChange: function onChange() {}
+  return _react2.default.createElement(
+    'label',
+    { className: (0, _classnames2.default)(baseClassNames, className), style: style },
+    _react2.default.createElement('input', _extends({ type: 'checkbox', className: 'Switch__self' }, restProps)),
+    _react2.default.createElement('span', { className: 'Switch__pseudo' })
+  );
 };
+
 exports.default = Switch;
 
 /***/ }),
@@ -8047,7 +8024,7 @@ var _classnames2 = __webpack_require__(3);
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8074,18 +8051,24 @@ var TabsItem = function (_React$Component) {
   _createClass(TabsItem, [{
     key: 'render',
     value: function render() {
-      var className = (0, _classnames3.default)(baseClassName, _defineProperty({
-        'TabsItem--selected': this.props.selected
-      }, 'TabsItem--' + this.props.theme, true), this.props.className);
+      var _props = this.props,
+          onClick = _props.onClick,
+          children = _props.children,
+          selected = _props.selected,
+          className = _props.className,
+          theme = _props.theme;
+
 
       return _react2.default.createElement(
         _Tappable2.default,
         {
-          className: className,
-          onClick: this.props.onClick,
+          className: (0, _classnames3.default)(baseClassName, _defineProperty({
+            'TabsItem--selected': selected
+          }, 'TabsItem--' + theme, true), className),
+          onClick: onClick,
           activeEffectDelay: osname === _platform.IOS ? 0 : _Tappable.ACTIVE_EFFECT_DELAY
         },
-        this.props.children
+        children
       );
     }
   }]);
@@ -8209,10 +8192,6 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _removeObjectKeys = __webpack_require__(4);
-
-var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
-
 var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
@@ -8221,9 +8200,15 @@ var _requestAnimationFrame = __webpack_require__(10);
 
 var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
+
+var _classnames = __webpack_require__(3);
+
+var _classnames2 = _interopRequireDefault(_classnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -8242,7 +8227,8 @@ var Textarea = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Textarea.__proto__ || Object.getPrototypeOf(Textarea)).call(this, props));
 
     _this.getRef = function (element) {
-      return _this.element = element;
+      _this.element = element;
+      _this.props.getRef && _this.props.getRef(element);
     };
 
     _this.resize = function () {
@@ -8294,12 +8280,12 @@ var Textarea = function (_Component) {
       }
     };
 
-    _this.state = {
-      value: typeof props.value === 'undefined' ? props.initialValue || '' : undefined
-    };
-
     if (typeof props.value !== 'undefined') {
       _this.isControlledOutside = true;
+    } else {
+      _this.state = {
+        value: props.defaultValue || props.initialValue || ''
+      };
     }
     return _this;
   }
@@ -8326,19 +8312,27 @@ var Textarea = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var props = this.props;
-      var value = this.isControlledOutside ? props.value : this.state.value;
-      var height = this.state.height || this.props.style.height || 66;
+      var _props = this.props,
+          initialValue = _props.initialValue,
+          defaultValue = _props.defaultValue,
+          grow = _props.grow,
+          style = _props.style,
+          onResize = _props.onResize,
+          v = _props.v,
+          className = _props.className,
+          restProps = _objectWithoutProperties(_props, ['initialValue', 'defaultValue', 'grow', 'style', 'onResize', 'v', 'className']);
+
+      var height = this.state.height || style.height || 66;
 
       return _react2.default.createElement(
         'div',
-        { className: (0, _getClassName2.default)(this.baseClass) },
-        _react2.default.createElement('textarea', _extends({}, (0, _removeObjectKeys2.default)(props, ['initialValue', 'grow', 'style', 'onResize', 'v']), {
-          value: value,
+        { className: (0, _classnames2.default)((0, _getClassName2.default)(this.baseClass), className) },
+        _react2.default.createElement('textarea', _extends({
+          value: this.value,
           onChange: this.onChange,
           ref: this.getRef,
-          style: Object.assign({}, props.style, { height: height })
-        })),
+          style: Object.assign({}, style, { height: height })
+        }, restProps)),
         osname === _platform.ANDROID && _react2.default.createElement('div', { className: this.baseClass + '-underline' })
       );
     }
@@ -8347,6 +8341,11 @@ var Textarea = function (_Component) {
     get: function get() {
       return this.props.v === 'old' ? 'Textarea' : 'TextareaNew';
     }
+  }, {
+    key: 'value',
+    get: function get() {
+      return this.isControlledOutside ? this.props.value : this.state.value;
+    }
   }]);
 
   return Textarea;
@@ -8354,7 +8353,7 @@ var Textarea = function (_Component) {
 
 Textarea.defaultProps = {
   style: {},
-  initialValue: '',
+  defaultValue: '',
   grow: true,
   v: 'old',
   onResize: function onResize() {}
@@ -8867,7 +8866,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -9070,7 +9069,7 @@ var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
@@ -9405,7 +9404,7 @@ var FormLayoutOld = function (_React$Component) {
             );
           })
         ),
-        TagName === 'form' && this.props.allowSubmit && _react2.default.createElement('input', { type: 'submit', style: { position: 'absolute', visibility: 'hidden' } })
+        TagName === 'form' && allowSubmit && _react2.default.createElement('input', { type: 'submit', style: { position: 'absolute', visibility: 'hidden' } })
       );
     }
   }]);
@@ -10085,7 +10084,7 @@ Object.defineProperty(exports, 'getOffsetRect', {
   }
 });
 
-var _platform = __webpack_require__(5);
+var _platform = __webpack_require__(4);
 
 Object.defineProperty(exports, 'platform', {
   enumerable: true,
@@ -10106,7 +10105,7 @@ Object.defineProperty(exports, 'IOS', {
   }
 });
 
-var _removeObjectKeys = __webpack_require__(4);
+var _removeObjectKeys = __webpack_require__(5);
 
 Object.defineProperty(exports, 'removeObjectKeys', {
   enumerable: true,
@@ -10179,7 +10178,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.colors = _colors.values;
 exports.fontFamilies = _fonts.families;
-var v = exports.v = "1.4.4";
+var v = exports.v = "1.5.0-beta.1";
 
 /***/ }),
 /* 78 */
