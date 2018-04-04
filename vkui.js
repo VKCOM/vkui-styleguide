@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "/assets/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 77);
+/******/ 	return __webpack_require__(__webpack_require__.s = 79);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -226,7 +226,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(119);
+__webpack_require__(122);
 
 var _react = __webpack_require__(0);
 
@@ -2292,7 +2292,7 @@ var _removeObjectKeys = __webpack_require__(5);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
-__webpack_require__(105);
+__webpack_require__(107);
 
 var _platform = __webpack_require__(4);
 
@@ -2445,7 +2445,7 @@ var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-__webpack_require__(80);
+__webpack_require__(82);
 
 var _platform = __webpack_require__(4);
 
@@ -2616,7 +2616,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(81);
+__webpack_require__(83);
 
 var _react = __webpack_require__(0);
 
@@ -2763,7 +2763,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(83);
+__webpack_require__(85);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2889,7 +2889,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(87);
+__webpack_require__(89);
 
 var _react = __webpack_require__(0);
 
@@ -3031,7 +3031,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(89);
+__webpack_require__(91);
 
 var _classnames2 = __webpack_require__(3);
 
@@ -3268,7 +3268,7 @@ var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-__webpack_require__(97);
+__webpack_require__(99);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3320,9 +3320,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(99);
+__webpack_require__(101);
 
-__webpack_require__(100);
+__webpack_require__(102);
 
 var _react = __webpack_require__(0);
 
@@ -3485,7 +3485,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(114);
+__webpack_require__(117);
 
 var _react = __webpack_require__(0);
 
@@ -3711,7 +3711,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(115);
+__webpack_require__(118);
 
 var _react = __webpack_require__(0);
 
@@ -3731,11 +3731,11 @@ var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _AndroidSpinner = __webpack_require__(75);
+var _AndroidSpinner = __webpack_require__(77);
 
 var _AndroidSpinner2 = _interopRequireDefault(_AndroidSpinner);
 
-var _IosSpinner = __webpack_require__(76);
+var _IosSpinner = __webpack_require__(78);
 
 var _IosSpinner2 = _interopRequireDefault(_IosSpinner);
 
@@ -3834,7 +3834,7 @@ var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-__webpack_require__(117);
+__webpack_require__(120);
 
 var _platform = __webpack_require__(4);
 
@@ -3898,7 +3898,7 @@ exports.transitionEndEventName = exports.transitionStartEventName = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(123);
+__webpack_require__(126);
 
 var _react = __webpack_require__(0);
 
@@ -3912,7 +3912,7 @@ var _classnames2 = __webpack_require__(3);
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _animate = __webpack_require__(78);
+var _animate = __webpack_require__(80);
 
 var _animate2 = _interopRequireDefault(_animate);
 
@@ -4159,6 +4159,7 @@ var View = function (_Component) {
           scrolls: (0, _removeObjectKeys2.default)(this.state.scrolls, [this.state.swipeBackPrevPanel])
         }, function () {
           _this2.document.dispatchEvent(new _this2.window.CustomEvent(transitionEndEventName));
+          window.scrollTo(0, _this2.state.scrolls[_this2.state.activePanel]);
           _this2.props.onTransition && _this2.props.onTransition();
         });
       }
@@ -4838,7 +4839,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(82);
+__webpack_require__(84);
 
 var _react = __webpack_require__(0);
 
@@ -5012,7 +5013,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = Div;
 
-__webpack_require__(86);
+__webpack_require__(88);
 
 var _react = __webpack_require__(0);
 
@@ -5072,7 +5073,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(88);
+__webpack_require__(90);
 
 var _react = __webpack_require__(0);
 
@@ -5196,7 +5197,7 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-__webpack_require__(90);
+__webpack_require__(92);
 
 var _FixedLayout = __webpack_require__(20);
 
@@ -5274,7 +5275,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = Flex;
 
-__webpack_require__(91);
+__webpack_require__(93);
 
 var _react = __webpack_require__(0);
 
@@ -5337,7 +5338,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(94);
+__webpack_require__(96);
 
 var _react = __webpack_require__(0);
 
@@ -5835,7 +5836,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(95);
+__webpack_require__(97);
 
 var _react = __webpack_require__(0);
 
@@ -5942,7 +5943,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(96);
+__webpack_require__(98);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6009,7 +6010,7 @@ var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-__webpack_require__(98);
+__webpack_require__(100);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6067,7 +6068,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(101);
+__webpack_require__(103);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6107,7 +6108,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(102);
+__webpack_require__(104);
 
 var _react = __webpack_require__(0);
 
@@ -6185,7 +6186,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(103);
+__webpack_require__(105);
 
 var _react = __webpack_require__(0);
 
@@ -6384,7 +6385,7 @@ var _ActionSheetItem = __webpack_require__(12);
 
 var _ActionSheetItem2 = _interopRequireDefault(_ActionSheetItem);
 
-var _string = __webpack_require__(79);
+var _string = __webpack_require__(81);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6597,7 +6598,7 @@ var _Entity = __webpack_require__(19);
 
 var _Entity2 = _interopRequireDefault(_Entity);
 
-__webpack_require__(104);
+__webpack_require__(106);
 
 var _propTypes = __webpack_require__(1);
 
@@ -6649,7 +6650,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(106);
+__webpack_require__(108);
 
 var _colors = __webpack_require__(28);
 
@@ -6697,7 +6698,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-__webpack_require__(107);
+__webpack_require__(109);
 
 var _react = __webpack_require__(0);
 
@@ -7024,7 +7025,7 @@ var _getClassName = __webpack_require__(2);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-__webpack_require__(108);
+__webpack_require__(110);
 
 var _transitionEvents = __webpack_require__(14);
 
@@ -7221,7 +7222,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 exports.default = ScreenSpinner;
 
-__webpack_require__(109);
+__webpack_require__(111);
 
 var _react = __webpack_require__(0);
 
@@ -7284,7 +7285,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(110);
+__webpack_require__(112);
 
 var _react = __webpack_require__(0);
 
@@ -7411,41 +7412,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _getClassName = __webpack_require__(2);
-
-var _getClassName2 = _interopRequireDefault(_getClassName);
-
-var _classnames2 = __webpack_require__(3);
-
-var _classnames3 = _interopRequireDefault(_classnames2);
-
-__webpack_require__(111);
-
 var _platform = __webpack_require__(4);
 
-var _HeaderButton = __webpack_require__(22);
+var _SearchIOS = __webpack_require__(76);
 
-var _HeaderButton2 = _interopRequireDefault(_HeaderButton);
+var _SearchIOS2 = _interopRequireDefault(_SearchIOS);
 
-var _back = __webpack_require__(67);
+var _SearchAndroid = __webpack_require__(75);
 
-var _back2 = _interopRequireDefault(_back);
-
-var _cancel = __webpack_require__(68);
-
-var _cancel2 = _interopRequireDefault(_cancel);
-
-var _search = __webpack_require__(66);
-
-var _search2 = _interopRequireDefault(_search);
+var _SearchAndroid2 = _interopRequireDefault(_SearchAndroid);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -7455,291 +7432,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var osname = (0, _platform.platform)();
 
-var baseClassName = (0, _getClassName2.default)('Search');
-
-var SearchIOS = function (_React$Component) {
-  _inherits(SearchIOS, _React$Component);
-
-  function SearchIOS(props) {
-    _classCallCheck(this, SearchIOS);
-
-    var _this = _possibleConstructorReturn(this, (SearchIOS.__proto__ || Object.getPrototypeOf(SearchIOS)).call(this, props));
-
-    _this.calcSizes = function () {
-      _this.setState({
-        afterWidth: _this.afterEl.offsetWidth,
-        placeholderWidth: _this.placeholderEl.offsetWidth,
-        controlWidth: _this.controlEl.offsetWidth,
-        placeholderOffset: (_this.controlEl.offsetWidth - (_this.state.showAfter ? _this.afterEl.offsetWidth + 12 : 0) - _this.placeholderEl.offsetWidth) / 2
-      });
-    };
-
-    _this.onFocus = function (e) {
-      _this.setState({ focused: true, showAfter: true }, function () {
-        return _this.props.onFocus && _this.props.onFocus(e);
-      });
-    };
-
-    _this.onBlur = function (e) {
-      _this.setState({ focused: false, showAfter: _this.value || _this.props.theme === 'header' }, function () {
-        return _this.props.onBlur && _this.props.onBlur(e);
-      });
-    };
-
-    _this.onChange = function (e) {
-      if (_this.isControlledOutside) {
-        _this.props.onChange(e.target.value, e);
-      } else {
-        _this.setState({ value: e.target.value });
-      }
-    };
-
-    _this.onCancel = function () {
-      if (_this.isControlledOutside) {
-        _this.props.onChange('');
-      } else {
-        _this.setState({ value: '' });
-      }
-      _this.setState({ showAfter: false });
-    };
-
-    var state = {
-      showAfter: props.theme === 'header',
-      focused: false,
-      placeholderOffset: null,
-      afterWidth: null
-    };
-
-    if (props.hasOwnProperty('value')) {
-      _this.isControlledOutside = true;
-    } else {
-      state.value = props.initialValue || '';
-    }
-
-    _this.state = state;
-    return _this;
-  }
-
-  _createClass(SearchIOS, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.calcSizes();
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      if (this.state.afterWidth !== this.afterEl.offsetWidth || this.state.placeholderWidth !== this.placeholderEl.offsetWidth) {
-        this.calcSizes();
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _classnames,
-          _this2 = this;
-
-      var className = (0, _classnames3.default)(baseClassName, (_classnames = {}, _defineProperty(_classnames, 'Search--' + this.props.theme, true), _defineProperty(_classnames, 'Search--focused', this.state.focused), _defineProperty(_classnames, 'Search--has-value', !!this.value), _classnames), this.props.className);
-
-      return _react2.default.createElement(
-        'div',
-        { className: className },
-        this.props.before && _react2.default.createElement(
-          'div',
-          { className: 'Search__before' },
-          this.props.before
-        ),
-        _react2.default.createElement(
-          'div',
-          {
-            className: 'Search__control',
-            ref: function ref(el) {
-              return _this2.controlEl = el;
-            },
-            style: {
-              width: this.state.controlWidth - (this.state.showAfter ? this.state.afterWidth + 12 : 0) + 'px'
-            }
-          },
-          _react2.default.createElement(
-            'div',
-            {
-              className: 'Search__placeholder',
-              onClick: function onClick() {
-                return _this2.inputEl.focus();
-              },
-              ref: function ref(el) {
-                return _this2.placeholderEl = el;
-              },
-              style: {
-                transform: 'translateX(' + (this.state.focused || this.value ? 0 : this.state.placeholderOffset + 'px') + ')'
-              }
-            },
-            _react2.default.createElement(_search2.default, null),
-            !this.value && _react2.default.createElement(
-              'div',
-              { className: 'Search__placeholder-text' },
-              this.props.placeholder
-            )
-          ),
-          _react2.default.createElement('input', {
-            ref: function ref(el) {
-              return _this2.inputEl = el;
-            },
-            type: 'text',
-            className: 'Search__input',
-            onFocus: this.onFocus,
-            onBlur: this.onBlur,
-            onChange: this.onChange,
-            value: this.value
-          })
-        ),
-        _react2.default.createElement(
-          'div',
-          {
-            ref: function ref(el) {
-              return _this2.afterEl = el;
-            },
-            className: 'Search__after',
-            onClick: this.onCancel,
-            style: { marginLeft: 12 }
-          },
-          this.props.after
-        )
-      );
-    }
-  }, {
-    key: 'value',
-    get: function get() {
-      return this.isControlledOutside ? this.props.value : this.state.value;
-    }
-  }]);
-
-  return SearchIOS;
-}(_react2.default.Component);
-
-SearchIOS.defaultProps = {
-  after: 'Отменить',
-  theme: 'default',
-  placeholder: 'Поиск'
-};
-
-var SearchAndroid = function (_React$Component2) {
-  _inherits(SearchAndroid, _React$Component2);
-
-  function SearchAndroid(props) {
-    _classCallCheck(this, SearchAndroid);
-
-    var _this3 = _possibleConstructorReturn(this, (SearchAndroid.__proto__ || Object.getPrototypeOf(SearchAndroid)).call(this, props));
-
-    _this3.onCancel = function () {
-      if (_this3.isControlledOutside) {
-        _this3.props.onChange('');
-      } else {
-        _this3.setState({ value: '' });
-      }
-      _this3.inputEl.focus();
-    };
-
-    _this3.onChange = function (e) {
-      if (_this3.isControlledOutside) {
-        _this3.props.onChange(e.target.value, e);
-      } else {
-        _this3.setState({ value: e.target.value });
-      }
-    };
-
-    _this3.onFocus = function (e) {
-      _this3.props.onFocus && _this3.props.onFocus(e);
-    };
-
-    _this3.onBlur = function (e) {
-      _this3.props.onBlur && _this3.props.onBlur(e);
-    };
-
-    _this3.onClose = function () {
-      _this3.props.onClose && _this3.props.onClose();
-    };
-
-    var state = {};
-
-    if (props.hasOwnProperty('value')) {
-      _this3.isControlledOutside = true;
-    } else {
-      state.value = props.initialValue || '';
-    }
-
-    _this3.state = state;
-    return _this3;
-  }
-
-  _createClass(SearchAndroid, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.inputEl.focus();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this4 = this;
-
-      var className = (0, _classnames3.default)(baseClassName, {
-        'Search--focused': this.state.focused,
-        'Search--has-value': !!this.value
-      }, this.props.className);
-
-      return _react2.default.createElement(
-        'div',
-        { className: className },
-        _react2.default.createElement(
-          'div',
-          { className: 'Search__before' },
-          _react2.default.createElement(
-            _HeaderButton2.default,
-            { onClick: this.onClose },
-            _react2.default.createElement(_back2.default, null)
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'Search__control' },
-          _react2.default.createElement('input', {
-            className: 'Search__input',
-            placeholder: this.props.placeholder,
-            ref: function ref(el) {
-              return _this4.inputEl = el;
-            },
-            value: this.value,
-            onChange: this.onChange,
-            onFocus: this.onFocus,
-            onBlur: this.onBlur
-          })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'Search__after' },
-          _react2.default.createElement(
-            _HeaderButton2.default,
-            { onClick: this.onCancel },
-            _react2.default.createElement(_cancel2.default, null)
-          )
-        )
-      );
-    }
-  }, {
-    key: 'value',
-    get: function get() {
-      return this.isControlledOutside ? this.props.value : this.state.value;
-    }
-  }]);
-
-  return SearchAndroid;
-}(_react2.default.Component);
-
-SearchAndroid.defaultProps = {
-  placeholder: 'Поиск'
-};
-
-var Search = function (_React$Component3) {
-  _inherits(Search, _React$Component3);
+var Search = function (_React$Component) {
+  _inherits(Search, _React$Component);
 
   function Search() {
     _classCallCheck(this, Search);
@@ -7751,9 +7445,9 @@ var Search = function (_React$Component3) {
     key: 'render',
     value: function render() {
       if (osname === _platform.IOS) {
-        return _react2.default.createElement(SearchIOS, this.props);
+        return _react2.default.createElement(_SearchIOS2.default, this.props);
       } else {
-        return _react2.default.createElement(SearchAndroid, this.props);
+        return _react2.default.createElement(_SearchAndroid2.default, this.props);
       }
     }
   }]);
@@ -7778,9 +7472,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(112);
+__webpack_require__(115);
 
-__webpack_require__(113);
+__webpack_require__(116);
 
 var _react = __webpack_require__(0);
 
@@ -7950,7 +7644,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-__webpack_require__(116);
+__webpack_require__(119);
 
 var _react = __webpack_require__(0);
 
@@ -8018,7 +7712,7 @@ var _Tappable = __webpack_require__(6);
 
 var _Tappable2 = _interopRequireDefault(_Tappable);
 
-__webpack_require__(118);
+__webpack_require__(121);
 
 var _classnames2 = __webpack_require__(3);
 
@@ -8094,7 +7788,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(120);
+__webpack_require__(123);
 
 var _react = __webpack_require__(0);
 
@@ -8180,9 +7874,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(121);
+__webpack_require__(124);
 
-__webpack_require__(122);
+__webpack_require__(125);
 
 var _react = __webpack_require__(0);
 
@@ -8959,7 +8653,7 @@ var _classnames2 = __webpack_require__(3);
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-__webpack_require__(84);
+__webpack_require__(86);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9055,7 +8749,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(85);
+__webpack_require__(87);
 
 var _react = __webpack_require__(0);
 
@@ -9170,7 +8864,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(92);
+__webpack_require__(94);
 
 var _react = __webpack_require__(0);
 
@@ -9303,7 +8997,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(93);
+__webpack_require__(95);
 
 var _react = __webpack_require__(0);
 
@@ -9420,6 +9114,400 @@ exports.default = FormLayoutOld;
 
 /***/ }),
 /* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _getClassName = __webpack_require__(2);
+
+var _getClassName2 = _interopRequireDefault(_getClassName);
+
+var _classnames = __webpack_require__(3);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+__webpack_require__(113);
+
+var _HeaderButton = __webpack_require__(22);
+
+var _HeaderButton2 = _interopRequireDefault(_HeaderButton);
+
+var _back = __webpack_require__(67);
+
+var _back2 = _interopRequireDefault(_back);
+
+var _cancel = __webpack_require__(68);
+
+var _cancel2 = _interopRequireDefault(_cancel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var baseClassName = (0, _getClassName2.default)('Search');
+
+var SearchAndroid = function (_React$Component) {
+  _inherits(SearchAndroid, _React$Component);
+
+  function SearchAndroid(props) {
+    _classCallCheck(this, SearchAndroid);
+
+    var _this = _possibleConstructorReturn(this, (SearchAndroid.__proto__ || Object.getPrototypeOf(SearchAndroid)).call(this, props));
+
+    _this.onCancel = function () {
+      if (_this.isControlledOutside) {
+        _this.props.onChange('');
+      } else {
+        _this.setState({ value: '' });
+      }
+      _this.inputEl.focus();
+    };
+
+    _this.onChange = function (e) {
+      if (_this.isControlledOutside) {
+        _this.props.onChange(e.target.value, e);
+      } else {
+        _this.setState({ value: e.target.value });
+      }
+    };
+
+    _this.onFocus = function (e) {
+      _this.props.onFocus && _this.props.onFocus(e);
+    };
+
+    _this.onBlur = function (e) {
+      _this.props.onBlur && _this.props.onBlur(e);
+    };
+
+    _this.onClose = function () {
+      _this.props.onClose && _this.props.onClose();
+    };
+
+    var state = {};
+
+    if (props.hasOwnProperty('value')) {
+      _this.isControlledOutside = true;
+    } else {
+      state.value = props.initialValue || '';
+    }
+
+    _this.state = state;
+    return _this;
+  }
+
+  _createClass(SearchAndroid, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.inputEl.focus();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var className = (0, _classnames2.default)(baseClassName, {
+        'Search--focused': this.state.focused,
+        'Search--has-value': !!this.value
+      }, this.props.className);
+
+      return _react2.default.createElement(
+        'div',
+        { className: className },
+        _react2.default.createElement(
+          'div',
+          { className: 'Search__before' },
+          _react2.default.createElement(
+            _HeaderButton2.default,
+            { onClick: this.onClose },
+            _react2.default.createElement(_back2.default, null)
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'Search__control' },
+          _react2.default.createElement('input', {
+            className: 'Search__input',
+            placeholder: this.props.placeholder,
+            ref: function ref(el) {
+              return _this2.inputEl = el;
+            },
+            value: this.value,
+            onChange: this.onChange,
+            onFocus: this.onFocus,
+            onBlur: this.onBlur
+          })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'Search__after' },
+          _react2.default.createElement(
+            _HeaderButton2.default,
+            { onClick: this.onCancel },
+            _react2.default.createElement(_cancel2.default, null)
+          )
+        )
+      );
+    }
+  }, {
+    key: 'value',
+    get: function get() {
+      return this.isControlledOutside ? this.props.value : this.state.value;
+    }
+  }]);
+
+  return SearchAndroid;
+}(_react2.default.Component);
+
+SearchAndroid.defaultProps = {
+  placeholder: 'Поиск'
+};
+exports.default = SearchAndroid;
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _getClassName = __webpack_require__(2);
+
+var _getClassName2 = _interopRequireDefault(_getClassName);
+
+var _classnames2 = __webpack_require__(3);
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
+__webpack_require__(114);
+
+var _search = __webpack_require__(66);
+
+var _search2 = _interopRequireDefault(_search);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var baseClassName = (0, _getClassName2.default)('Search');
+
+var SearchIOS = function (_React$Component) {
+  _inherits(SearchIOS, _React$Component);
+
+  function SearchIOS(props) {
+    _classCallCheck(this, SearchIOS);
+
+    var _this = _possibleConstructorReturn(this, (SearchIOS.__proto__ || Object.getPrototypeOf(SearchIOS)).call(this, props));
+
+    _this.calcSizes = function () {
+      _this.setState({
+        afterWidth: _this.afterEl.offsetWidth,
+        placeholderWidth: _this.placeholderEl.offsetWidth,
+        controlWidth: _this.controlEl.offsetWidth,
+        placeholderOffset: (_this.controlEl.offsetWidth - (_this.state.showAfter ? _this.afterEl.offsetWidth + 12 : 0) - _this.placeholderEl.offsetWidth) / 2
+      });
+    };
+
+    _this.onFocus = function (e) {
+      _this.setState({ focused: true, showAfter: true }, function () {
+        return _this.props.onFocus && _this.props.onFocus(e);
+      });
+    };
+
+    _this.onBlur = function (e) {
+      _this.setState({ focused: false, showAfter: _this.value || _this.props.theme === 'header' }, function () {
+        return _this.props.onBlur && _this.props.onBlur(e);
+      });
+    };
+
+    _this.onChange = function (e) {
+      if (_this.isControlledOutside) {
+        _this.props.onChange(e.target.value, e);
+      } else {
+        _this.setState({ value: e.target.value });
+      }
+    };
+
+    _this.onCancel = function () {
+      if (_this.isControlledOutside) {
+        _this.props.onChange('');
+      } else {
+        _this.setState({ value: '' });
+      }
+      _this.setState({ showAfter: false });
+    };
+
+    var state = {
+      showAfter: props.theme === 'header',
+      focused: false,
+      placeholderOffset: null,
+      afterWidth: null
+    };
+
+    if (props.hasOwnProperty('value')) {
+      _this.isControlledOutside = true;
+    } else {
+      state.value = props.defaultValue || '';
+    }
+
+    _this.state = state;
+    return _this;
+  }
+
+  _createClass(SearchIOS, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.calcSizes();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.state.afterWidth !== this.afterEl.offsetWidth) {
+        this.calcSizes();
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _classnames,
+          _this2 = this;
+
+      var _props = this.props,
+          className = _props.className,
+          theme = _props.theme,
+          onFocus = _props.onFocus,
+          onBlur = _props.onBlur,
+          onChange = _props.onChange,
+          defaultValue = _props.defaultValue,
+          value = _props.value,
+          placeholder = _props.placeholder,
+          before = _props.before,
+          after = _props.after,
+          inputProps = _objectWithoutProperties(_props, ['className', 'theme', 'onFocus', 'onBlur', 'onChange', 'defaultValue', 'value', 'placeholder', 'before', 'after']);
+
+      return _react2.default.createElement(
+        'div',
+        { className: (0, _classnames3.default)(baseClassName, (_classnames = {}, _defineProperty(_classnames, 'Search--' + theme, true), _defineProperty(_classnames, 'Search--focused', this.state.focused), _defineProperty(_classnames, 'Search--has-value', !!this.value), _classnames), className) },
+        before && _react2.default.createElement(
+          'div',
+          { className: 'Search__before' },
+          before
+        ),
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'Search__control',
+            ref: function ref(el) {
+              return _this2.controlEl = el;
+            },
+            style: {
+              width: this.state.controlWidth - (this.state.showAfter ? this.state.afterWidth + 12 : 0) + 'px'
+            }
+          },
+          _react2.default.createElement(
+            'div',
+            {
+              className: 'Search__placeholder',
+              onClick: function onClick() {
+                return _this2.inputEl.focus();
+              },
+              ref: function ref(el) {
+                return _this2.placeholderEl = el;
+              },
+              style: {
+                transform: 'translateX(' + (this.state.focused || this.value ? 0 : this.state.placeholderOffset + 'px') + ')'
+              }
+            },
+            _react2.default.createElement(_search2.default, null),
+            !this.value && _react2.default.createElement('div', { className: 'Search__placeholder-text', dangerouslySetInnerHTML: { __html: placeholder } })
+          ),
+          _react2.default.createElement('input', _extends({
+            ref: function ref(el) {
+              return _this2.inputEl = el;
+            },
+            type: 'text',
+            className: 'Search__input',
+            onFocus: this.onFocus,
+            onBlur: this.onBlur,
+            onChange: this.onChange,
+            value: this.value
+          }, inputProps))
+        ),
+        _react2.default.createElement(
+          'div',
+          {
+            ref: function ref(el) {
+              return _this2.afterEl = el;
+            },
+            className: 'Search__after',
+            onClick: this.onCancel,
+            style: { marginLeft: 12 }
+          },
+          after
+        )
+      );
+    }
+  }, {
+    key: 'value',
+    get: function get() {
+      return this.isControlledOutside ? this.props.value : this.state.value;
+    }
+  }]);
+
+  return SearchIOS;
+}(_react2.default.Component);
+
+SearchIOS.defaultProps = {
+  after: 'Отменить',
+  theme: 'default',
+  placeholder: 'Поиск'
+};
+exports.default = SearchIOS;
+
+/***/ }),
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9559,7 +9647,7 @@ AndroidSpinner.defaultProps = {
 exports.default = AndroidSpinner;
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9659,7 +9747,7 @@ IosSpinner.defaultProps = {
 exports.default = IosSpinner;
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10178,10 +10266,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.colors = _colors.values;
 exports.fontFamilies = _fonts.families;
-var v = exports.v = "1.5.0-beta.1";
+var v = exports.v = "1.5.0-beta.2";
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10223,7 +10311,7 @@ function animate(options) {
 }
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10240,18 +10328,6 @@ function brToNl() {
 
   return str.replace(regex, '\n');
 }
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 81 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 82 */
@@ -10501,6 +10577,24 @@ function brToNl() {
 
 /***/ }),
 /* 123 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 126 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
