@@ -1237,40 +1237,6 @@ body.locked {
   background: #d9d9d9 !important;
   }
 
-.Tappable--ios.Tappable--active::before,
-.Tappable--ios.Tappable--active::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  left: 0;
-  height: 1px;
-  background: rgba(0, 0, 0, .12);
-  z-index: 2;
-  }
-
-.Tappable--ios.Tappable--active::before {
-  bottom: 100%;
-  }
-
-.Tappable--ios.Tappable--active::after {
-  bottom: 0;
-  }
-
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
-  .Tappable--ios.Tappable--active::before {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, #d9d9d9));
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .12) 50%, #d9d9d9 50%);
-    background: -o-linear-gradient(top, rgba(0, 0, 0, .12) 50%, #d9d9d9 50%);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .12) 50%, #d9d9d9 50%);
-    }
-  .Tappable--ios.Tappable--active::after {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
-    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    }
-  }
-
 /**
  * Android tappable
  */
@@ -1401,11 +1367,6 @@ body.locked {
 
 .HeaderButton--ios.HeaderButton--text.HeaderButton--primary {
   font-weight: 600;
-  }
-
-.HeaderButton--ios.Tappable--active::before,
-.HeaderButton--ios.Tappable--active::after {
-  display: none;
   }
 html,
 body,
@@ -2366,7 +2327,7 @@ body.locked {
 .Alert--ios .Alert__content::after {
     content: '';
     position: absolute;
-    top: 100%;
+    bottom: 0;
     height: 1px;
     right: 0;
     left: 0;
@@ -2390,11 +2351,8 @@ body.locked {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 1px;
     max-width: 100%;
     }
-
-.Alert--ios.Alert--h .Alert__footer {}
 
 .Alert--ios.Alert--v .Alert__footer {
     -webkit-box-orient: vertical;
@@ -2411,8 +2369,8 @@ body.locked {
       position: relative;
       background: #fafafa;
       -webkit-box-flex: 1;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
+          -ms-flex: 1 1 0px;
+              flex: 1 1 0;
       font-size: 17px;
       line-height: 44px;
       color: #528BCC;
@@ -2434,34 +2392,19 @@ body.locked {
 .Alert--ios .Alert__btn::after {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      width: 1px;
-      height: auto;
-      background: #e0e0e0;
+      background: rgba(0, 0, 0, .12);
       }
 
-.Alert--ios .Alert__btn.Tappable--active::before,
-    .Alert--ios .Alert__btn.Tappable--active::after,
-    .Alert--ios.Alert--h .Alert__btn:last-child:after {
+.Alert--ios .Alert__btn:last-child::after,
+    .Alert--ios .Alert__btn.Tappable--active::after {
       content: none;
       }
 
-.Alert--ios .Alert__btn--primary { /* Depcrated. Remove in next version */
-      font-weight: 500;
-      }
-
-.Alert--ios .Alert__btn--cancel {
-      font-weight: 600;
-      }
-
-.Alert--ios .Alert__btn--destructive {
-      color: #E64646;
-      }
-
-.Alert--ios.Alert--h .Alert__btn {
-      padding-right: 7px;
+.Alert--ios.Alert--h .Alert__btn::after {
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
       }
 
 .Alert--ios.Alert--h .Alert__btn:first-child {
@@ -2470,79 +2413,56 @@ body.locked {
 
 .Alert--ios.Alert--h .Alert__btn:last-child {
       border-radius: 0 0 12px 0;
-      padding-right: 6px;
       }
 
-.Alert--ios.Alert--h .Alert__btn:first-child:last-child {
-      border-radius: 0 0 12px 12px;
-      }
-
-.Alert--ios.Alert--v .Alert__btn {
-      padding-bottom: 1px;
-      }
-
-.Alert--ios.Alert--v .Alert__btn.Tappable--active::before,
-    .Alert--ios.Alert--v .Alert__btn::after {
-      content: '';
-      position: absolute;
-      top: auto;
-      bottom: 0;
-      right: 0;
+.Alert--ios.Alert--v .Alert__btn::after {
       left: 0;
+      bottom: 0;
       width: 100%;
       height: 1px;
-      background: #e0e0e0;
       }
 
 .Alert--ios.Alert--v .Alert__btn:last-child {
       border-radius: 0 0 12px 12px;
-      padding-bottom: 0;
-      }
-
-.Alert--ios.Alert--v .Alert__btn:last-child::after {
-      content: none;
       }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .Alert--ios .Alert__content::after {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #e0e0e0), color-stop(50%, #fafafa));
-    background: -webkit-linear-gradient(bottom, #e0e0e0 50%, #fafafa 50%);
-    background: -o-linear-gradient(bottom, #e0e0e0 50%, #fafafa 50%);
-    background: linear-gradient(to top, #e0e0e0 50%, #fafafa 50%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
     }
 
     .Alert--ios.Alert--h .Alert__btn::after {
-      background: -webkit-gradient(linear, right top, left top, color-stop(50%, #e0e0e0), color-stop(50%, #fafafa));
-      background: -webkit-linear-gradient(right, #e0e0e0 50%, #fafafa 50%);
-      background: -o-linear-gradient(right, #e0e0e0 50%, #fafafa 50%);
-      background: linear-gradient(to left, #e0e0e0 50%, #fafafa 50%);
-      }
-    .Alert--ios.Alert--h .Alert__btn.Tappable--active::after {
-      background: -webkit-gradient(linear, right top, left top, color-stop(50%, #e0e0e0), color-stop(50%, #d9d9d9));
-      background: -webkit-linear-gradient(right, #e0e0e0 50%, #d9d9d9 50%);
-      background: -o-linear-gradient(right, #e0e0e0 50%, #d9d9d9 50%);
-      background: linear-gradient(to left, #e0e0e0 50%, #d9d9d9 50%);
+      background: -webkit-gradient(linear, right top, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+      background: -webkit-linear-gradient(right, rgba(0, 0, 0, .12) 50%, transparent 50%);
+      background: -o-linear-gradient(right, rgba(0, 0, 0, .12) 50%, transparent 50%);
+      background: linear-gradient(to left, rgba(0, 0, 0, .12) 50%, transparent 50%);
       }
     .Alert--ios.Alert--h .Alert__btn:last-child::after {
       content: none;
       }
 
-    .Alert--ios.Alert--v .Alert__btn.Tappable--active::before,
     .Alert--ios.Alert--v .Alert__btn::after {
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, #e0e0e0));
-      background: -webkit-linear-gradient(top, transparent 50%, #e0e0e0 50%);
-      background: -o-linear-gradient(top, transparent 50%, #e0e0e0 50%);
-      background: linear-gradient(to bottom, transparent 50%, #e0e0e0 50%);
-      }
-    .Alert--ios.Alert--v .Alert__btn.Tappable--active::before {
-      top: auto;
-      bottom: 100%;
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, #e0e0e0));
-      background: -webkit-linear-gradient(top, transparent 50%, #e0e0e0 50%);
-      background: -o-linear-gradient(top, transparent 50%, #e0e0e0 50%);
-      background: linear-gradient(to bottom, transparent 50%, #e0e0e0 50%);
+      background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+      background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+      background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+      background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
       }
   }
+
+.Alert--ios .Alert__btn--primary { /* Depcrated. Remove in next version */
+    font-weight: 500;
+    }
+
+.Alert--ios .Alert__btn--cancel {
+    font-weight: 600;
+    }
+
+.Alert--ios .Alert__btn--destructive {
+    color: #E64646;
+    }
 
 /**
  * Android version
@@ -3293,13 +3213,13 @@ body.locked {
   }
 
 .Button--ios::before {
-  bottom: 100%;
-  background: #dfdfdf;
+  top: 0;
+  background: rgba(0, 0, 0, .12);
   }
 
 .Button--ios::after {
   bottom: 0;
-  background: #dfdfdf;
+  background: rgba(0, 0, 0, .12);
   }
 
 .Button--ios {
@@ -3419,22 +3339,16 @@ body.locked {
   border-radius: 4px;
   }
 
+.Button--ios.Tappable--active::before,
+.Button--ios.Tappable--active::after,
 .Button--ios.Button--vk-rich::before,
 .Button--ios.Button--vk-rich::after,
-.Button--ios.Button--vk-rich.Tappable--active::before,
-.Button--ios.Button--vk-rich.Tappable--active::after,
 .Button--ios.Button--vk-primary::before,
 .Button--ios.Button--vk-primary::after,
-.Button--ios.Button--vk-primary.Tappable--active::before,
-.Button--ios.Button--vk-primary.Tappable--active::after,
 .Button--ios.Button--vk-secondary::before,
 .Button--ios.Button--vk-secondary::after,
-.Button--ios.Button--vk-secondary.Tappable--active::before,
-.Button--ios.Button--vk-secondary.Tappable--active::after,
 .Button--ios.Button--vk-tertiary::before,
-.Button--ios.Button--vk-tertiary::after,
-.Button--ios.Button--vk-tertiary.Tappable--active::before,
-.Button--ios.Button--vk-tertiary.Tappable--active::after {
+.Button--ios.Button--vk-tertiary::after {
   content: none;
   }
 
@@ -3542,12 +3456,17 @@ body.locked {
   }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .Button--ios::before,
+  .Button--ios::before {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    }
   .Button--ios::after {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #C8C7CC), color-stop(50%, transparent));
-    background: -webkit-linear-gradient(bottom, #C8C7CC 50%, transparent 50%);
-    background: -o-linear-gradient(bottom, #C8C7CC 50%, transparent 50%);
-    background: linear-gradient(to top, #C8C7CC 50%, transparent 50%);
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
     }
   }
 .Header {
@@ -4021,7 +3940,7 @@ body.locked {
     }
 
 .NewPane--ios::before {
-    bottom: 100%;
+    top: 0;
     background: rgba(0, 0, 0, .12);
     }
 
@@ -4032,10 +3951,10 @@ body.locked {
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .NewPane--ios::before {
-      background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
-      background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
-      background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
-      background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+      background: -o-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
       }
 
     .NewPane--ios::after {
@@ -4160,6 +4079,11 @@ body.locked {
   background: #fff;
   }
 
+.List .ListItem, .List .Radio {
+    position: relative;
+    z-index: 2;
+    }
+
 /* iOS */
 
 .List--ios {}
@@ -4175,7 +4099,7 @@ body.locked {
     }
 
 .List--ios::before {
-    bottom: 100%;
+    top: 0;
     background: rgba(0, 0, 0, .12);
     }
 
@@ -4185,7 +4109,13 @@ body.locked {
     }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .List--ios::before,
+  .List--ios::before {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    }
+
   .List--ios::after {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
     background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
@@ -4383,21 +4313,13 @@ body.locked {
 
 .ListItem--ios {}
 
-.ListItem--ios.ListItem--expandable::before {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  margin-top: -4px;
-  width: 7px;
-  height: 7px;
-  border-top: 2px solid #C7C7CC;
-  border-right: 2px solid #C7C7CC;
-  content: '';
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-  z-index: 1;
-  }
+.List--ios .ListItem__chevron {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -12px;
+    color: rgba(0, 0, 0, .12);
+    }
 
 .ListItem--ios .ListItem__in {
     padding: 0 15px;
@@ -4407,7 +4329,7 @@ body.locked {
     padding: 0 35px 0 15px;
     }
 
-.ListItem--ios:not(:last-child) .ListItem__before::before {
+.ListItem--ios:not(:last-child) .ListItem__in:not(.Tappable--active) .ListItem__before::before {
       position: absolute;
       bottom: 0;
       left: 100%;
@@ -4438,11 +4360,11 @@ body.locked {
 
 @media
       (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-      .ListItem--ios .ListItem__before::before {
-        background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #c8c7cc), color-stop(50%, transparent));
-        background: -webkit-linear-gradient(bottom, #c8c7cc 50%, transparent 50%);
-        background: -o-linear-gradient(bottom, #c8c7cc 50%, transparent 50%);
-        background: linear-gradient(to top, #c8c7cc 50%, transparent 50%);
+      .ListItem--ios:not(:last-child) .ListItem__in:not(.Tappable--active) .ListItem__before::before {
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+        background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+        background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+        background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
         }
       }
 
@@ -4839,6 +4761,151 @@ body.locked {
     color: #fff;
     opacity: .6;
     }
+.FixedTabs {
+
+  }
+
+.FixedTabs--ios {
+  padding: 6px 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  }
+
+.FixedTabs--ios.FixedTabs--gray {
+  background-color: #e6e9ed;
+  }
+
+.FixedTabs--ios.FixedTabs--gray.FixedLayout--top {
+  border-bottom: 1px solid #d1d6dc;
+  }
+
+.FixedTabs--ios.FixedTabs--gray.FixedLayout--bottom {
+  border-top: 1px solid #d1d6dc;
+  }
+
+.FixedTabs--ios.FixedTabs--white {
+  background-color: #fff;
+  }
+
+.FixedTabs--ios.FixedTabs--white.FixedLayout--top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+.FixedTabs--ios.FixedTabs--white.FixedLayout--bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .FixedTabs--ios.FixedTabs--gray, .FixedTabs--ios.FixedTabs--white {
+    border-width: 0.5px;
+    }
+  }
+
+.FixedTabs--android {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
+          box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
+  }
+
+.FixedTabs--android.FixedTabs--blue {
+  background-color: #5181B8;
+  }
+.Tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  }
+.TabsItem {
+  max-width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 500;
+  }
+
+.TabsItem--ios {
+  height: 32px;
+  border: 1px solid;
+  line-height: 30px;
+  font-size: 14px;
+  }
+
+.TabsItem--ios:not(:first-child) {
+  border-left: none;
+  }
+
+.TabsItem--ios:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  }
+
+.TabsItem--ios:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  }
+
+.TabsItem--ios.TabsItem--gray {
+  border-color: #818C99;
+  color: #818C99;
+  }
+
+.TabsItem--ios.TabsItem--gray.TabsItem--selected {
+  color: #fff;
+  background-color: #818C99;
+  }
+
+.TabsItem--ios.TabsItem--white.Tappable--active {
+  background-color: rgba(255, 255, 255, .1);
+  }
+
+.TabsItem--ios.TabsItem--white {
+  border-color: #fff;
+  color: #fff;
+  }
+
+.TabsItem--ios.TabsItem--white.TabsItem--selected {
+  background-color: #fff;
+  color: #5181B8;
+  }
+
+.TabsItem--android {
+  height: 48px;
+  line-height: 48px;
+  color: rgba(255, 255, 255, .5);
+  font-size: 16px;
+  position: relative;
+  }
+
+.TabsItem--android.TabsItem--selected {
+  color: #fff;
+  }
+
+.TabsItem--android.TabsItem--white.Tappable--active {
+  background-color: rgba(255, 255, 255, .1);
+  }
+
+.TabsItem--android.TabsItem--selected::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  display: block;
+  content: '';
+  background-color: #fff;
+  }
 .FormLayoutNew {
 
   }
@@ -5009,7 +5076,7 @@ body.locked {
   }
 
 .FormLayout--ios .FormLayout__container::before {
-  bottom: 100%;
+  top: 0;
   }
 
 .FormLayout--ios .FormLayout__container::after {
@@ -5222,9 +5289,15 @@ body.locked {
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
   .FormLayout--ios .FormLayout__container::before,
-  .FormLayout--ios .FormLayout__container::after,
   .FormLayout--ios .FormLayout__separator::before,
   .FormLayout--ios .FormLayout__label::before {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    }
+
+  .FormLayout--ios .FormLayout__container::after {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
     background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
     background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
@@ -6064,7 +6137,7 @@ body.locked {
   overflow: hidden;
   }
 
-.Radio--ios::before {
+.Radio--ios:not(:last-child):not(.Tappable--active)::before {
   position: absolute;
   bottom: 0;
   left: 15px;
@@ -6076,11 +6149,11 @@ body.locked {
 
 @media
   (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .Radio--ios::before {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #c8c7cc), color-stop(50%, transparent));
-    background: -webkit-linear-gradient(bottom, #c8c7cc 50%, transparent 50%);
-    background: -o-linear-gradient(bottom, #c8c7cc 50%, transparent 50%);
-    background: linear-gradient(to top, #c8c7cc 50%, transparent 50%);
+  .Radio--ios:not(:last-child):not(.Tappable--active)::before {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
     }
   }
 
@@ -7030,7 +7103,7 @@ body.locked {
   }
 
 .Div--border::before {
-  bottom: 100%;
+  top: 0;
   background: rgba(0, 0, 0, .12);
   }
 
@@ -7040,12 +7113,19 @@ body.locked {
   }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .Div--border::before,
-  .Div--border::after {
+
+  .Div--border::before {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
     background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
     background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
     background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    }
+
+  .Div--border::after {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
     }
   }
 .Flex {
