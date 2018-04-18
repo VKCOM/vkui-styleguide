@@ -6463,7 +6463,8 @@ var NativePopouts = function (_React$Component) {
     value: function renderUIAlert(popout) {
       var title = popout.title,
           text = popout.text,
-          onClose = popout.onClose;
+          onClose = popout.onClose,
+          actionsLayout = popout.actionsLayout;
 
       this.setState({
         popout: _react2.default.createElement(
@@ -6473,7 +6474,7 @@ var NativePopouts = function (_React$Component) {
               return (0, _removeObjectKeys2.default)(item, ['params']);
             }),
             onClose: onClose,
-            actionsLayout: this.props.popout.actionsLayout
+            actionsLayout: actionsLayout
           },
           title && _react2.default.createElement(
             'h2',
@@ -10367,7 +10368,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.colors = _colors.values;
 exports.fontFamilies = _fonts.families;
-var v = exports.v = "1.5.0";
+var v = exports.v = "1.5.2";
 
 /***/ }),
 /* 81 */

@@ -2368,9 +2368,6 @@ body.locked {
 .Alert--ios .Alert__btn {
       position: relative;
       background: #fafafa;
-      -webkit-box-flex: 1;
-          -ms-flex: 1 1 0px;
-              flex: 1 1 0;
       font-size: 17px;
       line-height: 44px;
       color: #528BCC;
@@ -2405,6 +2402,16 @@ body.locked {
       right: 0;
       width: 1px;
       height: 100%;
+      }
+
+.Alert--ios.Alert--h .Alert__btn {
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
       }
 
 .Alert--ios.Alert--h .Alert__btn:first-child {
@@ -2902,6 +2909,10 @@ body.locked {
           box-sizing: border-box;
   }
 
+.ButtonNew[disabled] {
+  opacity: .4;
+  }
+
 .ButtonNew__in {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2963,7 +2974,7 @@ body.locked {
   color: #fff;
   }
 
-.ButtonNew--level-1.Tappable--active {
+.ButtonNew--level-1.Tappable--active:not([disabled]) {
   background-color: #4872a3;
   }
 
@@ -2972,7 +2983,7 @@ body.locked {
   color: #45678F
   }
 
-.ButtonNew--level-2.Tappable--active {
+.ButtonNew--level-2.Tappable--active:not([disabled]) {
   background-color: rgba(0, 54, 115, .2);
   }
 
@@ -2981,7 +2992,7 @@ body.locked {
   color: #5181B8
   }
 
-.ButtonNew--level-3.Tappable--active {
+.ButtonNew--level-3.Tappable--active:not([disabled]) {
   background-color: rgba(0, 54, 115, .08);
   }
 
@@ -3000,7 +3011,7 @@ body.locked {
   color: #528BCC;
   }
 
-.ButtonNew--level-sell.Tappable--active {
+.ButtonNew--level-sell.Tappable--active:not([disabled]) {
   background-color: rgba(82, 139, 204, 0.1);
   }
 
