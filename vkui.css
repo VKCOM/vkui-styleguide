@@ -3185,7 +3185,8 @@ body.locked {
     text-align: right;
     }
 
-.Input-underline {
+.Input-underline,
+.Textarea-underline {
   position: absolute;
   bottom: 9px;
   left: 0;
@@ -3197,7 +3198,8 @@ body.locked {
   background: linear-gradient(to top, transparent 50%, #d6d6d6 50%);
   }
 
-.Input-underline::before {
+.Input-underline::before,
+  .Textarea-underline::before {
     position: absolute;
     top: 0;
     right: 0;
@@ -5097,16 +5099,16 @@ body.locked {
               justify-content: flex-start;
       }
 
-.ListItem__icon {
+.ListItem__before-in {
         -ms-flex-negative: 0;
             flex-shrink: 0;
         color: #AAAEB3;
         }
 
-.ListItem__icon > svg,
-        .ListItem__icon > img {
-          vertical-align: top;
-          }
+.ListItem__checkbox-marker {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        }
 
 .ListItem__main {
       -webkit-box-flex: 1;
@@ -5153,7 +5155,32 @@ body.locked {
 
 /* iOS */
 
-.ListItem--ios {}
+.ListItem--ios {
+  overflow: hidden;
+  }
+
+.ListItem--ios.ListItem--removing {
+    -webkit-transition: height .3s cubic-bezier(.36, .66, .04, 1);
+    -o-transition: height .3s cubic-bezier(.36, .66, .04, 1);
+    transition: height .3s cubic-bezier(.36, .66, .04, 1);
+    }
+
+.ListItem--ios .ListItem__remove {
+    position: absolute;
+    left: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #FF3B30;
+    color: #fff;
+    padding: 0 10px;
+    line-height: 45px;
+    font-size: 15px;
+    -webkit-transition: -webkit-transform .6s cubic-bezier(.36, .66, .04, 1);
+    transition: -webkit-transform .6s cubic-bezier(.36, .66, .04, 1);
+    -o-transition: transform .6s cubic-bezier(.36, .66, .04, 1);
+    transition: transform .6s cubic-bezier(.36, .66, .04, 1);
+    transition: transform .6s cubic-bezier(.36, .66, .04, 1), -webkit-transform .6s cubic-bezier(.36, .66, .04, 1);
+    }
 
 .List--ios .ListItem__chevron {
     position: absolute;
@@ -5165,6 +5192,11 @@ body.locked {
 
 .ListItem--ios .ListItem__in {
     padding: 0 15px;
+    -webkit-transition: -webkit-transform .6s cubic-bezier(.36, .66, .04, 1);
+    transition: -webkit-transform .6s cubic-bezier(.36, .66, .04, 1);
+    -o-transition: transform .6s cubic-bezier(.36, .66, .04, 1);
+    transition: transform .6s cubic-bezier(.36, .66, .04, 1);
+    transition: transform .6s cubic-bezier(.36, .66, .04, 1), -webkit-transform .6s cubic-bezier(.36, .66, .04, 1);
     }
 
 .ListItem--ios.ListItem--expandable .ListItem__in {
@@ -5181,24 +5213,51 @@ body.locked {
       content: '';
       }
 
-.ListItem--ios .ListItem__before .Icon {
+.ListItem--ios .ListItem__before-in .Icon {
         padding: 10px 16px 10px 0;
         }
 
-.ListItem--ios .ListItem__before .Avatar {
+.ListItem--ios .ListItem__before-in .Avatar {
         padding: 4px 12px 4px 0;
         }
 
 .ListItem--ios .ListItem__checkbox-marker {
+        margin: 10px 16px 10px 0;
         width: 24px;
         height: 24px;
-        margin: 10px 16px 10px 0;
-        background: url('data:image/svg+xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2048.2%20(47327)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3Echeck_off_circle_24%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22VK-iOS-UI-Kit%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(-1839.000000%2C%20-1274.000000)%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Controls%22%20transform%3D%22translate(1765.000000%2C%201068.000000)%22%20fill%3D%22%23C4C8CC%22%20fill-rule%3D%22nonzero%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22List-Checkbox-Off%22%20transform%3D%22translate(64.000000%2C%20196.000000)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M22%2C10%20C28.6288742%2C10%2034%2C15.372583%2034%2C22%20C34%2C28.6288742%2028.627417%2C34%2022%2C34%20C15.3711258%2C34%2010%2C28.627417%2010%2C22%20C10%2C15.3711258%2015.372583%2C10%2022%2C10%20Z%20M22%2C11.5%20C16.2004422%2C11.5%2011.5%2C16.200048%2011.5%2C22%20C11.5%2C27.7995578%2016.200048%2C32.5%2022%2C32.5%20C27.7995578%2C32.5%2032.5%2C27.799952%2032.5%2C22%20C32.5%2C16.2004422%2027.799952%2C11.5%2022%2C11.5%20Z%22%20id%3D%22check_off_circle_24%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E') 0 0/100% no-repeat;
+        border-radius: 50%;
+        border: 2px solid #c4c8cc;
+        color: transparent;
         }
 
 .ListItem--ios .ListItem__checkbox:checked ~ .ListItem__before .ListItem__checkbox-marker {
-        background: url('data:image/svg+xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2048.2%20(47327)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3Echeck_on_circle_24%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22VK-iOS-UI-Kit%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(-1839.000000%2C%20-1206.000000)%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Controls%22%20transform%3D%22translate(1765.000000%2C%201068.000000)%22%20fill%3D%22%23528BCC%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22List-Checkbox-On%22%20transform%3D%22translate(64.000000%2C%20128.000000)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M10%2C22%20C10%2C15.372583%2015.372583%2C10%2022%2C10%20C28.627417%2C10%2034%2C15.372583%2034%2C22%20C34%2C28.627417%2028.627417%2C34%2022%2C34%20C15.372583%2C34%2010%2C28.627417%2010%2C22%20Z%20M15.6952286%2C22.8607967%20L19.3047714%2C26.331511%20C19.6872276%2C26.6992573%2020.3094925%2C26.7024111%2020.6912708%2C26.3353165%20L28.3087292%2C19.0108373%20C28.6901996%2C18.6440388%2028.6902719%2C18.0483384%2028.308203%2C17.6809644%20L28.291797%2C17.6651895%20C27.9107054%2C17.2987552%2027.2920375%2C17.2961178%2026.9121465%2C17.6613976%20L20%2C24.3076923%20L17.0941162%2C21.5135733%20C16.706934%2C21.1412827%2016.0902719%2C21.1439693%2015.708203%2C21.5113433%20L15.691797%2C21.5271182%20C15.3107054%2C21.8935525%2015.3112644%2C22.4916004%2015.6952286%2C22.8607967%20Z%22%20id%3D%22check_on_circle_24%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E') 0 0/100% no-repeat;
+        border: none;
+        color: #fff;
+        background-color: #528BCC;
+        padding: 4px;
         }
+
+.ListItem--ios .ListItem__remove-marker {
+        margin: 10px 16px 10px 0;
+        width: 21px;
+        height: 21px;
+        background-color: #FF3B30;
+        border-radius: 50%;
+        position: relative;
+        -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, .06);
+                box-shadow: 0 2px 0 0 rgba(0, 0, 0, .06);
+        }
+
+.ListItem--ios .ListItem__remove-marker::before {
+          position: absolute;
+          left: 6px;
+          top: 10px;
+          width: 9px;
+          height: 1px;
+          background-color: #fff;
+          content: '';
+          display: block;
+          }
 
 @media
       (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -5214,7 +5273,7 @@ body.locked {
       padding: 11px .5em 12px 0;
       }
 
-.ListItem--ios .ListItem__description {
+.ListItem--ios .ListItem__description:not(:empty) {
         margin-top: 2px;
         font-size: 13px;
         line-height: 15px;
@@ -5238,11 +5297,11 @@ body.locked {
     background: #fff;
     }
 
-.ListItem--android .ListItem__before .Icon {
+.ListItem--android .ListItem__before-in .Icon {
       padding: 14px 32px 18px 0;
       }
 
-.ListItem--android .ListItem__before .Avatar {
+.ListItem--android .ListItem__before-in .Avatar {
       padding: 8px 16px 8px 0;
       }
 
@@ -5250,20 +5309,25 @@ body.locked {
       padding: 16px .5em 17px 0;
       }
 
-.ListItem--android .ListItem__description {
+.ListItem--android .ListItem__description:not(:empty) {
         margin-top: 1px;
         font-size: 14px;
         line-height: 18px;
         }
 
 .ListItem--android .ListItem__checkbox-marker {
-      width: 24px;
-      height: 24px;
-      background: url('data:image/svg+xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2048.2%20(47327)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3Echeck_box_off_24%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M6.8458278%2C3%20L17.1541722%2C3%20C18.4914503%2C3%2018.9763797%2C3.13923842%2019.4652686%2C3.40069906%20C19.9541574%2C3.66215969%2020.3378403%2C4.04584256%2020.5993009%2C4.53473144%20C20.8607616%2C5.02362033%2021%2C5.50854969%2021%2C6.8458278%20L21%2C17.1541722%20C21%2C18.4914503%2020.8607616%2C18.9763797%2020.5993009%2C19.4652686%20C20.3378403%2C19.9541574%2019.9541574%2C20.3378403%2019.4652686%2C20.5993009%20C18.9763797%2C20.8607616%2018.4914503%2C21%2017.1541722%2C21%20L6.8458278%2C21%20C5.50854969%2C21%205.02362033%2C20.8607616%204.53473144%2C20.5993009%20C4.04584256%2C20.3378403%203.66215969%2C19.9541574%203.40069906%2C19.4652686%20C3.13923842%2C18.9763797%203%2C18.4914503%203%2C17.1541722%20L3%2C6.8458278%20C3%2C5.50854969%203.13923842%2C5.02362033%203.40069906%2C4.53473144%20C3.66215969%2C4.04584256%204.04584256%2C3.66215969%204.53473144%2C3.40069906%20C5.02362033%2C3.13923842%205.50854969%2C3%206.8458278%2C3%20Z%20M6.2819426%2C5%20C5.83618323%2C5%205.67454011%2C5.04641281%205.51157715%2C5.13356635%20C5.34861419%2C5.2207199%205.2207199%2C5.34861419%205.13356635%2C5.51157715%20C5.04641281%2C5.67454011%205%2C5.83618323%205%2C6.2819426%20L5%2C17.7180574%20C5%2C18.1638168%205.04641281%2C18.3254599%205.13356635%2C18.4884229%20C5.2207199%2C18.6513858%205.34861419%2C18.7792801%205.51157715%2C18.8664336%20C5.67454011%2C18.9535872%205.83618323%2C19%206.2819426%2C19%20L17.7180574%2C19%20C18.1638168%2C19%2018.3254599%2C18.9535872%2018.4884229%2C18.8664336%20C18.6513858%2C18.7792801%2018.7792801%2C18.6513858%2018.8664336%2C18.4884229%20C18.9535872%2C18.3254599%2019%2C18.1638168%2019%2C17.7180574%20L19%2C6.2819426%20C19%2C5.83618323%2018.9535872%2C5.67454011%2018.8664336%2C5.51157715%20C18.7792801%2C5.34861419%2018.6513858%2C5.2207199%2018.4884229%2C5.13356635%20C18.3254599%2C5.04641281%2018.1638168%2C5%2017.7180574%2C5%20L6.2819426%2C5%20Z%22%20id%3D%22path-1%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22VK-Android-UI-Kit%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(-3428.000000%2C%20-1715.000000)%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Controls%22%20transform%3D%22translate(3376.000000%2C%201503.000000)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Checkbox%22%20transform%3D%22translate(52.000000%2C%20200.000000)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Icons-Unsorted%2Fcheck_box_off_24%22%20transform%3D%22translate(0.000000%2C%2012.000000)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22check_box_off_24%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20id%3D%22Bounds%22%20opacity%3D%220.100000001%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%3E%3C%2Frect%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cmask%20id%3D%22mask-2%22%20fill%3D%22white%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fmask%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cuse%20id%3D%22Mask%22%20fill%3D%22%23C4C8CC%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E') 0 0/100% no-repeat;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #c4c8cc;
+      color: transparent;
+      border-radius: 3px;
       }
 
 .ListItem--android .ListItem__checkbox:checked ~ .ListItem__aside .ListItem__checkbox-marker {
-      background: url('data:image/svg+xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3C!--%20Generator%3A%20Sketch%2048.2%20(47327)%20-%20http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%20--%3E%0A%20%20%20%20%3Ctitle%3Echeck_box_on_24%3C%2Ftitle%3E%0A%20%20%20%20%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22VK-Android-UI-Kit%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(-3452.000000%2C%20-1643.000000)%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Controls%22%20transform%3D%22translate(3376.000000%2C%201503.000000)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22Checkbox%22%20transform%3D%22translate(64.000000%2C%20128.000000)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22check_box_on_24%22%20transform%3D%22translate(12.000000%2C%2012.000000)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20id%3D%22Bounds%22%20opacity%3D%220.100000001%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%3E%3C%2Frect%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M6.8458278%2C3%20L17.1541722%2C3%20C18.4914503%2C3%2018.9763797%2C3.13923842%2019.4652686%2C3.40069906%20C19.9541574%2C3.66215969%2020.3378403%2C4.04584256%2020.5993009%2C4.53473144%20C20.8607616%2C5.02362033%2021%2C5.50854969%2021%2C6.8458278%20L21%2C17.1541722%20C21%2C18.4914503%2020.8607616%2C18.9763797%2020.5993009%2C19.4652686%20C20.3378403%2C19.9541574%2019.9541574%2C20.3378403%2019.4652686%2C20.5993009%20C18.9763797%2C20.8607616%2018.4914503%2C21%2017.1541722%2C21%20L6.8458278%2C21%20C5.50854969%2C21%205.02362033%2C20.8607616%204.53473144%2C20.5993009%20C4.04584256%2C20.3378403%203.66215969%2C19.9541574%203.40069906%2C19.4652686%20C3.13923842%2C18.9763797%203%2C18.4914503%203%2C17.1541722%20L3%2C6.8458278%20C3%2C5.50854969%203.13923842%2C5.02362033%203.40069906%2C4.53473144%20C3.66215969%2C4.04584256%204.04584256%2C3.66215969%204.53473144%2C3.40069906%20C5.02362033%2C3.13923842%205.50854969%2C3%206.8458278%2C3%20Z%20M5.7%2C11.5192308%20L5.70689128%2C11.5126045%20C6.09400277%2C11.140382%206.70599723%2C11.140382%207.09310872%2C11.5126045%20L10%2C14.3076923%20L16.9068913%2C7.66645069%20C17.2940028%2C7.29422811%2017.9059972%2C7.29422811%2018.2931087%2C7.66645069%20L18.3%2C7.67307692%20C18.6717301%2C8.03050973%2018.6833204%2C8.62161308%2018.3258876%2C8.9933432%20C18.3174284%2C9.00214074%2018.3087975%2C9.01077159%2018.3%2C9.01923077%20L10.6931087%2C16.3335493%20C10.3059972%2C16.7057719%209.69400277%2C16.7057719%209.30689128%2C16.3335493%20L5.7%2C12.8653846%20C5.32826988%2C12.5079518%205.31667962%2C11.9168485%205.67411243%2C11.5451183%20C5.6825716%2C11.5363208%205.69120245%2C11.5276899%205.7%2C11.5192308%20Z%22%20id%3D%22Shape%22%20fill%3D%22%23528BCC%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E') 0 0/100% no-repeat;
+      color: #fff;
+      border: none;
+      padding: 1px;
+      background-color: #528BCC;
       }
 
 .ListItem--android .ListItem__indicator,
@@ -5321,7 +5385,45 @@ body.locked {
   .Gallery__slide > * {
       width: 100%;
       height: 100%;
-      }.Progress {
+      }
+
+  .Gallery__bullets {
+    position: absolute;
+    bottom: 10px;
+    height: 6px;
+    width: 100%;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    }
+
+  .Gallery__bullets--dark .Gallery__bullet {
+      background-color: #000;
+      }
+
+  .Gallery__bullets--light .Gallery__bullet {
+      background-color: #fff;
+      }
+
+  .Gallery__bullet {
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      margin: 0 3px;
+      opacity: .56;
+      }
+
+  .Gallery__bullet--active {
+      opacity: 1;
+      }
+.Progress {
   border-radius: 2px;
   background-color: #EBEDF0;
   }
@@ -6317,7 +6419,7 @@ body.locked {
     font-size: 16px;
     }
 
-.Textarea--android textarea:focus ~ .Input-underline::before {
+.Textarea--android textarea:focus ~ .Textarea-underline::before {
     -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
             transform: scaleX(1);
@@ -6744,6 +6846,113 @@ body.locked {
 .Radio__self:checked ~ .Radio__wrapper .Radio__icon::before {
     background: #5181b8;
     }
+.RadioNew {
+  background-color: #fff;
+  display: block;
+  }
+
+  .RadioNew__self {
+    display: none;
+    }
+
+  .RadioNew__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    }
+
+  .RadioNew__container {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    max-width: 100%;
+    }
+
+  .RadioNew__icon {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 50%;
+    position: relative;
+    }
+
+  .RadioNew__description {
+    font-size: 13px;
+    line-height: 15px;
+    color: #909499;
+    }
+
+  .RadioNew__icon::after {
+      position: absolute;
+      content: '';
+      display: block;
+      border-radius: 50%;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      }
+
+  .RadioNew--ios .RadioNew__container {
+    margin: 11px 0;
+    line-height: 22px;
+    }
+
+  .RadioNew--ios .RadioNew__icon {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #c4c8cc;
+    margin: 11px 13px;
+    }
+
+  .RadioNew--ios .RadioNew__icon::after {
+      width: 14px;
+      height: 14px;
+      left: 2px;
+      top: 2px;
+      }
+
+  .RadioNew--ios .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon {
+    border-color: #528BCC;
+    }
+
+  .RadioNew--ios .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon::after {
+      background-color: #528BCC;
+      }
+
+  .RadioNew--android .RadioNew__container {
+    margin: 14px 0;
+    line-height: 20px;
+    }
+
+  .RadioNew--android .RadioNew__icon {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c4c8cc;
+    margin: 14px 18px;
+    }
+
+  .RadioNew--android .RadioNew__icon::after {
+    width: 10px;
+    height: 10px;
+    left: 3px;
+    top: 3px;
+    }
+
+  .RadioNew--android .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon {
+    border-color: #528BCC;
+    }
+
+  .RadioNew--android .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon::after {
+    background-color: #528BCC;
+    }
+
+
 html,
 body,
 div#root {
