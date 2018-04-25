@@ -1895,10 +1895,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var events = (0, _touch.getSupportedEvents)();
 
-// amazing hack for preventing vertical scroll during horizontal swipe
-// (in View, Slider, Gallery). todo: requires investigation
-window.addEventListener('touchmove', function () {});
-
 var Touch = function (_Component) {
   _inherits(Touch, _Component);
 
@@ -1938,9 +1934,7 @@ var Touch = function (_Component) {
         _this.props.onStartY(outputEvent);
       }
 
-      _this.document.addEventListener(events[1], _this.onMove, { capture: _this.props.useCapture, passive: false });
-      _this.document.addEventListener(events[2], _this.onEnd, { capture: _this.props.useCapture, passive: false });
-      _this.document.addEventListener(events[3], _this.onEnd, { capture: _this.props.useCapture, passive: false });
+      !_touch.touchEnabled && _this.subscribe(_this.document);
     }, _this.onMove = function (e) {
       var _this$gesture = _this.gesture,
           isPressed = _this$gesture.isPressed,
@@ -2033,9 +2027,7 @@ var Touch = function (_Component) {
       _this.cancelClick = e.target.tagName === 'A' && isSlide;
       _this.gesture = {};
 
-      _this.document.removeEventListener(events[1], _this.onMove, { capture: _this.props.useCapture, passive: false });
-      _this.document.removeEventListener(events[2], _this.onEnd, { capture: _this.props.useCapture, passive: false });
-      _this.document.removeEventListener(events[3], _this.onEnd, { capture: _this.props.useCapture, passive: false });
+      !_touch.touchEnabled && _this.unsubscribe(_this.document);
     }, _this.onDragStart = function (e) {
       if (e.target.tagName === 'A' || e.target.tagName === 'IMG') {
         return e.preventDefault();
@@ -2056,11 +2048,13 @@ var Touch = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.container.addEventListener(events[0], this.onStart, { capture: this.props.useCapture, passive: false });
+      _touch.touchEnabled && this.subscribe(this.container);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       this.container.removeEventListener(events[0], this.onStart, { capture: this.props.useCapture, passive: false });
+      _touch.touchEnabled && this.unsubscribe(this.container);
     }
 
     /**
@@ -2089,6 +2083,20 @@ var Touch = function (_Component) {
      * @returns {void}
      */
 
+  }, {
+    key: 'subscribe',
+    value: function subscribe(element) {
+      element.addEventListener(events[1], this.onMove, { capture: this.props.useCapture, passive: false });
+      element.addEventListener(events[2], this.onEnd, { capture: this.props.useCapture, passive: false });
+      element.addEventListener(events[3], this.onEnd, { capture: this.props.useCapture, passive: false });
+    }
+  }, {
+    key: 'unsubscribe',
+    value: function unsubscribe(element) {
+      element.removeEventListener(events[1], this.onMove, { capture: this.props.useCapture, passive: false });
+      element.removeEventListener(events[2], this.onEnd, { capture: this.props.useCapture, passive: false });
+      element.removeEventListener(events[3], this.onEnd, { capture: this.props.useCapture, passive: false });
+    }
 
     /**
      * Обработчик событий dragstart
@@ -2371,7 +2379,8 @@ var PopoutWrapper = function (_React$Component) {
       var _this2 = this;
 
       // TODO add "animationend" event instead of setTimeout
-      window.addEventListener('touchmove', this.preventTouch);
+      window.addEventListener('touchmove', this.preventTouch, { passive: false });
+      console.log('sth');
       this.openTimeout = setTimeout(function () {
         return _this2.setState({ opened: true });
       }, osname === _platform.ANDROID ? 200 : 300);
@@ -2380,7 +2389,7 @@ var PopoutWrapper = function (_React$Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       clearTimeout(this.openTimeout);
-      window.removeEventListener('touchmove', this.preventTouch);
+      window.removeEventListener('touchmove', this.preventTouch, { passive: false });
     }
   }, {
     key: 'render',
@@ -3673,7 +3682,7 @@ var Slider = function (_Component) {
       _this.setState({ active: !!e.originalEvent.target.closest('.Slider__thumb') });
     };
 
-    _this.onMove = function (e) {
+    _this.onMoveX = function (e) {
       var absolutePosition = _this.validateAbsolute(_this.state.startX + (e.shiftX || 0));
       var percentPosition = _this.absoluteToPecent(absolutePosition);
 
@@ -3787,7 +3796,7 @@ var Slider = function (_Component) {
         { className: (0, _classnames2.default)(baseClassNames, this.props.className), ref: this.getRef, style: this.props.style },
         _react2.default.createElement(
           _Touch2.default,
-          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, className: 'Slider__in' },
+          { onStart: this.onStart, onMoveX: this.onMoveX, onEnd: this.onEnd, className: 'Slider__in' },
           _react2.default.createElement(
             'div',
             { className: 'Slider__dragger', style: { width: this.state.percentPosition + '%' } },
@@ -5008,6 +5017,9 @@ var coordY = function coordY(e) {
   return e.clientY || e.touches && e.touches[0].clientY;
 };
 
+var isClient = typeof window !== 'undefined';
+var touchEnabled = isClient && 'ontouchstart' in window;
+
 /**
  * Возвращает массив поддерживаемых событий
  * Если браузер поддерживает pointer events или подключена handjs, вернет события указателя.
@@ -5016,9 +5028,6 @@ var coordY = function coordY(e) {
  * @returns {Array} Массив с названиями событий
  */
 function getSupportedEvents() {
-  var isClient = typeof window !== 'undefined';
-  var touchEnabled = isClient && 'ontouchstart' in window;
-
   if (touchEnabled) {
     return ['touchstart', 'touchmove', 'touchend', 'touchcancel'];
   }
@@ -5029,6 +5038,7 @@ function getSupportedEvents() {
 exports.getSupportedEvents = getSupportedEvents;
 exports.coordX = coordX;
 exports.coordY = coordY;
+exports.touchEnabled = touchEnabled;
 
 /***/ }),
 /* 35 */
@@ -5935,7 +5945,7 @@ var Gallery = function (_Component) {
           {
             className: 'Gallery__viewport',
             onStartX: this.onStart,
-            onMoveX: this.onMove,
+            onMoveX: this.onMoveX,
             onEnd: this.onEnd,
             style: { width: slideWidth },
             ref: this.getViewportRef
@@ -6011,7 +6021,7 @@ var _initialiseProps = function _initialiseProps() {
     });
   };
 
-  this.onMove = function (e) {
+  this.onMoveX = function (e) {
     if (!_this4.isDraggable()) {
       return;
     }
@@ -7192,9 +7202,13 @@ var _classnames = __webpack_require__(3);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _platform = __webpack_require__(4);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var osname = (0, _platform.platform)();
 
 var Radio = function Radio(_ref) {
   var v = _ref.v,
@@ -7207,7 +7221,12 @@ var Radio = function Radio(_ref) {
 
   return _react2.default.createElement(
     _Tappable2.default,
-    { component: 'label', onClick: function onClick() {}, className: (0, _classnames2.default)((0, _getClassName2.default)(name), className) },
+    {
+      component: 'label',
+      onClick: function onClick() {},
+      className: (0, _classnames2.default)((0, _getClassName2.default)(name), className),
+      activeEffectDelay: osname === _platform.IOS ? 100 : _Tappable.ACTIVE_EFFECT_DELAY
+    },
     _react2.default.createElement('input', _extends({
       type: 'radio',
       className: name + '__self'
@@ -7333,7 +7352,7 @@ var RangeSlider = function (_Slider) {
       } else if (thumb === _this.thumbEnd) {
         _this.setState({ active: 'end' });
       }
-    }, _this.onMove = function (e) {
+    }, _this.onMoveX = function (e) {
       var absolutePosition = _this.validateAbsolute(_this.state.startX + (e.shiftX || 0));
       var percentPosition = _this.absoluteToPecent(absolutePosition);
       var percentRange = _this.calcPercentRange(percentPosition);
@@ -7424,7 +7443,7 @@ var RangeSlider = function (_Slider) {
         { className: (0, _classnames2.default)(baseClassNames, this.props.className), ref: this.getRef, style: this.props.style },
         _react2.default.createElement(
           _Touch2.default,
-          { onStart: this.onStart, onMove: this.onMove, onEnd: this.onEnd, className: 'Slider__in' },
+          { onStart: this.onStart, onMoveX: this.onMoveX, onEnd: this.onEnd, className: 'Slider__in' },
           _react2.default.createElement(
             'div',
             {

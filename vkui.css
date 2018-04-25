@@ -1543,8 +1543,17 @@ body.locked {
  * iOS tappable
  */
 
+.Tappable--ios {
+  -webkit-transition: background-color .15s ease-out;
+  -o-transition: background-color .15s ease-out;
+  transition: background-color .15s ease-out;
+  }
+
 .Tappable--ios.Tappable--active:not([disabled]):not(.Button--vk-primary):not(.Button--vk-secondary):not(.Button--vk-tertiary):not(.Button--vk-rich):not(.Button--vk-wide-primary):not(.TabsItem--white):not(.HeaderButton):not(.ButtonNew--type-default) {
   background: #d9d9d9 !important;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
   }
 
 /**
@@ -6846,16 +6855,106 @@ body.locked {
 .Radio__self:checked ~ .Radio__wrapper .Radio__icon::before {
     background: #5181b8;
     }
+html,
+body,
+div#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  background: #EBEDF0;
+}
+
+html[theme="white"] {
+  background: #fff;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a:focus {
+  outline: none;
+}
+
+/*
+body.locked {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+*/
+
+.InputNew-underline,
+.SelectNew-underline,
+.TextareaNew-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .12);
+}
+
+.InputNew-underline::after,
+.SelectNew-underline::after,
+.TextareaNew-underline::after {
+  position: absolute;
+  top: 0;
+  height: 6px;
+  width: 100%;
+  content: '';
+  display: block;
+  background-color: #f2f3f5;
+  z-index: 2;
+}
+
+.InputNew-underline::before,
+.SelectNew-underline::before,
+.TextareaNew-underline::before {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 4px;
+  background: #518bcc;
+  content: '';
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
+  transition: -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
+  -o-transition: transform .1s cubic-bezier(.4, 0, .2, 1);
+  transition: transform .1s cubic-bezier(.4, 0, .2, 1);
+  transition: transform .1s cubic-bezier(.4, 0, .2, 1), -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
+}
+
 .RadioNew {
   background-color: #fff;
   display: block;
   }
 
-  .RadioNew__self {
+.RadioNew__self {
     display: none;
     }
 
-  .RadioNew__wrapper {
+.RadioNew__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6867,14 +6966,14 @@ body.locked {
             justify-content: flex-start;
     }
 
-  .RadioNew__container {
+.RadioNew__container {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     max-width: 100%;
     }
 
-  .RadioNew__icon {
+.RadioNew__icon {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     -webkit-box-sizing: border-box;
@@ -6883,13 +6982,13 @@ body.locked {
     position: relative;
     }
 
-  .RadioNew__description {
+.RadioNew__description {
     font-size: 13px;
     line-height: 15px;
     color: #909499;
     }
 
-  .RadioNew__icon::after {
+.RadioNew__icon::after {
       position: absolute;
       content: '';
       display: block;
@@ -6898,58 +6997,86 @@ body.locked {
               box-sizing: border-box;
       }
 
-  .RadioNew--ios .RadioNew__container {
+.RadioNew--ios .RadioNew__container {
     margin: 11px 0;
     line-height: 22px;
     }
 
-  .RadioNew--ios .RadioNew__icon {
+.RadioNew--ios .RadioNew__icon {
     width: 22px;
     height: 22px;
     border: 2px solid #c4c8cc;
     margin: 11px 13px;
+    -webkit-transition: border-color .15s cubic-bezier(.36, .66, .04, 1);
+    -o-transition: border-color .15s cubic-bezier(.36, .66, .04, 1);
+    transition: border-color .15s cubic-bezier(.36, .66, .04, 1);
     }
 
-  .RadioNew--ios .RadioNew__icon::after {
+.RadioNew--ios .RadioNew__icon::after {
       width: 14px;
       height: 14px;
       left: 2px;
       top: 2px;
+      -webkit-transform: scale(.3);
+          -ms-transform: scale(.3);
+              transform: scale(.3);
+      -webkit-transition: -webkit-transform .15s cubic-bezier(.36, .66, .04, 1);
+      transition: -webkit-transform .15s cubic-bezier(.36, .66, .04, 1);
+      -o-transition: transform .15s cubic-bezier(.36, .66, .04, 1);
+      transition: transform .15s cubic-bezier(.36, .66, .04, 1);
+      transition: transform .15s cubic-bezier(.36, .66, .04, 1), -webkit-transform .15s cubic-bezier(.36, .66, .04, 1);
       }
 
-  .RadioNew--ios .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon {
+.RadioNew--ios .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon {
     border-color: #528BCC;
     }
 
-  .RadioNew--ios .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon::after {
+.RadioNew--ios .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon::after {
       background-color: #528BCC;
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
       }
 
-  .RadioNew--android .RadioNew__container {
+.RadioNew--android .RadioNew__container {
     margin: 14px 0;
     line-height: 20px;
     }
 
-  .RadioNew--android .RadioNew__icon {
+.RadioNew--android .RadioNew__icon {
     width: 20px;
     height: 20px;
     border: 2px solid #c4c8cc;
     margin: 14px 18px;
+    -webkit-transition: border-color .5s cubic-bezier(.36, .66, .04, 1);
+    -o-transition: border-color .5s cubic-bezier(.36, .66, .04, 1);
+    transition: border-color .5s cubic-bezier(.36, .66, .04, 1);
     }
 
-  .RadioNew--android .RadioNew__icon::after {
+.RadioNew--android .RadioNew__icon::after {
     width: 10px;
     height: 10px;
     left: 3px;
     top: 3px;
+    -webkit-transform: scale(.3);
+        -ms-transform: scale(.3);
+            transform: scale(.3);
+    -webkit-transition: -webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
+    transition: -webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
+    -o-transition: transform .5s cubic-bezier(.36, .66, .04, 1);
+    transition: transform .5s cubic-bezier(.36, .66, .04, 1);
+    transition: transform .5s cubic-bezier(.36, .66, .04, 1), -webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
     }
 
-  .RadioNew--android .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon {
+.RadioNew--android .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon {
     border-color: #528BCC;
     }
 
-  .RadioNew--android .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon::after {
+.RadioNew--android .RadioNew__self:checked ~ .RadioNew__wrapper .RadioNew__icon::after {
     background-color: #528BCC;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
     }
 
 
