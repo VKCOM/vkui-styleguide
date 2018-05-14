@@ -3667,7 +3667,7 @@ var PanelHeader = function (_React$Component) {
       this.iconNode = document.getElementById('header-icon-' + this.context.panel);
       this.titleNode = document.getElementById('header-title-' + this.context.panel);
       this.rightNode = document.getElementById('header-right-' + this.context.panel);
-      this.context.setHeaderTheme(_defineProperty({}, this.context.panel, this.props.theme));
+      this.context.setHeaderTheme(_defineProperty({}, this.context.panel, { theme: this.props.theme, noShadow: this.props.noShadow }));
       this.setState({ ready: true });
     }
   }, {
@@ -3741,10 +3741,12 @@ PanelHeader.propTypes = {
   icon: _propTypes2.default.node,
   right: _propTypes2.default.node,
   children: _propTypes2.default.node,
-  theme: _propTypes2.default.oneOf(['light', 'brand'])
+  theme: _propTypes2.default.oneOf(['light', 'brand']),
+  noShadow: _propTypes2.default.bool
 };
 PanelHeader.defaultProps = {
-  theme: 'brand'
+  theme: 'brand',
+  noShadow: false
 };
 PanelHeader.contextTypes = {
   panel: _propTypes2.default.string,
@@ -4322,11 +4324,11 @@ var View = function (_Component) {
     };
 
     _this.onMove = function (e) {
-      if (osname === _platform.IOS && !_this.context.isWebView && (e.startX <= 70 || e.startX >= _this.window.innerWidth - 70) && !_this.state.browserSwipe) {
+      if (osname === _platform.IOS && !_this.context.isWebView && (e.startX <= 70 || e.startX >= _this.window.innerWidth - 70)) {
         _this.setState({ browserSwipe: true });
       }
 
-      if (osname === _platform.IOS && _this.context.isWebView && _this.props.onSwipeBack && !View.swipeBackPrevented(e.originalEvent.target)) {
+      if (osname === _platform.IOS && _this.context.isWebView && _this.props.onSwipeBack) {
         if (_this.state.animated && e.startX <= 70) {
           e.originalEvent.preventDefault();
           return false;
@@ -4401,7 +4403,9 @@ var View = function (_Component) {
 
       browserSwipe: false,
 
-      headerThemes: {}
+      headerThemes: [].concat(props.children).reduce(function (res, panel) {
+        res[panel.props.id] = {};return res;
+      }, {})
     };
     return _this;
   }
@@ -4602,6 +4606,11 @@ var View = function (_Component) {
         _this4.document.dispatchEvent(new _this4.window.CustomEvent(transitionEndEventName));
       });
     }
+
+    // static swipeBackPrevented (target) {
+    //   return target && target.closest('.Gallery, .Slider') !== null;
+    // }
+
   }, {
     key: 'calcPanelSwipeStyles',
     value: function calcPanelSwipeStyles(panelId) {
@@ -4686,7 +4695,8 @@ var View = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this5 = this;
+      var _this5 = this,
+          _classnames;
 
       var _props = this.props,
           style = _props.style,
@@ -4729,14 +4739,14 @@ var View = function (_Component) {
           osname === _platform.IOS && _react2.default.createElement('div', { className: 'View__header-scrolltop', onClick: this.onScrollTop }),
           _react2.default.createElement(
             'div',
-            { className: (0, _classnames5.default)(_PanelHeader.baseClassNames, _defineProperty({}, 'PanelHeader--' + activePanelHeaderTheme, true)) },
+            { className: (0, _classnames5.default)(_PanelHeader.baseClassNames, (_classnames = {}, _defineProperty(_classnames, 'PanelHeader--' + activePanelHeaderTheme.theme, true), _defineProperty(_classnames, 'PanelHeader--no-shadow', activePanelHeaderTheme.noShadow), _classnames)) },
             panels.map(function (panel) {
               var _classnames2;
 
               return _react2.default.createElement(
                 'div',
                 {
-                  className: (0, _classnames5.default)('PanelHeader__in', (_classnames2 = {}, _defineProperty(_classnames2, 'PanelHeader__in--' + headerThemes[panel.props.id], true), _defineProperty(_classnames2, 'PanelHeader__in--active', panel.props.id === activePanel), _defineProperty(_classnames2, 'PanelHeader__in--prev', panel.props.id === prevPanel), _defineProperty(_classnames2, 'PanelHeader__in--next', panel.props.id === nextPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-prev', panel.props.id === _this5.state.swipeBackPrevPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-next', panel.props.id === _this5.state.swipeBackNextPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-success', _this5.state.swipingBackFinish === true), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-failed', _this5.state.swipingBackFinish === false), _classnames2)),
+                  className: (0, _classnames5.default)('PanelHeader__in', (_classnames2 = {}, _defineProperty(_classnames2, 'PanelHeader__in--' + headerThemes[panel.props.id].theme, true), _defineProperty(_classnames2, 'PanelHeader__in--active', panel.props.id === activePanel), _defineProperty(_classnames2, 'PanelHeader__in--prev', panel.props.id === prevPanel), _defineProperty(_classnames2, 'PanelHeader__in--next', panel.props.id === nextPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-prev', panel.props.id === _this5.state.swipeBackPrevPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-next', panel.props.id === _this5.state.swipeBackNextPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-success', _this5.state.swipingBackFinish === true), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-failed', _this5.state.swipingBackFinish === false), _classnames2)),
                   style: _this5.calcHeaderSwipeStyles(panel.props.id).item,
                   key: panel.props.id
                 },
@@ -4819,11 +4829,6 @@ var View = function (_Component) {
     key: 'panels',
     get: function get() {
       return [].concat(this.props.children);
-    }
-  }], [{
-    key: 'swipeBackPrevented',
-    value: function swipeBackPrevented(target) {
-      return target && target.closest('.Gallery, .Slider') !== null;
     }
   }]);
 
@@ -5346,9 +5351,25 @@ var BottomModal = function (_React$Component) {
   _inherits(BottomModal, _React$Component);
 
   function BottomModal() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, BottomModal);
 
-    return _possibleConstructorReturn(this, (BottomModal.__proto__ || Object.getPrototypeOf(BottomModal)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = BottomModal.__proto__ || Object.getPrototypeOf(BottomModal)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      fadeIn: false,
+      fadeOut: false
+    }, _this.onClose = function () {
+      _this.setState({ fadeOut: true });
+      _this.containerEl.addEventListener('transitionend', _this.props.onClose);
+    }, _this.containerRef = function (el) {
+      return _this.containerEl = el;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(BottomModal, [{
@@ -5356,6 +5377,11 @@ var BottomModal = function (_React$Component) {
     value: function componentWillMount() {
       this.node = document.createElement('div');
       document.body.appendChild(this.node);
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setState({ fadeIn: true });
     }
   }, {
     key: 'componentWillUnmount',
@@ -5367,18 +5393,20 @@ var BottomModal = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           className = _props.className,
-          header = _props.header,
-          onClose = _props.onClose,
+          title = _props.title,
           addon = _props.addon,
           children = _props.children;
 
 
       return _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: (0, _classnames2.default)(baseClassName, className) },
+        { className: (0, _classnames2.default)(baseClassName, className, {
+            'BottomModal--fade-in': this.state.fadeIn,
+            'BottomModal--fade-out': this.state.fadeOut
+          }) },
         _react2.default.createElement(
           'div',
-          { className: 'BottomModal__container' },
+          { className: 'BottomModal__container', ref: this.containerRef },
           _react2.default.createElement(
             'div',
             { className: 'BottomModal__header' },
@@ -5387,14 +5415,14 @@ var BottomModal = function (_React$Component) {
               { className: 'BottomModal__addon' },
               addon
             ),
-            header && _react2.default.createElement(
+            title && _react2.default.createElement(
               'div',
-              { className: 'BottomModal__header-content' },
-              header
+              { className: 'BottomModal__title' },
+              title
             ),
             _react2.default.createElement(
               'div',
-              { className: 'BottomModal__close', onClick: onClose },
+              { className: 'BottomModal__close', onClick: this.onClose },
               _react2.default.createElement(_cancel2.default, null)
             )
           ),
@@ -5413,7 +5441,7 @@ var BottomModal = function (_React$Component) {
 
 BottomModal.propTypes = {
   className: _propTypes2.default.string,
-  header: _propTypes2.default.node,
+  title: _propTypes2.default.node,
   children: _propTypes2.default.node,
   onClose: _propTypes2.default.func,
   addon: _propTypes2.default.node
@@ -10518,19 +10546,21 @@ var SearchAndroid = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (SearchAndroid.__proto__ || Object.getPrototypeOf(SearchAndroid)).call(this, props));
 
     _this.onCancel = function () {
-      if (_this.isControlledOutside) {
-        _this.props.onChange('');
-      } else {
+      if (!_this.isControlledOutside) {
         _this.setState({ value: '' });
+      }
+      if (_this.props.onChange) {
+        _this.props.onChange('');
       }
       _this.inputEl.focus();
     };
 
     _this.onChange = function (e) {
-      if (_this.isControlledOutside) {
-        _this.props.onChange(e.target.value, e);
-      } else {
+      if (!_this.isControlledOutside) {
         _this.setState({ value: e.target.value });
+      }
+      if (_this.props.onChange) {
+        _this.props.onChange(e.target.value, e);
       }
     };
 
@@ -10719,18 +10749,20 @@ var SearchIOS = function (_React$Component) {
     };
 
     _this.onChange = function (e) {
-      if (_this.isControlledOutside) {
-        _this.props.onChange(e.target.value, e);
-      } else {
+      if (!_this.isControlledOutside) {
         _this.setState({ value: e.target.value });
+      }
+      if (_this.props.onChange) {
+        _this.props.onChange(e.target.value, e);
       }
     };
 
     _this.onCancel = function () {
-      if (_this.isControlledOutside) {
-        _this.props.onChange('');
-      } else {
+      if (!_this.isControlledOutside) {
         _this.setState({ value: '' });
+      }
+      if (_this.props.onChange) {
+        _this.props.onChange('');
       }
       _this.setState({ showAfter: false });
     };

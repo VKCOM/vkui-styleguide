@@ -58,8 +58,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -388,8 +388,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -917,8 +917,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -1419,7 +1419,26 @@ body.locked {
 .PanelHeader--no-shadow {
   -webkit-box-shadow: none;
           box-shadow: none;
+  -webkit-transition: -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+  transition: -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+  -o-transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+  transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+  transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
   }
+
+.PanelHeader--android .Search {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    }
+
+.PanelHeader--android .Search .Search__input {
+    color: #5a5d61;
+    }
 
 .PanelHeader--android .PanelHeader__in--brand {
     background: #5181b8;
@@ -1539,8 +1558,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -1801,8 +1820,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -1833,16 +1852,30 @@ body.locked {
 
 .BottomModal {
   position: fixed;
-  z-index: 2;
+  z-index: 6;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,.4);
-  font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
   }
 
-.BottomModal__container {
+.BottomModal--ios {
+  background-color: rgba(0,0,0,0);
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+  -webkit-transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
+  -o-transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
+  transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
+  }
+
+.BottomModal--ios.BottomModal--fade-in {
+  background-color: rgba(0,0,0,.4);
+  }
+
+.BottomModal--ios.BottomModal--fade-out {
+  background-color: rgba(0,0,0,0);
+  }
+
+.BottomModal--ios .BottomModal__container {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -1850,9 +1883,29 @@ body.locked {
     background-color: #fff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+    transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+    -o-transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+    transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+    transition: transform .3s cubic-bezier(.36, .66, .04, 1), -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
     }
 
-.BottomModal__header {
+.BottomModal--ios.BottomModal--fade-in .BottomModal__container {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    }
+
+.BottomModal--ios.BottomModal--fade-out .BottomModal__container {
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+    }
+
+.BottomModal--ios .BottomModal__header {
       height: 52px;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1866,11 +1919,7 @@ body.locked {
       padding: 0 15px;
       }
 
-.BottomModal__addon {
-
-        }
-
-.BottomModal__close {
+.BottomModal--ios .BottomModal__close {
         width: 24px;
         height: 24px;
         padding: 4px;
@@ -1883,7 +1932,7 @@ body.locked {
         z-index: 2;
         }
 
-.BottomModal__header-content {
+.BottomModal--ios .BottomModal__title {
         font-size: 17px;
         font-weight: 600;
         position: absolute;
@@ -1893,7 +1942,13 @@ body.locked {
         text-align: center;
         }
 
+.BottomModal--android {
+  background-color: #fff;
+  }
 
+.BottomModal--android .Search {
+
+    }
 .InnerScroll {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -1961,8 +2016,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -2383,8 +2438,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -2587,8 +2642,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -2955,8 +3010,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -3298,8 +3353,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -3509,8 +3564,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -3717,8 +3772,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -3888,8 +3943,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -4184,8 +4239,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -4633,8 +4688,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -4799,8 +4854,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -4941,8 +4996,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -5083,8 +5138,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -5234,8 +5289,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -5701,8 +5756,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -6120,8 +6175,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -6356,8 +6411,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -6544,8 +6599,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -6695,8 +6750,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -6879,8 +6934,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -7112,8 +7167,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -7337,8 +7392,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -7458,8 +7513,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -7627,8 +7682,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
@@ -7785,8 +7840,8 @@ body.locked {
 .SelectNew-underline::after,
 .TextareaNew-underline::after {
   position: absolute;
-  top: 0;
-  height: 6px;
+  top: -1px;
+  height: 7px;
   width: 100%;
   content: '';
   display: block;
