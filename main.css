@@ -18,6 +18,8 @@
   .Avatar--android {
   font-family: Roboto, Droid, 'Open Sans', sans-serif
   }
+
+
 html,
 body,
 div#root {
@@ -33,6 +35,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -507,21 +510,7 @@ a:focus {
     height: 100vh;
     }
 
-/**
- * iOS
- */
 
-.View--ios {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
-  }
-
-/**
- * Android
- */
-
-.View--android {
-  font-family: Roboto, Droid, 'Open Sans', sans-serif;
-  }
 html,
 body,
 div#root {
@@ -537,6 +526,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -1063,7 +1053,9 @@ a:focus {
       }
 
 .PanelHeader--ios .PanelHeader-content {
-        font: 500 17px/44px -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 44px;
         text-align: center;
         padding: 0 6px;
         -webkit-transition: color .6s cubic-bezier(.36, .66, .04, 1);
@@ -1122,7 +1114,8 @@ a:focus {
       }
 
 .PanelHeader--android .PanelHeader-content {
-      font: 500 20px/56px Roboto, Droid, 'Open Sans', sans-serif;
+      font-size: 20px;
+      line-height: 56px;
       padding: 0 12px;
       }
 
@@ -1169,6 +1162,8 @@ a:focus {
       width: 100%;
       display: block;
       }
+
+
 html,
 body,
 div#root {
@@ -1184,6 +1179,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -1404,6 +1400,8 @@ a:focus {
 .HeaderButton--android.Tappable--active {
   background-color: rgba(255, 255, 255, .1);
   }
+
+
 html,
 body,
 div#root {
@@ -1419,6 +1417,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -1532,10 +1531,6 @@ a:focus {
 /**
  * iOS
  */
-
-.Root--ios {
-  font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
-  }
 
 .Root--ios.Root--transition,
 .Root--ios.Root--popout {
@@ -1745,6 +1740,8 @@ a:focus {
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
     }
+
+
 html,
 body,
 div#root {
@@ -1760,6 +1757,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -1939,6 +1937,8 @@ a:focus {
     opacity: 1;
   }
 }
+
+
 html,
 body,
 div#root {
@@ -1954,6 +1954,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -2203,7 +2204,9 @@ a:focus {
     -webkit-transform: scale(1);
             transform: scale(1);
     }
-  }html,
+  }
+
+html,
 body,
 div#root {
   margin: 0;
@@ -2218,6 +2221,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -2316,7 +2320,8 @@ a:focus {
 .Alert--ios .Alert__content {
     position: relative;
     padding: 19px 16px 20px;
-    font: 13px/16px -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 16px;
     text-align: center;
     }
 
@@ -2332,7 +2337,9 @@ a:focus {
 
 .Alert--ios .Alert__content h2 {
       margin: 0 0 7px;
-      font: 500 17px/22px -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 22px;
       }
 
 .Alert--ios .Alert__content p {
@@ -2638,7 +2645,9 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 8px;
-  }html,
+  }
+
+html,
 body,
 div#root {
   margin: 0;
@@ -2653,6 +2662,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -2799,7 +2809,9 @@ a:focus {
   to {
     opacity: .1;
     }
-  }html,
+  }
+
+html,
 body,
 div#root {
   margin: 0;
@@ -2814,6 +2826,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3085,6 +3098,8 @@ a:focus {
 .Button--android.Button--type-cell .Button__before .Icon {
     margin-right: 12px;
     }
+
+
 html,
 body,
 div#root {
@@ -3100,6 +3115,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3252,6 +3268,8 @@ a:focus {
     text-transform: uppercase;
     padding: 15px 0 14px;
     }
+
+
 html,
 body,
 div#root {
@@ -3267,6 +3285,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3434,6 +3453,8 @@ a:focus {
     padding: 12px 16px 8px;
     }
 
+
+
 html,
 body,
 div#root {
@@ -3449,6 +3470,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3575,6 +3597,8 @@ a:focus {
     }
   }
 
+
+
 html,
 body,
 div#root {
@@ -3590,6 +3614,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3895,7 +3920,7 @@ a:focus {
     }
 
 .ListItem--android .ListItem__before-in > .Icon {
-      padding: 14px 32px 18px 0;
+      padding: 12px 16px 12px 0;
       }
 
 .ListItem--android .ListItem__before-in > .Avatar {
@@ -3932,6 +3957,8 @@ a:focus {
       padding-top: 16px;
       padding-bottom: 17px;
       }
+
+
 html,
 body,
 div#root {
@@ -3947,6 +3974,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -4146,6 +4174,8 @@ a:focus {
     color: #71757A;
     margin-bottom: 4px;
     }
+
+
 html,
 body,
 div#root {
@@ -4161,6 +4191,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -4350,6 +4381,8 @@ a:focus {
     -o-transition: width .2s ease;
     transition: width .2s ease;
     }
+
+
 html,
 body,
 div#root {
@@ -4365,6 +4398,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -4570,6 +4604,8 @@ a:focus {
     background-color: #143a66;
     color: #fff;
     }
+
+
 html,
 body,
 div#root {
@@ -4585,6 +4621,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -4939,6 +4976,8 @@ a:focus {
       padding-top: 8px;
       font-size: 13px;
       }
+
+
 html,
 body,
 div#root {
@@ -4954,6 +4993,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5117,6 +5157,8 @@ a:focus {
       -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
               box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
       }
+
+
 html,
 body,
 div#root {
@@ -5132,6 +5174,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5348,6 +5391,8 @@ a:focus {
         }
 
 
+
+
 html,
 body,
 div#root {
@@ -5363,6 +5408,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5500,6 +5546,8 @@ a:focus {
       }
 
 
+
+
 html,
 body,
 div#root {
@@ -5515,6 +5563,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5681,6 +5730,8 @@ a:focus {
     transition: transform .14s cubic-bezier(.4, 0, .2, 1);
     transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
     }
+
+
 html,
 body,
 div#root {
@@ -5696,6 +5747,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5853,6 +5905,8 @@ a:focus {
     transition: transform .14s cubic-bezier(.4, 0, .2, 1);
     transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
     }
+
+
 html,
 body,
 div#root {
@@ -5868,6 +5922,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {

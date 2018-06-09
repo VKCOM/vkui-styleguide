@@ -1,3 +1,5 @@
+
+
 html,
 body,
 div#root {
@@ -13,6 +15,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -126,10 +129,6 @@ a:focus {
 /**
  * iOS
  */
-
-.Root--ios {
-  font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
-  }
 
 .Root--ios.Root--transition,
 .Root--ios.Root--popout {
@@ -318,6 +317,8 @@ a:focus {
     opacity: 1;
     }
   }
+
+
 html,
 body,
 div#root {
@@ -333,6 +334,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -807,21 +809,7 @@ a:focus {
     height: 100vh;
     }
 
-/**
- * iOS
- */
 
-.View--ios {
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
-  }
-
-/**
- * Android
- */
-
-.View--android {
-  font-family: Roboto, Droid, 'Open Sans', sans-serif;
-  }
 html,
 body,
 div#root {
@@ -837,6 +825,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -1363,7 +1352,9 @@ a:focus {
       }
 
 .PanelHeader--ios .PanelHeader-content {
-        font: 500 17px/44px -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 44px;
         text-align: center;
         padding: 0 6px;
         -webkit-transition: color .6s cubic-bezier(.36, .66, .04, 1);
@@ -1422,7 +1413,8 @@ a:focus {
       }
 
 .PanelHeader--android .PanelHeader-content {
-      font: 500 20px/56px Roboto, Droid, 'Open Sans', sans-serif;
+      font-size: 20px;
+      line-height: 56px;
       padding: 0 12px;
       }
 
@@ -1469,6 +1461,8 @@ a:focus {
       width: 100%;
       display: block;
       }
+
+
 html,
 body,
 div#root {
@@ -1484,6 +1478,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -1732,6 +1727,8 @@ a:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   }
+
+
 html,
 body,
 div#root {
@@ -1747,6 +1744,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -1845,7 +1843,8 @@ a:focus {
 .Alert--ios .Alert__content {
     position: relative;
     padding: 19px 16px 20px;
-    font: 13px/16px -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 16px;
     text-align: center;
     }
 
@@ -1861,7 +1860,9 @@ a:focus {
 
 .Alert--ios .Alert__content h2 {
       margin: 0 0 7px;
-      font: 500 17px/22px -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 22px;
       }
 
 .Alert--ios .Alert__content p {
@@ -2144,6 +2145,8 @@ a:focus {
             transform: scale(1);
     }
   }
+
+
 html,
 body,
 div#root {
@@ -2159,6 +2162,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -2338,6 +2342,8 @@ a:focus {
     opacity: 1;
   }
 }
+
+
 html,
 body,
 div#root {
@@ -2353,6 +2359,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -2625,7 +2632,9 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 8px;
-  }html,
+  }
+
+html,
 body,
 div#root {
   margin: 0;
@@ -2640,6 +2649,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -2786,7 +2796,9 @@ a:focus {
   to {
     opacity: .1;
     }
-  }html,
+  }
+
+html,
 body,
 div#root {
   margin: 0;
@@ -2801,6 +2813,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3146,6 +3159,8 @@ a:focus {
     text-transform: uppercase;
     padding: 15px 0 14px;
     }
+
+
 html,
 body,
 div#root {
@@ -3161,6 +3176,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3328,6 +3344,8 @@ a:focus {
     padding: 12px 16px 8px;
     }
 
+
+
 html,
 body,
 div#root {
@@ -3343,6 +3361,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3469,6 +3488,8 @@ a:focus {
     }
   }
 
+
+
 html,
 body,
 div#root {
@@ -3484,6 +3505,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -3789,7 +3811,7 @@ a:focus {
     }
 
 .ListItem--android .ListItem__before-in > .Icon {
-      padding: 14px 32px 18px 0;
+      padding: 12px 16px 12px 0;
       }
 
 .ListItem--android .ListItem__before-in > .Avatar {
@@ -3836,6 +3858,8 @@ a:focus {
     color: #71757A;
     margin-bottom: 4px;
     }
+
+
 html,
 body,
 div#root {
@@ -3851,6 +3875,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -4060,6 +4085,8 @@ a:focus {
     -o-transition: width .2s ease;
     transition: width .2s ease;
     }
+
+
 html,
 body,
 div#root {
@@ -4075,6 +4102,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -4280,6 +4308,8 @@ a:focus {
     background-color: #143a66;
     color: #fff;
     }
+
+
 html,
 body,
 div#root {
@@ -4295,6 +4325,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -4653,6 +4684,8 @@ a:focus {
       padding-top: 8px;
       font-size: 13px;
       }
+
+
 html,
 body,
 div#root {
@@ -4668,6 +4701,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -4879,7 +4913,9 @@ a:focus {
       font-size: 99px;
       z-index: 1;
       opacity: 0;
-      }html,
+      }
+
+html,
 body,
 div#root {
   margin: 0;
@@ -4894,6 +4930,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5060,6 +5097,8 @@ a:focus {
     transition: transform .14s cubic-bezier(.4, 0, .2, 1);
     transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
     }
+
+
 html,
 body,
 div#root {
@@ -5075,6 +5114,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5238,6 +5278,8 @@ a:focus {
       -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
               box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
       }
+
+
 html,
 body,
 div#root {
@@ -5253,6 +5295,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5420,6 +5463,8 @@ a:focus {
       transition: transform .14s cubic-bezier(.4, 0, .2, 1);
       transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
       }
+
+
 html,
 body,
 div#root {
@@ -5435,6 +5480,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5651,6 +5697,8 @@ a:focus {
         }
 
 
+
+
 html,
 body,
 div#root {
@@ -5666,6 +5714,162 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
+}
+
+html {
+  background: #EBEDF0;
+}
+
+html[theme="white"] {
+  background: #fff;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a:focus {
+  outline: none;
+}
+
+.Input-underline,
+.Select-underline,
+.Textarea-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .12);
+  z-index: 1;
+}
+
+.Input-underline::after,
+.Select-underline::after,
+.Textarea-underline::after {
+  position: absolute;
+  top: -1px;
+  height: 7px;
+  width: 100%;
+  content: '';
+  display: block;
+  background-color: #f2f3f5;
+  z-index: 2;
+}
+
+.Input-underline::before,
+.Select-underline::before,
+.Textarea-underline::before {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 4px;
+  background: #518bcc;
+  content: '';
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
+  transition: -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
+  -o-transition: transform .1s cubic-bezier(.4, 0, .2, 1);
+  transition: transform .1s cubic-bezier(.4, 0, .2, 1);
+  transition: transform .1s cubic-bezier(.4, 0, .2, 1), -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
+}
+
+.Checkbox {
+  display: block;
+  }
+
+.Checkbox [type="checkbox"] {
+    display: none;
+    }
+
+.Checkbox__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    }
+
+.Checkbox__icon {
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      margin: 2px 14px 2px 2px;
+      border-radius: 4px;
+      border: 2px solid #c4c8cc;
+      color: transparent;
+      }
+
+.Checkbox__content {
+      -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 2px 0;
+      color: #000;
+      }
+
+.Checkbox [type="checkbox"]:checked ~ .Checkbox__container .Checkbox__icon {
+    background-color: #528bcc;
+    border-color: #528bcc;
+    color: #fff;
+    }
+
+.Checkbox--ios {
+  padding: 12px;
+  }
+
+.Checkbox--ios .Checkbox__container {}
+
+.Checkbox--ios .Checkbox__content {
+      font-size: 16px;
+      line-height: 20px;
+      }
+
+.Checkbox--android {
+  padding: 16px;
+  }
+
+.Checkbox--android .Checkbox__container {}
+
+.Checkbox--android .Checkbox__content {
+      font-size: 16px;
+      line-height: 20px;
+      }
+
+
+
+
+html,
+body,
+div#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  height: 100vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5738,6 +5942,10 @@ a:focus {
           box-sizing: border-box;
   }
 
+.Select--mimicry:focus {
+  outline: none;
+  }
+
 .Select select {
     display: block;
     position: absolute;
@@ -5789,10 +5997,6 @@ a:focus {
 
 .Select--ios {}
 
-.Select--ios.Select--mimicry:focus {
-  outline: none;
-  }
-
 .Select--ios .Select__container {
     border-radius: 10px;
     background-color: rgb(242, 243, 245);
@@ -5811,7 +6015,8 @@ a:focus {
     background-color: #f2f3f5;
     }
 
-.Select--android select:focus ~ .Select-underline::before {
+.Select--android select:focus ~ .Select-underline::before,
+  .Select--android.Select--mimicry:focus .Select-underline::before {
     -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
             transform: scaleX(1);
@@ -5822,6 +6027,8 @@ a:focus {
     transition: transform .14s cubic-bezier(.4, 0, .2, 1);
     transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
     }
+
+
 html,
 body,
 div#root {
@@ -5837,6 +6044,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -5970,6 +6178,8 @@ a:focus {
 .Text--android p {
     margin: 0 0 24px;
     }
+
+
 html,
 body,
 div#root {
@@ -5985,6 +6195,7 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
