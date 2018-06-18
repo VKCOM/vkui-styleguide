@@ -11,13 +11,14 @@
     max-width: 100%;
     }
 
-  .Avatar--ios {
-  font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif
-  }
+:root {
 
-  .Avatar--android {
-  font-family: Roboto, Droid, 'Open Sans', sans-serif
-  }
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 html,
 body,
@@ -38,7 +39,7 @@ div#root {
 }
 
 html {
-  background: #EBEDF0;
+  background: #ebedf0;
 }
 
 html[theme="white"] {
@@ -88,7 +89,7 @@ a:focus {
   bottom: 0;
   z-index: 1;
   border-radius: 4px;
-  background: #518bcc;
+  background: #528bcc;
   content: '';
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
@@ -100,6 +101,14 @@ a:focus {
   transition: transform .1s cubic-bezier(.4, 0, .2, 1), -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
 }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 .View--ios.View--header .Panel__in {
   padding-top: 64px;
   padding-top: calc(44px + constant(safe-area-inset-top));
@@ -430,7 +439,7 @@ a:focus {
     }
 .View .View__panel,
     .View .Panel__in {
-      background: #EBEDF0;
+      background: #ebedf0;
       }
 .View .View__panel--theme-white,
     .View .View__panel--theme-white .Panel__in {
@@ -455,6 +464,14 @@ a:focus {
     height: 100vh;
     }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 /**
  * Header swipe back
  */
@@ -542,6 +559,11 @@ a:focus {
 /**
  * Header transition
  */
+.View--animated .PanelHeader--ios {
+  -webkit-transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
+  -o-transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
+  transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
+  }
 .PanelHeader--ios .PanelHeader__in--prev,
 .PanelHeader--ios .PanelHeader__in--next {
   overflow: hidden;
@@ -974,6 +996,15 @@ a:focus {
       display: block;
       }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Tappable {}
 
 /**
@@ -1133,6 +1164,15 @@ a:focus {
 .HeaderButton--android.Tappable--active {
   background-color: rgba(255, 255, 255, .1);
   }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Root {
   width: 100%;
@@ -1393,6 +1433,15 @@ a:focus {
     padding-bottom: env(safe-area-inset-bottom);
     }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .PopoutWrapper {
   width: 100%;
   height: 100%;
@@ -1515,6 +1564,15 @@ a:focus {
   }
 }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 /**
  * iOS version
  */
@@ -1591,16 +1649,16 @@ a:focus {
   }
 
 .ActionSheet--ios .ActionSheet-Item--default {
-    color: #528BCC
+    color: #528bcc;
     }
 
 .ActionSheet--ios .ActionSheet-Item--cancel {
-    color: #528BCC;
+    color: #528bcc;
     font-weight: 600;
     }
 
 .ActionSheet--ios .ActionSheet-Item--destructive {
-    color: #E64646
+    color: #e64646;
     }
 
 /**
@@ -1642,11 +1700,11 @@ a:focus {
   }
 
 .ActionSheet--android .ActionSheet-Item--default {
-  color: #528BCC
+  color: #528bcc;
   }
 
 .ActionSheet--android .ActionSheet-Item--destructive {
-  color: #E64646
+  color: #e64646;
   }
 
 /**
@@ -1700,6 +1758,16 @@ a:focus {
             transform: scale(1);
     }
   }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Alert {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1789,7 +1857,7 @@ a:focus {
       background: #fafafa;
       font-size: 17px;
       line-height: 44px;
-      color: #528BCC;
+      color: #528bcc;
       border: 0;
       padding: 0 6px;
       margin: 0;
@@ -1890,7 +1958,7 @@ a:focus {
     }
 
 .Alert--ios .Alert__btn--destructive {
-    color: #E64646;
+    color: #e64646;
     }
 
 /**
@@ -1982,7 +2050,7 @@ a:focus {
 
 .Alert--android .Alert__btn--primary {
       color: #fff;
-      background: #5181B8;
+      background-color: #5181b8;
       }
 
 .Alert--android .Alert__btn--primary:active,
@@ -2074,6 +2142,15 @@ a:focus {
           align-items: center;
   border-radius: 8px;
   }
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Spinner {
   width: 100%;
   height: 100%;
@@ -2159,6 +2236,15 @@ a:focus {
     opacity: .1;
     }
   }
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Button {
   display: inline-block;
   -webkit-box-sizing: border-box;
@@ -2189,11 +2275,11 @@ a:focus {
   }
 
 .Button--type-cell.Button--level-primary {
-  color: #528BCC;
+  color: #528bcc;
   }
 
 .Button--type-cell.Button--level-danger {
-  color: #E64646;
+  color: #e64646;
   }
 
 .Button--stretched {
@@ -2236,7 +2322,7 @@ a:focus {
     }
 
 .Button--level-1 {
-  background-color: #5181B8;
+  background-color: #5181b8;
   color: #fff;
   }
 
@@ -2246,7 +2332,7 @@ a:focus {
 
 .Button--level-2 {
   background-color: rgba(0, 54, 115, .1);
-  color: #45678F
+  color: #45678f;
   }
 
 .Button--level-2.Tappable--active:not([disabled]) {
@@ -2255,7 +2341,7 @@ a:focus {
 
 .Button--level-3 {
   background-color: transparent;
-  color: #5181B8
+  color: #5181b8;
   }
 
 .Button--level-3.Tappable--active:not([disabled]) {
@@ -2263,7 +2349,7 @@ a:focus {
   }
 
 .Button--level-buy {
-  background-color: #4BB34B;
+  background-color: #4bb34b;
   color: #fff;
   }
 
@@ -2273,8 +2359,8 @@ a:focus {
 
 .Button--level-sell {
   background-color: transparent;
-  border: 1px solid #528BCC;
-  color: #528BCC;
+  border: 1px solid #528bcc;
+  color: #528bcc;
   }
 
 .Button--level-sell.Tappable--active:not([disabled]) {
@@ -2373,6 +2459,15 @@ a:focus {
     margin-right: 12px;
     }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Div {}
 
 .Div--ios {
@@ -2383,16 +2478,34 @@ a:focus {
   padding: 12px 16px;
   }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Link {
-  color: #528BCC;
+  color: #528bcc;
   text-decoration: none;
   }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Header {
 
   }
 
-  .Header__in {
+.Header__in {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2407,64 +2520,62 @@ a:focus {
             justify-content: space-between;
     }
 
-  .Header--ios {
+.Header--level-1 .Header__content {
+      color: #000;
+      font-size: 17px;
+      line-height: 20px;
+      font-weight: 500;
+      }
+
+.Header--level-2 .Header__content {
+      color: #909499;
+      font-size: 13px;
+      line-height: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      }
+
+.Header--ios {
   padding: 0 12px;
   }
 
-  .Header--ios .Header__aside {
+.Header--ios .Header__aside {
     font-size: 15px;
     }
 
-  .Header--ios.Header--level-1 {}
-
-  .Header--ios.Header--level-1 .Header__content {
-    font-size: 17px;
-    line-height: 20px;
-    color: #000;
-    font-weight: 600;
+.Header--ios.Header--level-1 .Header__content {
     padding: 14px 0;
     }
 
-  .Header--ios.Header--level-2 {}
-
-  .Header--ios.Header--level-2 .Header__content {
-    font-size: 13px;
-    line-height: 15px;
-    color: #909499;
-    font-weight: 600;
-    text-transform: uppercase;
+.Header--ios.Header--level-2 .Header__content {
     padding: 15px 0 14px;
     }
 
-  .Header--android {
+.Header--android {
   padding: 0 16px;
   }
 
-  .Header--android .Header__aside {
+.Header--android .Header__aside {
     font-size: 14px;
     font-weight: 500;
     }
 
-  .Header--android.Header--level-1 {}
-
-  .Header--android.Header--level-1 .Header__content {
-    font-size: 17px;
-    line-height: 20px;
-    color: #000;
-    font-weight: 500;
+.Header--android.Header--level-1 .Header__content {
     padding: 18px 0;
     }
 
-  .Header--android.Header--level-2 {}
-
-  .Header--android.Header--level-2 .Header__content {
-    font-size: 13px;
-    line-height: 15px;
-    color: #909499;
-    font-weight: 600;
-    text-transform: uppercase;
+.Header--android.Header--level-2 .Header__content {
     padding: 15px 0 14px;
     }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Group {
 
@@ -2497,7 +2608,7 @@ a:focus {
 .Group--ios .Group__description {
     font-size: 14px;
     line-height: 16px;
-    color: #71757A;
+    color: #71757a;
     padding: 8px 12px;
     }
 
@@ -2552,15 +2663,6 @@ a:focus {
     margin-top: 0;
     }
 
-.Group--android .Group__title {
-    font-size: 13px;
-    line-height: 15px;
-    font-weight: 500;
-    color: #909499;
-    padding: 15px 16px 14px;
-    text-transform: uppercase;
-    }
-
 .Group--android .Group__description {
     font-size: 14px;
     line-height: 16px;
@@ -2568,6 +2670,15 @@ a:focus {
     padding: 12px 16px 8px;
     }
 
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 /**
  * List
@@ -2631,6 +2742,15 @@ a:focus {
   }
 
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 /**
  * List item
  */
@@ -2681,7 +2801,7 @@ a:focus {
         -webkit-flex-shrink: 0;
             -ms-flex-negative: 0;
                 flex-shrink: 0;
-        color: #AAAEB3;
+        color: #aaaeb3;
         }
 
 .ListItem__checkbox-marker {
@@ -2770,7 +2890,7 @@ a:focus {
     right: 10px;
     top: 50%;
     margin-top: -12px;
-    color: rgba(0, 0, 0, .12);
+    color: rgba(0, 0, 0, .12)
     }
 
 .ListItem--ios .ListItem__in {
@@ -2816,7 +2936,7 @@ a:focus {
 .ListItem--ios .ListItem__checkbox:checked ~ .ListItem__before .ListItem__checkbox-marker {
         border: none;
         color: #fff;
-        background-color: #528BCC;
+        background-color: #528bcc;
         padding: 4px;
         }
 
@@ -2910,7 +3030,7 @@ a:focus {
       color: #fff;
       border: none;
       padding: 1px;
-      background-color: #528BCC;
+      background-color: #528bcc;
       }
 
 .ListItem--android .ListItem__indicator,
@@ -2918,6 +3038,15 @@ a:focus {
       padding-top: 16px;
       padding-bottom: 17px;
       }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Switch {
   display: block;
@@ -3046,16 +3175,34 @@ a:focus {
     background: #5181b8;
     }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .InfoRow {
 
   }
 
-  .InfoRow__title {
+.InfoRow__title {
     font-size: 14px;
     line-height: 16px;
-    color: #71757A;
+    color: #71757a;
     margin-bottom: 4px;
     }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Entity {
   position: relative;
@@ -3081,13 +3228,13 @@ a:focus {
       font-size: 15px;
       line-height: 20px;
       font-weight: 600;
-      color: #2C2D2E;
+      color: #2c2d2e;
       }
 
 .Entity__description {
       font-size: 14px;
       line-height: 16px;
-      color: #71757A;
+      color: #71757a;
       }
 
 .Entity__content {
@@ -3179,18 +3326,36 @@ a:focus {
       opacity: 1;
       }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Progress {
   border-radius: 2px;
-  background-color: #EBEDF0;
+  background-color: #ebedf0;
   }
 
-  .Progress__in {
+.Progress__in {
     height: 4px;
     border-radius: 2px;
     -webkit-transition: width .2s ease;
     -o-transition: width .2s ease;
     transition: width .2s ease;
     }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Search--ios {
   display: -webkit-box;
@@ -3225,7 +3390,7 @@ a:focus {
   height: 1px;
   content: '';
   bottom: 0;
-  background: rgba(0, 0, 0, .12);
+  background: rgba(0, 0, 0, .12)
   }
 
 .Search--ios + .List::before,
@@ -3270,7 +3435,7 @@ a:focus {
     }
 
 .Search--ios.Search--default .Search__after {
-    color: #528BCC;
+    color: #528bcc;
     }
 
 .Search--ios.Search--header .Search__after {
@@ -3340,6 +3505,15 @@ a:focus {
     background-color: #143a66;
     color: #fff;
     }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Search--android {
   display: -webkit-box;
@@ -3424,6 +3598,15 @@ a:focus {
     opacity: .6;
     }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .FixedTabs {
 
   }
@@ -3470,7 +3653,7 @@ a:focus {
   }
 
 .FixedTabs--android.FixedTabs--blue {
-  background-color: #5181B8;
+  background-color: #5181b8;
   }
 
 .Tabs {
@@ -3487,6 +3670,15 @@ a:focus {
       -ms-flex-pack: center;
           justify-content: center;
   }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .TabsItem {
   max-width: 100%;
@@ -3528,13 +3720,13 @@ a:focus {
   }
 
 .TabsItem--ios.TabsItem--gray {
-  border-color: #818C99;
-  color: #818C99;
+  border-color: #818c99;
+  color: #818c99;
   }
 
 .TabsItem--ios.TabsItem--gray.TabsItem--selected {
   color: #fff;
-  background-color: #818C99;
+  background-color: #818c99;
   }
 
 .TabsItem--ios.TabsItem--white.Tappable--active {
@@ -3548,7 +3740,7 @@ a:focus {
 
 .TabsItem--ios.TabsItem--white.TabsItem--selected {
   background-color: #fff;
-  color: #5181B8;
+  color: #5181b8;
   }
 
 .TabsItem--android {
@@ -3578,82 +3770,102 @@ a:focus {
   background-color: #fff;
   }
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .FormLayout {
 
   }
 
-  .FormLayout__row {
+.FormLayout__row {
     display: block;
     }
 
-  .FormLayout__addon .Icon {
+.FormLayout .FormLayout__row + .FormLayout__row {
+    padding-top: 0;
+    }
+
+.FormLayout__addon .Icon {
     display: inline-block;
     }
 
-  .FormLayout--ios {
+.FormLayout--ios {
 
   }
 
-  .FormLayout--ios .FormLayout__row {
-    padding: 0 12px;
-    margin: 12px 0;
+.FormLayout--ios .FormLayout__row {
+    padding: 12px;
     }
 
-  .FormLayout--ios .FormLayout__row .Radio,
+.FormLayout--ios .FormLayout__row .Radio,
     .FormLayout--ios .FormLayout__row .Checkbox,
     .FormLayout--ios .FormLayout__row .Button--type-cell {
       margin: 0 -12px;
       }
 
-  .FormLayout--ios .FormLayout__row .Button--type-cell {
+.FormLayout--ios .FormLayout__row .Button--type-cell {
       width: calc(100% + 24px);
       }
 
-  .FormLayout--ios .FormLayout__row-top {
-      color: #71757A;
+.FormLayout--ios .FormLayout__row-top {
+      color: #71757a;
       padding: 14px 0 8px;
       font-size: 14px;
       }
 
-  .FormLayout--ios .FormLayout__row-bottom {
+.FormLayout--ios .FormLayout__row-bottom {
     padding-top: 8px;
     font-size: 13px;
     }
 
-  .FormLayout--android {
+.FormLayout--android {
 
   }
 
-  .FormLayout--android .FormLayout__row {
-    padding: 0 16px;
-    margin: 10px 0;
+.FormLayout--android .FormLayout__row {
+    padding: 10px 16px;
     }
 
-  .FormLayout--android .FormLayout__row-top {
-      color: #71757A;
+.FormLayout--android .FormLayout__row-top {
+      color: #71757a;
       padding: 4px 0 8px;
       line-height: 18px;
       font-size: 14px;
       }
 
-  .FormLayout--android .FormLayout__field {
+.FormLayout--android .FormLayout__field {
 
       }
 
-  .FormLayout--android .FormLayout__field .Radio,
+.FormLayout--android .FormLayout__field .Radio,
       .FormLayout--android .FormLayout__field .Checkbox,
       .FormLayout--android .FormLayout__field .Button--type-cell {
         margin: 0 -16px;
         }
 
-  .FormLayout--android .FormLayout__field .Button--type-cell {
+.FormLayout--android .FormLayout__field .Button--type-cell {
         width: calc(100% + 32px);
         }
 
-  .FormLayout--android .FormLayout__row-bottom {
+.FormLayout--android .FormLayout__row-bottom {
       padding-top: 8px;
       font-size: 13px;
       }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Slider {
   position: relative;
@@ -3689,7 +3901,7 @@ a:focus {
     top: 0;
     width: 100%;
     height: 4px;
-    background: #528BCC;
+    background: #528bcc;
     border-radius: 2px;
     content: '';
     }
@@ -3748,11 +3960,18 @@ a:focus {
       content: '';
       background: #fff;
       border-radius: 10px;
-      -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
-              box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
       -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
               box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
       }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Radio {
   background-color: #fff;
@@ -3899,17 +4118,26 @@ a:focus {
       }
 
 .Radio--android [type="radio"]:checked ~ .Radio__container .Radio__icon {
-      border-color: #528BCC;
+      border-color: #528bcc;
       }
 
 .Radio--android [type="radio"]:checked ~ .Radio__container .Radio__icon::after {
-        background-color: #528BCC;
+        background-color: #528bcc;
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1);
         }
 
 
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Checkbox {
   display: block;
@@ -3989,6 +4217,15 @@ a:focus {
 
 
 
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Input {
   position: relative;
   line-height: 19px;
@@ -4065,7 +4302,7 @@ a:focus {
     }
 
 .Input--ios .Input__el:focus {
-    border-color: #528BCC;
+    border-color: #528bcc;
     }
 
 .Input--android {
@@ -4090,6 +4327,15 @@ a:focus {
     transition: transform .14s cubic-bezier(.4, 0, .2, 1);
     transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
     }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Select {
   display: block;
@@ -4148,7 +4394,7 @@ a:focus {
       position: absolute;
       top: 10px;
       right: 10px;
-      color: #99A2AD
+      color: #99a2ad;
       }
 
 .Select--ios {}
@@ -4161,7 +4407,7 @@ a:focus {
 
 .Select--ios select:focus ~ .Select__container,
   .Select--ios.Select--mimicry:focus .Select__container {
-    border-color: #528BCC;
+    border-color: #528bcc;
     }
 
 .Select--android {}
@@ -4183,6 +4429,15 @@ a:focus {
     transition: transform .14s cubic-bezier(.4, 0, .2, 1);
     transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
     }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
 
 .Textarea {
   position: relative;
@@ -4240,7 +4495,7 @@ a:focus {
       }
 
 .Textarea--ios textarea:focus {
-    border-color: #528BCC;
+    border-color: #528bcc;
     }
 
 .Textarea--android {
@@ -4269,7 +4524,7 @@ a:focus {
       }
 
 .Textarea--android textarea:focus {
-    border-color: #528BCC;
+    border-color: #528bcc;
     }
 
 .Textarea--android textarea:disabled ~ .Textarea-underline {
