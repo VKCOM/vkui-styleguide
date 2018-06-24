@@ -15139,7 +15139,7 @@ var HeaderButton = function HeaderButton(_ref) {
 
   return _react2.default.createElement(
     _Tappable2.default,
-    _extends({ className: (0, _classnames2.default)(baseClassName, className, {
+    _extends({ component: 'button', className: (0, _classnames2.default)(baseClassName, className, {
         'HeaderButton--primary': primary
       }) }, restProps),
     typeof children === 'string' ? _react2.default.createElement(
@@ -45855,7 +45855,7 @@ module.exports = {
             'type': {
                 'name': 'enum',
                 'computed': true,
-                'value': 'Object.values(colors)'
+                'value': 'Object.keys(colors).map(colorKey => colors[colorKey])'
             },
             'required': false,
             'description': '',
@@ -45955,7 +45955,9 @@ var Progress = function Progress(_ref) {
 };
 
 Progress.propTypes = {
-  color: _propTypes2.default.oneOf(Object.values(_colors.values)),
+  color: _propTypes2.default.oneOf(Object.keys(_colors.values).map(function (colorKey) {
+    return _colors.values[colorKey];
+  })),
   style: _propTypes2.default.object,
   className: _propTypes2.default.string,
   value: _propTypes2.default.number
@@ -47425,6 +47427,13 @@ module.exports = {
             'name': 'expandable'
         },
         {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'href'
+        },
+        {
             'type': { 'name': 'node' },
             'required': false,
             'description': '',
@@ -47474,7 +47483,7 @@ module.exports = {
         {
             'type': { 'name': 'node' },
             'required': false,
-            'description': '',
+            'description': 'iOS only',
             'defaultValue': {
                 'value': '\'Удалить\'',
                 'computed': false
@@ -47765,6 +47774,7 @@ var ListItem = function (_Component) {
       height: null,
       removeOffset: 0
     }, _this.onSelectableClick = function (e) {
+      // нужен, чтобы предотвращать двойное срабатывание (https://github.com/vuejs/vue/issues/3699#issuecomment-247957931)
       if (e.target.tagName.toLowerCase() === 'input') {
         e.stopPropagation();
       } else {
@@ -47823,7 +47833,8 @@ var ListItem = function (_Component) {
           onRemove = _props.onRemove,
           removable = _props.removable,
           removePlaceholder = _props.removePlaceholder,
-          restProps = _objectWithoutProperties(_props, ['before', 'indicator', 'asideContent', 'expandable', 'onClick', 'children', 'description', 'selectable', 'multiline', 'className', 'onRemove', 'removable', 'removePlaceholder']);
+          href = _props.href,
+          restProps = _objectWithoutProperties(_props, ['before', 'indicator', 'asideContent', 'expandable', 'onClick', 'children', 'description', 'selectable', 'multiline', 'className', 'onRemove', 'removable', 'removePlaceholder', 'href']);
 
       var modifiers = {
         'ListItem--expandable': expandable,
@@ -47833,6 +47844,7 @@ var ListItem = function (_Component) {
 
       var rootProps = selectable ? {} : restProps;
       var inputProps = selectable ? restProps : {};
+      var linkProps = href ? restProps : {};
 
       return _react2.default.createElement(
         'li',
@@ -47840,17 +47852,18 @@ var ListItem = function (_Component) {
           className: (0, _classnames2.default)(baseClassNames, modifiers, className),
           ref: this.getRootRef,
           style: { height: this.state.height }
-        }, rootProps, {
-          onClick: selectable ? this.onSelectableClick : onClick
-        }),
+        }, rootProps),
         _react2.default.createElement(
           _Tappable2.default,
-          {
-            component: selectable ? 'label' : 'div',
+          _extends({
+            component: selectable ? 'label' : href ? 'a' : 'div',
             className: 'ListItem__in',
-            disabled: !selectable && !onClick,
-            style: { transform: 'translateX(-' + this.state.removeOffset + 'px)' }
-          },
+            href: href
+          }, linkProps, {
+            disabled: !selectable && !onClick && !href,
+            style: { transform: 'translateX(-' + this.state.removeOffset + 'px)' },
+            onClick: selectable ? this.onSelectableClick : onClick
+          }),
           selectable && _react2.default.createElement('input', _extends({
             type: 'checkbox',
             className: 'ListItem__checkbox'
@@ -47898,9 +47911,9 @@ var ListItem = function (_Component) {
               'div',
               { className: 'ListItem__remove-marker', onClick: onRemove },
               _react2.default.createElement(_cancel2.default, null)
-            )
-          ),
-          osname === _platform.IOS && expandable && _react2.default.createElement(_chevron2.default, { className: 'ListItem__chevron' })
+            ),
+            osname === _platform.IOS && expandable && _react2.default.createElement(_chevron2.default, { className: 'ListItem__chevron' })
+          )
         ),
         removable && osname === _platform.IOS && _react2.default.createElement(
           'div',
@@ -47934,10 +47947,17 @@ ListItem.propTypes = {
   multiline: _propTypes2.default.bool,
   description: _propTypes2.default.node,
   className: _propTypes2.default.string,
+
   selectable: _propTypes2.default.bool,
+
   removable: _propTypes2.default.bool,
   onRemove: _propTypes2.default.func,
-  removePlaceholder: _propTypes2.default.node
+  /**
+   * iOS only
+   */
+  removePlaceholder: _propTypes2.default.node,
+
+  href: _propTypes2.default.string
 };
 ListItem.defaultProps = {
   before: null,
@@ -50581,7 +50601,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      activePanel: \'panel1\',\n      activeView: \'main\'\n    }\n  }\n\n  render() {\n    return (\n      <Root activeView={this.state.activeView}>\n        <View id="main" activePanel={this.state.activePanel}>\n          <Panel id="panel1">\n            <PanelHeader left={<HeaderButton>{osname === IOS ? \'отмена\' : <Icon24Cancel/>}</HeaderButton>}>\n              Стартовый экран\n            </PanelHeader>\n            <Group>\n              <Div>\n                Если приложение открывается как модальное окно, то в качестве левой кнопки принято кнопку "отмена".\n                <br/>\n                <br/>\n                В противном случае показывается кнопка "назад".\n              </Div>\n            </Group>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel2\' }) }>\n                Больше примеров\n              </Button>\n            </Group>\n          </Panel>\n          <Panel id="panel2">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activePanel: \'panel1\' })}>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}\n              addon={<HeaderButton onClick={() => this.setState({ activePanel: \'panel1\' })}>назад</HeaderButton>}\n              right={<HeaderButton onClick={() => {}}><Icon24Story/></HeaderButton>}\n            >\n              Заголовок\n            </PanelHeader>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel3\' }) }>\n                Несколько иконок\n              </Button>\n            </Group>\n          </Panel>\n          <Panel id="panel3">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activePanel: \'panel2\' })}>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}\n              addon={<HeaderButton onClick={() => this.setState({ activePanel: \'panel2\' })}>назад</HeaderButton>}\n              right={[\n                <HeaderButton key="add" onClick={() => {}}><Icon24Add/></HeaderButton>,\n                <HeaderButton key="more" onClick={() => {}}><Icon24MoreVertical/></HeaderButton>\n              ]}\n            >\n              Две иконки\n            </PanelHeader>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activeView: \'modal\' }) }>\n                Модальное окно\n              </Button>\n            </Group>\n          </Panel>\n        </View>\n        <View id="modal" header activePanel="modal-panel">\n          <Panel id="modal-panel">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activeView: \'main\' })}>{osname === IOS ? \'Отмена\' : <Icon24Cancel/>}</HeaderButton>}\n              right={<HeaderButton primary onClick={() => this.setState({ activeView: \'main\' })}>{osname === IOS ? \'Готово\' : <Icon24Done/>}</HeaderButton>}\n            >\n              Модальное окно\n            </PanelHeader>\n          </Panel>\n        </View>\n      </Root>\n    )\n  }\n}\n\n<Example/>',
+        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      activePanel: \'panel1\',\n      activeView: \'main\'\n    }\n  }\n\n  render() {\n    return (\n      <Root activeView={this.state.activeView}>\n        <View id="main" activePanel={this.state.activePanel}>\n          <Panel id="panel1">\n            <PanelHeader left={<HeaderButton>{osname === IOS ? \'Отмена\' : <Icon24Cancel/>}</HeaderButton>}>\n              Стартовый экран\n            </PanelHeader>\n            <Group>\n              <Div>\n                Если приложение открывается как модальное окно, то в качестве левой кнопки принято кнопку "Отмена".\n                <br/>\n                <br/>\n                В противном случае показывается кнопка "Назад".\n              </Div>\n            </Group>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel2\' }) }>\n                Больше примеров\n              </Button>\n            </Group>\n          </Panel>\n          <Panel id="panel2">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activePanel: \'panel1\' })}>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}\n              addon={<HeaderButton onClick={() => this.setState({ activePanel: \'panel1\' })}>Назад</HeaderButton>}\n              right={<HeaderButton onClick={() => {}}><Icon24Story/></HeaderButton>}\n            >\n              Заголовок\n            </PanelHeader>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel3\' }) }>\n                Несколько иконок\n              </Button>\n            </Group>\n          </Panel>\n          <Panel id="panel3">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activePanel: \'panel2\' })}>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}\n              addon={<HeaderButton onClick={() => this.setState({ activePanel: \'panel2\' })}>Назад</HeaderButton>}\n              right={[\n                <HeaderButton key="add" onClick={() => {}}><Icon24Add/></HeaderButton>,\n                <HeaderButton key="more" onClick={() => {}}><Icon24MoreVertical/></HeaderButton>\n              ]}\n            >\n              Две иконки\n            </PanelHeader>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activeView: \'modal\' }) }>\n                Модальное окно\n              </Button>\n            </Group>\n          </Panel>\n        </View>\n        <View id="modal" header activePanel="modal-panel">\n          <Panel id="modal-panel">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activeView: \'main\' })}>{osname === IOS ? \'Отмена\' : <Icon24Cancel/>}</HeaderButton>}\n              right={<HeaderButton disabled primary onClick={() => this.setState({ activeView: \'main\' })}>{osname === IOS ? \'Готово\' : <Icon24Done/>}</HeaderButton>}\n            >\n              Модальное окно\n            </PanelHeader>\n          </Panel>\n        </View>\n      </Root>\n    )\n  }\n}\n\n<Example/>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -52378,7 +52398,7 @@ module.exports = createFind;
 /* 361 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.0.2","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","repository":"https://github.com/VKCOM/VKUI","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^7.2.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.0.2"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"./node_modules/.bin/eslint . && ./node_modules/.bin/stylelint ./src/**/*.css && ./node_modules/.bin/jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.0.3","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","repository":"https://github.com/VKCOM/VKUI","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^7.2.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.0.2"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"./node_modules/.bin/eslint . && ./node_modules/.bin/stylelint ./src/**/*.css && ./node_modules/.bin/jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 362 */
