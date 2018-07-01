@@ -503,11 +503,11 @@ a:focus {
 .PanelHeader__in--swipe-back-failed,
 .PanelHeader__in--swipe-back-failed .PanelHeader__content,
 .PanelHeader__in--swipe-back-failed .PanelHeader__left-in,
-.PanelHeader__in--swipe-back-failed .PanelHeader__icon,
+.PanelHeader__in--swipe-back-failed .PanelHeader__addon,
 .PanelHeader__in--swipe-back-success,
 .PanelHeader__in--swipe-back-success .PanelHeader__content,
 .PanelHeader__in--swipe-back-success .PanelHeader__left-in,
-.PanelHeader__in--swipe-back-success .PanelHeader__icon {
+.PanelHeader__in--swipe-back-success .PanelHeader__addon {
   -webkit-transition:
       opacity .3s cubic-bezier(.36, .66, .04, 1),
       -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
@@ -530,13 +530,13 @@ a:focus {
   }
 .PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__content {
   opacity: 0;
-  -webkit-transform: translate3d(-60%, 0, 0);
-          transform: translate3d(-60%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
   }
 .PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__addon {
   opacity: 0;
-  -webkit-transform: translate3d(-60%, 0, 0);
-          transform: translate3d(-60%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
   }
 .PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__left-in,
 .PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__right {
@@ -574,12 +574,12 @@ a:focus {
   opacity: 0;
   }
 .PanelHeader--ios .PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__content {
-  -webkit-transform: translate3d(60%, 0, 0);
-          transform: translate3d(60%, 0, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
   }
 .PanelHeader--ios .PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__addon {
-  -webkit-transform: translate3d(60%, 0, 0);
-          transform: translate3d(60%, 0, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
   }
 /**
  * Header transition
@@ -626,8 +626,8 @@ a:focus {
 @-webkit-keyframes animation-ios-header-next-back {
   from {
     opacity: 0;
-    -webkit-transform: translateX(-60%);
-            transform: translateX(-60%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
     }
   to {
     opacity: 1;
@@ -638,8 +638,8 @@ a:focus {
 @keyframes animation-ios-header-next-back {
   from {
     opacity: 0;
-    -webkit-transform: translateX(-60%);
-            transform: translateX(-60%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
     }
   to {
     opacity: 1;
@@ -650,8 +650,8 @@ a:focus {
 @-webkit-keyframes animation-ios-header-next-forward {
   from {
     opacity: 0;
-    -webkit-transform: translateX(60%);
-            transform: translateX(60%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     }
   to {
     opacity: 1;
@@ -662,8 +662,8 @@ a:focus {
 @keyframes animation-ios-header-next-forward {
   from {
     opacity: 0;
-    -webkit-transform: translateX(60%);
-            transform: translateX(60%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     }
   to {
     opacity: 1;
@@ -679,8 +679,8 @@ a:focus {
     }
   to {
     opacity: 0;
-    -webkit-transform: translateX(60%);
-            transform: translateX(60%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     }
   }
 @keyframes animation-ios-header-prev-back {
@@ -691,8 +691,8 @@ a:focus {
     }
   to {
     opacity: 0;
-    -webkit-transform: translateX(60%);
-            transform: translateX(60%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
     }
   }
 @-webkit-keyframes animation-ios-header-prev-forward {
@@ -703,8 +703,8 @@ a:focus {
     }
   to {
     opacity: 0;
-    -webkit-transform: translateX(-60%);
-            transform: translateX(-60%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
     }
   }
 @keyframes animation-ios-header-prev-forward {
@@ -715,8 +715,8 @@ a:focus {
     }
   to {
     opacity: 0;
-    -webkit-transform: translateX(-60%);
-            transform: translateX(-60%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
     }
   }
 @-webkit-keyframes animation-ios-header-fade-in {
@@ -787,13 +787,22 @@ a:focus {
           -ms-flex-negative: 0;
               flex-shrink: 0;
       }
-.PanelHeader__icon {}
-.PanelHeader-icon {}
 .PanelHeader__left-in {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         }
 .PanelHeader-left-in {}
+.PanelHeader__content {
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
+      min-width: 50%;
+      }
+.PanelHeader-content {
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        }
 .PanelHeader__right {
       -webkit-flex-shrink: 0;
           -ms-flex-negative: 0;
@@ -811,16 +820,6 @@ a:focus {
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        }
-.PanelHeader__content {
-      overflow: hidden;
-      -o-text-overflow: ellipsis;
-         text-overflow: ellipsis;
-      }
-.PanelHeader-content {
-        overflow: hidden;
-        -o-text-overflow: ellipsis;
-           text-overflow: ellipsis;
         }
 .PanelHeader--ios {
   height: 44px;
@@ -874,10 +873,6 @@ a:focus {
           -ms-flex-preferred-size: 0;
               flex-basis: 0;
       }
-.PanelHeader--ios .PanelHeader__icon {}
-.PanelHeader--ios .PanelHeader-icon {
-          font-size: 17px;
-          }
 .PanelHeader--ios .PanelHeader__left-in {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
@@ -888,10 +883,32 @@ a:focus {
 .PanelHeader--ios .PanelHeader-left-in .HeaderButton .Icon--24 {
             padding-left: 12px;
             }
-.PanelHeader--ios .PanelHeader-left-in:not(.PanelHeader-left-in--with-icon) .HeaderButton > *:not(.Icon),
-          .PanelHeader--ios .PanelHeader-left-in:not(.PanelHeader-left-in--with-icon) .HeaderButton__str {
+.PanelHeader--ios .PanelHeader-left-in .HeaderButton:not(.HeaderButton--icon) {
             padding-left: 16px;
             }
+.PanelHeader--ios .PanelHeader__addon {
+      padding-right: 12px;
+      }
+.PanelHeader--ios .PanelHeader-addon:not(:empty) {
+        padding-left: 4px;
+        }
+.PanelHeader--ios .PanelHeader__content {
+
+      }
+.PanelHeader--ios .PanelHeader-content {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 44px;
+        height: 44px;
+        text-align: center;
+        -webkit-transition: color .6s cubic-bezier(.36, .66, .04, 1);
+        -o-transition: color .6s cubic-bezier(.36, .66, .04, 1);
+        transition: color .6s cubic-bezier(.36, .66, .04, 1);
+        color: #fff;
+        }
+.PanelHeader--ios.PanelHeader--light .PanelHeader-content {
+        color: #000;
+        }
 .PanelHeader--ios .PanelHeader__right {
       -webkit-box-flex: 1;
       -webkit-flex-grow: 1;
@@ -903,31 +920,17 @@ a:focus {
       }
 .PanelHeader--ios .PanelHeader-right {
         font-size: 17px;
+        padding-left: 12px;
         }
-.PanelHeader--ios .PanelHeader-right .HeaderButton .Icon--24 {
-          padding-right: 12px;
-          }
-.PanelHeader--ios .PanelHeader-right .HeaderButton > *:not(.Icon),
-        .PanelHeader--ios .PanelHeader-right .HeaderButton__str {
+.PanelHeader--ios .PanelHeader-right .HeaderButton:not(.HeaderButton--icon) {
           padding-right: 16px;
           }
-.PanelHeader--ios .PanelHeader__content {
-
-      }
-.PanelHeader--ios .PanelHeader-content {
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 44px;
-        text-align: center;
-        padding: 0 6px;
-        -webkit-transition: color .6s cubic-bezier(.36, .66, .04, 1);
-        -o-transition: color .6s cubic-bezier(.36, .66, .04, 1);
-        transition: color .6s cubic-bezier(.36, .66, .04, 1);
-        color: #fff;
-        }
-.PanelHeader--ios.PanelHeader--light .PanelHeader-content {
-        color: #000;
-        }
+.PanelHeader--ios .PanelHeader-right .HeaderButton:not(:first-child) {
+          padding-left: 12px;
+          }
+.PanelHeader--ios .PanelHeader-right .HeaderButton .Icon--24 {
+            padding-right: 12px;
+            }
 .PanelHeader--android {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
           box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
@@ -1190,13 +1193,8 @@ a:focus {
             align-self: center;
     }
 
-.HeaderButton--ios .Icon--24 {
-    padding: 0 10px;
-    }
-
 .HeaderButton--ios .Icon--chevron_back_28 {
     padding-left: 4px;
-    padding-right: 4px;
     }
 
 .HeaderButton--ios.Tappable--active {
@@ -2323,6 +2321,27 @@ a:focus {
             align-items: center;
     }
 
+.Button--align-left .Button__in {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    }
+
+.Button--align-center .Button__in {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    }
+
+.Button--align-right .Button__in {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    }
+
 .Button--type-cell {
   display: block;
   width: 100%;
@@ -3408,153 +3427,263 @@ a:focus {
 }
 
 .Search--ios {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   overflow: hidden;
-  width: 100%;
+  font-weight: normal;
   }
 
-.Search--ios.Search--default {
-  padding: 8px;
-  background-color: #e6e9ed;
-  position: relative;
-  }
-
-.Search--ios.Search--default::after {
-  position: absolute;
-  right: 0;
-  left: 0;
-  z-index: 1;
-  height: 1px;
-  content: '';
-  bottom: 0;
-  background: rgba(0, 0, 0, .12)
-  }
-
-.Search--ios + .List::before,
-.Search--ios + .Group::before {
-  content: none;
-  }
-
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .Search--ios.Search--default::after {
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
-    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    }
-  }
-
-.Search--ios .Search__control {
+.Search--ios .Search__in {
     position: relative;
-    -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-            flex-shrink: 0;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-transition: width .3s cubic-bezier(.36, .66, .04, 1);
-    -o-transition: width .3s cubic-bezier(.36, .66, .04, 1);
-    transition: width .3s cubic-bezier(.36, .66, .04, 1);
     }
 
-.Search--ios.Search--header {
-    padding-right: 6px;
-    }
-
-.Search--ios .Search__after {
-    -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-            flex-shrink: 0;
-    font-size: 17px;
-    white-space: nowrap;
-    font-weight: 400;
-    padding-left: 12px;
-    }
-
-.Search--ios.Search--default .Search__after {
-    color: #528bcc;
-    }
-
-.Search--ios.Search--header .Search__after {
-    color: #fff;
-    }
-
-.Search--ios .Search__placeholder {
-    position: absolute;
-    cursor: text;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size: 15px;
-    padding: 0 12px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
-    transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
-    -o-transition: transform .3s cubic-bezier(.36, .66, .04, 1);
-    transition: transform .3s cubic-bezier(.36, .66, .04, 1);
-    transition: transform .3s cubic-bezier(.36, .66, .04, 1), -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
-    height: 100%;
-    left: 0;
-    }
-
-.Search--ios .Search__placeholder-text {
-      margin-left: 6px;
+.Search--ios .Search__width {
+      height: 32px;
+      white-space: nowrap;
+      color: transparent;
       }
 
-.Search--ios.Search--default .Search__placeholder {
-    color: #99a2ad;
-    }
+.Search--ios .Search__width::before {
+        content: 'oooooooooooooooooooooooooooooooooooooooooooooooooooo' /* хак для растягивание Search на всю ширину */
+        }
 
-.Search--ios.Search--header .Search__placeholder {
-    color: #b4c8e0;
-    opacity: .68;
-    }
+.Search--ios .Search__control {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: calc(100% - 1px);
+      height: 100%;
+      border-radius: 16px;
+      }
 
 .Search--ios .Search__input {
-    height: 32px;
-    border-radius: 16px;
-    border: none;
-    display: block;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    outline: none;
-    padding-left: 34px;
-    padding-right: 12px;
-    font-size: 15px;
-    }
+        border: none;
+        margin: 0;
+        height: 32px;
+        position: relative;
+        padding: 0 22px 0 34px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        font-size: 15px;
+        outline: none;
+        border-radius: 16px;
+        max-width: 100%;
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+        min-width: 0;
+        background-color: transparent;
+        z-index: 2;
+        }
 
-.Search--ios.Search--default .Search__input {
-    background-color: #fff;
-    }
+.Search--ios.Search--has-after .Search__input {
+        border-radius: 16px 0 0 16px;
+        padding-right: 32px;
+        }
+
+.Search--ios .Search__after-width {
+        font-size: 17px;
+        height: 32px;
+        line-height: 32px;
+        padding-left: 12px;
+        padding-right: 4px;
+        }
+
+.Search--ios .Search__placeholder {
+        position: absolute;
+        left: 0;
+        -webkit-transform: translate(50%);
+            -ms-transform: translate(50%);
+                transform: translate(50%);
+        -webkit-transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+        transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+        -o-transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+        transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+        transition: transform .3s cubic-bezier(.36, .66, .04, 1), -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+        width: 100%;
+        cursor: text;
+        opacity: .5;
+        z-index: 1;
+        text-align: left;
+        display: block;
+        height: 32px;
+        font-size: 0;
+        }
+
+.Search--ios.Search--focused .Search__placeholder,
+      .Search--ios.Search--has-value .Search__placeholder {
+        -webkit-transform: translate(0);
+            -ms-transform: translate(0);
+                transform: translate(0);
+        }
+
+.Search--ios .Search__placeholder-in {
+          -webkit-transform: translate(-50%);
+              -ms-transform: translate(-50%);
+                  transform: translate(-50%);
+          -webkit-transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+          transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+          -o-transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+          transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+          transition: transform .3s cubic-bezier(.36, .66, .04, 1), -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+          height: 32px;
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          }
+
+.Search--ios.Search--focused .Search__placeholder .Search__placeholder-in,
+        .Search--ios.Search--has-value .Search__placeholder .Search__placeholder-in {
+          -webkit-transform: translate(12px);
+              -ms-transform: translate(12px);
+                  transform: translate(12px);
+          }
+
+.Search--ios .Search__placeholder-text {
+            margin-left: 6px;
+            line-height: 32px;
+            font-size: 15px;
+            }
+
+.Search--ios.Search--has-value .Search__placeholder-text {
+            opacity: 0;
+            }
+
+.Search--ios .Search__after {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      line-height: 32px;
+      z-index: 2;
+      -webkit-transform: translate(0);
+          -ms-transform: translate(0);
+              transform: translate(0);
+      -webkit-transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+      transition: -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+      -o-transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+      transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+      transition: transform .3s cubic-bezier(.36, .66, .04, 1), -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
+      cursor: default;
+      }
+
+.Search--ios.Search--focused .Search__after,
+    .Search--ios.Search--has-value .Search__after {
+      -webkit-transform: translate(-100%);
+          -ms-transform: translate(-100%);
+              transform: translate(-100%);
+      }
+
+.Search--ios .Search__after::before {
+        position: absolute;
+        right: calc(100% - 1px);
+        display: block;
+        height: 100%;
+        width: 33px;
+        content: '';
+        }
+
+.Search--ios .Search__after-in {
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        font-size: 17px;
+        padding-left: 12px;
+        padding-right: 4px;
+        }
+
+.Search--ios .Search__after::after {
+        position: absolute;
+        right: 100%;
+        display: block;
+        height: 100%;
+        width: 33px;
+        content: '';
+        top: 0;
+        border-radius: 0 16px 16px 0;
+        cursor: text;
+        }
+
+.Search--ios.Search--default {
+  background: #e6e9ed;
+  padding: 8px;
+  }
+
+.Search--ios.Search--default .Search__control {
+  background-color: #fff;
+  }
 
 .Search--ios.Search--header .Search__input {
-    background-color: #143a66;
-    color: #fff;
-    }
+  color: #000;
+  }
+
+.Search--ios.Search--default .Search__after-width {
+  background: #fff;
+  color: #fff;
+  }
+
+.Search--ios.Search--default .Search__after {
+  background: #e6e9ed;
+  color: #528bcc;
+  }
+
+.Search--ios.Search--default .Search__after::after {
+  background-color: #fff;
+  }
+
+.Search--ios.Search--default .Search__after::before {
+  background-color: #e6e9ed;
+  }
+
+.Search--ios.Search--header {
+  background: #5181b8;
+  padding-top: 6px;
+  }
+
+.Search--ios.Search--header .Search__control {
+  background-color: #143a66;
+  }
+
+.Search--ios.Search--header .Search__input {
+  color: #fff;
+  }
+
+.Search--ios.Search--header .Search__after-width {
+  background: #143a66;
+  color: #143a66;
+  }
+
+.Search--ios.Search--header .Search__after {
+  background: #5181b8;
+  color: #fff;
+  }
+
+.Search--ios.Search--header .Search__after::after {
+  background-color: #143a66;
+  }
+
+.Search--ios.Search--header .Search__after::before {
+  background-color: #5181b8;
+  }
 
 :root {
 

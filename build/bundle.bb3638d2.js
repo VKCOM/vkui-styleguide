@@ -14783,9 +14783,10 @@ var Button = function (_React$Component) {
           level = _props.level,
           type = _props.type,
           stretched = _props.stretched,
+          align = _props.align,
           children = _props.children,
           before = _props.before,
-          restProps = _objectWithoutProperties(_props, ['className', 'size', 'level', 'type', 'stretched', 'children', 'before']);
+          restProps = _objectWithoutProperties(_props, ['className', 'size', 'level', 'type', 'stretched', 'align', 'children', 'before']);
 
       switch (type) {
         case 'default':
@@ -14797,7 +14798,7 @@ var Button = function (_React$Component) {
           level = level || 'primary';
       }
 
-      var classNames = (0, _classnames3.default)(baseClassName, className, (_classnames = {}, _defineProperty(_classnames, 'Button--size-' + size, size), _defineProperty(_classnames, 'Button--level-' + level, level), _defineProperty(_classnames, 'Button--type-' + type, type), _defineProperty(_classnames, 'Button--stretched', stretched), _classnames));
+      var classNames = (0, _classnames3.default)(baseClassName, className, (_classnames = {}, _defineProperty(_classnames, 'Button--size-' + size, size), _defineProperty(_classnames, 'Button--level-' + level, level), _defineProperty(_classnames, 'Button--type-' + type, type), _defineProperty(_classnames, 'Button--align-' + align, align), _defineProperty(_classnames, 'Button--stretched', stretched), _classnames));
 
       return _react2.default.createElement(
         _Tappable2.default,
@@ -14827,6 +14828,7 @@ Button.propTypes = {
   level: _propTypes2.default.oneOf(['1', '2', '3', 'sell', 'buy', 'primary', 'danger']),
   size: _propTypes2.default.oneOf(['m', 'l', 'xl']),
   type: _propTypes2.default.oneOf(['default', 'cell']),
+  align: _propTypes2.default.oneOf(['left', 'center', 'right']),
   stretched: _propTypes2.default.bool,
 
   children: _propTypes2.default.node,
@@ -14836,7 +14838,8 @@ Button.propTypes = {
 };
 Button.defaultProps = {
   type: 'default',
-  component: 'button'
+  component: 'button',
+  align: 'left'
 };
 exports.default = Button;
 
@@ -15140,18 +15143,15 @@ var HeaderButton = function HeaderButton(_ref) {
   return _react2.default.createElement(
     _Tappable2.default,
     _extends({ component: 'button', className: (0, _classnames2.default)(baseClassName, className, {
-        'HeaderButton--primary': primary
+        'HeaderButton--primary': primary,
+        'HeaderButton--icon': children && children.type && children.type.name === 'SvgIcon'
       }) }, restProps),
-    typeof children === 'string' ? _react2.default.createElement(
-      'span',
-      { className: 'HeaderButton__str' },
-      children
-    ) : children
+    children
   );
 };
 
 HeaderButton.propTypes = {
-  children: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.string]),
+  children: _propTypes2.default.node,
   className: _propTypes2.default.string,
   primary: _propTypes2.default.bool
 };
@@ -15811,29 +15811,29 @@ var View = function (_Component) {
           title: {},
           item: {},
           left: {},
-          icon: {},
+          addon: {},
           right: {}
         };
       }
 
       var opacity = this.state.swipeBackShift / this.window.innerWidth;
-      var titleTransform = this.state.swipeBackShift / this.window.innerWidth * 60;
-      var leftTransform = this.state.swipeBackShift / this.window.innerWidth * 60;
+      var titleTransform = this.state.swipeBackShift / this.window.innerWidth * 100;
+      var leftTransform = this.state.swipeBackShift / this.window.innerWidth * 100;
 
       if (isNext) {
         return {
           title: {
-            transform: 'translate3d(' + (-60 + titleTransform) + '%, 0, 0)',
-            WebkitTransform: 'translate3d(' + (-60 + titleTransform) + '%, 0, 0)',
+            transform: 'translate3d(' + (-100 + titleTransform) + '%, 0, 0)',
+            WebkitTransform: 'translate3d(' + (-100 + titleTransform) + '%, 0, 0)',
             opacity: opacity
           },
           item: { opacity: opacity },
-          left: {
-            transform: 'translate3d(' + (-60 + leftTransform) + '%, 0, 0)',
-            WebkitTransform: 'translate3d(' + (-60 + leftTransform) + '%, 0, 0)',
-            opacity: opacity
+          left: { opacity: opacity },
+          addon: {
+            opacity: 1,
+            transform: 'translate3d(' + (-100 + leftTransform) + '%, 0, 0)',
+            WebkitTransform: 'translate3d(' + (-100 + leftTransform) + '%, 0, 0)'
           },
-          icon: { opacity: 1 },
           right: { opacity: 1 }
         };
       }
@@ -15844,7 +15844,7 @@ var View = function (_Component) {
             WebkitTransform: 'translate3d(' + titleTransform + '%, 0, 0)'
           },
           item: { opacity: 1 - opacity },
-          left: {
+          addon: {
             transform: 'translate3d(' + leftTransform + '%, 0, 0)',
             WebkitTransform: 'translate3d(' + leftTransform + '%, 0, 0)'
           }
@@ -37260,8 +37260,8 @@ var Preview = function (_PreviewParent) {
           initialContent: frameInitialContent,
           mountTarget: 'body',
           style: {
-            height: 564,
-            width: 320,
+            height: 667,
+            width: 375,
             border: '1px solid rgba(0, 0, 0, .12)',
             display: 'block',
             margin: 'auto'
@@ -45000,14 +45000,14 @@ module.exports = {
         {
             'type': { 'name': 'node' },
             'required': false,
-            'description': '',
+            'description': 'iOS only',
             'tags': {},
             'name': 'after'
         },
         {
             'type': { 'name': 'node' },
             'required': false,
-            'description': '',
+            'description': 'iOS only',
             'tags': {},
             'name': 'before'
         },
@@ -45019,13 +45019,6 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'defaultValue'
-        },
-        {
             'type': { 'name': 'func' },
             'required': false,
             'description': '',
@@ -45035,37 +45028,9 @@ module.exports = {
         {
             'type': { 'name': 'func' },
             'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onBlur'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onChange'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
+            'description': 'Android only. Вызывается при клике по стрелку (слева). Этот контрол служит для выхода из режима поиска.',
             'tags': {},
             'name': 'onClose'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onFocus'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'placeholder'
         },
         {
             'type': {
@@ -45082,16 +45047,9 @@ module.exports = {
                 ]
             },
             'required': false,
-            'description': '',
+            'description': 'iOS only',
             'tags': {},
             'name': 'theme'
-        },
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'value'
         }
     ],
     'doclets': {},
@@ -45116,6 +45074,8 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -45150,6 +45110,8 @@ var _cancel = __webpack_require__(78);
 var _cancel2 = _interopRequireDefault(_cancel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -45186,18 +45148,6 @@ var SearchAndroid = function (_React$Component) {
       }
     };
 
-    _this.onFocus = function (e) {
-      _this.props.onFocus && _this.props.onFocus(e);
-    };
-
-    _this.onBlur = function (e) {
-      _this.props.onBlur && _this.props.onBlur(e);
-    };
-
-    _this.onClose = function () {
-      _this.props.onClose && _this.props.onClose();
-    };
-
     _this.inputRef = function (el) {
       _this.inputEl = el;
       _this.props.getRef && _this.props.getRef(el);
@@ -45223,6 +45173,14 @@ var SearchAndroid = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _props = this.props,
+          getRef = _props.getRef,
+          value = _props.value,
+          defaultValue = _props.defaultValue,
+          onChange = _props.onChange,
+          onClose = _props.onClose,
+          inputProps = _objectWithoutProperties(_props, ['getRef', 'value', 'defaultValue', 'onChange', 'onClose']);
+
       var className = (0, _classnames2.default)(baseClassName, {
         'Search--focused': this.state.focused,
         'Search--has-value': !!this.value
@@ -45236,22 +45194,19 @@ var SearchAndroid = function (_React$Component) {
           { className: 'Search__before' },
           _react2.default.createElement(
             _HeaderButton2.default,
-            { onClick: this.onClose },
+            { onClick: onClose },
             _react2.default.createElement(_back2.default, null)
           )
         ),
         _react2.default.createElement(
           'div',
           { className: 'Search__control' },
-          _react2.default.createElement('input', {
+          _react2.default.createElement('input', _extends({
             className: 'Search__input',
-            placeholder: this.props.placeholder,
             ref: this.inputRef,
             value: this.value,
-            onChange: this.onChange,
-            onFocus: this.onFocus,
-            onBlur: this.onBlur
-          })
+            onChange: this.onChange
+          }, inputProps))
         ),
         _react2.default.createElement(
           'div',
@@ -45523,6 +45478,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var baseClassName = (0, _getClassName2.default)('Search');
 
+var searchId = 0;
+
 var SearchIOS = function (_React$Component) {
   _inherits(SearchIOS, _React$Component);
 
@@ -45531,37 +45488,14 @@ var SearchIOS = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (SearchIOS.__proto__ || Object.getPrototypeOf(SearchIOS)).call(this, props));
 
-    _this.calcSizes = function () {
-      var afterWidth = _this.afterEl.offsetWidth;
-      var placeholderWidth = _this.placeholderEl.offsetWidth;
-      var controlWidth = _this.controlEl.offsetWidth;
-      var beforeWidth = _this.beforeEl ? _this.beforeEl.offsetWidth : 0;
-
-      _this.setState({
-        afterWidth: afterWidth,
-        placeholderWidth: placeholderWidth,
-        controlWidth: controlWidth,
-        beforeWidth: beforeWidth,
-        placeholderOffset: (controlWidth - beforeWidth - (_this.state.showAfter ? afterWidth : 0) - placeholderWidth) / 2
-      });
-    };
-
     _this.onFocus = function (e) {
-      _this.setState({
-        focused: true,
-        showAfter: true
-      }, function () {
-        return _this.props.onFocus && _this.props.onFocus(e);
-      });
+      _this.setState({ focused: true });
+      _this.props.onFocus && _this.props.onFocus(e);
     };
 
     _this.onBlur = function (e) {
-      _this.setState({
-        focused: false,
-        showAfter: _this.value
-      }, function () {
-        return _this.props.onBlur && _this.props.onBlur(e);
-      });
+      _this.setState({ focused: false });
+      _this.props.onBlur && _this.props.onBlur(e);
     };
 
     _this.onChange = function (e) {
@@ -45574,7 +45508,6 @@ var SearchIOS = function (_React$Component) {
     };
 
     _this.onCancel = function () {
-      _this.setState({ showAfter: false });
       if (!_this.isControlledOutside) {
         _this.setState({ value: '' });
       }
@@ -45584,8 +45517,7 @@ var SearchIOS = function (_React$Component) {
     };
 
     _this.inputRef = function (el) {
-      _this.inputEl = el;
-      _this.props.getRef && _this.props.getRef(el);
+      return _this.props.getRef && _this.props.getRef(el);
     };
 
     var state = {
@@ -45600,28 +45532,15 @@ var SearchIOS = function (_React$Component) {
     } else {
       state.value = props.defaultValue || '';
     }
-
+    searchId++;
     _this.state = state;
     return _this;
   }
 
   _createClass(SearchIOS, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.calcSizes();
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      if (this.state.afterWidth !== this.afterEl.offsetWidth) {
-        this.calcSizes();
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _classnames,
-          _this2 = this;
+      var _classnames;
 
       var _props = this.props,
           className = _props.className,
@@ -45638,55 +45557,52 @@ var SearchIOS = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: (0, _classnames3.default)(baseClassName, (_classnames = {}, _defineProperty(_classnames, 'Search--' + theme, true), _defineProperty(_classnames, 'Search--focused', this.state.focused), _defineProperty(_classnames, 'Search--has-value', !!this.value), _classnames), className) },
+        { className: (0, _classnames3.default)(baseClassName, (_classnames = {}, _defineProperty(_classnames, 'Search--' + theme, true), _defineProperty(_classnames, 'Search--focused', this.state.focused), _defineProperty(_classnames, 'Search--has-value', this.value), _defineProperty(_classnames, 'Search--has-after', after), _classnames), className) },
         _react2.default.createElement(
           'div',
-          {
-            className: 'Search__control',
-            ref: function ref(el) {
-              return _this2.controlEl = el;
-            },
-            style: {
-              width: this.state.controlWidth - this.state.beforeWidth - (this.state.showAfter ? this.state.afterWidth : 0) + 'px'
-            }
-          },
+          { className: 'Search__in' },
+          _react2.default.createElement('div', { className: 'Search__width' }),
           _react2.default.createElement(
             'div',
-            {
-              className: 'Search__placeholder',
-              onClick: function onClick() {
-                return _this2.inputEl.focus();
+            { className: 'Search__control' },
+            _react2.default.createElement('input', _extends({
+              id: 'search-' + searchId,
+              ref: this.inputRef,
+              type: 'text',
+              className: 'Search__input',
+              onFocus: this.onFocus,
+              onBlur: this.onBlur,
+              onChange: this.onChange,
+              value: this.value
+            }, inputProps)),
+            after && _react2.default.createElement(
+              'div',
+              { className: 'Search__after-width' },
+              after
+            ),
+            _react2.default.createElement(
+              'label',
+              {
+                className: 'Search__placeholder',
+                htmlFor: 'search-' + searchId
               },
-              ref: function ref(el) {
-                return _this2.placeholderEl = el;
-              },
-              style: {
-                transform: 'translateX(' + (this.state.focused || this.value ? 0 : this.state.placeholderOffset + 'px') + ')'
-              }
-            },
-            _react2.default.createElement(_search2.default, null),
-            !this.value && _react2.default.createElement('div', { className: 'Search__placeholder-text', dangerouslySetInnerHTML: { __html: placeholder } })
+              _react2.default.createElement(
+                'div',
+                { className: 'Search__placeholder-in' },
+                _react2.default.createElement(_search2.default, null),
+                _react2.default.createElement('div', { className: 'Search__placeholder-text', dangerouslySetInnerHTML: { __html: placeholder } })
+              )
+            )
           ),
-          _react2.default.createElement('input', _extends({
-            ref: this.inputRef,
-            type: 'text',
-            className: 'Search__input',
-            onFocus: this.onFocus,
-            onBlur: this.onBlur,
-            onChange: this.onChange,
-            value: this.value
-          }, inputProps))
-        ),
-        _react2.default.createElement(
-          'div',
-          {
-            ref: function ref(el) {
-              return _this2.afterEl = el;
-            },
-            className: 'Search__after',
-            onClick: this.onCancel
-          },
-          after
+          after && _react2.default.createElement(
+            'div',
+            { className: 'Search__after', onClick: this.onCancel },
+            _react2.default.createElement(
+              'div',
+              { className: 'Search__after-in' },
+              after
+            )
+          )
         )
       );
     }
@@ -45796,18 +45712,26 @@ var Search = function (_React$Component) {
 }(_react2.default.Component);
 
 Search.propTypes = {
-  onClose: _propTypes2.default.func,
-  after: _propTypes2.default.node,
-  before: _propTypes2.default.node,
   className: _propTypes2.default.string,
-  defaultValue: _propTypes2.default.string,
-  value: _propTypes2.default.string,
-  onChange: _propTypes2.default.func,
-  onFocus: _propTypes2.default.func,
-  onBlur: _propTypes2.default.func,
-  placeholder: _propTypes2.default.node,
+  getRef: _propTypes2.default.func,
+
+  /**
+   * iOS only
+   */
+  after: _propTypes2.default.node,
+  /**
+   * iOS only
+   */
+  before: _propTypes2.default.node,
+  /**
+   * iOS only
+   */
   theme: _propTypes2.default.oneOf(['header', 'default']),
-  getRef: _propTypes2.default.func
+
+  /**
+   * Android only. Вызывается при клике по стрелку (слева). Этот контрол служит для выхода из режима поиска.
+   */
+  onClose: _propTypes2.default.func
 };
 exports.default = Search;
 
@@ -48694,7 +48618,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': '<View activePanel="button" header={false}>\n <Panel id="button">\n   <Group title="Levels">\n\n     <Div>\n       <Button onClick={() => {}}>level="1" (default)</Button>\n     </Div>\n     <Div>\n       <Button onClick={() => {}} level="2">level="2"</Button>\n     </Div>\n     <Div>\n       <Button onClick={() => {}} level="3">level="3"</Button>\n     </Div>\n     <Div>\n       <Button onClick={() => {}} level="buy">level="buy"</Button>\n     </Div>\n     <Div>\n       <Button onClick={() => {}} level="sell">level="sell"</Button>\n     </Div>\n   </Group>\n   <Group title="Sizes">\n     <Div>\n       <Button onClick={() => {}}>size="m" (default)</Button>\n     </Div>\n     <Div>\n       <Button onClick={() => {}} size="l">size="l"</Button>\n     </Div>\n     <Div>\n       <Button onClick={() => {}} size="xl" level="2">size="xl"</Button>\n     </Div>\n   </Group>\n   <Group title="Stretched">\n     <Div>\n       <Button onClick={() => {}} size="l">No stretch</Button>\n     </Div>\n     <Div style={{display: \'flex\'}}>\n       <Button onClick={() => {}} size="l" stretched style={{ marginRight: 8 }}>Stretched</Button>\n       <Button onClick={() => {}} size="l" stretched level="2">Stretched</Button>\n     </Div>\n   </Group>\n   <Group title="Icons">\n     <Div>\n       <Button\n         onClick={() => {}}\n         before={<Icon16Add/>}\n       >Add item</Button>\n     </Div>\n     <Div>\n       <Button\n         onClick={() => {}}\n         before={<Icon24Camera/>}\n         size="l"\n       >Take a photo</Button>\n     </Div>\n     <Div>\n       <Button\n         onClick={() => {}}\n         level="2"\n         before={<Icon24Shuffle fill={colors.mutedBlue}/>}\n         size="l"\n       >Shuffle</Button>\n     </Div>\n   </Group>\n   <Group title="Cell">\n     <Button onClick={() => {}} type="cell">Cell Button</Button>\n     <Button onClick={() => {}} type="cell" level="danger">Danger Button</Button>\n   </Group>\n </Panel>\n</View>',
+        'content': '<View activePanel="button" header={false}>\n <Panel id="button">\n   <Group title="Levels">\n\n     <Div>\n       <Button>level="1" (default)</Button>\n     </Div>\n     <Div>\n       <Button level="2">level="2"</Button>\n     </Div>\n     <Div>\n       <Button level="3">level="3"</Button>\n     </Div>\n     <Div>\n       <Button level="buy">level="buy"</Button>\n     </Div>\n     <Div>\n       <Button level="sell">level="sell"</Button>\n     </Div>\n   </Group>\n   <Group title="Sizes">\n     <Div>\n       <Button>size="m" (default)</Button>\n     </Div>\n     <Div>\n       <Button size="l">size="l"</Button>\n     </Div>\n     <Div>\n       <Button size="xl" level="2">size="xl"</Button>\n     </Div>\n   </Group>\n   <Group title="Stretched">\n     <Div>\n       <Button size="l">No stretch</Button>\n     </Div>\n     <Div style={{display: \'flex\'}}>\n       <Button size="l" stretched style={{ marginRight: 8 }}>Stretched</Button>\n       <Button size="l" stretched level="2">Stretched</Button>\n     </Div>\n   </Group>\n   <Group title="Icons">\n     <Div>\n       <Button before={<Icon16Add/>}>Add item</Button>\n     </Div>\n     <Div>\n       <Button before={<Icon24Camera/>} size="l">Take a photo</Button>\n     </Div>\n     <Div>\n       <Button\n         level="2"\n         before={<Icon24Shuffle/>}\n         size="l"\n       >Shuffle</Button>\n     </Div>\n   </Group>\n   <Group title="Cell">\n     <Button type="cell">Cell Button</Button>\n     <Button type="cell" level="danger">Danger Button</Button>\n   </Group>\n   <Group title="Cell align">\n     <Button type="cell">Left</Button>\n     <Button type="cell" align="center">Center</Button>\n     <Button type="cell" align="right">Right</Button>\n   </Group>\n </Panel>\n</View>',
         'settings': {},
         'evalInContext': evalInContext
     }]
@@ -48712,6 +48636,33 @@ module.exports = {
     'displayName': 'Button',
     'methods': [],
     'props': [
+        {
+            'type': {
+                'name': 'enum',
+                'value': [
+                    {
+                        'value': '\'left\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'center\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'right\'',
+                        'computed': false
+                    }
+                ]
+            },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '\'left\'',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'align'
+        },
         {
             'type': { 'name': 'node' },
             'required': false,
@@ -50621,13 +50572,7 @@ module.exports = {
     'displayName': 'HeaderButton',
     'props': [
         {
-            'type': {
-                'name': 'union',
-                'value': [
-                    { 'name': 'element' },
-                    { 'name': 'string' }
-                ]
-            },
+            'type': { 'name': 'node' },
             'required': false,
             'description': '',
             'tags': {},
@@ -52398,7 +52343,7 @@ module.exports = createFind;
 /* 361 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.0.3","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","repository":"https://github.com/VKCOM/VKUI","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^7.2.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.0.2"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"./node_modules/.bin/eslint . && ./node_modules/.bin/stylelint ./src/**/*.css && ./node_modules/.bin/jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.0.4","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","repository":"https://github.com/VKCOM/VKUI","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^7.2.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.0.2"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"./node_modules/.bin/eslint . && ./node_modules/.bin/stylelint ./src/**/*.css && ./node_modules/.bin/jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 362 */
