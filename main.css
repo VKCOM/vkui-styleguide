@@ -7,44 +7,6 @@
   /* colors */
 }
 
-.Avatar {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  }
-
-.Avatar__img {
-    border-radius: 50%;
-    background-color: rgba(0, 28, 61, .08);
-    color: #aaaeb3;
-    border: none;
-    display: block;
-    max-width: 100%;
-    }
-
-div.Avatar__img {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    }
-
-:root {
-
-  /* borders */
-
-  /* easings */
-
-  /* colors */
-}
-
 html,
 body,
 div#root {
@@ -248,88 +210,97 @@ a:focus {
   }
 @-webkit-keyframes animation-ios-next-forward {
   from {
-    -webkit-transform: translate3d(100%,0,0);
-            transform: translate3d(100%,0,0);
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
     }
+
   to {
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     }
   }
 @keyframes animation-ios-next-forward {
   from {
-    -webkit-transform: translate3d(100%,0,0);
-            transform: translate3d(100%,0,0);
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
     }
+
   to {
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     }
   }
 @-webkit-keyframes animation-ios-next-back {
   from {
-    -webkit-transform: translate3d(-50%,0,0);
-            transform: translate3d(-50%,0,0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
     }
+
   to {
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     }
   }
 @keyframes animation-ios-next-back {
   from {
-    -webkit-transform: translate3d(-50%,0,0);
-            transform: translate3d(-50%,0,0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
     }
+
   to {
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     }
   }
 @-webkit-keyframes animation-ios-prev-forward {
   from {
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     }
+
   to {
-    -webkit-transform: translate3d(-50%,0,0);
-            transform: translate3d(-50%,0,0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
     }
   }
 @keyframes animation-ios-prev-forward {
   from {
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     }
+
   to {
-    -webkit-transform: translate3d(-50%,0,0);
-            transform: translate3d(-50%,0,0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
     }
   }
 @-webkit-keyframes animation-ios-prev-back {
   from {
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     }
+
   to {
-    -webkit-transform: translate3d(100%,0,0);
-            transform: translate3d(100%,0,0);
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
     }
   }
 @keyframes animation-ios-prev-back {
   from {
-    -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     }
+
   to {
-    -webkit-transform: translate3d(100%,0,0);
-            transform: translate3d(100%,0,0);
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
     }
   }
 @-webkit-keyframes animation-ios-fade-in {
   from {
     opacity: 0;
     }
+
   to {
     opacity: .3;
     }
@@ -338,6 +309,7 @@ a:focus {
   from {
     opacity: 0;
     }
+
   to {
     opacity: .3;
     }
@@ -346,6 +318,7 @@ a:focus {
   from {
     opacity: .3;
     }
+
   to {
     opacity: 0;
     }
@@ -354,6 +327,7 @@ a:focus {
   from {
     opacity: .3;
     }
+
   to {
     opacity: 0;
     }
@@ -387,6 +361,7 @@ a:focus {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     }
+
   to {
     opacity: 0;
     -webkit-transform: translateY(80px);
@@ -399,6 +374,7 @@ a:focus {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     }
+
   to {
     opacity: 0;
     -webkit-transform: translateY(80px);
@@ -411,6 +387,7 @@ a:focus {
     -webkit-transform: translateY(80px);
             transform: translateY(80px);
     }
+
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -423,6 +400,7 @@ a:focus {
     -webkit-transform: translateY(80px);
             transform: translateY(80px);
     }
+
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -629,6 +607,7 @@ a:focus {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
     }
+
   to {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -641,6 +620,7 @@ a:focus {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
     }
+
   to {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -653,6 +633,7 @@ a:focus {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
     }
+
   to {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -665,6 +646,7 @@ a:focus {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
     }
+
   to {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -677,6 +659,7 @@ a:focus {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     }
+
   to {
     opacity: 0;
     -webkit-transform: translateX(100%);
@@ -689,6 +672,7 @@ a:focus {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     }
+
   to {
     opacity: 0;
     -webkit-transform: translateX(100%);
@@ -701,6 +685,7 @@ a:focus {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     }
+
   to {
     opacity: 0;
     -webkit-transform: translateX(-100%);
@@ -713,6 +698,7 @@ a:focus {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     }
+
   to {
     opacity: 0;
     -webkit-transform: translateX(-100%);
@@ -723,6 +709,7 @@ a:focus {
   from {
     opacity: 0;
     }
+
   to {
     opacity: 1;
     }
@@ -731,6 +718,7 @@ a:focus {
   from {
     opacity: 0;
     }
+
   to {
     opacity: 1;
     }
@@ -739,6 +727,7 @@ a:focus {
   from {
     opacity: 1;
     }
+
   to {
     opacity: 0;
     }
@@ -747,6 +736,7 @@ a:focus {
   from {
     opacity: 1;
     }
+
   to {
     opacity: 0;
     }
@@ -838,6 +828,9 @@ a:focus {
     background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
     background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
     content: '';
+    }
+.PanelHeader--no-shadow::after {
+    display: none;
     }
 .PanelHeader--ios.PanelHeader--brand {
     color: #fff;
@@ -1045,7 +1038,7 @@ a:focus {
   transition: background-color .15s ease-out;
   }
 
-.Tappable--ios.Tappable--active:not([disabled]):not(.Button--vk-secondary):not(.Button--vk-tertiary):not(.Button--vk-rich):not(.Button--vk-wide-primary):not(.TabsItem--white):not(.HeaderButton):not(.Button--type-default) {
+.Tappable--ios.Tappable--active:not([disabled]):not(.TabsItem):not(.HeaderButton):not(.Button--type-default) {
   background: #d9d9d9 !important;
   -webkit-transition: none;
   -o-transition: none;
@@ -1063,7 +1056,7 @@ a:focus {
   transition: background-color .15s ease-out;
   }
 
-.Tappable--android.Tappable--active:not([disabled]):not(.Button--vk-secondary):not(.Button--vk-tertiary):not(.Button--vk-rich):not(.Alert__btn--primary):not(.Button--vk-wide-primary):not(.TabsItem--white):not(.HeaderButton):not(.Button--type-default) {
+.Tappable--android.Tappable--active:not([disabled]):not(.TabsItem):not(.HeaderButton):not(.Button--type-default) {
   background: #f0f1f3 !important;
   }
 
@@ -1110,9 +1103,11 @@ a:focus {
             transform: scale(1);
     opacity: 1;
   }
+
   30% {
     opacity: 1;
   }
+
   100% {
     -webkit-transform: scale(8);
             transform: scale(8);
@@ -1126,9 +1121,11 @@ a:focus {
             transform: scale(1);
     opacity: 1;
   }
+
   30% {
     opacity: 1;
   }
+
   100% {
     -webkit-transform: scale(8);
             transform: scale(8);
@@ -1311,6 +1308,7 @@ a:focus {
   from {
     opacity: .3;
     }
+
   to {
     opacity: 0;
     }
@@ -1320,6 +1318,7 @@ a:focus {
   from {
     opacity: .3;
     }
+
   to {
     opacity: 0;
     }
@@ -1329,6 +1328,7 @@ a:focus {
   from {
     opacity: 0;
     }
+
   to {
     opacity: .3;
     }
@@ -1338,6 +1338,7 @@ a:focus {
   from {
     opacity: 0;
     }
+
   to {
     opacity: .3;
     }
@@ -1348,6 +1349,7 @@ a:focus {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     }
+
   to {
     -webkit-transform: translate3d(0, 100vh, 0);
             transform: translate3d(0, 100vh, 0);
@@ -1359,6 +1361,7 @@ a:focus {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
     }
+
   to {
     -webkit-transform: translate3d(0, 100vh, 0);
             transform: translate3d(0, 100vh, 0);
@@ -1370,6 +1373,7 @@ a:focus {
     -webkit-transform: translate3d(0, 100vh, 0);
             transform: translate3d(0, 100vh, 0);
     }
+
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
@@ -1381,6 +1385,7 @@ a:focus {
     -webkit-transform: translate3d(0, 100vh, 0);
             transform: translate3d(0, 100vh, 0);
     }
+
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
@@ -1411,6 +1416,7 @@ a:focus {
             transform: scale(1);
     opacity: 1;
     }
+
   to {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
@@ -1424,6 +1430,7 @@ a:focus {
             transform: scale(1);
     opacity: 1;
     }
+
   to {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
@@ -1437,6 +1444,7 @@ a:focus {
             transform: scale(1.05);
     opacity: 0;
     }
+
   to {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -1450,6 +1458,7 @@ a:focus {
             transform: scale(1.05);
     opacity: 0;
     }
+
   to {
     -webkit-transform: scale(1);
             transform: scale(1);
@@ -1478,6 +1487,18 @@ a:focus {
 .FixedLayout--ios.FixedLayout--bottom .FixedLayout__in {
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
+    }
+
+.HorizontalScroll {
+  position: relative;
+  overflow: hidden;
+  }
+
+  .HorizontalScroll__in {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
     }
 
 :root {
@@ -1580,7 +1601,7 @@ a:focus {
 .PopoutWrapper--ios.PopoutWrapper--closing .PopoutWrapper__mask {
   -webkit-transition: opacity .3s cubic-bezier(.36, .66, .04, 1);
   -o-transition: opacity .3s cubic-bezier(.36, .66, .04, 1);
-  transition: opacity .3s cubic-bezier(.36, .66, .04, 1)
+  transition: opacity .3s cubic-bezier(.36, .66, .04, 1);
   }
 
 /**
@@ -1590,13 +1611,14 @@ a:focus {
 .PopoutWrapper--android.PopoutWrapper--closing .PopoutWrapper__mask {
   -webkit-transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
   -o-transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
-  transition: opacity .2s cubic-bezier(.4, 0, .2, 1)
+  transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
   }
 
 @-webkit-keyframes animation-full-fade-in {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1606,6 +1628,7 @@ a:focus {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1686,7 +1709,7 @@ a:focus {
 
 .ActionSheet--ios .ActionSheet__separator {
     height: 1px;
-    background-color: rgba(0,0,0,.12);
+    background-color: rgba(0, 0, 0, .12);
   }
 
 .ActionSheet--ios .ActionSheet-Item {
@@ -1715,17 +1738,17 @@ a:focus {
 .ActionSheet--android {
   min-width: 280px;
   background: #fff;
-  -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.3), 0 0 35px 0 rgba(0, 0, 0, 0.22);
-          box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.3), 0 0 35px 0 rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .3), 0 0 35px 0 rgba(0, 0, 0, .22);
+          box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .3), 0 0 35px 0 rgba(0, 0, 0, .22);
   border-radius: 2px;
   -webkit-animation: animation-android-actionsheet-intro .2s ease;
           animation: animation-android-actionsheet-intro .2s ease;
 }
 
 .ActionSheet--android.ActionSheet--closing {
-    -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
-            transform: scale(0.95);
+    -webkit-transform: scale(.95);
+        -ms-transform: scale(.95);
+            transform: scale(.95);
     opacity: 0;
     -webkit-transition: opacity .2s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s cubic-bezier(.4, 0, .2, 1);
     transition: opacity .2s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s cubic-bezier(.4, 0, .2, 1);
@@ -1763,6 +1786,7 @@ a:focus {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
     }
+
   to {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -1774,6 +1798,7 @@ a:focus {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
     }
+
   to {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -1786,6 +1811,7 @@ a:focus {
     -webkit-transform: scale(.95);
             transform: scale(.95);
     }
+
   to {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -1799,6 +1825,7 @@ a:focus {
     -webkit-transform: scale(.95);
             transform: scale(.95);
     }
+
   to {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -1984,6 +2011,7 @@ a:focus {
       background: -o-linear-gradient(right, rgba(0, 0, 0, .12) 50%, transparent 50%);
       background: linear-gradient(to left, rgba(0, 0, 0, .12) 50%, transparent 50%);
       }
+
     .Alert--ios.Alert--h .Alert__btn:last-child::after {
       content: none;
       }
@@ -2016,8 +2044,8 @@ a:focus {
   min-width: 280px;
   margin: auto 24px;
   background: #fff;
-  -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.3), 0 0 35px 0 rgba(0, 0, 0, 0.22);
-          box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.3), 0 0 35px 0 rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .3), 0 0 35px 0 rgba(0, 0, 0, .22);
+          box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .3), 0 0 35px 0 rgba(0, 0, 0, .22);
   border-radius: 2px;
   -webkit-animation: animation-android-alert-intro .2s ease;
           animation: animation-android-alert-intro .2s ease;
@@ -2031,7 +2059,7 @@ a:focus {
     padding: 18px 24px 16px;
     font-size: 16px;
     line-height: 24px;
-    color: #71757A;
+    color: #71757a;
     }
 
 .Alert--android .Alert__content h2 {
@@ -2039,7 +2067,7 @@ a:focus {
       font-weight: 500;
       font-size: 20px;
       line-height: 28px;
-      color: #2E3033;
+      color: #2e3033;
       }
 
 .Alert--android .Alert__content p {
@@ -2071,7 +2099,7 @@ a:focus {
 
 .Alert--android .Alert__btn {
       background: transparent;
-      margin: 0;
+      margin: 0 0 0 12px;
       border: 0;
       -webkit-box-flex: 0;
       -webkit-flex: 0 1 auto;
@@ -2083,8 +2111,7 @@ a:focus {
       line-height: 16px;
       padding: 8px;
       border-radius: 2px;
-      margin-left: 12px;
-      color: #5181B8;
+      color: #5181b8;
       outline: none;
       overflow: hidden;
       -o-text-overflow: ellipsis;
@@ -2102,7 +2129,7 @@ a:focus {
 
 .Alert--android .Alert__btn--primary:active,
     .Alert--android .Alert__btn--primary.Tappable--active {
-      background: #4872A3;
+      background: #4872a3;
       }
 
 /**
@@ -2115,6 +2142,7 @@ a:focus {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
     }
+
   to {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -2128,6 +2156,7 @@ a:focus {
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
     }
+
   to {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -2141,6 +2170,7 @@ a:focus {
     -webkit-transform: scale(.95);
             transform: scale(.95);
     }
+
   to {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -2154,6 +2184,7 @@ a:focus {
     -webkit-transform: scale(.95);
             transform: scale(.95);
     }
+
   to {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -2189,6 +2220,7 @@ a:focus {
           align-items: center;
   border-radius: 8px;
   }
+
 :root {
 
   /* borders */
@@ -2249,6 +2281,7 @@ a:focus {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
     }
+
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
@@ -2260,6 +2293,7 @@ a:focus {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
     }
+
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
@@ -2270,6 +2304,7 @@ a:focus {
   from {
     opacity: 1;
     }
+
   to {
     opacity: .1;
     }
@@ -2279,10 +2314,12 @@ a:focus {
   from {
     opacity: 1;
     }
+
   to {
     opacity: .1;
     }
   }
+
 :root {
 
   /* borders */
@@ -2351,14 +2388,8 @@ a:focus {
   }
 
 .Button--stretched {
-  max-width: 100%;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  display: block;
+  width: 100%;
   }
 
 .Button--stretched .Button__in {
@@ -2432,7 +2463,7 @@ a:focus {
   }
 
 .Button--level-sell.Tappable--active:not([disabled]) {
-  background-color: rgba(82, 139, 204, 0.1);
+  background-color: rgba(82, 139, 204, .1);
   }
 
 .Button--size-m {
@@ -2526,15 +2557,6 @@ a:focus {
 .Button--android.Button--type-cell .Button__before .Icon {
     margin-right: 12px;
     }
-
-:root {
-
-  /* borders */
-
-  /* easings */
-
-  /* colors */
-}
 
 .Div {}
 
@@ -2723,8 +2745,8 @@ a:focus {
 .Group--android {
   margin: 8px 0;
   background-color: #fff;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 0 2px 0 rgba(0, 0, 0, 0.03);
-          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 0 2px 0 rgba(0, 0, 0, 0.03);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .06), 0 0 2px 0 rgba(0, 0, 0, .03);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .06), 0 0 2px 0 rgba(0, 0, 0, .03);
   }
 
 .Group--android:first-child {
@@ -2756,7 +2778,6 @@ a:focus {
   position: relative;
   margin: 0;
   padding: 0;
-  list-style: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -2764,7 +2785,8 @@ a:focus {
   background: #fff;
   }
 
-.List .ListItem, .List .Radio {
+.List .ListItem,
+  .List .Radio {
     position: relative;
     z-index: 2;
     }
@@ -2943,7 +2965,7 @@ a:focus {
     left: 100%;
     height: 100%;
     top: 0;
-    background-color: #FF3B30;
+    background-color: #ff3b30;
     color: #fff;
     padding: 0 10px;
     line-height: 45px;
@@ -2956,7 +2978,7 @@ a:focus {
     }
 
 .List--ios .ListItem__chevron {
-    color: rgba(0, 0, 0, .12)
+    color: rgba(0, 0, 0, .12);
     }
 
 .ListItem--ios .ListItem__in {
@@ -2968,7 +2990,7 @@ a:focus {
     transition: transform .6s cubic-bezier(.36, .66, .04, 1), -webkit-transform .6s cubic-bezier(.36, .66, .04, 1);
     }
 
-.ListItem--ios:not(:last-child) .ListItem__in:not(.Tappable--active) .ListItem__before::before {
+.List .ListItem--ios:not(:last-child) .ListItem__in:not(.Tappable--active) .ListItem__before::before {
       position: absolute;
       bottom: 0;
       left: 100%;
@@ -3006,7 +3028,7 @@ a:focus {
         margin: 10px 16px 10px 0;
         width: 21px;
         height: 21px;
-        background-color: #FF3B30;
+        background-color: #ff3b30;
         border-radius: 50%;
         position: relative;
         -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, .06);
@@ -3026,7 +3048,7 @@ a:focus {
 
 @media
       (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-      .ListItem--ios:not(:last-child) .ListItem__in:not(.Tappable--active) .ListItem__before::before {
+      .List .ListItem--ios:not(:last-child) .ListItem__in:not(.Tappable--active) .ListItem__before::before {
         background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
         background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
         background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
@@ -3161,7 +3183,7 @@ a:focus {
 .Switch--ios .Switch__pseudo {
     width: 48px;
     height: 28px;
-    border: 1px solid #E6E6E6;
+    border: 1px solid #e6e6e6;
     background: #fff;
     border-radius: 15px;
     -webkit-transition:
@@ -3176,8 +3198,8 @@ a:focus {
     }
 
 .Switch--ios .Switch__self:checked + .Switch__pseudo {
-    border-color: #4CD864;
-    background: #4CD864;
+    border-color: #4cd864;
+    background: #4cd864;
     }
 
 .Switch--ios .Switch__self[disabled] + .Switch__pseudo {
@@ -3227,7 +3249,7 @@ a:focus {
     left: -3px;
     width: 20px;
     height: 20px;
-    background: #F1F1F1;
+    background: #f1f1f1;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
             box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
@@ -3302,6 +3324,44 @@ a:focus {
 .Entity__content {
       margin-top: 6px;
       }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
+.Avatar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  }
+
+.Avatar__img {
+    border-radius: 50%;
+    background-color: rgba(0, 28, 61, .08);
+    color: #aaaeb3;
+    border: none;
+    display: block;
+    max-width: 100%;
+    }
+
+div.Avatar__img {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    }
 
 .Gallery {
   position: relative;
@@ -3779,55 +3839,6 @@ a:focus {
   /* colors */
 }
 
-.FixedTabs {
-
-  }
-
-.FixedTabs--ios {
-  padding: 6px 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  }
-
-.FixedTabs--ios.FixedTabs--gray {
-  background-color: #e6e9ed;
-  }
-
-.FixedTabs--ios.FixedTabs--gray.FixedLayout--top {
-  border-bottom: 1px solid #d1d6dc;
-  }
-
-.FixedTabs--ios.FixedTabs--gray.FixedLayout--bottom {
-  border-top: 1px solid #d1d6dc;
-  }
-
-.FixedTabs--ios.FixedTabs--white {
-  background-color: #fff;
-  }
-
-.FixedTabs--ios.FixedTabs--white.FixedLayout--top {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-.FixedTabs--ios.FixedTabs--white.FixedLayout--bottom {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .FixedTabs--ios.FixedTabs--gray, .FixedTabs--ios.FixedTabs--white {
-    border-width: 0.5px;
-    }
-  }
-
-.FixedTabs--android {
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
-          box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
-  }
-
-.FixedTabs--android.FixedTabs--blue {
-  background-color: #5181b8;
-  }
-
 .Tabs {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3837,10 +3848,85 @@ a:focus {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  }
+
+.Tabs--default {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  }
+
+.Tabs--buttons {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  }
+
+/*
+ iOS
+ */
+
+.Tabs--ios.Tabs--default.Tabs--light {
+  padding: 8px;
+  background-color: #fafafa;
+  }
+
+.Tabs--ios.Tabs--default.Tabs--header {
+  padding-top: 6px;
+  }
+
+.Tabs--ios.Tabs--buttons.Tabs--header {
+  background-color: #5181b8;
+  }
+
+.FixedLayout--ios.FixedLayout--top .Tabs::after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 1px;
+  content: '';
+  bottom: 0;
+  background: rgba(0, 0, 0, .12);
+  }
+
+.FixedLayout--ios.FixedLayout--bottom .Tabs::before {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 1px;
+  content: '';
+  top: 0;
+  background: rgba(0, 0, 0, .12);
+  }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .FixedLayout--ios.FixedLayout--top .Tabs--light::after {
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    }
+
+  .FixedLayout--ios.FixedLayout--bottom .Tabs--light::before {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+    }
+  }
+
+/*
+  Android
+ */
+
+.Tabs--android {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
+          box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
+  background-color: #5181b8;
   }
 
 :root {
@@ -3852,7 +3938,7 @@ a:focus {
   /* colors */
 }
 
-.TabsItem {
+.Tabs--default .TabsItem {
   max-width: 100%;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -3870,52 +3956,116 @@ a:focus {
   font-weight: 500;
   }
 
-.TabsItem--ios {
+/*
+  iOS
+ */
+
+.Tabs--ios.Tabs--default .TabsItem {
   height: 32px;
   border: 1px solid;
   line-height: 30px;
   font-size: 14px;
+  padding: 0 12px;
   }
 
-.TabsItem--ios:not(:first-child) {
+.Tabs--ios.Tabs--default .TabsItem:not(:first-child) {
   border-left: none;
   }
 
-.TabsItem--ios:last-child {
+.Tabs--ios.Tabs--default .TabsItem:last-child {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   }
 
-.TabsItem--ios:first-child {
+.Tabs--ios.Tabs--default .TabsItem:first-child {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
   }
 
-.TabsItem--ios.TabsItem--gray {
-  border-color: #818c99;
-  color: #818c99;
+.Tabs--ios.Tabs--default.Tabs--light .TabsItem {
+  border-color: #99a2ad;
+  color: #99a2ad;
   }
 
-.TabsItem--ios.TabsItem--gray.TabsItem--selected {
+.Tabs--ios.Tabs--default.Tabs--light .TabsItem--selected {
   color: #fff;
-  background-color: #818c99;
+  background-color: #99a2ad;
   }
 
-.TabsItem--ios.TabsItem--white.Tappable--active {
+.Tabs--ios.Tabs--default.Tabs--light .TabsItem:not(.TabsItem--selected).Tappable--active {
+  background: rgba(0, 0, 0, .12);
+  }
+
+.Tabs--ios.Tabs--default.Tabs--header .TabsItem:not(.TabsItem--selected).Tappable--active {
   background-color: rgba(255, 255, 255, .1);
   }
 
-.TabsItem--ios.TabsItem--white {
+.Tabs--ios.Tabs--default.Tabs--header .TabsItem {
   border-color: #fff;
   color: #fff;
   }
 
-.TabsItem--ios.TabsItem--white.TabsItem--selected {
+.Tabs--ios.Tabs--default.Tabs--header .TabsItem--selected {
   background-color: #fff;
   color: #5181b8;
   }
 
-.TabsItem--android {
+.Tabs--ios.Tabs--buttons .TabsItem {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  }
+
+.Tabs--ios.Tabs--buttons.Tabs--header .TabsItem {
+  background-color: #5181b8;
+  }
+
+.Tabs--ios.Tabs--buttons .TabsItem__in {
+    height: 32px;
+    line-height: 32px;
+    border-radius: 16px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 16px;
+    font-size: 16px;
+    font-weight: 500;
+    }
+
+.Tabs--ios.Tabs--buttons .TabsItem {
+  padding: 8px 0;
+  }
+
+.Tabs--ios.Tabs--buttons .TabsItem:first-child {
+  padding-left: 8px;
+  }
+
+.Tabs--ios.Tabs--buttons .TabsItem:last-child {
+  padding-right: 8px;
+  }
+
+.Tabs--ios.Tabs--buttons.Tabs--light .TabsItem__in {
+    color: #71757a;
+    }
+
+.Tabs--ios.Tabs--buttons.Tabs--light .TabsItem--selected .TabsItem__in {
+    background-color: #ebedf0;
+    color: #5a5d61;
+    }
+
+.Tabs--ios.Tabs--buttons.Tabs--header .TabsItem__in {
+    color: #c2deff;
+    }
+
+.Tabs--ios.Tabs--buttons.Tabs--header .TabsItem--selected .TabsItem__in {
+    background-color: rgba(173, 211, 255, .32);
+    color: #fff;
+    }
+
+/*
+  Android
+ */
+
+.Tabs--android.Tabs--default .TabsItem {
   height: 48px;
   line-height: 48px;
   color: rgba(255, 255, 255, .5);
@@ -3923,15 +4073,15 @@ a:focus {
   position: relative;
   }
 
-.TabsItem--android.TabsItem--selected {
+.Tabs--android.Tabs--default .TabsItem--selected {
   color: #fff;
   }
 
-.TabsItem--android.TabsItem--white.Tappable--active {
+.Tabs--android.Tabs--default.Tabs--header .TabsItem.Tappable--active {
   background-color: rgba(255, 255, 255, .1);
   }
 
-.TabsItem--android.TabsItem--selected::after {
+.Tabs--android.Tabs--default .TabsItem--selected::after {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -4132,8 +4282,8 @@ a:focus {
       content: '';
       background: #fff;
       border-radius: 10px;
-      -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
-              box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+      -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 .5px rgba(0, 0, 0, .04);
+              box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 1px 0 rgba(0, 0, 0, .12), 0 0 0 .5px rgba(0, 0, 0, .04);
       }
 
 :root {
@@ -4300,8 +4450,6 @@ a:focus {
                 transform: scale(1);
         }
 
-
-
 :root {
 
   /* borders */
@@ -4315,7 +4463,7 @@ a:focus {
   display: block;
   }
 
-.Checkbox [type="checkbox"] {
+.Checkbox__input {
     display: none;
     }
 
@@ -4359,7 +4507,7 @@ a:focus {
       color: #000;
       }
 
-.Checkbox [type="checkbox"]:checked ~ .Checkbox__container .Checkbox__icon {
+.Checkbox__input:checked ~ .Checkbox__container .Checkbox__icon {
     background-color: #528bcc;
     border-color: #528bcc;
     color: #fff;
@@ -4386,8 +4534,6 @@ a:focus {
       font-size: 16px;
       line-height: 20px;
       }
-
-
 
 :root {
 
@@ -4470,7 +4616,7 @@ a:focus {
 .Input--ios .Input__el {
     border-radius: 10px;
     background-color: rgb(242, 243, 245);
-    border: solid .5px rgba(0, 0, 0, 0.15);
+    border: solid .5px rgba(0, 0, 0, .15);
     }
 
 .Input--ios .Input__el:focus {
@@ -4574,7 +4720,7 @@ a:focus {
 .Select--ios .Select__container {
     border-radius: 10px;
     background-color: rgb(242, 243, 245);
-    border: solid .5px rgba(0, 0, 0, 0.15);
+    border: solid .5px rgba(0, 0, 0, .15);
     }
 
 .Select--ios select:focus ~ .Select__container,
@@ -4647,7 +4793,7 @@ a:focus {
 .Textarea--ios textarea {
     border-radius: 10px;
     background-color: rgb(242, 243, 245);
-    border: solid .5px rgba(0, 0, 0, 0.15);
+    border: solid .5px rgba(0, 0, 0, .15);
     }
 
 .Textarea--ios textarea::-webkit-input-placeholder {
@@ -4737,3 +4883,4 @@ a:focus {
       z-index: 1;
       opacity: 0;
       }
+
