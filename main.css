@@ -786,7 +786,7 @@ a:focus {
       overflow: hidden;
       -o-text-overflow: ellipsis;
          text-overflow: ellipsis;
-      min-width: 50%;
+      min-width: 44%;
       }
 .PanelHeader-content {
         overflow: hidden;
@@ -865,6 +865,7 @@ a:focus {
       -webkit-flex-basis: 0;
           -ms-flex-preferred-size: 0;
               flex-basis: 0;
+      padding-right: 12px;
       }
 .PanelHeader--ios .PanelHeader__left-in {
         -webkit-box-sizing: border-box;
@@ -910,10 +911,10 @@ a:focus {
       -webkit-flex-basis: 0;
           -ms-flex-preferred-size: 0;
               flex-basis: 0;
+      padding-left: 12px;
       }
 .PanelHeader--ios .PanelHeader-right {
         font-size: 17px;
-        padding-left: 12px;
         }
 .PanelHeader--ios .PanelHeader-right .HeaderButton:not(:first-child) {
           padding-left: 12px;
@@ -947,6 +948,13 @@ a:focus {
     -webkit-flex-grow: 2;
         -ms-flex-positive: 2;
             flex-grow: 2;
+    height: 100%;
+    }
+.PanelHeader--android .PanelHeader__left {
+    padding-right: 6px;
+    }
+.PanelHeader--android .PanelHeader__right {
+    padding-left: 6px;
     }
 .PanelHeader--android .PanelHeader__in--brand {
     background: #5181b8;
@@ -959,14 +967,17 @@ a:focus {
 .PanelHeader--android .PanelHeader-right:not(:empty) {
       padding-right: 4px;
       }
-.PanelHeader--android .PanelHeader-left-in {
+.PanelHeader--android .PanelHeader-left-in:not(:empty) {
       padding-left: 4px;
       }
 .PanelHeader--android .PanelHeader-content {
       font-size: 20px;
       line-height: 56px;
+      height: 100%;
       font-weight: 500;
-      padding: 0 12px;
+      }
+.PanelHeader--android .PanelHeader-content > *:not(.Search):not(.PanelHeaderContent) {
+      padding: 0 6px;
       }
 .PanelHeader--android .Search {
         position: absolute;
@@ -1038,7 +1049,7 @@ a:focus {
   transition: background-color .15s ease-out;
   }
 
-.Tappable--ios.Tappable--active:not([disabled]):not(.TabsItem):not(.HeaderButton):not(.Button--type-default) {
+.Tappable--ios.Tappable--active:not([disabled]):not(.TabsItem):not(.HeaderButton):not(.Button--type-default):not(.PanelHeaderContent__in) {
   background: #d9d9d9 !important;
   -webkit-transition: none;
   -o-transition: none;
@@ -1056,7 +1067,7 @@ a:focus {
   transition: background-color .15s ease-out;
   }
 
-.Tappable--android.Tappable--active:not([disabled]):not(.TabsItem):not(.HeaderButton):not(.Button--type-default) {
+.Tappable--android.Tappable--active:not([disabled]):not(.TabsItem):not(.HeaderButton):not(.Button--type-default):not(.PanelHeaderContent__in) {
   background: #f0f1f3 !important;
   }
 
@@ -1132,6 +1143,187 @@ a:focus {
     opacity: 0;
   }
 }
+
+.PanelHeaderContent {
+  line-height: initial;
+  height: 100%;
+  }
+
+  .PanelHeaderContent__in {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 100%;
+    }
+
+  .PanelHeaderContent__status {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    }
+
+  /*
+  iOS
+ */
+
+  .PanelHeaderContent--ios {
+
+  }
+
+  .PanelHeaderContent--ios .PanelHeaderContent__in {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    }
+
+  .PanelHeaderContent--ios .PanelHeaderContent__in.Tappable--active {
+    opacity: .7;
+    }
+
+  .PanelHeaderContent--ios .PanelHeaderContent__children {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      font-size: 17px;
+      line-height: 20px;
+      }
+
+  .PanelHeaderContent--ios .PanelHeaderContent__status ~ .PanelHeaderContent__children {
+      font-size: 16px;
+      line-height: 19px;
+      }
+
+  .PanelHeaderContent--ios .PanelHeaderContent__aside {
+        margin-left: 2px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        }
+
+  .PanelHeaderContent--ios .PanelHeaderContent__status {
+      opacity: .6;
+      font-size: 13px;
+      }
+
+  /*
+  Android
+ */
+
+  .PanelHeaderContent--android {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  }
+
+  .PanelHeaderContent--android .PanelHeaderContent__before {
+    padding-right: 6px;
+    padding-left: 6px;
+    }
+
+  .PanelHeaderContent--android .PanelHeaderContent__in {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 6px;
+    }
+
+  .PanelHeaderContent--android .PanelHeaderContent__in.Tappable--active {
+    background-color: rgba(255, 255, 255, .1);
+    }
+
+  .PanelHeaderContent--android .PanelHeaderContent__children {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 500;
+      }
+
+  .PanelHeaderContent--android .PanelHeaderContent__status ~ .PanelHeaderContent__children {
+      font-size: 16px;
+      line-height: 19px;
+      }
+
+  .PanelHeaderContent--android .PanelHeaderContent__aside {
+        margin-left: 4px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        opacity: .8;
+        }
+
+  .PanelHeaderContent--android .PanelHeaderContent__status {
+      opacity: .6;
+      font-size: 13px;
+      line-height: 16px;
+      }
 
 :root {
 
