@@ -2670,6 +2670,8 @@ a:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
+  text-decoration: none;
+  cursor: default;
   }
 
 .Button[disabled] {
@@ -3473,6 +3475,26 @@ a:focus {
   /* colors */
 }
 
+.Footer {
+  margin: 24px 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 13px;
+  color: #909499;
+  line-height: 16px;
+  font-weight: normal;
+  text-align: center;
+  }
+
+:root {
+
+  /* borders */
+
+  /* easings */
+
+  /* colors */
+}
+
 .Switch {
   display: block;
   padding: 8px 15px;
@@ -3680,29 +3702,40 @@ a:focus {
           box-sizing: border-box;
   }
 
-.Avatar__img {
-    border-radius: 50%;
-    background-color: rgba(0, 28, 61, .08);
+.Avatar__in {
+    position: relative;
     color: #aaaeb3;
-    border: none;
-    display: block;
-    max-width: 100%;
     }
 
-div.Avatar__img {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    }
+.Avatar__img {
+      background-color: rgba(0, 28, 61, .08);
+      border: none;
+      display: block;
+      max-width: 100%;
+      position: relative;
+      z-index: 1;
+      }
+
+.Avatar__children {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      }
 
 .Gallery {
   position: relative;
@@ -4906,6 +4939,14 @@ div.Avatar__img {
   font-size: 16px;
   }
 
+.Input--center .Input__el {
+  text-align: center;
+  }
+
+.Input--right .Input__el {
+  text-align: right;
+  }
+
 .Input__el {
   margin: 0;
   width: 100%;
@@ -5062,6 +5103,14 @@ div.Avatar__img {
 
 .Select--not-selected .Select__title {
       color: #909499;
+      }
+
+.Select--align-right .Select__title {
+      text-align: right;
+      }
+
+.Select--align-center .Select__title {
+      text-align: center;
       }
 
 .Select .Icon {
