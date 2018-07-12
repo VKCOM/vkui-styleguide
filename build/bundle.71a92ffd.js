@@ -14226,6 +14226,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 __webpack_require__(199);
@@ -14251,6 +14253,8 @@ var _getClassName = __webpack_require__(7);
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -14320,13 +14324,12 @@ var Slider = function (_Component) {
     };
 
     _this.getRef = function (container) {
-      _this.container = container;
+      return _this.container = container;
     };
 
     _this.state = {
       startX: 0
     };
-
     _this.isControlledOutside = _this.props.hasOwnProperty('value');
     return _this;
   }
@@ -14400,9 +14403,19 @@ var Slider = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _props = this.props,
+          className = _props.className,
+          min = _props.min,
+          max = _props.max,
+          step = _props.step,
+          value = _props.value,
+          defaultValue = _props.defaultValue,
+          onChange = _props.onChange,
+          restProps = _objectWithoutProperties(_props, ['className', 'min', 'max', 'step', 'value', 'defaultValue', 'onChange']);
+
       return _react2.default.createElement(
         'div',
-        { className: (0, _classnames2.default)(baseClassNames, this.props.className), ref: this.getRef, style: this.props.style },
+        _extends({}, restProps, { className: (0, _classnames2.default)(baseClassNames, className), ref: this.getRef }),
         _react2.default.createElement(
           _Touch2.default,
           { onStart: this.onStart, onMoveX: this.onMoveX, onEnd: this.onEnd, className: 'Slider__in' },
@@ -44135,6 +44148,8 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -44265,9 +44280,19 @@ var RangeSlider = function (_Slider) {
     value: function render() {
       var _this3 = this;
 
+      var _props = this.props,
+          className = _props.className,
+          min = _props.min,
+          max = _props.max,
+          step = _props.step,
+          value = _props.value,
+          defaultValue = _props.defaultValue,
+          onChange = _props.onChange,
+          restProps = _objectWithoutProperties(_props, ['className', 'min', 'max', 'step', 'value', 'defaultValue', 'onChange']);
+
       return _react2.default.createElement(
         'div',
-        { className: (0, _classnames2.default)(baseClassNames, this.props.className), ref: this.getRef, style: this.props.style },
+        _extends({}, restProps, { className: (0, _classnames2.default)(baseClassNames, className), ref: this.getRef }),
         _react2.default.createElement(
           _Touch2.default,
           { onStart: this.onStart, onMoveX: this.onMoveX, onEnd: this.onEnd, className: 'Slider__in' },
@@ -45392,12 +45417,12 @@ var SearchAndroid = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'Search__control' },
-          _react2.default.createElement('input', _extends({
+          _react2.default.createElement('input', _extends({}, inputProps, {
             className: 'Search__input',
             ref: this.inputRef,
             value: this.value,
             onChange: this.onChange
-          }, inputProps))
+          }))
         ),
         _react2.default.createElement(
           'div',
@@ -45765,7 +45790,7 @@ var SearchIOS = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'Search__control' },
-            _react2.default.createElement('input', _extends({
+            _react2.default.createElement('input', _extends({}, inputProps, {
               id: 'search-' + searchId,
               ref: this.inputRef,
               type: 'text',
@@ -45774,7 +45799,7 @@ var SearchIOS = function (_React$Component) {
               onBlur: this.onBlur,
               onChange: this.onChange,
               value: this.value
-            }, inputProps)),
+            })),
             after && _react2.default.createElement(
               'div',
               { className: 'Search__after-width' },
@@ -46437,6 +46462,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 __webpack_require__(236);
@@ -46468,6 +46495,8 @@ var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -46733,16 +46762,23 @@ var Gallery = function (_Component) {
           duration = _state4.duration,
           current = _state4.current,
           dragging = _state4.dragging;
+
       var _props = this.props,
+          children = _props.children,
+          slideWidth = _props.slideWidth,
+          autoplay = _props.autoplay,
+          initialSlideIndex = _props.initialSlideIndex,
+          slideIndex = _props.slideIndex,
+          onDragStart = _props.onDragStart,
+          onDragEnd = _props.onDragEnd,
+          onChange = _props.onChange,
+          onEnd = _props.onEnd,
+          align = _props.align,
+          bullets = _props.bullets,
           className = _props.className,
-          style = _props.style,
-          slideWidth = _props.slideWidth;
+          restProps = _objectWithoutProperties(_props, ['children', 'slideWidth', 'autoplay', 'initialSlideIndex', 'slideIndex', 'onDragStart', 'onDragEnd', 'onChange', 'onEnd', 'align', 'bullets', 'className']);
 
       var indent = dragging ? this.calculateDragIndent() : this.calculateIndent(current);
-      var classname = (0, _classnames4.default)(baseClassNames, className, _defineProperty({
-        'Gallery--dragging': dragging
-      }, 'Gallery--' + this.props.align, true));
-
       var layerStyle = {
         WebkitTransform: 'translateX(' + indent + 'px)',
         transform: 'translateX(' + indent + 'px)',
@@ -46752,7 +46788,9 @@ var Gallery = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: classname, style: style, ref: this.getContainerRef },
+        _extends({}, restProps, { className: (0, _classnames4.default)(baseClassNames, className, _defineProperty({
+            'Gallery--dragging': dragging
+          }, 'Gallery--' + this.props.align, true)), ref: this.getContainerRef }),
         _react2.default.createElement(
           _Touch2.default,
           {
@@ -52313,7 +52351,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': '```jsx\n<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">\'react\'</span>;\n<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">\'react-dom\'</span>;\n<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> UI <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> <span class="hljs-string">\'@vkontakte/vkui/dist/vkui.css\'</span>;\n\n<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span> (<span class="hljs-params"></span>) </span>{\n  <span class="hljs-keyword">return</span> (\n    &lt;UI.View activePanel="main" header&gt;\n      &lt;UI.Panel id="main" header={{ title: \'VKUI\' }}&gt;\n        &lt;UI.Group title="Items"&gt;\n          &lt;UI.List&gt;\n            &lt;UI.ListItem&gt;Hello&lt;/UI.ListItem&gt;\n            &lt;UI.ListItem&gt;World&lt;/UI.ListItem&gt;\n          &lt;/UI.List&gt;\n        &lt;/UI.Group&gt;\n      &lt;/UI.Panel&gt;\n    &lt;/UI.View&gt;\n  );\n}\n\nReactDOM.render(\n  &lt;App /&gt;,\n  document.getElementById(\'root\')\n);\n```'
+        'content': '```jsx\n<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">\'react\'</span>;\n<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">\'react-dom\'</span>;\n<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> UI <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> <span class="hljs-string">\'@vkontakte/vkui/dist/vkui.css\'</span>;\n\n<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span> (<span class="hljs-params"></span>) </span>{\n  <span class="hljs-keyword">return</span> (\n    &lt;UI.View activePanel="main" header&gt;\n      &lt;UI.Panel id="main"&gt;\n        &lt;UI.PanelHeader&gt;VKUI&lt;/UI.PanelHeader&gt;\n        &lt;UI.Group title="Items"&gt;\n          &lt;UI.List&gt;\n            &lt;UI.ListItem&gt;Hello&lt;/UI.ListItem&gt;\n            &lt;UI.ListItem&gt;World&lt;/UI.ListItem&gt;\n          &lt;/UI.List&gt;\n        &lt;/UI.Group&gt;\n      &lt;/UI.Panel&gt;\n    &lt;/UI.View&gt;\n  );\n}\n\nReactDOM.render(\n  &lt;App /&gt;,\n  document.getElementById(\'root\')\n);\n```'
     }]
 	
 
@@ -53433,7 +53471,7 @@ module.exports = createFind;
 /* 379 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.5.0","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.5.1","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 380 */
