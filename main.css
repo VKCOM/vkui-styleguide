@@ -22,7 +22,6 @@ div#root {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
 }
 
 html {
@@ -96,6 +95,9 @@ a:focus {
 
   /* colors */
 }
+.View--ios {
+  font-family: -apple-system, Helvetica Neue, Arial;
+  }
 .View--ios.View--header .Panel__in {
   padding-top: 64px;
   padding-top: calc(44px + constant(safe-area-inset-top));
@@ -331,6 +333,9 @@ a:focus {
   to {
     opacity: 0;
     }
+  }
+.View--android {
+  font-family: Roboto, Arial;
   }
 .View--android.View--header .Panel__in {
   padding-top: 56px;
@@ -948,10 +953,13 @@ a:focus {
             flex-grow: 2;
     height: 100%;
     }
-.PanelHeader--android .PanelHeader__left {
+.PanelHeader--android .PanelHeader-left-in {
     padding-right: 6px;
     }
-.PanelHeader--android .PanelHeader__right {
+.PanelHeader--android .PanelHeader-left-in:empty {
+    padding-right: 12px;
+    }
+.PanelHeader--android .PanelHeader-right {
     padding-left: 6px;
     }
 .PanelHeader--android .PanelHeader__in--brand {
@@ -1019,11 +1027,14 @@ a:focus {
     min-height: 100%;
     }
 
-  .Panel__in::after {
-      content: ' ';
-      padding-top: 1px;
-      width: 100%;
-      display: block;
+  .Panel__in-before {
+      height: 1px;
+      margin-top: -1px;
+      }
+
+  .Panel__in-after {
+      float: left;
+      height: 1px;
       }
 
 :root {
@@ -1341,12 +1352,12 @@ a:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
   display: block;
   color: currentColor;
   padding: 0;
   margin: 0;
   font-size: 17px;
+  font-family: -apple-system, Helvetica Neue, Arial;
   }
 
 .HeaderButton[disabled] {
@@ -1388,6 +1399,7 @@ a:focus {
   font-weight: 500;
   font-size: 14px;
   padding: 0 12px;
+  font-family: Roboto, Arial;
   }
 
 .HeaderButton--android .Icon--24 {
@@ -1608,6 +1620,10 @@ a:focus {
  * iOS
  */
 
+.Root--ios {
+  font-family: -apple-system, Helvetica Neue, Arial;
+  }
+
 .Root--ios.Root--transition,
 .Root--ios.Root--popout {
   height: 100vh;
@@ -1739,7 +1755,7 @@ a:focus {
  */
 
 .Root--android {
-  font-family: Roboto, Droid, 'Open Sans', sans-serif;
+  font-family: Roboto, Arial;
   }
 
 .Root--android .Root__view--show-forward {
@@ -2306,6 +2322,7 @@ a:focus {
       overflow: hidden;
       -o-text-overflow: ellipsis;
          text-overflow: ellipsis;
+      font-family: -apple-system, Helvetica Neue, Arial;
       }
 
 .Alert--ios .Alert__btn:active {
@@ -2481,6 +2498,7 @@ a:focus {
       overflow: hidden;
       -o-text-overflow: ellipsis;
          text-overflow: ellipsis;
+      font-family: Roboto, Arial;
       }
 
 .Alert--android .Alert__btn--cancel {
@@ -2860,6 +2878,14 @@ a:focus {
     padding: 11px;
     }
 
+/*
+  iOS
+ */
+
+.Button--ios {
+  font-family: -apple-system, Helvetica Neue, Arial;
+  }
+
 .Button--ios.Button--size-m {
   border-radius: 15px;
   }
@@ -2886,6 +2912,14 @@ a:focus {
 .Button--ios.Button--type-cell .Button__before .Icon {
       margin-right: 12px;
       }
+
+/*
+  Android
+ */
+
+.Button--android {
+  font-family: Roboto, Arial;
+  }
 
 .Button--android.Button--type-default {
   border-radius: 4px;
@@ -3915,6 +3949,7 @@ a:focus {
         min-width: 0;
         background-color: transparent;
         z-index: 2;
+        font-family: -apple-system, Helvetica Neue, Arial;
         }
 
 .Search--ios.Search--has-after .Search__input {
@@ -4185,6 +4220,7 @@ a:focus {
     font-size: 16px;
     background-color: transparent;
     color: #fff;
+    font-family: Roboto, Arial;
     }
 
 .Search--android .Search__input::-webkit-input-placeholder {
@@ -4970,7 +5006,6 @@ a:focus {
   font-size: 16px;
   color: #000;
   padding: 12px;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
   }
 
 .Input__el:disabled {
@@ -5010,7 +5045,7 @@ a:focus {
   }
 
 .Input--ios {
-
+  font-family: -apple-system, Helvetica Neue, Arial;
   }
 
 .Input--ios .Input__el {
@@ -5024,6 +5059,7 @@ a:focus {
     }
 
 .Input--android {
+  font-family: Roboto, Arial;
   }
 
 .Input--android .Input__el {
@@ -5187,7 +5223,6 @@ a:focus {
     min-height: 86px;
     max-height: 198px;
     border: none;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
     }
 
 .Textarea textarea:disabled {
@@ -5199,6 +5234,7 @@ a:focus {
   }
 
 .Textarea--ios textarea {
+    font-family: -apple-system, Helvetica Neue, Arial;
     border-radius: 10px;
     background-color: rgb(242, 243, 245);
     border: solid .5px rgba(0, 0, 0, .15);
@@ -5231,6 +5267,7 @@ a:focus {
 .Textarea--android textarea {
     border-radius: 4px;
     background-color: #f2f3f5;
+    font-family: Roboto, Arial;
     }
 
 .Textarea--android textarea::-webkit-input-placeholder {
