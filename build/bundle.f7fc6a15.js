@@ -15243,9 +15243,9 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _classnames = __webpack_require__(6);
+var _classnames6 = __webpack_require__(6);
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _classnames7 = _interopRequireDefault(_classnames6);
 
 __webpack_require__(360);
 
@@ -15293,31 +15293,36 @@ var PanelHeader = function (_React$Component) {
       this.addonNode = this.document.getElementById('header-addon-' + this.context.panel);
       this.titleNode = this.document.getElementById('header-title-' + this.context.panel);
       this.rightNode = this.document.getElementById('header-right-' + this.context.panel);
-      this.context.setHeaderTheme(_defineProperty({}, this.context.panel, { theme: this.props.theme, noShadow: this.props.noShadow }));
+      this.bgNode = this.document.getElementById('header-bg-' + this.context.panel);
+
       this.setState({ ready: true });
     }
   }, {
     key: 'render',
     value: function render() {
+      var _classnames;
+
       var _props = this.props,
           left = _props.left,
           addon = _props.addon,
           children = _props.children,
-          right = _props.right;
+          right = _props.right,
+          theme = _props.theme,
+          noShadow = _props.noShadow;
 
       var isPrimitive = typeof children === 'string' || typeof children === 'number';
 
-      return this.state.ready ? [_reactDom2.default.createPortal(_react2.default.createElement(
+      return this.state.ready ? [_reactDom2.default.createPortal(_react2.default.createElement('div', { className: (0, _classnames7.default)('PanelHeader-bg', (_classnames = {}, _defineProperty(_classnames, 'PanelHeader-bg--' + theme, true), _defineProperty(_classnames, 'PanelHeader-bg--no-shadow', noShadow), _classnames)) }), this.bgNode), _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: (0, _classnames2.default)('PanelHeader-left-in') },
+        { className: (0, _classnames7.default)('PanelHeader-left-in', _defineProperty({}, 'PanelHeader-left-in--' + theme, true)) },
         left
       ), this.leftNode), osname === _platform.IOS && _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: 'PanelHeader-addon' },
+        { className: (0, _classnames7.default)('PanelHeader-addon', _defineProperty({}, 'PanelHeader-addon--' + theme, true)) },
         addon
       ), this.addonNode), _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: 'PanelHeader-content' },
+        { className: (0, _classnames7.default)('PanelHeader-content', _defineProperty({}, 'PanelHeader-content--' + theme, true)) },
         isPrimitive ? _react2.default.createElement(
           'span',
           null,
@@ -15325,7 +15330,7 @@ var PanelHeader = function (_React$Component) {
         ) : children
       ), this.titleNode), _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: 'PanelHeader-right' },
+        { className: (0, _classnames7.default)('PanelHeader-right', _defineProperty({}, 'PanelHeader-right--' + theme, true)) },
         right
       ), this.rightNode)] : null;
     }
@@ -15427,8 +15432,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.transitionEndEventName = exports.transitionStartEventName = undefined;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 __webpack_require__(364);
@@ -15441,9 +15444,9 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _classnames4 = __webpack_require__(6);
+var _classnames2 = __webpack_require__(6);
 
-var _classnames5 = _interopRequireDefault(_classnames4);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _animate = __webpack_require__(362);
 
@@ -15621,29 +15624,12 @@ var View = function (_Component) {
       swipeBackPrevPanel: null,
       swipingBackFinish: null,
 
-      browserSwipe: false,
-
-      headerThemes: [].concat(props.children).reduce(function (res, panel) {
-        res[panel.props.id] = {};return res;
-      }, {})
+      browserSwipe: false
     };
     return _this;
   }
 
   _createClass(View, [{
-    key: 'getChildContext',
-    value: function getChildContext() {
-      var _this2 = this;
-
-      return {
-        setHeaderTheme: function setHeaderTheme(theme) {
-          _this2.setState({
-            headerThemes: _extends({}, _this2.state.headerThemes, theme)
-          });
-        }
-      };
-    }
-  }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
       this.setPanelBg(this.props.activePanel);
@@ -15651,7 +15637,7 @@ var View = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      var _this3 = this;
+      var _this2 = this;
 
       if (this.props.activePanel !== nextProps.activePanel) {
         this.setPanelBg(nextProps.activePanel);
@@ -15664,7 +15650,7 @@ var View = function (_Component) {
       // Нужен переход
       if (this.props.activePanel !== nextProps.activePanel && !this.state.swipingBack && !this.state.browserSwipe) {
         var firstLayer = this.panels.find(function (panel) {
-          return panel.props.id === _this3.props.activePanel || panel.props.id === nextProps.activePanel;
+          return panel.props.id === _this2.props.activePanel || panel.props.id === nextProps.activePanel;
         });
 
         var isBack = firstLayer && firstLayer.props.id === nextProps.activePanel;
@@ -15695,9 +15681,9 @@ var View = function (_Component) {
           visiblePanels: [nextProps.activePanel],
           scrolls: (0, _removeObjectKeys2.default)(this.state.scrolls, [this.state.swipeBackPrevPanel])
         }, function () {
-          _this3.document.dispatchEvent(new _this3.window.CustomEvent(transitionEndEventName));
-          window.scrollTo(0, _this3.state.scrolls[_this3.state.activePanel]);
-          _this3.props.onTransition && _this3.props.onTransition();
+          _this2.document.dispatchEvent(new _this2.window.CustomEvent(transitionEndEventName));
+          window.scrollTo(0, _this2.state.scrolls[_this2.state.activePanel]);
+          _this2.props.onTransition && _this2.props.onTransition();
         });
       }
     }
@@ -15814,7 +15800,7 @@ var View = function (_Component) {
   }, {
     key: 'onSwipeBackCancel',
     value: function onSwipeBackCancel() {
-      var _this4 = this;
+      var _this3 = this;
 
       this.setState({
         swipeBackPrevPanel: null,
@@ -15824,7 +15810,7 @@ var View = function (_Component) {
         swipebackStartX: 0,
         swipeBackShift: 0
       }, function () {
-        _this4.document.dispatchEvent(new _this4.window.CustomEvent(transitionEndEventName));
+        _this3.document.dispatchEvent(new _this3.window.CustomEvent(transitionEndEventName));
       });
     }
   }, {
@@ -15911,8 +15897,7 @@ var View = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this5 = this,
-          _classnames;
+      var _this4 = this;
 
       var _props = this.props,
           style = _props.style,
@@ -15923,15 +15908,12 @@ var View = function (_Component) {
           nextPanel = _state.nextPanel,
           activePanel = _state.activePanel,
           swipeBackPrevPanel = _state.swipeBackPrevPanel,
-          swipeBackNextPanel = _state.swipeBackNextPanel,
-          headerThemes = _state.headerThemes;
+          swipeBackNextPanel = _state.swipeBackNextPanel;
 
       var hasPopout = !!popout;
       var panels = this.panels.filter(function (panel) {
-        return _this5.state.visiblePanels.indexOf(panel.props.id) > -1 || panel.props.id === _this5.state.swipeBackPrevPanel || panel.props.id === _this5.state.swipeBackNextPanel;
+        return _this4.state.visiblePanels.indexOf(panel.props.id) > -1 || panel.props.id === _this4.state.swipeBackPrevPanel || panel.props.id === _this4.state.swipeBackNextPanel;
       });
-
-      var activePanelHeaderTheme = headerThemes[activePanel || nextPanel];
 
       var modifiers = {
         'View--header': header,
@@ -15943,7 +15925,7 @@ var View = function (_Component) {
         _Touch2.default,
         {
           component: 'section',
-          className: (0, _classnames5.default)(baseClassNames, modifiers),
+          className: (0, _classnames3.default)(baseClassNames, modifiers),
           style: style,
           onMoveX: this.onMoveX,
           onEnd: this.onEnd
@@ -15954,40 +15936,47 @@ var View = function (_Component) {
           osname === _platform.IOS && _react2.default.createElement('div', { className: 'View__header-scrolltop', onClick: this.onScrollTop }),
           _react2.default.createElement(
             'div',
-            { className: (0, _classnames5.default)(_PanelHeader.baseClassNames, (_classnames = {}, _defineProperty(_classnames, 'PanelHeader--' + activePanelHeaderTheme.theme, true), _defineProperty(_classnames, 'PanelHeader--no-shadow', activePanelHeaderTheme.noShadow), _classnames)) },
+            { className: (0, _classnames3.default)(_PanelHeader.baseClassNames) },
             panels.map(function (panel) {
-              var _classnames2;
-
               return _react2.default.createElement(
                 'div',
                 {
-                  className: (0, _classnames5.default)('PanelHeader__in', (_classnames2 = {}, _defineProperty(_classnames2, 'PanelHeader__in--' + headerThemes[panel.props.id].theme, true), _defineProperty(_classnames2, 'PanelHeader__in--active', panel.props.id === activePanel), _defineProperty(_classnames2, 'PanelHeader__in--prev', panel.props.id === prevPanel), _defineProperty(_classnames2, 'PanelHeader__in--next', panel.props.id === nextPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-prev', panel.props.id === _this5.state.swipeBackPrevPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-next', panel.props.id === _this5.state.swipeBackNextPanel), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-success', _this5.state.swipingBackFinish === true), _defineProperty(_classnames2, 'PanelHeader__in--swipe-back-failed', _this5.state.swipingBackFinish === false), _classnames2)),
-                  style: _this5.calcHeaderSwipeStyles(panel.props.id).item,
+                  className: (0, _classnames3.default)('PanelHeader__in', {
+                    'PanelHeader__in--active': panel.props.id === activePanel,
+                    'PanelHeader__in--prev': panel.props.id === prevPanel,
+                    'PanelHeader__in--next': panel.props.id === nextPanel,
+                    'PanelHeader__in--swipe-back-prev': panel.props.id === _this4.state.swipeBackPrevPanel,
+                    'PanelHeader__in--swipe-back-next': panel.props.id === _this4.state.swipeBackNextPanel,
+                    'PanelHeader__in--swipe-back-success': _this4.state.swipingBackFinish === true,
+                    'PanelHeader__in--swipe-back-failed': _this4.state.swipingBackFinish === false
+                  }),
+                  style: _this4.calcHeaderSwipeStyles(panel.props.id).item,
                   key: panel.props.id
                 },
+                _react2.default.createElement('div', { className: 'PanelHeader__bg', key: panel.props.id, id: 'header-bg-' + panel.props.id }),
                 _react2.default.createElement(
                   'div',
                   { className: 'PanelHeader__left' },
                   _react2.default.createElement('div', {
                     className: 'PanelHeader__left-in',
                     id: 'header-left-' + panel.props.id,
-                    style: _this5.calcHeaderSwipeStyles(panel.props.id).left
+                    style: _this4.calcHeaderSwipeStyles(panel.props.id).left
                   }),
                   osname === _platform.IOS && _react2.default.createElement('div', {
                     className: 'PanelHeader__addon',
                     id: 'header-addon-' + panel.props.id,
-                    style: _this5.calcHeaderSwipeStyles(panel.props.id).icon
+                    style: _this4.calcHeaderSwipeStyles(panel.props.id).icon
                   })
                 ),
                 _react2.default.createElement('div', {
                   className: 'PanelHeader__content',
-                  style: _this5.calcHeaderSwipeStyles(panel.props.id).title,
+                  style: _this4.calcHeaderSwipeStyles(panel.props.id).title,
                   id: 'header-title-' + panel.props.id
                 }),
                 _react2.default.createElement('div', {
                   className: 'PanelHeader__right',
                   id: 'header-right-' + panel.props.id,
-                  style: _this5.calcHeaderSwipeStyles(panel.props.id).right
+                  style: _this4.calcHeaderSwipeStyles(panel.props.id).right
                 })
               );
             })
@@ -16000,16 +15989,16 @@ var View = function (_Component) {
             return _react2.default.createElement(
               'div',
               {
-                className: (0, _classnames5.default)('View__panel', _defineProperty({
+                className: (0, _classnames3.default)('View__panel', _defineProperty({
                   'View__panel--active': panel.props.id === activePanel,
                   'View__panel--prev': panel.props.id === prevPanel,
                   'View__panel--next': panel.props.id === nextPanel,
-                  'View__panel--swipe-back-prev': panel.props.id === _this5.state.swipeBackPrevPanel,
-                  'View__panel--swipe-back-next': panel.props.id === _this5.state.swipeBackNextPanel,
-                  'View__panel--swipe-back-success': _this5.state.swipingBackFinish === true,
-                  'View__panel--swipe-back-failed': _this5.state.swipingBackFinish === false
+                  'View__panel--swipe-back-prev': panel.props.id === _this4.state.swipeBackPrevPanel,
+                  'View__panel--swipe-back-next': panel.props.id === _this4.state.swipeBackNextPanel,
+                  'View__panel--swipe-back-success': _this4.state.swipingBackFinish === true,
+                  'View__panel--swipe-back-failed': _this4.state.swipingBackFinish === false
                 }, 'View__panel--theme-' + panel.props.theme, true)),
-                style: _this5.calcPanelSwipeStyles(panel.props.id),
+                style: _this4.calcPanelSwipeStyles(panel.props.id),
                 key: panel.props.id
               },
               _react2.default.createElement(
@@ -16072,9 +16061,6 @@ View.contextTypes = {
   isWebView: _propTypes2.default.bool,
   window: _propTypes2.default.any,
   document: _propTypes2.default.any
-};
-View.childContextTypes = {
-  setHeaderTheme: _propTypes2.default.func
 };
 exports.default = View;
 
@@ -42679,14 +42665,10 @@ var Textarea = function (_Component) {
           _this.setState({ height: scrollHeight - diff });
         }
 
-        // const top = document.body.scrollTop;
-
         _this.setState({ height: 0 }, function () {
           var height = el.scrollHeight - diff;
 
           _this.setState({ height: height });
-          // TODO fix problem with scroll to top
-          // document.body.scrollTop = top;
 
           _this.props.onResize(el);
         });
@@ -43846,6 +43828,7 @@ var Checkbox = function Checkbox(_ref) {
       component: 'label',
       className: (0, _classnames2.default)(baseClassName, className),
       style: style,
+      disabled: restProps.disabled,
       activeEffectDelay: osname === _platform.IOS ? 100 : _Tappable.ACTIVE_EFFECT_DELAY
     },
     _react2.default.createElement('input', _extends({}, restProps, { type: 'checkbox', className: 'Checkbox__input' })),
@@ -51893,7 +51876,7 @@ module.exports = {
             'required': false,
             'description': '',
             'defaultValue': {
-                'value': 'false',
+                'value': 'true',
                 'computed': false
             },
             'tags': {},
@@ -52071,7 +52054,7 @@ Panel.defaultProps = {
   children: '',
   theme: 'gray',
   centered: false,
-  optimized: false
+  optimized: true
 };
 Panel.contextTypes = {
   insets: _propTypes2.default.shape({
@@ -53473,7 +53456,7 @@ module.exports = createFind;
 /* 379 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.5.2","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.5.3","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 380 */

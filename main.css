@@ -53,6 +53,10 @@ a:focus {
   z-index: 1;
 }
 
+.Textarea-underline {
+  position: relative;
+  }
+
 .Input-underline::after,
 .Select-underline::after,
 .Textarea-underline::after {
@@ -426,6 +430,7 @@ a:focus {
   }
 .View__header {
     z-index: 2;
+    position: fixed;
     }
 .View--animated .View__panel,
   .View--animated .View__header,
@@ -576,13 +581,20 @@ a:focus {
 .PanelHeader--ios .PanelHeader__in--next {
   overflow: hidden;
   }
+.PanelHeader--ios .PanelHeader__in--next {
+  z-index: 2;
+  }
+.PanelHeader--ios .PanelHeader__in--prev {
+  z-index: 1;
+  }
 .PanelHeader--ios .PanelHeader__in--prev .PanelHeader__left-in,
 .PanelHeader--ios .PanelHeader__in--prev .PanelHeader__right {
   -webkit-animation: animation-ios-header-fade-out .6s cubic-bezier(.36, .66, .04, 1);
           animation: animation-ios-header-fade-out .6s cubic-bezier(.36, .66, .04, 1);
   }
 .PanelHeader--ios .PanelHeader__in--next .PanelHeader__left-in,
-.PanelHeader--ios .PanelHeader__in--next .PanelHeader__right {
+.PanelHeader--ios .PanelHeader__in--next .PanelHeader__right,
+.PanelHeader--ios .PanelHeader__in--next .PanelHeader__bg {
   -webkit-animation: animation-ios-header-fade-in .6s cubic-bezier(.36, .66, .04, 1);
           animation: animation-ios-header-fade-in .6s cubic-bezier(.36, .66, .04, 1);
   }
@@ -761,6 +773,13 @@ a:focus {
   width: 100%;
   z-index: 5;
   }
+.PanelHeader__bg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    }
 .PanelHeader__in {
     display: -webkit-box;
     display: -webkit-flex;
@@ -778,6 +797,7 @@ a:focus {
     z-index: 1;
     }
 .PanelHeader__left {
+      z-index: 2;
       -webkit-flex-shrink: 0;
           -ms-flex-negative: 0;
               flex-shrink: 0;
@@ -788,6 +808,7 @@ a:focus {
         }
 .PanelHeader-left-in {}
 .PanelHeader__content {
+      z-index: 3;
       overflow: hidden;
       -o-text-overflow: ellipsis;
          text-overflow: ellipsis;
@@ -799,6 +820,7 @@ a:focus {
            text-overflow: ellipsis;
         }
 .PanelHeader__right {
+      z-index: 2;
       -webkit-flex-shrink: 0;
           -ms-flex-negative: 0;
               flex-shrink: 0;
@@ -822,38 +844,38 @@ a:focus {
   padding-top: constant(safe-area-inset-top);
   padding-top: env(safe-area-inset-top);
   }
-.PanelHeader--ios::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
-    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
-    content: '';
-    }
-.PanelHeader--no-shadow::after {
-    display: none;
-    }
-.PanelHeader--ios.PanelHeader--brand {
-    color: #fff;
-    background: #5181b8;
-    }
-.PanelHeader--ios.PanelHeader--light {
-    color: #5181b8;
-    background: #fff;
-    }
 .PanelHeader--ios .PanelHeader__in {
-    top: 20px;
-    top: constant(safe-area-inset-top);
-    top: env(safe-area-inset-top);
+    height: 44px;
+    padding-top: 20px;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
     }
+.PanelHeader--ios .PanelHeader__bg {}
+.PanelHeader--ios .PanelHeader-bg {
+        height: 44px;
+        padding-top: 20px;
+        padding-top: constant(safe-area-inset-top);
+        padding-top: env(safe-area-inset-top);
+        }
+.PanelHeader--ios .PanelHeader-bg::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(0, 0, 0, .12)), color-stop(50%, transparent));
+        background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+        background: -o-linear-gradient(bottom, rgba(0, 0, 0, .12) 50%, transparent 50%);
+        background: linear-gradient(to top, rgba(0, 0, 0, .12) 50%, transparent 50%);
+        content: '';
+        }
+.PanelHeader--ios .PanelHeader-bg--no-shadow::after {
+        content: none;
+        }
 .PanelHeader--ios .PanelHeader__left {
       display: -webkit-box;
       display: -webkit-flex;
@@ -890,7 +912,7 @@ a:focus {
         padding-left: 4px;
         }
 .PanelHeader--ios .PanelHeader__content {
-
+      position: relative;
       }
 .PanelHeader--ios .PanelHeader-content {
         font-weight: 500;
@@ -901,10 +923,6 @@ a:focus {
         -webkit-transition: color .6s cubic-bezier(.36, .66, .04, 1);
         -o-transition: color .6s cubic-bezier(.36, .66, .04, 1);
         transition: color .6s cubic-bezier(.36, .66, .04, 1);
-        color: #fff;
-        }
-.PanelHeader--ios.PanelHeader--light .PanelHeader-content {
-        color: #000;
         }
 .PanelHeader--ios .PanelHeader__right {
       -webkit-box-flex: 1;
@@ -929,22 +947,23 @@ a:focus {
             padding-right: 16px;
             }
 .PanelHeader--android {
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
-          box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
   height: 56px;
   }
 .PanelHeader--android .PanelHeader__in {
     height: 56px;
     }
-.PanelHeader--no-shadow {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transition: -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
-  transition: -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
-  -o-transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
-  transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
-  transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
-  }
+.PanelHeader--android .PanelHeader__bg {
+    height: 56px;
+    }
+.PanelHeader--android .PanelHeader-bg {
+      height: 56px;
+      -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
+              box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
+      }
+.PanelHeader--android .PanelHeader-bg--no-shadow {
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      }
 .PanelHeader--android .PanelHeader__content {
     max-width: 100%;
     -webkit-box-flex: 2;
@@ -961,14 +980,6 @@ a:focus {
     }
 .PanelHeader--android .PanelHeader-right {
     padding-left: 6px;
-    }
-.PanelHeader--android .PanelHeader__in--brand {
-    background: #5181b8;
-    color: #fff;
-    }
-.PanelHeader--android .PanelHeader__in--light {
-    background-color: #fff;
-    color: #5a5d61;
     }
 .PanelHeader--android .PanelHeader-right:not(:empty) {
       padding-right: 4px;
@@ -992,6 +1003,29 @@ a:focus {
         top: 0;
         z-index: 2;
         }
+/*
+  Темы
+ */
+.PanelHeader-bg--brand {
+  background: #5181b8;
+  }
+.PanelHeader-content--brand,
+.PanelHeader-left-in--brand,
+.PanelHeader-addon--brand,
+.PanelHeader-right--brand {
+  color: #fff;
+  }
+.PanelHeader-bg--light {
+  background: #fff;
+  }
+.PanelHeader-left-in--light,
+.PanelHeader-addon--light,
+.PanelHeader-right--light {
+  color: #5181b8;
+  }
+.PanelHeader-content--light {
+  color: #000;
+  }
 
 .Panel {
   position: relative;
@@ -4522,6 +4556,10 @@ a:focus {
     display: block;
     }
 
+.FormLayout .FormLayout__row:first-child {
+    padding-top: 0;
+    }
+
 .FormLayout .FormLayout__row + .FormLayout__row {
     padding-top: 0;
     }
@@ -4570,6 +4608,7 @@ a:focus {
       }
 
 .FormLayout--ios .FormLayout__row-bottom {
+    color: #71757a;
     padding-top: 8px;
     font-size: 13px;
     }
@@ -4584,7 +4623,7 @@ a:focus {
 
 .FormLayout--android .FormLayout__row-top {
       color: #71757a;
-      padding: 4px 0 8px;
+      padding: 14px 0 8px;
       line-height: 18px;
       font-size: 14px;
       }
@@ -4606,6 +4645,7 @@ a:focus {
 .FormLayout--android .FormLayout__row-bottom {
       padding-top: 8px;
       font-size: 13px;
+      color: #71757a;
       }
 
 :root {
@@ -4941,6 +4981,10 @@ a:focus {
     color: #fff;
     }
 
+.Checkbox__input[disabled] ~ .Checkbox__container {
+    opacity: .6;
+    }
+
 .Checkbox--ios {
   padding: 12px;
   }
@@ -5265,9 +5309,10 @@ a:focus {
   }
 
 .Textarea--android textarea {
-    border-radius: 4px;
+    border-radius: 4px 0 0 4px;
     background-color: #f2f3f5;
     font-family: Roboto, Arial;
+    padding-bottom: 4px;
     }
 
 .Textarea--android textarea::-webkit-input-placeholder {
