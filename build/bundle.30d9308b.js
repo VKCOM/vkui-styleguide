@@ -6374,7 +6374,7 @@ var PopoutWrapper = function (_React$Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      window.removeEventListener('touchmove', this.preventTouch);
+      window.removeEventListener('touchmove', this.preventTouch, { passive: false });
       clearTimeout(this.animationFinishTimeout);
     }
   }, {
@@ -15852,7 +15852,7 @@ var View = function (_Component) {
       if (!isPrev && !isNext || this.state.swipingBackFinish !== null) {
         return {
           title: {},
-          item: {},
+          bg: {},
           left: {},
           addon: {},
           right: {}
@@ -15870,29 +15870,40 @@ var View = function (_Component) {
             WebkitTransform: 'translate3d(' + (-100 + titleTransform) + '%, 0, 0)',
             opacity: opacity
           },
-          item: { opacity: opacity },
           left: { opacity: opacity },
           addon: {
             opacity: 1,
             transform: 'translate3d(' + (-100 + leftTransform) + '%, 0, 0)',
             WebkitTransform: 'translate3d(' + (-100 + leftTransform) + '%, 0, 0)'
           },
-          right: { opacity: 1 }
+          right: { opacity: opacity }
         };
       }
       if (isPrev) {
         return {
           title: {
             transform: 'translate3d(' + titleTransform + '%, 0, 0)',
-            WebkitTransform: 'translate3d(' + titleTransform + '%, 0, 0)'
+            WebkitTransform: 'translate3d(' + titleTransform + '%, 0, 0)',
+            opacity: 1 - opacity
           },
-          item: { opacity: 1 - opacity },
+          bg: { opacity: 1 - opacity },
+          left: { opacity: 1 - opacity },
           addon: {
             transform: 'translate3d(' + leftTransform + '%, 0, 0)',
-            WebkitTransform: 'translate3d(' + leftTransform + '%, 0, 0)'
+            WebkitTransform: 'translate3d(' + leftTransform + '%, 0, 0)',
+            opacity: 1 - opacity
           }
         };
       }
+    }
+  }, {
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(_ref) {
+      var inRoot = _ref.inRoot,
+          isNext = _ref.isNext,
+          isPrev = _ref.isPrev;
+
+      return inRoot ? !isNext && !isPrev : true;
     }
   }, {
     key: 'render',
@@ -15950,10 +15961,14 @@ var View = function (_Component) {
                     'PanelHeader__in--swipe-back-success': _this4.state.swipingBackFinish === true,
                     'PanelHeader__in--swipe-back-failed': _this4.state.swipingBackFinish === false
                   }),
-                  style: _this4.calcHeaderSwipeStyles(panel.props.id).item,
                   key: panel.props.id
                 },
-                _react2.default.createElement('div', { className: 'PanelHeader__bg', key: panel.props.id, id: 'header-bg-' + panel.props.id }),
+                _react2.default.createElement('div', {
+                  className: 'PanelHeader__bg',
+                  key: panel.props.id,
+                  id: 'header-bg-' + panel.props.id,
+                  style: _this4.calcHeaderSwipeStyles(panel.props.id).bg
+                }),
                 _react2.default.createElement(
                   'div',
                   { className: 'PanelHeader__left' },
@@ -16048,7 +16063,20 @@ View.propTypes = {
   onTransition: _propTypes2.default.func,
   onSwipeBack: _propTypes2.default.func,
   onSwipeBackStart: _propTypes2.default.func,
-  history: _propTypes2.default.arrayOf(_propTypes2.default.string)
+  history: _propTypes2.default.arrayOf(_propTypes2.default.string),
+
+  /**
+   * @ignore
+   */
+  isNext: _propTypes2.default.bool,
+  /**
+   * @ignore
+   */
+  isPrev: _propTypes2.default.bool,
+  /**
+   * @ignore
+   */
+  inRoot: _propTypes2.default.bool
 };
 View.defaultProps = {
   style: {},
@@ -44465,7 +44493,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': '  <View activePanel="new-user">\n    <Panel id="new-user" theme="white">\n      <PanelHeader>Регистрация</PanelHeader>\n      <FormLayout>\n        <Input type="email" top="E-mail" />\n        <Input type="password" top="Пароль" placeholder="Введите пароль" />\n        <Input type="password" placeholder="Повторите пароль" />\n        <Input top="Имя" />\n        <Input top="Фамилия" />\n        <Select top="Пол" placeholder="Выберите пол">\n          <option value="m">Мужской</option>\n          <option value="f">Женский</option>\n        </Select>\n        <div top="Тип документа">\n          <Radio name="type">Паспорт</Radio>\n          <Radio name="type">Загран</Radio>\n        </div>\n        <Textarea top="О себе" />\n        <Checkbox>Согласен со всем, что <Link>этим</Link></Checkbox>\n        <Button size="xl">Зарегистрироваться</Button>\n      </FormLayout>\n    </Panel>\n  </View>',
+        'content': '  <View activePanel="new-user">\n    <Panel id="new-user" theme="white">\n      <PanelHeader>Регистрация</PanelHeader>\n      <FormLayout>\n        <Input type="email" top="E-mail" />\n        <div top="Пароль">\n          <Input type="password" top="Пароль" placeholder="Введите пароль" />\n          <Input type="password" placeholder="Повторите пароль" />\n        </div>\n        <Input top="Имя" />\n        <Input top="Фамилия" />\n        <Select top="Пол" placeholder="Выберите пол">\n          <option value="m">Мужской</option>\n          <option value="f">Женский</option>\n        </Select>\n        <div top="Тип документа">\n          <Radio name="type">Паспорт</Radio>\n          <Radio name="type">Загран</Radio>\n        </div>\n        <Textarea top="О себе" />\n        <Checkbox>Согласен со всем, что <Link>этим</Link></Checkbox>\n        <Button size="xl">Зарегистрироваться</Button>\n      </FormLayout>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -51100,7 +51128,11 @@ var Root = function (_React$Component) {
                 'Root__view--show-forward': View.props.id === nextView && !isBack,
                 'Root__view--active': View.props.id === activeView
               }) },
-            View
+            _react2.default.cloneElement(View, {
+              inRoot: true,
+              isNext: View.props.id === nextView,
+              isPrev: View.props.id === prevView
+            })
           );
         }),
         this.props.popout && _react2.default.createElement(
@@ -53456,7 +53488,7 @@ module.exports = createFind;
 /* 379 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.5.3","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.5.4","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 380 */

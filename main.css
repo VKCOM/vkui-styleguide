@@ -486,13 +486,13 @@ a:focus {
   /* colors */
 }
 /**
- * Header swipe back
+ * Header iOS swipe back
  */
-.PanelHeader__in--swipe-back-failed,
+.PanelHeader__in--swipe-back-failed .PanelHeader__bg,
 .PanelHeader__in--swipe-back-failed .PanelHeader__content,
 .PanelHeader__in--swipe-back-failed .PanelHeader__left-in,
 .PanelHeader__in--swipe-back-failed .PanelHeader__addon,
-.PanelHeader__in--swipe-back-success,
+.PanelHeader__in--swipe-back-success .PanelHeader__bg,
 .PanelHeader__in--swipe-back-success .PanelHeader__content,
 .PanelHeader__in--swipe-back-success .PanelHeader__left-in,
 .PanelHeader__in--swipe-back-success .PanelHeader__addon {
@@ -513,70 +513,64 @@ a:focus {
       transform .3s cubic-bezier(.36, .66, .04, 1),
       -webkit-transform .3s cubic-bezier(.36, .66, .04, 1);
   }
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed {
-  opacity: 0;
-  }
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__content {
-  opacity: 0;
-  -webkit-transform: translate3d(-100%, 0, 0);
-          transform: translate3d(-100%, 0, 0);
-  }
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__addon {
+/*
+  next failed
+ */
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__bg {}
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__content,
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__addon {
   opacity: 0;
   -webkit-transform: translate3d(-100%, 0, 0);
           transform: translate3d(-100%, 0, 0);
   }
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__left-in,
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__right {
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__left-in,
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-failed .PanelHeader__right {
   opacity: 0;
   }
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success {
-  opacity: 1;
-  }
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success .PanelHeader__content {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  }
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success .PanelHeader__addon {
+/*
+  next success
+ */
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success .PanelHeader__content,
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success .PanelHeader__addon {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   }
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success .PanelHeader__left-in,
-.PanelHeader--ios .PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success .PanelHeader__right {
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success .PanelHeader__left-in,
+.PanelHeader__in--swipe-back-next.PanelHeader__in--swipe-back-success .PanelHeader__right {
   opacity: 1;
   }
-.PanelHeader--ios .PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-failed {
+/*
+  prev failed
+ */
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-failed .PanelHeader__content,
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-failed .PanelHeader__addon {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   opacity: 1;
   }
-.PanelHeader--ios .PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-failed .PanelHeader__content {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-failed .PanelHeader__left-in,
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-failed .PanelHeader__right,
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-failed .PanelHeader__bg {
+  opacity: 1;
   }
-.PanelHeader--ios .PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-failed .PanelHeader__addon {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  }
-.PanelHeader--ios .PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success {
+/*
+  prev success
+ */
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__content,
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__addon {
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
   opacity: 0;
   }
-.PanelHeader--ios .PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__content {
-  -webkit-transform: translate3d(100%, 0, 0);
-          transform: translate3d(100%, 0, 0);
-  }
-.PanelHeader--ios .PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__addon {
-  -webkit-transform: translate3d(100%, 0, 0);
-          transform: translate3d(100%, 0, 0);
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__left-in,
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__right,
+.PanelHeader__in--swipe-back-prev.PanelHeader__in--swipe-back-success .PanelHeader__bg {
+  opacity: 0;
   }
 /**
  * Header transition
  */
-.View--animated .PanelHeader--ios {
-  -webkit-transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
-  -o-transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
-  transition: background-color .3s cubic-bezier(.36, .66, .04, 1);
-  }
 .PanelHeader--ios .PanelHeader__in--prev,
 .PanelHeader--ios .PanelHeader__in--next {
   overflow: hidden;
@@ -3082,19 +3076,6 @@ a:focus {
   /* colors */
 }
 
-.Group {
-
-  }
-
-.Group__title {
-    margin: 0;
-    }
-
-.Group__description a {
-    text-decoration: none;
-    color: #5181b8;
-    }
-
 /**
  * iOS
  */
@@ -3162,10 +3143,6 @@ a:focus {
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .06), 0 0 2px 0 rgba(0, 0, 0, .03);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .06), 0 0 2px 0 rgba(0, 0, 0, .03);
   }
-
-.Group--android:first-child {
-    margin-top: 0;
-    }
 
 .Group--android .Group__description {
     font-size: 14px;
@@ -4556,17 +4533,11 @@ a:focus {
     display: block;
     }
 
-.FormLayout .FormLayout__row:first-child {
-    padding-top: 0;
-    }
-
-.FormLayout .FormLayout__row + .FormLayout__row {
-    padding-top: 0;
-    }
-
-.FormLayout__addon .Icon {
-    display: inline-block;
-    }
+.FormLayout__row .Input + .Input,
+    .FormLayout__row .Select + .Select,
+    .FormLayout__row .SelectMimicry + .SelectMimicry {
+      padding-top: 8px;
+      }
 
 .FormLayout__submit {
     position: absolute;
@@ -4603,7 +4574,7 @@ a:focus {
 
 .FormLayout--ios .FormLayout__row-top {
       color: #71757a;
-      padding: 14px 0 8px;
+      padding: 2px 0 8px;
       font-size: 14px;
       }
 
@@ -4623,7 +4594,7 @@ a:focus {
 
 .FormLayout--android .FormLayout__row-top {
       color: #71757a;
-      padding: 14px 0 8px;
+      padding: 2px 0 8px;
       line-height: 18px;
       font-size: 14px;
       }
@@ -5171,6 +5142,7 @@ a:focus {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     height: 44px;
+    position: relative;
     }
 
 .Select select:disabled ~ .Select__container {
