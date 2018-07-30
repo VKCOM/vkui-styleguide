@@ -3904,6 +3904,8 @@ a:focus {
 .Search--ios {
   overflow: hidden;
   font-weight: normal;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   }
 
 .Search--ios .Search__in {
@@ -4099,6 +4101,14 @@ a:focus {
         cursor: text;
         }
 
+/*
+  Themes
+ */
+
+/*
+  default
+ */
+
 .Search--ios.Search--default {
   background: #e6e9ed;
   padding: 8px;
@@ -4129,6 +4139,10 @@ a:focus {
 .Search--ios.Search--default .Search__after::before {
   background-color: #e6e9ed;
   }
+
+/*
+  header
+ */
 
 .Search--ios.Search--header {
   background: #5181b8;
