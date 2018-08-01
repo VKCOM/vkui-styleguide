@@ -15361,7 +15361,6 @@ PanelHeader.defaultProps = {
 };
 PanelHeader.contextTypes = {
   panel: _propTypes2.default.string,
-  setHeaderTheme: _propTypes2.default.func,
   document: _propTypes2.default.any
 };
 exports.default = PanelHeader;
@@ -15971,28 +15970,32 @@ var View = function (_Component) {
                 }),
                 _react2.default.createElement(
                   'div',
-                  { className: 'PanelHeader__left' },
+                  { className: 'PanelHeader__container' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'PanelHeader__left' },
+                    _react2.default.createElement('div', {
+                      className: 'PanelHeader__left-in',
+                      id: 'header-left-' + panel.props.id,
+                      style: _this4.calcHeaderSwipeStyles(panel.props.id).left
+                    }),
+                    osname === _platform.IOS && _react2.default.createElement('div', {
+                      className: 'PanelHeader__addon',
+                      id: 'header-addon-' + panel.props.id,
+                      style: _this4.calcHeaderSwipeStyles(panel.props.id).icon
+                    })
+                  ),
                   _react2.default.createElement('div', {
-                    className: 'PanelHeader__left-in',
-                    id: 'header-left-' + panel.props.id,
-                    style: _this4.calcHeaderSwipeStyles(panel.props.id).left
+                    className: 'PanelHeader__content',
+                    style: _this4.calcHeaderSwipeStyles(panel.props.id).title,
+                    id: 'header-title-' + panel.props.id
                   }),
-                  osname === _platform.IOS && _react2.default.createElement('div', {
-                    className: 'PanelHeader__addon',
-                    id: 'header-addon-' + panel.props.id,
-                    style: _this4.calcHeaderSwipeStyles(panel.props.id).icon
+                  _react2.default.createElement('div', {
+                    className: 'PanelHeader__right',
+                    id: 'header-right-' + panel.props.id,
+                    style: _this4.calcHeaderSwipeStyles(panel.props.id).right
                   })
-                ),
-                _react2.default.createElement('div', {
-                  className: 'PanelHeader__content',
-                  style: _this4.calcHeaderSwipeStyles(panel.props.id).title,
-                  id: 'header-title-' + panel.props.id
-                }),
-                _react2.default.createElement('div', {
-                  className: 'PanelHeader__right',
-                  id: 'header-right-' + panel.props.id,
-                  style: _this4.calcHeaderSwipeStyles(panel.props.id).right
-                })
+                )
               );
             })
           )
@@ -47882,6 +47885,13 @@ module.exports = {
             },
             'tags': {},
             'name': 'selectable'
+        },
+        {
+            'type': { 'name': 'object' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'style'
         }
     ],
     'doclets': {},
@@ -48223,7 +48233,8 @@ var ListItem = function (_Component) {
           removable = _props.removable,
           removePlaceholder = _props.removePlaceholder,
           href = _props.href,
-          restProps = _objectWithoutProperties(_props, ['before', 'indicator', 'asideContent', 'expandable', 'onClick', 'children', 'description', 'selectable', 'multiline', 'className', 'onRemove', 'removable', 'removePlaceholder', 'href']);
+          style = _props.style,
+          restProps = _objectWithoutProperties(_props, ['before', 'indicator', 'asideContent', 'expandable', 'onClick', 'children', 'description', 'selectable', 'multiline', 'className', 'onRemove', 'removable', 'removePlaceholder', 'href', 'style']);
 
       var rootProps = selectable ? {} : restProps;
       var inputProps = selectable ? restProps : {};
@@ -48239,7 +48250,7 @@ var ListItem = function (_Component) {
             'ListItem--removing': this.state.removing
           }, className),
           ref: this.getRootRef,
-          style: removable ? { height: this.state.height } : null
+          style: removable ? _extends({}, style, { height: this.state.height }) : style
         }),
         _react2.default.createElement(
           _Tappable2.default,
@@ -48338,6 +48349,7 @@ ListItem.propTypes = {
   multiline: _propTypes2.default.bool,
   description: _propTypes2.default.node,
   className: _propTypes2.default.string,
+  style: _propTypes2.default.object,
 
   selectable: _propTypes2.default.bool,
 
@@ -53488,7 +53500,7 @@ module.exports = createFind;
 /* 379 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.5.5","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.5.6","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 380 */
