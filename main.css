@@ -431,6 +431,7 @@ a:focus {
 .View__header {
     z-index: 2;
     position: fixed;
+    width: 100%;
     }
 .View--animated .View__panel,
   .View--animated .View__header,
@@ -761,21 +762,17 @@ a:focus {
           animation: animation-android-next-forward .3s cubic-bezier(.4, 0, .2, 1);
   }
 .PanelHeader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 5;
+  position: relative;
   }
 .PanelHeader__in {
-    position: fixed;
+    position: absolute;
     width: 100%;
     left: 0;
     top: 0;
     z-index: 1;
     }
 .PanelHeader__bg {
-      position: fixed;
+      position: absolute;
       width: 100%;
       left: 0;
       top: 0;
@@ -1061,12 +1058,12 @@ a:focus {
 
   .Panel__in-before {
       height: 1px;
-      margin-top: -1px;
+      margin-bottom: -1px;
       }
 
   .Panel__in-after {
-      float: left;
       height: 1px;
+      margin-top: -1px;
       }
 
 :root {
