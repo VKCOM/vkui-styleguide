@@ -4368,9 +4368,20 @@ a:focus {
  */
 
 .Tabs--android {
+
+  }
+
+.Tabs--android.Tabs--light {
+  background-color: #fff;
+  }
+
+.Tabs--android.Tabs--header {
+  background-color: #5181b8;
+  }
+
+.FixedLayout--top .Tabs--android {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
           box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
-  background-color: #5181b8;
   }
 
 :root {
@@ -4382,6 +4393,17 @@ a:focus {
   /* colors */
 }
 
+.TabsItem {
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 500;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  }
+
 .Tabs--default .TabsItem {
   max-width: 100%;
   -webkit-box-flex: 1;
@@ -4391,13 +4413,6 @@ a:focus {
   -webkit-flex-basis: 0;
       -ms-flex-preferred-size: 0;
           flex-basis: 0;
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-weight: 500;
   }
 
 /*
@@ -4509,32 +4524,73 @@ a:focus {
   Android
  */
 
-.Tabs--android.Tabs--default .TabsItem {
+.Tabs--android .TabsItem {
   height: 48px;
   line-height: 48px;
-  color: rgba(255, 255, 255, .5);
   font-size: 16px;
-  position: relative;
   }
 
-.Tabs--android.Tabs--default .TabsItem--selected {
+.Tabs--android .TabsItem__in {
+    position: relative;
+    -webkit-transition: background-color .15s ease-out;
+    -o-transition: background-color .15s ease-out;
+    transition: background-color .15s ease-out;
+    }
+
+.Tabs--android .TabsItem--selected .TabsItem__in::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      display: block;
+      content: '';
+      }
+
+.Tabs--android.Tabs--light .TabsItem {
+  color: #909499;
+  }
+
+.Tabs--android.Tabs--light .TabsItem--selected {
+  color: #5181b8;
+  }
+
+.Tabs--android.Tabs--light .TabsItem--selected .TabsItem__in::after {
+    background-color: #5181b8;
+    }
+
+.Tabs--android.Tabs--header .TabsItem {
+  color: rgba(255, 255, 255, .5);
+  }
+
+.Tabs--android.Tabs--header .TabsItem--selected {
   color: #fff;
   }
 
-.Tabs--android.Tabs--default.Tabs--header .TabsItem.Tappable--active {
+.Tabs--android.Tabs--header .TabsItem--selected .TabsItem__in::after {
+    background-color: #fff;
+    }
+
+.Tabs--android.Tabs--header .TabsItem.Tappable--active .TabsItem__in {
   background-color: rgba(255, 255, 255, .1);
   }
 
-.Tabs--android.Tabs--default .TabsItem--selected::after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  display: block;
-  content: '';
-  background-color: #fff;
+.Tabs--android.Tabs--light .TabsItem.Tappable--active .TabsItem__in {
+  background-color: #f0f1f3;
   }
+
+.Tabs--android.Tabs--buttons .TabsItem:first-child {
+  padding-left: 8px;
+  }
+
+.Tabs--android.Tabs--buttons .TabsItem:last-child {
+  padding-right: 8px;
+  }
+
+.Tabs--android.Tabs--buttons .TabsItem__in {
+    padding-left: 12px;
+    padding-right: 12px;
+    }
 
 :root {
 
