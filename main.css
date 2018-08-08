@@ -14,10 +14,6 @@ div#root {
   padding: 0;
   height: 100%;
   height: 100vh;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
@@ -35,6 +31,13 @@ html[theme="white"] {
 body {
   overflow-x: hidden;
 }
+
+#root {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  }
 
 a:focus {
   outline: none;
@@ -4283,7 +4286,8 @@ a:focus {
   /* colors */
 }
 
-.Tabs {
+.Tabs,
+.Tabs .HorizontalScroll__in {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4294,14 +4298,16 @@ a:focus {
           align-items: center;
   }
 
-.Tabs--default {
+.Tabs--default,
+.Tabs--default .HorizontalScroll__in {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   }
 
-.Tabs--buttons {
+.Tabs--buttons,
+.Tabs--default .HorizontalScroll__in {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
@@ -4325,6 +4331,11 @@ a:focus {
   background-color: #5181b8;
   }
 
+.Tabs--ios.Tabs--buttons {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  }
+
 .FixedLayout--ios.FixedLayout--top .Tabs::after {
   position: absolute;
   right: 0;
@@ -4345,6 +4356,17 @@ a:focus {
   content: '';
   top: 0;
   background: rgba(0, 0, 0, .12);
+  }
+
+.Tabs--ios.Tabs--buttons .HorizontalScroll__in::after,
+.Tabs--ios.Tabs--buttons .HorizontalScroll__in::before {
+  display: block;
+  width: 8px;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  height: 1px;
+  content: '';
   }
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -4379,7 +4401,19 @@ a:focus {
   background-color: #5181b8;
   }
 
-.FixedLayout--top .Tabs--android {
+.Tabs--android.Tabs--buttons .HorizontalScroll__in::after,
+.Tabs--android.Tabs--buttons .HorizontalScroll__in::before {
+  display: block;
+  width: 8px;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  height: 1px;
+  content: '';
+  }
+
+.FixedLayout--top .Tabs--android,
+.FixedLayout--bottom .Tabs--android {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
           box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
   }
@@ -4470,55 +4504,38 @@ a:focus {
   }
 
 .Tabs--ios.Tabs--buttons .TabsItem {
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 16px;
+  font-size: 16px;
+  font-weight: 500;
+  }
+
+.Tabs--ios.Tabs--buttons > .TabsItem:first-child {
+  margin-left: 8px;
   }
 
 .Tabs--ios.Tabs--buttons.Tabs--header .TabsItem {
   background-color: #5181b8;
+  color: #c2deff;
   }
 
-.Tabs--ios.Tabs--buttons .TabsItem__in {
-    height: 32px;
-    line-height: 32px;
-    border-radius: 16px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 0 16px;
-    font-size: 16px;
-    font-weight: 500;
-    }
-
-.Tabs--ios.Tabs--buttons .TabsItem {
-  padding: 8px 0;
+.Tabs--ios.Tabs--buttons.Tabs--header .TabsItem--selected {
+  background-color: rgba(173, 211, 255, .32);
+  color: #fff;
   }
 
-.Tabs--ios.Tabs--buttons .TabsItem:first-child {
-  padding-left: 8px;
+.Tabs--ios.Tabs--buttons.Tabs--light .TabsItem {
+  color: #71757a;
   }
 
-.Tabs--ios.Tabs--buttons .TabsItem:last-child {
-  padding-right: 8px;
+.Tabs--ios.Tabs--buttons.Tabs--light .TabsItem--selected {
+  background-color: #ebedf0;
+  color: #5a5d61;
   }
-
-.Tabs--ios.Tabs--buttons.Tabs--light .TabsItem__in {
-    color: #71757a;
-    }
-
-.Tabs--ios.Tabs--buttons.Tabs--light .TabsItem--selected .TabsItem__in {
-    background-color: #ebedf0;
-    color: #5a5d61;
-    }
-
-.Tabs--ios.Tabs--buttons.Tabs--header .TabsItem__in {
-    color: #c2deff;
-    }
-
-.Tabs--ios.Tabs--buttons.Tabs--header .TabsItem--selected .TabsItem__in {
-    background-color: rgba(173, 211, 255, .32);
-    color: #fff;
-    }
 
 /*
   Android
@@ -4528,24 +4545,18 @@ a:focus {
   height: 48px;
   line-height: 48px;
   font-size: 16px;
+  position: relative;
   }
 
-.Tabs--android .TabsItem__in {
-    position: relative;
-    -webkit-transition: background-color .15s ease-out;
-    -o-transition: background-color .15s ease-out;
-    transition: background-color .15s ease-out;
+.Tabs--android .TabsItem--selected::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    display: block;
+    content: '';
     }
-
-.Tabs--android .TabsItem--selected .TabsItem__in::after {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      display: block;
-      content: '';
-      }
 
 .Tabs--android.Tabs--light .TabsItem {
   color: #909499;
@@ -4555,7 +4566,7 @@ a:focus {
   color: #5181b8;
   }
 
-.Tabs--android.Tabs--light .TabsItem--selected .TabsItem__in::after {
+.Tabs--android.Tabs--light .TabsItem--selected::after {
     background-color: #5181b8;
     }
 
@@ -4567,30 +4578,22 @@ a:focus {
   color: #fff;
   }
 
-.Tabs--android.Tabs--header .TabsItem--selected .TabsItem__in::after {
+.Tabs--android.Tabs--header .TabsItem--selected::after {
     background-color: #fff;
     }
 
-.Tabs--android.Tabs--header .TabsItem.Tappable--active .TabsItem__in {
+.Tabs--android.Tabs--header .TabsItem.Tappable--active {
   background-color: rgba(255, 255, 255, .1);
   }
 
-.Tabs--android.Tabs--light .TabsItem.Tappable--active .TabsItem__in {
+.Tabs--android.Tabs--light .TabsItem.Tappable--active {
   background-color: #f0f1f3;
   }
 
-.Tabs--android.Tabs--buttons .TabsItem:first-child {
-  padding-left: 8px;
+.Tabs--android.Tabs--buttons .TabsItem {
+  padding-left: 12px;
+  padding-right: 12px;
   }
-
-.Tabs--android.Tabs--buttons .TabsItem:last-child {
-  padding-right: 8px;
-  }
-
-.Tabs--android.Tabs--buttons .TabsItem__in {
-    padding-left: 12px;
-    padding-right: 12px;
-    }
 
 :root {
 
