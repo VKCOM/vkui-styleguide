@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "build/" + ({}[chunkId]||chunkId) + "." + {"0":"1214002b"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "build/" + ({}[chunkId]||chunkId) + "." + {"0":"1d774c5d"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -255,15 +255,15 @@ var prop_types = __webpack_require__(1);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/lodash/merge.js
-var merge = __webpack_require__(82);
+var merge = __webpack_require__(81);
 var merge_default = /*#__PURE__*/__webpack_require__.n(merge);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/lodash/memoize.js
-var memoize = __webpack_require__(80);
+var memoize = __webpack_require__(79);
 var memoize_default = /*#__PURE__*/__webpack_require__.n(memoize);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/styles/setupjss.js + 1 modules
-var setupjss = __webpack_require__(38);
+var setupjss = __webpack_require__(39);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/styles/theme.js
 var spaceFactor = 8;
@@ -3335,19 +3335,19 @@ if (false) { var PropTypes; }
 
 //# sourceMappingURL=index.esm.js.map
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Link/index.js + 1 modules
-var Link = __webpack_require__(55);
+var Link = __webpack_require__(30);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Text/index.js + 1 modules
 var Text = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/index.js + 1 modules
-var Para = __webpack_require__(32);
+var Para = __webpack_require__(33);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
 var Styled = __webpack_require__(2);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Heading/index.js + 1 modules
-var Heading = __webpack_require__(30);
+var Heading = __webpack_require__(32);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Markdown/MarkdownHeading/MarkdownHeadingRenderer.js
 
@@ -3795,7 +3795,7 @@ __webpack_require__(421);
 
 var baseOverrides = {
 	a: {
-		component: Link["a" /* default */]
+		component: Link["default"]
 	},
 	h1: {
 		component: MarkdownHeading_MarkdownHeadingRenderer,
@@ -3964,7 +3964,7 @@ function showSpaces(string) {
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(117);
+var freeGlobal = __webpack_require__(119);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -4266,7 +4266,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(347);
+__webpack_require__(343);
 
 var _react = __webpack_require__(0);
 
@@ -4276,7 +4276,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Touch = __webpack_require__(34);
+var _Touch = __webpack_require__(35);
 
 var _Touch2 = _interopRequireDefault(_Touch);
 
@@ -4290,9 +4290,9 @@ var _getClassName2 = _interopRequireDefault(_getClassName);
 
 var _platform = __webpack_require__(11);
 
-var _offset = __webpack_require__(345);
+var _offset = __webpack_require__(341);
 
-var _touch = __webpack_require__(94);
+var _touch = __webpack_require__(93);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -4786,8 +4786,8 @@ TypeRenderer.propTypes = {
 /* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(73),
-    isLength = __webpack_require__(67);
+var isFunction = __webpack_require__(72),
+    isLength = __webpack_require__(66);
 
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
@@ -4825,7 +4825,7 @@ module.exports = isArrayLike;
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(47),
+var Symbol = __webpack_require__(48),
     getRawTag = __webpack_require__(475),
     objectToString = __webpack_require__(474);
 
@@ -4975,11 +4975,11 @@ var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _toCss = __webpack_require__(77);
+var _toCss = __webpack_require__(76);
 
 var _toCss2 = _interopRequireDefault(_toCss);
 
-var _toCssValue = __webpack_require__(51);
+var _toCssValue = __webpack_require__(52);
 
 var _toCssValue2 = _interopRequireDefault(_toCssValue);
 
@@ -5132,6 +5132,178 @@ exports['default'] = StyleRule;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(0);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/prop-types/index.js
+var prop_types = __webpack_require__(1);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__(10);
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
+var Styled = __webpack_require__(2);
+
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Link/LinkRenderer.js
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+
+
+
+
+
+var styles = function styles(_ref) {
+	var color = _ref.color;
+	return {
+		link: {
+			'&, &:link, &:visited': {
+				fontSize: 'inherit',
+				color: color.link,
+				textDecoration: 'none'
+			},
+			'&:hover, &:active': {
+				isolate: false,
+				color: color.linkHover,
+				cursor: 'pointer'
+			}
+		}
+	};
+};
+
+function LinkRenderer(_ref2) {
+	var classes = _ref2.classes,
+	    children = _ref2.children,
+	    props = _objectWithoutProperties(_ref2, ['classes', 'children']);
+
+	return react_default.a.createElement(
+		'a',
+		_extends({}, props, { className: classnames_default()(classes.link, props.className) }),
+		children
+	);
+}
+
+LinkRenderer.propTypes = {
+	children: prop_types_default.a.node,
+	className: prop_types_default.a.string,
+	classes: prop_types_default.a.object.isRequired
+};
+
+/* harmony default export */ var Link_LinkRenderer = (Object(Styled["default"])(styles)(LinkRenderer));
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Link/index.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "default", function() { return Link_LinkRenderer; });
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(0);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/prop-types/index.js
+var prop_types = __webpack_require__(1);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
+var Styled = __webpack_require__(2);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Markdown/index.js + 20 modules
+var Markdown = __webpack_require__(12);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Name/index.js + 1 modules
+var Name = __webpack_require__(28);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Type/index.js + 1 modules
+var Type = __webpack_require__(24);
+
+// EXTERNAL MODULE: ./node_modules/react-group/index.js
+var react_group = __webpack_require__(40);
+var react_group_default = /*#__PURE__*/__webpack_require__.n(react_group);
+
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/ArgumentRenderer.js
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+
+
+
+
+
+
+
+
+var styles = function styles(_ref) {
+	var space = _ref.space;
+	return {
+		block: {
+			marginBottom: space[2]
+		}
+	};
+};
+
+function ArgumentRenderer(_ref2) {
+	var classes = _ref2.classes,
+	    name = _ref2.name,
+	    type = _ref2.type,
+	    description = _ref2.description,
+	    returns = _ref2.returns,
+	    block = _ref2.block,
+	    props = _objectWithoutProperties(_ref2, ['classes', 'name', 'type', 'description', 'returns', 'block']);
+
+	return react_default.a.createElement(
+		react_group_default.a,
+		_extends({ className: block && classes.block }, props),
+		returns && 'Returns',
+		name && react_default.a.createElement(
+			'span',
+			null,
+			react_default.a.createElement(
+				Name["a" /* default */],
+				null,
+				name
+			),
+			type && ':'
+		),
+		type && react_default.a.createElement(
+			Type["a" /* default */],
+			null,
+			type.name
+		),
+		type && description && ' \u2014 ',
+		description && react_default.a.createElement(Markdown["default"], { text: '' + description, inline: true })
+	);
+}
+
+ArgumentRenderer.propTypes = {
+	classes: prop_types_default.a.object.isRequired,
+	name: prop_types_default.a.string,
+	type: prop_types_default.a.object,
+	description: prop_types_default.a.string,
+	returns: prop_types_default.a.bool,
+	block: prop_types_default.a.bool
+};
+
+/* harmony default export */ var Argument_ArgumentRenderer = (Object(Styled["default"])(styles)(ArgumentRenderer));
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/index.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Argument_ArgumentRenderer; });
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
@@ -5218,7 +5390,70 @@ HeadingRenderer.propTypes = {
 
 
 /***/ }),
-/* 31 */
+/* 33 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(0);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/prop-types/index.js
+var prop_types = __webpack_require__(1);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
+var Styled = __webpack_require__(2);
+
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/ParaRenderer.js
+
+
+
+
+var styles = function styles(_ref) {
+	var space = _ref.space,
+	    color = _ref.color,
+	    fontFamily = _ref.fontFamily;
+	return {
+		para: {
+			marginTop: 0,
+			marginBottom: space[2],
+			color: color.base,
+			fontFamily: fontFamily.base,
+			fontSize: 'inherit',
+			lineHeight: 1.5
+		}
+	};
+};
+
+function ParaRenderer(_ref2) {
+	var classes = _ref2.classes,
+	    semantic = _ref2.semantic,
+	    children = _ref2.children;
+
+	var Tag = semantic || 'div';
+
+	return react_default.a.createElement(
+		Tag,
+		{ className: classes.para },
+		children
+	);
+}
+
+ParaRenderer.propTypes = {
+	classes: prop_types_default.a.object.isRequired,
+	semantic: prop_types_default.a.oneOf(['p']),
+	children: prop_types_default.a.node.isRequired
+};
+
+/* harmony default export */ var Para_ParaRenderer = (Object(Styled["default"])(styles)(ParaRenderer));
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/index.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Para_ParaRenderer; });
+
+
+/***/ }),
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5303,169 +5538,7 @@ JsDoc.propTypes = {
 
 
 /***/ }),
-/* 32 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(0);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/prop-types/index.js
-var prop_types = __webpack_require__(1);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(2);
-
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/ParaRenderer.js
-
-
-
-
-var styles = function styles(_ref) {
-	var space = _ref.space,
-	    color = _ref.color,
-	    fontFamily = _ref.fontFamily;
-	return {
-		para: {
-			marginTop: 0,
-			marginBottom: space[2],
-			color: color.base,
-			fontFamily: fontFamily.base,
-			fontSize: 'inherit',
-			lineHeight: 1.5
-		}
-	};
-};
-
-function ParaRenderer(_ref2) {
-	var classes = _ref2.classes,
-	    semantic = _ref2.semantic,
-	    children = _ref2.children;
-
-	var Tag = semantic || 'div';
-
-	return react_default.a.createElement(
-		Tag,
-		{ className: classes.para },
-		children
-	);
-}
-
-ParaRenderer.propTypes = {
-	classes: prop_types_default.a.object.isRequired,
-	semantic: prop_types_default.a.oneOf(['p']),
-	children: prop_types_default.a.node.isRequired
-};
-
-/* harmony default export */ var Para_ParaRenderer = (Object(Styled["default"])(styles)(ParaRenderer));
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/index.js
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Para_ParaRenderer; });
-
-
-/***/ }),
-/* 33 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(0);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/prop-types/index.js
-var prop_types = __webpack_require__(1);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(2);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Markdown/index.js + 20 modules
-var Markdown = __webpack_require__(12);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Name/index.js + 1 modules
-var Name = __webpack_require__(28);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Type/index.js + 1 modules
-var Type = __webpack_require__(24);
-
-// EXTERNAL MODULE: ./node_modules/react-group/index.js
-var react_group = __webpack_require__(39);
-var react_group_default = /*#__PURE__*/__webpack_require__.n(react_group);
-
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/ArgumentRenderer.js
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-
-
-
-
-
-
-
-
-var styles = function styles(_ref) {
-	var space = _ref.space;
-	return {
-		block: {
-			marginBottom: space[2]
-		}
-	};
-};
-
-function ArgumentRenderer(_ref2) {
-	var classes = _ref2.classes,
-	    name = _ref2.name,
-	    type = _ref2.type,
-	    description = _ref2.description,
-	    returns = _ref2.returns,
-	    block = _ref2.block,
-	    props = _objectWithoutProperties(_ref2, ['classes', 'name', 'type', 'description', 'returns', 'block']);
-
-	return react_default.a.createElement(
-		react_group_default.a,
-		_extends({ className: block && classes.block }, props),
-		returns && 'Returns',
-		name && react_default.a.createElement(
-			'span',
-			null,
-			react_default.a.createElement(
-				Name["a" /* default */],
-				null,
-				name
-			),
-			type && ':'
-		),
-		type && react_default.a.createElement(
-			Type["a" /* default */],
-			null,
-			type.name
-		),
-		type && description && ' \u2014 ',
-		description && react_default.a.createElement(Markdown["default"], { text: '' + description, inline: true })
-	);
-}
-
-ArgumentRenderer.propTypes = {
-	classes: prop_types_default.a.object.isRequired,
-	name: prop_types_default.a.string,
-	type: prop_types_default.a.object,
-	description: prop_types_default.a.string,
-	returns: prop_types_default.a.bool,
-	block: prop_types_default.a.bool
-};
-
-/* harmony default export */ var Argument_ArgumentRenderer = (Object(Styled["default"])(styles)(ArgumentRenderer));
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/index.js
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Argument_ArgumentRenderer; });
-
-
-/***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5487,7 +5560,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _touch = __webpack_require__(94);
+var _touch = __webpack_require__(93);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5778,7 +5851,7 @@ Touch.contextTypes = {
 exports.default = Touch;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5803,7 +5876,7 @@ if (typeof document !== 'undefined' && document.createElement) {
 exports.default = { supported: supported, prefix: prefix };
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 /**
@@ -5846,7 +5919,7 @@ module.exports = eq;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5860,11 +5933,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _createRule = __webpack_require__(50);
+var _createRule = __webpack_require__(51);
 
 var _createRule2 = _interopRequireDefault(_createRule);
 
-var _linkRule = __webpack_require__(120);
+var _linkRule = __webpack_require__(122);
 
 var _linkRule2 = _interopRequireDefault(_linkRule);
 
@@ -6099,13 +6172,13 @@ var RuleList = function () {
 exports['default'] = RuleList;
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/jss/lib/index.js
-var lib = __webpack_require__(81);
+var lib = __webpack_require__(80);
 
 // EXTERNAL MODULE: ./node_modules/jss-global/lib/index.js
 var jss_global_lib = __webpack_require__(151);
@@ -6232,7 +6305,7 @@ var jss = Object(lib["create"])({
 /* harmony default export */ var setupjss = __webpack_exports__["a"] = (jss);
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var React = __webpack_require__(0);
@@ -6280,7 +6353,7 @@ module.exports = Group;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6314,7 +6387,7 @@ __webpack_require__(317);
 
 var _platform = __webpack_require__(11);
 
-var _transitionEvents = __webpack_require__(35);
+var _transitionEvents = __webpack_require__(36);
 
 var _transitionEvents2 = _interopRequireDefault(_transitionEvents);
 
@@ -6438,7 +6511,7 @@ PopoutWrapper.defaultProps = {
 exports.default = PopoutWrapper;
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6454,10 +6527,10 @@ var requestAnimationFrame = typeof window !== 'undefined' && window.requestAnima
 exports.default = requestAnimationFrame;
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isSymbol = __webpack_require__(44);
+var isSymbol = __webpack_require__(45);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;
@@ -6481,10 +6554,10 @@ module.exports = toKey;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(107),
+var arrayLikeKeys = __webpack_require__(109),
     baseKeys = __webpack_require__(401),
     isArrayLike = __webpack_require__(25);
 
@@ -6524,7 +6597,7 @@ module.exports = keys;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(26),
@@ -6559,7 +6632,7 @@ module.exports = isSymbol;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isKeyable = __webpack_require__(462);
@@ -6583,7 +6656,7 @@ module.exports = getMapData;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(27);
@@ -6595,7 +6668,7 @@ module.exports = nativeCreate;
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(14);
@@ -6607,10 +6680,10 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var eq = __webpack_require__(36);
+var eq = __webpack_require__(37);
 
 /**
  * Gets the index at which the `key` is found in `array` of key-value pairs.
@@ -6634,7 +6707,7 @@ module.exports = assocIndexOf;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var listCacheClear = __webpack_require__(486),
@@ -6672,7 +6745,7 @@ module.exports = ListCache;
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6720,7 +6793,7 @@ function createRule() {
 }
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6774,7 +6847,7 @@ function toCssValue(value) {
 }
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6816,7 +6889,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6869,7 +6942,94 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 54 */
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(0);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/prop-types/index.js
+var prop_types = __webpack_require__(1);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/index.js + 1 modules
+var Argument = __webpack_require__(31);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Heading/index.js + 1 modules
+var Heading = __webpack_require__(32);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
+var Styled = __webpack_require__(2);
+
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/ArgumentsRenderer.js
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+
+
+
+
+var styles = function styles(_ref) {
+	var space = _ref.space;
+	return {
+		root: {
+			marginBottom: space[2],
+			fontSize: 'inherit'
+		},
+		headingWrapper: {
+			marginBottom: space[0]
+		}
+	};
+};
+
+function ArgumentsRenderer(_ref2) {
+	var classes = _ref2.classes,
+	    args = _ref2.args,
+	    heading = _ref2.heading;
+
+	if (args.length === 0) {
+		return null;
+	}
+
+	return react_default.a.createElement(
+		'div',
+		{ className: classes.root },
+		heading && react_default.a.createElement(
+			'div',
+			{ className: classes.headingWrapper },
+			react_default.a.createElement(
+				Heading["a" /* default */],
+				{ level: 5 },
+				'Arguments'
+			)
+		),
+		args.map(function (arg) {
+			return react_default.a.createElement(Argument["a" /* default */], _extends({ key: arg.name }, arg));
+		})
+	);
+}
+
+ArgumentsRenderer.propTypes = {
+	classes: prop_types_default.a.object.isRequired,
+	args: prop_types_default.a.arrayOf(prop_types_default.a.shape({
+		name: prop_types_default.a.string.isRequired,
+		type: prop_types_default.a.object,
+		description: prop_types_default.a.string
+	})).isRequired,
+	heading: prop_types_default.a.bool
+};
+
+/* harmony default export */ var Arguments_ArgumentsRenderer = (Object(Styled["default"])(styles)(ArgumentsRenderer));
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/index.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Arguments_ArgumentsRenderer; });
+
+
+/***/ }),
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6994,165 +7154,6 @@ TableRenderer.propTypes = {
 /* harmony default export */ var Table_TableRenderer = (Object(Styled["default"])(styles)(TableRenderer));
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Table/index.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Table_TableRenderer; });
-
-
-/***/ }),
-/* 55 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(0);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/prop-types/index.js
-var prop_types = __webpack_require__(1);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
-// EXTERNAL MODULE: ./node_modules/classnames/index.js
-var classnames = __webpack_require__(10);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(2);
-
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Link/LinkRenderer.js
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-
-
-
-
-
-var styles = function styles(_ref) {
-	var color = _ref.color;
-	return {
-		link: {
-			'&, &:link, &:visited': {
-				fontSize: 'inherit',
-				color: color.link,
-				textDecoration: 'none'
-			},
-			'&:hover, &:active': {
-				isolate: false,
-				color: color.linkHover,
-				cursor: 'pointer'
-			}
-		}
-	};
-};
-
-function LinkRenderer(_ref2) {
-	var classes = _ref2.classes,
-	    children = _ref2.children,
-	    props = _objectWithoutProperties(_ref2, ['classes', 'children']);
-
-	return react_default.a.createElement(
-		'a',
-		_extends({}, props, { className: classnames_default()(classes.link, props.className) }),
-		children
-	);
-}
-
-LinkRenderer.propTypes = {
-	children: prop_types_default.a.node,
-	className: prop_types_default.a.string,
-	classes: prop_types_default.a.object.isRequired
-};
-
-/* harmony default export */ var Link_LinkRenderer = (Object(Styled["default"])(styles)(LinkRenderer));
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Link/index.js
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Link_LinkRenderer; });
-
-
-/***/ }),
-/* 56 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(0);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/prop-types/index.js
-var prop_types = __webpack_require__(1);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/index.js + 1 modules
-var Argument = __webpack_require__(33);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Heading/index.js + 1 modules
-var Heading = __webpack_require__(30);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(2);
-
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/ArgumentsRenderer.js
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-
-
-
-
-
-
-var styles = function styles(_ref) {
-	var space = _ref.space;
-	return {
-		root: {
-			marginBottom: space[2],
-			fontSize: 'inherit'
-		},
-		headingWrapper: {
-			marginBottom: space[0]
-		}
-	};
-};
-
-function ArgumentsRenderer(_ref2) {
-	var classes = _ref2.classes,
-	    args = _ref2.args,
-	    heading = _ref2.heading;
-
-	if (args.length === 0) {
-		return null;
-	}
-
-	return react_default.a.createElement(
-		'div',
-		{ className: classes.root },
-		heading && react_default.a.createElement(
-			'div',
-			{ className: classes.headingWrapper },
-			react_default.a.createElement(
-				Heading["a" /* default */],
-				{ level: 5 },
-				'Arguments'
-			)
-		),
-		args.map(function (arg) {
-			return react_default.a.createElement(Argument["a" /* default */], _extends({ key: arg.name }, arg));
-		})
-	);
-}
-
-ArgumentsRenderer.propTypes = {
-	classes: prop_types_default.a.object.isRequired,
-	args: prop_types_default.a.arrayOf(prop_types_default.a.shape({
-		name: prop_types_default.a.string.isRequired,
-		type: prop_types_default.a.object,
-		description: prop_types_default.a.string
-	})).isRequired,
-	heading: prop_types_default.a.bool
-};
-
-/* harmony default export */ var Arguments_ArgumentsRenderer = (Object(Styled["default"])(styles)(ArgumentsRenderer));
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/index.js
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Arguments_ArgumentsRenderer; });
 
 
 /***/ }),
@@ -12768,13 +12769,13 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(335);
+__webpack_require__(330);
 
 var _classnames2 = __webpack_require__(6);
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _View = __webpack_require__(95);
+var _View = __webpack_require__(94);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12908,76 +12909,8 @@ exports.default = FixedLayout;
 /* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-var IconBase = function IconBase(_ref, _ref2) {
-  var children = _ref.children;
-  var color = _ref.color;
-  var size = _ref.size;
-  var style = _ref.style;
-  var width = _ref.width;
-  var height = _ref.height;
-
-  var props = _objectWithoutProperties(_ref, ['children', 'color', 'size', 'style', 'width', 'height']);
-
-  var _ref2$reactIconBase = _ref2.reactIconBase;
-  var reactIconBase = _ref2$reactIconBase === undefined ? {} : _ref2$reactIconBase;
-
-  var computedSize = size || reactIconBase.size || '1em';
-  return _react2.default.createElement('svg', _extends({
-    children: children,
-    fill: 'currentColor',
-    preserveAspectRatio: 'xMidYMid meet',
-    height: height || computedSize,
-    width: width || computedSize
-  }, reactIconBase, props, {
-    style: _extends({
-      verticalAlign: 'middle',
-      color: color || reactIconBase.color
-    }, reactIconBase.style || {}, style)
-  }));
-};
-
-IconBase.propTypes = {
-  color: _propTypes2.default.string,
-  size: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-  width: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-  height: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-  style: _propTypes2.default.object
-};
-
-IconBase.contextTypes = {
-  reactIconBase: _propTypes2.default.shape(IconBase.propTypes)
-};
-
-exports.default = IconBase;
-module.exports = exports['default'];
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var isArray = __webpack_require__(16),
-    isSymbol = __webpack_require__(44);
+    isSymbol = __webpack_require__(45);
 
 /** Used to match property names within property paths. */
 var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
@@ -13008,12 +12941,12 @@ module.exports = isKey;
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseMatches = __webpack_require__(419),
     baseMatchesProperty = __webpack_require__(393),
-    identity = __webpack_require__(63),
+    identity = __webpack_require__(62),
     isArray = __webpack_require__(16),
     property = __webpack_require__(385);
 
@@ -13045,7 +12978,7 @@ module.exports = baseIteratee;
 
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports) {
 
 /**
@@ -13072,7 +13005,7 @@ module.exports = identity;
 
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -13103,7 +13036,7 @@ module.exports = isIndex;
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsTypedArray = __webpack_require__(446),
@@ -13136,7 +13069,7 @@ module.exports = isTypedArray;
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(14),
@@ -13178,10 +13111,10 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(70)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(69)(module)))
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -13222,7 +13155,7 @@ module.exports = isLength;
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsArguments = __webpack_require__(450),
@@ -13264,7 +13197,7 @@ module.exports = isArguments;
 
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -13288,7 +13221,7 @@ module.exports = isPrototype;
 
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -13316,10 +13249,10 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var defineProperty = __webpack_require__(114);
+var defineProperty = __webpack_require__(116);
 
 /**
  * The base implementation of `assignValue` and `assignMergeValue` without
@@ -13347,7 +13280,7 @@ module.exports = baseAssignValue;
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var mapCacheClear = __webpack_require__(470),
@@ -13385,7 +13318,7 @@ module.exports = MapCache;
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(26),
@@ -13428,7 +13361,7 @@ module.exports = isFunction;
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(27),
@@ -13441,10 +13374,10 @@ module.exports = Map;
 
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(49),
+var ListCache = __webpack_require__(50),
     stackClear = __webpack_require__(481),
     stackDelete = __webpack_require__(480),
     stackGet = __webpack_require__(479),
@@ -13474,7 +13407,7 @@ module.exports = Stack;
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13484,7 +13417,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _SheetsRegistry = __webpack_require__(122);
+var _SheetsRegistry = __webpack_require__(124);
 
 var _SheetsRegistry2 = _interopRequireDefault(_SheetsRegistry);
 
@@ -13499,7 +13432,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 exports['default'] = new _SheetsRegistry2['default']();
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13510,7 +13443,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports['default'] = toCss;
 
-var _toCssValue = __webpack_require__(51);
+var _toCssValue = __webpack_require__(52);
 
 var _toCssValue2 = _interopRequireDefault(_toCssValue);
 
@@ -13586,7 +13519,7 @@ function toCss(selector, style) {
 }
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -13770,10 +13703,10 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGet = __webpack_require__(97);
+var baseGet = __webpack_require__(99);
 
 /**
  * Gets the value at `path` of `object`. If the resolved value is
@@ -13809,10 +13742,10 @@ module.exports = get;
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MapCache = __webpack_require__(72);
+var MapCache = __webpack_require__(71);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -13888,7 +13821,7 @@ module.exports = memoize;
 
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13908,7 +13841,7 @@ Object.defineProperty(exports, 'getDynamicStyles', {
   }
 });
 
-var _toCssValue = __webpack_require__(51);
+var _toCssValue = __webpack_require__(52);
 
 Object.defineProperty(exports, 'toCssValue', {
   enumerable: true,
@@ -13917,7 +13850,7 @@ Object.defineProperty(exports, 'toCssValue', {
   }
 });
 
-var _SheetsRegistry = __webpack_require__(122);
+var _SheetsRegistry = __webpack_require__(124);
 
 Object.defineProperty(exports, 'SheetsRegistry', {
   enumerable: true,
@@ -13935,7 +13868,7 @@ Object.defineProperty(exports, 'SheetsManager', {
   }
 });
 
-var _RuleList = __webpack_require__(37);
+var _RuleList = __webpack_require__(38);
 
 Object.defineProperty(exports, 'RuleList', {
   enumerable: true,
@@ -13944,7 +13877,7 @@ Object.defineProperty(exports, 'RuleList', {
   }
 });
 
-var _sheets = __webpack_require__(76);
+var _sheets = __webpack_require__(75);
 
 Object.defineProperty(exports, 'sheets', {
   enumerable: true,
@@ -13953,7 +13886,7 @@ Object.defineProperty(exports, 'sheets', {
   }
 });
 
-var _createGenerateClassName = __webpack_require__(119);
+var _createGenerateClassName = __webpack_require__(121);
 
 Object.defineProperty(exports, 'createGenerateClassName', {
   enumerable: true,
@@ -13981,7 +13914,7 @@ var create = exports.create = function create(options) {
 exports['default'] = create();
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseMerge = __webpack_require__(487),
@@ -14026,7 +13959,7 @@ module.exports = merge;
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -14210,13 +14143,13 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14240,7 +14173,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Touch = __webpack_require__(34);
+var _Touch = __webpack_require__(35);
 
 var _Touch2 = _interopRequireDefault(_Touch);
 
@@ -14465,7 +14398,7 @@ Slider.defaultProps = {
 exports.default = Slider;
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14582,7 +14515,7 @@ Tabs.defaultProps = {
 exports.default = Tabs;
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14620,10 +14553,6 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 var baseClassName = (0, _getClassName2.default)('Avatar');
 
-/**
- * Для этого компонента сделано исключение: свойство style применяется к img, а не к корневому элементу.
- * Сделано для удобства.
- */
 var Avatar = function Avatar(_ref) {
   var src = _ref.src,
       size = _ref.size,
@@ -14685,7 +14614,7 @@ Avatar.defaultProps = {
 exports.default = Avatar;
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -14869,7 +14798,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14949,7 +14878,7 @@ Header.defaultProps = {
 exports.default = Header;
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15006,7 +14935,7 @@ Div.propTypes = {
 };
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15137,7 +15066,7 @@ Button.defaultProps = {
 exports.default = Button;
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15211,7 +15140,7 @@ HeaderButton.defaultProps = {
 exports.default = HeaderButton;
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15244,7 +15173,7 @@ var _classnames6 = __webpack_require__(6);
 
 var _classnames7 = _interopRequireDefault(_classnames6);
 
-__webpack_require__(359);
+__webpack_require__(354);
 
 var _platform = __webpack_require__(11);
 
@@ -15363,7 +15292,7 @@ PanelHeader.contextTypes = {
 exports.default = PanelHeader;
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15417,7 +15346,7 @@ exports.coordY = coordY;
 exports.touchEnabled = touchEnabled;
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15430,7 +15359,7 @@ exports.transitionEndEventName = exports.transitionStartEventName = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(363);
+__webpack_require__(358);
 
 var _react = __webpack_require__(0);
 
@@ -15444,11 +15373,11 @@ var _classnames2 = __webpack_require__(6);
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _animate = __webpack_require__(361);
+var _animate = __webpack_require__(356);
 
 var _animate2 = _interopRequireDefault(_animate);
 
-var _transitionEvents = __webpack_require__(35);
+var _transitionEvents = __webpack_require__(36);
 
 var _transitionEvents2 = _interopRequireDefault(_transitionEvents);
 
@@ -15458,15 +15387,15 @@ var _getClassName2 = _interopRequireDefault(_getClassName);
 
 var _platform = __webpack_require__(11);
 
-var _Touch = __webpack_require__(34);
+var _Touch = __webpack_require__(35);
 
 var _Touch2 = _interopRequireDefault(_Touch);
 
-var _removeObjectKeys = __webpack_require__(360);
+var _removeObjectKeys = __webpack_require__(355);
 
 var _removeObjectKeys2 = _interopRequireDefault(_removeObjectKeys);
 
-var _PanelHeader = __webpack_require__(93);
+var _PanelHeader = __webpack_require__(92);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16093,11 +16022,183 @@ View.contextTypes = {
 exports.default = View;
 
 /***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.styles = undefined;
+exports.PathlineRenderer = PathlineRenderer;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Link = __webpack_require__(30);
+
+var _Link2 = _interopRequireDefault(_Link);
+
+var _package = __webpack_require__(96);
+
+var _package2 = _interopRequireDefault(_package);
+
+var _Styled = __webpack_require__(2);
+
+var _Styled2 = _interopRequireDefault(_Styled);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var styles = exports.styles = function styles(_ref) {
+  var fontFamily = _ref.fontFamily,
+      fontSize = _ref.fontSize;
+  return {
+    pathline: {
+      fontFamily: fontFamily.base,
+      fontSize: fontSize.small
+    },
+    link: {
+      marginTop: 4
+    }
+  };
+};
+
+function PathlineRenderer(_ref2) {
+  var classes = _ref2.classes,
+      children = _ref2.children;
+
+  return _react2.default.createElement(
+    'div',
+    { className: classes.pathline },
+    _react2.default.createElement(
+      'div',
+      null,
+      '\u041F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430:\xA0',
+      _react2.default.createElement(
+        'select',
+        { onChange: function onChange(e) {
+            window.localStorage.setItem('vkui-styleguide:ua', e.target.value);
+            window.location.reload();
+          }, value: window.navigator.userAgent },
+        _react2.default.createElement(
+          'option',
+          { value: window.uaList.ios },
+          'ios'
+        ),
+        _react2.default.createElement(
+          'option',
+          { value: window.uaList.android },
+          'android'
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: classes.link },
+      '\u0418\u0441\u0445\u043E\u0434\u043D\u0438\u043A\u0438:\xA0',
+      _react2.default.createElement(
+        _Link2.default,
+        { target: '_blank', href: _package2.default.repository + '/tree/v' + _package2.default.version + '/' + children.replace('../', '') },
+        'Github'
+      )
+    )
+  );
+}
+
+PathlineRenderer.propTypes = {
+  classes: _propTypes2.default.object.isRequired,
+  children: _propTypes2.default.string
+};
+
+exports.default = (0, _Styled2.default)(styles)(PathlineRenderer);
+
+/***/ }),
 /* 96 */
+/***/ (function(module) {
+
+module.exports = {"name":"@vkontakte/vkui","version":"2.6.2","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var IconBase = function IconBase(_ref, _ref2) {
+  var children = _ref.children;
+  var color = _ref.color;
+  var size = _ref.size;
+  var style = _ref.style;
+  var width = _ref.width;
+  var height = _ref.height;
+
+  var props = _objectWithoutProperties(_ref, ['children', 'color', 'size', 'style', 'width', 'height']);
+
+  var _ref2$reactIconBase = _ref2.reactIconBase;
+  var reactIconBase = _ref2$reactIconBase === undefined ? {} : _ref2$reactIconBase;
+
+  var computedSize = size || reactIconBase.size || '1em';
+  return _react2.default.createElement('svg', _extends({
+    children: children,
+    fill: 'currentColor',
+    preserveAspectRatio: 'xMidYMid meet',
+    height: height || computedSize,
+    width: width || computedSize
+  }, reactIconBase, props, {
+    style: _extends({
+      verticalAlign: 'middle',
+      color: color || reactIconBase.color
+    }, reactIconBase.style || {}, style)
+  }));
+};
+
+IconBase.propTypes = {
+  color: _propTypes2.default.string,
+  size: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  width: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  height: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  style: _propTypes2.default.object
+};
+
+IconBase.contextTypes = {
+  reactIconBase: _propTypes2.default.shape(IconBase.propTypes)
+};
+
+exports.default = IconBase;
+module.exports = exports['default'];
+
+/***/ }),
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isArray = __webpack_require__(16),
-    isKey = __webpack_require__(61),
+    isKey = __webpack_require__(60),
     stringToPath = __webpack_require__(392),
     toString = __webpack_require__(390);
 
@@ -16120,11 +16221,11 @@ module.exports = castPath;
 
 
 /***/ }),
-/* 97 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var castPath = __webpack_require__(96),
-    toKey = __webpack_require__(42);
+var castPath = __webpack_require__(98),
+    toKey = __webpack_require__(43);
 
 /**
  * The base implementation of `_.get` without support for default values.
@@ -16150,7 +16251,7 @@ module.exports = baseGet;
 
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, exports) {
 
 /**
@@ -16176,7 +16277,7 @@ module.exports = matchesStrictComparable;
 
 
 /***/ }),
-/* 99 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(17);
@@ -16197,7 +16298,7 @@ module.exports = isStrictComparable;
 
 
 /***/ }),
-/* 100 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SetCache = __webpack_require__(416),
@@ -16286,7 +16387,7 @@ module.exports = equalArrays;
 
 
 /***/ }),
-/* 101 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsEqualDeep = __webpack_require__(417),
@@ -16320,7 +16421,7 @@ module.exports = baseIsEqual;
 
 
 /***/ }),
-/* 102 */
+/* 104 */
 /***/ (function(module, exports) {
 
 /**
@@ -16347,7 +16448,7 @@ module.exports = arrayMap;
 
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18144,7 +18245,7 @@ function isnan (val) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(15)))
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18155,20 +18256,20 @@ function isnan (val) {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39);
+/* harmony import */ var react_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(40);
 /* harmony import */ var react_group__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_group__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var javascript_stringify__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(145);
 /* harmony import */ var javascript_stringify__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(javascript_stringify__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var rsg_components_Arguments__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(56);
-/* harmony import */ var rsg_components_Argument__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(33);
+/* harmony import */ var rsg_components_Arguments__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(55);
+/* harmony import */ var rsg_components_Argument__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(31);
 /* harmony import */ var rsg_components_Code__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(18);
-/* harmony import */ var rsg_components_JsDoc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(31);
+/* harmony import */ var rsg_components_JsDoc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(34);
 /* harmony import */ var rsg_components_Markdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
 /* harmony import */ var rsg_components_Name__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(28);
 /* harmony import */ var rsg_components_Type__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(24);
 /* harmony import */ var rsg_components_Text__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(19);
-/* harmony import */ var rsg_components_Para__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(32);
-/* harmony import */ var rsg_components_Table__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(54);
+/* harmony import */ var rsg_components_Para__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(33);
+/* harmony import */ var rsg_components_Table__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(56);
 /* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(13);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -18507,11 +18608,11 @@ PropsRenderer.propTypes = {
 };
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(17),
-    isSymbol = __webpack_require__(44);
+    isSymbol = __webpack_require__(45);
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
@@ -18579,12 +18680,12 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 106 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(17),
     now = __webpack_require__(428),
-    toNumber = __webpack_require__(105);
+    toNumber = __webpack_require__(107);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -18775,15 +18876,15 @@ module.exports = debounce;
 
 
 /***/ }),
-/* 107 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseTimes = __webpack_require__(440),
-    isArguments = __webpack_require__(68),
+    isArguments = __webpack_require__(67),
     isArray = __webpack_require__(16),
-    isBuffer = __webpack_require__(66),
-    isIndex = __webpack_require__(64),
-    isTypedArray = __webpack_require__(65);
+    isBuffer = __webpack_require__(65),
+    isIndex = __webpack_require__(63),
+    isTypedArray = __webpack_require__(64);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -18830,10 +18931,10 @@ module.exports = arrayLikeKeys;
 
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(107),
+var arrayLikeKeys = __webpack_require__(109),
     baseKeysIn = __webpack_require__(439),
     isArrayLike = __webpack_require__(25);
 
@@ -18868,7 +18969,7 @@ module.exports = keysIn;
 
 
 /***/ }),
-/* 109 */
+/* 111 */
 /***/ (function(module, exports) {
 
 /**
@@ -18889,7 +18990,7 @@ module.exports = safeGet;
 
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, exports) {
 
 /**
@@ -18910,10 +19011,10 @@ module.exports = overArg;
 
 
 /***/ }),
-/* 111 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(110);
+var overArg = __webpack_require__(112);
 
 /** Built-in value references. */
 var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -18922,7 +19023,7 @@ module.exports = getPrototype;
 
 
 /***/ }),
-/* 112 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(14);
@@ -18934,7 +19035,7 @@ module.exports = Uint8Array;
 
 
 /***/ }),
-/* 113 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var createBaseFor = __webpack_require__(458);
@@ -18956,7 +19057,7 @@ module.exports = baseFor;
 
 
 /***/ }),
-/* 114 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(27);
@@ -18973,11 +19074,11 @@ module.exports = defineProperty;
 
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssignValue = __webpack_require__(71),
-    eq = __webpack_require__(36);
+var baseAssignValue = __webpack_require__(70),
+    eq = __webpack_require__(37);
 
 /**
  * This function is like `assignValue` except that it doesn't assign
@@ -18999,7 +19100,7 @@ module.exports = assignMergeValue;
 
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -19031,7 +19132,7 @@ module.exports = toSource;
 
 
 /***/ }),
-/* 117 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -19042,7 +19143,7 @@ module.exports = freeGlobal;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(15)))
 
 /***/ }),
-/* 118 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19056,11 +19157,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _linkRule = __webpack_require__(120);
+var _linkRule = __webpack_require__(122);
 
 var _linkRule2 = _interopRequireDefault(_linkRule);
 
-var _RuleList = __webpack_require__(37);
+var _RuleList = __webpack_require__(38);
 
 var _RuleList2 = _interopRequireDefault(_RuleList);
 
@@ -19288,7 +19389,7 @@ var StyleSheet = function () {
 exports['default'] = StyleSheet;
 
 /***/ }),
-/* 119 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19302,7 +19403,7 @@ var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _StyleSheet = __webpack_require__(118);
+var _StyleSheet = __webpack_require__(120);
 
 var _StyleSheet2 = _interopRequireDefault(_StyleSheet);
 
@@ -19351,7 +19452,7 @@ exports['default'] = function () {
 };
 
 /***/ }),
-/* 120 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19370,7 +19471,7 @@ function linkRule(rule, cssRule) {
 }
 
 /***/ }),
-/* 121 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19391,7 +19492,7 @@ exports['default'] = function (value) {
 };
 
 /***/ }),
-/* 122 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19495,7 +19596,7 @@ var SheetsRegistry = function () {
 exports['default'] = SheetsRegistry;
 
 /***/ }),
-/* 123 */
+/* 125 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -19685,7 +19786,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 124 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -19869,7 +19970,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 125 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19890,7 +19991,7 @@ if (false) {}
 module.exports = emptyObject;
 
 /***/ }),
-/* 126 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19987,7 +20088,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 127 */
+/* 129 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20054,12 +20155,12 @@ function getComponent(module, name) {
 }
 
 /***/ }),
-/* 128 */
+/* 130 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return globalizeComponent; });
-/* harmony import */ var _getComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(127);
+/* harmony import */ var _getComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(129);
 
 
 /**
@@ -20077,10 +20178,10 @@ function globalizeComponent(component) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(15)))
 
 /***/ }),
-/* 129 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isNumber = __webpack_require__(368);
+var isNumber = __webpack_require__(369);
 
 /**
  * Checks if `value` is `NaN`.
@@ -20121,7 +20222,7 @@ module.exports = isNaN;
 
 
 /***/ }),
-/* 130 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(14);
@@ -20160,108 +20261,6 @@ function isFinite(value) {
 }
 
 module.exports = isFinite;
-
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactIconBase = __webpack_require__(60);
-
-var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var MdContentCopy = function MdContentCopy(props) {
-    return _react2.default.createElement(
-        _reactIconBase2.default,
-        _extends({ viewBox: '0 0 40 40' }, props),
-        _react2.default.createElement(
-            'g',
-            null,
-            _react2.default.createElement('path', { d: 'm31.6 35v-23.4h-18.2v23.4h18.2z m0-26.6c1.8 0 3.4 1.4 3.4 3.2v23.4c0 1.8-1.6 3.4-3.4 3.4h-18.2c-1.8 0-3.4-1.6-3.4-3.4v-23.4c0-1.8 1.6-3.2 3.4-3.2h18.2z m-5-6.8v3.4h-20v23.4h-3.2v-23.4c0-1.8 1.4-3.4 3.2-3.4h20z' })
-        )
-    );
-};
-
-exports.default = MdContentCopy;
-module.exports = exports['default'];
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports) {
-
-module.exports = clipboardCopy
-
-function clipboardCopy (text) {
-  // Use the Async Clipboard API when available
-  if (navigator.clipboard) {
-    return navigator.clipboard.writeText(text)
-  }
-
-  // ...Otherwise, use document.execCommand() fallback
-
-  // Put the text to copy into a <span>
-  var span = document.createElement('span')
-  span.textContent = text
-
-  // Preserve consecutive spaces and newlines
-  span.style.whiteSpace = 'pre'
-
-  // An <iframe> isolates the <span> from the page's styles
-  var iframe = document.createElement('iframe')
-  iframe.sandbox = 'allow-same-origin'
-
-  // Add the <iframe> to the page
-  document.body.appendChild(iframe)
-  var win = iframe.contentWindow
-
-  // Add the <span> to the <iframe>
-  win.document.body.appendChild(span)
-
-  // Get a Selection object representing the range of text selected by the user
-  var selection = win.getSelection()
-
-  // Fallback for Firefox which fails to get a selection from an <iframe>
-  if (!selection) {
-    win = window
-    selection = win.getSelection()
-    document.body.appendChild(span)
-  }
-
-  var range = win.document.createRange()
-  selection.removeAllRanges()
-  range.selectNode(span)
-  selection.addRange(range)
-
-  var success = false
-  try {
-    success = win.document.execCommand('copy')
-  } catch (err) {}
-
-  selection.removeAllRanges()
-  win.document.body.removeChild(span)
-  document.body.removeChild(iframe)
-
-  // The Async Clipboard API returns a promise that may reject with `undefined` so we
-  // match that here for consistency.
-  return success
-    ? Promise.resolve()
-    : Promise.reject() // eslint-disable-line prefer-promise-reject-errors
-}
 
 
 /***/ }),
@@ -20400,8 +20399,8 @@ exports.default = (0, _Styled2.default)(styles)(PlaygroundRenderer);
 /* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createFind = __webpack_require__(377),
-    findIndex = __webpack_require__(376);
+var createFind = __webpack_require__(378),
+    findIndex = __webpack_require__(377);
 
 /**
  * Iterates over elements of `collection`, returning the first element
@@ -27183,7 +27182,7 @@ Bundle.prototype = {
 /* harmony default export */ __webpack_exports__["a"] = (MagicString$1);
 //# sourceMappingURL=magic-string.es.js.map
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(103).Buffer, __webpack_require__(123)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(105).Buffer, __webpack_require__(125)))
 
 /***/ }),
 /* 138 */
@@ -37151,7 +37150,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactFrameComponent = __webpack_require__(372);
+var _reactFrameComponent = __webpack_require__(373);
 
 var _reactFrameComponent2 = _interopRequireDefault(_reactFrameComponent);
 
@@ -37311,11 +37310,15 @@ var _Styled = __webpack_require__(2);
 
 var _Styled2 = _interopRequireDefault(_Styled);
 
+var _Link = __webpack_require__(30);
+
+var _Link2 = _interopRequireDefault(_Link);
+
 var _classnames = __webpack_require__(10);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _package = __webpack_require__(378);
+var _package = __webpack_require__(96);
 
 var _package2 = _interopRequireDefault(_package);
 
@@ -37421,7 +37424,7 @@ function StyleGuideRenderer(_ref2) {
       _react2.default.createElement(
         'div',
         { className: classes.os },
-        'Platform:\xA0',
+        '\u041F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430:\xA0',
         _react2.default.createElement(
           'select',
           { onChange: function onChange(e) {
@@ -37442,8 +37445,32 @@ function StyleGuideRenderer(_ref2) {
         _react2.default.createElement(
           'div',
           { style: { marginTop: 4 } },
-          'Version:\xA0',
-          _package2.default.version
+          '\u0412\u0435\u0440\u0441\u0438\u044F:\xA0',
+          _react2.default.createElement(
+            _Link2.default,
+            { href: 'https://www.npmjs.com/package/' + _package2.default.name },
+            _package2.default.version
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { style: { marginTop: 4 } },
+          '\u0418\u0441\u0445\u043E\u0434\u043D\u0438\u043A\u0438:\xA0',
+          _react2.default.createElement(
+            _Link2.default,
+            { href: _package2.default.repository },
+            'GitHub'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { style: { marginTop: 4 } },
+          '\u0427\u0430\u0442:\xA0',
+          _react2.default.createElement(
+            _Link2.default,
+            { href: 'https://vk.me/join/AJQ1d8dLkgTUYRPPQ/Wa6Jmd' },
+            'VK'
+          )
         )
       ),
       toc
@@ -37479,7 +37506,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactIconBase = __webpack_require__(60);
+var _reactIconBase = __webpack_require__(97);
 
 var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
 
@@ -37517,7 +37544,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactIconBase = __webpack_require__(60);
+var _reactIconBase = __webpack_require__(97);
 
 var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
 
@@ -37542,8 +37569,8 @@ module.exports = exports['default'];
 /* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayMap = __webpack_require__(102),
-    baseIteratee = __webpack_require__(62),
+var arrayMap = __webpack_require__(104),
+    baseIteratee = __webpack_require__(61),
     baseMap = __webpack_require__(382),
     isArray = __webpack_require__(16);
 
@@ -37998,7 +38025,7 @@ module.exports = function unquote(str) {
   };
 });
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(103).Buffer))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(105).Buffer))
 
 /***/ }),
 /* 146 */
@@ -38557,7 +38584,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports['default'] = jssGlobal;
 
-var _jss = __webpack_require__(81);
+var _jss = __webpack_require__(80);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -39523,7 +39550,7 @@ var es6_promise_auto = __webpack_require__(522);
 // Promise to support webpack 2 require.ensure() in IE11
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/styles/setupjss.js + 1 modules
-var setupjss = __webpack_require__(38);
+var setupjss = __webpack_require__(39);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/styles/styles.js
 
@@ -39679,7 +39706,7 @@ var EditorLoader_EditorLoader = function (_Component) {
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Editor/index.js
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Props/PropsRenderer.js
-var PropsRenderer = __webpack_require__(104);
+var PropsRenderer = __webpack_require__(106);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Props/index.js
 
@@ -39687,19 +39714,19 @@ var PropsRenderer = __webpack_require__(104);
 var Markdown = __webpack_require__(12);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/index.js + 1 modules
-var Argument = __webpack_require__(33);
+var Argument = __webpack_require__(31);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/index.js + 1 modules
-var Arguments = __webpack_require__(56);
+var Arguments = __webpack_require__(55);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Name/index.js + 1 modules
 var Name = __webpack_require__(28);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/JsDoc/index.js + 1 modules
-var JsDoc = __webpack_require__(31);
+var JsDoc = __webpack_require__(34);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Table/index.js + 1 modules
-var Table = __webpack_require__(54);
+var Table = __webpack_require__(56);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Methods/MethodsRenderer.js
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -40145,7 +40172,7 @@ var DOCS_TAB_USAGE = 'rsg-usage';
 	};
 });
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Link/index.js + 1 modules
-var Link = __webpack_require__(55);
+var Link = __webpack_require__(30);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/ComponentsList/ComponentsListRenderer.js
 function ComponentsListRenderer_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -40217,7 +40244,7 @@ function ComponentsListRenderer(_ref2) {
 					key: href
 				},
 				react_default.a.createElement(
-					Link["a" /* default */],
+					Link["default"],
 					{ className: classnames_default()(heading && classes.heading), href: href },
 					name
 				),
@@ -40511,7 +40538,7 @@ var StyleGuideRenderer = __webpack_require__(140);
 var StyleGuideRenderer_default = /*#__PURE__*/__webpack_require__.n(StyleGuideRenderer);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/lodash/debounce.js
-var debounce = __webpack_require__(106);
+var debounce = __webpack_require__(108);
 var debounce_default = /*#__PURE__*/__webpack_require__.n(debounce);
 
 // EXTERNAL MODULE: ./styleguide/Components/Preview.js
@@ -40519,7 +40546,7 @@ var Preview = __webpack_require__(139);
 var Preview_default = /*#__PURE__*/__webpack_require__.n(Preview);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/index.js + 1 modules
-var Para = __webpack_require__(32);
+var Para = __webpack_require__(33);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Slot/Slot.js
 var Slot_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -40829,7 +40856,7 @@ Examples.contextTypes = {
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Examples/index.js
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Heading/index.js + 1 modules
-var Heading = __webpack_require__(30);
+var Heading = __webpack_require__(32);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/SectionHeading/SectionHeadingRenderer.js
 function SectionHeadingRenderer_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -40950,68 +40977,10 @@ SectionHeading.propTypes = {
 };
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/SectionHeading/index.js
 
-// EXTERNAL MODULE: ./node_modules/clipboard-copy/index.js
-var clipboard_copy = __webpack_require__(132);
-var clipboard_copy_default = /*#__PURE__*/__webpack_require__.n(clipboard_copy);
+// EXTERNAL MODULE: ./styleguide/components/PathlineRenderer.js
+var PathlineRenderer = __webpack_require__(95);
+var PathlineRenderer_default = /*#__PURE__*/__webpack_require__.n(PathlineRenderer);
 
-// EXTERNAL MODULE: ./node_modules/react-icons/lib/md/content-copy.js
-var content_copy = __webpack_require__(131);
-var content_copy_default = /*#__PURE__*/__webpack_require__.n(content_copy);
-
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Pathline/PathlineRenderer.js
-
-
-
-
-
-
-
-var PathlineRenderer_styles = function styles(_ref) {
-	var space = _ref.space,
-	    fontFamily = _ref.fontFamily,
-	    fontSize = _ref.fontSize,
-	    color = _ref.color;
-	return {
-		pathline: {
-			fontFamily: fontFamily.monospace,
-			fontSize: fontSize.small,
-			color: color.light
-		},
-		copyButton: {
-			marginLeft: space[0]
-		}
-	};
-};
-
-function PathlineRenderer(_ref2) {
-	var classes = _ref2.classes,
-	    children = _ref2.children;
-
-	return react_default.a.createElement(
-		'div',
-		{ className: classes.pathline },
-		children,
-		react_default.a.createElement(
-			ToolbarButton_ToolbarButtonRenderer,
-			{
-				small: true,
-				className: classes.copyButton,
-				onClick: function onClick() {
-					return clipboard_copy_default()(children);
-				},
-				title: 'Copy to clipboard'
-			},
-			react_default.a.createElement(content_copy_default.a, null)
-		)
-	);
-}
-
-PathlineRenderer.propTypes = {
-	classes: prop_types_default.a.object.isRequired,
-	children: prop_types_default.a.string
-};
-
-/* harmony default export */ var Pathline_PathlineRenderer = (Object(Styled["default"])(PathlineRenderer_styles)(PathlineRenderer));
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Pathline/index.js
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/ReactComponent/ReactComponentRenderer.js
@@ -41063,7 +41032,7 @@ function ReactComponentRenderer(_ref2) {
 			{ className: classes.header },
 			heading,
 			pathLine && react_default.a.createElement(
-				Pathline_PathlineRenderer,
+				PathlineRenderer_default.a,
 				null,
 				pathLine
 			)
@@ -41690,7 +41659,7 @@ StyleGuide_StyleGuide.defaultProps = {
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/StyleGuide/index.js
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/lodash/get.js
-var get = __webpack_require__(79);
+var get = __webpack_require__(78);
 var get_default = /*#__PURE__*/__webpack_require__.n(get);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/utils/getPageTitle.js
@@ -41718,7 +41687,7 @@ function getPageTitle(sections, baseTitle, displayMode) {
   return baseTitle;
 }
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/lodash/isFinite.js
-var lodash_isFinite = __webpack_require__(130);
+var lodash_isFinite = __webpack_require__(132);
 var isFinite_default = /*#__PURE__*/__webpack_require__.n(lodash_isFinite);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/utils/filterComponentExamples.js
@@ -41843,7 +41812,7 @@ function findSection(sections, name) {
 	return undefined;
 }
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/lodash/isNaN.js
-var lodash_isNaN = __webpack_require__(129);
+var lodash_isNaN = __webpack_require__(131);
 var isNaN_default = /*#__PURE__*/__webpack_require__.n(lodash_isNaN);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/utils/getInfoFromHash.js
@@ -41945,7 +41914,7 @@ function getRouteData(sections, hash, pagePerSection) {
 	return { sections: sections, displayMode: displayMode };
 }
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/utils/globalizeComponent.js
-var globalizeComponent = __webpack_require__(128);
+var globalizeComponent = __webpack_require__(130);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/utils/globalizeComponents.js
 
@@ -42092,7 +42061,7 @@ var scrollToOrigin = function scrollToOrigin() {
 
 var lib_render = function render() {
 	// eslint-disable-next-line import/no-unresolved
-	var styleguide = __webpack_require__(367);
+	var styleguide = __webpack_require__(368);
 	var containerId = 'rsg-root';
 
 	if (document.getElementById('app')) {
@@ -42174,7 +42143,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'File под капотом использует [Button](https://vkcom.github.io/vkui-styleguide/#button),\nпоэтому в качестве свойств можно пробрасывать все свойства, которые поддерживает Button.'
+        'content': 'File под капотом использует Button. То есть все свойства, применимые к Button, применимы и к File.'
     },
     {
         'type': 'code',
@@ -42319,7 +42288,7 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _Button = __webpack_require__(91);
+var _Button = __webpack_require__(90);
 
 var _Button2 = _interopRequireDefault(_Button);
 
@@ -42586,7 +42555,7 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _requestAnimationFrame = __webpack_require__(41);
+var _requestAnimationFrame = __webpack_require__(42);
 
 var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 
@@ -42768,7 +42737,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Визуальная имитация компонента Select'
+        'content': 'Визуальная имитация компонента Select.'
     },
     {
         'type': 'code',
@@ -42878,7 +42847,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(84);
+__webpack_require__(83);
 
 var _react = __webpack_require__(0);
 
@@ -42896,7 +42865,7 @@ var _classnames2 = __webpack_require__(6);
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _dropdown = __webpack_require__(83);
+var _dropdown = __webpack_require__(82);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
@@ -42992,7 +42961,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'В Select можно добавлять `placeholder`:\n\n```jsx\n&lt;Select placeholder="Выберите пол"&gt;\n  &lt;option value="m"&gt;Мужской&lt;/option&gt;\n  &lt;option value="f"&gt;Женский&lt;/option&gt;\n&lt;/Select&gt;\n```'
+        'content': 'В Select можно добавлять placeholder.\n\n```jsx\n<span class="hljs-keyword">import</span> { Select } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Выберите пол"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"m"</span>&gt;</span>Мужской<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"f"</span>&gt;</span>Женский<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Select</span>&gt;</span></span>\n```'
     },
     {
         'type': 'code',
@@ -43134,7 +43103,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(84);
+__webpack_require__(83);
 
 var _react = __webpack_require__(0);
 
@@ -43152,7 +43121,7 @@ var _classnames2 = __webpack_require__(6);
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _dropdown = __webpack_require__(83);
+var _dropdown = __webpack_require__(82);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
@@ -43542,7 +43511,7 @@ var _classnames = __webpack_require__(6);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _requestAnimationFrame = __webpack_require__(41);
+var _requestAnimationFrame = __webpack_require__(42);
 
 var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 
@@ -43783,7 +43752,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _platform = __webpack_require__(11);
 
-var _done = __webpack_require__(88);
+var _done = __webpack_require__(87);
 
 var _done2 = _interopRequireDefault(_done);
 
@@ -44021,7 +43990,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Принимает те же свойства, что и [Slider](#slider), за исключением value и defaultValue. Они должны переданы в виде массива\n[startValue, endValue]. onChange так же возвращает подобный массив.'
+        'content': 'Принимает те же свойства, что и Slider, за исключением value и defaultValue. Они должны переданы в виде массива\n[startValue, endValue]. onChange так же возвращает подобный массив.'
     }]
 	
 
@@ -44087,7 +44056,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Touch = __webpack_require__(34);
+var _Touch = __webpack_require__(35);
 
 var _Touch2 = _interopRequireDefault(_Touch);
 
@@ -44095,7 +44064,7 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _Slider2 = __webpack_require__(85);
+var _Slider2 = __webpack_require__(84);
 
 var _Slider3 = _interopRequireDefault(_Slider2);
 
@@ -44439,11 +44408,11 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Компонент для создания форм. Принимает в качестве children один или несколько элементов форм. Input, Textarea, Select, Button, Checkbox, Radio.\n\nДля отрисовки лейблов снизу и сверху у каждой строчки, используются свойства top и bottom, которые нужно навесить на children элементы:\n\n```jsx\n&lt;FormLayout&gt;\n  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">top</span>=<span class="hljs-string">"Имя"</span> /&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">FormLayout</span>&gt;</span></span>\n```'
+        'content': 'Компонент для создания форм. Принимает в качестве children один или несколько элементов форм. Input, Textarea, Select, Button, Checkbox, Radio.\n\nДля отрисовки лейблов снизу и сверху у каждой строчки, используются свойства top и bottom, которые нужно навесить на children элементы.\n\nИногда требуется объединить несколько контролов в группу. Делается это путем оборачивания их в div.\n\n```jsx\n<span class="hljs-keyword">import</span> { FormLayout, Input } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n&lt;FormLayout&gt;\n  &lt;Input top="Имя" /&gt;\n  &lt;div top="Пароль"&gt;\n    &lt;Input type="password" top="Пароль" placeholder="Введите пароль" /&gt;\n    &lt;Input type="password" placeholder="Повторите пароль" /&gt;\n  &lt;/div&gt;\n&lt;/FormLayout&gt;\n```'
     },
     {
         'type': 'code',
-        'content': '  <View activePanel="new-user">\n    <Panel id="new-user" theme="white">\n      <PanelHeader>Регистрация</PanelHeader>\n      <FormLayout>\n        <Input type="email" top="E-mail" />\n        <div top="Пароль">\n          <Input type="password" top="Пароль" placeholder="Введите пароль" />\n          <Input type="password" placeholder="Повторите пароль" />\n        </div>\n        <Input top="Имя" />\n        <Input top="Фамилия" />\n        <Select top="Пол" placeholder="Выберите пол">\n          <option value="m">Мужской</option>\n          <option value="f">Женский</option>\n        </Select>\n        <div top="Тип документа">\n          <Radio name="type">Паспорт</Radio>\n          <Radio name="type">Загран</Radio>\n        </div>\n        <Textarea top="О себе" />\n        <Checkbox>Согласен со всем, что <Link>этим</Link></Checkbox>\n        <Button size="xl">Зарегистрироваться</Button>\n      </FormLayout>\n    </Panel>\n  </View>',
+        'content': '<View activePanel="new-user">\n  <Panel id="new-user" theme="white">\n    <PanelHeader>Регистрация</PanelHeader>\n    <FormLayout>\n      <Input type="email" top="E-mail" />\n      <div top="Пароль">\n        <Input type="password" top="Пароль" placeholder="Введите пароль" />\n        <Input type="password" placeholder="Повторите пароль" />\n      </div>\n      <Input top="Имя" />\n      <Input top="Фамилия" />\n      <Select top="Пол" placeholder="Выберите пол">\n        <option value="m">Мужской</option>\n        <option value="f">Женский</option>\n      </Select>\n      <div top="Тип документа">\n        <Radio name="type">Паспорт</Radio>\n        <Radio name="type">Загран</Radio>\n      </div>\n      <Textarea top="О себе" />\n      <Checkbox>Согласен со всем <Link>этим</Link></Checkbox>\n      <Button size="xl">Зарегистрироваться</Button>\n    </FormLayout>\n  </Panel>\n</View>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -44787,7 +44756,7 @@ var _FixedLayout = __webpack_require__(59);
 
 var _FixedLayout2 = _interopRequireDefault(_FixedLayout);
 
-var _Tabs = __webpack_require__(86);
+var _Tabs = __webpack_require__(85);
 
 var _Tabs2 = _interopRequireDefault(_Tabs);
 
@@ -45040,7 +45009,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Табы могут растягиваться на всю ширину, либо занимать только необходимое пространство.'
+        'content': 'Табы могут растягиваться на всю ширину, либо занимать только необходимое пространство.\n\n**Важно:** Header, к которому внизу примыкают Tabs, нужно снабдить свойством noShadow, чтобы его тень не налезала\nна Tabs.'
     },
     {
         'type': 'code',
@@ -45276,15 +45245,15 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 __webpack_require__(218);
 
-var _HeaderButton = __webpack_require__(92);
+var _HeaderButton = __webpack_require__(91);
 
 var _HeaderButton2 = _interopRequireDefault(_HeaderButton);
 
-var _back = __webpack_require__(124);
+var _back = __webpack_require__(126);
 
 var _back2 = _interopRequireDefault(_back);
 
-var _cancel = __webpack_require__(78);
+var _cancel = __webpack_require__(77);
 
 var _cancel2 = _interopRequireDefault(_cancel);
 
@@ -46082,12 +46051,18 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(4);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
-module.exports = [{
+module.exports = [
+    {
+        'type': 'markdown',
+        'content': '**Важно**: свойство style применяется к img, а не к корневому элементу. Чаще всего требуется стилизовать именно\nизображение, а не обертку.'
+    },
+    {
         'type': 'code',
         'content': '  <View activePanel="avatar">\n    <Panel id="avatar">\n      <PanelHeader>Avatar</PanelHeader>\n      <Group title="Standart size">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            description="VKonktakte"\n            title="Артур Стамбульцян"\n          >\n            <Button>Добавить</Button>\n          </Entity>\n        </Div>\n      </Group>\n      <Group title="Big avatar (80px)">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            description="VKonktakte"\n            title="Артур Стамбульцян"\n            avatarProps={{ size: 80 }}\n          >\n            <Button>Добавить</Button>\n          </Entity>\n        </Div>\n      </Group>\n      <Group title="Placeholder">\n        <List>\n          <ListItem\n            before={<Avatar style={{ background: colors.blue }} size={28}><Icon16Add fill="#fff" /></Avatar>}\n            description="Только от друзей друзей"\n          >\n            Заявки в друзья\n          </ListItem>\n          <ListItem\n            before={<Avatar style={{ background: colors.red }} size={28}><Icon16Like fill="#fff" /></Avatar>}\n            description="Только важные"\n          >\n            Отметки \xABМне нравится\xBB\n          </ListItem>\n        </List>\n      </Group>\n      <Group title="Using in ListItem">\n        <List>\n          <ListItem before={<Avatar><Icon28User /></Avatar>}>Артур Стамбульцян</ListItem>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c845121/v845121950/63c02/4hP61FL56YM.jpg?ava=1" />}>Тимофей Чаптыков</ListItem>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c834100/v834100961/4f8f1/hjsBzq433co.jpg?ava=1" />}>Влад Анесов</ListItem>\n        </List>\n      </Group>\n      <Header>Типы</Header>\n      <Group title="default" description="Дефолтный стиль аватарки. Используется для юзеров, групп.">\n        <List>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c625316/v625316293/347b7/DmD1VKYbwwI.jpg?ava=1" />}>Евгений Авсиевич</ListItem>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c636327/v636327034/2be85/gt3uFFWTw-w.jpg?ava=1" />}>Татьяна Плуталова</ListItem>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c841629/v841629884/290ab/STZCXV5wZbg.jpg?ava=1" />}>Олег Илларианов</ListItem>\n        </List>\n      </Group>\n      <Group title="app" description="Аватарки для приложений. Радиус скургления зависит от значения свойства size.">\n        <List>\n          <ListItem before={<Avatar type="app" src="https://pp.userapi.com/c844616/v844616889/9ec4a/9Fk-RI7uchQ.jpg" />} description="Ролевая">Шторм онлайн</ListItem>\n          <ListItem before={<Avatar type="app" src="https://pp.userapi.com/c848536/v848536020/18242/ZLjAYM59EqY.jpg" />} description="Настольная" multiline={false}>Шашки - 3 вида: шашки, уголки, поддавки</ListItem>\n          <ListItem before={<Avatar type="app" src="https://pp.userapi.com/c849028/v849028348/1b353/Na_GRlqgRNM.jpg" />} description="Головолмка">Вега Микс на даче</ListItem>\n        </List>\n      </Group>\n      <Group title="image" description="Используется для остальных случаев. Например, для музыки и плейлистов.">\n        <List>\n          <ListItem before={<Avatar type="image" src="https://pp.userapi.com/c841025/v841025503/617f7/bkN1Def0s14.jpg" />} description="Arctic Monkeys" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>I Wanna Be Yours</ListItem>\n          <ListItem before={<Avatar type="image" src="https://pp.userapi.com/c845220/v845220642/7cacc/XzhH5b7FSKY.jpg" />} description="Лето (звери)" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>6 утра</ListItem>\n          <ListItem before={<Avatar type="image" src="https://pp.userapi.com/c837628/v837628453/39175/4JRjMaFvCrw.jpg" />} description="Depeche Mode" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>Enjoy the Silence</ListItem>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
-    }]
+    }
+]
 	
 
 /***/ }),
@@ -46098,7 +46073,7 @@ module.exports = [{
 if (false) {}
 
 module.exports = {
-    'description': 'Для этого компонента сделано исключение: свойство style применяется к img, а не к корневому элементу.\nСделано для удобства.\n',
+    'description': '',
     'methods': [],
     'displayName': 'Avatar',
     'props': [
@@ -46210,7 +46185,6 @@ module.exports = {
         }
     ],
     'doclets': {},
-    'tags': {},
     'examples': __webpack_require__(230)
 }
 	
@@ -46443,7 +46417,7 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _Touch = __webpack_require__(34);
+var _Touch = __webpack_require__(35);
 
 var _Touch2 = _interopRequireDefault(_Touch);
 
@@ -46451,7 +46425,7 @@ var _classnames3 = __webpack_require__(6);
 
 var _classnames4 = _interopRequireDefault(_classnames3);
 
-var _requestAnimationFrame = __webpack_require__(41);
+var _requestAnimationFrame = __webpack_require__(42);
 
 var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 
@@ -47160,7 +47134,7 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _Avatar = __webpack_require__(87);
+var _Avatar = __webpack_require__(86);
 
 var _Avatar2 = _interopRequireDefault(_Avatar);
 
@@ -47282,11 +47256,11 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Информационный блок. Используется для отрисовки некликабельных блоков с неизменяемым контентом (то есть без инпутов, слайдеров и т.п.)\nЕсли таких блоков несколько и они объединены по смыслу, то рекомендуется оборачивать список в `<Group />` с указанием `title`.'
+        'content': 'Информационный блок. Используется для отрисовки некликабельных блоков с неизменяемым контентом (то есть без инпутов, слайдеров и т.п.)\nЕсли таких блоков несколько и они объединены по смыслу, то рекомендуется оборачивать список в Group с указанием title.'
     },
     {
         'type': 'code',
-        'content': '  <View activePanel="info-row">\n    <Panel id="info-row">\n      <PanelHeader>\n        InfoRow\n      </PanelHeader>\n      <Group>\n        <Div>\n          <InfoRow title="Общий бюджет">\n            3000 р.\n          </InfoRow>\n        </Div>\n      </Group>\n      <Group title="Информация о пользователе">\n        <List>\n          <ListItem>\n            <InfoRow title="Дата рождения">\n              30 января 1993\n            </InfoRow>\n          </ListItem>\n          <ListItem>\n            <InfoRow title="Родной город">\n              Ереван\n            </InfoRow>\n          </ListItem>\n          <ListItem>\n            <InfoRow title="Место работы">\n              Команда ВКонтакте\n            </InfoRow>\n          </ListItem>\n        </List>\n      </Group>  \n    </Panel>\n  </View>',
+        'content': '  <View activePanel="info-row">\n    <Panel id="info-row">\n      <PanelHeader>\n        InfoRow\n      </PanelHeader>\n      <Group>\n        <Div>\n          <InfoRow title="Общий бюджет">\n            3000 р.\n          </InfoRow>\n        </Div>\n      </Group>\n      <Group title="Информация о пользователе">\n        <List>\n          <ListItem>\n            <InfoRow title="Дата рождения">\n              30 января 1993\n            </InfoRow>\n          </ListItem>\n          <ListItem>\n            <InfoRow title="Родной город">\n              Ереван\n            </InfoRow>\n          </ListItem>\n          <ListItem>\n            <InfoRow title="Место работы">\n              Команда ВКонтакте\n            </InfoRow>\n          </ListItem>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -47556,7 +47530,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Подвал для списков'
+        'content': 'Подвал для списков.'
     },
     {
         'type': 'code',
@@ -47640,7 +47614,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 __webpack_require__(257);
 
-var _Div = __webpack_require__(90);
+var _Div = __webpack_require__(89);
 
 var _Div2 = _interopRequireDefault(_Div);
 
@@ -48082,11 +48056,11 @@ var _chevron = __webpack_require__(261);
 
 var _chevron2 = _interopRequireDefault(_chevron);
 
-var _done = __webpack_require__(88);
+var _done = __webpack_require__(87);
 
 var _done2 = _interopRequireDefault(_done);
 
-var _cancel = __webpack_require__(78);
+var _cancel = __webpack_require__(77);
 
 var _cancel2 = _interopRequireDefault(_cancel);
 
@@ -48591,7 +48565,7 @@ var _classnames = __webpack_require__(6);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _Header = __webpack_require__(89);
+var _Header = __webpack_require__(88);
 
 var _Header2 = _interopRequireDefault(_Header);
 
@@ -48776,7 +48750,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Компонент-обертка для отрисовки ссылок.\n\n```jsx\n  &lt;Link href="https://google.com" target="_blank"&gt;Google&lt;/Link&gt;\n  &lt;Link href="/profile"&gt;Profile&lt;/Link&gt;\n```'
+        'content': 'Компонент-обертка для отрисовки ссылок. Поддерживаются все допустимые html атрибуты.\n\n```jsx\n<span class="hljs-keyword">import</span> { Link } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://google.com"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>Google<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>\n&lt;Link href=<span class="hljs-string">"/profile"</span>&gt;Profile&lt;<span class="hljs-regexp">/Link&gt;</span>\n```'
     }]
 	
 
@@ -48905,10 +48879,18 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(4);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
-module.exports = [{
+module.exports = [
+    {
         'type': 'markdown',
         'content': 'Компонент с установленными паддингами, которые отличаются в зависимости от платформы. Необходим, когда есть какой-то\nкастомный блок, у которого должны быть стандартные отступы.'
-    }]
+    },
+    {
+        'type': 'code',
+        'content': '<View activePanel="div">\n  <Panel id="div">\n    <PanelHeader>Div</PanelHeader>\n    <Group>\n      <Div>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\n        dolore magna aliqua.\n      </Div>\n    </Group>\n  </Panel>\n</View>',
+        'settings': {},
+        'evalInContext': evalInContext
+    }
+]
 	
 
 /***/ }),
@@ -49661,7 +49643,7 @@ var _Spinner = __webpack_require__(299);
 
 var _Spinner2 = _interopRequireDefault(_Spinner);
 
-var _PopoutWrapper = __webpack_require__(40);
+var _PopoutWrapper = __webpack_require__(41);
 
 var _PopoutWrapper2 = _interopRequireDefault(_PopoutWrapper);
 
@@ -49707,7 +49689,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Свойство-массив actions служит для отрисовки кнопок. Каждый элемент массива \u2013 это объект из трех полей:\n\n-   `action` \u2013 функция для обработки клика по кнопке.\n-   `style` \u2013 стилизация кнопки. Более подробно со значениями можно ознакомиться в разделе props & methods.\n-   `autoclose` \u2013 флаг для автозакрытия алерта при клике на кнопку. **Важно:** перед установкой этого флага в `true`, убедитесь, что в `Alert` передано свойство `onClose`.'
+        'content': 'Свойство-массив actions служит для отрисовки кнопок. Каждый элемент массива \u2013 это объект из трех полей:\n\n-   action \u2013 функция для обработки клика по кнопке.\n-   style \u2013 стилизация кнопки. Более подробно со значениями можно ознакомиться в разделе props & methods.\n-   autoclose \u2013 флаг для автозакрытия алерта при клике на кнопку. **Важно:** перед установкой этого флага в true, убедитесь, что в Alert передано свойство onClose.'
     },
     {
         'type': 'code',
@@ -49871,7 +49853,7 @@ var _Tappable = __webpack_require__(20);
 
 var _Tappable2 = _interopRequireDefault(_Tappable);
 
-var _PopoutWrapper = __webpack_require__(40);
+var _PopoutWrapper = __webpack_require__(41);
 
 var _PopoutWrapper2 = _interopRequireDefault(_PopoutWrapper);
 
@@ -50003,7 +49985,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Элемент списка ActionSheet. Если в ActionSheetItem передать `autoclose={true}`, то ActionSheet сам вызовет переданный в него onClose.'
+        'content': 'Элемент списка ActionSheet. Если в ActionSheetItem передать autoclose={true}, то ActionSheet сам вызовет переданный в него onClose.'
     }]
 	
 
@@ -50176,7 +50158,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'ActionSheet \u2013 имитация [нативного компонента](https://developer.apple.com/ios/human-interface-guidelines/views/action-sheets/). Удобно использовать, когда нужно дать пользователю выбрать одно из множества действий.\nВ качестве children принимает коллекцию [ActionSheetItem](https://vkcom.github.io/vkui-styleguide/#actionsheetitem).\n\n**Важно**\n\n-   Нужно обязательно передать onClose для обработки закрытия ActionSheet изнутри.\n-   Согласно гайдлайнам, в ActionSheet должен быть элемент для закрытия. В коде примера ниже можно посмотреть, как добавить такой элемент.'
+        'content': 'ActionSheet \u2013 имитация [нативного компонента](https://developer.apple.com/ios/human-interface-guidelines/views/action-sheets/). Удобно использовать, когда нужно дать пользователю выбрать одно из множества действий.\nВ качестве children принимает коллекцию ActionSheetItem.\n\n**Важно**\n\n-   Нужно обязательно передать onClose для обработки закрытия ActionSheet изнутри.\n-   Согласно гайдлайнам Apple, в ActionSheet должен быть элемент для закрытия.\n    В коде примера ниже можно посмотреть, как добавить такой элемент.\n    Для Android версии такой элемент не нужен.'
     },
     {
         'type': 'code',
@@ -50277,7 +50259,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _PopoutWrapper = __webpack_require__(40);
+var _PopoutWrapper = __webpack_require__(41);
 
 var _PopoutWrapper2 = _interopRequireDefault(_PopoutWrapper);
 
@@ -50293,7 +50275,7 @@ __webpack_require__(312);
 
 var _platform = __webpack_require__(11);
 
-var _transitionEvents = __webpack_require__(35);
+var _transitionEvents = __webpack_require__(36);
 
 var _transitionEvents2 = _interopRequireDefault(_transitionEvents);
 
@@ -50447,7 +50429,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Компонент-обертка для отрисовки всплывающих окон с затемнением фона. Используется внутри [Alert](#alert), [ActionSheet](#actionsheet) и [ScreenSpinner](#screenspinner).\nСвойства v и h служат для удобного позиционирования контента. Пример:\n\n```jsx\n  &lt;PopoutWrapper v=<span class="hljs-string">"center"</span> h=<span class="hljs-string">"center"</span>&gt;\n    Some content\n  &lt;<span class="hljs-regexp">/PopoutWrapper&gt;</span>\n```'
+        'content': 'Компонент-обертка для отрисовки всплывающих окон с затемнением фона. Используется внутри Alert, ActionSheet и ScreenSpinner.\nСвойства v и h служат для удобного позиционирования контента. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { Popout } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PopoutWrapper</span> <span class="hljs-attr">v</span>=<span class="hljs-string">"center"</span> <span class="hljs-attr">h</span>=<span class="hljs-string">"center"</span>&gt;</span>\n  Some content\n<span class="hljs-tag">&lt;/<span class="hljs-name">PopoutWrapper</span>&gt;</span></span>\n```'
     }]
 	
 
@@ -50596,7 +50578,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Компонент нужен для отрисовки длинного длинного содержимого, которое можно скроллить по-горизонтали.'
+        'content': 'Компонент для отрисовки "длинного" содержимого, которое можно скроллить по-горизонтали.'
     },
     {
         'type': 'code',
@@ -50747,7 +50729,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'position: fixed не дружит с transform: translate на родителе, поэтому для позиционирования фиксированных блоков внутри Panel, необходимо использовать FixedLayout в качестве обертки.\n\nДля удобства есть свойство vertical, с помощью которого можно прижать контент к верху или низу. При этому будут учитываться высота шапки, insets и safe-area-insets. В большинстве случаев нужен именно такой тип позиционирования.'
+        'content': '{ position: fixed } не дружит с { transform: translate } на родителе, поэтому для позиционирования фиксированных блоков внутри Panel, необходимо использовать FixedLayout в качестве обертки.\n\nДля удобства есть свойство vertical, с помощью которого можно прижать контент к верху или низу. При этому будут учитываться высота шапки и прочие системные отступы.\n\nВажно понимать, что блок с { position: fixed } находится не в потоке. В примере можно увидеть, что у блока с основным контентом есть паддинги. Они там не случайны.'
     },
     {
         'type': 'code',
@@ -50829,10 +50811,1153 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(4);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
+module.exports = [{
+        'type': 'code',
+        'content': 'class Example extends React.Component {\n\n  constructor () {\n    this.state = {\n      contextOpened: true,\n      mode: \'all\'\n    }\n    this.toggleContext = this.toggleContext.bind(this);\n    this.select = this.select.bind(this);\n  }\n\n  toggleContext () {\n    this.setState({ contextOpened: !this.state.contextOpened });\n  }\n\n  select (e) {\n    const mode = e.currentTarget.dataset.mode;\n    this.setState({ mode });\n    requestAnimationFrame(this.toggleContext);\n  }\n\n  render () {\n\n    return (\n      <View activePanel="context">\n        <Panel id="context">\n          <PanelHeader\n            left={<HeaderButton>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n            right={<HeaderButton>{<Icon24Add />}</HeaderButton>}\n          >\n            <PanelHeaderContent aside={<Icon16Dropdown />} onClick={this.toggleContext}>\n              Communities\n            </PanelHeaderContent>\n          </PanelHeader>\n          <HeaderContext opened={this.state.contextOpened} onClose={this.toggleContext}>\n            <List>\n              <ListItem\n                before={<Icon24Users />}\n                asideContent={this.state.mode === \'all\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                onClick={this.select}\n                data-mode="all"\n              >\n                Communities\n              </ListItem>\n              <ListItem\n                before={<Icon24Settings />}\n                asideContent={this.state.mode === \'managed\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                onClick={this.select}\n                data-mode="managed"\n              >\n                Managed Communities\n              </ListItem>\n            </List>\n          </HeaderContext>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
+        'settings': {},
+        'evalInContext': evalInContext
+    }]
+	
+
+/***/ }),
+/* 326 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+module.exports = {
+    'description': '',
+    'displayName': 'HeaderContext',
+    'methods': [],
+    'props': [
+        {
+            'type': { 'name': 'func' },
+            'required': true,
+            'description': '',
+            'tags': {},
+            'name': 'onClose'
+        },
+        {
+            'type': { 'name': 'bool' },
+            'required': true,
+            'description': '',
+            'defaultValue': {
+                'value': 'false',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'opened'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'children'
+        },
+        {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'className'
+        },
+        {
+            'type': { 'name': 'object' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'style'
+        }
+    ],
+    'doclets': {},
+    'examples': __webpack_require__(325)
+}
+	
+
+/***/ }),
+/* 327 */,
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 329 */,
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(6);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _getClassName = __webpack_require__(7);
+
+var _getClassName2 = _interopRequireDefault(_getClassName);
+
+var _FixedLayout = __webpack_require__(59);
+
+var _FixedLayout2 = _interopRequireDefault(_FixedLayout);
+
+__webpack_require__(328);
+
+var _transitionEvents = __webpack_require__(36);
+
+var _transitionEvents2 = _interopRequireDefault(_transitionEvents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var baseClassNames = (0, _getClassName2.default)('HeaderContext');
+
+var HeaderContext = function (_React$Component) {
+  _inherits(HeaderContext, _React$Component);
+
+  function HeaderContext() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, HeaderContext);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeaderContext.__proto__ || Object.getPrototypeOf(HeaderContext)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      closing: false
+    }, _this.onAnimationFinish = function () {
+      return _this.setState({ closing: false });
+    }, _this.getRef = function (el) {
+      return _this.el = el;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(HeaderContext, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.opened !== this.props.opened) {
+        if (nextProps.opened === false) {
+          this.setState({ closing: true });
+          this.waitAnimationFinish(this.onAnimationFinish);
+        } else {
+          clearTimeout(this.closeAnimationTimeiout);
+        }
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearTimeout(this.closeAnimationTimeiout);
+    }
+  }, {
+    key: 'waitAnimationFinish',
+    value: function waitAnimationFinish(eventHandler) {
+      if (_transitionEvents2.default.supported) {
+        var eventName = _transitionEvents2.default.prefix ? _transitionEvents2.default.prefix + 'AnimationEnd' : 'animationend';
+        this.el.removeEventListener(eventName, eventHandler);
+        this.el.addEventListener(eventName, eventHandler);
+      } else {
+        this.closeAnimationTimeiout = setTimeout(eventHandler.bind(this), 200);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          opened = _props.opened,
+          onClose = _props.onClose,
+          restProps = _objectWithoutProperties(_props, ['children', 'className', 'opened', 'onClose']);
+
+      return _react2.default.createElement(
+        _FixedLayout2.default,
+        _extends({}, restProps, { className: (0, _classnames2.default)(baseClassNames, {
+            'HeaderContext--opened': opened,
+            'HeaderContext--closing': this.state.closing
+          }, className), vertical: 'top' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'HeaderContext__in', ref: this.getRef },
+          (opened || this.state.closing) && children
+        ),
+        (opened || this.state.closing) && _react2.default.createElement('div', { onClick: onClose, className: 'HeaderContext__fade' })
+      );
+    }
+  }]);
+
+  return HeaderContext;
+}(_react2.default.Component);
+
+HeaderContext.propTypes = {
+  children: _propTypes2.default.node,
+  className: _propTypes2.default.string,
+  style: _propTypes2.default.object,
+  onClose: _propTypes2.default.func.isRequired,
+  opened: _propTypes2.default.bool.isRequired
+};
+HeaderContext.defaultProps = {
+  opened: false
+};
+exports.default = HeaderContext;
+
+/***/ }),
+/* 332 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Используется для создания модальных окон. Содержимое View \u2013 это коллекция Panel, содержимое Root \u2013 коллекция View. Принцип тот же. У каждой View должен быть id, свойство activeView определяет, какая View активна. Так же есть свойство onTransition.'
+        'content': 'Компонент для отрисовки "сложного" содержимого шапки.'
+    },
+    {
+        'type': 'code',
+        'content': '<View activePanel="brand">\n  <Panel id="brand">\n    <PanelHeader\n      left={<HeaderButton>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n      right={<HeaderButton>{<Icon24Phone />}</HeaderButton>}\n    >\n      <PanelHeaderContent\n        status="был в сети сегодня, в 18:46"\n        aside={<Icon16Dropdown />}\n        before={<Avatar size={40} src="https://sun9-5.userapi.com/c834100/v834100961/4f8f1/hjsBzq433co.jpg?ava=1" />}\n        onClick={() => {}}\n      >\n        Влад Анесов\n      </PanelHeaderContent>\n    </PanelHeader>\n  </Panel>\n</View>',
+        'settings': {},
+        'evalInContext': evalInContext
+    }
+]
+	
+
+/***/ }),
+/* 333 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+module.exports = {
+    'description': '',
+    'methods': [],
+    'displayName': 'PanelHeaderContent',
+    'props': [
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'aside'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': 'Android only',
+            'tags': {},
+            'name': 'before'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'children'
+        },
+        {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'className'
+        },
+        {
+            'type': { 'name': 'func' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'onClick'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'status'
+        },
+        {
+            'type': { 'name': 'object' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'style'
+        }
+    ],
+    'doclets': {},
+    'examples': __webpack_require__(332)
+}
+	
+
+/***/ }),
+/* 334 */,
+/* 335 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 336 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(6);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _getClassName = __webpack_require__(7);
+
+var _getClassName2 = _interopRequireDefault(_getClassName);
+
+var _platform = __webpack_require__(11);
+
+var _Tappable = __webpack_require__(20);
+
+var _Tappable2 = _interopRequireDefault(_Tappable);
+
+__webpack_require__(335);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var osname = (0, _platform.platform)();
+var baseClassNames = (0, _getClassName2.default)('PanelHeaderContent');
+
+var PanelHeaderContent = function PanelHeaderContent(_ref) {
+  var className = _ref.className,
+      style = _ref.style,
+      aside = _ref.aside,
+      status = _ref.status,
+      before = _ref.before,
+      children = _ref.children,
+      onClick = _ref.onClick,
+      restProps = _objectWithoutProperties(_ref, ['className', 'style', 'aside', 'status', 'before', 'children', 'onClick']);
+
+  var InComponent = onClick ? _Tappable2.default : 'div';
+  var rootProps = onClick ? {} : restProps;
+  var inProps = onClick ? restProps : {};
+
+  return _react2.default.createElement(
+    'div',
+    _extends({}, rootProps, { className: (0, _classnames2.default)(baseClassNames, className), style: style }),
+    osname === _platform.ANDROID && before && _react2.default.createElement(
+      'div',
+      { className: 'PanelHeaderContent__before' },
+      before
+    ),
+    _react2.default.createElement(
+      InComponent,
+      _extends({}, inProps, { className: 'PanelHeaderContent__in', onClick: onClick }),
+      status && _react2.default.createElement(
+        'div',
+        { className: 'PanelHeaderContent__status' },
+        status
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'PanelHeaderContent__children' },
+        _react2.default.createElement(
+          'span',
+          null,
+          children
+        ),
+        aside && _react2.default.createElement(
+          'div',
+          { className: 'PanelHeaderContent__aside' },
+          aside
+        )
+      )
+    )
+  );
+};
+
+PanelHeaderContent.propTypes = {
+  children: _propTypes2.default.node,
+  className: _propTypes2.default.string,
+  style: _propTypes2.default.object,
+  aside: _propTypes2.default.node,
+  status: _propTypes2.default.node,
+  onClick: _propTypes2.default.func,
+  /**
+   * Android only
+   */
+  before: _propTypes2.default.node
+};
+
+exports.default = PanelHeaderContent;
+
+/***/ }),
+/* 337 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
+module.exports = [
+    {
+        'type': 'markdown',
+        'content': 'Компонент для отрисовки кнопок в PanelHeader. Внутрь компонента передается либо иконка, либо текст. Текстовые кнопки\nчаще всего используются в iOS, но есть исключения для Android.\n\nШапки iOS и Android достаточно сильно отличаются внешне, поэтому описание будет разделено на две части.\n\n**Android**\n\nКнопки могут быть переданы в left или right компонента PanelHeader:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Back <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/back\'</span>;\n<span class="hljs-keyword">import</span> Icon24Search <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/search\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">left</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">HeaderButton</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Back</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n  right={<span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Search</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n/&gt;</span>\n```\n\nЕсли нужно несколько кнопок справа или слева, то передаем массив:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Add <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/add\'</span>;\n<span class="hljs-keyword">import</span> Icon24Search <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/search\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">right</span>=<span class="hljs-string">{[</span>\n    &lt;<span class="hljs-attr">HeaderButton</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"search"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Search</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>,\n    <span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"add"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Add</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>\n  ]}\n/&gt;</span>\n```\n\n**iOS**\n\nОсновное отличие \u2013 это составность левой кнопки. Она может состоять из иконки и текста. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton, platform, IOS } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Back <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/back\'</span>;\n<span class="hljs-keyword">import</span> Icon28ChevronBack <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/28/chevron_back\'</span>;\n\n<span class="hljs-keyword">const</span> osname = platform();\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">addon</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">HeaderButton</span>&gt;</span>Назад<span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n  left={<span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span>&gt;</span>{osname === IOS <span class="hljs-tag">&lt;<span class="hljs-name">Icon28ChevronBack</span>/&gt;</span> ? <span class="hljs-tag">&lt;<span class="hljs-name">Icon24Back</span>/&gt;</span>}<span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n/&gt;</span>\n```\n\nВ примере выше появляется новое свойство `addon`, актуальное только для iOS версии.\n\n**Важно:** кнопки для возврата к предыдущей Panel отличаются.\nВ случае с iOS используется иконка [28/chevron_back](https://vkcom.github.io/icons/#28/chevron_back), в случае с\nAndroid \u2013 [24/back](https://vkcom.github.io/icons/#24/back). Так же различаются кнопки для возврата к предыдущей\nView. iOS \u2013 текст "Отмена", Android \u2013 [24/cancel](https://vkcom.github.io/icons/#24/cancel).'
+    },
+    {
+        'type': 'code',
+        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      activePanel: \'panel1\',\n      activeView: \'main\'\n    }\n  }\n\n  render() {\n    return (\n      <Root activeView={this.state.activeView}>\n        <View id="main" activePanel={this.state.activePanel}>\n          <Panel id="panel1">\n            <PanelHeader left={<HeaderButton>{osname === IOS ? \'Отмена\' : <Icon24Cancel/>}</HeaderButton>}>\n              Стартовый экран\n            </PanelHeader>\n            <Group>\n              <Div>\n                Если приложение открывается как модальное окно, то в качестве левой кнопки принято кнопку "Отмена".\n                <br/>\n                <br/>\n                В противном случае показывается кнопка "Назад".\n              </Div>\n            </Group>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel2\' }) }>\n                Больше примеров\n              </Button>\n            </Group>\n          </Panel>\n          <Panel id="panel2">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activePanel: \'panel1\' })}>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}\n              addon={<HeaderButton onClick={() => this.setState({ activePanel: \'panel1\' })}>Назад</HeaderButton>}\n              right={<HeaderButton onClick={() => {}}><Icon24Story/></HeaderButton>}\n            >\n              Заголовок\n            </PanelHeader>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel3\' }) }>\n                Несколько иконок\n              </Button>\n            </Group>\n          </Panel>\n          <Panel id="panel3">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activePanel: \'panel2\' })}>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}\n              addon={<HeaderButton onClick={() => this.setState({ activePanel: \'panel2\' })}>Назад</HeaderButton>}\n              right={[\n                <HeaderButton key="add" onClick={() => {}}><Icon24Add/></HeaderButton>,\n                <HeaderButton key="more" onClick={() => {}}><Icon24MoreVertical/></HeaderButton>\n              ]}\n            >\n              Две иконки\n            </PanelHeader>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activeView: \'modal\' }) }>\n                Модальное окно\n              </Button>\n            </Group>\n          </Panel>\n        </View>\n        <View id="modal" header activePanel="modal-panel">\n          <Panel id="modal-panel">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activeView: \'main\' })}>{osname === IOS ? \'Отмена\' : <Icon24Cancel/>}</HeaderButton>}\n              right={<HeaderButton disabled primary onClick={() => this.setState({ activeView: \'main\' })}>{osname === IOS ? \'Готово\' : <Icon24Done/>}</HeaderButton>}\n            >\n              Модальное окно\n            </PanelHeader>\n          </Panel>\n        </View>\n      </Root>\n    )\n  }\n}\n\n<Example/>',
+        'settings': {},
+        'evalInContext': evalInContext
+    }
+]
+	
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+module.exports = {
+    'description': '',
+    'methods': [],
+    'displayName': 'HeaderButton',
+    'props': [
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'children'
+        },
+        {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'className'
+        },
+        {
+            'type': { 'name': 'bool' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': 'false',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'primary'
+        }
+    ],
+    'doclets': {},
+    'examples': __webpack_require__(337)
+}
+	
+
+/***/ }),
+/* 339 */,
+/* 340 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getOffsetRect = getOffsetRect;
+function getOffsetRect(elem) {
+  var box = elem.getBoundingClientRect();
+  var body = document.body;
+  var doc = document.documentElement;
+  var scrollTop = window.pageYOffset || doc.scrollTop || body.scrollTop;
+  var scrollLeft = window.pageXOffset || doc.scrollLeft || body.scrollLeft;
+  var clientTop = doc.clientTop || body.clientTop || 0;
+  var clientLeft = doc.clientLeft || body.clientLeft || 0;
+
+  return {
+    top: Math.round(box.top + scrollTop - clientTop),
+    left: Math.round(box.left + scrollLeft - clientLeft),
+    width: elem.offsetWidth,
+    height: elem.offsetHeight
+  };
+}
+
+/***/ }),
+/* 342 */,
+/* 343 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 344 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
+module.exports = [
+    {
+        'type': 'markdown',
+        'content': 'Компонент для отрисовки шапки внутри Panel. В качестве children принимает то, что будет находиться в центре.\nЭто может быть текст, элемент или Search. По бокам располагаются управляющие кнопки HeaderButton.'
+    },
+    {
+        'type': 'code',
+        'content': 'class Example extends React.Component {\n\n  constructor () {\n    this.state = {\n      activePanel: \'brand\'\n    }\n  }\n\n  render () {\n\n    return (\n      <View activePanel={this.state.activePanel}>\n        <Panel id="brand">\n          <PanelHeader>\n            Настройки\n          </PanelHeader>\n          <Group>\n            <Button type="cell" onClick={() => this.setState({ activePanel: \'light\' })}>Светлая тема</Button>\n          </Group>\n        </Panel>\n        <Panel id="light">\n          <PanelHeader\n            theme="light"\n            left={<HeaderButton onClick={() => this.setState({ activePanel: \'brand\' })}>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n            addon={<HeaderButton onClick={() => this.setState({ activePanel: \'brand\' })}>Назад</HeaderButton>}\n          >\n            Котики\n          </PanelHeader>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
+        'settings': {},
+        'evalInContext': evalInContext
+    }
+]
+	
+
+/***/ }),
+/* 345 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+module.exports = {
+    'description': '',
+    'displayName': 'PanelHeader',
+    'methods': [],
+    'props': [
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': 'iOS only',
+            'tags': {},
+            'name': 'addon'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'children'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'left'
+        },
+        {
+            'type': { 'name': 'bool' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': 'false',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'noShadow'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'right'
+        },
+        {
+            'type': {
+                'name': 'enum',
+                'value': [
+                    {
+                        'value': '\'light\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'brand\'',
+                        'computed': false
+                    }
+                ]
+            },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '\'brand\'',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'theme'
+        }
+    ],
+    'doclets': {},
+    'examples': __webpack_require__(344)
+}
+	
+
+/***/ }),
+/* 346 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
+module.exports = [{
+        'type': 'markdown',
+        'content': 'Компонент для создания панели. Передается внутрь View.\n\n```jsx\n<span class="hljs-keyword">import</span> { Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"panelId"</span>&gt;</span>\n  Content\n<span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span></span>\n```'
+    }]
+	
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+module.exports = {
+    'description': '',
+    'displayName': 'Panel',
+    'methods': [],
+    'props': [
+        {
+            'type': { 'name': 'string' },
+            'required': true,
+            'description': '',
+            'tags': {},
+            'name': 'id'
+        },
+        {
+            'type': { 'name': 'bool' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': 'false',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'centered'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '\'\'',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'children'
+        },
+        {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'className'
+        },
+        {
+            'type': { 'name': 'bool' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': 'true',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'optimized'
+        },
+        {
+            'type': { 'name': 'object' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'style'
+        },
+        {
+            'type': {
+                'name': 'enum',
+                'value': [
+                    {
+                        'value': '\'white\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'gray\'',
+                        'computed': false
+                    }
+                ]
+            },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '\'gray\'',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'theme'
+        }
+    ],
+    'doclets': {},
+    'examples': __webpack_require__(346)
+}
+	
+
+/***/ }),
+/* 348 */,
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(349);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _getClassName = __webpack_require__(7);
+
+var _getClassName2 = _interopRequireDefault(_getClassName);
+
+var _classnames = __webpack_require__(6);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var baseClassNames = (0, _getClassName2.default)('Panel');
+
+var Panel = function (_Component) {
+  _inherits(Panel, _Component);
+
+  function Panel() {
+    _classCallCheck(this, Panel);
+
+    return _possibleConstructorReturn(this, (Panel.__proto__ || Object.getPrototypeOf(Panel)).apply(this, arguments));
+  }
+
+  _createClass(Panel, [{
+    key: 'getChildContext',
+    value: function getChildContext() {
+      return {
+        panel: this.props.id
+      };
+    }
+  }, {
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(_ref) {
+      var optimized = _ref.optimized,
+          isNext = _ref.isNext,
+          isPrev = _ref.isPrev;
+
+      return optimized ? !isNext && !isPrev : true;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          className = _props.className,
+          centered = _props.centered,
+          children = _props.children,
+          isPrev = _props.isPrev,
+          isNext = _props.isNext,
+          theme = _props.theme,
+          optimized = _props.optimized,
+          restProps = _objectWithoutProperties(_props, ['className', 'centered', 'children', 'isPrev', 'isNext', 'theme', 'optimized']);
+
+      return _react2.default.createElement(
+        'div',
+        _extends({}, restProps, { className: (0, _classnames2.default)(baseClassNames, className, { 'Panel--centered': centered }) }),
+        _react2.default.createElement(
+          'div',
+          { className: 'Panel__in', style: { paddingBottom: this.insets.bottom || null, paddingTop: this.insets.top || null } },
+          _react2.default.createElement('div', { className: 'Panel__in-before' }),
+          children,
+          _react2.default.createElement('div', { className: 'Panel__in-after' })
+        )
+      );
+    }
+  }, {
+    key: 'insets',
+    get: function get() {
+      return this.context.insets || {};
+    }
+  }]);
+
+  return Panel;
+}(_react.Component);
+
+Panel.childContextTypes = {
+  panel: _propTypes2.default.string
+};
+Panel.propTypes = {
+  children: _propTypes2.default.node,
+  className: _propTypes2.default.string,
+  theme: _propTypes2.default.oneOf(['white', 'gray']),
+  id: _propTypes2.default.string.isRequired,
+  optimized: _propTypes2.default.bool,
+  centered: _propTypes2.default.bool,
+  style: _propTypes2.default.object,
+  /**
+   * @ignore
+   */
+  isPrev: _propTypes2.default.bool,
+  /**
+   * @ignore
+   */
+  isNext: _propTypes2.default.bool
+};
+Panel.defaultProps = {
+  children: '',
+  theme: 'gray',
+  centered: false,
+  optimized: true
+};
+Panel.contextTypes = {
+  insets: _propTypes2.default.shape({
+    top: _propTypes2.default.number,
+    right: _propTypes2.default.number,
+    bottom: _propTypes2.default.number,
+    left: _propTypes2.default.number
+  })
+};
+exports.default = Panel;
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
+module.exports = [
+    {
+        'type': 'markdown',
+        'content': 'Базовый компонент для создания панелей. В качестве children принимает коллекцию Panel. У каждой Panel должен быть уникальный id. Свойство activePanel определяет какая Panel активна.\n\nПри смене значения свойства activePanel происходит переход от одной панели к другой. Как только он заканчивается, вызывается свойство-функция onTransition.'
+    },
+    {
+        'type': 'code',
+        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      activePanel: \'panel1\'\n    }\n  }\n\n  render() {\n    return (\n      <View activePanel={this.state.activePanel}>\n        <Panel id="panel1">\n          <PanelHeader>Panel 1</PanelHeader>\n          <Group>\n            <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel2\' }) }>\n              Go to panel 2\n            </Button>\n          </Group>\n        </Panel>\n        <Panel id="panel2">\n          <PanelHeader>Panel 2</PanelHeader>\n          <Group>\n            <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel3\' }) }>\n              Go to panel 3\n            </Button>\n          </Group>\n        </Panel>\n        <Panel id="panel3">\n          <PanelHeader>Panel 3</PanelHeader>\n          <Group>\n            <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel1\' }) }>\n              Back to panel 1\n            </Button>\n          </Group>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
+        'settings': {},
+        'evalInContext': evalInContext
+    }
+]
+	
+
+/***/ }),
+/* 352 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+module.exports = {
+    'description': '',
+    'displayName': 'View',
+    'methods': [],
+    'props': [
+        {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'activePanel'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': 'null',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'children'
+        },
+        {
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'object' },
+                    { 'name': 'bool' }
+                ]
+            },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': 'true',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'header'
+        },
+        {
+            'type': {
+                'name': 'arrayOf',
+                'value': { 'name': 'string' }
+            },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '[]',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'history'
+        },
+        {
+            'type': { 'name': 'func' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'onSwipeBack'
+        },
+        {
+            'type': { 'name': 'func' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'onSwipeBackStart'
+        },
+        {
+            'type': { 'name': 'func' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'onTransition'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': 'null',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'popout'
+        },
+        {
+            'type': { 'name': 'object' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '{}',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'style'
+        }
+    ],
+    'doclets': {},
+    'examples': __webpack_require__(351)
+}
+	
+
+/***/ }),
+/* 353 */,
+/* 354 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 355 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = removeObjectKeys;
+function removeObjectKeys() {
+  var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var keys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+
+  var newObj = Object.assign({}, obj);
+
+  keys.forEach(function (key) {
+    return delete newObj[key];
+  });
+
+  return newObj;
+}
+
+/***/ }),
+/* 356 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = animate;
+
+var _requestAnimationFrame = __webpack_require__(42);
+
+var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function animate(options) {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  var start = window.performance.now();
+
+  (0, _requestAnimationFrame2.default)(function animate(time) {
+    var timeFraction = (time - start) / options.duration;
+
+    if (timeFraction > 1) {
+      timeFraction = 1;
+    }
+
+    var progress = options.timing(timeFraction);
+
+    options.draw(progress);
+
+    if (timeFraction < 1) {
+      (0, _requestAnimationFrame2.default)(animate);
+    }
+  });
+}
+
+/***/ }),
+/* 357 */,
+/* 358 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 359 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
+module.exports = [
+    {
+        'type': 'markdown',
+        'content': 'Используется для создания модальных окон. Содержимое Root \u2013 это коллекция View. У каждой View должен быть id,\nсвойство activeView определяет, какая View сейактивна.\n\nПри смене значения свойства activeView происходит переход от одной View к другой. Как только он заканчивается, вызывается свойство-функция onTransition.'
     },
     {
         'type': 'code',
@@ -50844,7 +51969,7 @@ module.exports = [
 	
 
 /***/ }),
-/* 326 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -50889,19 +52014,19 @@ module.exports = {
         }
     ],
     'doclets': {},
-    'examples': __webpack_require__(325)
+    'examples': __webpack_require__(359)
 }
 	
 
 /***/ }),
-/* 327 */,
-/* 328 */
+/* 361 */,
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 329 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50929,9 +52054,9 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-__webpack_require__(328);
+__webpack_require__(362);
 
-var _transitionEvents = __webpack_require__(35);
+var _transitionEvents = __webpack_require__(36);
 
 var _transitionEvents2 = _interopRequireDefault(_transitionEvents);
 
@@ -51134,1149 +52259,6 @@ Root.contextTypes = {
 exports.default = Root;
 
 /***/ }),
-/* 330 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-var requireMap = { 'react': __webpack_require__(0) };
-var requireInRuntimeBase = __webpack_require__(5);
-var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = __webpack_require__(4);
-var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
-
-module.exports = [{
-        'type': 'code',
-        'content': 'class Example extends React.Component {\n\n  constructor () {\n    this.state = {\n      contextOpened: true,\n      mode: \'all\'\n    }\n    this.toggleContext = this.toggleContext.bind(this);\n    this.select = this.select.bind(this);\n  }\n\n  toggleContext () {\n    this.setState({ contextOpened: !this.state.contextOpened });\n  }\n\n  select (e) {\n    const mode = e.currentTarget.dataset.mode;\n    this.setState({ mode });\n    requestAnimationFrame(this.toggleContext);\n  }\n\n  render () {\n\n    return (\n      <View activePanel="context">\n        <Panel id="context">\n          <PanelHeader\n            left={<HeaderButton>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n            right={<HeaderButton>{<Icon24Add />}</HeaderButton>}\n          >\n            <PanelHeaderContent aside={<Icon16Dropdown />} onClick={this.toggleContext}>\n              Communities\n            </PanelHeaderContent>\n          </PanelHeader>\n          <HeaderContext opened={this.state.contextOpened} onClose={this.toggleContext}>\n            <List>\n              <ListItem\n                before={<Icon24Users />}\n                asideContent={this.state.mode === \'all\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                onClick={this.select}\n                data-mode="all"\n              >\n                Communities\n              </ListItem>\n              <ListItem\n                before={<Icon24Settings />}\n                asideContent={this.state.mode === \'managed\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                onClick={this.select}\n                data-mode="managed"\n              >\n                Managed Communities\n              </ListItem>\n            </List>\n          </HeaderContext>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
-        'settings': {},
-        'evalInContext': evalInContext
-    }]
-	
-
-/***/ }),
-/* 331 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-module.exports = {
-    'description': '',
-    'displayName': 'HeaderContext',
-    'methods': [],
-    'props': [
-        {
-            'type': { 'name': 'func' },
-            'required': true,
-            'description': '',
-            'tags': {},
-            'name': 'onClose'
-        },
-        {
-            'type': { 'name': 'bool' },
-            'required': true,
-            'description': '',
-            'defaultValue': {
-                'value': 'false',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'opened'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'children'
-        },
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'className'
-        },
-        {
-            'type': { 'name': 'object' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'style'
-        }
-    ],
-    'doclets': {},
-    'examples': __webpack_require__(330)
-}
-	
-
-/***/ }),
-/* 332 */,
-/* 333 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 334 */,
-/* 335 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 336 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _classnames = __webpack_require__(6);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _getClassName = __webpack_require__(7);
-
-var _getClassName2 = _interopRequireDefault(_getClassName);
-
-var _FixedLayout = __webpack_require__(59);
-
-var _FixedLayout2 = _interopRequireDefault(_FixedLayout);
-
-__webpack_require__(333);
-
-var _transitionEvents = __webpack_require__(35);
-
-var _transitionEvents2 = _interopRequireDefault(_transitionEvents);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var baseClassNames = (0, _getClassName2.default)('HeaderContext');
-
-var HeaderContext = function (_React$Component) {
-  _inherits(HeaderContext, _React$Component);
-
-  function HeaderContext() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, HeaderContext);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeaderContext.__proto__ || Object.getPrototypeOf(HeaderContext)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      closing: false
-    }, _this.onAnimationFinish = function () {
-      return _this.setState({ closing: false });
-    }, _this.getRef = function (el) {
-      return _this.el = el;
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(HeaderContext, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.opened !== this.props.opened) {
-        if (nextProps.opened === false) {
-          this.setState({ closing: true });
-          this.waitAnimationFinish(this.onAnimationFinish);
-        } else {
-          clearTimeout(this.closeAnimationTimeiout);
-        }
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this.closeAnimationTimeiout);
-    }
-  }, {
-    key: 'waitAnimationFinish',
-    value: function waitAnimationFinish(eventHandler) {
-      if (_transitionEvents2.default.supported) {
-        var eventName = _transitionEvents2.default.prefix ? _transitionEvents2.default.prefix + 'AnimationEnd' : 'animationend';
-        this.el.removeEventListener(eventName, eventHandler);
-        this.el.addEventListener(eventName, eventHandler);
-      } else {
-        this.closeAnimationTimeiout = setTimeout(eventHandler.bind(this), 200);
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          children = _props.children,
-          className = _props.className,
-          opened = _props.opened,
-          onClose = _props.onClose,
-          restProps = _objectWithoutProperties(_props, ['children', 'className', 'opened', 'onClose']);
-
-      return _react2.default.createElement(
-        _FixedLayout2.default,
-        _extends({}, restProps, { className: (0, _classnames2.default)(baseClassNames, {
-            'HeaderContext--opened': opened,
-            'HeaderContext--closing': this.state.closing
-          }, className), vertical: 'top' }),
-        _react2.default.createElement(
-          'div',
-          { className: 'HeaderContext__in', ref: this.getRef },
-          (opened || this.state.closing) && children
-        ),
-        (opened || this.state.closing) && _react2.default.createElement('div', { onClick: onClose, className: 'HeaderContext__fade' })
-      );
-    }
-  }]);
-
-  return HeaderContext;
-}(_react2.default.Component);
-
-HeaderContext.propTypes = {
-  children: _propTypes2.default.node,
-  className: _propTypes2.default.string,
-  style: _propTypes2.default.object,
-  onClose: _propTypes2.default.func.isRequired,
-  opened: _propTypes2.default.bool.isRequired
-};
-HeaderContext.defaultProps = {
-  opened: false
-};
-exports.default = HeaderContext;
-
-/***/ }),
-/* 337 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-var requireMap = { 'react': __webpack_require__(0) };
-var requireInRuntimeBase = __webpack_require__(5);
-var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = __webpack_require__(4);
-var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
-
-module.exports = [
-    {
-        'type': 'markdown',
-        'content': 'Компонент для отрисовки кнопок в [PanelHeader](#panelheader). Внутрь компонента передается либо иконка, либо текст. Текстовые кнопки\nчаще всего используются в iOS, но есть исключения для Android.\n\nШапки iOS и Android достаточно сильно отличаются внешне, поэтому описание будет разделено на две части.\n\n**Android**\n\nКнопки могут быть переданы в `left` или `right` свойства `header`:\n\n```jsx\n  &lt;PanelHeader\n    left={&lt;HeaderButton&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Back</span>/&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span></span>}\n    right={&lt;HeaderButton&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Search</span>/&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span></span>}\n  /&gt;\n```\n\nЕсли нужно несколько кнопок справа или слева, то передаем массив:\n\n```jsx\n  &lt;PanelHeader\n    right={[\n      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"search"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Search</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span></span>,\n      &lt;HeaderButton key=<span class="hljs-string">"add"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Add</span>/&gt;</span></span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span></span>\n    ]}\n  /&gt;\n```\n\n**iOS**\n\nОсновное отличие \u2013 это составность левой кнопки. Она может состоять из иконки и текста. Пример:\n\n```jsx\n  &lt;PanelHeader\n    addon={&lt;HeaderButton&gt;Назад&lt;/HeaderButton&gt;}\n    left={&lt;HeaderButton&gt;{osname === IOS &lt;Icon28ChevronBack/&gt; ? &lt;Icon24Back/&gt;}&lt;/HeaderButton&gt;}\n  /&gt;\n```\n\nВ примере выше появляется новое свойство `addon`, актуальное только для iOS версии.'
-    },
-    {
-        'type': 'code',
-        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      activePanel: \'panel1\',\n      activeView: \'main\'\n    }\n  }\n\n  render() {\n    return (\n      <Root activeView={this.state.activeView}>\n        <View id="main" activePanel={this.state.activePanel}>\n          <Panel id="panel1">\n            <PanelHeader left={<HeaderButton>{osname === IOS ? \'Отмена\' : <Icon24Cancel/>}</HeaderButton>}>\n              Стартовый экран\n            </PanelHeader>\n            <Group>\n              <Div>\n                Если приложение открывается как модальное окно, то в качестве левой кнопки принято кнопку "Отмена".\n                <br/>\n                <br/>\n                В противном случае показывается кнопка "Назад".\n              </Div>\n            </Group>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel2\' }) }>\n                Больше примеров\n              </Button>\n            </Group>\n          </Panel>\n          <Panel id="panel2">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activePanel: \'panel1\' })}>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}\n              addon={<HeaderButton onClick={() => this.setState({ activePanel: \'panel1\' })}>Назад</HeaderButton>}\n              right={<HeaderButton onClick={() => {}}><Icon24Story/></HeaderButton>}\n            >\n              Заголовок\n            </PanelHeader>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel3\' }) }>\n                Несколько иконок\n              </Button>\n            </Group>\n          </Panel>\n          <Panel id="panel3">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activePanel: \'panel2\' })}>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}\n              addon={<HeaderButton onClick={() => this.setState({ activePanel: \'panel2\' })}>Назад</HeaderButton>}\n              right={[\n                <HeaderButton key="add" onClick={() => {}}><Icon24Add/></HeaderButton>,\n                <HeaderButton key="more" onClick={() => {}}><Icon24MoreVertical/></HeaderButton>\n              ]}\n            >\n              Две иконки\n            </PanelHeader>\n            <Group>\n              <Button type="cell" onClick={ () => this.setState({ activeView: \'modal\' }) }>\n                Модальное окно\n              </Button>\n            </Group>\n          </Panel>\n        </View>\n        <View id="modal" header activePanel="modal-panel">\n          <Panel id="modal-panel">\n            <PanelHeader\n              left={<HeaderButton onClick={() => this.setState({ activeView: \'main\' })}>{osname === IOS ? \'Отмена\' : <Icon24Cancel/>}</HeaderButton>}\n              right={<HeaderButton disabled primary onClick={() => this.setState({ activeView: \'main\' })}>{osname === IOS ? \'Готово\' : <Icon24Done/>}</HeaderButton>}\n            >\n              Модальное окно\n            </PanelHeader>\n          </Panel>\n        </View>\n      </Root>\n    )\n  }\n}\n\n<Example/>',
-        'settings': {},
-        'evalInContext': evalInContext
-    }
-]
-	
-
-/***/ }),
-/* 338 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-module.exports = {
-    'description': '',
-    'methods': [],
-    'displayName': 'HeaderButton',
-    'props': [
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'children'
-        },
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'className'
-        },
-        {
-            'type': { 'name': 'bool' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': 'false',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'primary'
-        }
-    ],
-    'doclets': {},
-    'examples': __webpack_require__(337)
-}
-	
-
-/***/ }),
-/* 339 */,
-/* 340 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 341 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-var requireMap = { 'react': __webpack_require__(0) };
-var requireInRuntimeBase = __webpack_require__(5);
-var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = __webpack_require__(4);
-var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
-
-module.exports = [
-    {
-        'type': 'markdown',
-        'content': 'Компонент нужен для отрисовки "сложного" содержимого шапки.'
-    },
-    {
-        'type': 'code',
-        'content': '<View activePanel="brand">\n  <Panel id="brand">\n    <PanelHeader\n      left={<HeaderButton>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n      right={<HeaderButton>{<Icon24Phone />}</HeaderButton>}\n    >\n      <PanelHeaderContent\n        status="был в сети сегодня, в 18:46"\n        aside={<Icon16Dropdown />}\n        before={<Avatar size={40} src="https://sun9-5.userapi.com/c834100/v834100961/4f8f1/hjsBzq433co.jpg?ava=1" />}\n        onClick={() => {}}\n      >\n        Влад Анесов\n      </PanelHeaderContent>\n    </PanelHeader>\n  </Panel>\n</View>',
-        'settings': {},
-        'evalInContext': evalInContext
-    }
-]
-	
-
-/***/ }),
-/* 342 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-module.exports = {
-    'description': '',
-    'methods': [],
-    'displayName': 'PanelHeaderContent',
-    'props': [
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'aside'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': 'Android only',
-            'tags': {},
-            'name': 'before'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'children'
-        },
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'className'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onClick'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'status'
-        },
-        {
-            'type': { 'name': 'object' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'style'
-        }
-    ],
-    'doclets': {},
-    'examples': __webpack_require__(341)
-}
-	
-
-/***/ }),
-/* 343 */,
-/* 344 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 345 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getOffsetRect = getOffsetRect;
-function getOffsetRect(elem) {
-  var box = elem.getBoundingClientRect();
-  var body = document.body;
-  var doc = document.documentElement;
-  var scrollTop = window.pageYOffset || doc.scrollTop || body.scrollTop;
-  var scrollLeft = window.pageXOffset || doc.scrollLeft || body.scrollLeft;
-  var clientTop = doc.clientTop || body.clientTop || 0;
-  var clientLeft = doc.clientLeft || body.clientLeft || 0;
-
-  return {
-    top: Math.round(box.top + scrollTop - clientTop),
-    left: Math.round(box.left + scrollLeft - clientLeft),
-    width: elem.offsetWidth,
-    height: elem.offsetHeight
-  };
-}
-
-/***/ }),
-/* 346 */,
-/* 347 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 348 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _classnames = __webpack_require__(6);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _getClassName = __webpack_require__(7);
-
-var _getClassName2 = _interopRequireDefault(_getClassName);
-
-var _platform = __webpack_require__(11);
-
-var _Tappable = __webpack_require__(20);
-
-var _Tappable2 = _interopRequireDefault(_Tappable);
-
-__webpack_require__(344);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-var osname = (0, _platform.platform)();
-var baseClassNames = (0, _getClassName2.default)('PanelHeaderContent');
-
-var PanelHeaderContent = function PanelHeaderContent(_ref) {
-  var className = _ref.className,
-      style = _ref.style,
-      aside = _ref.aside,
-      status = _ref.status,
-      before = _ref.before,
-      children = _ref.children,
-      onClick = _ref.onClick,
-      restProps = _objectWithoutProperties(_ref, ['className', 'style', 'aside', 'status', 'before', 'children', 'onClick']);
-
-  var InComponent = onClick ? _Tappable2.default : 'div';
-  var rootProps = onClick ? {} : restProps;
-  var inProps = onClick ? restProps : {};
-
-  return _react2.default.createElement(
-    'div',
-    _extends({}, rootProps, { className: (0, _classnames2.default)(baseClassNames, className), style: style }),
-    osname === _platform.ANDROID && before && _react2.default.createElement(
-      'div',
-      { className: 'PanelHeaderContent__before' },
-      before
-    ),
-    _react2.default.createElement(
-      InComponent,
-      _extends({}, inProps, { className: 'PanelHeaderContent__in', onClick: onClick }),
-      status && _react2.default.createElement(
-        'div',
-        { className: 'PanelHeaderContent__status' },
-        status
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'PanelHeaderContent__children' },
-        _react2.default.createElement(
-          'span',
-          null,
-          children
-        ),
-        aside && _react2.default.createElement(
-          'div',
-          { className: 'PanelHeaderContent__aside' },
-          aside
-        )
-      )
-    )
-  );
-};
-
-PanelHeaderContent.propTypes = {
-  children: _propTypes2.default.node,
-  className: _propTypes2.default.string,
-  style: _propTypes2.default.object,
-  aside: _propTypes2.default.node,
-  status: _propTypes2.default.node,
-  onClick: _propTypes2.default.func,
-  /**
-   * Android only
-   */
-  before: _propTypes2.default.node
-};
-
-exports.default = PanelHeaderContent;
-
-/***/ }),
-/* 349 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-var requireMap = { 'react': __webpack_require__(0) };
-var requireInRuntimeBase = __webpack_require__(5);
-var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = __webpack_require__(4);
-var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
-
-module.exports = [
-    {
-        'type': 'markdown',
-        'content': 'Компонент для отрисовки шапки внутри [Panel](#panel). В качестве children принимает то, что будет находиться в центре.\nЭто может быть текст, элемент или [Search](#search). По бокам располагаются управляющие кнопки. Более подробно об этих\nкнопках можно почитать [тут](#headerbutton).'
-    },
-    {
-        'type': 'code',
-        'content': 'class Example extends React.Component {\n\n  constructor () {\n    this.state = {\n      activePanel: \'brand\'\n    }\n  }\n\n  render () {\n\n    return (\n      <View activePanel={this.state.activePanel}>\n        <Panel id="brand">\n          <PanelHeader>\n            Настройки\n          </PanelHeader>\n          <Group>\n            <Button type="cell" onClick={() => this.setState({ activePanel: \'light\' })}>Светлая тема</Button>\n          </Group>\n        </Panel>\n        <Panel id="light">\n          <PanelHeader\n            theme="light"\n            left={<HeaderButton onClick={() => this.setState({ activePanel: \'brand\' })}>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n            addon={<HeaderButton onClick={() => this.setState({ activePanel: \'brand\' })}>Назад</HeaderButton>}\n          >\n            Котики\n          </PanelHeader>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
-        'settings': {},
-        'evalInContext': evalInContext
-    }
-]
-	
-
-/***/ }),
-/* 350 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-module.exports = {
-    'description': '',
-    'displayName': 'PanelHeader',
-    'methods': [],
-    'props': [
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': 'iOS only',
-            'tags': {},
-            'name': 'addon'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'children'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'left'
-        },
-        {
-            'type': { 'name': 'bool' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': 'false',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'noShadow'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'right'
-        },
-        {
-            'type': {
-                'name': 'enum',
-                'value': [
-                    {
-                        'value': '\'light\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'brand\'',
-                        'computed': false
-                    }
-                ]
-            },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '\'brand\'',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'theme'
-        }
-    ],
-    'doclets': {},
-    'examples': __webpack_require__(349)
-}
-	
-
-/***/ }),
-/* 351 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-var requireMap = { 'react': __webpack_require__(0) };
-var requireInRuntimeBase = __webpack_require__(5);
-var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = __webpack_require__(4);
-var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
-
-module.exports = [{
-        'type': 'markdown',
-        'content': 'Компонент для создания панели. Передается внутрь View.\n\n```js\n  &lt;Panel id=<span class="hljs-string">"panelId"</span>&gt;\n    Content\n  &lt;<span class="hljs-regexp">/Panel&gt;</span>\n```'
-    }]
-	
-
-/***/ }),
-/* 352 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-module.exports = {
-    'description': '',
-    'displayName': 'Panel',
-    'methods': [],
-    'props': [
-        {
-            'type': { 'name': 'string' },
-            'required': true,
-            'description': '',
-            'tags': {},
-            'name': 'id'
-        },
-        {
-            'type': { 'name': 'bool' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': 'false',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'centered'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '\'\'',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'children'
-        },
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'className'
-        },
-        {
-            'type': { 'name': 'bool' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': 'true',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'optimized'
-        },
-        {
-            'type': { 'name': 'object' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'style'
-        },
-        {
-            'type': {
-                'name': 'enum',
-                'value': [
-                    {
-                        'value': '\'white\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'gray\'',
-                        'computed': false
-                    }
-                ]
-            },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '\'gray\'',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'theme'
-        }
-    ],
-    'doclets': {},
-    'examples': __webpack_require__(351)
-}
-	
-
-/***/ }),
-/* 353 */,
-/* 354 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 355 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(354);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _getClassName = __webpack_require__(7);
-
-var _getClassName2 = _interopRequireDefault(_getClassName);
-
-var _classnames = __webpack_require__(6);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var baseClassNames = (0, _getClassName2.default)('Panel');
-
-var Panel = function (_Component) {
-  _inherits(Panel, _Component);
-
-  function Panel() {
-    _classCallCheck(this, Panel);
-
-    return _possibleConstructorReturn(this, (Panel.__proto__ || Object.getPrototypeOf(Panel)).apply(this, arguments));
-  }
-
-  _createClass(Panel, [{
-    key: 'getChildContext',
-    value: function getChildContext() {
-      return {
-        panel: this.props.id
-      };
-    }
-  }, {
-    key: 'shouldComponentUpdate',
-    value: function shouldComponentUpdate(_ref) {
-      var optimized = _ref.optimized,
-          isNext = _ref.isNext,
-          isPrev = _ref.isPrev;
-
-      return optimized ? !isNext && !isPrev : true;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          className = _props.className,
-          centered = _props.centered,
-          children = _props.children,
-          isPrev = _props.isPrev,
-          isNext = _props.isNext,
-          theme = _props.theme,
-          optimized = _props.optimized,
-          restProps = _objectWithoutProperties(_props, ['className', 'centered', 'children', 'isPrev', 'isNext', 'theme', 'optimized']);
-
-      return _react2.default.createElement(
-        'div',
-        _extends({}, restProps, { className: (0, _classnames2.default)(baseClassNames, className, { 'Panel--centered': centered }) }),
-        _react2.default.createElement(
-          'div',
-          { className: 'Panel__in', style: { paddingBottom: this.insets.bottom || null, paddingTop: this.insets.top || null } },
-          _react2.default.createElement('div', { className: 'Panel__in-before' }),
-          children,
-          _react2.default.createElement('div', { className: 'Panel__in-after' })
-        )
-      );
-    }
-  }, {
-    key: 'insets',
-    get: function get() {
-      return this.context.insets || {};
-    }
-  }]);
-
-  return Panel;
-}(_react.Component);
-
-Panel.childContextTypes = {
-  panel: _propTypes2.default.string
-};
-Panel.propTypes = {
-  children: _propTypes2.default.node,
-  className: _propTypes2.default.string,
-  theme: _propTypes2.default.oneOf(['white', 'gray']),
-  id: _propTypes2.default.string.isRequired,
-  optimized: _propTypes2.default.bool,
-  centered: _propTypes2.default.bool,
-  style: _propTypes2.default.object,
-  /**
-   * @ignore
-   */
-  isPrev: _propTypes2.default.bool,
-  /**
-   * @ignore
-   */
-  isNext: _propTypes2.default.bool
-};
-Panel.defaultProps = {
-  children: '',
-  theme: 'gray',
-  centered: false,
-  optimized: true
-};
-Panel.contextTypes = {
-  insets: _propTypes2.default.shape({
-    top: _propTypes2.default.number,
-    right: _propTypes2.default.number,
-    bottom: _propTypes2.default.number,
-    left: _propTypes2.default.number
-  })
-};
-exports.default = Panel;
-
-/***/ }),
-/* 356 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-var requireMap = { 'react': __webpack_require__(0) };
-var requireInRuntimeBase = __webpack_require__(5);
-var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = __webpack_require__(4);
-var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
-
-module.exports = [
-    {
-        'type': 'markdown',
-        'content': 'Базовый компонент для создания панелей. В качестве children принимает коллекцию [Panel](#panel). У каждой Panel должен быть уникальный id. Свойство activePanel определяет какая Panel активна.\n\nПри смене значения свойства activePanel происходит переход от одной панели к другой. Как только он заканчивается, вызывается свойство-функция onTransition.'
-    },
-    {
-        'type': 'code',
-        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      activePanel: \'panel1\'\n    }\n  }\n\n  render() {\n    return (\n      <View activePanel={this.state.activePanel}>\n        <Panel id="panel1">\n          <PanelHeader>Panel 1</PanelHeader>\n          <Group>\n            <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel2\' }) }>\n              Go to panel 2\n            </Button>\n          </Group>  \n        </Panel>\n        <Panel id="panel2">\n          <PanelHeader>Panel 2</PanelHeader>\n          <Group>\n            <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel3\' }) }>\n              Go to panel 3\n            </Button>\n          </Group>  \n        </Panel>\n        <Panel id="panel3">\n          <PanelHeader>Panel 3</PanelHeader>\n          <Group>\n            <Button type="cell" onClick={ () => this.setState({ activePanel: \'panel1\' }) }>\n              Back to panel 1\n            </Button>\n          </Group>  \n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
-        'settings': {},
-        'evalInContext': evalInContext
-    }
-]
-	
-
-/***/ }),
-/* 357 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-module.exports = {
-    'description': '',
-    'displayName': 'View',
-    'methods': [],
-    'props': [
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'activePanel'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': 'null',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'children'
-        },
-        {
-            'type': {
-                'name': 'union',
-                'value': [
-                    { 'name': 'object' },
-                    { 'name': 'bool' }
-                ]
-            },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': 'true',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'header'
-        },
-        {
-            'type': {
-                'name': 'arrayOf',
-                'value': { 'name': 'string' }
-            },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '[]',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'history'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onSwipeBack'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onSwipeBackStart'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onTransition'
-        },
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': 'null',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'popout'
-        },
-        {
-            'type': { 'name': 'object' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '{}',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'style'
-        }
-    ],
-    'doclets': {},
-    'examples': __webpack_require__(356)
-}
-	
-
-/***/ }),
-/* 358 */,
-/* 359 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 360 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = removeObjectKeys;
-function removeObjectKeys() {
-  var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var keys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-
-  var newObj = Object.assign({}, obj);
-
-  keys.forEach(function (key) {
-    return delete newObj[key];
-  });
-
-  return newObj;
-}
-
-/***/ }),
-/* 361 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = animate;
-
-var _requestAnimationFrame = __webpack_require__(41);
-
-var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function animate(options) {
-  if (typeof window === 'undefined') {
-    return;
-  }
-
-  var start = window.performance.now();
-
-  (0, _requestAnimationFrame2.default)(function animate(time) {
-    var timeFraction = (time - start) / options.duration;
-
-    if (timeFraction > 1) {
-      timeFraction = 1;
-    }
-
-    var progress = options.timing(timeFraction);
-
-    options.draw(progress);
-
-    if (timeFraction < 1) {
-      (0, _requestAnimationFrame2.default)(animate);
-    }
-  });
-}
-
-/***/ }),
-/* 362 */,
-/* 363 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
 /* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -52291,7 +52273,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'VKUI \u2013 библиотека React компонентов, с помощью которой можно создавать web-приложения, дизайн которых будет повторять\nдизайн мобильных клиентов (iOS, Android).\n\nКаждое vkui-приложение \u2013 это набор экранов. Есть два типа переходов между экранами:\n\n### Переход между панелями\n\nPanel \u2013 это компонент, в который передается children, видимый пользователю. Компонент View \u2013 это набор таких панелей. Пример:\n\n```jsx\n  &lt;View activePanel="greetings"&gt;\n    &lt;Panel id="greetings"&gt;\n      {* panel content *}\n    &lt;/Panel&gt;\n    &lt;Panel id="form"&gt;\n      {* panel content *}\n    &lt;/Panel&gt;\n    &lt;Panel id="finish"&gt;\n      {* panel content *}  \n    &lt;/Panel&gt;\n  &lt;/View&gt;\n```\n\nВ компонент View передается коллекция Panel. Свойство activePanel отвечает за то, какая Panel должна быть показана. [Демо](#view).\n\n### Переход между модальными окнами\n\nВ каждом приложении есть какой-то основной пользовательский сценарий. И есть ответвления: check user action, поиск пользователя и т.д.\nЧтобы как-то отделить ветки от основого сценария, существуют модальные окна. Пример:\n\n```jsx\n  &lt;Root activeView="main"&gt;\n    &lt;View id="main"&gt;\n      {* main flow *}\n    &lt;/View&gt;\n    &lt;View id="users-search"&gt;\n      {* modal window for users search *}\n    &lt;/View&gt;\n    &lt;View id="check-user-actions"&gt;\n      {* modal window for check user actions *}  \n    &lt;/View&gt;\n  &lt;/Root&gt;\n```\n\nВ компонент Root передается коллекция View, в каждой из которых содержится набор Panel. Свойство\nactiveView отвечает за то, какая View должна быть показана. [Демо](#root).'
+        'content': 'Каждое VKUI-приложение \u2013 это набор экранов. Есть два типа переходов между экранами:\n\n### Переход между панелями\n\nPanel \u2013 это компонент, в который передается children, видимый пользователю. Компонент View \u2013 это набор таких панелей. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { View, Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">activePanel</span>=<span class="hljs-string">"greetings"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"greetings"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"form"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"finish"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>\n```\n\nВ компонент View передается коллекция Panel. Свойство activePanel отвечает за то, какая Panel должна быть показана. [Демо](https://vkcom.github.io/vkui-styleguide/#!/View).\n\n### Переход между модальными окнами\n\nВ каждом приложении есть какой-то основной пользовательский сценарий. И есть ответвления: check user action, поиск пользователя и т.д.\nЧтобы как-то отделить ветки от основого сценария, существуют модальные окна. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { Root, View } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Root</span> <span class="hljs-attr">activeView</span>=<span class="hljs-string">"main"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>\n    {* main flow *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"users-search"</span>&gt;</span>\n    {* modal window for users search *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check-user-actions"</span>&gt;</span>\n    {* modal window for check user actions *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Root</span>&gt;</span></span>\n```\n\nВ компонент Root передается коллекция View, в каждой из которых содержится набор Panel. Свойство\nactiveView отвечает за то, какая View должна быть показана. [Демо](https://vkcom.github.io/vkui-styleguide/#!/Root).\n\n### Еще раз :)\n\nСтруктура любого VKUI-приложения должна выглядить так:\n\n```jsx\n<span class="hljs-keyword">import</span> { Root, View, Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Root</span> <span class="hljs-attr">activeView</span>=<span class="hljs-string">"view"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"view"</span> <span class="hljs-attr">activePanel</span>=<span class="hljs-string">"panel"</span>&gt;</span>\n    <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"panel"</span> /&gt;</span>\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Root</span>&gt;</span></span>\n```\n\n**Важно:** эта структура должна быть постоянной. То есть нельзя на лету добавлять и удалять Panel или View. Нельзя так же\nменять id у Panel или View. Структура \u2013 это _декларация_ приложения. Единственный способ для перехода между Panel\nв пределах View и View в пределах Root \u2013 это обновление свойств activePanel и activeView соответственно.'
     }]
 	
 
@@ -52310,7 +52292,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': '```jsx\n<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">\'react\'</span>;\n<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">\'react-dom\'</span>;\n<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> UI <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> <span class="hljs-string">\'@vkontakte/vkui/dist/vkui.css\'</span>;\n\n<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span> (<span class="hljs-params"></span>) </span>{\n  <span class="hljs-keyword">return</span> (\n    &lt;UI.View activePanel="main"&gt;\n      &lt;UI.Panel id="main"&gt;\n        &lt;UI.PanelHeader&gt;VKUI&lt;/UI.PanelHeader&gt;\n        &lt;UI.Group title="Items"&gt;\n          &lt;UI.List&gt;\n            &lt;UI.ListItem&gt;Hello&lt;/UI.ListItem&gt;\n            &lt;UI.ListItem&gt;World&lt;/UI.ListItem&gt;\n          &lt;/UI.List&gt;\n        &lt;/UI.Group&gt;\n      &lt;/UI.Panel&gt;\n    &lt;/UI.View&gt;\n  );\n}\n\nReactDOM.render(\n  &lt;App /&gt;,\n  document.getElementById(\'root\')\n);\n```'
+        'content': '```jsx\n<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">\'react\'</span>;\n<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">\'react-dom\'</span>;\n<span class="hljs-keyword">import</span> { View, Panel, PanelHeader, Group, List, ListItem } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> <span class="hljs-string">\'@vkontakte/vkui/dist/vkui.css\'</span>;\n\n<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span> (<span class="hljs-params"></span>) </span>{\n  <span class="hljs-keyword">return</span> (\n    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">activePanel</span>=<span class="hljs-string">"main"</span>&gt;</span>\n      <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>\n        <span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>&gt;</span>VKUI<span class="hljs-tag">&lt;/<span class="hljs-name">PanelHeader</span>&gt;</span>\n        <span class="hljs-tag">&lt;<span class="hljs-name">Group</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Items"</span>&gt;</span>\n          <span class="hljs-tag">&lt;<span class="hljs-name">List</span>&gt;</span>\n            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>Hello<span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>\n            <span class="hljs-tag">&lt;<span class="hljs-name">ListItem</span>&gt;</span>World<span class="hljs-tag">&lt;/<span class="hljs-name">ListItem</span>&gt;</span>\n          <span class="hljs-tag">&lt;/<span class="hljs-name">List</span>&gt;</span>\n        <span class="hljs-tag">&lt;/<span class="hljs-name">Group</span>&gt;</span>\n      <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n    <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>\n  );\n}\n\nReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>, document.getElementById(\'root\'));</span>\n```'
     }]
 	
 
@@ -52329,12 +52311,31 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': '`npm install @vkontakte/vkui` \\|\\| `yarn add @vkontakte/vkui`'
+        'content': 'npm install @vkontakte/vkui'
     }]
 	
 
 /***/ }),
 /* 367 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
+module.exports = [{
+        'type': 'markdown',
+        'content': 'VKUI \u2013 это набор React-компонентов, с помощью которых можно создавать интерфейсы, внешне неотличимые от\nнаших iOS и Android приложений.\n\nГлавным преимуществом библиотеки является изоморфность. Вы пишите код один раз под все платформы.\n\nЕсли вы еще не работали с React, то советую сначала ознакомиться с этим фрейворком, а потом возвращаться сюда.'
+    }]
+	
+
+/***/ }),
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -52365,6 +52366,15 @@ module.exports = {
     'welcomeScreen': false,
     'patterns': void 0,
     'sections': [
+        {
+            'name': 'Intro',
+            'description': void 0,
+            'slug': 'intro',
+            'sections': [],
+            'filepath': './pages/intro.md',
+            'components': [],
+            'content': __webpack_require__(367)
+        },
         {
             'name': 'Installation',
             'description': void 0,
@@ -52405,11 +52415,20 @@ module.exports = {
                     'filepath': void 0,
                     'components': [
                         {
+                            'filepath': '../src/components/Root/Root.js',
+                            'slug': 'root',
+                            'pathLine': '../src/components/Root/Root.js',
+                            'module': __webpack_require__(363),
+                            'props': __webpack_require__(360),
+                            'hasExamples': true,
+                            'metadata': {}
+                        },
+                        {
                             'filepath': '../src/components/View/View.js',
                             'slug': 'view',
                             'pathLine': '../src/components/View/View.js',
-                            'module': __webpack_require__(95),
-                            'props': __webpack_require__(357),
+                            'module': __webpack_require__(94),
+                            'props': __webpack_require__(352),
                             'hasExamples': true,
                             'metadata': {}
                         },
@@ -52417,8 +52436,8 @@ module.exports = {
                             'filepath': '../src/components/Panel/Panel.js',
                             'slug': 'panel',
                             'pathLine': '../src/components/Panel/Panel.js',
-                            'module': __webpack_require__(355),
-                            'props': __webpack_require__(352),
+                            'module': __webpack_require__(350),
+                            'props': __webpack_require__(347),
                             'hasExamples': true,
                             'metadata': {}
                         },
@@ -52426,17 +52445,8 @@ module.exports = {
                             'filepath': '../src/components/PanelHeader/PanelHeader.js',
                             'slug': 'panelheader',
                             'pathLine': '../src/components/PanelHeader/PanelHeader.js',
-                            'module': __webpack_require__(93),
-                            'props': __webpack_require__(350),
-                            'hasExamples': true,
-                            'metadata': {}
-                        },
-                        {
-                            'filepath': '../src/components/PanelHeaderContent/PanelHeaderContent.js',
-                            'slug': 'panelheadercontent',
-                            'pathLine': '../src/components/PanelHeaderContent/PanelHeaderContent.js',
-                            'module': __webpack_require__(348),
-                            'props': __webpack_require__(342),
+                            'module': __webpack_require__(92),
+                            'props': __webpack_require__(345),
                             'hasExamples': true,
                             'metadata': {}
                         },
@@ -52444,8 +52454,17 @@ module.exports = {
                             'filepath': '../src/components/HeaderButton/HeaderButton.js',
                             'slug': 'headerbutton',
                             'pathLine': '../src/components/HeaderButton/HeaderButton.js',
-                            'module': __webpack_require__(92),
+                            'module': __webpack_require__(91),
                             'props': __webpack_require__(338),
+                            'hasExamples': true,
+                            'metadata': {}
+                        },
+                        {
+                            'filepath': '../src/components/PanelHeaderContent/PanelHeaderContent.js',
+                            'slug': 'panelheadercontent',
+                            'pathLine': '../src/components/PanelHeaderContent/PanelHeaderContent.js',
+                            'module': __webpack_require__(336),
+                            'props': __webpack_require__(333),
                             'hasExamples': true,
                             'metadata': {}
                         },
@@ -52453,16 +52472,7 @@ module.exports = {
                             'filepath': '../src/components/HeaderContext/HeaderContext.js',
                             'slug': 'headercontext',
                             'pathLine': '../src/components/HeaderContext/HeaderContext.js',
-                            'module': __webpack_require__(336),
-                            'props': __webpack_require__(331),
-                            'hasExamples': true,
-                            'metadata': {}
-                        },
-                        {
-                            'filepath': '../src/components/Root/Root.js',
-                            'slug': 'root',
-                            'pathLine': '../src/components/Root/Root.js',
-                            'module': __webpack_require__(329),
+                            'module': __webpack_require__(331),
                             'props': __webpack_require__(326),
                             'hasExamples': true,
                             'metadata': {}
@@ -52499,7 +52509,7 @@ module.exports = {
                             'filepath': '../src/components/PopoutWrapper/PopoutWrapper.js',
                             'slug': 'popoutwrapper',
                             'pathLine': '../src/components/PopoutWrapper/PopoutWrapper.js',
-                            'module': __webpack_require__(40),
+                            'module': __webpack_require__(41),
                             'props': __webpack_require__(315),
                             'hasExamples': true,
                             'metadata': {}
@@ -52554,7 +52564,7 @@ module.exports = {
                             'filepath': '../src/components/Button/Button.js',
                             'slug': 'button',
                             'pathLine': '../src/components/Button/Button.js',
-                            'module': __webpack_require__(91),
+                            'module': __webpack_require__(90),
                             'props': __webpack_require__(289),
                             'hasExamples': true,
                             'metadata': {}
@@ -52563,7 +52573,7 @@ module.exports = {
                             'filepath': '../src/components/Div/Div.js',
                             'slug': 'div',
                             'pathLine': '../src/components/Div/Div.js',
-                            'module': __webpack_require__(90),
+                            'module': __webpack_require__(89),
                             'props': __webpack_require__(285),
                             'hasExamples': true,
                             'metadata': {}
@@ -52581,7 +52591,7 @@ module.exports = {
                             'filepath': '../src/components/Header/Header.js',
                             'slug': 'header',
                             'pathLine': '../src/components/Header/Header.js',
-                            'module': __webpack_require__(89),
+                            'module': __webpack_require__(88),
                             'props': __webpack_require__(276),
                             'hasExamples': true,
                             'metadata': {}
@@ -52662,7 +52672,7 @@ module.exports = {
                             'filepath': '../src/components/Avatar/Avatar.js',
                             'slug': 'avatar',
                             'pathLine': '../src/components/Avatar/Avatar.js',
-                            'module': __webpack_require__(87),
+                            'module': __webpack_require__(86),
                             'props': __webpack_require__(231),
                             'hasExamples': true,
                             'metadata': {}
@@ -52689,7 +52699,7 @@ module.exports = {
                             'filepath': '../src/components/Tabs/Tabs.js',
                             'slug': 'tabs',
                             'pathLine': '../src/components/Tabs/Tabs.js',
-                            'module': __webpack_require__(86),
+                            'module': __webpack_require__(85),
                             'props': __webpack_require__(212),
                             'hasExamples': true,
                             'metadata': {}
@@ -52735,7 +52745,7 @@ module.exports = {
                             'filepath': '../src/components/Slider/Slider.js',
                             'slug': 'slider',
                             'pathLine': '../src/components/Slider/Slider.js',
-                            'module': __webpack_require__(85),
+                            'module': __webpack_require__(84),
                             'props': __webpack_require__(196),
                             'hasExamples': true,
                             'metadata': {}
@@ -52843,7 +52853,7 @@ module.exports = {
 	
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(26),
@@ -52887,7 +52897,7 @@ module.exports = isNumber;
 
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52953,7 +52963,7 @@ Content.propTypes = {
 exports.default = Content;
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53021,7 +53031,7 @@ DocumentContext.childContextTypes = {
 exports.default = DocumentContext;
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53047,11 +53057,11 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _DocumentContext = __webpack_require__(370);
+var _DocumentContext = __webpack_require__(371);
 
 var _DocumentContext2 = _interopRequireDefault(_DocumentContext);
 
-var _Content = __webpack_require__(369);
+var _Content = __webpack_require__(370);
 
 var _Content2 = _interopRequireDefault(_Content);
 
@@ -53206,7 +53216,7 @@ Frame.defaultProps = {
 exports.default = Frame;
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53216,7 +53226,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Frame = __webpack_require__(371);
+var _Frame = __webpack_require__(372);
 
 var _Frame2 = _interopRequireDefault(_Frame);
 
@@ -53225,10 +53235,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _Frame2.default;
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toNumber = __webpack_require__(105);
+var toNumber = __webpack_require__(107);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0,
@@ -53273,10 +53283,10 @@ module.exports = toFinite;
 
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toFinite = __webpack_require__(373);
+var toFinite = __webpack_require__(374);
 
 /**
  * Converts `value` to an integer.
@@ -53315,7 +53325,7 @@ module.exports = toInteger;
 
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports) {
 
 /**
@@ -53345,12 +53355,12 @@ module.exports = baseFindIndex;
 
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFindIndex = __webpack_require__(375),
-    baseIteratee = __webpack_require__(62),
-    toInteger = __webpack_require__(374);
+var baseFindIndex = __webpack_require__(376),
+    baseIteratee = __webpack_require__(61),
+    toInteger = __webpack_require__(375);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -53406,12 +53416,12 @@ module.exports = findIndex;
 
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIteratee = __webpack_require__(62),
+var baseIteratee = __webpack_require__(61),
     isArrayLike = __webpack_require__(25),
-    keys = __webpack_require__(43);
+    keys = __webpack_require__(44);
 
 /**
  * Creates a `_.find` or `_.findLast` function.
@@ -53435,12 +53445,6 @@ function createFind(findIndexFunc) {
 
 module.exports = createFind;
 
-
-/***/ }),
-/* 378 */
-/***/ (function(module) {
-
-module.exports = {"name":"@vkontakte/vkui","version":"2.6.1","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 379 */
@@ -53484,8 +53488,8 @@ module.exports = createBaseEach;
 /* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFor = __webpack_require__(113),
-    keys = __webpack_require__(43);
+var baseFor = __webpack_require__(115),
+    keys = __webpack_require__(44);
 
 /**
  * The base implementation of `_.forOwn` without support for iteratee shorthands.
@@ -53554,7 +53558,7 @@ module.exports = baseMap;
 /* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGet = __webpack_require__(97);
+var baseGet = __webpack_require__(99);
 
 /**
  * A specialized version of `baseProperty` which supports deep paths.
@@ -53598,8 +53602,8 @@ module.exports = baseProperty;
 
 var baseProperty = __webpack_require__(384),
     basePropertyDeep = __webpack_require__(383),
-    isKey = __webpack_require__(61),
-    toKey = __webpack_require__(42);
+    isKey = __webpack_require__(60),
+    toKey = __webpack_require__(43);
 
 /**
  * Creates a function that returns the value at `path` of a given object.
@@ -53634,12 +53638,12 @@ module.exports = property;
 /* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var castPath = __webpack_require__(96),
-    isArguments = __webpack_require__(68),
+var castPath = __webpack_require__(98),
+    isArguments = __webpack_require__(67),
     isArray = __webpack_require__(16),
-    isIndex = __webpack_require__(64),
-    isLength = __webpack_require__(67),
-    toKey = __webpack_require__(42);
+    isIndex = __webpack_require__(63),
+    isLength = __webpack_require__(66),
+    toKey = __webpack_require__(43);
 
 /**
  * Checks if `path` exists on `object`.
@@ -53738,10 +53742,10 @@ module.exports = hasIn;
 /* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(47),
-    arrayMap = __webpack_require__(102),
+var Symbol = __webpack_require__(48),
+    arrayMap = __webpack_require__(104),
     isArray = __webpack_require__(16),
-    isSymbol = __webpack_require__(44);
+    isSymbol = __webpack_require__(45);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;
@@ -53815,7 +53819,7 @@ module.exports = toString;
 /* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoize = __webpack_require__(80);
+var memoize = __webpack_require__(79);
 
 /** Used as the maximum memoize cache size. */
 var MAX_MEMOIZE_SIZE = 500;
@@ -53880,13 +53884,13 @@ module.exports = stringToPath;
 /* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsEqual = __webpack_require__(101),
-    get = __webpack_require__(79),
+var baseIsEqual = __webpack_require__(103),
+    get = __webpack_require__(78),
     hasIn = __webpack_require__(388),
-    isKey = __webpack_require__(61),
-    isStrictComparable = __webpack_require__(99),
-    matchesStrictComparable = __webpack_require__(98),
-    toKey = __webpack_require__(42);
+    isKey = __webpack_require__(60),
+    isStrictComparable = __webpack_require__(101),
+    matchesStrictComparable = __webpack_require__(100),
+    toKey = __webpack_require__(43);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -53919,8 +53923,8 @@ module.exports = baseMatchesProperty;
 /* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isStrictComparable = __webpack_require__(99),
-    keys = __webpack_require__(43);
+var isStrictComparable = __webpack_require__(101),
+    keys = __webpack_require__(44);
 
 /**
  * Gets the property names, values, and compare flags of `object`.
@@ -54002,12 +54006,12 @@ module.exports = DataView;
 /***/ (function(module, exports, __webpack_require__) {
 
 var DataView = __webpack_require__(398),
-    Map = __webpack_require__(74),
+    Map = __webpack_require__(73),
     Promise = __webpack_require__(397),
     Set = __webpack_require__(396),
     WeakMap = __webpack_require__(395),
     baseGetTag = __webpack_require__(26),
-    toSource = __webpack_require__(116);
+    toSource = __webpack_require__(118);
 
 /** `Object#toString` result references. */
 var mapTag = '[object Map]',
@@ -54065,7 +54069,7 @@ module.exports = getTag;
 /* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(110);
+var overArg = __webpack_require__(112);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeKeys = overArg(Object.keys, Object);
@@ -54077,7 +54081,7 @@ module.exports = nativeKeys;
 /* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isPrototype = __webpack_require__(69),
+var isPrototype = __webpack_require__(68),
     nativeKeys = __webpack_require__(400);
 
 /** Used for built-in method references. */
@@ -54263,7 +54267,7 @@ module.exports = baseGetAllKeys;
 
 var baseGetAllKeys = __webpack_require__(406),
     getSymbols = __webpack_require__(404),
-    keys = __webpack_require__(43);
+    keys = __webpack_require__(44);
 
 /**
  * Creates an array of own enumerable property names and symbols of `object`.
@@ -54426,10 +54430,10 @@ module.exports = mapToArray;
 /* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(47),
-    Uint8Array = __webpack_require__(112),
-    eq = __webpack_require__(36),
-    equalArrays = __webpack_require__(100),
+var Symbol = __webpack_require__(48),
+    Uint8Array = __webpack_require__(114),
+    eq = __webpack_require__(37),
+    equalArrays = __webpack_require__(102),
     mapToArray = __webpack_require__(410),
     setToArray = __webpack_require__(409);
 
@@ -54637,7 +54641,7 @@ module.exports = setCacheAdd;
 /* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MapCache = __webpack_require__(72),
+var MapCache = __webpack_require__(71),
     setCacheAdd = __webpack_require__(415),
     setCacheHas = __webpack_require__(414);
 
@@ -54670,14 +54674,14 @@ module.exports = SetCache;
 /* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Stack = __webpack_require__(75),
-    equalArrays = __webpack_require__(100),
+var Stack = __webpack_require__(74),
+    equalArrays = __webpack_require__(102),
     equalByTag = __webpack_require__(411),
     equalObjects = __webpack_require__(408),
     getTag = __webpack_require__(399),
     isArray = __webpack_require__(16),
-    isBuffer = __webpack_require__(66),
-    isTypedArray = __webpack_require__(65);
+    isBuffer = __webpack_require__(65),
+    isTypedArray = __webpack_require__(64);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;
@@ -54759,8 +54763,8 @@ module.exports = baseIsEqualDeep;
 /* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Stack = __webpack_require__(75),
-    baseIsEqual = __webpack_require__(101);
+var Stack = __webpack_require__(74),
+    baseIsEqual = __webpack_require__(103);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -54829,7 +54833,7 @@ module.exports = baseIsMatch;
 
 var baseIsMatch = __webpack_require__(418),
     getMatchData = __webpack_require__(394),
-    matchesStrictComparable = __webpack_require__(98);
+    matchesStrictComparable = __webpack_require__(100);
 
 /**
  * The base implementation of `_.matches` which doesn't clone `source`.
@@ -55182,8 +55186,8 @@ module.exports = ReactPropTypesSecret;
 
 
 
-var emptyFunction = __webpack_require__(52);
-var invariant = __webpack_require__(53);
+var emptyFunction = __webpack_require__(53);
+var invariant = __webpack_require__(54);
 var ReactPropTypesSecret = __webpack_require__(425);
 
 module.exports = function() {
@@ -55361,9 +55365,9 @@ module.exports = now;
 /* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var eq = __webpack_require__(36),
+var eq = __webpack_require__(37),
     isArrayLike = __webpack_require__(25),
-    isIndex = __webpack_require__(64),
+    isIndex = __webpack_require__(63),
     isObject = __webpack_require__(17);
 
 /**
@@ -55473,8 +55477,8 @@ module.exports = constant;
 /***/ (function(module, exports, __webpack_require__) {
 
 var constant = __webpack_require__(431),
-    defineProperty = __webpack_require__(114),
-    identity = __webpack_require__(63);
+    defineProperty = __webpack_require__(116),
+    identity = __webpack_require__(62);
 
 /**
  * The base implementation of `setToString` without support for hot loop shorting.
@@ -55589,7 +55593,7 @@ module.exports = overRest;
 /* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var identity = __webpack_require__(63),
+var identity = __webpack_require__(62),
     overRest = __webpack_require__(435),
     setToString = __webpack_require__(433);
 
@@ -55682,7 +55686,7 @@ module.exports = nativeKeysIn;
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(17),
-    isPrototype = __webpack_require__(69),
+    isPrototype = __webpack_require__(68),
     nativeKeysIn = __webpack_require__(438);
 
 /** Used for built-in method references. */
@@ -55746,8 +55750,8 @@ module.exports = baseTimes;
 /* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssignValue = __webpack_require__(71),
-    eq = __webpack_require__(36);
+var baseAssignValue = __webpack_require__(70),
+    eq = __webpack_require__(37);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -55781,7 +55785,7 @@ module.exports = assignValue;
 /***/ (function(module, exports, __webpack_require__) {
 
 var assignValue = __webpack_require__(441),
-    baseAssignValue = __webpack_require__(71);
+    baseAssignValue = __webpack_require__(70);
 
 /**
  * Copies properties of `source` to `object`.
@@ -55827,7 +55831,7 @@ module.exports = copyObject;
 /***/ (function(module, exports, __webpack_require__) {
 
 var copyObject = __webpack_require__(442),
-    keysIn = __webpack_require__(108);
+    keysIn = __webpack_require__(110);
 
 /**
  * Converts `value` to a plain object flattening inherited enumerable string
@@ -55864,7 +55868,7 @@ module.exports = toPlainObject;
 /* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(117);
+/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(119);
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -55895,7 +55899,7 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(70)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(69)(module)))
 
 /***/ }),
 /* 445 */
@@ -55922,7 +55926,7 @@ module.exports = baseUnary;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(26),
-    isLength = __webpack_require__(67),
+    isLength = __webpack_require__(66),
     isObjectLike = __webpack_require__(21);
 
 /** `Object#toString` result references. */
@@ -55988,7 +55992,7 @@ module.exports = baseIsTypedArray;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(26),
-    getPrototype = __webpack_require__(111),
+    getPrototype = __webpack_require__(113),
     isObjectLike = __webpack_require__(21);
 
 /** `Object#toString` result references. */
@@ -56179,8 +56183,8 @@ module.exports = baseCreate;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseCreate = __webpack_require__(451),
-    getPrototype = __webpack_require__(111),
-    isPrototype = __webpack_require__(69);
+    getPrototype = __webpack_require__(113),
+    isPrototype = __webpack_require__(68);
 
 /**
  * Initializes an object clone.
@@ -56228,7 +56232,7 @@ module.exports = copyArray;
 /* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Uint8Array = __webpack_require__(112);
+var Uint8Array = __webpack_require__(114);
 
 /**
  * Creates a clone of `arrayBuffer`.
@@ -56308,26 +56312,26 @@ function cloneBuffer(buffer, isDeep) {
 
 module.exports = cloneBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(70)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(69)(module)))
 
 /***/ }),
 /* 457 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assignMergeValue = __webpack_require__(115),
+var assignMergeValue = __webpack_require__(117),
     cloneBuffer = __webpack_require__(456),
     cloneTypedArray = __webpack_require__(455),
     copyArray = __webpack_require__(453),
     initCloneObject = __webpack_require__(452),
-    isArguments = __webpack_require__(68),
+    isArguments = __webpack_require__(67),
     isArray = __webpack_require__(16),
     isArrayLikeObject = __webpack_require__(449),
-    isBuffer = __webpack_require__(66),
-    isFunction = __webpack_require__(73),
+    isBuffer = __webpack_require__(65),
+    isFunction = __webpack_require__(72),
     isObject = __webpack_require__(17),
     isPlainObject = __webpack_require__(447),
-    isTypedArray = __webpack_require__(65),
-    safeGet = __webpack_require__(109),
+    isTypedArray = __webpack_require__(64),
+    safeGet = __webpack_require__(111),
     toPlainObject = __webpack_require__(443);
 
 /**
@@ -56445,7 +56449,7 @@ module.exports = createBaseFor;
 /* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(45);
+var getMapData = __webpack_require__(46);
 
 /**
  * Sets the map `key` to `value`.
@@ -56473,7 +56477,7 @@ module.exports = mapCacheSet;
 /* 460 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(45);
+var getMapData = __webpack_require__(46);
 
 /**
  * Checks if a map value for `key` exists.
@@ -56495,7 +56499,7 @@ module.exports = mapCacheHas;
 /* 461 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(45);
+var getMapData = __webpack_require__(46);
 
 /**
  * Gets the map value for `key`.
@@ -56538,7 +56542,7 @@ module.exports = isKeyable;
 /* 463 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getMapData = __webpack_require__(45);
+var getMapData = __webpack_require__(46);
 
 /**
  * Removes `key` and its value from the map.
@@ -56562,7 +56566,7 @@ module.exports = mapCacheDelete;
 /* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(46);
+var nativeCreate = __webpack_require__(47);
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -56591,7 +56595,7 @@ module.exports = hashSet;
 /* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(46);
+var nativeCreate = __webpack_require__(47);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -56620,7 +56624,7 @@ module.exports = hashHas;
 /* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(46);
+var nativeCreate = __webpack_require__(47);
 
 /** Used to stand-in for `undefined` hash values. */
 var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -56679,7 +56683,7 @@ module.exports = hashDelete;
 /* 468 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var nativeCreate = __webpack_require__(46);
+var nativeCreate = __webpack_require__(47);
 
 /**
  * Removes all key-value entries from the hash.
@@ -56739,8 +56743,8 @@ module.exports = Hash;
 /***/ (function(module, exports, __webpack_require__) {
 
 var Hash = __webpack_require__(469),
-    ListCache = __webpack_require__(49),
-    Map = __webpack_require__(74);
+    ListCache = __webpack_require__(50),
+    Map = __webpack_require__(73);
 
 /**
  * Removes all key-value entries from the map.
@@ -56850,7 +56854,7 @@ module.exports = objectToString;
 /* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(47);
+var Symbol = __webpack_require__(48);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -56902,10 +56906,10 @@ module.exports = getRawTag;
 /* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(73),
+var isFunction = __webpack_require__(72),
     isMasked = __webpack_require__(473),
     isObject = __webpack_require__(17),
-    toSource = __webpack_require__(116);
+    toSource = __webpack_require__(118);
 
 /**
  * Used to match `RegExp`
@@ -56955,9 +56959,9 @@ module.exports = baseIsNative;
 /* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(49),
-    Map = __webpack_require__(74),
-    MapCache = __webpack_require__(72);
+var ListCache = __webpack_require__(50),
+    Map = __webpack_require__(73),
+    MapCache = __webpack_require__(71);
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;
@@ -57059,7 +57063,7 @@ module.exports = stackDelete;
 /* 481 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ListCache = __webpack_require__(49);
+var ListCache = __webpack_require__(50);
 
 /**
  * Removes all key-value entries from the stack.
@@ -57080,7 +57084,7 @@ module.exports = stackClear;
 /* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(48);
+var assocIndexOf = __webpack_require__(49);
 
 /**
  * Sets the list cache `key` to `value`.
@@ -57112,7 +57116,7 @@ module.exports = listCacheSet;
 /* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(48);
+var assocIndexOf = __webpack_require__(49);
 
 /**
  * Checks if a list cache value for `key` exists.
@@ -57134,7 +57138,7 @@ module.exports = listCacheHas;
 /* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(48);
+var assocIndexOf = __webpack_require__(49);
 
 /**
  * Gets the list cache value for `key`.
@@ -57159,7 +57163,7 @@ module.exports = listCacheGet;
 /* 485 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assocIndexOf = __webpack_require__(48);
+var assocIndexOf = __webpack_require__(49);
 
 /** Used for built-in method references. */
 var arrayProto = Array.prototype;
@@ -57219,13 +57223,13 @@ module.exports = listCacheClear;
 /* 487 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Stack = __webpack_require__(75),
-    assignMergeValue = __webpack_require__(115),
-    baseFor = __webpack_require__(113),
+var Stack = __webpack_require__(74),
+    assignMergeValue = __webpack_require__(117),
+    baseFor = __webpack_require__(115),
     baseMergeDeep = __webpack_require__(457),
     isObject = __webpack_require__(17),
-    keysIn = __webpack_require__(108),
-    safeGet = __webpack_require__(109);
+    keysIn = __webpack_require__(110),
+    safeGet = __webpack_require__(111);
 
 /**
  * The base implementation of `_.merge` without support for multiple sources.
@@ -57296,8 +57300,8 @@ module.exports = ReactPropTypesSecret;
 
 
 
-var emptyFunction = __webpack_require__(52);
-var invariant = __webpack_require__(53);
+var emptyFunction = __webpack_require__(53);
+var invariant = __webpack_require__(54);
 var ReactPropTypesSecret = __webpack_require__(488);
 
 module.exports = function() {
@@ -57615,7 +57619,7 @@ module.exports = ExecutionEnvironment;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(53),ca=__webpack_require__(0),m=__webpack_require__(495),p=__webpack_require__(126),v=__webpack_require__(52),da=__webpack_require__(494),ea=__webpack_require__(493),fa=__webpack_require__(492),ha=__webpack_require__(125);
+var aa=__webpack_require__(54),ca=__webpack_require__(0),m=__webpack_require__(495),p=__webpack_require__(128),v=__webpack_require__(53),da=__webpack_require__(494),ea=__webpack_require__(493),fa=__webpack_require__(492),ha=__webpack_require__(127);
 function A(a){for(var b=arguments.length-1,c="https://reactjs.org/docs/error-decoder.html?invariant="+a,d=0;d<b;d++)c+="&args[]="+encodeURIComponent(arguments[d+1]);aa(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",c)}ca?void 0:A("227");
 function ia(a,b,c,d,e,f,g,h,k){this._hasCaughtError=!1;this._caughtError=null;var n=Array.prototype.slice.call(arguments,3);try{b.apply(c,n)}catch(r){this._caughtError=r,this._hasCaughtError=!0}}
 var B={_caughtError:null,_hasCaughtError:!1,_rethrowError:null,_hasRethrowError:!1,invokeGuardedCallback:function(a,b,c,d,e,f,g,h,k){ia.apply(B,arguments)},invokeGuardedCallbackAndCatchFirstError:function(a,b,c,d,e,f,g,h,k){B.invokeGuardedCallback.apply(this,arguments);if(B.hasCaughtError()){var n=B.clearCaughtError();B._hasRethrowError||(B._hasRethrowError=!0,B._rethrowError=n)}},rethrowCaughtError:function(){return ka.apply(B,arguments)},hasCaughtError:function(){return B._hasCaughtError},clearCaughtError:function(){if(B._hasCaughtError){var a=
@@ -58423,7 +58427,7 @@ var _warning = __webpack_require__(22);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _sheets = __webpack_require__(76);
+var _sheets = __webpack_require__(75);
 
 var _sheets2 = _interopRequireDefault(_sheets);
 
@@ -58431,7 +58435,7 @@ var _StyleRule = __webpack_require__(29);
 
 var _StyleRule2 = _interopRequireDefault(_StyleRule);
 
-var _toCssValue = __webpack_require__(51);
+var _toCssValue = __webpack_require__(52);
 
 var _toCssValue2 = _interopRequireDefault(_toCssValue);
 
@@ -58880,7 +58884,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _RuleList = __webpack_require__(37);
+var _RuleList = __webpack_require__(38);
 
 var _RuleList2 = _interopRequireDefault(_RuleList);
 
@@ -58888,7 +58892,7 @@ var _StyleRule = __webpack_require__(29);
 
 var _StyleRule2 = _interopRequireDefault(_StyleRule);
 
-var _createRule = __webpack_require__(50);
+var _createRule = __webpack_require__(51);
 
 var _createRule2 = _interopRequireDefault(_createRule);
 
@@ -58966,11 +58970,11 @@ var _StyleRule = __webpack_require__(29);
 
 var _StyleRule2 = _interopRequireDefault(_StyleRule);
 
-var _createRule = __webpack_require__(50);
+var _createRule = __webpack_require__(51);
 
 var _createRule2 = _interopRequireDefault(_createRule);
 
-var _isObservable = __webpack_require__(121);
+var _isObservable = __webpack_require__(123);
 
 var _isObservable2 = _interopRequireDefault(_isObservable);
 
@@ -59033,7 +59037,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _toCss = __webpack_require__(77);
+var _toCss = __webpack_require__(76);
 
 var _toCss2 = _interopRequireDefault(_toCss);
 
@@ -59083,7 +59087,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _toCss = __webpack_require__(77);
+var _toCss = __webpack_require__(76);
 
 var _toCss2 = _interopRequireDefault(_toCss);
 
@@ -59144,7 +59148,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _RuleList = __webpack_require__(37);
+var _RuleList = __webpack_require__(38);
 
 var _RuleList2 = _interopRequireDefault(_RuleList);
 
@@ -59240,7 +59244,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _RuleList = __webpack_require__(37);
+var _RuleList = __webpack_require__(38);
 
 var _RuleList2 = _interopRequireDefault(_RuleList);
 
@@ -59584,7 +59588,7 @@ var _isInBrowser = __webpack_require__(512);
 
 var _isInBrowser2 = _interopRequireDefault(_isInBrowser);
 
-var _StyleSheet = __webpack_require__(118);
+var _StyleSheet = __webpack_require__(120);
 
 var _StyleSheet2 = _interopRequireDefault(_StyleSheet);
 
@@ -59604,7 +59608,7 @@ var _functions = __webpack_require__(503);
 
 var _functions2 = _interopRequireDefault(_functions);
 
-var _sheets = __webpack_require__(76);
+var _sheets = __webpack_require__(75);
 
 var _sheets2 = _interopRequireDefault(_sheets);
 
@@ -59612,11 +59616,11 @@ var _StyleRule = __webpack_require__(29);
 
 var _StyleRule2 = _interopRequireDefault(_StyleRule);
 
-var _createGenerateClassName = __webpack_require__(119);
+var _createGenerateClassName = __webpack_require__(121);
 
 var _createGenerateClassName2 = _interopRequireDefault(_createGenerateClassName);
 
-var _createRule2 = __webpack_require__(50);
+var _createRule2 = __webpack_require__(51);
 
 var _createRule3 = _interopRequireDefault(_createRule2);
 
@@ -59901,7 +59905,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports['default'] = cloneStyle;
 
-var _isObservable = __webpack_require__(121);
+var _isObservable = __webpack_require__(123);
 
 var _isObservable2 = _interopRequireDefault(_isObservable);
 
@@ -61254,7 +61258,7 @@ return Promise$1;
 
 //# sourceMappingURL=es6-promise.map
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(123), __webpack_require__(15)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(125), __webpack_require__(15)))
 
 /***/ }),
 /* 522 */
@@ -65193,7 +65197,7 @@ exports.default = {
  * LICENSE file in the root directory of this source tree.
  */
 
-var k=__webpack_require__(126),n=__webpack_require__(53),p=__webpack_require__(125),q=__webpack_require__(52),r="function"===typeof Symbol&&Symbol.for,t=r?Symbol.for("react.element"):60103,u=r?Symbol.for("react.portal"):60106,v=r?Symbol.for("react.fragment"):60107,w=r?Symbol.for("react.strict_mode"):60108,x=r?Symbol.for("react.profiler"):60114,y=r?Symbol.for("react.provider"):60109,z=r?Symbol.for("react.context"):60110,A=r?Symbol.for("react.async_mode"):60111,B=
+var k=__webpack_require__(128),n=__webpack_require__(54),p=__webpack_require__(127),q=__webpack_require__(53),r="function"===typeof Symbol&&Symbol.for,t=r?Symbol.for("react.element"):60103,u=r?Symbol.for("react.portal"):60106,v=r?Symbol.for("react.fragment"):60107,w=r?Symbol.for("react.strict_mode"):60108,x=r?Symbol.for("react.profiler"):60114,y=r?Symbol.for("react.provider"):60109,z=r?Symbol.for("react.context"):60110,A=r?Symbol.for("react.async_mode"):60111,B=
 r?Symbol.for("react.forward_ref"):60112;r&&Symbol.for("react.timeout");var C="function"===typeof Symbol&&Symbol.iterator;function D(a){for(var b=arguments.length-1,e="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=0;c<b;c++)e+="&args[]="+encodeURIComponent(arguments[c+1]);n(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",e)}
 var E={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function F(a,b,e){this.props=a;this.context=b;this.refs=p;this.updater=e||E}F.prototype.isReactComponent={};F.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?D("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};F.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};function G(){}
 G.prototype=F.prototype;function H(a,b,e){this.props=a;this.context=b;this.refs=p;this.updater=e||E}var I=H.prototype=new G;I.constructor=H;k(I,F.prototype);I.isPureReactComponent=!0;var J={current:null},K=Object.prototype.hasOwnProperty,L={key:!0,ref:!0,__self:!0,__source:!0};
@@ -65227,7 +65231,7 @@ var _platform = __webpack_require__(11);
 
 __webpack_require__(547);
 
-var _cancel = __webpack_require__(78);
+var _cancel = __webpack_require__(77);
 
 var _cancel2 = _interopRequireDefault(_cancel);
 
@@ -65243,7 +65247,7 @@ var _shuffle = __webpack_require__(543);
 
 var _shuffle2 = _interopRequireDefault(_shuffle);
 
-var _back = __webpack_require__(124);
+var _back = __webpack_require__(126);
 
 var _back2 = _interopRequireDefault(_back);
 
