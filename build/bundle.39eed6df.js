@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "build/" + ({}[chunkId]||chunkId) + "." + {"0":"1d774c5d"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "build/" + ({}[chunkId]||chunkId) + "." + {"0":"b2b38fde"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -194,7 +194,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 551);
+/******/ 	return __webpack_require__(__webpack_require__.s = 553);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -205,7 +205,7 @@
 
 
 if (true) {
-  module.exports = __webpack_require__(549);
+  module.exports = __webpack_require__(551);
 } else {}
 
 
@@ -16123,7 +16123,7 @@ exports.default = (0, _Styled2.default)(styles)(PathlineRenderer);
 /* 96 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.6.2","main":"dist/vkui.js","license":"SEE LICENSE IN LICENSE","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.6.3","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 97 */
@@ -39683,7 +39683,7 @@ var EditorLoader_EditorLoader = function (_Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
-			__webpack_require__.e(/* import() */ 0).then(__webpack_require__.bind(null, 561)).then(function (module) {
+			__webpack_require__.e(/* import() */ 0).then(__webpack_require__.bind(null, 563)).then(function (module) {
 				_this2.setState({ editor: module.default });
 			});
 		}
@@ -42096,7 +42096,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': '### platform\n\nФункция platform используется для определения платформы на основании user agent. На данный момент библиотеке поддерживает\niOS и Android. Пример использования:\n\n```js\n  <span class="hljs-keyword">import</span> { platform, IOS, ANDROID } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n\n  <span class="hljs-keyword">const</span> osname = platform();\n\n  <span class="hljs-keyword">if</span> (osname === IOS) {\n    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">\'Это iPhone!\'</span>);\n  } <span class="hljs-keyword">else</span> {\n    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">\'Похоже, что это Android\'</span>);\n  }\n```\n\n### getClassName\n\nДопустим, вы решили создать свой собственный компонент. Вероятно, в CSS вам захочется стилизовать ваш компонент\nпо-разному, в зависимости от платформы (iOS или Android).\n\nКак вариант, на корневой элемент можно навесить модификаторы. Функция `getClassName` инкапсулирует в себе логику\nопределения платформы и на выходе выдает строчку, состояющую из CSS классов. Пример:\n\n```js\n  <span class="hljs-keyword">import</span> { getClassName } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n\n  <span class="hljs-keyword">const</span> baseClassName = getClassName(<span class="hljs-string">\'Tooltip\'</span>) <span class="hljs-comment">// "Tooltip Tooltip--ios"</span>\n```'
+        'content': '### platform\n\nФункция `platform` используется для определения платформы на основании user agent. На данный момент библиотека поддерживает\niOS и Android. Пример использования:\n\n```js\n  <span class="hljs-keyword">import</span> { platform, IOS, ANDROID } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n\n  <span class="hljs-keyword">const</span> osname = platform();\n\n  <span class="hljs-keyword">if</span> (osname === IOS) {\n    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">\'Это iPhone!\'</span>);\n  } <span class="hljs-keyword">else</span> {\n    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">\'Похоже, что это Android\'</span>);\n  }\n```\n\n### getClassName\n\nДопустим, вы решили создать свой собственный компонент. Вероятно, в CSS вам захочется стилизовать ваш компонент\nпо-разному, в зависимости от платформы (iOS или Android).\n\nКак вариант, на корневой элемент можно навесить модификаторы. Функция `getClassName` инкапсулирует в себе логику\nопределения платформы и на выходе выдает строчку, состояющую из css-классов. Пример:\n\n```js\n  <span class="hljs-keyword">import</span> { getClassName } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n\n  <span class="hljs-keyword">const</span> baseClassName = getClassName(<span class="hljs-string">\'Tooltip\'</span>) <span class="hljs-comment">// "Tooltip Tooltip--ios"</span>\n```'
     }]
 	
 
@@ -42143,7 +42143,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'File под капотом использует Button. То есть все свойства, применимые к Button, применимы и к File.'
+        'content': '`File` под капотом использует `Button`. То есть все свойства, применимые к `Button`, применимы и к `File`.'
     },
     {
         'type': 'code',
@@ -42961,7 +42961,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'В Select можно добавлять placeholder.\n\n```jsx\n<span class="hljs-keyword">import</span> { Select } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Выберите пол"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"m"</span>&gt;</span>Мужской<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"f"</span>&gt;</span>Женский<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Select</span>&gt;</span></span>\n```'
+        'content': '```jsx\n<span class="hljs-keyword">import</span> { Select } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Выберите пол"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"m"</span>&gt;</span>Мужской<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"f"</span>&gt;</span>Женский<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Select</span>&gt;</span></span>\n```'
     },
     {
         'type': 'code',
@@ -43819,7 +43819,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': '  <View activePanel="panel">\n    <Panel id="panel" theme="white">\n      <PanelHeader>Radio</PanelHeader>\n      <FormLayout>\n        <div>\n          <Radio name="radio" value="1" description="Lorem ipsum dolor sit amet, consectetur." defaultChecked>First</Radio>\n          <Radio name="radio" value="2">Second</Radio>\n          <Radio name="radio" value="3" disabled>Third</Radio>\n        </div>\n      </FormLayout>\n    </Panel>\n  </View>',
+        'content': '  <View activePanel="panel">\n    <Panel id="panel" theme="white">\n      <PanelHeader>Radio</PanelHeader>\n      <FormLayout>\n        <div>\n          <Radio name="radio" value="1" description="Lorem ipsum dolor sit amet, consectetur." defaultChecked>First</Radio>\n          <Radio name="radio" value="2">Second</Radio>\n          <Radio name="radio" value="3" disabled>Third (disabled)</Radio>\n        </div>\n      </FormLayout>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
     }]
@@ -43988,10 +43988,18 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(4);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
-module.exports = [{
+module.exports = [
+    {
         'type': 'markdown',
-        'content': 'Принимает те же свойства, что и Slider, за исключением value и defaultValue. Они должны переданы в виде массива\n[startValue, endValue]. onChange так же возвращает подобный массив.'
-    }]
+        'content': 'Принимает те же свойства, что и обычный слайдер, за исключением `value` и `defaultValue`.\nОни должны переданы в виде массива `[startValue, endValue]`. `onChange` так же возвращает подобный массив.'
+    },
+    {
+        'type': 'code',
+        'content': '  class Example extends React.Component {\n\n    render() {\n      return (\n        <View activePanel="slider">\n          <Panel id="slider" theme="white">\n            <PanelHeader>RangerSlider</PanelHeader>\n            <FormLayout>\n              <RangeSlider\n                top="Uncontrolled"\n                min={10}\n                max={20}\n                step={1}\n                defaultValue={[12, 16]}\n              />\n            </FormLayout>\n          </Panel>\n        </View>\n      );\n    }\n  }\n\n  <Example />',
+        'settings': {},
+        'evalInContext': evalInContext
+    }
+]
 	
 
 /***/ }),
@@ -44408,7 +44416,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Компонент для создания форм. Принимает в качестве children один или несколько элементов форм. Input, Textarea, Select, Button, Checkbox, Radio.\n\nДля отрисовки лейблов снизу и сверху у каждой строчки, используются свойства top и bottom, которые нужно навесить на children элементы.\n\nИногда требуется объединить несколько контролов в группу. Делается это путем оборачивания их в div.\n\n```jsx\n<span class="hljs-keyword">import</span> { FormLayout, Input } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n&lt;FormLayout&gt;\n  &lt;Input top="Имя" /&gt;\n  &lt;div top="Пароль"&gt;\n    &lt;Input type="password" top="Пароль" placeholder="Введите пароль" /&gt;\n    &lt;Input type="password" placeholder="Повторите пароль" /&gt;\n  &lt;/div&gt;\n&lt;/FormLayout&gt;\n```'
+        'content': 'Компонент для создания форм. Принимает в качестве `children` один или несколько элементов форм.\n\nДля отрисовки лейблов снизу и сверху у каждой строчки, используются свойства `top` и `bottom`, которые нужно навесить\nна `children` элементы.\n\nИногда требуется объединить несколько контролов в группу. Делается это путем оборачивания их в `div`.\n\n```jsx\n<span class="hljs-keyword">import</span> { FormLayout, Input } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n&lt;FormLayout&gt;\n  &lt;Input top="Имя" /&gt;\n  &lt;div top="Пароль"&gt;\n    &lt;Input type="password" top="Пароль" placeholder="Введите пароль" /&gt;\n    &lt;Input type="password" placeholder="Повторите пароль" /&gt;\n  &lt;/div&gt;\n&lt;/FormLayout&gt;\n```'
     },
     {
         'type': 'code',
@@ -44720,11 +44728,11 @@ module.exports = {
             'name': 'vertical'
         }
     ],
-    'doclets': { 'deprecated': 'Этот компонент устарел и будет удален в следущей мажорной версии.\nДля отрисовки фиксированных Tabs используйте связку Tabs и FixedLayout.' },
+    'doclets': { 'deprecated': 'этот компонент устарел и будет удален в следущей мажорной версии.\nДля отрисовки фиксированных табов используйте связку `Tabs` и `FixedLayout`.' },
     'tags': {
         'deprecated': [{
                 'title': 'deprecated',
-                'description': 'Этот компонент устарел и будет удален в следущей мажорной версии.\nДля отрисовки фиксированных Tabs используйте связку Tabs и FixedLayout.'
+                'description': 'этот компонент устарел и будет удален в следущей мажорной версии.\nДля отрисовки фиксированных табов используйте связку `Tabs` и `FixedLayout`.'
             }]
     },
     'examples': []
@@ -44773,8 +44781,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var osname = (0, _platform.platform)();
 
 /**
- * @deprecated Этот компонент устарел и будет удален в следущей мажорной версии.
- * Для отрисовки фиксированных Tabs используйте связку Tabs и FixedLayout.
+ * @deprecated этот компонент устарел и будет удален в следущей мажорной версии.
+ * Для отрисовки фиксированных табов используйте связку `Tabs` и `FixedLayout`.
  */
 
 var FixedTabs = function (_React$Component) {
@@ -45009,7 +45017,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Табы могут растягиваться на всю ширину, либо занимать только необходимое пространство.\n\n**Важно:** Header, к которому внизу примыкают Tabs, нужно снабдить свойством noShadow, чтобы его тень не налезала\nна Tabs.'
+        'content': 'Табы могут растягиваться на всю ширину, либо занимать только необходимое пространство.\n\n**Важно:** Шапку, к которой снизу примыкают фиксированные табы, нужно снабдить свойством `noShadow={true}`,\nчтобы ее тень не налезала на `Tabs`.'
     },
     {
         'type': 'code',
@@ -46054,7 +46062,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': '**Важно**: свойство style применяется к img, а не к корневому элементу. Чаще всего требуется стилизовать именно\nизображение, а не обертку.'
+        'content': '**Важно**: свойство `style` применяется к `img`, а не к корневому элементу. Чаще всего требуется стилизовать именно\nизображение, а не обертку.'
     },
     {
         'type': 'code',
@@ -48750,7 +48758,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Компонент-обертка для отрисовки ссылок. Поддерживаются все допустимые html атрибуты.\n\n```jsx\n<span class="hljs-keyword">import</span> { Link } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://google.com"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>Google<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>\n&lt;Link href=<span class="hljs-string">"/profile"</span>&gt;Profile&lt;<span class="hljs-regexp">/Link&gt;</span>\n```'
+        'content': 'Компонент-обертка для отрисовки ссылок. Поддерживаются все допустимые html-атрибуты.\n\n```jsx\n<span class="hljs-keyword">import</span> { Link } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://google.com"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>Google<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>\n&lt;Link href=<span class="hljs-string">"/profile"</span>&gt;Profile&lt;<span class="hljs-regexp">/Link&gt;</span>\n```'
     }]
 	
 
@@ -49686,18 +49694,12 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(4);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
-module.exports = [
-    {
-        'type': 'markdown',
-        'content': 'Свойство-массив actions служит для отрисовки кнопок. Каждый элемент массива \u2013 это объект из трех полей:\n\n-   action \u2013 функция для обработки клика по кнопке.\n-   style \u2013 стилизация кнопки. Более подробно со значениями можно ознакомиться в разделе props & methods.\n-   autoclose \u2013 флаг для автозакрытия алерта при клике на кнопку. **Важно:** перед установкой этого флага в true, убедитесь, что в Alert передано свойство onClose.'
-    },
-    {
+module.exports = [{
         'type': 'code',
         'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      popout: null\n    }\n  }\n\n  componentDidMount() {\n    this.openSheet()\n  }\n\n  openSheet () {\n    this.setState({ popout:\n      <Alert\n        actions={[{\n          title: \'Close\',\n          autoclose: true,\n          style: \'destructive\'\n        }, {\n          title: \'Cancel\',\n          autoclose: true,\n          style: \'cancel\'\n        }]}\n        onClose={ () => this.setState({ popout: null }) }\n      >\n        <h2>Hi!</h2>\n        <p>I am alert</p>\n      </Alert>\n    });\n  }\n\n  render() {\n    return (\n      <View popout={this.state.popout} header={false} activePanel="alert">\n        <Panel id="alert">\n          <Button type="cell" onClick={this.openSheet.bind(this)}>Open Alert</Button>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
         'settings': {},
         'evalInContext': evalInContext
-    }
-]
+    }]
 	
 
 /***/ }),
@@ -49985,7 +49987,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Элемент списка ActionSheet. Если в ActionSheetItem передать autoclose={true}, то ActionSheet сам вызовет переданный в него onClose.'
+        'content': 'Элемент списка `ActionSheet`. Если в `ActionSheetItem` передать `autoclose={true}`, то `ActionSheet` сам вызовет\nпереданный в него `onClose`.'
     }]
 	
 
@@ -50158,7 +50160,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'ActionSheet \u2013 имитация [нативного компонента](https://developer.apple.com/ios/human-interface-guidelines/views/action-sheets/). Удобно использовать, когда нужно дать пользователю выбрать одно из множества действий.\nВ качестве children принимает коллекцию ActionSheetItem.\n\n**Важно**\n\n-   Нужно обязательно передать onClose для обработки закрытия ActionSheet изнутри.\n-   Согласно гайдлайнам Apple, в ActionSheet должен быть элемент для закрытия.\n    В коде примера ниже можно посмотреть, как добавить такой элемент.\n    Для Android версии такой элемент не нужен.'
+        'content': 'ActionSheet \u2013 имитация [нативного компонента](https://developer.apple.com/ios/human-interface-guidelines/views/action-sheets/).\nУдобно использовать, когда нужно дать пользователю выбрать одно из множества действий. В качестве `children` принимает\nколлекцию `ActionSheetItem`.\n\n**Важно**\n\n-   Нужно обязательно передать onClose для обработки закрытия ActionSheet изнутри.\n-   Согласно гайдлайнам Apple, в ActionSheet должен быть элемент для закрытия.\n    В коде примера ниже можно посмотреть, как добавить такой элемент.\n    Для Android версии такой элемент не нужен.'
     },
     {
         'type': 'code',
@@ -50429,7 +50431,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Компонент-обертка для отрисовки всплывающих окон с затемнением фона. Используется внутри Alert, ActionSheet и ScreenSpinner.\nСвойства v и h служат для удобного позиционирования контента. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { Popout } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PopoutWrapper</span> <span class="hljs-attr">v</span>=<span class="hljs-string">"center"</span> <span class="hljs-attr">h</span>=<span class="hljs-string">"center"</span>&gt;</span>\n  Some content\n<span class="hljs-tag">&lt;/<span class="hljs-name">PopoutWrapper</span>&gt;</span></span>\n```'
+        'content': 'Компонент-обертка для отрисовки всплывающих окон с затемнением фона. Используется внутри `Alert`, `ActionSheet`\nи `ScreenSpinner`. Свойства `v` и `h` служат для удобного позиционирования контента. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { Popout } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PopoutWrapper</span> <span class="hljs-attr">v</span>=<span class="hljs-string">"center"</span> <span class="hljs-attr">h</span>=<span class="hljs-string">"center"</span>&gt;</span>\n  Some content\n<span class="hljs-tag">&lt;/<span class="hljs-name">PopoutWrapper</span>&gt;</span></span>\n```\n\nВсе всплывающие окна передаются в свойство `popout` компонентов `View` или `Root`.'
     }]
 	
 
@@ -50729,7 +50731,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': '{ position: fixed } не дружит с { transform: translate } на родителе, поэтому для позиционирования фиксированных блоков внутри Panel, необходимо использовать FixedLayout в качестве обертки.\n\nДля удобства есть свойство vertical, с помощью которого можно прижать контент к верху или низу. При этому будут учитываться высота шапки и прочие системные отступы.\n\nВажно понимать, что блок с { position: fixed } находится не в потоке. В примере можно увидеть, что у блока с основным контентом есть паддинги. Они там не случайны.'
+        'content': '`{ position: fixed }` не дружит с `{ transform: translate }` на родителе, поэтому для позиционирования фиксированных\nблоков внутри панели, необходимо использовать `FixedLayout` в качестве обертки.\n\nДля удобства есть свойство `vertical`, с помощью которого можно "прижать" контент к верху или низу.\nПри этому будут учитываться высота шапки и прочие системные отступы.\n\n**Важно:** блок с `{ position: fixed }` находится не в потоке. В примере можно увидеть, что у блока с основным\nконтентом есть паддинги. Они там не случайны.'
     },
     {
         'type': 'code',
@@ -51259,7 +51261,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Компонент для отрисовки кнопок в PanelHeader. Внутрь компонента передается либо иконка, либо текст. Текстовые кнопки\nчаще всего используются в iOS, но есть исключения для Android.\n\nШапки iOS и Android достаточно сильно отличаются внешне, поэтому описание будет разделено на две части.\n\n**Android**\n\nКнопки могут быть переданы в left или right компонента PanelHeader:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Back <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/back\'</span>;\n<span class="hljs-keyword">import</span> Icon24Search <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/search\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">left</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">HeaderButton</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Back</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n  right={<span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Search</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n/&gt;</span>\n```\n\nЕсли нужно несколько кнопок справа или слева, то передаем массив:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Add <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/add\'</span>;\n<span class="hljs-keyword">import</span> Icon24Search <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/search\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">right</span>=<span class="hljs-string">{[</span>\n    &lt;<span class="hljs-attr">HeaderButton</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"search"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Search</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>,\n    <span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"add"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Add</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>\n  ]}\n/&gt;</span>\n```\n\n**iOS**\n\nОсновное отличие \u2013 это составность левой кнопки. Она может состоять из иконки и текста. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton, platform, IOS } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Back <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/back\'</span>;\n<span class="hljs-keyword">import</span> Icon28ChevronBack <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/28/chevron_back\'</span>;\n\n<span class="hljs-keyword">const</span> osname = platform();\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">addon</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">HeaderButton</span>&gt;</span>Назад<span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n  left={<span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span>&gt;</span>{osname === IOS <span class="hljs-tag">&lt;<span class="hljs-name">Icon28ChevronBack</span>/&gt;</span> ? <span class="hljs-tag">&lt;<span class="hljs-name">Icon24Back</span>/&gt;</span>}<span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n/&gt;</span>\n```\n\nВ примере выше появляется новое свойство `addon`, актуальное только для iOS версии.\n\n**Важно:** кнопки для возврата к предыдущей Panel отличаются.\nВ случае с iOS используется иконка [28/chevron_back](https://vkcom.github.io/icons/#28/chevron_back), в случае с\nAndroid \u2013 [24/back](https://vkcom.github.io/icons/#24/back). Так же различаются кнопки для возврата к предыдущей\nView. iOS \u2013 текст "Отмена", Android \u2013 [24/cancel](https://vkcom.github.io/icons/#24/cancel).'
+        'content': 'Компонент для отрисовки кнопок в шапке панели. Внутрь компонента передается либо [иконка](https://vkcom.github.io/icons/),\nлибо текст. Текстовые кнопки чаще всего используются в iOS, но есть исключения для Android.\n\nКнопки могут быть переданы в `left` или `right` компонента `PanelHeader`:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Back <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/back\'</span>;\n<span class="hljs-keyword">import</span> Icon24Search <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/search\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">left</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">HeaderButton</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Back</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n  right={<span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Search</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n/&gt;</span>\n```\n\nЕсли нужно несколько кнопок справа или слева, то передаем массив:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Add <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/add\'</span>;\n<span class="hljs-keyword">import</span> Icon24Search <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/search\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">right</span>=<span class="hljs-string">{[</span>\n    &lt;<span class="hljs-attr">HeaderButton</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"search"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Search</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>,\n    <span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"add"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon24Add</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>\n  ]}\n/&gt;</span>\n```\n\n**Addon для iOS**\n\nВ iOS к левой кнопке может быть добавлена подпись. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { PanelHeader, HeaderButton, platform, IOS } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkonktakte/vkui\'</span>;\n<span class="hljs-keyword">import</span> Icon24Back <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/24/back\'</span>;\n<span class="hljs-keyword">import</span> Icon28ChevronBack <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/icons/dist/28/chevron_back\'</span>;\n\n<span class="hljs-keyword">const</span> osname = platform();\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span>\n  <span class="hljs-attr">addon</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">HeaderButton</span>&gt;</span>Назад<span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n  left={<span class="hljs-tag">&lt;<span class="hljs-name">HeaderButton</span>&gt;</span>{osname === IOS <span class="hljs-tag">&lt;<span class="hljs-name">Icon28ChevronBack</span>/&gt;</span> ? <span class="hljs-tag">&lt;<span class="hljs-name">Icon24Back</span>/&gt;</span>}<span class="hljs-tag">&lt;/<span class="hljs-name">HeaderButton</span>&gt;</span>}\n/&gt;</span>\n```\n\n**Важно:** кнопки для возврата к предыдущей панели отличаются.\nВ случае с iOS используется иконка [28/chevron_back](https://vkcom.github.io/icons/#28/chevron_back), в случае с\nAndroid \u2013 [24/back](https://vkcom.github.io/icons/#24/back). Так же различаются кнопки для возврата к предыдущей\n`View`. iOS \u2013 текст "Отмена", Android \u2013 иконка [24/cancel](https://vkcom.github.io/icons/#24/cancel).'
     },
     {
         'type': 'code',
@@ -51371,7 +51373,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Компонент для отрисовки шапки внутри Panel. В качестве children принимает то, что будет находиться в центре.\nЭто может быть текст, элемент или Search. По бокам располагаются управляющие кнопки HeaderButton.'
+        'content': 'Компонент для отрисовки шапки внутри панели. В качестве `children` принимает то, что будет являться заголовком панели.\nПо бокам располагаются управляющие кнопки `HeaderButton`.'
     },
     {
         'type': 'code',
@@ -51477,7 +51479,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Компонент для создания панели. Передается внутрь View.\n\n```jsx\n<span class="hljs-keyword">import</span> { Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"panelId"</span>&gt;</span>\n  Content\n<span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span></span>\n```'
+        'content': 'Компонент для создания панели. Передается внутрь `View`.\n\n```jsx\n<span class="hljs-keyword">import</span> { Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"panelId"</span>&gt;</span>\n  Content\n<span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span></span>\n```'
     }]
 	
 
@@ -51740,7 +51742,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Базовый компонент для создания панелей. В качестве children принимает коллекцию Panel. У каждой Panel должен быть уникальный id. Свойство activePanel определяет какая Panel активна.\n\nПри смене значения свойства activePanel происходит переход от одной панели к другой. Как только он заканчивается, вызывается свойство-функция onTransition.'
+        'content': 'Базовый компонент для создания панелей. В качестве `children` принимает коллекцию `Panel`.\nУ каждой `Panel` должен быть уникальный `id`. Свойство `activePanel` определяет какая `Panel` активна.\n\nПри смене значения свойства `activePanel` происходит плавный переход от одной панели к другой.\nКак только он заканчивается, вызывается свойство-функция `onTransition`.'
     },
     {
         'type': 'code',
@@ -51957,7 +51959,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Используется для создания модальных окон. Содержимое Root \u2013 это коллекция View. У каждой View должен быть id,\nсвойство activeView определяет, какая View сейактивна.\n\nПри смене значения свойства activeView происходит переход от одной View к другой. Как только он заканчивается, вызывается свойство-функция onTransition.'
+        'content': 'Используется для создания модальных окон. Содержимое `Root` \u2013 это коллекция `View`. У каждой `View` должен быть `id`.\nСвойство `activeView` определяет, какая `View` сейчас активна.\n\nПри смене значения свойства `activeView` плавный происходит переход от одной `View` к другой.\nКак только он заканчивается, вызывается свойство-функция `onTransition`.'
     },
     {
         'type': 'code',
@@ -52273,7 +52275,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Каждое VKUI-приложение \u2013 это набор экранов. Есть два типа переходов между экранами:\n\n### Переход между панелями\n\nPanel \u2013 это компонент, в который передается children, видимый пользователю. Компонент View \u2013 это набор таких панелей. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { View, Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">activePanel</span>=<span class="hljs-string">"greetings"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"greetings"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"form"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"finish"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>\n```\n\nВ компонент View передается коллекция Panel. Свойство activePanel отвечает за то, какая Panel должна быть показана. [Демо](https://vkcom.github.io/vkui-styleguide/#!/View).\n\n### Переход между модальными окнами\n\nВ каждом приложении есть какой-то основной пользовательский сценарий. И есть ответвления: check user action, поиск пользователя и т.д.\nЧтобы как-то отделить ветки от основого сценария, существуют модальные окна. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { Root, View } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Root</span> <span class="hljs-attr">activeView</span>=<span class="hljs-string">"main"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>\n    {* main flow *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"users-search"</span>&gt;</span>\n    {* modal window for users search *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check-user-actions"</span>&gt;</span>\n    {* modal window for check user actions *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Root</span>&gt;</span></span>\n```\n\nВ компонент Root передается коллекция View, в каждой из которых содержится набор Panel. Свойство\nactiveView отвечает за то, какая View должна быть показана. [Демо](https://vkcom.github.io/vkui-styleguide/#!/Root).\n\n### Еще раз :)\n\nСтруктура любого VKUI-приложения должна выглядить так:\n\n```jsx\n<span class="hljs-keyword">import</span> { Root, View, Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Root</span> <span class="hljs-attr">activeView</span>=<span class="hljs-string">"view"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"view"</span> <span class="hljs-attr">activePanel</span>=<span class="hljs-string">"panel"</span>&gt;</span>\n    <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"panel"</span> /&gt;</span>\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Root</span>&gt;</span></span>\n```\n\n**Важно:** эта структура должна быть постоянной. То есть нельзя на лету добавлять и удалять Panel или View. Нельзя так же\nменять id у Panel или View. Структура \u2013 это _декларация_ приложения. Единственный способ для перехода между Panel\nв пределах View и View в пределах Root \u2013 это обновление свойств activePanel и activeView соответственно.'
+        'content': 'Каждое VKUI-приложение \u2013 это набор экранов. Есть два типа переходов между экранами.\n\n### Переход между панелями\n\n`Panel` \u2013 это компонент, в который передается `children`, видимый пользователю. Компонент `View` \u2013 это набор таких панелей. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { View, Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">activePanel</span>=<span class="hljs-string">"greetings"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"greetings"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"form"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"finish"</span>&gt;</span>\n    {* panel content *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">Panel</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>\n```\n\nВ компонент `View` передается коллекция `Panel`. Свойство `activePanel` отвечает за то, какая `Panel` должна быть показана. [Демо](https://vkcom.github.io/vkui-styleguide/#!/View).\n\n### Переход между модальными окнами\n\nВ каждом приложении есть какой-то основной пользовательский сценарий. И есть ответвления: check user action, поиск пользователя и т.д.\nЧтобы как-то отделить ветки от основого сценария, существуют модальные окна. Пример:\n\n```jsx\n<span class="hljs-keyword">import</span> { Root, View } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Root</span> <span class="hljs-attr">activeView</span>=<span class="hljs-string">"main"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>\n    {* main flow *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"users-search"</span>&gt;</span>\n    {* modal window for users search *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"check-user-actions"</span>&gt;</span>\n    {* modal window for check user actions *}\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Root</span>&gt;</span></span>\n```\n\nВ компонент `Root` передается коллекция `View`, в каждой из которых содержится набор `Panel`. Свойство\n`activeView` отвечает за то, какая `View` должна быть показана. [Демо](https://vkcom.github.io/vkui-styleguide/#!/Root).\n\n### Еще раз :)\n\nСтруктура любого VKUI-приложения должна выглядеть так:\n\n```jsx\n<span class="hljs-keyword">import</span> { Root, View, Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Root</span> <span class="hljs-attr">activeView</span>=<span class="hljs-string">"view"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"view"</span> <span class="hljs-attr">activePanel</span>=<span class="hljs-string">"panel"</span>&gt;</span>\n    <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"panel"</span> /&gt;</span>\n  <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">Root</span>&gt;</span></span>\n```\n\nИли так:\n\n```jsx\n<span class="hljs-keyword">import</span> { View, Panel } <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"view"</span> <span class="hljs-attr">activePanel</span>=<span class="hljs-string">"panel"</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">Panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"panel"</span> /&gt;</span>\n<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>\n```\n\n**Важно:** эта структура должна быть постоянной и не должна меняться в рантайме. То есть нельзя на лету добавлять и\nудалять `Panel` или `View`. Нельзя так же менять `id` у `Panel` или `View`. Структура \u2013 это _декларация_ приложения.\nЕдинственный способ для перехода между `Panel` в пределах `View` и `View` в пределах `Root` \u2013 это обновление свойств `activePanel`\nи `activeView` соответственно.'
     }]
 	
 
@@ -52330,7 +52332,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'VKUI \u2013 это набор React-компонентов, с помощью которых можно создавать интерфейсы, внешне неотличимые от\nнаших iOS и Android приложений.\n\nГлавным преимуществом библиотеки является изоморфность. Вы пишите код один раз под все платформы.\n\nЕсли вы еще не работали с React, то советую сначала ознакомиться с этим фреймворком, а потом возвращаться сюда.'
+        'content': 'VKUI \u2013 это набор React-компонентов, с помощью которых можно создавать интерфейсы, внешне неотличимые от\nнаших iOS и Android приложений.\n\nГлавным преимуществом библиотеки является изоморфность \u2013 код, написанный один раз, работает под все платформы.\n\nЕсли вы еще не работали с React, то советую сначала [ознакомиться](https://reactjs.org/) с этим фреймворком, а потом возвращаться сюда.'
     }]
 	
 
@@ -52394,9 +52396,9 @@ module.exports = {
             'content': __webpack_require__(365)
         },
         {
-            'name': 'The Concept',
+            'name': 'Concept',
             'description': void 0,
-            'slug': 'the-concept',
+            'slug': 'concept',
             'sections': [],
             'filepath': './pages/concept.md',
             'components': [],
@@ -61459,7 +61461,14 @@ if (needsPolyfill) {
 
 
 /***/ }),
-/* 526 */
+/* 526 */,
+/* 527 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -61643,7 +61652,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 527 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -61827,7 +61836,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 528 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -62011,7 +62020,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 529 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -62195,7 +62204,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 530 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -62379,7 +62388,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 531 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -62563,7 +62572,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 532 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -62747,7 +62756,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 533 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -62931,7 +62940,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 534 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -63115,7 +63124,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 535 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -63299,7 +63308,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 536 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -63483,7 +63492,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 537 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -63667,7 +63676,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 538 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -63851,7 +63860,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 539 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -64035,7 +64044,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 540 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -64219,7 +64228,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 541 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -64403,7 +64412,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 542 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -64587,7 +64596,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 543 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -64771,7 +64780,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
 });
 
 /***/ }),
-/* 544 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -64955,7 +64964,7 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 545 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -65139,14 +65148,14 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 546 */,
-/* 547 */
+/* 548 */,
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 548 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65184,7 +65193,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 549 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65213,7 +65222,7 @@ assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default?Z.default:Z;
 
 
 /***/ }),
-/* 550 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -65223,27 +65232,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _colors = __webpack_require__(548);
+var _colors = __webpack_require__(550);
 
 var _colors2 = _interopRequireDefault(_colors);
 
 var _platform = __webpack_require__(11);
 
-__webpack_require__(547);
+__webpack_require__(549);
 
 var _cancel = __webpack_require__(77);
 
 var _cancel2 = _interopRequireDefault(_cancel);
 
-var _add = __webpack_require__(545);
+var _add = __webpack_require__(547);
 
 var _add2 = _interopRequireDefault(_add);
 
-var _camera = __webpack_require__(544);
+var _camera = __webpack_require__(546);
 
 var _camera2 = _interopRequireDefault(_camera);
 
-var _shuffle = __webpack_require__(543);
+var _shuffle = __webpack_require__(545);
 
 var _shuffle2 = _interopRequireDefault(_shuffle);
 
@@ -65251,71 +65260,71 @@ var _back = __webpack_require__(126);
 
 var _back2 = _interopRequireDefault(_back);
 
-var _search = __webpack_require__(542);
+var _search = __webpack_require__(544);
 
 var _search2 = _interopRequireDefault(_search);
 
-var _add3 = __webpack_require__(541);
+var _add3 = __webpack_require__(543);
 
 var _add4 = _interopRequireDefault(_add3);
 
-var _chevron_back = __webpack_require__(540);
+var _chevron_back = __webpack_require__(542);
 
 var _chevron_back2 = _interopRequireDefault(_chevron_back);
 
-var _story = __webpack_require__(539);
+var _story = __webpack_require__(541);
 
 var _story2 = _interopRequireDefault(_story);
 
-var _more_vertical = __webpack_require__(538);
+var _more_vertical = __webpack_require__(540);
 
 var _more_vertical2 = _interopRequireDefault(_more_vertical);
 
-var _done = __webpack_require__(537);
+var _done = __webpack_require__(539);
 
 var _done2 = _interopRequireDefault(_done);
 
-var _services = __webpack_require__(536);
+var _services = __webpack_require__(538);
 
 var _services2 = _interopRequireDefault(_services);
 
-var _about = __webpack_require__(535);
+var _about = __webpack_require__(537);
 
 var _about2 = _interopRequireDefault(_about);
 
-var _user = __webpack_require__(534);
+var _user = __webpack_require__(536);
 
 var _user2 = _interopRequireDefault(_user);
 
-var _document = __webpack_require__(533);
+var _document = __webpack_require__(535);
 
 var _document2 = _interopRequireDefault(_document);
 
-var _like = __webpack_require__(532);
+var _like = __webpack_require__(534);
 
 var _like2 = _interopRequireDefault(_like);
 
-var _dropdown = __webpack_require__(531);
+var _dropdown = __webpack_require__(533);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _phone = __webpack_require__(530);
+var _phone = __webpack_require__(532);
 
 var _phone2 = _interopRequireDefault(_phone);
 
-var _users = __webpack_require__(529);
+var _users = __webpack_require__(531);
 
 var _users2 = _interopRequireDefault(_users);
 
-var _settings = __webpack_require__(528);
+var _settings = __webpack_require__(530);
 
 var _settings2 = _interopRequireDefault(_settings);
 
-var _privacy = __webpack_require__(527);
+var _privacy = __webpack_require__(529);
 
 var _privacy2 = _interopRequireDefault(_privacy);
 
-var _more_horizontal = __webpack_require__(526);
+var _more_horizontal = __webpack_require__(528);
 
 var _more_horizontal2 = _interopRequireDefault(_more_horizontal);
 
@@ -65363,10 +65372,11 @@ window.Icon24MoreHorizontal = _more_horizontal2.default;
 window.colors = _colors2.default;
 
 /***/ }),
-/* 551 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(550);
+__webpack_require__(552);
+__webpack_require__(527);
 module.exports = __webpack_require__(157);
 
 
