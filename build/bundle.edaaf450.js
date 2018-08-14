@@ -16106,7 +16106,7 @@ function PathlineRenderer(_ref2) {
       _react2.default.createElement(
         _Link2.default,
         { target: '_blank', href: _package2.default.repository + '/tree/v' + _package2.default.version + '/' + children.replace('../', '') },
-        'Github'
+        'GitHub'
       )
     )
   );
@@ -16123,7 +16123,7 @@ exports.default = (0, _Styled2.default)(styles)(PathlineRenderer);
 /* 96 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.6.3","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.7.0","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 97 */
@@ -42120,7 +42120,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': '  <View activePanel="colors" header={false}>\n    <Panel id="colors">\n      <Group>\n        <List>\n          { Object.keys(colors).map((color) => (\n            <ListItem key={color} description={color} before={<Avatar style={{ backgroundColor: colors[color] }} />}>\n              {colors[color]}\n            </ListItem>\n          )) }\n        </List>\n      </Group>\n    </Panel>\n  </View>',
+        'content': '  <View activePanel="colors" header={false}>\n    <Panel id="colors">\n      <Group>\n        <List>\n          { Object.keys(colors).map((color) => (\n            <Cell key={color} description={color} before={<Avatar style={{ backgroundColor: colors[color] }} />}>\n              {colors[color]}\n            </Cell>\n          )) }\n        </List>\n      </Group>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -42741,7 +42741,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': '  class Example extends React.Component {\n\n    constructor(props) {\n      super(props);\n      this.state = {\n        country: \'\',\n        activeView: \'profile\'\n      }\n    }\n\n    render () {\n      return (\n        <Root activeView={this.state.activeView}>\n          <View activePanel="profile" id="profile">\n            <Panel id="profile" theme="white">\n              <PanelHeader>\n                Профиль\n              </PanelHeader>\n              <FormLayout>\n                <SelectMimicry\n                  top="Выберите страну"\n                  placeholder="Не выбрана"\n                  onClick={() => this.setState({ activeView: \'countries\' })}\n                >{this.state.country}</SelectMimicry>\n              </FormLayout>\n            </Panel>\n          </View>\n          <View activePanel="countries" id="countries">\n            <Panel id="countries">\n              <PanelHeader>\n                Выбор страны\n              </PanelHeader>\n              <Group>\n                <List>\n                  <ListItem\n                    onClick={() => this.setState({ country: \'Россия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Россия\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                  >\n                    Россия\n                  </ListItem>\n                  <ListItem\n                    onClick={() => this.setState({ country: \'Италия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Италия\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                  >\n                    Италия\n                  </ListItem>\n                  <ListItem\n                    onClick={() => this.setState({ country: \'Англия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Англия\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                  >\n                    Англия\n                  </ListItem>\n                </List>\n              </Group>\n            </Panel>\n          </View>\n        </Root>\n      )\n    }\n  }\n\n  <Example />',
+        'content': '  class Example extends React.Component {\n\n    constructor(props) {\n      super(props);\n      this.state = {\n        country: \'\',\n        activeView: \'profile\'\n      }\n    }\n\n    render () {\n      return (\n        <Root activeView={this.state.activeView}>\n          <View activePanel="profile" id="profile">\n            <Panel id="profile" theme="white">\n              <PanelHeader>\n                Профиль\n              </PanelHeader>\n              <FormLayout>\n                <SelectMimicry\n                  top="Выберите страну"\n                  placeholder="Не выбрана"\n                  onClick={() => this.setState({ activeView: \'countries\' })}\n                >{this.state.country}</SelectMimicry>\n              </FormLayout>\n            </Panel>\n          </View>\n          <View activePanel="countries" id="countries">\n            <Panel id="countries">\n              <PanelHeader>\n                Выбор страны\n              </PanelHeader>\n              <Group>\n                <List>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Россия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Россия\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                  >\n                    Россия\n                  </Cell>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Италия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Италия\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                  >\n                    Италия\n                  </Cell>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Англия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Англия\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                  >\n                    Англия\n                  </Cell>\n                </List>\n              </Group>\n            </Panel>\n          </View>\n        </Root>\n      )\n    }\n  }\n\n  <Example />',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -45135,7 +45135,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': '  const thematics = [\n    {id: 3201, name: "Аренда автомобилей"},\n    {id: 3273, name: "Автотовары"},\n    {id: 3205, name: "Автосалон"},\n    {id: 3282, name: "Автосервис"},\n    {id: 3283, name: "Услуги для автовладельцев"},\n    {id: 3284, name: "Велосипеды"},\n    {id: 3285, name: "Мотоциклы и другая мототехника"},\n    {id: 3286, name: "Водный транспорт"},\n    {id: 3287, name: "Автопроизводитель"},\n    {id: 3288, name: "Автомойка"},\n    {id: 3117, name: "Автошкола"},\n    {id: 3118, name: "Детский сад"},\n    {id: 3119, name: "Гимназия"},\n    {id: 3120, name: "Колледж"},\n    {id: 3121, name: "Лицей"},\n    {id: 3122, name: "Техникум"},\n    {id: 3123, name: "Университет"},\n    {id: 3124, name: "Школа"},\n    {id: 3125, name: "Институт"},\n    {id: 3126, name: "Обучающие курсы"},\n    {id: 3276, name: "Дополнительное образование"},\n    {id: 3275, name: "Тренинг, семинар"},\n    {id: 3127, name: "Танцевальная школа"}\n  ];\n\n  const users = [\n    {id: 3201, name: "Влад Анесов"},\n    {id: 3273, name: "Вадим Дорохов"},\n    {id: 3205, name: "Андрей Абрамов"},\n    {id: 3282, name: "Александр Колобов"},\n    {id: 3283, name: "Артур Стамбульцян"},\n    {id: 3284, name: "Илья Таратухин"},\n    {id: 3285, name: "Роман Захаров"},\n    {id: 3286, name: "Михаил Андриевский"},\n    {id: 3287, name: "Тарас Иванов"},\n    {id: 3288, name: "Илья Гришин"},\n    {id: 3117, name: "Илья Пеняев"},\n    {id: 3118, name: "Иван Барышев"},\n    {id: 3119, name: "Иван Гусев"},\n    {id: 3120, name: "Макс Павлов"},\n    {id: 3121, name: "Антон Циварев"},\n    {id: 3122, name: "Юля Брук"},\n    {id: 3123, name: "Андрей Рогозов"},\n    {id: 3124, name: "Андрей Новосельский"}\n  ];\n\n  class SimpleSearch extends React.Component {\n\n    constructor (props) {\n      super(props);\n      this.state = {\n        showSearch: false,\n        search: \'\'\n      }\n      this.toggleSearch = this.toggleSearch.bind(this);\n\n      this.onChange = this.onChange.bind(this);\n    }\n\n    toggleSearch () { this.setState({ showSearch: !this.state.showSearch }); }\n\n    onChange (search) { this.setState({ search }); }\n\n    get thematics () {\n      const search = this.state.search.toLowerCase();\n      return thematics.filter(({name}) => name.toLowerCase().indexOf(search) > -1);\n    }\n\n    render() {\n      return (\n        <div>\n          <PanelHeader\n            right={[\n              osname === ANDROID && <HeaderButton key="search" onClick={this.toggleSearch}><Icon24Search /></HeaderButton>,\n              <HeaderButton onClick={this.props.goHeaderSearch} key="add"><Icon24Add /></HeaderButton>,\n            ]}\n          >\n            {this.state.showSearch ?\n              <Search onClose={this.toggleSearch} value={this.state.search} onChange={this.onChange}/> :\n              \'Выбор тематики\'\n            }\n          </PanelHeader>\n          {osname === IOS && <Search value={this.state.search} onChange={this.onChange}/>}\n          {this.thematics.length > 0 &&\n            <List>\n              {this.thematics.map((thematic) => (\n                <ListItem key={thematic.id}>{thematic.name}</ListItem>\n              ))}\n            </List>\n          }\n        </div>\n      );\n    }\n  }\n\n  class HeaderSearch extends React.Component {\n\n    constructor (props) {\n      super(props);\n      this.state = {\n        showSearch: osname === IOS,\n        search: \'\'\n      }\n      this.toggleSearch = this.toggleSearch.bind(this);\n\n      this.onChange = this.onChange.bind(this);\n    }\n\n    toggleSearch () { this.setState({ showSearch: !this.state.showSearch }); }\n\n    onChange (search) { this.setState({ search }); }\n\n    get users () {\n      const search = this.state.search.toLowerCase();\n      return users.filter(({name}) => name.toLowerCase().indexOf(search) > -1);\n    }\n\n    render () {\n      return (\n        <div>\n          <PanelHeader\n            left={<HeaderButton onClick={this.props.goSearch}>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n            right={osname === ANDROID && <HeaderButton onClick={this.toggleSearch}><Icon24Search /></HeaderButton>}\n          >\n            {this.state.showSearch ?\n              <Search\n                theme="header"\n                value={this.state.search}\n                onChange={this.onChange}\n                onClose={this.toggleSearch}\n              /> : \'Поиск\'\n            }\n          </PanelHeader>\n          <List>\n            {this.users.map((user) => (\n              <ListItem\n                before={<Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" />}\n                key={user.id}\n                onClick={this.props.goSearch}\n              >{user.name}</ListItem>\n            ))}\n          </List>\n        </div>\n      );\n    }\n  }\n\n  class SearchExample extends React.Component {\n\n    constructor (props) {\n      super(props);\n\n      this.state = {\n        activePanel: \'search\'\n      }\n\n      this.goSearch = this.goSearch.bind(this);\n      this.goHeaderSearch = this.goHeaderSearch.bind(this);\n    }\n\n    goHeaderSearch () { this.setState({ activePanel: \'header-search\' }); }\n    goSearch () { this.setState({ activePanel: \'search\' }); }\n\n    render () {\n      return (\n        <View activePanel={this.state.activePanel}>\n          <Panel id="search">\n            <SimpleSearch goHeaderSearch={this.goHeaderSearch}/>\n          </Panel>\n          <Panel id="header-search">\n            <HeaderSearch goSearch={this.goSearch}/>\n          </Panel>\n        </View>\n      );\n    }\n  }\n\n  <SearchExample />',
+        'content': '  const thematics = [\n    {id: 3201, name: "Аренда автомобилей"},\n    {id: 3273, name: "Автотовары"},\n    {id: 3205, name: "Автосалон"},\n    {id: 3282, name: "Автосервис"},\n    {id: 3283, name: "Услуги для автовладельцев"},\n    {id: 3284, name: "Велосипеды"},\n    {id: 3285, name: "Мотоциклы и другая мототехника"},\n    {id: 3286, name: "Водный транспорт"},\n    {id: 3287, name: "Автопроизводитель"},\n    {id: 3288, name: "Автомойка"},\n    {id: 3117, name: "Автошкола"},\n    {id: 3118, name: "Детский сад"},\n    {id: 3119, name: "Гимназия"},\n    {id: 3120, name: "Колледж"},\n    {id: 3121, name: "Лицей"},\n    {id: 3122, name: "Техникум"},\n    {id: 3123, name: "Университет"},\n    {id: 3124, name: "Школа"},\n    {id: 3125, name: "Институт"},\n    {id: 3126, name: "Обучающие курсы"},\n    {id: 3276, name: "Дополнительное образование"},\n    {id: 3275, name: "Тренинг, семинар"},\n    {id: 3127, name: "Танцевальная школа"}\n  ];\n\n  const users = [\n    {id: 3201, name: "Влад Анесов"},\n    {id: 3273, name: "Вадим Дорохов"},\n    {id: 3205, name: "Андрей Абрамов"},\n    {id: 3282, name: "Александр Колобов"},\n    {id: 3283, name: "Артур Стамбульцян"},\n    {id: 3284, name: "Илья Таратухин"},\n    {id: 3285, name: "Роман Захаров"},\n    {id: 3286, name: "Михаил Андриевский"},\n    {id: 3287, name: "Тарас Иванов"},\n    {id: 3288, name: "Илья Гришин"},\n    {id: 3117, name: "Илья Пеняев"},\n    {id: 3118, name: "Иван Барышев"},\n    {id: 3119, name: "Иван Гусев"},\n    {id: 3120, name: "Макс Павлов"},\n    {id: 3121, name: "Антон Циварев"},\n    {id: 3122, name: "Юля Брук"},\n    {id: 3123, name: "Андрей Рогозов"},\n    {id: 3124, name: "Андрей Новосельский"}\n  ];\n\n  class SimpleSearch extends React.Component {\n\n    constructor (props) {\n      super(props);\n      this.state = {\n        showSearch: false,\n        search: \'\'\n      }\n      this.toggleSearch = this.toggleSearch.bind(this);\n\n      this.onChange = this.onChange.bind(this);\n    }\n\n    toggleSearch () { this.setState({ showSearch: !this.state.showSearch }); }\n\n    onChange (search) { this.setState({ search }); }\n\n    get thematics () {\n      const search = this.state.search.toLowerCase();\n      return thematics.filter(({name}) => name.toLowerCase().indexOf(search) > -1);\n    }\n\n    render() {\n      return (\n        <div>\n          <PanelHeader\n            right={[\n              osname === ANDROID && <HeaderButton key="search" onClick={this.toggleSearch}><Icon24Search /></HeaderButton>,\n              <HeaderButton onClick={this.props.goHeaderSearch} key="add"><Icon24Add /></HeaderButton>,\n            ]}\n          >\n            {this.state.showSearch ?\n              <Search onClose={this.toggleSearch} value={this.state.search} onChange={this.onChange}/> :\n              \'Выбор тематики\'\n            }\n          </PanelHeader>\n          {osname === IOS && <Search value={this.state.search} onChange={this.onChange}/>}\n          {this.thematics.length > 0 &&\n            <List>\n              {this.thematics.map((thematic) => (\n                <Cell key={thematic.id}>{thematic.name}</Cell>\n              ))}\n            </List>\n          }\n        </div>\n      );\n    }\n  }\n\n  class HeaderSearch extends React.Component {\n\n    constructor (props) {\n      super(props);\n      this.state = {\n        showSearch: osname === IOS,\n        search: \'\'\n      }\n      this.toggleSearch = this.toggleSearch.bind(this);\n\n      this.onChange = this.onChange.bind(this);\n    }\n\n    toggleSearch () { this.setState({ showSearch: !this.state.showSearch }); }\n\n    onChange (search) { this.setState({ search }); }\n\n    get users () {\n      const search = this.state.search.toLowerCase();\n      return users.filter(({name}) => name.toLowerCase().indexOf(search) > -1);\n    }\n\n    render () {\n      return (\n        <div>\n          <PanelHeader\n            left={<HeaderButton onClick={this.props.goSearch}>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n            right={osname === ANDROID && <HeaderButton onClick={this.toggleSearch}><Icon24Search /></HeaderButton>}\n          >\n            {this.state.showSearch ?\n              <Search\n                theme="header"\n                value={this.state.search}\n                onChange={this.onChange}\n                onClose={this.toggleSearch}\n              /> : \'Поиск\'\n            }\n          </PanelHeader>\n          <List>\n            {this.users.map((user) => (\n              <Cell\n                before={<Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" />}\n                key={user.id}\n                onClick={this.props.goSearch}\n              >{user.name}</Cell>\n            ))}\n          </List>\n        </div>\n      );\n    }\n  }\n\n  class SearchExample extends React.Component {\n\n    constructor (props) {\n      super(props);\n\n      this.state = {\n        activePanel: \'search\'\n      }\n\n      this.goSearch = this.goSearch.bind(this);\n      this.goHeaderSearch = this.goHeaderSearch.bind(this);\n    }\n\n    goHeaderSearch () { this.setState({ activePanel: \'header-search\' }); }\n    goSearch () { this.setState({ activePanel: \'search\' }); }\n\n    render () {\n      return (\n        <View activePanel={this.state.activePanel}>\n          <Panel id="search">\n            <SimpleSearch goHeaderSearch={this.goHeaderSearch}/>\n          </Panel>\n          <Panel id="header-search">\n            <HeaderSearch goSearch={this.goSearch}/>\n          </Panel>\n        </View>\n      );\n    }\n  }\n\n  <SearchExample />',
         'settings': {},
         'evalInContext': evalInContext
     }]
@@ -46066,7 +46066,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': '  <View activePanel="avatar">\n    <Panel id="avatar">\n      <PanelHeader>Avatar</PanelHeader>\n      <Group title="Standart size">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            description="VKonktakte"\n            title="Артур Стамбульцян"\n          >\n            <Button>Добавить</Button>\n          </Entity>\n        </Div>\n      </Group>\n      <Group title="Big avatar (80px)">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            description="VKonktakte"\n            title="Артур Стамбульцян"\n            avatarProps={{ size: 80 }}\n          >\n            <Button>Добавить</Button>\n          </Entity>\n        </Div>\n      </Group>\n      <Group title="Placeholder">\n        <List>\n          <ListItem\n            before={<Avatar style={{ background: colors.blue }} size={28}><Icon16Add fill="#fff" /></Avatar>}\n            description="Только от друзей друзей"\n          >\n            Заявки в друзья\n          </ListItem>\n          <ListItem\n            before={<Avatar style={{ background: colors.red }} size={28}><Icon16Like fill="#fff" /></Avatar>}\n            description="Только важные"\n          >\n            Отметки \xABМне нравится\xBB\n          </ListItem>\n        </List>\n      </Group>\n      <Group title="Using in ListItem">\n        <List>\n          <ListItem before={<Avatar><Icon28User /></Avatar>}>Артур Стамбульцян</ListItem>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c845121/v845121950/63c02/4hP61FL56YM.jpg?ava=1" />}>Тимофей Чаптыков</ListItem>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c834100/v834100961/4f8f1/hjsBzq433co.jpg?ava=1" />}>Влад Анесов</ListItem>\n        </List>\n      </Group>\n      <Header>Типы</Header>\n      <Group title="default" description="Дефолтный стиль аватарки. Используется для юзеров, групп.">\n        <List>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c625316/v625316293/347b7/DmD1VKYbwwI.jpg?ava=1" />}>Евгений Авсиевич</ListItem>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c636327/v636327034/2be85/gt3uFFWTw-w.jpg?ava=1" />}>Татьяна Плуталова</ListItem>\n          <ListItem before={<Avatar src="https://pp.userapi.com/c841629/v841629884/290ab/STZCXV5wZbg.jpg?ava=1" />}>Олег Илларианов</ListItem>\n        </List>\n      </Group>\n      <Group title="app" description="Аватарки для приложений. Радиус скургления зависит от значения свойства size.">\n        <List>\n          <ListItem before={<Avatar type="app" src="https://pp.userapi.com/c844616/v844616889/9ec4a/9Fk-RI7uchQ.jpg" />} description="Ролевая">Шторм онлайн</ListItem>\n          <ListItem before={<Avatar type="app" src="https://pp.userapi.com/c848536/v848536020/18242/ZLjAYM59EqY.jpg" />} description="Настольная" multiline={false}>Шашки - 3 вида: шашки, уголки, поддавки</ListItem>\n          <ListItem before={<Avatar type="app" src="https://pp.userapi.com/c849028/v849028348/1b353/Na_GRlqgRNM.jpg" />} description="Головолмка">Вега Микс на даче</ListItem>\n        </List>\n      </Group>\n      <Group title="image" description="Используется для остальных случаев. Например, для музыки и плейлистов.">\n        <List>\n          <ListItem before={<Avatar type="image" src="https://pp.userapi.com/c841025/v841025503/617f7/bkN1Def0s14.jpg" />} description="Arctic Monkeys" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>I Wanna Be Yours</ListItem>\n          <ListItem before={<Avatar type="image" src="https://pp.userapi.com/c845220/v845220642/7cacc/XzhH5b7FSKY.jpg" />} description="Лето (звери)" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>6 утра</ListItem>\n          <ListItem before={<Avatar type="image" src="https://pp.userapi.com/c837628/v837628453/39175/4JRjMaFvCrw.jpg" />} description="Depeche Mode" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>Enjoy the Silence</ListItem>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
+        'content': '  <View activePanel="avatar">\n    <Panel id="avatar">\n      <PanelHeader>Avatar</PanelHeader>\n      <Group title="Standart size">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            description="VKonktakte"\n            title="Артур Стамбульцян"\n          >\n            <Button>Добавить</Button>\n          </Entity>\n        </Div>\n      </Group>\n      <Group title="Big avatar (80px)">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            description="VKonktakte"\n            title="Артур Стамбульцян"\n            avatarProps={{ size: 80 }}\n          >\n            <Button>Добавить</Button>\n          </Entity>\n        </Div>\n      </Group>\n      <Group title="Placeholder">\n        <List>\n          <Cell\n            before={<Avatar style={{ background: colors.blue }} size={28}><Icon16Add fill="#fff" /></Avatar>}\n            description="Только от друзей друзей"\n          >\n            Заявки в друзья\n          </Cell>\n          <Cell\n            before={<Avatar style={{ background: colors.red }} size={28}><Icon16Like fill="#fff" /></Avatar>}\n            description="Только важные"\n          >\n            Отметки \xABМне нравится\xBB\n          </Cell>\n        </List>\n      </Group>\n      <Group title="Using in Cell">\n        <List>\n          <Cell before={<Avatar><Icon28User /></Avatar>}>Артур Стамбульцян</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c845121/v845121950/63c02/4hP61FL56YM.jpg?ava=1" />}>Тимофей Чаптыков</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c834100/v834100961/4f8f1/hjsBzq433co.jpg?ava=1" />}>Влад Анесов</Cell>\n        </List>\n      </Group>\n      <Header>Типы</Header>\n      <Group title="default" description="Дефолтный стиль аватарки. Используется для юзеров, групп.">\n        <List>\n          <Cell before={<Avatar src="https://pp.userapi.com/c625316/v625316293/347b7/DmD1VKYbwwI.jpg?ava=1" />}>Евгений Авсиевич</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c636327/v636327034/2be85/gt3uFFWTw-w.jpg?ava=1" />}>Татьяна Плуталова</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c841629/v841629884/290ab/STZCXV5wZbg.jpg?ava=1" />}>Олег Илларианов</Cell>\n        </List>\n      </Group>\n      <Group title="app" description="Аватарки для приложений. Радиус скургления зависит от значения свойства size.">\n        <List>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c844616/v844616889/9ec4a/9Fk-RI7uchQ.jpg" />} description="Ролевая">Шторм онлайн</Cell>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c848536/v848536020/18242/ZLjAYM59EqY.jpg" />} description="Настольная" multiline={false}>Шашки - 3 вида: шашки, уголки, поддавки</Cell>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c849028/v849028348/1b353/Na_GRlqgRNM.jpg" />} description="Головолмка">Вега Микс на даче</Cell>\n        </List>\n      </Group>\n      <Group title="image" description="Используется для остальных случаев. Например, для музыки и плейлистов.">\n        <List>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c841025/v841025503/617f7/bkN1Def0s14.jpg" />} description="Arctic Monkeys" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>I Wanna Be Yours</Cell>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c845220/v845220642/7cacc/XzhH5b7FSKY.jpg" />} description="Лето (звери)" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>6 утра</Cell>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c837628/v837628453/39175/4JRjMaFvCrw.jpg" />} description="Depeche Mode" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>Enjoy the Silence</Cell>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -46940,12 +46940,7 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(4);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
-module.exports = [{
-        'type': 'code',
-        'content': '  <View activePanel="entity">\n    <Panel id="entity">\n      <PanelHeader>\n        Entity\n      </PanelHeader>\n      <Group title="Title and description">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            size={48}\n            title="Karl Heinrich Marx"\n            description="London"\n          />\n        </Div>\n      </Group>\n\n      <Group title="Extra content">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            size={64}\n            title="Karl Heinrich Marx"\n            description="London"\n          >\n            <Button style={{ marginRight: 8 }}>Добавить</Button>\n            <Button level="2">Скрыть</Button>\n          </Entity>\n        </Div>\n      </Group>\n\n       <Group title="No photo">\n          <Div>\n            <Entity\n              size={72}\n              title="Karl Heinrich Marx"\n              description="London"\n            />\n          </Div>\n        </Group>\n    </Panel>\n  </View>',
-        'settings': {},
-        'evalInContext': evalInContext
-    }]
+module.exports = []
 	
 
 /***/ }),
@@ -46956,7 +46951,7 @@ module.exports = [{
 if (false) {}
 
 module.exports = {
-    'description': '',
+    'description': '\n',
     'displayName': 'Entity',
     'methods': [],
     'props': [
@@ -47090,7 +47085,13 @@ module.exports = {
             'name': 'title'
         }
     ],
-    'doclets': {},
+    'doclets': { 'deprecated': 'этот компонент устарел и будет удален в следущей мажорной версии.\nИспользуйте `Cell`.' },
+    'tags': {
+        'deprecated': [{
+                'title': 'deprecated',
+                'description': 'этот компонент устарел и будет удален в следущей мажорной версии.\nИспользуйте `Cell`.'
+            }]
+    },
     'examples': __webpack_require__(237)
 }
 	
@@ -47157,6 +47158,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var baseClassNames = (0, _getClassName2.default)('Entity');
 
 // @TODO Try to load photo
+/**
+ * @deprecated этот компонент устарел и будет удален в следущей мажорной версии.
+ * Используйте `Cell`.
+ */
 
 var Entity = function (_Component) {
   _inherits(Entity, _Component);
@@ -47268,7 +47273,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': '  <View activePanel="info-row">\n    <Panel id="info-row">\n      <PanelHeader>\n        InfoRow\n      </PanelHeader>\n      <Group>\n        <Div>\n          <InfoRow title="Общий бюджет">\n            3000 р.\n          </InfoRow>\n        </Div>\n      </Group>\n      <Group title="Информация о пользователе">\n        <List>\n          <ListItem>\n            <InfoRow title="Дата рождения">\n              30 января 1993\n            </InfoRow>\n          </ListItem>\n          <ListItem>\n            <InfoRow title="Родной город">\n              Ереван\n            </InfoRow>\n          </ListItem>\n          <ListItem>\n            <InfoRow title="Место работы">\n              Команда ВКонтакте\n            </InfoRow>\n          </ListItem>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
+        'content': '  <View activePanel="info-row">\n    <Panel id="info-row">\n      <PanelHeader>\n        InfoRow\n      </PanelHeader>\n      <Group>\n        <Div>\n          <InfoRow title="Общий бюджет">\n            3000 р.\n          </InfoRow>\n        </Div>\n      </Group>\n      <Group title="Информация о пользователе">\n        <List>\n          <Cell>\n            <InfoRow title="Дата рождения">\n              30 января 1993\n            </InfoRow>\n          </Cell>\n          <Cell>\n            <InfoRow title="Родной город">\n              Ереван\n            </InfoRow>\n          </Cell>\n          <Cell>\n            <InfoRow title="Место работы">\n              Команда ВКонтакте\n            </InfoRow>\n          </Cell>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -47411,7 +47416,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': '  <View activePanel="switch">\n    <Panel id="switch">\n      <PanelHeader>\n        Switch\n      </PanelHeader>\n      <Group>\n        <List>\n          <ListItem asideContent={<Switch />}>\n            Комментарии к записям\n          </ListItem>\n          <ListItem asideContent={<Switch defaultChecked />}>\n            Ссылки\n          </ListItem>\n          <ListItem asideContent={<Switch disabled />}>\n            Фотоальбомы\n          </ListItem>\n        </List>\n      </Group>  \n    </Panel>\n  </View>',
+        'content': '  <View activePanel="switch">\n    <Panel id="switch">\n      <PanelHeader>\n        Switch\n      </PanelHeader>\n      <Group>\n        <List>\n          <Cell asideContent={<Switch />}>\n            Комментарии к записям\n          </Cell>\n          <Cell asideContent={<Switch defaultChecked />}>\n            Ссылки\n          </Cell>\n          <Cell asideContent={<Switch disabled />}>\n            Фотоальбомы\n          </Cell>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
     }]
@@ -47542,7 +47547,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': '<View activePanel="list">\n  <Panel id="list">\n    <PanelHeader>\n      List\n    </PanelHeader>\n    <Group>\n      <List>\n        <ListItem before={<Avatar />}description="Веб-сайт">Команда ВКонтакте</ListItem>\n        <ListItem before={<Avatar />}description="Музыкант">Robbie Williams</ListItem>\n        <ListItem before={<Avatar />}description="Издательский дом">ПостНаука</ListItem>\n      </List>\n    </Group>\n    <Footer>3 cообщества</Footer>\n  </Panel>\n</View>',
+        'content': '<View activePanel="list">\n  <Panel id="list">\n    <PanelHeader>\n      Footer\n    </PanelHeader>\n    <Group>\n      <List>\n        <Cell before={<Avatar />}description="Веб-сайт">Команда ВКонтакте</Cell>\n        <Cell before={<Avatar />}description="Музыкант">Robbie Williams</Cell>\n        <Cell before={<Avatar />}description="Издательский дом">ПостНаука</Cell>\n      </List>\n    </Group>\n    <Footer>3 cообщества</Footer>\n  </Panel>\n</View>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -47665,7 +47670,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': '  class Example extends React.Component {\n\n    constructor() {\n      this.state = {\n        activePanel: \'list\',\n        removeList: [\'Feature 1\', \'Feature 2\', \'Feature 3\']\n      };\n    }\n\n    render() {\n      return (\n        <View activePanel={this.state.activePanel}>\n          <Panel id="list">\n            <PanelHeader>\n              List\n            </PanelHeader>\n            {this.state.removeList.length > 0 &&\n              <Group title="Removable">\n                <List>\n                  {this.state.removeList.map((item, index) => (\n                    <ListItem key={item} removable onRemove={() => {\n                      this.setState({\n                        removeList: [...this.state.removeList.slice(0, index), ...this.state.removeList.slice(index + 1)]\n                      })\n                    }}>{item}</ListItem>\n                  ))}\n                </List>\n              </Group>\n            }\n\n            <Group title="Simple list">\n              <List>\n                <ListItem>Label 1</ListItem>\n                <ListItem>Label 2</ListItem>\n                <ListItem>Label 3</ListItem>\n              </List>\n            </Group>\n\n            <Group title="Expandable">\n              <List>\n                <ListItem expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Label 1</ListItem>\n                <ListItem expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Label 2</ListItem>\n                <ListItem expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Label 3</ListItem>\n              </List>\n            </Group>\n\n            <Group title="Indicator">\n              <List>\n                <ListItem expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="Indicator">Feature 1</ListItem>\n                <ListItem expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="Off">Feature 2</ListItem>\n                <ListItem expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="On">Feature 3</ListItem>\n              </List>\n            </Group>\n\n            <Group title="Icons">\n              <List>\n                <ListItem before={<Icon24About />}>Information</ListItem>\n                <ListItem before={<Icon24Services />}>Services</ListItem>\n              </List>\n            </Group>\n\n            <Group title="Selectable">\n              <List>\n                <ListItem selectable name="selectable-list" value="Feature 1">Feature 1</ListItem>\n                <ListItem selectable name="selectable-list" value="Feature 2">Feature 2</ListItem>\n                <ListItem selectable name="selectable-list" value="Feature 3">Feature 3</ListItem>\n              </List>\n            </Group>\n\n            <Group title="Users list">\n              <List>\n                <ListItem before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Артур Стамбульцян</ListItem>\n                <ListItem before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Тимофей Чаптыков</ListItem>\n                <ListItem before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Влад Анесов</ListItem>\n              </List>\n            </Group>\n\n            <Group title="Selectable users list">\n              <List>\n                <ListItem selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Артур Стамбульцян</ListItem>\n                <ListItem selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Тимофей Чаптыков</ListItem>\n                <ListItem selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Влад Анесов</ListItem>\n              </List>\n            </Group>\n\n            <Group title="Multiline">\n              <List>\n                <ListItem multiline>A Series of Unfortunate Events, Archer, Brooklyn Nine-Nine, Doctor Who, Game of Thrones</ListItem>\n                <ListItem multiline>The Avalanches</ListItem>\n              </List>\n            </Group>\n\n            <Group title="With description">\n              <List>\n                <ListItem description="Depeche Mode">Where\u2019s the Revolution</ListItem>\n                <ListItem description="The Weeknd">I Feel It Coming (Feat. Daft Punk)</ListItem>\n              </List>\n            </Group>\n          </Panel>\n          <Panel id="nothing">\n              <PanelHeader\n                left={\n                  <HeaderButton onClick={() => this.setState({ activePanel: \'list\' })}>\n                    {osname === ANDROID ? <Icon24Back/> : <Icon28ChevronBack/>}\n                  </HeaderButton>\n                }\n              >\n                Nothing\n              </PanelHeader>\n            <div\n              style={{\n                padding: \'100px 0\',\n                height: \'100%\',\n                display: \'flex\',\n                alignItems: \'center\',\n                justifyContent: \'center\'\n              }}\n            >\n              <div\n                style={{\n                  flex: \'0 0 auto\',\n                  color: \'gray\',\n                  textAlign: \'center\'\n                }}\n              >\n                Here is nothing<br />\n                <span onClick={() => this.setState({ activePanel: \'list\' })} style={{ textDecoration: \'underline\' }}>Back to start screen</span>\n              </div>\n            </div>\n          </Panel>\n        </View>\n      )\n    }\n  }\n\n  <Example />',
+        'content': '  class Example extends React.Component {\n\n    constructor() {\n      this.state = {\n        activePanel: \'list\',\n        removeList: [\'Михаил Андриевский\', \'Вадим Дорохов\', \'Саша Колобов\']\n      };\n    }\n\n    render() {\n      return (\n        <View activePanel={this.state.activePanel}>\n          <Panel id="list">\n            <PanelHeader>\n              Ячейки\n            </PanelHeader>\n\n            <Group title="Простейший пример">\n              <List>\n                <Cell>Пятница</Cell>\n                <Cell>Суббота</Cell>\n                <Cell>Воскресение</Cell>\n              </List>\n            </Group>\n\n            <Group title="Переходы">\n              <List>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Учетная запись</Cell>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Основные</Cell>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Приватность</Cell>\n              </List>\n            </Group>\n\n            <Group title="Индикатор">\n              <List>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="При использовании">Геолокация</Cell>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="Всегда">Автопроигрывание медиа</Cell>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="Выключены">Стикеры</Cell>\n              </List>\n            </Group>\n\n            <Group title="Многострочность">\n              <List>\n                <Cell multiline>A Series of Unfortunate Events, Archer, Brooklyn Nine-Nine, Doctor Who, Game of Thrones</Cell>\n                <Cell multiline>The Avalanches</Cell>\n              </List>\n            </Group>\n\n            <Group title="Подпись">\n              <List>\n                <Cell description="Depeche Mode">Where\u2019s the Revolution</Cell>\n                <Cell description="The Weeknd">I Feel It Coming (Feat. Daft Punk)</Cell>\n              </List>\n            </Group>\n\n            <Group title="Большая ячейка">\n              <List>\n                <Cell\n                  before={<Avatar size={72} />}\n                  size="l"\n                  description="Друзья в Facebook"\n                  asideContent={<Icon24MoreHorizontal />}\n                  bottomContent={\n                    <div style={{ display: \'flex\' }}>\n                      <Button size="m">Добавить</Button>\n                      <Button size="m" level="2" style={{ marginLeft: 8 }}>Скрыть</Button>\n                    </div>\n                  }\n                >\n                  Семён Ефимов</Cell>\n                <Cell\n                  before={<Avatar size={72} />}\n                  size="l"\n                  description="29 лет, Санкт-Петербург"\n                  asideContent={<Icon24MoreHorizontal />}\n                  bottomContent={\n                    <div style={{ display: \'flex\' }}>\n                      <Button size="m">Добавить</Button>\n                      <Button size="m" level="2" style={{ marginLeft: 8 }}>Скрыть</Button>\n                    </div>\n                  }\n                >\n                  Александр Попов</Cell>\n                <Cell\n                  before={<Avatar size={72} />}\n                  size="l"\n                  description="Команда ВКонтакте"\n                  asideContent={<Icon24MoreHorizontal />}\n                  bottomContent={\n                    <div style={{ display: \'flex\' }}>\n                      <Button size="m">Добавить</Button>\n                      <Button size="m" level="2" style={{ marginLeft: 8 }}>Скрыть</Button>\n                    </div>\n                  }\n                >\n                  Екатерина Скобейко</Cell>\n              </List>\n            </Group>\n\n            <Group title="Иконки">\n              <List>\n                <Cell before={<Icon24About />}>Информация</Cell>\n                <Cell before={<Icon24Services />}>Севрисы</Cell>\n              </List>\n            </Group>\n\n            <Group title="Чекбоксы">\n              <List>\n                <Cell selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Артур Стамбульцян</Cell>\n                <Cell selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Тимофей Чаптыков</Cell>\n                <Cell selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Влад Анесов</Cell>\n              </List>\n            </Group>\n\n            {this.state.removeList.length > 0 &&\n              <Group title="Удаление">\n                <List>\n                  {this.state.removeList.map((item, index) => (\n                    <Cell key={item} removable onRemove={() => {\n                      this.setState({\n                        removeList: [...this.state.removeList.slice(0, index), ...this.state.removeList.slice(index + 1)]\n                      })\n                    }}>{item}</Cell>\n                  ))}\n                </List>\n              </Group>\n            }\n          </Panel>\n          <Panel id="nothing">\n              <PanelHeader\n                left={\n                  <HeaderButton onClick={() => this.setState({ activePanel: \'list\' })}>\n                    {osname === ANDROID ? <Icon24Back/> : <Icon28ChevronBack/>}\n                  </HeaderButton>\n                }\n              >\n                Ничего\n              </PanelHeader>\n            <div\n              style={{\n                padding: \'100px 0\',\n                height: \'100%\',\n                display: \'flex\',\n                alignItems: \'center\',\n                justifyContent: \'center\'\n              }}\n            >\n              <div\n                style={{\n                  flex: \'0 0 auto\',\n                  color: \'gray\',\n                  textAlign: \'center\'\n                }}\n              >\n                Тут ничего нет<br />\n                <span onClick={() => this.setState({ activePanel: \'list\' })} style={{ textDecoration: \'underline\' }}>Пошли обратно</span>\n              </div>\n            </div>\n          </Panel>\n        </View>\n      )\n    }\n  }\n\n  <Example />',
         'settings': {},
         'evalInContext': evalInContext
     }]
@@ -47680,7 +47685,7 @@ if (false) {}
 
 module.exports = {
     'description': '',
-    'displayName': 'ListItem',
+    'displayName': 'Cell',
     'methods': [],
     'props': [
         {
@@ -47704,6 +47709,17 @@ module.exports = {
             },
             'tags': {},
             'name': 'before'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': 'Контейнер для произвольного содержимого под `description`. Рисуется только если передать `size="l"`.',
+            'defaultValue': {
+                'value': 'null',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'bottomContent'
         },
         {
             'type': { 'name': 'node' },
@@ -47816,6 +47832,29 @@ module.exports = {
             },
             'tags': {},
             'name': 'selectable'
+        },
+        {
+            'type': {
+                'name': 'enum',
+                'value': [
+                    {
+                        'value': '\'m\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'l\'',
+                        'computed': false
+                    }
+                ]
+            },
+            'required': false,
+            'description': 'Размер влияет на выравнивание блоков по-вертикали, виду сепаратора (iOS) и возможности вставлять `bottomContent`.',
+            'defaultValue': {
+                'value': '\'m\'',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'size'
         },
         {
             'type': { 'name': 'object' },
@@ -48046,9 +48085,9 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _classnames = __webpack_require__(6);
+var _classnames2 = __webpack_require__(6);
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _getClassName = __webpack_require__(7);
 
@@ -48074,6 +48113,8 @@ var _cancel2 = _interopRequireDefault(_cancel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48084,25 +48125,24 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var osname = (0, _platform.platform)();
 
-var baseClassNames = (0, _getClassName2.default)('ListItem');
+var baseClassNames = (0, _getClassName2.default)('Cell');
 
-var ListItem = function (_Component) {
-  _inherits(ListItem, _Component);
+var Cell = function (_Component) {
+  _inherits(Cell, _Component);
 
-  function ListItem() {
+  function Cell() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, ListItem);
+    _classCallCheck(this, Cell);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ListItem.__proto__ || Object.getPrototypeOf(ListItem)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Cell.__proto__ || Object.getPrototypeOf(Cell)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       isRemoveActivated: false,
-      height: null,
       removeOffset: 0
     }, _this.onClick = function (e) {
       if (e.target.tagName.toLowerCase() === 'input') {
@@ -48111,21 +48151,15 @@ var ListItem = function (_Component) {
         _this.props.onClick && _this.props.onClick(e);
       }
     }, _this.activateRemove = function () {
-      _this.setState({ isRemoveActivated: true, height: _this.rootEl.offsetHeight });
+      _this.setState({ isRemoveActivated: true });
       _this.document.addEventListener('click', _this.deactivateRemove);
     }, _this.deactivateRemove = function () {
-      _this.setState({ isRemoveActivated: false, removeOffset: 0, height: null });
+      _this.setState({ isRemoveActivated: false, removeOffset: 0 });
       _this.document.removeEventListener('click', _this.deactivateRemove);
     }, _this.onRemoveClick = function (e) {
       e.nativeEvent.stopImmediatePropagation();
       e.preventDefault();
-      if (!_this.state.removing) {
-        _this.rootEl.addEventListener('transitionend', _this.onRemoveFinish);
-        _this.setState({ removing: true, height: 0 });
-      }
-    }, _this.onRemoveFinish = function () {
-      _this.rootEl.removeEventListener('transitionend', _this.onRemoveFinish);
-      _this.props.onRemove();
+      _this.props.onRemove && _this.props.onRemove();
     }, _this.getRemoveRef = function (el) {
       return _this.removeButton = el;
     }, _this.getRootRef = function (el) {
@@ -48133,10 +48167,9 @@ var ListItem = function (_Component) {
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(ListItem, [{
+  _createClass(Cell, [{
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      this.rootEl.removeEventListener('transitionend', this.onRemoveFinish);
       this.document.removeEventListener('click', this.deactivateRemove);
     }
   }, {
@@ -48149,6 +48182,8 @@ var ListItem = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _classnames;
+
       var _props = this.props,
           before = _props.before,
           indicator = _props.indicator,
@@ -48164,8 +48199,9 @@ var ListItem = function (_Component) {
           removable = _props.removable,
           removePlaceholder = _props.removePlaceholder,
           href = _props.href,
-          style = _props.style,
-          restProps = _objectWithoutProperties(_props, ['before', 'indicator', 'asideContent', 'expandable', 'onClick', 'children', 'description', 'selectable', 'multiline', 'className', 'onRemove', 'removable', 'removePlaceholder', 'href', 'style']);
+          size = _props.size,
+          bottomContent = _props.bottomContent,
+          restProps = _objectWithoutProperties(_props, ['before', 'indicator', 'asideContent', 'expandable', 'onClick', 'children', 'description', 'selectable', 'multiline', 'className', 'onRemove', 'removable', 'removePlaceholder', 'href', 'size', 'bottomContent']);
 
       var rootProps = selectable ? {} : restProps;
       var inputProps = selectable ? restProps : {};
@@ -48175,77 +48211,84 @@ var ListItem = function (_Component) {
         'div',
         _extends({}, rootProps, {
           onClick: href ? null : this.onClick,
-          className: (0, _classnames2.default)(baseClassNames, {
-            'ListItem--expandable': expandable,
-            'ListItem--multiline': multiline,
-            'ListItem--removing': this.state.removing
-          }, className),
-          ref: this.getRootRef,
-          style: removable ? _extends({}, style, { height: this.state.height }) : style
+          className: (0, _classnames3.default)(baseClassNames, (_classnames = {
+            'Cell--expandable': expandable,
+            'Cell--multiline': multiline
+          }, _defineProperty(_classnames, 'Cell--' + size, size), _defineProperty(_classnames, 'Cell--removing', this.state.removing), _classnames), className),
+          ref: this.getRootRef
         }),
         _react2.default.createElement(
           _Tappable2.default,
           _extends({}, linkProps, {
             onClick: href ? this.onClick : null,
             component: selectable ? 'label' : href ? 'a' : 'div',
-            className: 'ListItem__in',
+            className: 'Cell__in',
             href: href,
             disabled: !selectable && !onClick && !href,
             style: removable ? { transform: 'translateX(-' + this.state.removeOffset + 'px)' } : null
           }),
-          selectable && _react2.default.createElement('input', _extends({}, inputProps, { type: 'checkbox', className: 'ListItem__checkbox' })),
+          selectable && _react2.default.createElement('input', _extends({}, inputProps, { type: 'checkbox', className: 'Cell__checkbox' })),
           _react2.default.createElement(
             'div',
-            { className: 'ListItem__before' },
+            { className: 'Cell__before' },
             selectable && osname === _platform.IOS && _react2.default.createElement(
               'div',
-              { className: 'ListItem__checkbox-marker' },
+              { className: 'Cell__checkbox-marker' },
               _react2.default.createElement(_done2.default, null)
             ),
-            removable && osname === _platform.IOS && _react2.default.createElement('div', { className: 'ListItem__remove-marker', onClick: this.activateRemove }),
+            removable && osname === _platform.IOS && _react2.default.createElement('div', { className: 'Cell__remove-marker', onClick: this.activateRemove }),
             before && _react2.default.createElement(
               'div',
-              { className: 'ListItem__before-in' },
+              { className: 'Cell__before-in' },
               before
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'ListItem__main' },
-            children,
+            { className: 'Cell__main' },
             _react2.default.createElement(
               'div',
-              { className: 'ListItem__description' },
+              { className: 'Cell__children' },
+              children
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'Cell__description' },
               description
+            ),
+            size === 'l' && _react2.default.createElement(
+              'div',
+              { className: 'Cell__bottom' },
+              bottomContent
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'ListItem__indicator' },
+            { className: 'Cell__indicator' },
             indicator
           ),
           _react2.default.createElement(
             'div',
-            { className: 'ListItem__aside' },
+            { className: 'Cell__aside' },
             asideContent,
             selectable && osname === _platform.ANDROID && _react2.default.createElement(
               'div',
-              { className: 'ListItem__checkbox-marker' },
+              { className: 'Cell__checkbox-marker' },
               _react2.default.createElement(_done2.default, null)
             ),
             removable && osname === _platform.ANDROID && _react2.default.createElement(
               'div',
-              { className: 'ListItem__remove-marker', onClick: onRemove },
+              { className: 'Cell__remove-marker', onClick: onRemove },
               _react2.default.createElement(_cancel2.default, null)
             ),
-            osname === _platform.IOS && expandable && _react2.default.createElement(_chevron2.default, { className: 'ListItem__chevron' })
+            osname === _platform.IOS && expandable && _react2.default.createElement(_chevron2.default, { className: 'Cell__chevron' })
           )
         ),
         removable && osname === _platform.IOS && _react2.default.createElement(
           'div',
           {
             ref: this.getRemoveRef,
-            className: 'ListItem__remove',
+            className: 'Cell__remove',
             onClick: this.onRemoveClick,
             style: removable ? { transform: 'translateX(-' + this.state.removeOffset + 'px)' } : null
           },
@@ -48267,10 +48310,10 @@ var ListItem = function (_Component) {
 
   }]);
 
-  return ListItem;
+  return Cell;
 }(_react.Component);
 
-ListItem.propTypes = {
+Cell.propTypes = {
   before: _propTypes2.default.node,
   indicator: _propTypes2.default.node,
   asideContent: _propTypes2.default.node,
@@ -48279,8 +48322,16 @@ ListItem.propTypes = {
   onClick: _propTypes2.default.func,
   multiline: _propTypes2.default.bool,
   description: _propTypes2.default.node,
+  /**
+   * Контейнер для произвольного содержимого под `description`. Рисуется только если передать `size="l"`.
+   */
+  bottomContent: _propTypes2.default.node,
   className: _propTypes2.default.string,
   style: _propTypes2.default.object,
+  /**
+   * Размер влияет на выравнивание блоков по-вертикали, виду сепаратора (iOS) и возможности вставлять `bottomContent`.
+   */
+  size: _propTypes2.default.oneOf(['m', 'l']),
 
   selectable: _propTypes2.default.bool,
 
@@ -48293,21 +48344,23 @@ ListItem.propTypes = {
 
   href: _propTypes2.default.string
 };
-ListItem.defaultProps = {
+Cell.defaultProps = {
   before: null,
   indicator: '',
   asideContent: '',
+  bottomContent: null,
   expandable: false,
   children: '',
   selectable: false,
   multiline: false,
   removable: false,
+  size: 'm',
   removePlaceholder: 'Удалить'
 };
-ListItem.contextTypes = {
+Cell.contextTypes = {
   document: _propTypes2.default.any
 };
-exports.default = ListItem;
+exports.default = Cell;
 
 /***/ }),
 /* 265 */
@@ -48325,11 +48378,11 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Контейнер для ListItem.'
+        'content': 'Контейнер для Cell.'
     },
     {
         'type': 'code',
-        'content': '<View activePanel="list">\n  <Panel id="list">\n    <PanelHeader>\n      List\n    </PanelHeader>\n    <Group>\n      <List>\n        <ListItem expandable before={<Icon24User />}>Учетная запись</ListItem>\n        <ListItem expandable before={<Icon24Settings />}>Основные</ListItem>\n        <ListItem expandable before={<Icon24Privacy />}>Приватность</ListItem>\n      </List>\n    </Group>\n  </Panel>\n</View>',
+        'content': '<View activePanel="list">\n  <Panel id="list">\n    <PanelHeader>\n      List\n    </PanelHeader>\n    <Group>\n      <List>\n        <Cell expandable before={<Icon24User />}>Учетная запись</Cell>\n        <Cell expandable before={<Icon24Settings />}>Основные</Cell>\n        <Cell expandable before={<Icon24Privacy />}>Приватность</Cell>\n      </List>\n    </Group>\n  </Panel>\n</View>',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -48466,7 +48519,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': '  <View activePanel="group">\n    <Panel id="group">\n      <PanelHeader>\n        Group\n      </PanelHeader>\n      <Group title="Group title" description="Group description. Lorem ipsum dolor sit amet, consectetur adipisicing elit.">\n        <List>\n          <ListItem>\n            One\n          </ListItem>\n          <ListItem>\n            Two\n          </ListItem>\n          <ListItem>\n            Three\n          </ListItem>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
+        'content': '  <View activePanel="group">\n    <Panel id="group">\n      <PanelHeader>\n        Group\n      </PanelHeader>\n      <Group title="Group title" description="Group description. Lorem ipsum dolor sit amet, consectetur adipisicing elit.">\n        <List>\n          <Cell>\n            One\n          </Cell>\n          <Cell>\n            Two\n          </Cell>\n          <Cell>\n            Three\n          </Cell>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
         'settings': {},
         'evalInContext': evalInContext
     }]
@@ -50815,7 +50868,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': 'class Example extends React.Component {\n\n  constructor () {\n    this.state = {\n      contextOpened: true,\n      mode: \'all\'\n    }\n    this.toggleContext = this.toggleContext.bind(this);\n    this.select = this.select.bind(this);\n  }\n\n  toggleContext () {\n    this.setState({ contextOpened: !this.state.contextOpened });\n  }\n\n  select (e) {\n    const mode = e.currentTarget.dataset.mode;\n    this.setState({ mode });\n    requestAnimationFrame(this.toggleContext);\n  }\n\n  render () {\n\n    return (\n      <View activePanel="context">\n        <Panel id="context">\n          <PanelHeader\n            left={<HeaderButton>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n            right={<HeaderButton>{<Icon24Add />}</HeaderButton>}\n          >\n            <PanelHeaderContent aside={<Icon16Dropdown />} onClick={this.toggleContext}>\n              Communities\n            </PanelHeaderContent>\n          </PanelHeader>\n          <HeaderContext opened={this.state.contextOpened} onClose={this.toggleContext}>\n            <List>\n              <ListItem\n                before={<Icon24Users />}\n                asideContent={this.state.mode === \'all\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                onClick={this.select}\n                data-mode="all"\n              >\n                Communities\n              </ListItem>\n              <ListItem\n                before={<Icon24Settings />}\n                asideContent={this.state.mode === \'managed\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                onClick={this.select}\n                data-mode="managed"\n              >\n                Managed Communities\n              </ListItem>\n            </List>\n          </HeaderContext>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
+        'content': 'class Example extends React.Component {\n\n  constructor () {\n    this.state = {\n      contextOpened: true,\n      mode: \'all\'\n    }\n    this.toggleContext = this.toggleContext.bind(this);\n    this.select = this.select.bind(this);\n  }\n\n  toggleContext () {\n    this.setState({ contextOpened: !this.state.contextOpened });\n  }\n\n  select (e) {\n    const mode = e.currentTarget.dataset.mode;\n    this.setState({ mode });\n    requestAnimationFrame(this.toggleContext);\n  }\n\n  render () {\n\n    return (\n      <View activePanel="context">\n        <Panel id="context">\n          <PanelHeader\n            left={<HeaderButton>{osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}\n            right={<HeaderButton>{<Icon24Add />}</HeaderButton>}\n          >\n            <PanelHeaderContent aside={<Icon16Dropdown />} onClick={this.toggleContext}>\n              Communities\n            </PanelHeaderContent>\n          </PanelHeader>\n          <HeaderContext opened={this.state.contextOpened} onClose={this.toggleContext}>\n            <List>\n              <Cell\n                before={<Icon24Users />}\n                asideContent={this.state.mode === \'all\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                onClick={this.select}\n                data-mode="all"\n              >\n                Communities\n              </Cell>\n              <Cell\n                before={<Icon24Settings />}\n                asideContent={this.state.mode === \'managed\' ? <Icon24Done fill={colors.accentBlue} /> : null}\n                onClick={this.select}\n                data-mode="managed"\n              >\n                Managed Communities\n              </Cell>\n            </List>\n          </HeaderContext>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
         'settings': {},
         'evalInContext': evalInContext
     }]
@@ -52617,9 +52670,9 @@ module.exports = {
                             'metadata': {}
                         },
                         {
-                            'filepath': '../src/components/ListItem/ListItem.js',
-                            'slug': 'listitem',
-                            'pathLine': '../src/components/ListItem/ListItem.js',
+                            'filepath': '../src/components/Cell/Cell.js',
+                            'slug': 'cell',
+                            'pathLine': '../src/components/Cell/Cell.js',
                             'module': __webpack_require__(264),
                             'props': __webpack_require__(260),
                             'hasExamples': true,
