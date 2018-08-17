@@ -14543,7 +14543,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__(240);
+__webpack_require__(243);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16123,7 +16123,7 @@ exports.default = (0, _Styled2.default)(styles)(PathlineRenderer);
 /* 96 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.7.0","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.7.1","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.1.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 97 */
@@ -37332,7 +37332,6 @@ var styles = function styles(_ref) {
   var color = _ref.color,
       fontFamily = _ref.fontFamily,
       fontSize = _ref.fontSize,
-      sidebarWidth = _ref.sidebarWidth,
       mq = _ref.mq,
       space = _ref.space,
       maxWidth = _ref.maxWidth;
@@ -37341,7 +37340,7 @@ var styles = function styles(_ref) {
       backgroundColor: color.baseBackground
     },
     hasSidebar: _defineProperty({
-      paddingLeft: sidebarWidth
+      paddingLeft: 230
     }, mq.small, {
       paddingLeft: 0
     }),
@@ -37360,7 +37359,7 @@ var styles = function styles(_ref) {
       top: 0,
       left: 0,
       bottom: 0,
-      width: sidebarWidth,
+      width: 230,
       overflow: 'auto',
       '-webkit-overflow-scrolling': 'touch'
     }, mq.small, {
@@ -46059,157 +46058,6 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(4);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
-module.exports = [
-    {
-        'type': 'markdown',
-        'content': '**Важно**: свойство `style` применяется к `img`, а не к корневому элементу. Чаще всего требуется стилизовать именно\nизображение, а не обертку.'
-    },
-    {
-        'type': 'code',
-        'content': '  <View activePanel="avatar">\n    <Panel id="avatar">\n      <PanelHeader>Avatar</PanelHeader>\n      <Group title="Standart size">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            description="VKonktakte"\n            title="Артур Стамбульцян"\n          >\n            <Button>Добавить</Button>\n          </Entity>\n        </Div>\n      </Group>\n      <Group title="Big avatar (80px)">\n        <Div>\n          <Entity\n            photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n            description="VKonktakte"\n            title="Артур Стамбульцян"\n            avatarProps={{ size: 80 }}\n          >\n            <Button>Добавить</Button>\n          </Entity>\n        </Div>\n      </Group>\n      <Group title="Placeholder">\n        <List>\n          <Cell\n            before={<Avatar style={{ background: colors.blue }} size={28}><Icon16Add fill="#fff" /></Avatar>}\n            description="Только от друзей друзей"\n          >\n            Заявки в друзья\n          </Cell>\n          <Cell\n            before={<Avatar style={{ background: colors.red }} size={28}><Icon16Like fill="#fff" /></Avatar>}\n            description="Только важные"\n          >\n            Отметки \xABМне нравится\xBB\n          </Cell>\n        </List>\n      </Group>\n      <Group title="Using in Cell">\n        <List>\n          <Cell before={<Avatar><Icon28User /></Avatar>}>Артур Стамбульцян</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c845121/v845121950/63c02/4hP61FL56YM.jpg?ava=1" />}>Тимофей Чаптыков</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c834100/v834100961/4f8f1/hjsBzq433co.jpg?ava=1" />}>Влад Анесов</Cell>\n        </List>\n      </Group>\n      <Header>Типы</Header>\n      <Group title="default" description="Дефолтный стиль аватарки. Используется для юзеров, групп.">\n        <List>\n          <Cell before={<Avatar src="https://pp.userapi.com/c625316/v625316293/347b7/DmD1VKYbwwI.jpg?ava=1" />}>Евгений Авсиевич</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c636327/v636327034/2be85/gt3uFFWTw-w.jpg?ava=1" />}>Татьяна Плуталова</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c841629/v841629884/290ab/STZCXV5wZbg.jpg?ava=1" />}>Олег Илларианов</Cell>\n        </List>\n      </Group>\n      <Group title="app" description="Аватарки для приложений. Радиус скургления зависит от значения свойства size.">\n        <List>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c844616/v844616889/9ec4a/9Fk-RI7uchQ.jpg" />} description="Ролевая">Шторм онлайн</Cell>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c848536/v848536020/18242/ZLjAYM59EqY.jpg" />} description="Настольная" multiline={false}>Шашки - 3 вида: шашки, уголки, поддавки</Cell>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c849028/v849028348/1b353/Na_GRlqgRNM.jpg" />} description="Головолмка">Вега Микс на даче</Cell>\n        </List>\n      </Group>\n      <Group title="image" description="Используется для остальных случаев. Например, для музыки и плейлистов.">\n        <List>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c841025/v841025503/617f7/bkN1Def0s14.jpg" />} description="Arctic Monkeys" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>I Wanna Be Yours</Cell>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c845220/v845220642/7cacc/XzhH5b7FSKY.jpg" />} description="Лето (звери)" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>6 утра</Cell>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c837628/v837628453/39175/4JRjMaFvCrw.jpg" />} description="Depeche Mode" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>Enjoy the Silence</Cell>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
-        'settings': {},
-        'evalInContext': evalInContext
-    }
-]
-	
-
-/***/ }),
-/* 231 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-module.exports = {
-    'description': '',
-    'methods': [],
-    'displayName': 'Avatar',
-    'props': [
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'children'
-        },
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'className'
-        },
-        {
-            'type': {
-                'name': 'enum',
-                'value': [
-                    {
-                        'value': '80',
-                        'computed': false
-                    },
-                    {
-                        'value': '72',
-                        'computed': false
-                    },
-                    {
-                        'value': '64',
-                        'computed': false
-                    },
-                    {
-                        'value': '56',
-                        'computed': false
-                    },
-                    {
-                        'value': '48',
-                        'computed': false
-                    },
-                    {
-                        'value': '40',
-                        'computed': false
-                    },
-                    {
-                        'value': '36',
-                        'computed': false
-                    },
-                    {
-                        'value': '32',
-                        'computed': false
-                    },
-                    {
-                        'value': '28',
-                        'computed': false
-                    }
-                ]
-            },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '48',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'size'
-        },
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'src'
-        },
-        {
-            'type': { 'name': 'object' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'style'
-        },
-        {
-            'type': {
-                'name': 'enum',
-                'value': [
-                    {
-                        'value': '\'default\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'image\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'app\'',
-                        'computed': false
-                    }
-                ]
-            },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '\'default\'',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'type'
-        }
-    ],
-    'doclets': {},
-    'examples': __webpack_require__(230)
-}
-	
-
-/***/ }),
-/* 232 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-var requireMap = { 'react': __webpack_require__(0) };
-var requireInRuntimeBase = __webpack_require__(5);
-var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = __webpack_require__(4);
-var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
-
 module.exports = [{
         'type': 'code',
         'content': '  class Example extends React.Component {\n\n    constructor (props) {\n\n      super(props);\n\n      this.state = {\n        slideIndex: 0\n      }\n    }\n\n    render () {\n      return (\n        <View header={false} activePanel="gallery">\n          <Panel id="gallery">\n            <Group title="Sticks right">\n              <Gallery\n                slideWidth="90%"\n                style={{ height: 150 }}\n                bullets="dark"\n              >\n                <div style={{ height: 150, backgroundColor: colors.red }} />\n                <div style={{ height: 150, backgroundColor: colors.green }} />\n                <div style={{ height: 150, backgroundColor: colors.blue }} />\n              </Gallery>\n            </Group>\n            <Group title="Sticks left">\n              <Gallery\n                slideWidth="90%"\n                align="right"\n                style={{ height: 150 }}\n              >\n                <div style={{ height: 150, backgroundColor: colors.green }} />\n                <div style={{ height: 150, backgroundColor: colors.blue }} />\n                <div style={{ height: 150, backgroundColor: colors.red }} />\n              </Gallery>\n            </Group>\n            <Group title="Centered">\n              <Gallery\n                slideWidth="90%"\n                align="center"\n                style={{ height: 150 }}\n              >\n                <div style={{ height: 150, backgroundColor: colors.blue }} />\n                <div style={{ height: 150, backgroundColor: colors.red }} />\n                <div style={{ height: 150, backgroundColor: colors.green }} />\n              </Gallery>\n            </Group>\n            <Group title="Controled">\n              <Gallery\n                slideWidth="90%"\n                align="center"\n                style={{ height: 150 }}\n                slideIndex={this.state.slideIndex}\n                onChange={slideIndex => this.setState({slideIndex})}\n              >\n                <div style={{ height: 150, backgroundColor: colors.blue }} />\n                <div style={{ height: 150, backgroundColor: colors.red }} />\n                <div style={{ height: 150, backgroundColor: colors.green }} />\n              </Gallery>\n              <Div>\n                <Button v="new" onClick={() => this.setState({slideIndex: this.state.slideIndex === 2 ? 0 : this.state.slideIndex + 1 })}>Next slide</Button>\n              </Div>\n            </Group>\n          </Panel>\n        </View>\n      )\n    }\n  }\n\n  <Example />',
@@ -46219,7 +46067,7 @@ module.exports = [{
 	
 
 /***/ }),
-/* 233 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -46385,19 +46233,19 @@ module.exports = {
         }
     ],
     'doclets': {},
-    'examples': __webpack_require__(232)
+    'examples': __webpack_require__(230)
 }
 	
 
 /***/ }),
-/* 234 */,
-/* 235 */
+/* 232 */,
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 236 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46411,7 +46259,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(235);
+__webpack_require__(233);
 
 var _react = __webpack_require__(0);
 
@@ -46928,7 +46776,7 @@ var _initialiseProps = function _initialiseProps() {
 exports.default = Gallery;
 
 /***/ }),
-/* 237 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -46944,7 +46792,7 @@ module.exports = []
 	
 
 /***/ }),
-/* 238 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -47092,26 +46940,19 @@ module.exports = {
                 'description': 'этот компонент устарел и будет удален в следущей мажорной версии.\nИспользуйте `Cell`.'
             }]
     },
-    'examples': __webpack_require__(237)
+    'examples': __webpack_require__(235)
 }
 	
 
 /***/ }),
-/* 239 */,
-/* 240 */
+/* 237 */,
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 241 */,
-/* 242 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 243 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47125,7 +46966,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(242);
+__webpack_require__(238);
 
 var _react = __webpack_require__(0);
 
@@ -47252,6 +47093,164 @@ Entity.defaultProps = {
   description: ''
 };
 exports.default = Entity;
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
+module.exports = [
+    {
+        'type': 'markdown',
+        'content': '**Важно**: свойство `style` применяется к `img`, а не к корневому элементу. Чаще всего требуется стилизовать именно\nизображение, а не обертку.'
+    },
+    {
+        'type': 'code',
+        'content': '  <View activePanel="avatar">\n    <Panel id="avatar">\n      <PanelHeader>Avatar</PanelHeader>\n      <Group title="Standart size">\n        <Cell\n          size="l"\n          description="VKonktakte"\n          before={<Avatar src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"/>}\n          bottomContent={<Button>Добавить</Button>}\n        >\n          Артур Стамбульцян\n        </Cell>\n      </Group>\n      <Group title="Big avatar (80px)">\n        <Cell\n          photo="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg"\n          description="VKonktakte"\n          bottomContent={<Button>Добавить</Button>}\n          before={<Avatar src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" size={80}/>}\n          size="l"\n        >\n          Артур Стамбульцян\n        </Cell>\n      </Group>\n      <Group title="Placeholder">\n        <List>\n          <Cell\n            before={<Avatar style={{ background: colors.blue }} size={28}><Icon16Add fill="#fff" /></Avatar>}\n            description="Только от друзей друзей"\n          >\n            Заявки в друзья\n          </Cell>\n          <Cell\n            before={<Avatar style={{ background: colors.red }} size={28}><Icon16Like fill="#fff" /></Avatar>}\n            description="Только важные"\n          >\n            Отметки \xABМне нравится\xBB\n          </Cell>\n        </List>\n      </Group>\n      <Group title="Using in Cell">\n        <List>\n          <Cell before={<Avatar><Icon28User /></Avatar>}>Артур Стамбульцян</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c845121/v845121950/63c02/4hP61FL56YM.jpg?ava=1" />}>Тимофей Чаптыков</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c834100/v834100961/4f8f1/hjsBzq433co.jpg?ava=1" />}>Влад Анесов</Cell>\n        </List>\n      </Group>\n      <Header>Типы</Header>\n      <Group title="default" description="Дефолтный стиль аватарки. Используется для юзеров, групп.">\n        <List>\n          <Cell before={<Avatar src="https://pp.userapi.com/c625316/v625316293/347b7/DmD1VKYbwwI.jpg?ava=1" />}>Евгений Авсиевич</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c636327/v636327034/2be85/gt3uFFWTw-w.jpg?ava=1" />}>Татьяна Плуталова</Cell>\n          <Cell before={<Avatar src="https://pp.userapi.com/c841629/v841629884/290ab/STZCXV5wZbg.jpg?ava=1" />}>Олег Илларианов</Cell>\n        </List>\n      </Group>\n      <Group title="app" description="Аватарки для приложений. Радиус скургления зависит от значения свойства size.">\n        <List>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c844616/v844616889/9ec4a/9Fk-RI7uchQ.jpg" />} description="Ролевая">Шторм онлайн</Cell>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c848536/v848536020/18242/ZLjAYM59EqY.jpg" />} description="Настольная" multiline={false}>Шашки - 3 вида: шашки, уголки, поддавки</Cell>\n          <Cell before={<Avatar type="app" src="https://pp.userapi.com/c849028/v849028348/1b353/Na_GRlqgRNM.jpg" />} description="Головолмка">Вега Микс на даче</Cell>\n        </List>\n      </Group>\n      <Group title="image" description="Используется для остальных случаев. Например, для музыки и плейлистов.">\n        <List>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c841025/v841025503/617f7/bkN1Def0s14.jpg" />} description="Arctic Monkeys" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>I Wanna Be Yours</Cell>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c845220/v845220642/7cacc/XzhH5b7FSKY.jpg" />} description="Лето (звери)" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>6 утра</Cell>\n          <Cell before={<Avatar type="image" src="https://pp.userapi.com/c837628/v837628453/39175/4JRjMaFvCrw.jpg" />} description="Depeche Mode" asideContent={<Icon24MoreHorizontal fill={colors.accentBlue}/>}>Enjoy the Silence</Cell>\n        </List>\n      </Group>\n    </Panel>\n  </View>',
+        'settings': {},
+        'evalInContext': evalInContext
+    }
+]
+	
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+module.exports = {
+    'description': '',
+    'methods': [],
+    'displayName': 'Avatar',
+    'props': [
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'children'
+        },
+        {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'className'
+        },
+        {
+            'type': {
+                'name': 'enum',
+                'value': [
+                    {
+                        'value': '80',
+                        'computed': false
+                    },
+                    {
+                        'value': '72',
+                        'computed': false
+                    },
+                    {
+                        'value': '64',
+                        'computed': false
+                    },
+                    {
+                        'value': '56',
+                        'computed': false
+                    },
+                    {
+                        'value': '48',
+                        'computed': false
+                    },
+                    {
+                        'value': '40',
+                        'computed': false
+                    },
+                    {
+                        'value': '36',
+                        'computed': false
+                    },
+                    {
+                        'value': '32',
+                        'computed': false
+                    },
+                    {
+                        'value': '28',
+                        'computed': false
+                    }
+                ]
+            },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '48',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'size'
+        },
+        {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'src'
+        },
+        {
+            'type': { 'name': 'object' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'style'
+        },
+        {
+            'type': {
+                'name': 'enum',
+                'value': [
+                    {
+                        'value': '\'default\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'image\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'app\'',
+                        'computed': false
+                    }
+                ]
+            },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '\'default\'',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'type'
+        }
+    ],
+    'doclets': {},
+    'examples': __webpack_require__(240)
+}
+	
+
+/***/ }),
+/* 242 */,
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 244 */
@@ -47668,6 +47667,148 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(4);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
+module.exports = [
+    {
+        'type': 'markdown',
+        'content': 'Контейнер для Cell.'
+    },
+    {
+        'type': 'code',
+        'content': '<View activePanel="list">\n  <Panel id="list">\n    <PanelHeader>\n      List\n    </PanelHeader>\n    <Group>\n      <List>\n        <Cell expandable before={<Icon24User />}>Учетная запись</Cell>\n        <Cell expandable before={<Icon24Settings />}>Основные</Cell>\n        <Cell expandable before={<Icon24Privacy />}>Приватность</Cell>\n      </List>\n    </Group>\n  </Panel>\n</View>',
+        'settings': {},
+        'evalInContext': evalInContext
+    }
+]
+	
+
+/***/ }),
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+module.exports = {
+    'description': '',
+    'methods': [],
+    'displayName': 'List',
+    'props': [
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '\'\'',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'children'
+        },
+        {
+            'type': { 'name': 'string' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'className'
+        },
+        {
+            'type': { 'name': 'object' },
+            'required': false,
+            'description': '',
+            'defaultValue': {
+                'value': '{}',
+                'computed': false
+            },
+            'tags': {},
+            'name': 'style'
+        }
+    ],
+    'doclets': {},
+    'examples': __webpack_require__(259)
+}
+	
+
+/***/ }),
+/* 261 */,
+/* 262 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 263 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+__webpack_require__(262);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(3);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(6);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _getClassName = __webpack_require__(7);
+
+var _getClassName2 = _interopRequireDefault(_getClassName);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var baseClassNames = (0, _getClassName2.default)('List');
+
+var List = function List(_ref) {
+  var className = _ref.className,
+      children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, ['className', 'children']);
+
+  return _react2.default.createElement(
+    'div',
+    _extends({}, restProps, { className: (0, _classnames2.default)(baseClassNames, className) }),
+    children
+  );
+};
+
+List.propTypes = {
+  style: _propTypes2.default.object,
+  children: _propTypes2.default.node,
+  className: _propTypes2.default.string
+};
+List.defaultProps = {
+  style: {},
+  children: ''
+};
+
+exports.default = List;
+
+/***/ }),
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+if (false) {}
+
+var requireMap = { 'react': __webpack_require__(0) };
+var requireInRuntimeBase = __webpack_require__(5);
+var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
+var evalInContextBase = __webpack_require__(4);
+var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
+
 module.exports = [{
         'type': 'code',
         'content': '  class Example extends React.Component {\n\n    constructor() {\n      this.state = {\n        activePanel: \'list\',\n        removeList: [\'Михаил Андриевский\', \'Вадим Дорохов\', \'Саша Колобов\']\n      };\n    }\n\n    render() {\n      return (\n        <View activePanel={this.state.activePanel}>\n          <Panel id="list">\n            <PanelHeader>\n              Ячейки\n            </PanelHeader>\n\n            <Group title="Простейший пример">\n              <List>\n                <Cell>Пятница</Cell>\n                <Cell>Суббота</Cell>\n                <Cell>Воскресение</Cell>\n              </List>\n            </Group>\n\n            <Group title="Переходы">\n              <List>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Учетная запись</Cell>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Основные</Cell>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })}>Приватность</Cell>\n              </List>\n            </Group>\n\n            <Group title="Индикатор">\n              <List>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="При использовании">Геолокация</Cell>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="Всегда">Автопроигрывание медиа</Cell>\n                <Cell expandable onClick={() => this.setState({ activePanel: \'nothing\' })} indicator="Выключены">Стикеры</Cell>\n              </List>\n            </Group>\n\n            <Group title="Многострочность">\n              <List>\n                <Cell multiline>A Series of Unfortunate Events, Archer, Brooklyn Nine-Nine, Doctor Who, Game of Thrones</Cell>\n                <Cell multiline>The Avalanches</Cell>\n              </List>\n            </Group>\n\n            <Group title="Подпись">\n              <List>\n                <Cell description="Depeche Mode">Where\u2019s the Revolution</Cell>\n                <Cell description="The Weeknd">I Feel It Coming (Feat. Daft Punk)</Cell>\n              </List>\n            </Group>\n\n            <Group title="Большая ячейка">\n              <List>\n                <Cell\n                  before={<Avatar size={72} />}\n                  size="l"\n                  description="Друзья в Facebook"\n                  asideContent={<Icon24MoreHorizontal />}\n                  bottomContent={\n                    <div style={{ display: \'flex\' }}>\n                      <Button size="m">Добавить</Button>\n                      <Button size="m" level="2" style={{ marginLeft: 8 }}>Скрыть</Button>\n                    </div>\n                  }\n                >\n                  Семён Ефимов</Cell>\n                <Cell\n                  before={<Avatar size={72} />}\n                  size="l"\n                  description="29 лет, Санкт-Петербург"\n                  asideContent={<Icon24MoreHorizontal />}\n                  bottomContent={\n                    <div style={{ display: \'flex\' }}>\n                      <Button size="m">Добавить</Button>\n                      <Button size="m" level="2" style={{ marginLeft: 8 }}>Скрыть</Button>\n                    </div>\n                  }\n                >\n                  Александр Попов</Cell>\n                <Cell\n                  before={<Avatar size={72} />}\n                  size="l"\n                  description="Команда ВКонтакте"\n                  asideContent={<Icon24MoreHorizontal />}\n                  bottomContent={\n                    <div style={{ display: \'flex\' }}>\n                      <Button size="m">Добавить</Button>\n                      <Button size="m" level="2" style={{ marginLeft: 8 }}>Скрыть</Button>\n                    </div>\n                  }\n                >\n                  Екатерина Скобейко</Cell>\n              </List>\n            </Group>\n\n            <Group title="Иконки">\n              <List>\n                <Cell before={<Icon24About />}>Информация</Cell>\n                <Cell before={<Icon24Services />}>Севрисы</Cell>\n              </List>\n            </Group>\n\n            <Group title="Чекбоксы">\n              <List>\n                <Cell selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Артур Стамбульцян</Cell>\n                <Cell selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Тимофей Чаптыков</Cell>\n                <Cell selectable before={ <Avatar size={40} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" /> }>Влад Анесов</Cell>\n              </List>\n            </Group>\n\n            {this.state.removeList.length > 0 &&\n              <Group title="Удаление">\n                <List>\n                  {this.state.removeList.map((item, index) => (\n                    <Cell key={item} removable onRemove={() => {\n                      this.setState({\n                        removeList: [...this.state.removeList.slice(0, index), ...this.state.removeList.slice(index + 1)]\n                      })\n                    }}>{item}</Cell>\n                  ))}\n                </List>\n              </Group>\n            }\n          </Panel>\n          <Panel id="nothing">\n              <PanelHeader\n                left={\n                  <HeaderButton onClick={() => this.setState({ activePanel: \'list\' })}>\n                    {osname === ANDROID ? <Icon24Back/> : <Icon28ChevronBack/>}\n                  </HeaderButton>\n                }\n              >\n                Ничего\n              </PanelHeader>\n            <div\n              style={{\n                padding: \'100px 0\',\n                height: \'100%\',\n                display: \'flex\',\n                alignItems: \'center\',\n                justifyContent: \'center\'\n              }}\n            >\n              <div\n                style={{\n                  flex: \'0 0 auto\',\n                  color: \'gray\',\n                  textAlign: \'center\'\n                }}\n              >\n                Тут ничего нет<br />\n                <span onClick={() => this.setState({ activePanel: \'list\' })} style={{ textDecoration: \'underline\' }}>Пошли обратно</span>\n              </div>\n            </div>\n          </Panel>\n        </View>\n      )\n    }\n  }\n\n  <Example />',
@@ -47677,7 +47818,7 @@ module.exports = [{
 	
 
 /***/ }),
-/* 260 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -47865,12 +48006,12 @@ module.exports = {
         }
     ],
     'doclets': {},
-    'examples': __webpack_require__(259)
+    'examples': __webpack_require__(264)
 }
 	
 
 /***/ }),
-/* 261 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -48054,14 +48195,14 @@ exports.default = SvgIcon;
 });
 
 /***/ }),
-/* 262 */,
-/* 263 */
+/* 267 */,
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 264 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48075,7 +48216,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(263);
+__webpack_require__(268);
 
 var _react = __webpack_require__(0);
 
@@ -48099,7 +48240,7 @@ var _Tappable2 = _interopRequireDefault(_Tappable);
 
 var _platform = __webpack_require__(11);
 
-var _chevron = __webpack_require__(261);
+var _chevron = __webpack_require__(266);
 
 var _chevron2 = _interopRequireDefault(_chevron);
 
@@ -48124,7 +48265,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var osname = (0, _platform.platform)();
-
 var baseClassNames = (0, _getClassName2.default)('Cell');
 
 var Cell = function (_Component) {
@@ -48251,12 +48391,12 @@ var Cell = function (_Component) {
               { className: 'Cell__children' },
               children
             ),
-            _react2.default.createElement(
+            description && _react2.default.createElement(
               'div',
               { className: 'Cell__description' },
               description
             ),
-            size === 'l' && _react2.default.createElement(
+            size === 'l' && bottomContent && _react2.default.createElement(
               'div',
               { className: 'Cell__bottom' },
               bottomContent
@@ -48361,148 +48501,6 @@ Cell.contextTypes = {
   document: _propTypes2.default.any
 };
 exports.default = Cell;
-
-/***/ }),
-/* 265 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-var requireMap = { 'react': __webpack_require__(0) };
-var requireInRuntimeBase = __webpack_require__(5);
-var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
-var evalInContextBase = __webpack_require__(4);
-var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
-
-module.exports = [
-    {
-        'type': 'markdown',
-        'content': 'Контейнер для Cell.'
-    },
-    {
-        'type': 'code',
-        'content': '<View activePanel="list">\n  <Panel id="list">\n    <PanelHeader>\n      List\n    </PanelHeader>\n    <Group>\n      <List>\n        <Cell expandable before={<Icon24User />}>Учетная запись</Cell>\n        <Cell expandable before={<Icon24Settings />}>Основные</Cell>\n        <Cell expandable before={<Icon24Privacy />}>Приватность</Cell>\n      </List>\n    </Group>\n  </Panel>\n</View>',
-        'settings': {},
-        'evalInContext': evalInContext
-    }
-]
-	
-
-/***/ }),
-/* 266 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-if (false) {}
-
-module.exports = {
-    'description': '',
-    'methods': [],
-    'displayName': 'List',
-    'props': [
-        {
-            'type': { 'name': 'node' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '\'\'',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'children'
-        },
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'className'
-        },
-        {
-            'type': { 'name': 'object' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '{}',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'style'
-        }
-    ],
-    'doclets': {},
-    'examples': __webpack_require__(265)
-}
-	
-
-/***/ }),
-/* 267 */,
-/* 268 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-__webpack_require__(268);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(3);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _classnames = __webpack_require__(6);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _getClassName = __webpack_require__(7);
-
-var _getClassName2 = _interopRequireDefault(_getClassName);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-var baseClassNames = (0, _getClassName2.default)('List');
-
-var List = function List(_ref) {
-  var className = _ref.className,
-      children = _ref.children,
-      restProps = _objectWithoutProperties(_ref, ['className', 'children']);
-
-  return _react2.default.createElement(
-    'div',
-    _extends({}, restProps, { className: (0, _classnames2.default)(baseClassNames, className) }),
-    children
-  );
-};
-
-List.propTypes = {
-  style: _propTypes2.default.object,
-  children: _propTypes2.default.node,
-  className: _propTypes2.default.string
-};
-List.defaultProps = {
-  style: {},
-  children: ''
-};
-
-exports.default = List;
 
 /***/ }),
 /* 270 */
@@ -52661,19 +52659,19 @@ module.exports = {
                             'metadata': {}
                         },
                         {
-                            'filepath': '../src/components/List/List.js',
-                            'slug': 'list',
-                            'pathLine': '../src/components/List/List.js',
+                            'filepath': '../src/components/Cell/Cell.js',
+                            'slug': 'cell',
+                            'pathLine': '../src/components/Cell/Cell.js',
                             'module': __webpack_require__(269),
-                            'props': __webpack_require__(266),
+                            'props': __webpack_require__(265),
                             'hasExamples': true,
                             'metadata': {}
                         },
                         {
-                            'filepath': '../src/components/Cell/Cell.js',
-                            'slug': 'cell',
-                            'pathLine': '../src/components/Cell/Cell.js',
-                            'module': __webpack_require__(264),
+                            'filepath': '../src/components/List/List.js',
+                            'slug': 'list',
+                            'pathLine': '../src/components/List/List.js',
+                            'module': __webpack_require__(263),
                             'props': __webpack_require__(260),
                             'hasExamples': true,
                             'metadata': {}
@@ -52706,11 +52704,20 @@ module.exports = {
                             'metadata': {}
                         },
                         {
+                            'filepath': '../src/components/Avatar/Avatar.js',
+                            'slug': 'avatar',
+                            'pathLine': '../src/components/Avatar/Avatar.js',
+                            'module': __webpack_require__(86),
+                            'props': __webpack_require__(241),
+                            'hasExamples': true,
+                            'metadata': {}
+                        },
+                        {
                             'filepath': '../src/components/Entity/Entity.js',
                             'slug': 'entity',
                             'pathLine': '../src/components/Entity/Entity.js',
-                            'module': __webpack_require__(243),
-                            'props': __webpack_require__(238),
+                            'module': __webpack_require__(239),
+                            'props': __webpack_require__(236),
                             'hasExamples': true,
                             'metadata': {}
                         },
@@ -52718,16 +52725,7 @@ module.exports = {
                             'filepath': '../src/components/Gallery/Gallery.js',
                             'slug': 'gallery',
                             'pathLine': '../src/components/Gallery/Gallery.js',
-                            'module': __webpack_require__(236),
-                            'props': __webpack_require__(233),
-                            'hasExamples': true,
-                            'metadata': {}
-                        },
-                        {
-                            'filepath': '../src/components/Avatar/Avatar.js',
-                            'slug': 'avatar',
-                            'pathLine': '../src/components/Avatar/Avatar.js',
-                            'module': __webpack_require__(86),
+                            'module': __webpack_require__(234),
                             'props': __webpack_require__(231),
                             'hasExamples': true,
                             'metadata': {}
