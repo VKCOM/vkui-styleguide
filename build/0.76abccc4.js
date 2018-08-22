@@ -9706,7 +9706,7 @@ return CodeMirror$1;
 /***/ 560:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(154)(false);
+exports = module.exports = __webpack_require__(155)(false);
 // imports
 
 
@@ -9736,7 +9736,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(153)(content, options);
+var update = __webpack_require__(154)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -9747,7 +9747,7 @@ if(false) {}
 /***/ 562:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(154)(false);
+exports = module.exports = __webpack_require__(155)(false);
 // imports
 
 
@@ -9777,7 +9777,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(153)(content, options);
+var update = __webpack_require__(154)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
