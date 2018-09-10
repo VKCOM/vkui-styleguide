@@ -3411,7 +3411,7 @@ a:focus {
       }
 
 .Cell--ios .Cell__before-in > .Icon {
-        padding: 10px 16px 10px 0;
+        padding: 11px 16px 11px 0;
         }
 
 .Cell--ios.Cell--m .Cell__before-in > .Avatar {
@@ -3481,8 +3481,8 @@ a:focus {
 
 .Cell--ios .Cell__indicator,
     .Cell--ios .Cell__aside {
-      padding-top: 12px;
-      padding-bottom: 12px;
+      padding-top: 11px;
+      padding-bottom: 11px;
       }
 
 /* Android */
@@ -4024,11 +4024,8 @@ a:focus {
       height: 32px;
       white-space: nowrap;
       color: transparent;
+      width: 10000px;
       }
-
-.Search--ios .Search__width::before {
-        content: 'oooooooooooooooooooooooooooooooooooooooooooooooooooo' /* хак для растягивание Search на всю ширину */
-        }
 
 .Search--ios .Search__control {
       display: -webkit-box;
