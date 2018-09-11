@@ -12806,7 +12806,7 @@ var FixedLayout = function (_React$Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FixedLayout.__proto__ || Object.getPrototypeOf(FixedLayout)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       transition: false,
       topOffset: null,
-      paddings: {}
+      paddingBottom: null
     }, _this.onViewTransitionStart = function (e) {
       var panelScroll = e.detail.scrolls[_this.context.panel] || 0;
       _this.setPaddings(function () {
@@ -12835,11 +12835,7 @@ var FixedLayout = function (_React$Component) {
     key: 'setPaddings',
     value: function setPaddings(callback) {
       if (this.props.vertical === 'bottom') {
-        var paddingBottom = parseInt(window.getComputedStyle(this.el).padding);
-
-        this.setState({
-          paddings: { paddingBottom: paddingBottom + (this.insets.bottom || 0) }
-        }, function () {
+        this.setState({ paddingBottom: this.insets.bottom || 0 }, function () {
           return callback && callback();
         });
       } else {
@@ -12861,7 +12857,7 @@ var FixedLayout = function (_React$Component) {
         _extends({}, restProps, {
           ref: this.getRef,
           className: (0, _classnames3.default)(baseClassNames, _defineProperty({}, 'FixedLayout--' + vertical, vertical), className),
-          style: _extends({}, style, this.state.paddings, this.state.transition ? { position: 'absolute', top: this.state.topOffset } : {})
+          style: _extends({}, style, { paddingBottom: this.state.paddingBottom }, this.state.transition ? { position: 'absolute', top: this.state.topOffset } : {})
         }),
         _react2.default.createElement(
           'div',
@@ -16162,7 +16158,7 @@ exports.default = (0, _Styled2.default)(styles)(PathlineRenderer);
 /* 96 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.9.5","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","url-loader":"^1.1.1","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.9.6","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","devDependencies":{"autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","url-loader":"^1.1.1","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 97 */
@@ -48752,7 +48748,7 @@ module.exports = {
         {
             'type': { 'name': 'bool' },
             'required': false,
-            'description': '',
+            'description': 'Флаг для перехода в режим удаляемых ячеек. **Важно:** в этом режиме обработчик onClick вызываться не будет.',
             'defaultValue': {
                 'value': 'false',
                 'computed': false
@@ -48763,7 +48759,7 @@ module.exports = {
         {
             'type': { 'name': 'node' },
             'required': false,
-            'description': 'iOS only',
+            'description': 'iOS only. Текст в выезжаеющей кнопке для удаления ячейки.',
             'defaultValue': {
                 'value': '\'Удалить\'',
                 'computed': false
@@ -49095,10 +49091,16 @@ var Cell = function (_Component) {
       isRemoveActivated: false,
       removeOffset: 0
     }, _this.onClick = function (e) {
+      var _this$props = _this.props,
+          removable = _this$props.removable,
+          onClick = _this$props.onClick;
+
       if (e.target.tagName.toLowerCase() === 'input') {
         e.stopPropagation();
+      } else if (removable) {
+        return null;
       } else {
-        _this.props.onClick && _this.props.onClick(e);
+        onClick && onClick(e);
       }
     }, _this.activateRemove = function () {
       _this.setState({ isRemoveActivated: true });
@@ -49176,7 +49178,7 @@ var Cell = function (_Component) {
             component: selectable ? 'label' : href ? 'a' : 'div',
             className: 'Cell__in',
             href: href,
-            disabled: !selectable && !onClick && !href,
+            disabled: !selectable && !onClick && !href || removable,
             style: removable ? { transform: 'translateX(-' + this.state.removeOffset + 'px)' } : null
           }),
           selectable && _react2.default.createElement('input', _extends({}, inputProps, { type: 'checkbox', className: 'Cell__checkbox' })),
@@ -49261,6 +49263,7 @@ var Cell = function (_Component) {
     /**
      * предотвращает двойное срабатывание в случае с input
      * (https://github.com/vuejs/vue/issues/3699#issuecomment-247957931)
+     * предотвращает клик в случае, когда включен режим removable
      * @param e
      */
 
@@ -49291,11 +49294,13 @@ Cell.propTypes = {
   size: _propTypes2.default.oneOf(['m', 'l']),
 
   selectable: _propTypes2.default.bool,
-
+  /**
+   * Флаг для перехода в режим удаляемых ячеек. **Важно:** в этом режиме обработчик onClick вызываться не будет.
+   */
   removable: _propTypes2.default.bool,
   onRemove: _propTypes2.default.func,
   /**
-   * iOS only
+   * iOS only. Текст в выезжаеющей кнопке для удаления ячейки.
    */
   removePlaceholder: _propTypes2.default.node,
 
