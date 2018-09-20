@@ -301,6 +301,9 @@ body[scheme="client_dark"] {
   /* easings */
   --ios-easing: cubic-bezier(.36, .66, .04, 1);
   --android-easing: cubic-bezier(.4, 0, .2, 1);
+
+  /* sizes */
+  --tabbar_height: 48px;
 }
 .Checkbox {
   display: block;
@@ -1057,6 +1060,17 @@ body[scheme="client_dark"] {
     width: 100%;
     min-height: 100%;
     z-index: 2;
+    padding-bottom: 0;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    }
+.Epic .Panel__in {
+    padding-bottom: 48px;
+    padding-bottom: var(--tabbar_height);
+    padding-bottom: calc(constant(safe-area-inset-bottom) + 48px);
+    padding-bottom: calc(constant(safe-area-inset-bottom) + var(--tabbar_height));
+    padding-bottom: calc(env(safe-area-inset-bottom) + 48px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + var(--tabbar_height));
     }
 .Panel__in-before {
       height: 1px;
@@ -1066,10 +1080,12 @@ body[scheme="client_dark"] {
       height: 1px;
       margin-top: -1px;
       }
+.Panel--tm-gray .Panel__in,
 .Panel--tm-gray::after {
   background-color: #ebedf0;
   background-color: var(--background_page);
   }
+.Panel--tm-white .Panel__in,
 .Panel--tm-white::after {
   background-color: #FFFFFF;
   background-color: var(--background_content);
@@ -1121,6 +1137,7 @@ body[scheme="client_dark"] {
   text-transform: uppercase;
   height: 48px;
   line-height: 48px;
+  border-radius: 50%;
   font-weight: 500;
   font-size: 14px;
   padding: 0 12px;
@@ -1250,9 +1267,18 @@ body[scheme="client_dark"] {
 .FixedLayout--bottom {
   width: 100%;
   bottom: 0;
+  padding-bottom: 0;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
   }
+.Epic .FixedLayout--bottom {
+    padding-bottom: 48px;
+    padding-bottom: var(--tabbar_height);
+    padding-bottom: calc(constant(safe-area-inset-bottom) + 48px);
+    padding-bottom: calc(constant(safe-area-inset-bottom) + var(--tabbar_height));
+    padding-bottom: calc(env(safe-area-inset-bottom) + 48px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + var(--tabbar_height));
+    }
 /**
  * Header iOS swipe back
  */
@@ -3798,15 +3824,15 @@ body[scheme="client_dark"] {
  */
 .Tabs--ios.Tabs--default.Tabs--light {
   padding: 8px;
-  background-color: #ebedf0;
-  background-color: var(--search_bar_background);
+  background: #ebedf0;
+  background: var(--search_bar_background);
   }
 .Tabs--ios.Tabs--default.Tabs--header {
   padding-top: 6px;
   }
 .Tabs--ios.Tabs--buttons.Tabs--header {
-  background-color: #5181B8;
-  background-color: var(--header_background);
+  background: #5181B8;
+  background: var(--header_background);
   }
 .Tabs--ios.Tabs--buttons {
   padding-top: 8px;
@@ -3823,32 +3849,35 @@ body[scheme="client_dark"] {
   background: #d7d8d9;
   background: var(--separator_common);
   }
-.FixedLayout--ios.FixedLayout--bottom .Tabs {}
+.FixedLayout--ios.FixedLayout--bottom .Tabs {
+  background: #F9F9F9;
+  background: var(--header_alternate_background);
+  }
+/* Нужно для закрашивания прозрачной области нижнего инсета на iphone x */
+.FixedLayout--ios.FixedLayout--bottom .Tabs--default::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: #F9F9F9;
+  background-color: var(--header_alternate_background);
+  }
+.FixedLayout--ios.FixedLayout--bottom .Tabs::before {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 1px;
+  content: '';
+  top: 0;
+  background: #d7d8d9;
+  background: var(--separator_common);
+  }
 .FixedLayout--ios.FixedLayout--bottom .TabsItem {
     position: relative;
     z-index: 2;
-    }
-/* Нужно для закрашивания прозрачной области нижнего инсета на iphone x */
-.FixedLayout--ios.FixedLayout--bottom .Tabs--default::after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background-color: #ebedf0;
-    background-color: var(--search_bar_background);
-    }
-.FixedLayout--ios.FixedLayout--bottom .Tabs::before {
-    position: absolute;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    height: 1px;
-    content: '';
-    top: 0;
-    background: #d7d8d9;
-    background: var(--separator_common);
     }
 .Tabs--ios.Tabs--buttons .HorizontalScroll__in::after,
 .Tabs--ios.Tabs--buttons .HorizontalScroll__in::before {
@@ -3911,6 +3940,10 @@ body[scheme="client_dark"] {
 .FixedLayout--bottom .Tabs--android {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
           box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
+  }
+.FixedLayout--android.FixedLayout--bottom .Tabs {
+  background: #F9F9F9;
+  background: var(--header_alternate_background);
   }
 .TabsItem {
   white-space: nowrap;
@@ -5256,7 +5289,7 @@ body[scheme="client_dark"] {
   background-color: #ebedf0;
   background-color: var(--search_bar_background);
   }
-.FixedLayout--top .Search--ios.Search--default::after {
+.Search--ios.Search--default::after {
   position: absolute;
   width: 100%;
   z-index: 1;
@@ -5268,7 +5301,7 @@ body[scheme="client_dark"] {
   background: var(--separator_common);
   }
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .FixedLayout--top .Search--ios.Search--default::after {
+  .Search--ios.Search--default::after {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #d7d8d9), color-stop(50%, transparent));
     background: -webkit-linear-gradient(bottom, #d7d8d9 50%, transparent 50%);
     background: -o-linear-gradient(bottom, #d7d8d9 50%, transparent 50%);
@@ -5547,6 +5580,105 @@ body[scheme="client_dark"] {
     opacity: 0;
   }
 }
+.Tabbar {
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  height: var(--tabbar_height);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  background: #F9F9F9;
+  background: var(--header_alternate_background);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  }
+.Tabbar--ios.Tabbar--shadow::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #d7d8d9;
+  background: var(--separator_common);
+  content: '';
+  }
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .Tabbar--ios::after {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #d7d8d9), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(top, #d7d8d9 50%, transparent 50%);
+    background: -o-linear-gradient(top, #d7d8d9 50%, transparent 50%);
+    background: linear-gradient(to bottom, #d7d8d9 50%, transparent 50%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, var(--separator_common)), color-stop(50%, transparent));
+    background: -webkit-linear-gradient(top, var(--separator_common) 50%, transparent 50%);
+    background: -o-linear-gradient(top, var(--separator_common) 50%, transparent 50%);
+    background: linear-gradient(to bottom, var(--separator_common) 50%, transparent 50%);
+    }
+  }
+.Tabbar--android.Tabbar--shadow {
+  -webkit-box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, .06), 0 0 2px 0 rgba(0, 0, 0, .08);
+          box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, .06), 0 0 2px 0 rgba(0, 0, 0, .08);
+  }
+.TabbarItem {
+  padding: 10px 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  max-width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  font-size: 0;
+  }
+.TabbarItem {
+  color: #99a2ad;
+  color: var(--tabbar_inactive_icon);
+  }
+.TabbarItem--selected {
+  color: #346CAD;
+  color: var(--tabbar_active_icon);
+  }
+.TabbarItem__in {
+    display: inline-block;
+    position: relative;
+    }
+.TabbarItem__label {
+      position: absolute;
+      top: 0;
+      left: calc(100% - 12px);
+      background: #E64646;
+      background: var(--destructive);
+      font-size: 12px;
+      color: #FFFFFF;
+      color: var(--white);
+      line-height: 14px;
+      border-radius: 9px;
+      min-width: 18px;
+      text-align: center;
+      padding: 2px 4px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      }
+.Epic {
+  width: 100%;
+  height: 100%;
+  }
 html,
 body,
 div#root {
