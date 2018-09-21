@@ -412,7 +412,7 @@ body[scheme="client_dark"] {
     top: 0;
     z-index: 100;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     }
 /**
  * iOS
@@ -420,10 +420,6 @@ body[scheme="client_dark"] {
 .Root--ios {
   font-family: -apple-system, Helvetica Neue, Arial;
   font-family: var(--font-ios);
-  }
-.Root--ios.Root--transition,
-.Root--ios.Root--popout {
-  height: 100vh;
   }
 .Root--ios .Root__view--show-back::after,
   .Root--ios .Root__view--hide-forward::after {
@@ -504,8 +500,8 @@ body[scheme="client_dark"] {
     }
 
   to {
-    -webkit-transform: translate3d(0, 100vh, 0);
-            transform: translate3d(0, 100vh, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
     }
   }
 @keyframes root-ios-animation-hide-back {
@@ -515,14 +511,14 @@ body[scheme="client_dark"] {
     }
 
   to {
-    -webkit-transform: translate3d(0, 100vh, 0);
-            transform: translate3d(0, 100vh, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
     }
   }
 @-webkit-keyframes root-ios-animation-show-forward {
   from {
-    -webkit-transform: translate3d(0, 100vh, 0);
-            transform: translate3d(0, 100vh, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
     }
 
   to {
@@ -532,8 +528,8 @@ body[scheme="client_dark"] {
   }
 @keyframes root-ios-animation-show-forward {
   from {
-    -webkit-transform: translate3d(0, 100vh, 0);
-            transform: translate3d(0, 100vh, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
     }
 
   to {
@@ -976,7 +972,6 @@ body[scheme="client_dark"] {
 .View--animated,
 .View--swiping-back {
   overflow: hidden;
-  height: 100vh;
   }
 .View__header {
     z-index: 2;
@@ -1017,7 +1012,7 @@ body[scheme="client_dark"] {
     top: 0;
     z-index: 100;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     }
 .Panel {
   position: relative;
@@ -1028,7 +1023,6 @@ body[scheme="client_dark"] {
     position: fixed;
     width: 100%;
     height: 100%;
-    height: 100vh;
     left: 0;
     top: 0;
     z-index: 1;
@@ -3805,6 +3799,9 @@ body[scheme="client_dark"] {
       -ms-flex-align: center;
           align-items: center;
   }
+.Tabs .HorizontalScroll {
+  min-width: 100%;
+  }
 .Tabs--default,
 .Tabs--default .HorizontalScroll__in {
   -webkit-box-pack: center;
@@ -3838,7 +3835,7 @@ body[scheme="client_dark"] {
   padding-top: 8px;
   padding-bottom: 8px;
   }
-.FixedLayout--ios.FixedLayout--top .Tabs::after {
+.FixedLayout--ios.FixedLayout--top .Tabs::before {
   position: absolute;
   right: 0;
   left: 0;
@@ -3848,21 +3845,6 @@ body[scheme="client_dark"] {
   bottom: 0;
   background: #d7d8d9;
   background: var(--separator_common);
-  }
-.FixedLayout--ios.FixedLayout--bottom .Tabs {
-  background: #F9F9F9;
-  background: var(--header_alternate_background);
-  }
-/* Нужно для закрашивания прозрачной области нижнего инсета на iphone x */
-.FixedLayout--ios.FixedLayout--bottom .Tabs--default::after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  content: '';
-  background-color: #F9F9F9;
-  background-color: var(--header_alternate_background);
   }
 .FixedLayout--ios.FixedLayout--bottom .Tabs::before {
   position: absolute;
@@ -3874,6 +3856,25 @@ body[scheme="client_dark"] {
   top: 0;
   background: #d7d8d9;
   background: var(--separator_common);
+  }
+.FixedLayout--ios.FixedLayout--top .Tabs--light.Tabs--buttons {
+  background: #FFFFFF;
+  background: var(--background_content);
+  }
+.FixedLayout--ios.FixedLayout--bottom .Tabs {
+  background: #F9F9F9;
+  background: var(--header_alternate_background);
+  }
+/* Нужно для закрашивания прозрачной области нижнего инсета на iphone x */
+.FixedLayout--ios.FixedLayout--bottom .Tabs::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: #F9F9F9;
+  background-color: var(--header_alternate_background);
   }
 .FixedLayout--ios.FixedLayout--bottom .TabsItem {
     position: relative;
@@ -3890,7 +3891,7 @@ body[scheme="client_dark"] {
   content: '';
   }
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .FixedLayout--ios.FixedLayout--top .Tabs--light::after {
+  .FixedLayout--ios.FixedLayout--top .Tabs::before {
     background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #d7d8d9), color-stop(50%, transparent));
     background: -webkit-linear-gradient(bottom, #d7d8d9 50%, transparent 50%);
     background: -o-linear-gradient(bottom, #d7d8d9 50%, transparent 50%);
@@ -3901,7 +3902,7 @@ body[scheme="client_dark"] {
     background: linear-gradient(to top, var(--separator_common) 50%, transparent 50%);
     }
 
-  .FixedLayout--ios.FixedLayout--bottom .Tabs--light::before {
+  .FixedLayout--ios.FixedLayout--bottom .Tabs::before {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #d7d8d9), color-stop(50%, transparent));
     background: -webkit-linear-gradient(top, #d7d8d9 50%, transparent 50%);
     background: -o-linear-gradient(top, #d7d8d9 50%, transparent 50%);
@@ -5592,10 +5593,10 @@ body[scheme="client_dark"] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -5634,7 +5635,6 @@ body[scheme="client_dark"] {
           box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, .06), 0 0 2px 0 rgba(0, 0, 0, .08);
   }
 .TabbarItem {
-  padding: 10px 0;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
@@ -5643,8 +5643,18 @@ body[scheme="client_dark"] {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  text-align: center;
-  font-size: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   }
 .TabbarItem {
   color: #99a2ad;
@@ -5655,7 +5665,9 @@ body[scheme="client_dark"] {
   color: var(--tabbar_active_icon);
   }
 .TabbarItem__in {
-    display: inline-block;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
     position: relative;
     }
 .TabbarItem__label {
@@ -5685,7 +5697,6 @@ div#root {
   margin: 0;
   padding: 0;
   height: 100%;
-  height: 100vh;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
