@@ -13516,7 +13516,7 @@ function toCss(selector, style) {
 /* 77 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.12.3","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.0","postcss":"^7.0.2","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.12.4","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.0","postcss":"^7.0.2","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 78 */
@@ -15460,9 +15460,7 @@ var PanelHeader = function (_React$Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PanelHeader.__proto__ || Object.getPrototypeOf(PanelHeader)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      ready: false,
-      rightWidth: null,
-      leftWidth: null
+      ready: false
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -15474,12 +15472,13 @@ var PanelHeader = function (_React$Component) {
       this.titleNode = this.document.getElementById('header-title-' + this.context.panel);
       this.rightNode = this.document.getElementById('header-right-' + this.context.panel);
       this.bgNode = this.document.getElementById('header-bg-' + this.context.panel);
+      this.props.getRef && this.props.getRef(this.document.getElementById('header-' + this.context.panel));
       this.setState({ ready: true });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _classnames, _classnames5;
+      var _classnames, _classnames2, _classnames3, _classnames4, _classnames5;
 
       var _props = this.props,
           left = _props.left,
@@ -15487,21 +15486,22 @@ var PanelHeader = function (_React$Component) {
           children = _props.children,
           right = _props.right,
           theme = _props.theme,
-          noShadow = _props.noShadow;
+          noShadow = _props.noShadow,
+          transparent = _props.transparent;
 
       var isPrimitive = typeof children === 'string' || typeof children === 'number';
 
-      return this.state.ready ? [_reactDom2.default.createPortal(_react2.default.createElement('div', { className: (0, _classnames7.default)('PanelHeader-bg', (_classnames = {}, _defineProperty(_classnames, 'PanelHeader-bg--' + theme, true), _defineProperty(_classnames, 'PanelHeader-bg--no-shadow', noShadow), _classnames)) }), this.bgNode), _reactDom2.default.createPortal(_react2.default.createElement(
+      return this.state.ready ? [_reactDom2.default.createPortal(_react2.default.createElement('div', { className: (0, _classnames7.default)('PanelHeader-bg', (_classnames = {}, _defineProperty(_classnames, 'PanelHeader-bg--' + theme, true), _defineProperty(_classnames, 'PanelHeader-bg--tp', transparent), _defineProperty(_classnames, 'PanelHeader-bg--no-shadow', noShadow), _classnames)) }), this.bgNode), _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: (0, _classnames7.default)('PanelHeader-left-in', _defineProperty({}, 'PanelHeader-left-in--' + theme, true)) },
+        { className: (0, _classnames7.default)('PanelHeader-left-in', (_classnames2 = {}, _defineProperty(_classnames2, 'PanelHeader-left-in--' + theme, true), _defineProperty(_classnames2, 'PanelHeader-left-in--tp', transparent), _classnames2)) },
         left
       ), this.leftNode), osname === _platform.IOS && _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: (0, _classnames7.default)('PanelHeader-addon', _defineProperty({}, 'PanelHeader-addon--' + theme, true)) },
+        { className: (0, _classnames7.default)('PanelHeader-addon', (_classnames3 = {}, _defineProperty(_classnames3, 'PanelHeader-addon--' + theme, true), _defineProperty(_classnames3, 'PanelHeader-addon--tp', transparent), _classnames3)) },
         addon
       ), this.addonNode), _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: (0, _classnames7.default)('PanelHeader-content', _defineProperty({}, 'PanelHeader-content--' + theme, true)) },
+        { className: (0, _classnames7.default)('PanelHeader-content', (_classnames4 = {}, _defineProperty(_classnames4, 'PanelHeader-content--' + theme, true), _defineProperty(_classnames4, 'PanelHeader-content--tp', transparent), _classnames4)) },
         isPrimitive ? _react2.default.createElement(
           'span',
           null,
@@ -15509,7 +15509,7 @@ var PanelHeader = function (_React$Component) {
         ) : children
       ), this.titleNode), _reactDom2.default.createPortal(_react2.default.createElement(
         'div',
-        { className: (0, _classnames7.default)('PanelHeader-right', (_classnames5 = {}, _defineProperty(_classnames5, 'PanelHeader-right--' + theme, true), _defineProperty(_classnames5, 'PanelHeader-right--vkapps', this.webviewType === 'vkapps'), _classnames5)) },
+        { className: (0, _classnames7.default)('PanelHeader-right', (_classnames5 = {}, _defineProperty(_classnames5, 'PanelHeader-right--' + theme, true), _defineProperty(_classnames5, 'PanelHeader-right--tp', transparent), _defineProperty(_classnames5, 'PanelHeader-right--vkapps', this.webviewType === 'vkapps'), _classnames5)) },
         this.webviewType === 'internal' ? right : null
       ), this.rightNode)] : null;
     }
@@ -15541,10 +15541,16 @@ PanelHeader.propTypes = {
    * мажорной версии.
    */
   theme: _propTypes2.default.oneOf(['light', 'alternate', 'brand']),
-  noShadow: _propTypes2.default.bool
+  /**
+   * @ignore
+   */
+  transparent: _propTypes2.default.bool,
+  noShadow: _propTypes2.default.bool,
+  getRef: _propTypes2.default.func
 };
 PanelHeader.defaultProps = {
   theme: 'brand',
+  transparent: false,
   noShadow: false
 };
 PanelHeader.contextTypes = {
@@ -16128,7 +16134,8 @@ var View = function (_Component) {
                     'PanelHeader__in--swipe-back-success': _this4.state.swipingBackFinish === true,
                     'PanelHeader__in--swipe-back-failed': _this4.state.swipingBackFinish === false
                   }),
-                  key: panel.props.id
+                  key: panel.props.id,
+                  id: 'header-' + panel.props.id
                 },
                 _react2.default.createElement('div', {
                   className: 'PanelHeader__bg',
@@ -53611,6 +53618,13 @@ module.exports = {
             'description': '',
             'tags': {},
             'name': 'children'
+        },
+        {
+            'type': { 'name': 'func' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'getRef'
         },
         {
             'type': { 'name': 'node' },

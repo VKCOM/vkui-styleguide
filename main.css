@@ -1145,6 +1145,9 @@ body[scheme="client_dark"] {
 .HeaderButton--android .Icon--24 {
     padding: 12px 0;
     }
+.HeaderButton--android .Tappable__waves {
+    border-radius: 50%;
+    }
 .HeaderButton--android.Tappable--active {
   background-color: rgba(255, 255, 255, .1);
   }
@@ -1390,7 +1393,8 @@ body[scheme="client_dark"] {
   z-index: 1;
   }
 .PanelHeader--ios .PanelHeader__in--prev .PanelHeader__left-in,
-.PanelHeader--ios .PanelHeader__in--prev .PanelHeader__right {
+.PanelHeader--ios .PanelHeader__in--prev .PanelHeader__right,
+.PanelHeader--ios .PanelHeader__in--prev .PanelHeader-bg::after {
   -webkit-animation: animation-ios-header-fade-out .6s cubic-bezier(.36, .66, .04, 1);
           animation: animation-ios-header-fade-out .6s cubic-bezier(.36, .66, .04, 1);
   -webkit-animation: animation-ios-header-fade-out .6s var(--ios-easing);
@@ -1572,17 +1576,93 @@ body[scheme="client_dark"] {
     opacity: 0;
     }
   }
+.PanelHeader--android .PanelHeader__in--prev {
+  -webkit-animation: animation-android-header-prev .3s cubic-bezier(.4, 0, .2, 1);
+          animation: animation-android-header-prev .3s cubic-bezier(.4, 0, .2, 1);
+  -webkit-animation: animation-android-header-prev .3s var(--android-easing);
+          animation: animation-android-header-prev .3s var(--android-easing);
+  }
 .PanelHeader--android .PanelHeader__in--next ~ .PanelHeader__in--prev {
-  -webkit-animation: animation-android-prev-back .3s cubic-bezier(.4, 0, .2, 1);
-          animation: animation-android-prev-back .3s cubic-bezier(.4, 0, .2, 1);
-  -webkit-animation: animation-android-prev-back .3s var(--android-easing);
-          animation: animation-android-prev-back .3s var(--android-easing);
+  -webkit-animation: animation-android-header-prev-back .3s cubic-bezier(.4, 0, .2, 1);
+          animation: animation-android-header-prev-back .3s cubic-bezier(.4, 0, .2, 1);
+  -webkit-animation: animation-android-header-prev-back .3s var(--android-easing);
+          animation: animation-android-header-prev-back .3s var(--android-easing);
   }
 .PanelHeader--android .PanelHeader__in--prev ~ .PanelHeader__in--next {
-  -webkit-animation: animation-android-next-forward .3s cubic-bezier(.4, 0, .2, 1);
-          animation: animation-android-next-forward .3s cubic-bezier(.4, 0, .2, 1);
-  -webkit-animation: animation-android-next-forward .3s var(--android-easing);
-          animation: animation-android-next-forward .3s var(--android-easing);
+  -webkit-animation: animation-android-header-next-forward .3s cubic-bezier(.4, 0, .2, 1);
+          animation: animation-android-header-next-forward .3s cubic-bezier(.4, 0, .2, 1);
+  -webkit-animation: animation-android-header-next-forward .3s var(--android-easing);
+          animation: animation-android-header-next-forward .3s var(--android-easing);
+  }
+@-webkit-keyframes animation-android-header-prev {
+  from {
+    opacity: 1;
+    }
+
+  to {
+    opacity: 0;
+    }
+  }
+@keyframes animation-android-header-prev {
+  from {
+    opacity: 1;
+    }
+
+  to {
+    opacity: 0;
+    }
+  }
+@-webkit-keyframes animation-android-header-prev-back {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    }
+  }
+@keyframes animation-android-header-prev-back {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    }
+  }
+@-webkit-keyframes animation-android-header-next-forward {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    }
+  }
+@keyframes animation-android-header-next-forward {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    }
   }
 .PanelHeader {
   position: relative;
@@ -1881,24 +1961,18 @@ body[scheme="client_dark"] {
 /*
   Темы
  */
-.PanelHeader-bg--brand {
-  background: #5181B8;
-  background: var(--header_background);
-  }
 .PanelHeader-content--brand,
 .PanelHeader-left-in--brand,
 .PanelHeader-addon--brand,
-.PanelHeader-right--brand {
+.PanelHeader-right--brand,
+.PanelHeader-bg--brand {
   color: #FFFFFF;
   color: var(--header_text);
   background: #5181B8;
   background: var(--header_background);
   }
 .PanelHeader-bg--light, /*TODO deprecated. Alias for alternate. Remove in 3.0.0*/
-.PanelHeader-bg--alternate {
-  background: #F9F9F9;
-  background: var(--header_alternate_background);
-  }
+.PanelHeader-bg--alternate,
 .PanelHeader-left-in--light, /*TODO deprecated. Alias for alternate. Remove in 3.0.0*/
 .PanelHeader-addon--light, /*TODO deprecated. Alias for alternate. Remove in 3.0.0*/
 .PanelHeader-right--light, /*TODO deprecated. Alias for alternate. Remove in 3.0.0*/
@@ -1914,6 +1988,16 @@ body[scheme="client_dark"] {
 .PanelHeader-content--alternate {
   color: #000000;
   color: var(--text_primary);
+  }
+/*
+  Прозрачность
+ */
+.PanelHeader-left-in--tp,
+.PanelHeader-addon--tp,
+.PanelHeader-right--tp,
+.PanelHeader-bg--tp,
+.PanelHeader-content--tp {
+  background: transparent;
   }
 .InnerScroll {
   overflow: auto;
