@@ -13516,7 +13516,7 @@ function toCss(selector, style) {
 /* 77 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.12.4","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.0","postcss":"^7.0.2","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.12.5","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","@vkontakte/vkui-connect":"^1.1.2"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.0","postcss":"^7.0.2","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 78 */
@@ -15708,7 +15708,7 @@ var View = function (_Component) {
           scrolls: isBack ? (0, _removeObjectKeys2.default)(_this.state.scrolls, [prevPanel]) : _this.state.scrolls
         }, function () {
           isBack && this.window.scrollTo(0, this.state.scrolls[activePanel]);
-          this.props.onTransition && this.props.onTransition();
+          this.props.onTransition && this.props.onTransition({ isBack: isBack, from: prevPanel, to: activePanel });
         });
       }
     };
@@ -15851,6 +15851,8 @@ var View = function (_Component) {
 
       // Закончилась анимация свайпа назад
       if (this.props.activePanel !== nextProps.activePanel && this.state.swipingBack) {
+        var nextPanel = nextProps.activePanel;
+        var prevPanel = this.props.activePanel;
         this.setState({
           swipeBackPrevPanel: null,
           swipeBackNextPanel: null,
@@ -15858,13 +15860,13 @@ var View = function (_Component) {
           swipingBackFinish: null,
           swipebackStartX: 0,
           swipeBackShift: 0,
-          activePanel: nextProps.activePanel,
-          visiblePanels: [nextProps.activePanel],
+          activePanel: nextPanel,
+          visiblePanels: [nextPanel],
           scrolls: (0, _removeObjectKeys2.default)(this.state.scrolls, [this.state.swipeBackPrevPanel])
         }, function () {
           _this2.document.dispatchEvent(new _this2.window.CustomEvent(transitionEndEventName));
           window.scrollTo(0, _this2.state.scrolls[_this2.state.activePanel]);
-          _this2.props.onTransition && _this2.props.onTransition();
+          _this2.props.onTransition && _this2.props.onTransition({ isBack: true, from: prevPanel, to: nextPanel });
         });
       }
     }
@@ -16239,8 +16241,17 @@ View.propTypes = {
   children: _propTypes2.default.node,
   popout: _propTypes2.default.node,
   onTransition: _propTypes2.default.func,
+  /**
+   * @ignore
+   */
   onSwipeBack: _propTypes2.default.func,
+  /**
+   * @ignore
+   */
   onSwipeBackStart: _propTypes2.default.func,
+  /**
+   * @ignore
+   */
   history: _propTypes2.default.arrayOf(_propTypes2.default.string),
 
   /**
@@ -54023,34 +54034,6 @@ module.exports = {
             'name': 'header'
         },
         {
-            'type': {
-                'name': 'arrayOf',
-                'value': { 'name': 'string' }
-            },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '[]',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'history'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onSwipeBack'
-        },
-        {
-            'type': { 'name': 'func' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'onSwipeBackStart'
-        },
-        {
             'type': { 'name': 'func' },
             'required': false,
             'description': '',
@@ -54289,16 +54272,18 @@ var Root = function (_React$Component) {
 
       if (['root-android-animation-hide-back', 'root-android-animation-show-forward', 'root-ios-animation-hide-back', 'root-ios-animation-show-forward'].indexOf(e.animationName) > -1 || e.manual) {
         var isBack = _this.state.isBack;
+        var prevView = _this.state.prevView;
+        var nextView = _this.state.nextView;
         _this.setState({
-          activeView: _this.state.nextView,
+          activeView: nextView,
           prevView: null,
           nextView: null,
-          visibleViews: [_this.state.nextView],
+          visibleViews: [nextView],
           transition: false,
           isBack: undefined
         }, function () {
           isBack ? _this.window.scrollTo(0, _this.state.scrolls[_this.state.activeView]) : _this.window.scrollTo(0, 0);
-          _this.props.onTransition && _this.props.onTransition(_this.state.isBack);
+          _this.props.onTransition && _this.props.onTransition({ isBack: isBack, from: prevView, to: nextView });
         });
       }
     };
