@@ -15276,8 +15276,6 @@ Spinner.propTypes = {
   className: _propTypes2.default.string
 };
 Spinner.defaultProps = {
-  on: true,
-  progress: null,
   size: 'regular'
 };
 exports.default = Spinner;
@@ -48762,24 +48760,6 @@ module.exports = {
             'description': '',
             'tags': {},
             'name': 'className'
-        },
-        {
-            'defaultValue': {
-                'value': 'true',
-                'computed': false
-            },
-            'description': '',
-            'tags': {},
-            'name': 'on'
-        },
-        {
-            'defaultValue': {
-                'value': 'null',
-                'computed': false
-            },
-            'description': '',
-            'tags': {},
-            'name': 'progress'
         },
         {
             'type': {
