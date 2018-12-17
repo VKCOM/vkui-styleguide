@@ -513,7 +513,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = getClassname;
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _classnames2 = __webpack_require__(6);
 
@@ -1866,34 +1866,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.platform = platform;
-var ANDROID = exports.ANDROID = 'android';
-var IOS = exports.IOS = 'ios';
-
-var ua = void 0;
-var platformName = void 0;
-
-function platform(useragent) {
-  if (!ua) {
-    ua = useragent || navigator && navigator.userAgent || '';
-  }
-  if (!platformName) {
-    platformName = /android/i.test(ua) ? ANDROID : IOS;
-  }
-
-  return platformName;
-}
-
-/***/ }),
-/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3923,7 +3895,7 @@ Markdown_Markdown.propTypes = {
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3958,6 +3930,34 @@ function getType(prop) {
  */
 function showSpaces(string) {
   return string.replace(/^\s|\s$/g, '␣');
+}
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.platform = platform;
+var ANDROID = exports.ANDROID = 'android';
+var IOS = exports.IOS = 'ios';
+
+var ua = void 0;
+var platformName = void 0;
+
+function platform(useragent) {
+  if (!ua) {
+    ua = useragent || navigator && navigator.userAgent || '';
+  }
+  if (!platformName) {
+    platformName = /android/i.test(ua) ? ANDROID : IOS;
+  }
+
+  return platformName;
 }
 
 /***/ }),
@@ -4037,7 +4037,7 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _offset = __webpack_require__(300);
 
@@ -5539,7 +5539,7 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 var Styled = __webpack_require__(2);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Markdown/index.js + 20 modules
-var Markdown = __webpack_require__(12);
+var Markdown = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Name/index.js + 1 modules
 var Name = __webpack_require__(28);
@@ -5788,7 +5788,7 @@ var prop_types = __webpack_require__(1);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Markdown/index.js + 20 modules
-var Markdown = __webpack_require__(12);
+var Markdown = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/node_modules/lodash/map.js
 var map = __webpack_require__(146);
@@ -6395,7 +6395,7 @@ var _propTypes = __webpack_require__(3);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _transitionEvents = __webpack_require__(36);
 
@@ -13500,7 +13500,7 @@ function toCss(selector, style) {
 /* 76 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.15.4","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","@vkontakte/vkui-connect":"^1.1.2","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.3","postcss":"^7.0.2","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.15.5","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"jest":"^23.1.0","loader-utils":"^1.1.0","mini-css-extract-plugin":"^0.4.0","mini-html-webpack-plugin":"^0.2.3","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","schema-utils":"^0.4.3","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","webpack-stats-plugin":"^0.1.4","@vkontakte/vkui-connect":"^1.1.2","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.3","postcss":"^7.0.2","postcss-custom-properties":"^5.0.2","postcss-import":"^9.1.0","postcss-loader":"^2.1.5","autoprefixer":"^7.2.3","babel-core":"^6.23.1","babel-eslint":"^8.2.3","babel-loader":"^7.1.3","babel-plugin-transform-class-properties":"^6.23.0","babel-plugin-transform-object-rest-spread":"^6.26.0","babel-preset-env":"^1.7.0","babel-preset-react":"^6.23.0","css-loader":"^0.27.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","style-loader":"^0.13.2","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css' && jest"},"pre-commit":["test"]};
 
 /***/ }),
 /* 77 */
@@ -15404,7 +15404,7 @@ var _classnames6 = __webpack_require__(6);
 
 var _classnames7 = _interopRequireDefault(_classnames6);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -15628,7 +15628,7 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _Touch = __webpack_require__(29);
 
@@ -18527,13 +18527,13 @@ function isnan (val) {
 /* harmony import */ var rsg_components_Argument__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32);
 /* harmony import */ var rsg_components_Code__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(19);
 /* harmony import */ var rsg_components_JsDoc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(35);
-/* harmony import */ var rsg_components_Markdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
+/* harmony import */ var rsg_components_Markdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(11);
 /* harmony import */ var rsg_components_Name__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(28);
 /* harmony import */ var rsg_components_Type__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(24);
 /* harmony import */ var rsg_components_Text__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(20);
 /* harmony import */ var rsg_components_Para__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(34);
 /* harmony import */ var rsg_components_Table__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(55);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(13);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(12);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -37764,7 +37764,7 @@ var _Logo = __webpack_require__(158);
 
 var _Logo2 = _interopRequireDefault(_Logo);
 
-var _Markdown = __webpack_require__(12);
+var _Markdown = __webpack_require__(11);
 
 var _Markdown2 = _interopRequireDefault(_Markdown);
 
@@ -40197,7 +40197,7 @@ var PropsRenderer = __webpack_require__(108);
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Props/index.js
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Markdown/index.js + 20 modules
-var Markdown = __webpack_require__(12);
+var Markdown = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/index.js + 1 modules
 var Argument = __webpack_require__(32);
@@ -43051,8 +43051,6 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _platform = __webpack_require__(11);
-
 var _classnames = __webpack_require__(6);
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -43067,11 +43065,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var osname = (0, _platform.platform)();
 var baseClassName = (0, _getClassName2.default)('Textarea');
 
-var Textarea = function (_Component) {
-  _inherits(Textarea, _Component);
+var Textarea = function (_PureComponent) {
+  _inherits(Textarea, _PureComponent);
 
   function Textarea(props) {
     _classCallCheck(this, Textarea);
@@ -43183,7 +43180,7 @@ var Textarea = function (_Component) {
           ref: this.getRef,
           style: { height: height }
         })),
-        osname === _platform.ANDROID && _react2.default.createElement('div', { className: 'Textarea-underline' })
+        _react2.default.createElement('div', { className: 'Textarea__border' })
       );
     }
   }, {
@@ -43194,7 +43191,7 @@ var Textarea = function (_Component) {
   }]);
 
   return Textarea;
-}(_react.Component);
+}(_react.PureComponent);
 
 Textarea.propTypes = {
   style: _propTypes2.default.object,
@@ -43274,10 +43271,6 @@ module.exports = {
             },
             'required': false,
             'description': '',
-            'defaultValue': {
-                'value': '\'left\'',
-                'computed': false
-            },
             'tags': {},
             'name': 'alignment'
         },
@@ -43368,8 +43361,6 @@ var _dropdown = __webpack_require__(82);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _platform = __webpack_require__(11);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -43382,7 +43373,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var osname = (0, _platform.platform)();
 var baseClassName = (0, _getClassName2.default)('Select');
 
 var SelectMimicry = function (_Component) {
@@ -43424,7 +43414,7 @@ var SelectMimicry = function (_Component) {
           ),
           _react2.default.createElement(_dropdown2.default, null)
         ),
-        osname === _platform.ANDROID && _react2.default.createElement('div', { className: 'Select-underline' })
+        _react2.default.createElement('div', { className: 'Select__border' })
       );
     }
   }]);
@@ -43442,8 +43432,7 @@ SelectMimicry.propTypes = {
   getRootRef: _propTypes2.default.func
 };
 SelectMimicry.defaultProps = {
-  tabIndex: 0,
-  alignment: 'left'
+  tabIndex: 0
 };
 exports.default = SelectMimicry;
 
@@ -43631,7 +43620,7 @@ var _dropdown = __webpack_require__(82);
 
 var _dropdown2 = _interopRequireDefault(_dropdown);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43839,10 +43828,6 @@ module.exports = {
             },
             'required': false,
             'description': '',
-            'defaultValue': {
-                'value': '\'left\'',
-                'computed': false
-            },
             'tags': {},
             'name': 'alignment'
         },
@@ -43908,59 +43893,11 @@ module.exports = {
             },
             'required': false,
             'description': '',
-            'defaultValue': {
-                'value': '\'default\'',
-                'computed': false
-            },
             'tags': {},
             'name': 'status'
         },
         {
-            'type': {
-                'name': 'enum',
-                'value': [
-                    {
-                        'value': '\'text\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'password\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'date\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'datetime-local\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'time\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'month\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'email\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'number\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'tel\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'url\'',
-                        'computed': false
-                    }
-                ]
-            },
+            'type': { 'name': 'string' },
             'required': false,
             'description': '',
             'defaultValue': {
@@ -44010,11 +43947,9 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _classnames = __webpack_require__(6);
+var _classnames2 = __webpack_require__(6);
 
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _platform = __webpack_require__(11);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44028,11 +43963,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var osname = (0, _platform.platform)();
 var baseClassName = (0, _getClassName2.default)('Input');
 
-var Input = function (_Component) {
-  _inherits(Input, _Component);
+var Input = function (_PureComponent) {
+  _inherits(Input, _PureComponent);
 
   function Input() {
     _classCallCheck(this, Input);
@@ -44043,46 +43977,30 @@ var Input = function (_Component) {
   _createClass(Input, [{
     key: 'render',
     value: function render() {
+      var _classnames;
+
       var _props = this.props,
           alignment = _props.alignment,
-          placeholder = _props.placeholder,
           status = _props.status,
           getRef = _props.getRef,
           className = _props.className,
           getRootRef = _props.getRootRef,
-          restProps = _objectWithoutProperties(_props, ['alignment', 'placeholder', 'status', 'getRef', 'className', 'getRootRef']);
-
-      var modifiers = _defineProperty({
-        'Input--left': alignment === 'left',
-        'Input--center': alignment === 'center',
-        'Input--right': alignment === 'right'
-      }, 'Input--s-' + this.props.status, true);
-
-      var customPlaceolder = ['date', 'datetime-local', 'time', 'month'].indexOf(this.props.type) > -1 && this.context.isWebView ? this.props.placeholder : null;
+          restProps = _objectWithoutProperties(_props, ['alignment', 'status', 'getRef', 'className', 'getRootRef']);
 
       return _react2.default.createElement(
         'div',
-        { className: (0, _classnames2.default)(baseClassName, modifiers, className), ref: getRootRef },
-        _react2.default.createElement('input', _extends({}, restProps, {
-          className: 'Input__el',
-          ref: getRef,
-          placeholder: customPlaceolder ? null : this.props.placeholder
-        })),
-        osname === _platform.ANDROID && _react2.default.createElement('div', { className: 'Input-underline' }),
-        customPlaceolder && !this.value && _react2.default.createElement(
-          'div',
-          { className: 'Input__placeholder' },
-          this.props.placeholder
-        )
+        { className: (0, _classnames3.default)(baseClassName, (_classnames = {}, _defineProperty(_classnames, 'Input--' + alignment, alignment), _defineProperty(_classnames, 'Input--s-' + status, status), _classnames), className), ref: getRootRef },
+        _react2.default.createElement('input', _extends({}, restProps, { className: 'Input__el', ref: getRef })),
+        _react2.default.createElement('div', { className: 'Input__border' })
       );
     }
   }]);
 
   return Input;
-}(_react.Component);
+}(_react.PureComponent);
 
 Input.propTypes = {
-  type: _propTypes2.default.oneOf(['text', 'password', 'date', 'datetime-local', 'time', 'month', 'email', 'number', 'tel', 'url']),
+  type: _propTypes2.default.string,
   alignment: _propTypes2.default.oneOf(['left', 'center', 'right']),
   value: _propTypes2.default.string,
   defaultValue: _propTypes2.default.string,
@@ -44094,12 +44012,7 @@ Input.propTypes = {
   className: _propTypes2.default.string
 };
 Input.defaultProps = {
-  type: 'text',
-  alignment: 'left',
-  status: 'default'
-};
-Input.contextTypes = {
-  isWebView: _propTypes2.default.bool
+  type: 'text'
 };
 exports.default = Input;
 
@@ -44203,7 +44116,7 @@ var _classnames = __webpack_require__(6);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _done = __webpack_require__(86);
 
@@ -44374,7 +44287,7 @@ var _classnames = __webpack_require__(6);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45975,7 +45888,7 @@ var _Tabs = __webpack_require__(84);
 
 var _Tabs2 = _interopRequireDefault(_Tabs);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46142,7 +46055,7 @@ var _classnames = __webpack_require__(6);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47045,7 +46958,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _SearchIOS = __webpack_require__(213);
 
@@ -49889,7 +49802,7 @@ var _Touch = __webpack_require__(29);
 
 var _Touch2 = _interopRequireDefault(_Touch);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _chevron = __webpack_require__(244);
 
@@ -52586,7 +52499,7 @@ var _classnames = __webpack_require__(6);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _transitionEvents = __webpack_require__(36);
 
@@ -53913,7 +53826,7 @@ var _getClassName = __webpack_require__(7);
 
 var _getClassName2 = _interopRequireDefault(_getClassName);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _Tappable = __webpack_require__(16);
 
@@ -54765,7 +54678,7 @@ var _transitionEvents = __webpack_require__(36);
 
 var _transitionEvents2 = _interopRequireDefault(_transitionEvents);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -69138,7 +69051,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _platform = __webpack_require__(11);
+var _platform = __webpack_require__(13);
 
 var _cancel = __webpack_require__(77);
 

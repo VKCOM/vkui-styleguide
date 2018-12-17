@@ -4064,7 +4064,7 @@ body[scheme="client_dark"] {
       }
 
 .Cell__indicator + .Cell__aside:not(:empty) {
-      padding-left: .5em;
+      padding-left: 8px;
       }
 
 .Cell__dragger {
@@ -4129,7 +4129,7 @@ body[scheme="client_dark"] {
               flex-shrink: 0;
       }
 
-.List--ios .Cell__chevron {
+.Cell--ios .Cell__chevron {
     color: #c4c8cc;
     color: var(--icon_tertiary);
     }
@@ -4248,7 +4248,7 @@ body[scheme="client_dark"] {
           }
 
 .Cell--ios .Cell__main {
-      padding: 12px .5em 12px 0;
+      padding: 11px 8px 11px 0;
       }
 
 .Cell--ios .Cell__description:not(:empty) {
@@ -4293,12 +4293,12 @@ body[scheme="client_dark"] {
       }
 
 .Cell--android .Cell__main {
-      padding: 14px .5em 14px 0;
+      padding: 14px 8px 14px 0;
       line-height: 20px;
       }
 
 .Cell--android.Cell--l .Cell__main {
-      padding: 12px .5em 12px 0;
+      padding: 12px 8px 12px 0;
       }
 
 .Cell--android .Cell__description:not(:empty) {
@@ -5442,6 +5442,9 @@ body[scheme="client_dark"] {
   color: #000000;
   color: var(--text_primary);
   padding: 12px;
+  position: relative;
+  z-index: 2;
+  background: transparent;
   }
 
 .Input__el:disabled {
@@ -5468,37 +5471,12 @@ body[scheme="client_dark"] {
   color: var(--field_text_placeholder);
   }
 
-.Input__placeholder {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: calc(100% - 20px);
-  color: #909499;
-  color: var(--field_text_placeholder);
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 12px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  }
-
 .Input--ios {
   font-family: -apple-system, Helvetica Neue, Arial;
   font-family: var(--font-ios);
   }
 
-.Input--ios .Input__el {
-    border-radius: 10px;
-    background-color: #f2f3f5;
-    background-color: var(--field_background);
-    border: solid .5px rgba(0, 0, 0, 0.12);
-    border: solid .5px var(--field_border);
-    }
-
-.Input--ios .Input__el:focus {
+.Input--ios .Input__el:focus ~ .Input__border {
     border-color: #528bcc;
     border-color: var(--accent);
     }
@@ -5514,11 +5492,11 @@ body[scheme="client_dark"] {
     background-color: var(--field_background);
     }
 
-.Input--android .Input__el:disabled ~ .Input-underline {
+.Input--android .Input__el:disabled ~ .Input__border {
     opacity: .6;
     }
 
-.Input--android .Input__el:focus ~ .Input-underline::before {
+.Input--android .Input__el:focus ~ .Input__border::before {
     -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
             transform: scaleX(1);
@@ -5661,6 +5639,29 @@ body[scheme="client_dark"] {
     min-height: 86px;
     max-height: 198px;
     border: none;
+    z-index: 2;
+    position: relative;
+    background: transparent;
+    }
+
+.Textarea textarea::-webkit-input-placeholder {
+    color: #909499;
+    color: var(--field_text_placeholder);
+    }
+
+.Textarea textarea:-ms-input-placeholder {
+    color: #909499;
+    color: var(--field_text_placeholder);
+    }
+
+.Textarea textarea::-ms-input-placeholder {
+    color: #909499;
+    color: var(--field_text_placeholder);
+    }
+
+.Textarea textarea::placeholder {
+    color: #909499;
+    color: var(--field_text_placeholder);
     }
 
 .Textarea textarea:disabled {
@@ -5674,34 +5675,9 @@ body[scheme="client_dark"] {
 .Textarea--ios textarea {
     font-family: -apple-system, Helvetica Neue, Arial;
     font-family: var(--font-ios);
-    border-radius: 10px;
-    background-color: #f2f3f5;
-    background-color: var(--field_background);
-    border: solid .5px rgba(0, 0, 0, 0.12);
-    border: solid .5px var(--field_border);
     }
 
-.Textarea--ios textarea::-webkit-input-placeholder {
-      color: #909499;
-      color: var(--field_text_placeholder);
-      }
-
-.Textarea--ios textarea:-ms-input-placeholder {
-      color: #909499;
-      color: var(--field_text_placeholder);
-      }
-
-.Textarea--ios textarea::-ms-input-placeholder {
-      color: #909499;
-      color: var(--field_text_placeholder);
-      }
-
-.Textarea--ios textarea::placeholder {
-      color: #909499;
-      color: var(--field_text_placeholder);
-      }
-
-.Textarea--ios textarea:focus {
+.Textarea--ios textarea:focus ~ .Textarea__border {
     border-color: #528bcc;
     border-color: var(--accent);
     }
@@ -5719,36 +5695,16 @@ body[scheme="client_dark"] {
     padding-bottom: 4px;
     }
 
-.Textarea--android textarea::-webkit-input-placeholder {
-      color: #909499;
-      color: var(--field_text_placeholder);
-      }
-
-.Textarea--android textarea:-ms-input-placeholder {
-      color: #909499;
-      color: var(--field_text_placeholder);
-      }
-
-.Textarea--android textarea::-ms-input-placeholder {
-      color: #909499;
-      color: var(--field_text_placeholder);
-      }
-
-.Textarea--android textarea::placeholder {
-      color: #909499;
-      color: var(--field_text_placeholder);
-      }
-
 .Textarea--android textarea:focus {
     border-color: #528bcc;
     border-color: var(--accent);
     }
 
-.Textarea--android textarea:disabled ~ .Textarea-underline {
+.Textarea--android textarea:disabled ~ .Textarea__border {
     opacity: .6;
     }
 
-.Textarea--android textarea:focus ~ .Textarea-underline::before {
+.Textarea--android textarea:focus ~ .Textarea__border::before {
       -webkit-transform: scaleX(1);
           -ms-transform: scaleX(1);
               transform: scaleX(1);
@@ -6039,8 +5995,9 @@ body[scheme="client_dark"] {
     background-color: var(--field_background);
     }
 
-.Select--android select:focus ~ .Select-underline::before,
-  .Select--android.Select--mimicry:focus .Select-underline::before {
+.Select--android select:focus ~ .Select__border::before,
+  .Select--android.Select--mimicry:focus .Select__border::before,
+  .Select--android.Select--mimicry:active .Select__border::before {
     -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
             transform: scaleX(1);
@@ -6907,9 +6864,9 @@ a:focus {
   outline: none;
 }
 
-.Input-underline,
-.Select-underline,
-.Textarea-underline {
+.Input--android .Input__border,
+.Select--android .Select__border,
+.Textarea--android .Textarea__border {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -6921,13 +6878,13 @@ a:focus {
   z-index: 1;
 }
 
-.Textarea-underline {
+.Textarea--android .Textarea__border {
   position: relative;
   }
 
-.Input-underline::after,
-.Select-underline::after,
-.Textarea-underline::after {
+.Input--android .Input__border::after,
+.Select--android .Select__border::after,
+.Textarea--android .Textarea__border::after {
   position: absolute;
   top: -1px;
   height: 7px;
@@ -6939,9 +6896,9 @@ a:focus {
   z-index: 2;
 }
 
-.Input-underline::before,
-.Select-underline::before,
-.Textarea-underline::before {
+.Input--android .Input__border::before,
+.Select--android .Select__border::before,
+.Textarea--android .Textarea__border::before {
   position: absolute;
   height: 8px;
   width: 100%;
@@ -6965,6 +6922,54 @@ a:focus {
   transition: transform .1s var(--android-easing);
   transition: transform .1s var(--android-easing), -webkit-transform .1s var(--android-easing);
 }
+
+.Input--ios .Input__border,
+.Textarea--ios .Textarea__border,
+.Select--ios .Select__border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--field_border);
+  background: #f2f3f5;
+  background: var(--field_background);
+  content: '';
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 1;
+  -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+          transform-origin: left top;
+  }
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 2dppx) {
+  .Input--ios .Input__border,
+  .Textarea--ios .Textarea__border,
+  .Select--ios .Select__border {
+    -webkit-transform: scale(.5);
+        -ms-transform: scale(.5);
+            transform: scale(.5);
+    border-radius: 20px;
+    width: 200%;
+    height: 200%;
+    }
+  }
+
+@media (-webkit-min-device-pixel-ratio: 3), (-o-min-device-pixel-ratio: 3/1), (min-resolution: 3dppx) {
+  .Input--ios .Input__border,
+  .Textarea--ios .Textarea__border,
+  .Select--ios .Select__border {
+    -webkit-transform: scale(.32);
+        -ms-transform: scale(.32);
+            transform: scale(.32);
+    border-radius: calc(10px * 3.125);
+    width: 312.5%;
+    height: 312.5%;
+    }
+  }
 
 /* stylelint-disable */
 
