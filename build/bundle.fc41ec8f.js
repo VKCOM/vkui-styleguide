@@ -1927,6 +1927,8 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -2078,7 +2080,7 @@ function (_Component) {
 
         _this.setState(function (state) {
           return {
-            clicks: Object.assign({}, state.clicks, _defineProperty({}, key, {
+            clicks: _objectSpread({}, state.clicks, _defineProperty({}, key, {
               x: Math.round(x - left),
               y: Math.round(y - top)
             }))
@@ -2087,7 +2089,8 @@ function (_Component) {
 
         _this.wavesTimeout = setTimeout(function () {
           _this.setState(function (state) {
-            var clicks = Object.assign({}, state.clicks);
+            var clicks = _objectSpread({}, state.clicks);
+
             delete clicks[key];
             return {
               clicks: clicks
@@ -4376,6 +4379,8 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -4429,7 +4434,7 @@ function (_Component) {
         isPressed: true
       }; // Вызываем нужные колбеки из props
 
-      var outputEvent = Object.assign({}, _this.gesture, {
+      var outputEvent = _objectSpread({}, _this.gesture, {
         originalEvent: e
       });
 
@@ -4487,7 +4492,7 @@ function (_Component) {
           _this.gesture.shiftXAbs = shiftXAbs;
           _this.gesture.shiftYAbs = shiftYAbs; // Вызываем нужные колбеки из props
 
-          var outputEvent = Object.assign({}, _this.gesture, {
+          var outputEvent = _objectSpread({}, _this.gesture, {
             originalEvent: e
           });
 
@@ -4515,7 +4520,7 @@ function (_Component) {
 
       if (isPressed) {
         // Вызываем нужные колбеки из props
-        var outputEvent = Object.assign({}, _this.gesture, {
+        var outputEvent = _objectSpread({}, _this.gesture, {
           originalEvent: e
         });
 
@@ -5106,7 +5111,7 @@ TextRenderer.defaultProps = {
 /* 26 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.16.1","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.3"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.16.2","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.3"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 27 */
@@ -6343,10 +6348,16 @@ var platform = __webpack_require__(6);
 var Touch = __webpack_require__(17);
 
 // CONCATENATED MODULE: ./src/lib/removeObjectKeys.js
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function removeObjectKeys() {
   var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var keys = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  var newObj = Object.assign({}, obj);
+
+  var newObj = _objectSpread({}, obj);
+
   keys.forEach(function (key) {
     return delete newObj[key];
   });
@@ -6360,6 +6371,8 @@ var PanelHeader = __webpack_require__(95);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transitionEndEventName", function() { return transitionEndEventName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return View_View; });
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function View_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { View_defineProperty(target, key, source[key]); }); } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -6377,7 +6390,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function View_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -6406,9 +6419,9 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(View).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "refsStore", {});
+    View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "refsStore", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "transitionEndHandler", function () {
+    View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "transitionEndHandler", function () {
       var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
         manual: true
       };
@@ -6439,14 +6452,14 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "swipingBackTransitionEndHandler", function (e) {
+    View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "swipingBackTransitionEndHandler", function (e) {
       // indexOf because of vendor prefixes in old browsers
       if (e.propertyName.indexOf('transform') >= 0 && e.target.classList.contains('View__panel--swipe-back-next')) {
         _this.state.swipingBackFinish ? _this.onSwipeBackSuccess() : _this.onSwipeBackCancel();
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onScrollTop", function () {
+    View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onScrollTop", function () {
       var activePanel = _this.state.activePanel;
 
       if (activePanel) {
@@ -6466,7 +6479,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMoveX", function (e) {
+    View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMoveX", function (e) {
       if (osname === platform["b" /* IOS */] && !_this.context.isWebView && (e.startX <= 70 || e.startX >= _this.window.innerWidth - 70) && !_this.state.browserSwipe) {
         _this.setState({
           browserSwipe: true
@@ -6485,7 +6498,7 @@ function (_Component) {
             startT: e.startT,
             swipeBackPrevPanel: _this.state.activePanel,
             swipeBackNextPanel: _this.props.history.slice(-2)[0],
-            scrolls: Object.assign({}, _this.state.scrolls, _defineProperty({}, _this.state.activePanel, _this.window.pageYOffset))
+            scrolls: View_objectSpread({}, _this.state.scrolls, View_defineProperty({}, _this.state.activePanel, _this.window.pageYOffset))
           });
         }
 
@@ -6507,7 +6520,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onEnd", function () {
+    View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onEnd", function () {
       if (_this.state.swipingBack) {
         var speed = _this.state.swipeBackShift / (new Date() - _this.state.startT) * 1000;
 
@@ -6523,7 +6536,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (c) {
+    View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (c) {
       if (c && c.container && c.id) {
         var el = c;
 
@@ -6572,7 +6585,7 @@ function (_Component) {
           nextPanel: nextProps.activePanel,
           activePanel: null,
           animated: true,
-          scrolls: Object.assign({}, this.state.scrolls, _defineProperty({}, this.props.activePanel, this.window.pageYOffset)),
+          scrolls: View_objectSpread({}, this.state.scrolls, View_defineProperty({}, this.props.activePanel, this.window.pageYOffset)),
           isBack: isBack
         });
       } // Закончилась анимация свайпа назад
@@ -6953,7 +6966,7 @@ function (_Component) {
   return View;
 }(react["Component"]);
 
-_defineProperty(View_View, "propTypes", {
+View_defineProperty(View_View, "propTypes", {
   style: prop_types_default.a.object,
   activePanel: prop_types_default.a.string,
   header: prop_types_default.a.oneOfType([prop_types_default.a.object, prop_types_default.a.bool]),
@@ -6992,7 +7005,7 @@ _defineProperty(View_View, "propTypes", {
   inRoot: prop_types_default.a.bool
 });
 
-_defineProperty(View_View, "defaultProps", {
+View_defineProperty(View_View, "defaultProps", {
   style: {},
   children: null,
   popout: null,
@@ -7000,7 +7013,7 @@ _defineProperty(View_View, "defaultProps", {
   history: []
 });
 
-_defineProperty(View_View, "contextTypes", {
+View_defineProperty(View_View, "contextTypes", {
   isWebView: prop_types_default.a.bool,
   window: prop_types_default.a.any,
   document: prop_types_default.a.any
@@ -59058,6 +59071,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -59160,7 +59175,7 @@ function (_React$Component) {
         var nextView = nextProps.activeView;
         var prevView = this.props.activeView;
         this.setState({
-          scrolls: Object.assign({}, this.state.scrolls, _defineProperty({}, this.props.activeView, pageYOffset)),
+          scrolls: _objectSpread({}, this.state.scrolls, _defineProperty({}, this.props.activeView, pageYOffset)),
           transition: true,
           activeView: null,
           nextView: nextView,
