@@ -2106,13 +2106,19 @@ body[scheme="client_dark"] {
           line-height: 56px;
           height: 56px;
           font-weight: 500;
-          }
+          display: flex;
+          align-items: center;
+        }
 
 .PanelHeader--android .PanelHeader-content > *:not(.Search):not(.PanelHeaderContent) {
           padding: 0 6px;
-          height: 56px;
-          line-height: 56px;
-          }
+          max-width: 100%;
+          flex: 1;
+          min-width: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
 .PanelHeader--android .Search {
             position: absolute;
@@ -3976,7 +3982,13 @@ body[scheme="client_dark"] {
     width: 100%;
     height: 100%;
     flex: 0 0 auto;
+    max-width: 100%;
+    overflow: hidden;
     }
+
+.Gallery--custom-width .Gallery__slide {
+  width: auto;
+}
 
 .Gallery__slide > * {
       width: 100%;

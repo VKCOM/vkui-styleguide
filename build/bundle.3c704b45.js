@@ -5111,7 +5111,7 @@ TextRenderer.defaultProps = {
 /* 26 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.16.4","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.3"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.16.5","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.3"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 27 */
@@ -40199,13 +40199,11 @@ function (_React$Component) {
   SearchAndroid_createClass(SearchAndroid, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.theme === 'header' && this.inputEl.focus();
+      this.props.theme === 'header' && this.props.autoFocus && this.inputEl.focus();
     }
   }, {
     key: "render",
     value: function render() {
-      var _classnames;
-
       var _this$props = this.props,
           getRef = _this$props.getRef,
           value = _this$props.value,
@@ -40213,9 +40211,12 @@ function (_React$Component) {
           onChange = _this$props.onChange,
           onClose = _this$props.onClose,
           theme = _this$props.theme,
-          inputProps = SearchAndroid_objectWithoutProperties(_this$props, ["getRef", "value", "defaultValue", "onChange", "onClose", "theme"]);
+          autoFocus = _this$props.autoFocus,
+          inputProps = SearchAndroid_objectWithoutProperties(_this$props, ["getRef", "value", "defaultValue", "onChange", "onClose", "theme", "autoFocus"]);
 
-      var className = Object(classnames["a" /* default */])(SearchAndroid_baseClassName, (_classnames = {}, SearchAndroid_defineProperty(_classnames, "Search--".concat(theme), true), SearchAndroid_defineProperty(_classnames, 'Search--focused', this.state.focused), SearchAndroid_defineProperty(_classnames, 'Search--has-value', !!this.value), _classnames), this.props.className);
+      var className = Object(classnames["a" /* default */])(SearchAndroid_baseClassName, "Search--".concat(theme), {
+        'Search--has-value': !!this.value
+      }, this.props.className);
       return react_default.a.createElement("div", {
         className: className
       }, react_default.a.createElement("div", {
@@ -40259,12 +40260,14 @@ SearchAndroid_defineProperty(SearchAndroid_SearchAndroid, "propTypes", {
   onClose: prop_types_default.a.func,
   placeholder: prop_types_default.a.node,
   theme: prop_types_default.a.oneOf(['header', 'default']),
-  getRef: prop_types_default.a.func
+  getRef: prop_types_default.a.func,
+  autoFocus: prop_types_default.a.bool
 });
 
 SearchAndroid_defineProperty(SearchAndroid_SearchAndroid, "defaultProps", {
   placeholder: 'Поиск',
-  theme: 'default'
+  theme: 'default',
+  autoFocus: true
 });
 
 
@@ -40317,7 +40320,8 @@ function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           onClose = _this$props.onClose,
-          iosProps = Search_objectWithoutProperties(_this$props, ["onClose"]);
+          autoFocus = _this$props.autoFocus,
+          iosProps = Search_objectWithoutProperties(_this$props, ["onClose", "autoFocus"]);
 
       var _this$props2 = this.props,
           after = _this$props2.after,
@@ -40354,6 +40358,11 @@ Search_defineProperty(Search_Search, "propTypes", {
    * Android only. Вызывается при клике по стрелке (слева). Этот контрол служит для выхода из режима поиска.
    */
   onClose: prop_types_default.a.func,
+
+  /**
+   * Android only. Определяет, будет ли установлен фокус в поле поиска.
+   */
+  autoFocus: prop_types_default.a.bool,
 
   /**
    * **Важно:** в коллбэк первым аргументом прилетает *значение* текстового поля.
@@ -52904,6 +52913,13 @@ module.exports = {
             'name': 'autoComplete'
         },
         {
+            'type': { 'name': 'bool' },
+            'required': false,
+            'description': 'Android only. Определяет, будет ли установлен фокус в поле поиска.',
+            'tags': {},
+            'name': 'autoFocus'
+        },
+        {
             'type': { 'name': 'node' },
             'required': false,
             'description': 'iOS only',
@@ -53107,7 +53123,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': '  class Example extends React.Component {\n\n    constructor (props) {\n\n      super(props);\n\n      this.state = {\n        slideIndex: 0\n      }\n    }\n\n    render () {\n      return (\n        <View header={false} activePanel="gallery">\n          <Panel id="gallery">\n            <Group title="Sticks right">\n              <Gallery\n                slideWidth="90%"\n                style={{ height: 150 }}\n                bullets="dark"\n              >\n                <div style={{ height: 150, backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ height: 150, backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ height: 150, backgroundColor: \'var(--accent)\' }} />\n              </Gallery>\n            </Group>\n            <Group title="Sticks left">\n              <Gallery\n                slideWidth="90%"\n                align="right"\n                style={{ height: 150 }}\n              >\n                <div style={{ height: 150, backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ height: 150, backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ height: 150, backgroundColor: \'var(--accent)\' }} />\n              </Gallery>\n            </Group>\n            <Group title="Centered">\n              <Gallery\n                slideWidth="90%"\n                align="center"\n                style={{ height: 150 }}\n              >\n                <div style={{ height: 150, backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ height: 150, backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ height: 150, backgroundColor: \'var(--accent)\' }} />\n              </Gallery>\n            </Group>\n            <Group title="Controled">\n              <Gallery\n                slideWidth="90%"\n                align="center"\n                style={{ height: 150 }}\n                slideIndex={this.state.slideIndex}\n                onChange={slideIndex => this.setState({slideIndex})}\n              >\n                <div style={{ height: 150, backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ height: 150, backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ height: 150, backgroundColor: \'var(--accent)\' }} />\n              </Gallery>\n              <Div>\n                <Button onClick={() => this.setState({slideIndex: this.state.slideIndex === 2 ? 0 : this.state.slideIndex + 1 })}>Next slide</Button>\n              </Div>\n            </Group>\n          </Panel>\n        </View>\n      )\n    }\n  }\n\n  <Example />',
+        'content': '  class Example extends React.Component {\n\n    constructor (props) {\n\n      super(props);\n\n      this.state = {\n        slideIndex: 0\n      }\n    }\n\n    render () {\n      return (\n        <View header={false} activePanel="gallery">\n          <Panel id="gallery">\n            <Group title="Sticks right">\n              <Gallery\n                slideWidth="90%"\n                style={{ height: 150 }}\n                bullets="dark"\n              >\n                <div style={{ backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ backgroundColor: \'var(--accent)\' }} />\n              </Gallery>\n            </Group>\n            <Group title="Sticks left">\n              <Gallery\n                slideWidth="90%"\n                align="right"\n                style={{ height: 150 }}\n              >\n                <div style={{ backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ backgroundColor: \'var(--accent)\' }} />\n              </Gallery>\n            </Group>\n            <Group title="Centered">\n              <Gallery\n                slideWidth="90%"\n                align="center"\n                style={{ height: 150 }}\n              >\n                <div style={{ backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ backgroundColor: \'var(--accent)\' }} />\n              </Gallery>\n            </Group>\n            <Group title="Custom width">\n              <Gallery\n                slideWidth="custom"\n                style={{ height: 150 }}\n              >\n                <div style={{ width: 200, backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ width: 120, backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ width: 70, backgroundColor: \'var(--accent)\' }} />\n                <div style={{ width: 220, backgroundColor: \'var(--icon_secondary)\' }} />\n              </Gallery>\n            </Group>\n            <Group title="Controled">\n              <Gallery\n                slideWidth="90%"\n                align="center"\n                style={{ height: 150 }}\n                slideIndex={this.state.slideIndex}\n                onChange={slideIndex => this.setState({slideIndex})}\n              >\n                <div style={{ backgroundColor: \'var(--destructive)\' }} />\n                <div style={{ backgroundColor: \'var(--button_commerce_background)\' }} />\n                <div style={{ backgroundColor: \'var(--accent)\' }} />\n              </Gallery>\n              <Div>\n                <Button onClick={() => this.setState({slideIndex: this.state.slideIndex === 2 ? 0 : this.state.slideIndex + 1 })}>Next slide</Button>\n              </Div>\n            </Group>\n          </Panel>\n        </View>\n      )\n    }\n  }\n\n  <Example />',
         'settings': {},
         'evalInContext': evalInContext
     }]
@@ -53343,8 +53359,6 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Gallery).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "slidesStore", {});
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "go", function (targetIndex) {
       _this.setState({
         animation: true,
@@ -53395,8 +53409,7 @@ function (_Component) {
         shiftX: _this.calculateIndent(targetIndex),
         deltaX: 0,
         animation: true,
-        current: targetIndex,
-        duration: '.24'
+        current: targetIndex
       });
 
       if (_this.props.onEnd) {
@@ -53417,8 +53430,10 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onResize", function () {
       _this.initializeSlides();
 
-      var layerWidth = _this.state.layerWidth;
-      var containerWidth = _this.container.offsetWidth;
+      var _this$state = _this.state,
+          layerWidth = _this$state.layerWidth,
+          slides = _this$state.slides;
+      var containerWidth = _this.container.current.offsetWidth;
       var viewportWidth = _this.viewport.offsetWidth;
 
       _this.setState({
@@ -53427,7 +53442,14 @@ function (_Component) {
         min: _this.calcMin({
           layerWidth: layerWidth,
           containerWidth: containerWidth,
-          viewportWidth: viewportWidth
+          viewportWidth: viewportWidth,
+          slides: slides
+        }),
+        max: _this.calcMax({
+          layerWidth: layerWidth,
+          containerWidth: containerWidth,
+          viewportWidth: viewportWidth,
+          slides: slides
         }),
         animation: false
       }, function () {
@@ -53441,9 +53463,9 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setTimeout", function (duration) {
       _this.timeout = setTimeout(function () {
-        var _this$state = _this.state,
-            slides = _this$state.slides,
-            current = _this$state.current;
+        var _this$state2 = _this.state,
+            slides = _this$state2.slides,
+            current = _this$state2.current;
         var targetIndex = current < slides.length - 1 ? current + 1 : 0;
 
         _this.go(targetIndex);
@@ -53468,18 +53490,14 @@ function (_Component) {
       return acc;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getContainerRef", function (container) {
-      _this.container = container;
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getViewportRef", function (viewport) {
-      _this.viewport = viewport ? viewport.container : {};
-    });
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getSlideRef", function (id) {
       return function (slide) {
         _this.slidesStore["slide-".concat(id)] = slide;
       };
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getViewportRef", function (viewport) {
+      _this.viewport = viewport ? viewport.container : {};
     });
 
     var _current = typeof props.slideIndex === 'number' ? props.slideIndex : props.initialSlideIndex;
@@ -53493,6 +53511,8 @@ function (_Component) {
       animation: false,
       duration: 0.24
     };
+    _this.container = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    _this.slidesStore = {};
     _this.slides = _this.getChildren(props.children);
     return _this;
   }
@@ -53502,7 +53522,7 @@ function (_Component) {
     value: function initializeSlides() {
       var callback = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : function () {};
       var slides = this.getSlidesCoords();
-      var containerWidth = this.container.offsetWidth;
+      var containerWidth = this.container.current.offsetWidth;
       var viewportWidth = this.viewport.offsetWidth;
       var layerWidth = slides.reduce(function (val, slide) {
         return slide.width + val;
@@ -53510,9 +53530,15 @@ function (_Component) {
       var min = this.calcMin({
         containerWidth: containerWidth,
         layerWidth: layerWidth,
-        viewportWidth: viewportWidth
+        viewportWidth: viewportWidth,
+        slides: slides
       });
-      var max = 0;
+      var max = this.calcMax({
+        containerWidth: containerWidth,
+        layerWidth: layerWidth,
+        viewportWidth: viewportWidth,
+        slides: slides
+      });
       this.setState({
         min: min,
         max: max,
@@ -53526,7 +53552,8 @@ function (_Component) {
     value: function calcMin(_ref) {
       var containerWidth = _ref.containerWidth,
           layerWidth = _ref.layerWidth,
-          viewportWidth = _ref.viewportWidth;
+          viewportWidth = _ref.viewportWidth,
+          slides = _ref.slides;
 
       switch (this.props.align) {
         case 'left':
@@ -53536,61 +53563,34 @@ function (_Component) {
           return viewportWidth - layerWidth;
 
         case 'center':
-          return viewportWidth - (containerWidth - viewportWidth) / 2 - layerWidth;
+          if (this.isCenterWithCustomWidth && slides.length) {
+            var _slides = slides[slides.length - 1],
+                coordX = _slides.coordX,
+                width = _slides.width;
+            return viewportWidth / 2 - coordX - width / 2;
+          } else {
+            return viewportWidth - (containerWidth - viewportWidth) / 2 - layerWidth;
+          }
+
       }
     }
-    /**
-     * Получает координаты и размеры каждого слайда
-      * @returns {Array} Массив с объектами, описывающими габариты слайда
-     */
-
   }, {
-    key: "getSlidesCoords",
-    value: function getSlidesCoords() {
-      var _this2 = this;
+    key: "calcMax",
+    value: function calcMax(_ref2) {
+      var viewportWidth = _ref2.viewportWidth,
+          slides = _ref2.slides;
 
-      return [].concat(this.props.children).reduce(function (acc, item, i) {
-        if (item) {
-          var elem = _this2.slidesStore["slide-".concat(i)];
-
-          var res = {
-            coordX: elem.offsetLeft,
-            width: elem.offsetWidth,
-            id: item.props.id
-          };
-          acc.push(res);
-        }
-
-        return acc;
-      }, []);
-    }
-    /**
-     * Считает отступ слоя галереи во время драга
-     *
-     * @returns {Number} Значения отступа
-     */
-
-  }, {
-    key: "calculateDragIndent",
-    value: function calculateDragIndent() {
-      var _this$state2 = this.state,
-          shiftX = _this$state2.shiftX,
-          deltaX = _this$state2.deltaX,
-          min = _this$state2.min,
-          max = _this$state2.max;
-      var indent = shiftX + deltaX;
-
-      if (indent > max) {
-        return max + Number((indent - max) / 3);
-      } else if (indent < min) {
-        return min + Number((indent - min) / 3);
+      if (this.isCenterWithCustomWidth && slides.length) {
+        var _slides$ = slides[0],
+            width = _slides$.width,
+            coordX = _slides$.coordX;
+        return viewportWidth / 2 - coordX - width / 2;
+      } else {
+        return 0;
       }
-
-      return indent;
     }
     /**
      * Считает отступ слоя галереи
-     *
      * @param {Number} targetIndex ID целевого слайда
      * @returns {Number} Значения отступа
      */
@@ -53604,15 +53604,51 @@ function (_Component) {
         return 0;
       }
 
-      var coordX = slides.length ? slides[targetIndex].coordX : 0;
-      return this.validateIndent(-1 * coordX);
+      var targetSlide = slides.length ? slides[targetIndex] : null;
+
+      if (targetSlide) {
+        var coordX = targetSlide.coordX,
+            width = targetSlide.width;
+
+        if (this.isCenterWithCustomWidth) {
+          var viewportWidth = this.viewport.offsetWidth;
+          return viewportWidth / 2 - coordX - width / 2;
+        }
+
+        return this.validateIndent(-1 * coordX);
+      } else {
+        return 0;
+      }
+    }
+    /**
+     * Считает отступ слоя галереи во время драга
+     * @returns {Number} Значения отступа
+     */
+
+  }, {
+    key: "calculateDragIndent",
+    value: function calculateDragIndent() {
+      var _this$state3 = this.state,
+          shiftX = _this$state3.shiftX,
+          deltaX = _this$state3.deltaX,
+          min = _this$state3.min,
+          max = _this$state3.max;
+      var indent = shiftX + deltaX;
+
+      if (indent > max) {
+        return max + Number((indent - max) / 3);
+      } else if (indent < min) {
+        return min + Number((indent - min) / 3);
+      }
+
+      return indent;
     }
   }, {
     key: "validateIndent",
     value: function validateIndent(value) {
-      var _this$state3 = this.state,
-          min = _this$state3.min,
-          max = _this$state3.max;
+      var _this$state4 = this.state,
+          min = _this$state4.min,
+          max = _this$state4.max;
 
       if (value < min) {
         return min;
@@ -53628,22 +53664,46 @@ function (_Component) {
       return this.state.layerWidth > this.state.containerWidth;
     }
     /**
+     * Получает координаты и размеры каждого слайда
+     * @returns {Array} Массив с объектами, описывающими габариты слайда
+     */
+
+  }, {
+    key: "getSlidesCoords",
+    value: function getSlidesCoords() {
+      var _this2 = this;
+
+      return [].concat(this.props.children).reduce(function (acc, item, i) {
+        if (item) {
+          var elem = _this2.slidesStore["slide-".concat(i)];
+
+          var res = {
+            coordX: elem.offsetLeft,
+            width: elem.offsetWidth
+          };
+          acc.push(res);
+        }
+
+        return acc;
+      }, []);
+    }
+    /**
      * Получает индекс слайда, к которому будет осуществлен переход
-     *
      * @returns {Number} Индекс слайда
      */
 
   }, {
     key: "getTarget",
     value: function getTarget() {
-      var _this$state4 = this.state,
-          slides = _this$state4.slides,
-          current = _this$state4.current,
-          deltaX = _this$state4.deltaX,
-          shiftX = _this$state4.shiftX,
-          startT = _this$state4.startT;
+      var _this$state5 = this.state,
+          slides = _this$state5.slides,
+          current = _this$state5.current,
+          deltaX = _this$state5.deltaX,
+          shiftX = _this$state5.shiftX,
+          startT = _this$state5.startT,
+          max = _this$state5.max;
       var expectDeltaX = deltaX / (new Date() - startT) * 240 * 0.6;
-      var shift = shiftX + deltaX + expectDeltaX;
+      var shift = shiftX + deltaX + expectDeltaX - max;
       var direction = deltaX < 0 ? 1 : -1; // Находим ближайшую границу слайда к текущему отступу
 
       var targetIndex = slides.reduce(function (val, item, index) {
@@ -53726,11 +53786,11 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$state5 = this.state,
-          animation = _this$state5.animation,
-          duration = _this$state5.duration,
-          current = _this$state5.current,
-          dragging = _this$state5.dragging;
+      var _this$state6 = this.state,
+          animation = _this$state6.animation,
+          duration = _this$state6.duration,
+          current = _this$state6.current,
+          dragging = _this$state6.dragging;
 
       var _this$props = this.props,
           children = _this$props.children,
@@ -53754,25 +53814,27 @@ function (_Component) {
         WebkitTransition: animation ? "-webkit-transform ".concat(duration, "s cubic-bezier(.1, 0, .25, 1)") : 'none',
         transition: animation ? "transform ".concat(duration, "s cubic-bezier(.1, 0, .25, 1)") : 'none'
       };
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, className, _defineProperty({
-          'Gallery--dragging': dragging
-        }, "Gallery--".concat(this.props.align), true)),
-        ref: this.getContainerRef
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({
+        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, className, "Gallery--".concat(align), {
+          'Gallery--dragging': dragging,
+          'Gallery--custom-width': slideWidth === 'custom'
+        })
+      }, restProps, {
+        ref: this.container
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Touch_Touch__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
         className: "Gallery__viewport",
         onStartX: this.onStart,
         onMoveX: this.onMoveX,
         onEnd: this.onEnd,
         style: {
-          width: slideWidth
+          width: slideWidth === 'custom' ? '100%' : slideWidth
         },
         ref: this.getViewportRef
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Gallery__layer",
         style: layerStyle
-      }, this.slides)), this.props.bullets && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('Gallery__bullets', _defineProperty({}, "Gallery__bullets--".concat(this.props.bullets), true))
+      }, this.slides)), bullets && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('Gallery__bullets', "Gallery__bullets--".concat(bullets))
       }, this.slides.map(function (item, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('Gallery__bullet', {
@@ -53781,6 +53843,11 @@ function (_Component) {
           key: index
         });
       })));
+    }
+  }, {
+    key: "isCenterWithCustomWidth",
+    get: function get() {
+      return this.props.slideWidth === 'custom' && this.props.align === 'center';
     }
   }]);
 
