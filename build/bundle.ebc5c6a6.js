@@ -287,16 +287,16 @@ function classNames() {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getClassname; });
 /* harmony import */ var _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 var osname = Object(_lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* platform */ "c"])();
 function getClassname(base) {
-  var _classnames;
+  var _classNames;
 
-  return Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(base, (_classnames = {}, _defineProperty(_classnames, base + '--ios', osname === _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* IOS */ "b"]), _defineProperty(_classnames, base + '--android', osname === _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* ANDROID */ "a"]), _classnames));
+  return Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(base, (_classNames = {}, _defineProperty(_classNames, base + '--ios', osname === _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* IOS */ "b"]), _defineProperty(_classNames, base + '--android', osname === _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* ANDROID */ "a"]), _classNames));
 }
 
 /***/ }),
@@ -1888,8 +1888,8 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 // EXTERNAL MODULE: ./src/components/Touch/Touch.js
 var Touch = __webpack_require__(17);
 
-// EXTERNAL MODULE: ./src/lib/classnames.js
-var classnames = __webpack_require__(3);
+// EXTERNAL MODULE: ./src/lib/classNames.js
+var classNames = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./src/helpers/getClassName.js
 var getClassName = __webpack_require__(4);
@@ -2171,7 +2171,7 @@ function (_Component) {
           restProps = _objectWithoutProperties(_this$props, ["children", "className", "component", "activeEffectDelay", "stopPropagation", "getRootRef"]);
 
       var Component = !restProps.disabled ? Touch["a" /* default */] : component;
-      var classes = Object(classnames["a" /* default */])(baseClassNames, className, {
+      var classes = Object(classNames["a" /* default */])(baseClassNames, className, {
         'Tappable--active': active,
         'Tappable--inactive': !active
       });
@@ -5111,7 +5111,7 @@ TextRenderer.defaultProps = {
 /* 26 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.16.5","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.3"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.16.6","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.4.0","react-docgen":"^2.20.0","react-dom":"^16.4.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.4.0","react":"^16.4.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1"},"dependencies":{"@vkontakte/icons":"^1.2.3"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 27 */
@@ -5346,7 +5346,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
@@ -5465,7 +5465,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _classnames;
+      var _classNames;
 
       var _this$props = this.props,
           v = _this$props.v,
@@ -5478,7 +5478,7 @@ function (_React$Component) {
           restProps = _objectWithoutProperties(_this$props, ["v", "h", "closing", "children", "hasMask", "onClick", "className"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, (_classnames = {}, _defineProperty(_classnames, "PopoutWrapper--v-".concat(v), v), _defineProperty(_classnames, "PopoutWrapper--h-".concat(h), h), _defineProperty(_classnames, 'PopoutWrapper--closing', closing), _classnames), className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, (_classNames = {}, _defineProperty(_classNames, "PopoutWrapper--v-".concat(v), v), _defineProperty(_classNames, "PopoutWrapper--h-".concat(h), h), _defineProperty(_classNames, 'PopoutWrapper--closing', closing), _classNames), className),
         onClick: this.onClick,
         ref: this.getRef
       }), hasMask && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -6299,8 +6299,8 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 var prop_types = __webpack_require__(1);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
-// EXTERNAL MODULE: ./src/lib/classnames.js
-var classnames = __webpack_require__(3);
+// EXTERNAL MODULE: ./src/lib/classNames.js
+var classNames = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./src/lib/animate.js
 /**
@@ -6871,7 +6871,7 @@ function (_Component) {
       };
       return react_default.a.createElement(Touch["a" /* default */], {
         component: "section",
-        className: Object(classnames["a" /* default */])(baseClassNames, modifiers),
+        className: Object(classNames["a" /* default */])(baseClassNames, modifiers),
         style: style,
         onMoveX: this.onMoveX,
         onEnd: this.onEnd
@@ -6881,10 +6881,10 @@ function (_Component) {
         className: "View__header-scrolltop",
         onClick: this.onScrollTop
       }), react_default.a.createElement("div", {
-        className: Object(classnames["a" /* default */])(PanelHeader["baseClassNames"])
+        className: Object(classNames["a" /* default */])(PanelHeader["baseClassNames"])
       }, panels.map(function (panel) {
         return react_default.a.createElement("div", {
-          className: Object(classnames["a" /* default */])('PanelHeader__in', {
+          className: Object(classNames["a" /* default */])('PanelHeader__in', {
             'PanelHeader__in--active': panel.props.id === activePanel,
             'PanelHeader__in--prev': panel.props.id === prevPanel,
             'PanelHeader__in--next': panel.props.id === nextPanel,
@@ -6925,7 +6925,7 @@ function (_Component) {
         className: "View__panels"
       }, panels.map(function (panel) {
         return react_default.a.createElement("div", {
-          className: Object(classnames["a" /* default */])('View__panel', {
+          className: Object(classNames["a" /* default */])('View__panel', {
             'View__panel--active': panel.props.id === activePanel,
             'View__panel--prev': panel.props.id === prevPanel,
             'View__panel--next': panel.props.id === nextPanel,
@@ -7462,7 +7462,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 /* harmony import */ var _View_View__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(41);
 /* harmony import */ var _appearance_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(66);
 /* harmony import */ var _appearance_constants__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_appearance_constants__WEBPACK_IMPORTED_MODULE_5__);
@@ -7574,7 +7574,7 @@ function (_React$Component) {
       var paddingBottom = vertical === 'bottom' && this.context.insets && this.context.insets.bottom ? this.context.insets.bottom + tabbarPadding : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
         ref: this.getRef,
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, _defineProperty({}, "FixedLayout--".concat(vertical), vertical), className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, _defineProperty({}, "FixedLayout--".concat(vertical), vertical), className),
         style: _objectSpread({}, style, this.state, {
           paddingBottom: paddingBottom
         })
@@ -7622,7 +7622,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Touch_Touch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -7826,7 +7826,7 @@ function (_Component) {
           restProps = _objectWithoutProperties(_this$props, ["className", "min", "max", "step", "value", "defaultValue", "onChange", "getRootRef"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className),
         ref: this.getRef
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Touch_Touch__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {
         onStart: this.onStart,
@@ -7839,7 +7839,7 @@ function (_Component) {
           width: this.state.percentPosition + '%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('Slider__thumb', 'Slider__thumb--end', {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('Slider__thumb', 'Slider__thumb--end', {
           'Slider__thumb--active': this.state.active
         })
       }))));
@@ -8939,7 +8939,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -8986,7 +8986,7 @@ var Avatar = function Avatar(_ref) {
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, className, _defineProperty({}, "Avatar--type-".concat(type), true)),
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, className, _defineProperty({}, "Avatar--type-".concat(type), true)),
     ref: getRootRef
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "Avatar__in"
@@ -9035,7 +9035,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -9060,7 +9060,7 @@ var HeaderButton = function HeaderButton(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* default */ "b"], _extends({}, restProps, {
     component: component,
     activeEffectDelay: 200,
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className, {
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className, {
       'HeaderButton--primary': primary
     })
   }), isPrimitive ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -10295,7 +10295,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -10342,7 +10342,7 @@ function (_React$Component) {
   _createClass(Tabs, [{
     key: "render",
     value: function render() {
-      var _classnames;
+      var _classNames;
 
       var _this$props = this.props,
           className = _this$props.className,
@@ -10355,7 +10355,7 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
         ref: getRootRef,
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, (_classnames = {}, _defineProperty(_classnames, "Tabs--".concat(this.theme), true), _defineProperty(_classnames, "Tabs--".concat(type), true), _classnames), className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, (_classNames = {}, _defineProperty(_classNames, "Tabs--".concat(this.theme), true), _defineProperty(_classNames, "Tabs--".concat(type), true), _classNames), className),
         style: style
       }), children);
     }
@@ -10416,7 +10416,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -10443,7 +10443,7 @@ var Header = function Header(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
     ref: getRootRef,
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className, _defineProperty({}, "Header--level-".concat(level), true))
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className, _defineProperty({}, "Header--level-".concat(level), true))
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "Header__in"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -10477,7 +10477,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -10498,7 +10498,7 @@ function Div(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
     ref: getRootRef,
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className)
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className)
   }), children);
 }
 Div.propTypes = {
@@ -10520,7 +10520,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -10537,7 +10537,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var baseClassName = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('CellButton');
 
 var CellButton = function CellButton(_ref) {
-  var _classnames;
+  var _classNames;
 
   var className = _ref.className,
       align = _ref.align,
@@ -10547,7 +10547,7 @@ var CellButton = function CellButton(_ref) {
       restProps = _objectWithoutProperties(_ref, ["className", "align", "level", "before", "children"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_1__[/* default */ "b"], _extends({}, restProps, {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className, (_classnames = {}, _defineProperty(_classnames, "CellButton--lvl-".concat(level), level), _defineProperty(_classnames, "CellButton--aln-".concat(align), align), _classnames)),
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className, (_classNames = {}, _defineProperty(_classNames, "CellButton--lvl-".concat(level), level), _defineProperty(_classNames, "CellButton--aln-".concat(align), align), _classNames)),
     stopPropagation: true
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "CellButton__in"
@@ -10586,7 +10586,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 /* harmony import */ var _CellButton_CellButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(92);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -10644,7 +10644,7 @@ function (_React$Component) {
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CellButton_CellButton__WEBPACK_IMPORTED_MODULE_5__["default"], restProps);
       } else {
-        var _classnames;
+        var _classNames;
 
         var _this$props2 = this.props,
             className = _this$props2.className,
@@ -10657,7 +10657,7 @@ function (_React$Component) {
             _restProps = _objectWithoutProperties(_this$props2, ["className", "size", "level", "stretched", "align", "children", "before"]);
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_1__[/* default */ "b"], _extends({}, _restProps, {
-          className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className, (_classnames = {}, _defineProperty(_classnames, "Button--sz-".concat(_size), true), _defineProperty(_classnames, "Button--lvl-".concat(Button.mapOldLevel(level)), true), _defineProperty(_classnames, "Button--aln-".concat(align || 'center'), true), _defineProperty(_classnames, "Button--str", _stretched), _classnames)),
+          className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className, (_classNames = {}, _defineProperty(_classNames, "Button--sz-".concat(_size), true), _defineProperty(_classNames, "Button--lvl-".concat(Button.mapOldLevel(level)), true), _defineProperty(_classNames, "Button--aln-".concat(align || 'center'), true), _defineProperty(_classNames, "Button--str", _stretched), _classNames)),
           stopPropagation: true
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "Button__in"
@@ -10740,7 +10740,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 /* harmony import */ var _vkontakte_icons_dist_24_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(138);
 /* harmony import */ var _vkontakte_icons_dist_24_spinner__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_24_spinner__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _vkontakte_icons_dist_32_spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(137);
@@ -10805,7 +10805,7 @@ function (_PureComponent) {
           restProps = _objectWithoutProperties(_this$props, ["className", "size"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className)
+        className: Object(_lib_classNames_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className)
       }), this.svgSpinner);
     }
   }, {
@@ -10865,7 +10865,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -10937,7 +10937,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _classnames, _classnames2, _classnames3, _classnames4, _classnames5;
+      var _classNames, _classNames2, _classNames3, _classNames4, _classNames5;
 
       var _this$props = this.props,
           left = _this$props.left,
@@ -10949,15 +10949,15 @@ function (_React$Component) {
           transparent = _this$props.transparent;
       var isPrimitive = typeof children === 'string' || typeof children === 'number';
       return this.state.ready ? [react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-bg', (_classnames = {}, _defineProperty(_classnames, "PanelHeader-bg--".concat(theme), true), _defineProperty(_classnames, 'PanelHeader-bg--tp', transparent), _defineProperty(_classnames, "PanelHeader-bg--no-shadow", noShadow || ['bright_light', 'space_gray'].indexOf(this.context.scheme) >= 0), _classnames))
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-bg', (_classNames = {}, _defineProperty(_classNames, "PanelHeader-bg--".concat(theme), true), _defineProperty(_classNames, 'PanelHeader-bg--tp', transparent), _defineProperty(_classNames, "PanelHeader-bg--no-shadow", noShadow || ['bright_light', 'space_gray'].indexOf(this.context.scheme) >= 0), _classNames))
       }), this.bgNode), react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-left-in', (_classnames2 = {}, _defineProperty(_classnames2, "PanelHeader-left-in--".concat(theme), true), _defineProperty(_classnames2, 'PanelHeader-left-in--tp', transparent), _classnames2))
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-left-in', (_classNames2 = {}, _defineProperty(_classNames2, "PanelHeader-left-in--".concat(theme), true), _defineProperty(_classNames2, 'PanelHeader-left-in--tp', transparent), _classNames2))
       }, left), this.leftNode), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] && react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-addon', (_classnames3 = {}, _defineProperty(_classnames3, "PanelHeader-addon--".concat(theme), true), _defineProperty(_classnames3, 'PanelHeader-addon--tp', transparent), _classnames3))
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-addon', (_classNames3 = {}, _defineProperty(_classNames3, "PanelHeader-addon--".concat(theme), true), _defineProperty(_classNames3, 'PanelHeader-addon--tp', transparent), _classNames3))
       }, addon), this.addonNode), react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-content', (_classnames4 = {}, _defineProperty(_classnames4, "PanelHeader-content--".concat(theme), true), _defineProperty(_classnames4, 'PanelHeader-content--tp', transparent), _classnames4))
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-content', (_classNames4 = {}, _defineProperty(_classNames4, "PanelHeader-content--".concat(theme), true), _defineProperty(_classNames4, 'PanelHeader-content--tp', transparent), _classNames4))
       }, isPrimitive ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, children) : children), this.titleNode), react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-right', (_classnames5 = {}, _defineProperty(_classnames5, "PanelHeader-right--".concat(theme), true), _defineProperty(_classnames5, 'PanelHeader-right--tp', transparent), _defineProperty(_classnames5, 'PanelHeader-right--vkapps', this.webviewType === 'vkapps'), _classnames5))
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-right', (_classNames5 = {}, _defineProperty(_classNames5, "PanelHeader-right--".concat(theme), true), _defineProperty(_classNames5, 'PanelHeader-right--tp', transparent), _defineProperty(_classNames5, 'PanelHeader-right--vkapps', this.webviewType === 'vkapps'), _classNames5))
       }, this.webviewType === 'internal' ? right : null), this.rightNode)] : null;
     }
   }, {
@@ -39889,8 +39889,8 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 // EXTERNAL MODULE: ./src/helpers/getClassName.js
 var getClassName = __webpack_require__(4);
 
-// EXTERNAL MODULE: ./src/lib/classnames.js
-var classnames = __webpack_require__(3);
+// EXTERNAL MODULE: ./src/lib/classNames.js
+var classNames = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/16/search.js
 var search = __webpack_require__(131);
@@ -40008,7 +40008,7 @@ function (_React$Component) {
   _createClass(SearchIOS, [{
     key: "render",
     value: function render() {
-      var _classnames;
+      var _classNames;
 
       var _this$props = this.props,
           className = _this$props.className,
@@ -40024,7 +40024,7 @@ function (_React$Component) {
           inputProps = _objectWithoutProperties(_this$props, ["className", "theme", "onFocus", "onBlur", "onChange", "defaultValue", "value", "placeholder", "after", "getRef"]);
 
       return react_default.a.createElement("div", {
-        className: Object(classnames["a" /* default */])(baseClassName, (_classnames = {}, _defineProperty(_classnames, "Search--".concat(theme), true), _defineProperty(_classnames, 'Search--focused', this.state.focused), _defineProperty(_classnames, 'Search--has-value', this.value), _defineProperty(_classnames, 'Search--has-after', after), _classnames), className)
+        className: Object(classNames["a" /* default */])(baseClassName, (_classNames = {}, _defineProperty(_classNames, "Search--".concat(theme), true), _defineProperty(_classNames, 'Search--focused', this.state.focused), _defineProperty(_classNames, 'Search--has-value', this.value), _defineProperty(_classNames, 'Search--has-after', after), _classNames), className)
       }, react_default.a.createElement("div", {
         className: "Search__in"
       }, react_default.a.createElement("div", {
@@ -40214,7 +40214,7 @@ function (_React$Component) {
           autoFocus = _this$props.autoFocus,
           inputProps = SearchAndroid_objectWithoutProperties(_this$props, ["getRef", "value", "defaultValue", "onChange", "onClose", "theme", "autoFocus"]);
 
-      var className = Object(classnames["a" /* default */])(SearchAndroid_baseClassName, "Search--".concat(theme), {
+      var className = Object(classNames["a" /* default */])(SearchAndroid_baseClassName, "Search--".concat(theme), {
         'Search--has-value': !!this.value
       }, this.props.className);
       return react_default.a.createElement("div", {
@@ -49383,7 +49383,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var _Button_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -49455,7 +49455,7 @@ function (_Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
         align: align || alignment,
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, className),
         component: "label",
         type: type,
         stretched: stretched,
@@ -49662,7 +49662,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -49806,11 +49806,12 @@ function (_PureComponent) {
           onResize = _this$props.onResize,
           className = _this$props.className,
           getRootRef = _this$props.getRootRef,
-          restProps = _objectWithoutProperties(_this$props, ["defaultValue", "value", "onChange", "grow", "style", "onResize", "className", "getRootRef"]);
+          getRef = _this$props.getRef,
+          restProps = _objectWithoutProperties(_this$props, ["defaultValue", "value", "onChange", "grow", "style", "onResize", "className", "getRootRef", "getRef"]);
 
       var height = this.state.height || style.height || 66;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className),
         style: style,
         ref: getRootRef
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", _extends({}, restProps, {
@@ -49981,7 +49982,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 /* harmony import */ var _vkontakte_icons_dist_24_dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(63);
 /* harmony import */ var _vkontakte_icons_dist_24_dropdown__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_24_dropdown__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -50040,7 +50041,7 @@ function (_Component) {
           restProps = _objectWithoutProperties(_this$props, ["className", "placeholder", "children", "alignment", "getRootRef"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, _defineProperty({
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, _defineProperty({
           'Select--not-selected': !children,
           'Select--mimicry': true
         }, "Select--align-".concat(alignment), alignment), className),
@@ -50235,7 +50236,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 /* harmony import */ var _vkontakte_icons_dist_24_dropdown__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(63);
 /* harmony import */ var _vkontakte_icons_dist_24_dropdown__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_24_dropdown__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
@@ -50343,7 +50344,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _classnames;
+      var _classNames;
 
       var _this$props = this.props,
           style = _this$props.style,
@@ -50360,7 +50361,7 @@ function (_Component) {
           restProps = _objectWithoutProperties(_this$props, ["style", "label", "value", "defaultValue", "onChange", "alignment", "placeholder", "children", "className", "getRef", "getRootRef"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, (_classnames = {}, _defineProperty(_classnames, "Select--not-selected", this.state.notSelected), _defineProperty(_classnames, "Select--align-".concat(alignment), alignment), _classnames), className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, (_classNames = {}, _defineProperty(_classNames, "Select--not-selected", this.state.notSelected), _defineProperty(_classNames, "Select--align-".concat(alignment), alignment), _classNames), className),
         style: style,
         ref: getRootRef
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", _extends({
@@ -50565,7 +50566,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -50612,7 +50613,7 @@ function (_PureComponent) {
   _createClass(Input, [{
     key: "render",
     value: function render() {
-      var _classnames;
+      var _classNames;
 
       var _this$props = this.props,
           alignment = _this$props.alignment,
@@ -50623,7 +50624,7 @@ function (_PureComponent) {
           restProps = _objectWithoutProperties(_this$props, ["alignment", "status", "getRef", "className", "getRootRef"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, (_classnames = {}, _defineProperty(_classnames, "Input--".concat(alignment), alignment), _defineProperty(_classnames, "Input--s-".concat(status), status), _classnames), className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, (_classNames = {}, _defineProperty(_classNames, "Input--".concat(alignment), alignment), _defineProperty(_classNames, "Input--s-".concat(status), status), _classNames), className),
         ref: getRootRef
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({}, restProps, {
         className: "Input__el",
@@ -50735,7 +50736,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(47);
 /* harmony import */ var _vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_6__);
@@ -50764,7 +50765,7 @@ var Checkbox = function Checkbox(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* default */ "b"], {
     component: "label",
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className),
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className),
     style: style,
     disabled: restProps.disabled,
     activeEffectDelay: osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] ? 100 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* ACTIVE_EFFECT_DELAY */ "a"],
@@ -50882,7 +50883,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -50911,7 +50912,7 @@ var Radio = function Radio(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* default */ "b"], {
     component: "label",
     style: style,
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className),
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className),
     activeEffectDelay: osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] ? 100 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* ACTIVE_EFFECT_DELAY */ "a"],
     disabled: restProps.disabled,
     getRootRef: getRootRef
@@ -51020,7 +51021,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Slider_Slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(46);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -51230,7 +51231,7 @@ function (_Slider) {
           restProps = _objectWithoutProperties(_this$props, ["className", "min", "max", "step", "value", "defaultValue", "onChange", "getRootRef"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(baseClassNames, className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(baseClassNames, className),
         ref: this.getRef
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Touch_Touch__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], {
         onStart: this.onStart,
@@ -51244,14 +51245,14 @@ function (_Slider) {
           left: this.state.percentStart + '%'
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Slider__thumb', 'Slider__thumb--start', {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Slider__thumb', 'Slider__thumb--start', {
           'Slider__thumb--active': this.state.active === 'start'
         }),
         ref: function ref(el) {
           return _this3.thumbStart = el;
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Slider__thumb', 'Slider__thumb--end', {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Slider__thumb', 'Slider__thumb--end', {
           'Slider__thumb--active': this.state.active === 'end'
         }),
         ref: function ref(el) {
@@ -51500,7 +51501,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -51525,7 +51526,7 @@ var FormStatus = function FormStatus(_ref) {
       restProps = _objectWithoutProperties(_ref, ["state", "title", "children", "className", "dangerouslySetInnerHTML"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, _defineProperty({}, "FormStatus--".concat(state), state), className)
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, _defineProperty({}, "FormStatus--".concat(state), state), className)
   }), title && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "FormStatus__title"
   }, title), dangerouslySetInnerHTML && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -51628,7 +51629,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -51649,7 +51650,7 @@ var FormLayoutGroup = function FormLayoutGroup(_ref) {
       restProps = _objectWithoutProperties(_ref, ["children", "top", "bottom", "className"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className)
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className)
   }, restProps), children);
 };
 
@@ -51767,7 +51768,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -51837,7 +51838,7 @@ function (_React$Component) {
 
       var arrayChildren = Array.isArray(children) ? children : [children];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TagName, _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className),
         onSubmit: this.onSubmit,
         ref: getRef
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -52053,7 +52054,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_4__);
@@ -52186,7 +52187,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _classnames;
+      var _classNames;
 
       var _this$props2 = this.props,
           title = _this$props2.title,
@@ -52195,7 +52196,7 @@ function (_React$Component) {
           alignY = _this$props2.alignY,
           cornerOffset = _this$props2.cornerOffset;
       return react_dom__WEBPACK_IMPORTED_MODULE_4___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, (_classnames = {}, _defineProperty(_classnames, "Tooltip--x-".concat(alignX), true), _defineProperty(_classnames, "Tooltip--y-".concat(alignY), true), _defineProperty(_classnames, 'Tooltip--fixed', this.fixedPortal), _classnames))
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, (_classNames = {}, _defineProperty(_classNames, "Tooltip--x-".concat(alignX), true), _defineProperty(_classNames, "Tooltip--y-".concat(alignY), true), _defineProperty(_classNames, 'Tooltip--fixed', this.fixedPortal), _classNames))
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Tooltip__container",
         style: {
@@ -52653,7 +52654,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -52711,7 +52712,7 @@ function (_React$Component) {
           restProps = _objectWithoutProperties(_this$props, ["children", "selected", "className"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_3__[/* default */ "b"], _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, {
           'TabsItem--selected': selected
         }, className),
         activeEffectDelay: osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] ? 0 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_3__[/* ACTIVE_EFFECT_DELAY */ "a"]
@@ -53063,7 +53064,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -53086,7 +53087,7 @@ var Progress = function Progress(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
     ref: getRootRef,
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, className)
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, className)
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "Progress__bg"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -53313,7 +53314,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var _Touch_Touch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(17);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -53815,7 +53816,7 @@ function (_Component) {
         transition: animation ? "transform ".concat(duration, "s cubic-bezier(.1, 0, .25, 1)") : 'none'
       };
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, className, "Gallery--".concat(align), {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, className, "Gallery--".concat(align), {
           'Gallery--dragging': dragging,
           'Gallery--custom-width': slideWidth === 'custom'
         })
@@ -53834,10 +53835,10 @@ function (_Component) {
         className: "Gallery__layer",
         style: layerStyle
       }, this.slides)), bullets && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('Gallery__bullets', "Gallery__bullets--".concat(bullets))
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('Gallery__bullets', "Gallery__bullets--".concat(bullets))
       }, this.slides.map(function (item, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('Gallery__bullet', {
+          className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('Gallery__bullet', {
             'Gallery__bullet--active': index === current
           }),
           key: index
@@ -54061,7 +54062,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _Avatar_Avatar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(64);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -54120,7 +54121,7 @@ function (_Component) {
           avatarProps = _this$props.avatarProps,
           children = _this$props.children;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className),
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className),
         style: style
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Entity__aside"
@@ -54423,7 +54424,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -54443,7 +54444,7 @@ var InfoRow = function InfoRow(_ref) {
       restProps = _objectWithoutProperties(_ref, ["title", "className", "children"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className)
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className)
   }), title && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "InfoRow__title"
   }, title), children && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, children));
@@ -54535,7 +54536,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -54556,7 +54557,7 @@ var Switch = function Switch(_ref) {
       restProps = _objectWithoutProperties(_ref, ["style", "className", "getRef", "getRootRef"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className),
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className),
     style: style,
     ref: getRootRef
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({}, restProps, {
@@ -54742,7 +54743,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _Div_Div__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(91);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -54761,7 +54762,7 @@ var Footer = function Footer(_ref) {
       restProps = _objectWithoutProperties(_ref, ["className", "children"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Div_Div__WEBPACK_IMPORTED_MODULE_3__["default"], _extends({}, restProps, {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('Footer', className)
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('Footer', className)
   }), children);
 };
 
@@ -54856,7 +54857,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -54876,7 +54877,7 @@ var List = function List(_ref) {
       restProps = _objectWithoutProperties(_ref, ["className", "children"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className)
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className)
   }), children);
 };
 
@@ -55137,7 +55138,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
 /* harmony import */ var _Touch_Touch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(17);
@@ -55353,7 +55354,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _classnames;
+      var _classNames;
 
       var _this$props2 = this.props,
           before = _this$props2.before,
@@ -55383,10 +55384,10 @@ function (_Component) {
       var linkProps = href ? restProps : {};
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, rootProps, {
         onClick: href || draggable ? null : this.onClick,
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, (_classnames = {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, (_classNames = {
           'Cell--expandable': expandable,
           'Cell--multiline': multiline
-        }, _defineProperty(_classnames, "Cell--".concat(size), size), _defineProperty(_classnames, 'Cell--dragging', this.state.dragging), _defineProperty(_classnames, 'Cell--draggable', draggable), _classnames), className),
+        }, _defineProperty(_classNames, "Cell--".concat(size), size), _defineProperty(_classNames, 'Cell--dragging', this.state.dragging), _defineProperty(_classNames, 'Cell--draggable', draggable), _classNames), className),
         ref: this.getRootRef
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_4__[/* default */ "b"], _extends({}, linkProps, {
         onClick: href ? this.onClick : null,
@@ -55678,7 +55679,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 /* harmony import */ var _Header_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(90);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -55737,7 +55738,7 @@ function (_Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
         ref: getRootRef,
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className)
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className)
       }), title && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
         level: "2"
       }, title), children && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -55942,7 +55943,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -55966,7 +55967,7 @@ var Link = function Link(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, _extends({}, restProps, {
     ref: getRootRef,
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, className)
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, className)
   }), children);
 };
 
@@ -56473,7 +56474,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Spinner_Spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(94);
 /* harmony import */ var _PopoutWrapper_PopoutWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -56493,7 +56494,7 @@ function ScreenSpinner(_ref) {
       restProps = _objectWithoutProperties(_ref, ["style", "className"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PopoutWrapper_PopoutWrapper__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(baseClassName, className),
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(baseClassName, className),
     style: style
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ScreenSpinner__container"
@@ -56659,7 +56660,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 /* harmony import */ var _PopoutWrapper_PopoutWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(33);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -56739,7 +56740,7 @@ function (_Component) {
         className: className,
         style: style
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(baseClassNames, {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(baseClassNames, {
           'Alert--v': actionsLayout === 'vertical',
           'Alert--h': actionsLayout === 'horizontal'
         })
@@ -56750,7 +56751,7 @@ function (_Component) {
       }, actions.map(function (button, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* default */ "b"], {
           component: "button",
-          className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Alert__btn', _defineProperty({}, "Alert__btn--".concat(button.style), true)),
+          className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Alert__btn', _defineProperty({}, "Alert__btn--".concat(button.style), true)),
           onClick: _this2.onItemClick(button),
           key: "alert-action-".concat(i)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -56894,7 +56895,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -56920,7 +56921,7 @@ var ActionSheetItem = function ActionSheetItem(_ref) {
       restProps = _objectWithoutProperties(_ref, ["className", "children", "autoclose", "theme"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_4__[/* default */ "b"], _extends({}, restProps, {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className, _defineProperty({}, "ActionSheetItem--".concat(theme), true)),
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className, _defineProperty({}, "ActionSheetItem--".concat(theme), true)),
     component: theme === 'cancel' ? 'span' : 'div'
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "ActionSheetItem__in"
@@ -57040,7 +57041,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _PopoutWrapper_PopoutWrapper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(33);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _lib_transitionEvents__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -57171,7 +57172,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
         ref: this.getRef,
         onClick: this.stopPropagation,
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, {
           'ActionSheet--closing': this.state.closing
         })
       }), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
@@ -57434,7 +57435,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -57485,7 +57486,7 @@ function (_React$Component) {
           restProps = _objectWithoutProperties(_this$props, ["children", "className"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('HorizontalScroll', className)
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('HorizontalScroll', className)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "HorizontalScroll__in"
       }, children));
@@ -57665,7 +57666,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -57720,7 +57721,7 @@ function (_React$Component) {
           restProps = _objectWithoutProperties(_this$props, ["className", "children", "selected", "label"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className, {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className, {
           'TabbarItem--selected': selected
         })
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -57817,7 +57818,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -57863,7 +57864,7 @@ function (_React$Component) {
           children = _this$props.children,
           shadow = _this$props.shadow;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className, {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className, {
           'Tabbar--shadow': shadow
         }),
         style: {
@@ -57983,7 +57984,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -58045,7 +58046,7 @@ function (_React$Component) {
           restProps = _objectWithoutProperties(_this$props, ["className", "activeStory", "tabbar", "children"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className)
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.toArray(children).find(function (item) {
         return item.props.id === activeStory;
       }), tabbar);
@@ -58157,7 +58158,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _FixedLayout_FixedLayout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(45);
 /* harmony import */ var _lib_transitionEvents__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(13);
@@ -58271,7 +58272,7 @@ function (_React$Component) {
           restProps = _objectWithoutProperties(_this$props, ["children", "className", "opened", "onClose"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FixedLayout_FixedLayout__WEBPACK_IMPORTED_MODULE_4__["default"], _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, {
           'HeaderContext--opened': opened,
           'HeaderContext--closing': this.state.closing
         }, className),
@@ -58407,7 +58408,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12);
@@ -58446,7 +58447,7 @@ var PanelHeaderContent = function PanelHeaderContent(_ref) {
     activeEffectDelay: 200
   }) : {};
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, rootProps, {
-    className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className),
+    className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className),
     style: style
   }), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* ANDROID */ "a"] && before && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "PanelHeaderContent__before"
@@ -58798,7 +58799,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
 /* harmony import */ var _appearance_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(66);
 /* harmony import */ var _appearance_constants__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_appearance_constants__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -58875,7 +58876,7 @@ function (_Component) {
 
       var tabbarPadding = this.context.hasTabbar ? _appearance_constants__WEBPACK_IMPORTED_MODULE_4__["tabbarHeight"] : 0;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className, _defineProperty({
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className, _defineProperty({
           'Panel--centered': centered
         }, "Panel--tm-".concat(theme), theme))
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -59139,7 +59140,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib_classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _lib_transitionEvents__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13);
 /* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
@@ -59307,14 +59308,14 @@ function (_React$Component) {
           activeView = _this$state.activeView,
           nextView = _this$state.nextView;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassName, {
           'Root--transition': transition
         })
       }, Views.map(function (View) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: View.props.id,
           id: "view-".concat(View.props.id),
-          className: Object(_lib_classnames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('Root__view', {
+          className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('Root__view', {
             'Root__view--hide-back': View.props.id === prevView && isBack,
             'Root__view--hide-forward': View.props.id === prevView && !isBack,
             'Root__view--show-back': View.props.id === nextView && isBack,
