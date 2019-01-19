@@ -1218,8 +1218,6 @@ body[scheme="client_dark"] {
   padding: 0;
   margin: 0;
   font-size: 17px;
-  font-family: -apple-system, Helvetica Neue, Arial;
-  font-family: var(--font-ios);
   }
 
 .HeaderButton[disabled] {
@@ -1257,8 +1255,6 @@ body[scheme="client_dark"] {
   font-weight: 500;
   font-size: 14px;
   padding: 0 12px;
-  font-family: Roboto, Arial;
-  font-family: var(--font-android);
   }
 
 .HeaderButton--android .Icon--24 {
@@ -2536,8 +2532,6 @@ body[scheme="client_dark"] {
       outline: none;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-family: -apple-system, Helvetica Neue, Arial;
-      font-family: var(--font-ios);
       }
 
 .Alert--ios .Alert__btn:active {
@@ -2698,8 +2692,6 @@ body[scheme="client_dark"] {
       outline: none;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-family: Roboto, Arial;
-      font-family: var(--font-android);
       }
 
 .Alert--android .Alert__btn--cancel {
@@ -3214,10 +3206,7 @@ body[scheme="client_dark"] {
   iOS
  */
 
-.Button--ios {
-  font-family: -apple-system, Helvetica Neue, Arial;
-  font-family: var(--font-ios);
-  }
+.Button--ios {}
 
 .Button--ios.Button--sz-m {
   border-radius: 15px;
@@ -3236,8 +3225,6 @@ body[scheme="client_dark"] {
  */
 
 .Button--android {
-  font-family: Roboto, Arial;
-  font-family: var(--font-android);
   border-radius: 4px;
   }
 
@@ -3295,8 +3282,6 @@ body[scheme="client_dark"] {
  */
 
 .CellButton--ios {
-  font-family: -apple-system, Helvetica Neue, Arial;
-  font-family: var(--font-ios);
   padding: 0 12px;
   }
 
@@ -3315,8 +3300,6 @@ body[scheme="client_dark"] {
  */
 
 .CellButton--android {
-  font-family: Roboto, Arial;
-  font-family: var(--font-android);
   padding: 0 16px;
   }
 
@@ -4946,20 +4929,14 @@ body[scheme="client_dark"] {
   color: var(--field_text_placeholder);
   }
 
-.Input--ios {
-  font-family: -apple-system, Helvetica Neue, Arial;
-  font-family: var(--font-ios);
-  }
+.Input--ios {}
 
 .Input--ios .Input__el:focus ~ .Input__border {
     border-color: #528bcc;
     border-color: var(--accent);
     }
 
-.Input--android {
-  font-family: Roboto, Arial;
-  font-family: var(--font-android);
-  }
+.Input--android {}
 
 .Input--android .Input__el {
     border-radius: 4px;
@@ -5125,11 +5102,6 @@ body[scheme="client_dark"] {
 
   }
 
-.Textarea--ios textarea {
-    font-family: -apple-system, Helvetica Neue, Arial;
-    font-family: var(--font-ios);
-    }
-
 .Textarea--ios textarea:focus ~ .Textarea__border {
     border-color: #528bcc;
     border-color: var(--accent);
@@ -5143,8 +5115,6 @@ body[scheme="client_dark"] {
     border-radius: 4px 0 0 4px;
     background-color: #f2f3f5;
     background-color: var(--field_background);
-    font-family: Roboto, Arial;
-    font-family: var(--font-android);
     padding-bottom: 4px;
     }
 
@@ -5476,8 +5446,6 @@ body[scheme="client_dark"] {
         min-width: 0;
         background-color: transparent;
         z-index: 2;
-        font-family: -apple-system, Helvetica Neue, Arial;
-        font-family: var(--font-ios);
         }
 
 .Search--ios.Search--has-after .Search__input {
@@ -5800,8 +5768,6 @@ body[scheme="client_dark"] {
       font-size: 16px;
       line-height: 20px;
       background-color: transparent;
-      font-family: Roboto, Arial;
-      font-family: var(--font-android);
       }
 
 /*
@@ -6084,6 +6050,16 @@ body[scheme="client_dark"] {
   height: 100%;
   }
 
+.Epic--ios {
+    font-family: -apple-system, Helvetica Neue, Arial;
+    font-family: var(--font-ios);
+  }
+
+.Epic--android {
+    font-family: Roboto, Arial;
+    font-family: var(--font-android);
+  }
+
 .FormStatus {
   border-radius: 10px;
   padding: 12px;
@@ -6135,6 +6111,13 @@ div#root {
 
 body {
   overflow-x: hidden;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
 }
 
 #root {
