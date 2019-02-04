@@ -3753,7 +3753,7 @@ body[scheme="client_dark"] {
       }
 
 .Cell--ios .Cell__before-in > .Icon {
-        padding: 11px 16px 11px 0;
+        padding: 10px 16px 10px 0;
         }
 
 .Cell--ios.Cell--m .Cell__before-in > .Avatar {
@@ -3824,8 +3824,8 @@ body[scheme="client_dark"] {
 
 .Cell--ios .Cell__indicator,
     .Cell--ios .Cell__aside {
-      padding-top: 11px;
-      padding-bottom: 11px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       }
 
 /* Android */
@@ -6712,7 +6712,8 @@ body[scheme="space_gray"] {
 
 /* stylelint-enable */
 
-[class*=rsg--para] > [class*=rsg--code] {
+[class*=rsg--para] > [class*=rsg--code],
+[class*=rsg--li] > [class*=rsg--code] {
   padding: 0 .3em;
   margin: 0;
   font-size: 85%;
