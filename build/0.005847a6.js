@@ -1,6 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
 
-/***/ 503:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
@@ -9703,10 +9703,10 @@ return CodeMirror$1;
 
 /***/ }),
 
-/***/ 504:
+/***/ 498:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(190)(false);
+exports = module.exports = __webpack_require__(188)(false);
 // imports
 
 
@@ -9718,11 +9718,11 @@ exports.push([module.i, "/*\n\n    Name:       Base16 Default Light\n    Author:
 
 /***/ }),
 
-/***/ 505:
+/***/ 499:
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(504);
+var content = __webpack_require__(498);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -9736,7 +9736,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(189)(content, options);
+var update = __webpack_require__(187)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -9744,10 +9744,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ 506:
+/***/ 500:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(190)(false);
+exports = module.exports = __webpack_require__(188)(false);
 // imports
 
 
@@ -9759,11 +9759,11 @@ exports.push([module.i, "/* BASICS */\n\n.CodeMirror {\n  /* Set height, width, 
 
 /***/ }),
 
-/***/ 507:
+/***/ 501:
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(506);
+var content = __webpack_require__(500);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -9777,7 +9777,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(189)(content, options);
+var update = __webpack_require__(187)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -9785,7 +9785,7 @@ if(false) {}
 
 /***/ }),
 
-/***/ 508:
+/***/ 502:
 /***/ (function(module, exports, __webpack_require__) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
@@ -9793,7 +9793,7 @@ if(false) {}
 
 (function(mod) {
   if (true) // CommonJS
-    mod(__webpack_require__(503));
+    mod(__webpack_require__(497));
   else {}
 })(function(CodeMirror) {
 "use strict";
@@ -10685,7 +10685,7 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 
 /***/ }),
 
-/***/ 509:
+/***/ 503:
 /***/ (function(module, exports, __webpack_require__) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
@@ -10693,7 +10693,7 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 
 (function(mod) {
   if (true) // CommonJS
-    mod(__webpack_require__(503));
+    mod(__webpack_require__(497));
   else {}
 })(function(CodeMirror) {
 "use strict";
@@ -11090,7 +11090,7 @@ if (!CodeMirror.mimeModes.hasOwnProperty("text/html"))
 
 /***/ }),
 
-/***/ 510:
+/***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
@@ -11098,7 +11098,7 @@ if (!CodeMirror.mimeModes.hasOwnProperty("text/html"))
 
 (function(mod) {
   if (true) // CommonJS
-    mod(__webpack_require__(503), __webpack_require__(509), __webpack_require__(508))
+    mod(__webpack_require__(497), __webpack_require__(503), __webpack_require__(502))
   else {}
 })(function(CodeMirror) {
   "use strict"
@@ -11242,7 +11242,7 @@ if (!CodeMirror.mimeModes.hasOwnProperty("text/html"))
 
 /***/ }),
 
-/***/ 511:
+/***/ 505:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11293,7 +11293,7 @@ var React = __webpack_require__(0);
 var SERVER_RENDERED = typeof navigator === 'undefined' || global['PREVENT_CODEMIRROR_RENDER'] === true;
 var cm;
 if (!SERVER_RENDERED) {
-  cm = __webpack_require__(503);
+  cm = __webpack_require__(497);
 }
 var Helper = function() {
   function Helper() {}
@@ -11878,11 +11878,11 @@ var UnControlled = function(_super) {
   return UnControlled;
 }(React.Component);
 exports.UnControlled = UnControlled;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(23)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(22)))
 
 /***/ }),
 
-/***/ 512:
+/***/ 506:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11891,11 +11891,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(114);
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(111);
 /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_codemirror2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(511);
+/* harmony import */ var react_codemirror2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(505);
 /* harmony import */ var react_codemirror2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_codemirror2__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var codemirror_mode_jsx_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(510);
+/* harmony import */ var codemirror_mode_jsx_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(504);
 /* harmony import */ var codemirror_mode_jsx_jsx__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(codemirror_mode_jsx_jsx__WEBPACK_IMPORTED_MODULE_4__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -11916,9 +11916,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // We’re explicitly specifying Webpack loaders here so we could skip specifying them in Webpack configuration.
 // That way we could avoid clashes between our loaders and user loaders.
 // eslint-disable-next-line import/no-unresolved
-__webpack_require__(507);
+__webpack_require__(501);
 // eslint-disable-next-line import/no-unresolved
-__webpack_require__(505);
+__webpack_require__(499);
 
 var UPDATE_DELAY = 10;
 
