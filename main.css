@@ -2615,10 +2615,6 @@ body[scheme="client_dark"] {
     }
   }
 
-.Alert--ios .Alert__btn--primary { /* Depcrated. Remove in next version */
-    font-weight: 500;
-    }
-
 .Alert--ios .Alert__btn--cancel {
     font-weight: 600;
     }
@@ -2677,6 +2673,11 @@ body[scheme="client_dark"] {
     flex-flow: wrap;
     }
 
+.Alert--android.Alert--v .Alert__footer {
+    flex-direction: column;
+    align-items: flex-end;
+    }
+
 .Alert--android .Alert__btn {
       margin: 0 0 0 12px;
       border: 0;
@@ -2692,16 +2693,6 @@ body[scheme="client_dark"] {
       outline: none;
       overflow: hidden;
       text-overflow: ellipsis;
-      }
-
-.Alert--android .Alert__btn--cancel {
-      color: #e64646;
-      color: var(--destructive);
-      }
-
-.Alert--android .Alert__btn--primary {
-      color: #528bcc;
-      color: var(--accent);
       }
 
 /**
@@ -4375,7 +4366,7 @@ body[scheme="client_dark"] {
 .Tabs--android .TabsItem {
   height: 48px;
   line-height: 48px;
-  font-size: 16px;
+  font-size: 14px;
   position: relative;
   }
 
@@ -4420,6 +4411,7 @@ body[scheme="client_dark"] {
 
 .Tabs--android.Tabs--header .TabsItem .TabsItem__in {
     opacity: .7;
+    text-transform: uppercase;
     }
 
 .Tabs--android.Tabs--header .TabsItem--selected .TabsItem__in {
@@ -4757,6 +4749,10 @@ body[scheme="client_dark"] {
     display: block;
     }
 
+.FormLayout__row-top {
+    line-height: 18px;
+    }
+
 .FormLayout__submit {
     position: absolute;
     visibility: hidden;
@@ -4869,7 +4865,6 @@ body[scheme="client_dark"] {
       color: #909499;
       color: var(--text_secondary);
       padding: 2px 16px 8px;
-      line-height: 18px;
       font-size: 14px;
       }
 

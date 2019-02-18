@@ -4254,7 +4254,7 @@ TextRenderer.defaultProps = {
 /* 28 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.18.2","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.18.3","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 29 */
@@ -5599,7 +5599,7 @@ function (_Component) {
         manual: true
       };
 
-      if (['animation-ios-next-forward', 'animation-ios-next-back', 'animation-ios-prev-forward', 'animation-ios-prev-back', 'animation-android-next-forward', 'animation-android-prev-back'].indexOf(e.animationName) > -1 || e.manual) {
+      if (['animation-ios-next-forward', 'animation-ios-prev-back', 'animation-android-next-forward', 'animation-android-prev-back'].indexOf(e.animationName) > -1 || e.manual) {
         var activePanel = _this.props.activePanel;
         var isBack = _this.state.isBack;
         var prevPanel = _this.state.prevPanel;
@@ -5636,7 +5636,7 @@ function (_Component) {
       var activePanel = _this.state.activePanel;
 
       if (activePanel) {
-        var scrollTop = _this.document.body.scrollTop || _this.document.this.documentElement.scrollTop;
+        var scrollTop = _this.document.body.scrollTop || _this.document.documentElement.scrollTop;
 
         if (scrollTop) {
           animate({
@@ -6011,14 +6011,6 @@ function (_Component) {
       }
     }
   }, {
-    key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(_ref) {
-      var inRoot = _ref.inRoot,
-          isNext = _ref.isNext,
-          isPrev = _ref.isPrev;
-      return inRoot ? !isNext && !isPrev : true;
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this4 = this;
@@ -6032,10 +6024,12 @@ function (_Component) {
           nextPanel = _this$state.nextPanel,
           activePanel = _this$state.activePanel,
           swipeBackPrevPanel = _this$state.swipeBackPrevPanel,
-          swipeBackNextPanel = _this$state.swipeBackNextPanel;
+          swipeBackNextPanel = _this$state.swipeBackNextPanel,
+          swipingBackFinish = _this$state.swipingBackFinish;
       var hasPopout = !!popout;
       var panels = this.panels.filter(function (panel) {
-        return _this4.state.visiblePanels.indexOf(panel.props.id) > -1 || panel.props.id === _this4.state.swipeBackPrevPanel || panel.props.id === _this4.state.swipeBackNextPanel;
+        var panelId = panel.props.id;
+        return _this4.state.visiblePanels.indexOf(panelId) > -1 || panelId === swipeBackPrevPanel || panelId === swipeBackNextPanel;
       });
       var modifiers = {
         'View--header': header,
@@ -6056,65 +6050,67 @@ function (_Component) {
       }), react_default.a.createElement("div", {
         className: Object(classNames["a" /* default */])(PanelHeader["baseClassNames"])
       }, panels.map(function (panel) {
+        var panelId = panel.props.id;
+
+        var headerSwipeStyles = _this4.calcHeaderSwipeStyles(panelId);
+
         return react_default.a.createElement("div", {
           className: Object(classNames["a" /* default */])('PanelHeader__in', {
-            'PanelHeader__in--active': panel.props.id === activePanel,
-            'PanelHeader__in--prev': panel.props.id === prevPanel,
-            'PanelHeader__in--next': panel.props.id === nextPanel,
-            'PanelHeader__in--swipe-back-prev': panel.props.id === _this4.state.swipeBackPrevPanel,
-            'PanelHeader__in--swipe-back-next': panel.props.id === _this4.state.swipeBackNextPanel,
-            'PanelHeader__in--swipe-back-success': _this4.state.swipingBackFinish === true,
-            'PanelHeader__in--swipe-back-failed': _this4.state.swipingBackFinish === false
+            'PanelHeader__in--active': panelId === activePanel,
+            'PanelHeader__in--prev': panelId === prevPanel,
+            'PanelHeader__in--next': panelId === nextPanel,
+            'PanelHeader__in--swipe-back-prev': panelId === swipeBackPrevPanel,
+            'PanelHeader__in--swipe-back-next': panelId === swipeBackNextPanel,
+            'PanelHeader__in--swipe-back-success': swipingBackFinish === true,
+            'PanelHeader__in--swipe-back-failed': swipingBackFinish === false
           }),
-          key: panel.props.id,
-          id: "panel-header-".concat(panel.props.id)
+          key: panelId,
+          id: "panel-header-".concat(panelId)
         }, react_default.a.createElement("div", {
           className: "PanelHeader__bg",
-          key: panel.props.id,
-          id: "header-bg-".concat(panel.props.id),
-          style: _this4.calcHeaderSwipeStyles(panel.props.id).bg
+          key: panelId,
+          id: "header-bg-".concat(panelId),
+          style: headerSwipeStyles.bg
         }), react_default.a.createElement("div", {
           className: "PanelHeader__container"
         }, react_default.a.createElement("div", {
           className: "PanelHeader__left"
         }, react_default.a.createElement("div", {
           className: "PanelHeader__left-in",
-          id: "header-left-".concat(panel.props.id),
-          style: _this4.calcHeaderSwipeStyles(panel.props.id).left
+          id: "header-left-".concat(panelId),
+          style: headerSwipeStyles.left
         }), osname === platform["b" /* IOS */] && react_default.a.createElement("div", {
           className: "PanelHeader__addon",
-          id: "header-addon-".concat(panel.props.id),
-          style: _this4.calcHeaderSwipeStyles(panel.props.id).icon
+          id: "header-addon-".concat(panelId),
+          style: headerSwipeStyles.icon
         })), react_default.a.createElement("div", {
           className: "PanelHeader__content",
-          style: _this4.calcHeaderSwipeStyles(panel.props.id).title,
-          id: "header-title-".concat(panel.props.id)
+          style: headerSwipeStyles.title,
+          id: "header-title-".concat(panelId)
         }), react_default.a.createElement("div", {
           className: "PanelHeader__right",
-          id: "header-right-".concat(panel.props.id),
-          style: _this4.calcHeaderSwipeStyles(panel.props.id).right
+          id: "header-right-".concat(panelId),
+          style: headerSwipeStyles.right
         })));
       }))), react_default.a.createElement("div", {
         className: "View__panels"
       }, panels.map(function (panel) {
+        var panelId = panel.props.id;
         return react_default.a.createElement("div", {
           className: Object(classNames["a" /* default */])('View__panel', {
-            'View__panel--active': panel.props.id === activePanel,
-            'View__panel--prev': panel.props.id === prevPanel,
-            'View__panel--next': panel.props.id === nextPanel,
-            'View__panel--swipe-back-prev': panel.props.id === _this4.state.swipeBackPrevPanel,
-            'View__panel--swipe-back-next': panel.props.id === _this4.state.swipeBackNextPanel,
-            'View__panel--swipe-back-success': _this4.state.swipingBackFinish === true,
-            'View__panel--swipe-back-failed': _this4.state.swipingBackFinish === false
+            'View__panel--active': panelId === activePanel,
+            'View__panel--prev': panelId === prevPanel,
+            'View__panel--next': panelId === nextPanel,
+            'View__panel--swipe-back-prev': panelId === swipeBackPrevPanel,
+            'View__panel--swipe-back-next': panelId === swipeBackNextPanel,
+            'View__panel--swipe-back-success': swipingBackFinish === true,
+            'View__panel--swipe-back-failed': swipingBackFinish === false
           }),
-          style: _this4.calcPanelSwipeStyles(panel.props.id),
-          key: panel.props.id
+          style: _this4.calcPanelSwipeStyles(panelId),
+          key: panelId
         }, react_default.a.createElement("div", {
           className: "View__panel-in"
-        }, react_default.a.cloneElement(panel, {
-          isNext: panel.props.id === nextPanel || panel.props.id === swipeBackNextPanel,
-          isPrev: panel.props.id === prevPanel || panel.props.id === swipeBackPrevPanel
-        })));
+        }, panel));
       })), hasPopout && react_default.a.createElement("div", {
         className: "View__popout"
       }, popout));
@@ -6160,22 +6156,7 @@ View_defineProperty(View_View, "propTypes", {
   /**
    * @ignore
    */
-  history: prop_types_default.a.arrayOf(prop_types_default.a.string),
-
-  /**
-   * @ignore
-   */
-  isNext: prop_types_default.a.bool,
-
-  /**
-   * @ignore
-   */
-  isPrev: prop_types_default.a.bool,
-
-  /**
-   * @ignore
-   */
-  inRoot: prop_types_default.a.bool
+  history: prop_types_default.a.arrayOf(prop_types_default.a.string)
 });
 
 View_defineProperty(View_View, "defaultProps", {
@@ -46624,8 +46605,8 @@ function (_React$Component) {
       return {
         width: targetBounds.width,
         height: targetBounds.height,
-        x: targetBounds.x - portalBounds.x,
-        y: targetBounds.y - portalBounds.y
+        x: targetBounds.left - portalBounds.left,
+        y: targetBounds.top - portalBounds.top
       };
     }
   }, {
@@ -50990,12 +50971,18 @@ var requireInRuntime = requireInRuntimeBase.bind(null, requireMap);
 var evalInContextBase = __webpack_require__(7);
 var evalInContext = evalInContextBase.bind(null, "var React = require('react');", requireInRuntime);
 
-module.exports = [{
+module.exports = [
+    {
+        'type': 'markdown',
+        'content': 'В Алертах особое внимание нужно уделить кнопкам. Всего есть три типа кнопок: \n`cancel`, `destructive` и `default`. \n\nТипом `cancel` нужно подсветить действие, возвращающее пользователя к\nсостоянию, когда алерт был закрыт. Пользователь кликнет по нему в случае, когда он открыл алерт для\nсовершения какого-то действия и передумал. \n\nСтиль `destructive` используется в случае, когда действие влечёт за собой какие-то деструктивные последствия:\nудаление, разжалование и т.д.\n\nВо всех остальных случаях используйте стиль `default`.\n\n**Важно:** \n\n-   Кнопка со стилем `cancel` должна быть одна на алерт.\n-   Кнопку со стилем `cancel` нужно располагать либо слева, либо снизу, в зависимости от выбранного \n    `actionsLayout`.\n-   Свойство экшена `style` игнорируется в Android версии. Там жирность и цвет всех кнопок одинковый. При этом\n    порядок кнопок должен быть одинаковым на всех платформах (см. пункт 2).'
+    },
+    {
         'type': 'code',
-        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      popout: null\n    }\n  }\n\n  componentDidMount() {\n    this.openSheet()\n  }\n\n  openSheet () {\n    this.setState({ popout:\n      <Alert\n        actions={[{\n          title: \'Close\',\n          autoclose: true,\n          style: \'destructive\'\n        }, {\n          title: \'Cancel\',\n          autoclose: true,\n          style: \'cancel\'\n        }]}\n        onClose={ () => this.setState({ popout: null }) }\n      >\n        <h2>Hi!</h2>\n        <p>I am alert</p>\n      </Alert>\n    });\n  }\n\n  render() {\n    return (\n      <View popout={this.state.popout} header={false} activePanel="alert">\n        <Panel id="alert">\n          <CellButton onClick={this.openSheet.bind(this)}>Open Alert</CellButton>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
+        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      popout: null\n    };\n    \n    this.openDefault = this.openDefault.bind(this);\n    this.openDestructive = this.openDestructive.bind(this);\n    this.closePopout = this.closePopout.bind(this);\n  }\n\n  componentDidMount() {\n    this.openDestructive()\n  }\n\n  openDefault () {\n    this.setState({ popout:\n      <Alert\n        actions={[{\n          title: \'Отмена\',\n          autoclose: true,\n          style: \'cancel\'\n        }, {\n          title: \'Добавить\',\n          autoclose: true,\n        }]}\n        onClose={this.closePopout}\n      >\n        <h2>Подтвердите действие</h2>\n        <p>Добавить пользователю право на модерацию контента.</p>\n      </Alert>\n    });\n  }\n  \n  openDestructive () {\n    \n    this.setState({ popout:\n      <Alert\n        actionsLayout="vertical"\n        actions={[{\n          title: \'Лишить права\',\n          autoclose: true,\n          style: \'destructive\'\n        }, {\n          title: \'Отмена\',\n          autoclose: true,\n          style: \'cancel\'\n        }]}\n        onClose={this.closePopout}\n      >\n        <h2>Подтвердите действие</h2>\n        <p>Вы уверены, что хотите лишить пользователя права на модерацию контента?</p>\n      </Alert>\n    });\n  } \n  \n  closePopout () {\n    this.setState({ popout: null });\n  }\n\n  render() {\n    return (\n      <View popout={this.state.popout} header={false} activePanel="alert">\n        <Panel id="alert">\n          <CellButton onClick={this.openDefault}>Добавить право</CellButton>\n          <CellButton level="danger" onClick={this.openDestructive}>Лишить права</CellButton>  \n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
         'settings': {},
         'evalInContext': evalInContext
-    }]
+    }
+]
 	
 
 /***/ }),
@@ -51028,10 +51015,6 @@ module.exports = {
                             'name': 'enum',
                             'value': [
                                 {
-                                    'value': '\'primary\'',
-                                    'computed': false
-                                },
-                                {
                                     'value': '\'cancel\'',
                                     'computed': false
                                 },
@@ -51044,6 +51027,7 @@ module.exports = {
                                     'computed': false
                                 }
                             ],
+                            'description': 'iOS only',
                             'required': false
                         }
                     }
@@ -51220,7 +51204,7 @@ function (_Component) {
       }, actions.map(function (button, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* default */ "b"], {
           component: "button",
-          className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Alert__btn', _defineProperty({}, "Alert__btn--".concat(button.style), true)),
+          className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Alert__btn', _defineProperty({}, "Alert__btn--".concat(button.style), button.style)),
           onClick: _this2.onItemClick(button),
           key: "alert-action-".concat(i)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -51243,7 +51227,11 @@ _defineProperty(Alert, "propTypes", {
   actions: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
     title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
     action: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-    style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['primary', 'cancel', 'destructive', 'default'])
+
+    /**
+     * iOS only
+     */
+    style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['cancel', 'destructive', 'default'])
   })),
   onClose: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
 });
@@ -53219,17 +53207,6 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'bool' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': 'true',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'optimized'
-        },
-        {
             'type': { 'name': 'object' },
             'required': false,
             'description': '',
@@ -53332,25 +53309,14 @@ function (_Component) {
       };
     }
   }, {
-    key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(_ref) {
-      var optimized = _ref.optimized,
-          isNext = _ref.isNext,
-          isPrev = _ref.isPrev;
-      return optimized ? !isNext && !isPrev : true;
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           className = _this$props.className,
           centered = _this$props.centered,
           children = _this$props.children,
-          isPrev = _this$props.isPrev,
-          isNext = _this$props.isNext,
           theme = _this$props.theme,
-          optimized = _this$props.optimized,
-          restProps = _objectWithoutProperties(_this$props, ["className", "centered", "children", "isPrev", "isNext", "theme", "optimized"]);
+          restProps = _objectWithoutProperties(_this$props, ["className", "centered", "children", "theme"]);
 
       var tabbarPadding = this.context.hasTabbar ? _appearance_constants__WEBPACK_IMPORTED_MODULE_4__["tabbarHeight"] : 0;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
@@ -53387,26 +53353,14 @@ _defineProperty(Panel, "propTypes", {
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   theme: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['white', 'gray']),
   id: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
-  optimized: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   centered: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-  style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
-
-  /**
-   * @ignore
-   */
-  isPrev: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
-
-  /**
-   * @ignore
-   */
-  isNext: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
+  style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object
 });
 
 _defineProperty(Panel, "defaultProps", {
   children: '',
   theme: 'gray',
-  centered: false,
-  optimized: true
+  centered: false
 });
 
 _defineProperty(Panel, "contextTypes", {
@@ -53804,11 +53758,7 @@ function (_React$Component) {
             'Root__view--show-forward': View.props.id === nextView && !isBack,
             'Root__view--active': View.props.id === activeView
           })
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(View, {
-          inRoot: true,
-          isNext: View.props.id === nextView,
-          isPrev: View.props.id === prevView
-        }));
+        }, View);
       }), this.props.popout && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Root__popout"
       }, this.props.popout));
