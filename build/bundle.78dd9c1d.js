@@ -4254,7 +4254,7 @@ TextRenderer.defaultProps = {
 /* 28 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.18.3","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.18.4","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.0","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 29 */
@@ -46056,11 +46056,11 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Компонент для создания форм. Принимает в качестве `children` один или несколько элементов форм.\n\nДля отрисовки лейблов снизу и сверху у каждой строчки, используются свойства `top` и `bottom`, которые нужно навесить\nна `children` элементы.'
+        'content': 'Компонент для создания форм. Принимает в качестве `children` один или несколько элементов форм.\n\nДля отрисовки лейблов снизу и сверху у каждой строчки, используются свойства `top` и `bottom`, которые нужно навесить\nна `children` элементы.\n\nМожно использовать вложенный массив `children`. Это будет полезно, если часть или все поля формы создаются динамически через `Array.map()`.'
     },
     {
         'type': 'code',
-        'content': '<View activePanel="new-user">\n  <Panel id="new-user" theme="white">\n    <PanelHeader>Регистрация</PanelHeader>\n    <FormLayout>\n      <Input type="email" top="E-mail" />\n      <FormLayoutGroup top="Пароль" bottom="Пароль может содержать только латинские буквы и цифры.">\n        <Input type="password"  placeholder="Введите пароль" />\n        <Input type="password" placeholder="Повторите пароль" />\n      </FormLayoutGroup>\n      <Input top="Имя" />\n      <Input top="Фамилия" />\n      <Select top="Пол" placeholder="Выберите пол">\n        <option value="m">Мужской</option>\n        <option value="f">Женский</option>\n      </Select>\n      <FormLayoutGroup top="Тип документа">\n        <Radio name="type">Паспорт</Radio>\n        <Radio name="type">Загран</Radio>\n      </FormLayoutGroup>\n      <Textarea top="О себе" />\n      <Checkbox>Согласен со всем <Link>этим</Link></Checkbox>\n      <Button size="xl">Зарегистрироваться</Button>\n    </FormLayout>\n  </Panel>\n</View>',
+        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.addressItems = [\n      { label: \'Почтовый индекс\', name: \'zip\' },\n      { label: \'Страна\', name: \'country\' },\n      { label: \'Город\', name: \'city\' }\n    ];\n  }\n\n  render() {\n    return (\n      <View activePanel="new-user">\n        <Panel id="new-user" theme="white">\n          <PanelHeader>Регистрация</PanelHeader>\n          <FormLayout>\n            <Input type="email" top="E-mail" />\n            <FormLayoutGroup top="Пароль" bottom="Пароль может содержать только латинские буквы и цифры.">\n              <Input type="password"  placeholder="Введите пароль" />\n              <Input type="password" placeholder="Повторите пароль" />\n            </FormLayoutGroup>\n            <Input top="Имя" />\n            <Input top="Фамилия" />\n            <Select top="Пол" placeholder="Выберите пол">\n              <option value="m">Мужской</option>\n              <option value="f">Женский</option>\n            </Select>\n            <FormLayoutGroup top="Тип документа">\n              <Radio name="type">Паспорт</Radio>\n              <Radio name="type">Загран</Radio>\n            </FormLayoutGroup>\n\n            {this.addressItems.map(({ label, name }) => (\n              <Input type="text" name={name} key={name} top={label} />\n            ))}\n\n            <Textarea top="О себе" />\n            <Checkbox>Согласен со всем <Link>этим</Link></Checkbox>\n            <Button size="xl">Зарегистрироваться</Button>\n          </FormLayout>\n        </Panel>\n      </View>\n    );\n  }\n}\n\n<Example />',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -46213,14 +46213,13 @@ function (_React$Component) {
           getRef = _this$props.getRef,
           restProps = _objectWithoutProperties(_this$props, ["children", "TagName", "className", "getRef"]);
 
-      var arrayChildren = Array.isArray(children) ? children : [children];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TagName, _extends({}, restProps, {
         className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className),
         onSubmit: this.onSubmit,
         ref: getRef
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FormLayout__container"
-      }, arrayChildren.map(function (field, i) {
+      }, react__WEBPACK_IMPORTED_MODULE_0__["Children"].toArray(children).map(function (field, i) {
         return field ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "FormLayout__row",
           key: field.key || "row-".concat(i)
@@ -51418,7 +51417,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      popout: null\n    }\n\n    this.openSheet = this.openSheet.bind(this);\n  }\n\n  componentDidMount() {\n    this.openSheet()\n  }\n\n  openSheet () {\n    this.setState({ popout:\n      <ActionSheet\n        onClose={() => this.setState({ popout: null })}\n        title="Hi!"\n        text="I am action sheet"\n      >\n        <ActionSheetItem autoclose>Action</ActionSheetItem>\n        <ActionSheetItem autoclose theme="destructive">Sheet</ActionSheetItem>\n        {osname === IOS && <ActionSheetItem autoclose theme="cancel">Cancel</ActionSheetItem>}\n      </ActionSheet>\n    });\n  }\n\n  render() {\n    return (\n      <View popout={this.state.popout} header={false} activePanel="panel">\n        <Panel id="panel">\n          <CellButton onClick={this.openSheet}>Open Sheet</CellButton>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
+        'content': 'class Example extends React.Component {\n  constructor(props) {\n    super(props);\n\n    this.state = {\n      popout: null\n    }\n\n    this.openSheet = this.openSheet.bind(this);\n    this.periodItems = [\'По дням\', \'По неделям\', \'По месяцам\'];\n  }\n\n  componentDidMount() {\n    this.openSheet()\n  }\n\n  getPeriodItems() {\n    return this.periodItems.map((name) => (\n      <ActionSheetItem autoclose key={name}>{name}</ActionSheetItem>\n    ));\n  }\n\n  openSheet () {\n    this.setState({ popout:\n      <ActionSheet\n        onClose={() => this.setState({ popout: null })}\n        title="Hi!"\n        text="I am action sheet"\n      >\n        {this.getPeriodItems()}\n        <ActionSheetItem autoclose theme="destructive">Деструктивный пункт</ActionSheetItem>\n        {osname === IOS && <ActionSheetItem autoclose theme="cancel">Cancel</ActionSheetItem>}\n      </ActionSheet>\n    });\n  }\n\n  render() {\n    return (\n      <View popout={this.state.popout} header={false} activePanel="panel">\n        <Panel id="panel">\n          <CellButton onClick={this.openSheet}>Open Sheet</CellButton>\n        </Panel>\n      </View>\n    )\n  }\n}\n\n<Example />',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -51640,14 +51639,14 @@ function (_React$Component) {
         className: "ActionSheet__title"
       }, title), text && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ActionSheet__text"
-      }, text)), react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.map(children, function (Child, index) {
+      }, text)), react__WEBPACK_IMPORTED_MODULE_0__["Children"].toArray(children).map(function (Child, index, arr) {
         return Child && react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(Child, {
           onClick: _this2.onItemClick(Child.props.onClick, Child.props.autoclose),
-          style: index === children.length - 1 && _this2.context.insets ? {
+          style: index === arr.length - 1 && _this2.context.insets ? {
             marginBottom: _this2.context.insets.bottom
           } : null
         });
-      }, null)));
+      })));
     }
   }]);
 
