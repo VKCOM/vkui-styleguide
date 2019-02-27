@@ -12,7 +12,7 @@
 
 :root {
   --accent: #528bcc;
-  --action_sheet_action_foreground: #0077ff;
+  --action_sheet_action_foreground: #2787f5;
   --action_sheet_separator: rgba(0, 0, 0, 0.12);
   --activity_indicator_tint: #aeb7c2;
   --attach_picker_tab_active_background: #5181b8;
@@ -36,7 +36,7 @@
   --button_outline_foreground: #528bcc;
   --button_primary_background: #5181b8;
   --button_primary_foreground: #ffffff;
-  --button_secondary_background: #ebedf0;
+  --button_secondary_background: rgba(0, 57, 115, 0.10);
   --button_secondary_foreground: #45678f;
   --button_tertiary_background: rgba(0, 0, 0, 0.00);
   --button_tertiary_foreground: #5181b8;
@@ -58,12 +58,16 @@
   --field_border: rgba(0, 0, 0, 0.12);
   --field_error_background: #faebeb;
   --field_error_border: #e64646;
+  --field_valid_border: #4bb34b;
   --field_text_placeholder: #909499;
   --float_button_background: #f5f5f5;
   --float_button_background_highlighted: #ebedf0;
   --float_button_foreground: #99a2ad;
   --float_button_border: rgba(0, 0, 0, 0.05);
   --header_alternate_background: #ffffff;
+  --header_alternate_tab_active_indicator: #528bcc;
+  --header_alternate_tab_active_text: #528bcc;
+  --header_alternate_tab_inactive_text: #909499;
   --header_background: #5181b8;
   --header_background_before_blur: #346cad;
   --header_background_before_blur_alternate: #ffffff;
@@ -79,6 +83,8 @@
   --header_tint: #ffffff;
   --header_tint_alternate: #528bcc;
   --icon_alpha_placeholder: #ffffff;
+  --icon_medium: #909499;
+  --icon_outline_medium: #818c99;
   --icon_outline_secondary: #99a2ad;
   --icon_secondary: #aaaeb3;
   --icon_tertiary: #c4c8cc;
@@ -103,13 +109,20 @@
   --im_reply_separator: #5181b8;
   --im_toolbar_voice_msg_background: #99a2ad;
   --im_toolbar_separator: #001d3d;
+  --image_border: rgba(0, 0, 0, 0.08);
   --input_background: #f2f3f5;
   --input_border: #e1e3e6;
-  --landing_background: #5181b8;
+  --landing_background: #528bcc;
+  --landing_login_button_background: rgba(0, 28, 61, 0.24);
+  --landing_login_button_foreground: #ffffff;
   --landing_primary_button_background: #ffffff;
-  --landing_primary_button_foreground: #5181b8;
+  --landing_primary_button_foreground: #2c2d2e;
+  --landing_tertiary_button_background: rgba(0, 0, 0, 0.00);
+  --landing_tertiary_button_foreground: rgba(194, 222, 255, 0.80);
   --landing_text_title: #ffffff;
   --landing_text_secondary: rgba(255, 255, 255, 0.60);
+  --landing_secondary_button_background: rgba(255, 255, 255, 0.15);
+  --landing_secondary_button_foreground: #ffffff;
   --landing_snippet_border: rgba(0, 0, 0, 0.00);
   --like_text_tint: #ff3347;
   --link_alternate: #5181b8;
@@ -143,9 +156,10 @@
   --separator_alternate: #e1e3e6;
   --separator_common: #d7d8d9;
   --snippet_background: #ffffff;
-  --snippet_border: #5d5f61;
+  --snippet_border: rgba(0, 0, 0, 0.15);
   --snippet_icon_tertiary: #c4c8cc;
   --splashscreen_icon: #e1e3e6;
+  --statusbar_alternate_legacy_background: rgba(0, 0, 0, 0.30);
   --stories_skeleton_loader_background: #c4c8cc;
   --switch_ios_off_border: #e1e3e6;
   --tabbar_active_icon: #2975cc;
@@ -168,6 +182,7 @@
   --panel_tab_active_text: #5d5f61;
   --panel_tab_inactive_text: #76787a;
   --im_service_message_text: #818c99;
+  --writebar_icon: #99a2ad;
 }
 
 /* stylelint-enable */
@@ -198,7 +213,7 @@ body[scheme="client_dark"] {
   --button_bot_shadow: #19191a;
   --button_commerce_background: #4bb34b;
   --button_commerce_foreground: #ffffff;
-  --button_muted_background: #ebedf0;
+  --button_muted_background: #2c2d2e;
   --button_muted_foreground: #e1e3e6;
   --button_outline_border: #e1e3e6;
   --button_outline_foreground: #e1e3e6;
@@ -212,7 +227,7 @@ body[scheme="client_dark"] {
   --content_placeholder_icon: #aaaeb3;
   --content_placeholder_text: #aaaeb3;
   --content_tint_background: #232324;
-  --content_tint_foreground: #76787a;
+  --content_tint_foreground: #909499;
   --control_background: #454647;
   --control_foreground: #e1e3e6;
   --control_tint: #19191a;
@@ -226,12 +241,16 @@ body[scheme="client_dark"] {
   --field_border: rgba(255, 255, 255, 0.12);
   --field_error_background: #522e2e;
   --field_error_border: #ff4e5f;
+  --field_valid_border: #4bb34b;
   --field_text_placeholder: #76787a;
   --float_button_background: #454647;
   --float_button_background_highlighted: #0a0a0a;
   --float_button_foreground: #aaaeb3;
   --float_button_border: rgba(0, 0, 0, 0.12);
   --header_alternate_background: #2c2d2e;
+  --header_alternate_tab_active_indicator: #e1e3e6;
+  --header_alternate_tab_active_text: #e1e3e6;
+  --header_alternate_tab_inactive_text: #76787a;
   --header_background: #2c2d2e;
   --header_background_before_blur: #141414;
   --header_background_before_blur_alternate: #141414;
@@ -247,6 +266,8 @@ body[scheme="client_dark"] {
   --header_tint: #e1e3e6;
   --header_tint_alternate: #e1e3e6;
   --icon_alpha_placeholder: #e1e3e6;
+  --icon_medium: #909499;
+  --icon_outline_medium: #aaaeb3;
   --icon_outline_secondary: #909499;
   --icon_secondary: #76787a;
   --icon_tertiary: #454647;
@@ -271,13 +292,20 @@ body[scheme="client_dark"] {
   --im_reply_separator: #ffffff;
   --im_toolbar_voice_msg_background: #454647;
   --im_toolbar_separator: #aaaeb3;
+  --image_border: rgba(255, 255, 255, 0.08);
   --input_background: #454647;
-  --input_border: #2c2d2e;
-  --landing_background: #5181b8;
-  --landing_primary_button_background: #ffffff;
-  --landing_primary_button_foreground: #5181b8;
+  --input_border: #454647;
+  --landing_background: #19191a;
+  --landing_login_button_background: #e1e3e6;
+  --landing_login_button_foreground: #19191a;
+  --landing_primary_button_background: #e1e3e6;
+  --landing_primary_button_foreground: #19191a;
+  --landing_tertiary_button_background: rgba(0, 0, 0, 0.00);
+  --landing_tertiary_button_foreground: #76787a;
   --landing_text_title: #ffffff;
-  --landing_text_secondary: rgba(255, 255, 255, 0.60);
+  --landing_text_secondary: #76787a;
+  --landing_secondary_button_background: rgba(255, 255, 255, 0.15);
+  --landing_secondary_button_foreground: #ffffff;
   --landing_snippet_border: rgba(0, 0, 0, 0.00);
   --like_text_tint: #ff4e5f;
   --link_alternate: #71aaeb;
@@ -303,17 +331,18 @@ body[scheme="client_dark"] {
   --search_bar_background: #19191a;
   --search_bar_field_background: #454647;
   --search_bar_field_tint: #aaaeb3;
-  --search_bar_segmented_control_tint: #76787a;
+  --search_bar_segmented_control_tint: #909499;
   --segmented_control_bar_background: #19191a;
   --segmented_control_tint: #76787a;
   --selection_off_icon: #454647;
   --separator_alpha: rgba(255, 255, 255, 0.15);
-  --separator_alternate: #19191a;
+  --separator_alternate: #232324;
   --separator_common: #313233;
   --snippet_background: #2c2d2e;
-  --snippet_border: rgba(255, 255, 255, 0.12);
+  --snippet_border: rgba(255, 255, 255, 0.15);
   --snippet_icon_tertiary: #5d5f61;
   --splashscreen_icon: #2c2d2e;
+  --statusbar_alternate_legacy_background: rgba(0, 0, 0, 0.00);
   --stories_skeleton_loader_background: #454647;
   --switch_ios_off_border: #2c2d2e;
   --tabbar_active_icon: #ffffff;
@@ -336,6 +365,7 @@ body[scheme="client_dark"] {
   --panel_tab_active_text: #e1e3e6;
   --panel_tab_inactive_text: #76787a;
   --im_service_message_text: #818c99;
+  --writebar_icon: #909499;
 }
 
 /* stylelint-enable */
@@ -2435,7 +2465,6 @@ body[scheme="client_dark"] {
     height: 100%;
     background-color: #ffffff;
     background-color: var(--modal_card_background);
-    opacity: .95;
     z-index: 1;
     content: '';
     }
@@ -2769,7 +2798,6 @@ body[scheme="client_dark"] {
     height: 100%;
     background-color: #ffffff;
     background-color: var(--modal_card_background);
-    opacity: .95;
     z-index: 1;
     content: '';
     transition: opacity .15s ease-out, background-color .15s ease-out;
@@ -3111,7 +3139,7 @@ body[scheme="client_dark"] {
   }
 
 .Button--lvl-secondary {
-  background-color: #ebedf0;
+  background-color: rgba(0, 57, 115, 0.10);
   background-color: var(--button_secondary_background);
   color: #45678f;
   color: var(--button_secondary_foreground);
@@ -4791,10 +4819,7 @@ body[scheme="client_dark"] {
       width: calc(100% - 2 * 12px);
       }
 
-.FormLayout--ios .FormLayout__row .Input,
-    .FormLayout--ios .FormLayout__row .Textarea,
-    .FormLayout--ios .FormLayout__row .Select,
-    .FormLayout--ios .FormLayout__row .SelectMimicry,
+.FormLayout--ios .FormLayout__row .FormField,
     .FormLayout--ios .FormLayout__row .Button,
     .FormLayout--ios .FormLayout__row .FormStatus {
       margin-left: 12px;
@@ -4845,10 +4870,7 @@ body[scheme="client_dark"] {
       width: calc(100% - 2 * 16px);
       }
 
-.FormLayout--android .FormLayout__row .Input,
-    .FormLayout--android .FormLayout__row .Textarea,
-    .FormLayout--android .FormLayout__row .Select,
-    .FormLayout--android .FormLayout__row .SelectMimicry,
+.FormLayout--android .FormLayout__row .FormField,
     .FormLayout--android .FormLayout__row .Button,
     .FormLayout--android .FormLayout__row .FormStatus {
       margin-left: 16px;
@@ -4875,6 +4897,17 @@ body[scheme="client_dark"] {
       color: var(--text_secondary);
       }
 
+.FormLayout__row--s-error .FormLayout__row-bottom {
+      color: #e64646;
+      color: var(--field_error_border);
+      }
+
+.FormLayout__row--s-valid .FormLayout__row-bottom,
+    .FormLayout__row--s-verified .FormLayout__row-bottom {
+      color: #4bb34b;
+      color: var(--field_valid_border);
+      }
+
 .FormLayoutGroup > * ~ * {
   margin-top: 12px;
   }
@@ -4884,6 +4917,96 @@ body[scheme="client_dark"] {
 .FormLayoutGroup > .Cell,
 .FormLayoutGroup > .CellButton {
   margin-top: 0;
+  }
+
+.FormField {
+  position: relative;
+  }
+
+.FormField__border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--field_border);
+  background: #f2f3f5;
+  background: var(--field_background);
+  content: '';
+  border-radius: 10px;
+  box-sizing: border-box;
+  z-index: 1;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  }
+
+.FormField--ios .FormField__border {
+  border-radius: 10px;
+  }
+
+.FormField--android .FormField__border {
+  border-radius: 8px;
+  }
+
+.FormField--s-error .FormField__border {
+  background: #faebeb;
+  background: var(--field_error_background);
+  border-color: #e64646;
+  border-color: var(--field_error_border);
+  }
+
+.FormField--s-valid .FormField__border,
+.FormField--s-verified .FormField__border {
+  border-color: #4bb34b;
+  border-color: var(--field_valid_border);
+  }
+
+.FormField.Textarea .Textarea__el:disabled ~ .FormField__border,
+.FormField.Select .Select__el:disabled ~ .FormField__border,
+.FormField.Input .Input__el:disabled ~ .FormField__border {
+  opacity: .6;
+  }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .FormField--ios .FormField__border {
+    border-radius: 20px;
+    -webkit-transform: scale(.5);
+            transform: scale(.5);
+    width: 200%;
+    height: 200%;
+    }
+  }
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx) {
+  .FormField--ios .FormField__border {
+    border-radius: 31.25px;
+    -webkit-transform: scale(.32);
+            transform: scale(.32);
+    width: 312.5%;
+    height: 312.5%;
+    }
+  }
+
+.FormField.Input .Input__el:focus ~ .FormField__border,
+.FormField.Textarea .Textarea__el:focus ~ .FormField__border,
+.FormField.Select .Select__el:focus ~ .FormField__border,
+.FormField.Select--mimicry:focus .FormField__border {
+  border-color: #528bcc;
+  border-color: var(--accent);
+  background: #f2f3f5;
+  background: var(--field_background);
+  }
+
+.FormField--ios.Input .Input__el:focus ~ .FormField__border,
+.FormField--ios.Textarea .Textarea__el:focus ~ .FormField__border,
+.FormField--ios.Select .Select__el:focus ~ .FormField__border,
+.FormField--ios.Select--mimicry:focus .FormField__border {
+  border-radius: 10px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  width: 100%;
+  height: 100%;
   }
 
 .Switch {
@@ -5063,36 +5186,6 @@ body[scheme="client_dark"] {
   color: var(--field_text_placeholder);
   }
 
-.Input--ios {}
-
-.Input--ios .Input__el:focus ~ .Input__border {
-    border-color: #528bcc;
-    border-color: var(--accent);
-    }
-
-.Input--android {}
-
-.Input--android .Input__el {
-    border-radius: 4px;
-    background-color: #f2f3f5;
-    background-color: var(--field_background);
-    }
-
-.Input--android .Input__el:disabled ~ .Input__border {
-    opacity: .6;
-    }
-
-.Input--android .Input__el:focus ~ .Input__border::before {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    transition: -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
-    transition: transform .14s cubic-bezier(.4, 0, .2, 1);
-    transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
-    transition: -webkit-transform .14s var(--android-easing);
-    transition: transform .14s var(--android-easing);
-    transition: transform .14s var(--android-easing), -webkit-transform .14s var(--android-easing);
-    }
-
 .Slider {
   position: relative;
   height: 28px;
@@ -5231,46 +5324,6 @@ body[scheme="client_dark"] {
 .Textarea textarea:disabled {
     opacity: .6;
     }
-
-.Textarea--ios {
-
-  }
-
-.Textarea--ios textarea:focus ~ .Textarea__border {
-    border-color: #528bcc;
-    border-color: var(--accent);
-    }
-
-.Textarea--android {
-
-  }
-
-.Textarea--android textarea {
-    border-radius: 4px 0 0 4px;
-    background-color: #f2f3f5;
-    background-color: var(--field_background);
-    padding-bottom: 4px;
-    }
-
-.Textarea--android textarea:focus {
-    border-color: #528bcc;
-    border-color: var(--accent);
-    }
-
-.Textarea--android textarea:disabled ~ .Textarea__border {
-    opacity: .6;
-    }
-
-.Textarea--android textarea:focus ~ .Textarea__border::before {
-      -webkit-transform: scaleX(1);
-              transform: scaleX(1);
-      transition: -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
-      transition: transform .14s cubic-bezier(.4, 0, .2, 1);
-      transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
-      transition: -webkit-transform .14s var(--android-easing);
-      transition: transform .14s var(--android-easing);
-      transition: transform .14s var(--android-easing), -webkit-transform .14s var(--android-easing);
-      }
 
 .Radio {
   display: block;
@@ -5444,7 +5497,7 @@ body[scheme="client_dark"] {
 .Select__container {
     line-height: 19px;
     font-size: 16px;
-    padding: 12px 40px 12px 12px;
+    padding: 13px 40px 12px 12px;
     color: #000000;
     color: var(--text_primary);
     box-sizing: border-box;
@@ -5478,7 +5531,8 @@ body[scheme="client_dark"] {
 
 .Select .Icon {
       position: absolute;
-      top: 10px;
+      top: 50%;
+      margin-top: -12px;
       right: 10px;
       color: #aaaeb3;
       color: var(--icon_secondary);
@@ -5488,49 +5542,6 @@ body[scheme="client_dark"] {
   height: auto;
   min-height: 44px;
   }
-
-.Select--multiline .Icon {
-  top: 50%;
-  margin-top: -12px;
-  }
-
-.Select--ios {}
-
-.Select--ios .Select__container {
-    border-radius: 10px;
-    background-color: #f2f3f5;
-    background-color: var(--field_background);
-    border: solid .5px rgba(0, 0, 0, 0.12);
-    border: solid .5px var(--field_border);
-    }
-
-.Select--ios select:focus ~ .Select__container,
-  .Select--ios.Select--mimicry:focus .Select__container {
-    border-color: #528bcc;
-    border-color: var(--accent);
-    }
-
-.Select--android {}
-
-.Select--android .Select__container {
-    border-radius: 4px;
-    background-color: #f2f3f5;
-    background-color: var(--field_background);
-    }
-
-.Select--android select:focus ~ .Select__border::before,
-  .Select--android.Select--mimicry:focus .Select__border::before,
-  .Select--android.Select--mimicry:active .Select__border::before {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    z-index: 0;
-    transition: -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
-    transition: transform .14s cubic-bezier(.4, 0, .2, 1);
-    transition: transform .14s cubic-bezier(.4, 0, .2, 1), -webkit-transform .14s cubic-bezier(.4, 0, .2, 1);
-    transition: -webkit-transform .14s var(--android-easing);
-    transition: transform .14s var(--android-easing);
-    transition: transform .14s var(--android-easing), -webkit-transform .14s var(--android-easing);
-    }
 
 .Div {
   -webkit-user-select: text;
@@ -6267,109 +6278,11 @@ button {
 #root {
   -webkit-user-select: none;
           user-select: none;
-  }
+}
 
 a:focus {
   outline: none;
 }
-
-.Input--android .Input__border,
-.Select--android .Select__border,
-.Textarea--android .Textarea__border {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.12);
-  background-color: var(--field_border);
-  z-index: 2;
-}
-
-.Textarea--android .Textarea__border {
-  position: relative;
-  }
-
-.Input--android .Input__border::after,
-.Select--android .Select__border::after,
-.Textarea--android .Textarea__border::after {
-  position: absolute;
-  top: -1px;
-  height: 7px;
-  width: 100%;
-  content: '';
-  display: block;
-  background-color: #f2f3f5;
-  background-color: var(--field_background);
-  z-index: 2;
-}
-
-.Input--android .Input__border::before,
-.Select--android .Select__border::before,
-.Textarea--android .Textarea__border::before {
-  position: absolute;
-  height: 8px;
-  width: 100%;
-  bottom: 0;
-  z-index: 1;
-  border-radius: 4px;
-  background: #528bcc;
-  background: var(--accent);
-  content: '';
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  transition: -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
-  transition: transform .1s cubic-bezier(.4, 0, .2, 1);
-  transition: transform .1s cubic-bezier(.4, 0, .2, 1), -webkit-transform .1s cubic-bezier(.4, 0, .2, 1);
-  transition: -webkit-transform .1s var(--android-easing);
-  transition: transform .1s var(--android-easing);
-  transition: transform .1s var(--android-easing), -webkit-transform .1s var(--android-easing);
-}
-
-.Input--ios .Input__border,
-.Textarea--ios .Textarea__border,
-.Select--ios .Select__border {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border: 1px solid var(--field_border);
-  background: #f2f3f5;
-  background: var(--field_background);
-  content: '';
-  border-radius: 10px;
-  box-sizing: border-box;
-  z-index: 1;
-  -webkit-transform-origin: left top;
-          transform-origin: left top;
-  }
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
-  .Input--ios .Input__border,
-  .Textarea--ios .Textarea__border,
-  .Select--ios .Select__border {
-    -webkit-transform: scale(.5);
-            transform: scale(.5);
-    border-radius: 20px;
-    width: 200%;
-    height: 200%;
-    }
-  }
-
-@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx) {
-  .Input--ios .Input__border,
-  .Textarea--ios .Textarea__border,
-  .Select--ios .Select__border {
-    -webkit-transform: scale(.32);
-            transform: scale(.32);
-    border-radius: calc(10px * 3.125);
-    width: 312.5%;
-    height: 312.5%;
-    }
-  }
 
 /* stylelint-disable */
 
@@ -6403,7 +6316,7 @@ body[scheme="bright_light"] {
   --button_outline_foreground: #528bcc;
   --button_primary_background: #4986cc;
   --button_primary_foreground: #ffffff;
-  --button_secondary_background: #ebedf0;
+  --button_secondary_background: rgba(0, 57, 115, 0.10);
   --button_secondary_foreground: #4986cc;
   --button_tertiary_background: rgba(0, 0, 0, 0.00);
   --button_tertiary_foreground: #4986cc;
@@ -6425,12 +6338,16 @@ body[scheme="bright_light"] {
   --field_border: rgba(0, 0, 0, 0.12);
   --field_error_background: #faebeb;
   --field_error_border: #e64646;
+  --field_valid_border: #4bb34b;
   --field_text_placeholder: #909499;
   --float_button_background: #f5f5f5;
   --float_button_background_highlighted: #ebedf0;
   --float_button_foreground: #99a2ad;
   --float_button_border: rgba(0, 0, 0, 0.05);
   --header_alternate_background: #ffffff;
+  --header_alternate_tab_active_indicator: #3f8ae0;
+  --header_alternate_tab_active_text: #3f8ae0;
+  --header_alternate_tab_inactive_text: #99a2ad;
   --header_background: #ffffff;
   --header_background_before_blur: #ffffff;
   --header_background_before_blur_alternate: #ffffff;
@@ -6441,11 +6358,13 @@ body[scheme="bright_light"] {
   --header_tab_active_indicator: #4986cc;
   --header_tab_inactive_text: #9099a3;
   --header_text: #3f8ae0;
-  --header_text_alternate: #000000;
+  --header_text_alternate: #3f8ae0;
   --header_text_secondary: #818c99;
   --header_tint: #3f8ae0;
   --header_tint_alternate: #528bcc;
   --icon_alpha_placeholder: #ffffff;
+  --icon_medium: #818c99;
+  --icon_outline_medium: #818c99;
   --icon_outline_secondary: #a3adb8;
   --icon_secondary: #a3adb8;
   --icon_tertiary: #c4c8cc;
@@ -6470,16 +6389,23 @@ body[scheme="bright_light"] {
   --im_reply_separator: #4986cc;
   --im_toolbar_voice_msg_background: #99a2ad;
   --im_toolbar_separator: #001d3d;
+  --image_border: rgba(0, 0, 0, 0.08);
   --input_background: #f2f3f5;
   --input_border: #e1e3e6;
   --landing_background: #ffffff;
+  --landing_login_button_background: #3f8ae0;
+  --landing_login_button_foreground: #ffffff;
   --landing_primary_button_background: #3f8ae0;
   --landing_primary_button_foreground: #ffffff;
+  --landing_tertiary_button_background: rgba(0, 0, 0, 0.00);
+  --landing_tertiary_button_foreground: #3f8ae0;
   --landing_text_title: #3f8ae0;
   --landing_text_secondary: #818c99;
+  --landing_secondary_button_background: rgba(0, 57, 115, 0.10);
+  --landing_secondary_button_foreground: #4986cc;
   --landing_snippet_border: rgba(0, 0, 0, 0.15);
   --like_text_tint: #ff3347;
-  --link_alternate: #5181b8;
+  --link_alternate: #4986cc;
   --loader_background: #ebedf0;
   --loader_tint: #76787a;
   --loader_track_fill: #e1e3e6;
@@ -6510,9 +6436,10 @@ body[scheme="bright_light"] {
   --separator_alternate: #e1e3e6;
   --separator_common: #d7d8d9;
   --snippet_background: #ffffff;
-  --snippet_border: #5d5f61;
+  --snippet_border: rgba(0, 0, 0, 0.15);
   --snippet_icon_tertiary: #c4c8cc;
   --splashscreen_icon: #e1e3e6;
+  --statusbar_alternate_legacy_background: rgba(0, 0, 0, 0.30);
   --stories_skeleton_loader_background: #c4c8cc;
   --switch_ios_off_border: #e1e3e6;
   --tabbar_active_icon: #2975cc;
@@ -6535,6 +6462,7 @@ body[scheme="bright_light"] {
   --panel_tab_active_text: #5d5f61;
   --panel_tab_inactive_text: #76787a;
   --im_service_message_text: #818c99;
+  --writebar_icon: #3f8ae0;
 }
 
 /* stylelint-enable */
@@ -6565,7 +6493,7 @@ body[scheme="space_gray"] {
   --button_bot_shadow: #19191a;
   --button_commerce_background: #4bb34b;
   --button_commerce_foreground: #ffffff;
-  --button_muted_background: #ebedf0;
+  --button_muted_background: #2c2d2e;
   --button_muted_foreground: #e1e3e6;
   --button_outline_border: #e1e3e6;
   --button_outline_foreground: #e1e3e6;
@@ -6579,7 +6507,7 @@ body[scheme="space_gray"] {
   --content_placeholder_icon: #aaaeb3;
   --content_placeholder_text: #aaaeb3;
   --content_tint_background: #232324;
-  --content_tint_foreground: #76787a;
+  --content_tint_foreground: #909499;
   --control_background: #454647;
   --control_foreground: #e1e3e6;
   --control_tint: #19191a;
@@ -6593,13 +6521,17 @@ body[scheme="space_gray"] {
   --field_border: rgba(255, 255, 255, 0.12);
   --field_error_background: #522e2e;
   --field_error_border: #ff4e5f;
+  --field_valid_border: #4bb34b;
   --field_text_placeholder: #76787a;
   --float_button_background: #454647;
   --float_button_background_highlighted: #0a0a0a;
   --float_button_foreground: #aaaeb3;
   --float_button_border: rgba(0, 0, 0, 0.12);
   --header_alternate_background: #2c2d2e;
-  --header_background: #2c2d2e;
+  --header_alternate_tab_active_indicator: #e1e3e6;
+  --header_alternate_tab_active_text: #e1e3e6;
+  --header_alternate_tab_inactive_text: #76787a;
+  --header_background: #19191a;
   --header_background_before_blur: #070708;
   --header_background_before_blur_alternate: #070708;
   --header_search_field_background: #454647;
@@ -6614,6 +6546,8 @@ body[scheme="space_gray"] {
   --header_tint: #e1e3e6;
   --header_tint_alternate: #e1e3e6;
   --icon_alpha_placeholder: #e1e3e6;
+  --icon_medium: #909499;
+  --icon_outline_medium: #aaaeb3;
   --icon_outline_secondary: #909499;
   --icon_secondary: #76787a;
   --icon_tertiary: #454647;
@@ -6638,14 +6572,21 @@ body[scheme="space_gray"] {
   --im_reply_separator: #ffffff;
   --im_toolbar_voice_msg_background: #454647;
   --im_toolbar_separator: #aaaeb3;
-  --input_background: #454647;
+  --image_border: rgba(255, 255, 255, 0.08);
+  --input_background: #2c2d2e;
   --input_border: #2c2d2e;
   --landing_background: #19191a;
-  --landing_primary_button_background: #ffffff;
+  --landing_login_button_background: #e1e3e6;
+  --landing_login_button_foreground: #19191a;
+  --landing_primary_button_background: #e1e3e6;
   --landing_primary_button_foreground: #19191a;
+  --landing_tertiary_button_background: rgba(0, 0, 0, 0.00);
+  --landing_tertiary_button_foreground: #ffffff;
   --landing_text_title: #ffffff;
   --landing_text_secondary: #76787a;
-  --landing_snippet_border: rgba(0, 0, 0, 0.15);
+  --landing_secondary_button_background: rgba(255, 255, 255, 0.15);
+  --landing_secondary_button_foreground: #ffffff;
+  --landing_snippet_border: rgba(255, 255, 255, 0.15);
   --like_text_tint: #ff4e5f;
   --link_alternate: #ffffff;
   --loader_background: #19191a;
@@ -6670,17 +6611,18 @@ body[scheme="space_gray"] {
   --search_bar_background: rgba(0, 0, 0, 0.00);
   --search_bar_field_background: #454647;
   --search_bar_field_tint: #aaaeb3;
-  --search_bar_segmented_control_tint: #76787a;
+  --search_bar_segmented_control_tint: #909499;
   --segmented_control_bar_background: #19191a;
   --segmented_control_tint: #76787a;
   --selection_off_icon: #454647;
   --separator_alpha: rgba(255, 255, 255, 0.15);
-  --separator_alternate: #19191a;
+  --separator_alternate: #232324;
   --separator_common: #313233;
   --snippet_background: #2c2d2e;
-  --snippet_border: rgba(255, 255, 255, 0.12);
+  --snippet_border: rgba(255, 255, 255, 0.15);
   --snippet_icon_tertiary: #5d5f61;
   --splashscreen_icon: #2c2d2e;
+  --statusbar_alternate_legacy_background: rgba(0, 0, 0, 0.00);
   --stories_skeleton_loader_background: #454647;
   --switch_ios_off_border: #2c2d2e;
   --tabbar_active_icon: #ffffff;
@@ -6703,6 +6645,7 @@ body[scheme="space_gray"] {
   --panel_tab_active_text: #e1e3e6;
   --panel_tab_inactive_text: #76787a;
   --im_service_message_text: #76787a;
+  --writebar_icon: #e1e3e6;
 }
 
 /* stylelint-enable */
