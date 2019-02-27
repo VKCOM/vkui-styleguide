@@ -4254,7 +4254,7 @@ TextRenderer.defaultProps = {
 /* 28 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.18.5","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.8","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.19.0","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.8","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 29 */
@@ -8974,7 +8974,6 @@ Button.defaultProps = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Spinner; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
@@ -8989,31 +8988,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vkontakte_icons_dist_44_spinner__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_44_spinner__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _vkontakte_icons_dist_16_spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(137);
 /* harmony import */ var _vkontakte_icons_dist_16_spinner__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_16_spinner__WEBPACK_IMPORTED_MODULE_7__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -9025,70 +9004,48 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var baseClassNames = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('Spinner');
 
-var Spinner =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(Spinner, _PureComponent);
+var svgSpinner = function svgSpinner(size) {
+  switch (size) {
+    case 'large':
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_44_spinner__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        className: "Spinner__self"
+      });
 
-  function Spinner() {
-    _classCallCheck(this, Spinner);
+    case 'medium':
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_32_spinner__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        className: "Spinner__self"
+      });
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Spinner).apply(this, arguments));
+    case 'small':
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_16_spinner__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        className: "Spinner__self"
+      });
+
+    default:
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_spinner__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        className: "Spinner__self"
+      });
   }
+};
 
-  _createClass(Spinner, [{
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          className = _this$props.className,
-          size = _this$props.size,
-          restProps = _objectWithoutProperties(_this$props, ["className", "size"]);
+var Spinner = react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(function (_ref) {
+  var className = _ref.className,
+      size = _ref.size,
+      restProps = _objectWithoutProperties(_ref, ["className", "size"]);
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
-        className: Object(_lib_classNames_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className)
-      }), this.svgSpinner);
-    }
-  }, {
-    key: "svgSpinner",
-    get: function get() {
-      switch (this.props.size) {
-        case 'large':
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_44_spinner__WEBPACK_IMPORTED_MODULE_6___default.a, {
-            className: "Spinner__self"
-          });
-
-        case 'medium':
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_32_spinner__WEBPACK_IMPORTED_MODULE_5___default.a, {
-            className: "Spinner__self"
-          });
-
-        case 'small':
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_16_spinner__WEBPACK_IMPORTED_MODULE_7___default.a, {
-            className: "Spinner__self"
-          });
-
-        default:
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_spinner__WEBPACK_IMPORTED_MODULE_4___default.a, {
-            className: "Spinner__self"
-          });
-      }
-    }
-  }]);
-
-  return Spinner;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]);
-
-_defineProperty(Spinner, "propTypes", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
+    className: Object(_lib_classNames_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassNames, className)
+  }), svgSpinner(size));
+});
+Spinner.propTypes = {
   style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   size: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['small', 'regular', 'large', 'medium']),
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
-});
-
-_defineProperty(Spinner, "defaultProps", {
+};
+Spinner.defaultProps = {
   size: 'regular'
-});
-
-
+};
+/* harmony default export */ __webpack_exports__["default"] = (Spinner);
 
 /***/ }),
 /* 96 */
@@ -33950,7 +33907,7 @@ function (_PureComponent) {
           contentShift: (currentY + 10) * 2.3
         });
 
-        if (progress > 85 && !refreshing) {
+        if (progress > 85 && !refreshing && isIOS) {
           _this.runRefreshing();
         }
       } else if (isY && pageYOffset === 0 && shiftY > 0 && !refreshing && touchDown) {
@@ -34044,7 +34001,8 @@ function (_PureComponent) {
     value: function runRefreshing() {
       if (!this.state.refreshing && this.props.onRefresh) {
         this.setState({
-          refreshing: true
+          refreshing: true,
+          spinnerY: isAndroid ? this.params.refreshing : this.state.spinnerY
         });
         this.props.onRefresh();
       }
@@ -46398,7 +46356,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 module.exports = [
     {
         'type': 'markdown',
-        'content': 'Компонент для обновления контента жестом pull-to-refresh.\nРаботает на тач-экранах.\n\nПри достаточном вытягивании спиннера вызывается обязательное свойство-функция `onRefresh`.\n\nНеобходимо при срабатывании `onRefresh` передать `isFetching={true}` компоненту, а затем после получения контента установить его как `false` для скрытия спиннера.'
+        'content': 'Компонент для обновления контента жестом pull-to-refresh.\nРаботает на тач-экранах.\n\nПри достаточном вытягивании спиннера вызывается обязательное свойство-функция `onRefresh`.\n\nНеобходимо при срабатывании `onRefresh` передать `isFetching={true}` компоненту, а затем после получения контента установить его как `false` для скрытия спиннера.\n\n**Важно:** в компонент нельзя помещать любой контент с фиксированным позиционированием. PullToRefresh подходит прежде всего, например, для каких-либо простых списков.'
     },
     {
         'type': 'code',
@@ -49188,55 +49146,8 @@ if (false) {}
 
 module.exports = {
     'description': '',
-    'displayName': 'Spinner',
     'methods': [],
-    'props': [
-        {
-            'type': { 'name': 'string' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'className'
-        },
-        {
-            'type': {
-                'name': 'enum',
-                'value': [
-                    {
-                        'value': '\'small\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'regular\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'large\'',
-                        'computed': false
-                    },
-                    {
-                        'value': '\'medium\'',
-                        'computed': false
-                    }
-                ]
-            },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '\'regular\'',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'size'
-        },
-        {
-            'type': { 'name': 'object' },
-            'required': false,
-            'description': '',
-            'tags': {},
-            'name': 'style'
-        }
-    ],
+    'displayName': 'Spinner',
     'doclets': {},
     'examples': __webpack_require__(264)
 }
@@ -52228,7 +52139,7 @@ module.exports = {
         {
             'type': { 'name': 'node' },
             'required': false,
-            'description': '',
+            'description': 'Счетчик рядом с иконкой',
             'tags': {},
             'name': 'label'
         },
@@ -52238,6 +52149,13 @@ module.exports = {
             'description': '',
             'tags': {},
             'name': 'selected'
+        },
+        {
+            'type': { 'name': 'node' },
+            'required': false,
+            'description': 'Тест рядом с иконкой',
+            'tags': {},
+            'name': 'text'
         }
     ],
     'doclets': {},
@@ -52309,7 +52227,8 @@ function (_React$Component) {
           children = _this$props.children,
           selected = _this$props.selected,
           label = _this$props.label,
-          restProps = _objectWithoutProperties(_this$props, ["className", "children", "selected", "label"]);
+          text = _this$props.text,
+          restProps = _objectWithoutProperties(_this$props, ["className", "children", "selected", "label", "text"]);
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, restProps, {
         className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className, {
@@ -52317,9 +52236,13 @@ function (_React$Component) {
         })
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "TabbarItem__in"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "TabbarItem__icon"
       }, children, label && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "TabbarItem__label"
-      }, label)));
+      }, label)), text && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "TabbarItem__text"
+      }, text)));
     }
   }]);
 
@@ -52330,6 +52253,15 @@ _defineProperty(TabbarItem, "propTypes", {
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   selected: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+
+  /**
+   * Тест рядом с иконкой
+   */
+  text: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+
+  /**
+   * Счетчик рядом с иконкой
+   */
   label: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node
 });
 
@@ -52379,6 +52311,29 @@ module.exports = {
             'description': '',
             'tags': {},
             'name': 'className'
+        },
+        {
+            'type': {
+                'name': 'enum',
+                'value': [
+                    {
+                        'value': '\'vertical\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'horizontal\'',
+                        'computed': false
+                    },
+                    {
+                        'value': '\'auto\'',
+                        'computed': false
+                    }
+                ]
+            },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'itemsLayout'
         },
         {
             'type': { 'name': 'bool' },
@@ -52455,13 +52410,29 @@ function (_React$Component) {
           children = _this$props.children,
           shadow = _this$props.shadow;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className, {
+        className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(baseClassName, className, "Tabbar--l-".concat(this.itemsLayout), {
           'Tabbar--shadow': shadow
         }),
         style: {
           paddingBottom: this.context.insets && this.context.insets.bottom || null
         }
       }, children);
+    }
+  }, {
+    key: "itemsLayout",
+    get: function get() {
+      var _this$props2 = this.props,
+          children = _this$props2.children,
+          itemsLayout = _this$props2.itemsLayout;
+
+      switch (itemsLayout) {
+        case 'horizontal':
+        case 'vertical':
+          return itemsLayout;
+
+        default:
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.count(children) > 2 ? 'vertical' : 'horizontal';
+      }
     }
   }]);
 
@@ -52475,7 +52446,8 @@ _defineProperty(Tabbar, "propTypes", {
   /**
    * флаг для показа/скрытия верхней тени (Android) или границы (iOS)
    */
-  shadow: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool
+  shadow: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  itemsLayout: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['vertical', 'horizontal', 'auto'])
 });
 
 _defineProperty(Tabbar, "defaultProps", {
@@ -52510,7 +52482,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': 'class Example extends React.Component {\n  constructor (props) {\n    super(props);\n\n    this.state = {\n      activeStory: \'more\'\n    };\n    this.onStoryChange = this.onStoryChange.bind(this);\n  }\n\n  onStoryChange (e) {\n    this.setState({ activeStory: e.currentTarget.dataset.story })\n  }\n\n  render () {\n\n    return (\n      <Epic activeStory={this.state.activeStory} tabbar={\n        <Tabbar>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'feed\'}\n            data-story="feed"\n          ><Icon28Newsfeed /></TabbarItem>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'discover\'}\n            data-story="discover"\n          ><Icon28Search /></TabbarItem>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'messages\'}\n            data-story="messages"\n            label="12"\n          ><Icon28Messages /></TabbarItem>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'notifications\'}\n            data-story="notifications"\n          ><Icon28Notifications /></TabbarItem>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'more\'}\n            data-story="more"\n          ><Icon28More /></TabbarItem>\n        </Tabbar>\n      }>\n        <View id="feed" activePanel="feed">\n          <Panel id="feed">\n            <PanelHeader>Feed</PanelHeader>\n          </Panel>\n        </View>\n        <View id="discover" activePanel="discover">\n          <Panel id="discover">\n            <PanelHeader>Discover</PanelHeader>\n          </Panel>\n        </View>\n        <View id="messages" activePanel="messages">\n          <Panel id="messages">\n            <PanelHeader>Messages</PanelHeader>\n          </Panel>\n        </View>\n        <View id="notifications" activePanel="notifications">\n          <Panel id="notifications">\n            <PanelHeader>Notifications</PanelHeader>\n          </Panel>\n        </View>\n        <View id="more" activePanel="more">\n          <Panel id="more">\n            <PanelHeader>More</PanelHeader>\n          </Panel>\n        </View>\n      </Epic>\n    )\n  }\n}\n\n<Example />',
+        'content': 'class Example extends React.Component {\n  constructor (props) {\n    super(props);\n\n    this.state = {\n      activeStory: \'more\'\n    };\n    this.onStoryChange = this.onStoryChange.bind(this);\n  }\n\n  onStoryChange (e) {\n    this.setState({ activeStory: e.currentTarget.dataset.story })\n  }\n\n  render () {\n\n    return (\n      <Epic activeStory={this.state.activeStory} tabbar={\n        <Tabbar>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'feed\'}\n            data-story="feed"\n            text="Новости"\n          ><Icon28Newsfeed /></TabbarItem>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'discover\'}\n            data-story="discover"\n            text="Поиск"\n          ><Icon28Search /></TabbarItem>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'messages\'}\n            data-story="messages"\n            label="12"\n            text="Сообщения"\n          ><Icon28Messages /></TabbarItem>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'notifications\'}\n            data-story="notifications"\n            text="Уведомлен."\n          ><Icon28Notifications /></TabbarItem>\n          <TabbarItem\n            onClick={this.onStoryChange}\n            selected={this.state.activeStory === \'more\'}\n            data-story="more"\n            text="Ещё"\n          ><Icon28More /></TabbarItem>\n        </Tabbar>\n      }>\n        <View id="feed" activePanel="feed">\n          <Panel id="feed">\n            <PanelHeader>Feed</PanelHeader>\n          </Panel>\n        </View>\n        <View id="discover" activePanel="discover">\n          <Panel id="discover">\n            <PanelHeader>Discover</PanelHeader>\n          </Panel>\n        </View>\n        <View id="messages" activePanel="messages">\n          <Panel id="messages">\n            <PanelHeader>Messages</PanelHeader>\n          </Panel>\n        </View>\n        <View id="notifications" activePanel="notifications">\n          <Panel id="notifications">\n            <PanelHeader>Notifications</PanelHeader>\n          </Panel>\n        </View>\n        <View id="more" activePanel="more">\n          <Panel id="more">\n            <PanelHeader>More</PanelHeader>\n          </Panel>\n        </View>\n      </Epic>\n    )\n  }\n}\n\n<Example />',
         'settings': {},
         'evalInContext': evalInContext
     }

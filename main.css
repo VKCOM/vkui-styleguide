@@ -2786,6 +2786,7 @@ body[scheme="client_dark"] {
 
 .ActionSheet {
   position: relative;
+  overflow: hidden;
   }
 
 .ActionSheet--android::before,
@@ -2824,7 +2825,6 @@ body[scheme="client_dark"] {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  overflow: hidden;
   }
 
 .ActionSheet--ios.ActionSheet--closing {
@@ -2972,11 +2972,11 @@ body[scheme="client_dark"] {
 
 .ActionSheet--android {
   min-width: 280px;
-  box-shadow: 0 20px 35px 0 rgba(0, 0, 0, .3), 0 0 35px 0 rgba(0, 0, 0, .22);
-  border-radius: 2px;
+  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, .16), 0 0 8px 0 rgba(0, 0, 0, .12);
   -webkit-animation: animation-android-actionsheet-intro .2s ease;
           animation: animation-android-actionsheet-intro .2s ease;
-  padding: 8px;
+  padding: 8px 0;
+  border-radius: 12px;
 }
 
 .ActionSheet--android.ActionSheet--closing {
@@ -2992,7 +2992,7 @@ body[scheme="client_dark"] {
     }
 
 .ActionSheet--android .ActionSheetItem {
-  padding: 14px 16px;
+  padding: 14px 24px;
   line-height: 1.25;
   font-size: 16px;
   }
@@ -3003,8 +3003,8 @@ body[scheme="client_dark"] {
   }
 
 .ActionSheet--android .ActionSheetItem--default {
-  color: #528bcc;
-  color: var(--accent);
+  color: #000000;
+  color: var(--text_primary);
   }
 
 .ActionSheet--android .ActionSheetItem--destructive {
@@ -4631,7 +4631,7 @@ body[scheme="client_dark"] {
   stroke: currentColor;
   }
 
-.PullToRefresh--refreshing .PullToRefresh__spinner-self {
+.PullToRefresh--ios.PullToRefresh--refreshing .PullToRefresh__spinner-self {
   -webkit-animation: PullToRefreshToRefreshing 380ms ease-out;
           animation: PullToRefreshToRefreshing 380ms ease-out;
   }
@@ -6163,6 +6163,7 @@ body[scheme="client_dark"] {
   flex-shrink: 0;
   max-width: 100%;
   flex-grow: 1;
+  flex-basis: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6180,8 +6181,23 @@ body[scheme="client_dark"] {
 
 .TabbarItem__in {
     align-self: center;
-    position: relative;
+    display: flex;
     }
+
+.Tabbar--l-vertical .TabbarItem__in {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+.Tabbar--l-horizontal .TabbarItem__in {
+    flex-direction: row;
+    align-items: center;
+    }
+
+.TabbarItem__icon {
+      position: relative;
+      }
 
 .TabbarItem__label {
       position: absolute;
@@ -6198,6 +6214,19 @@ body[scheme="client_dark"] {
       text-align: center;
       padding: 2px 4px;
       box-sizing: border-box;
+      }
+
+.Tabbar--l-vertical .TabbarItem__text {
+      font-size: 10px;
+      line-height: 12px;
+      font-weight: 500;
+      margin-top: 2px;
+      }
+
+.Tabbar--l-horizontal .TabbarItem__text {
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: 8px;
       }
 
 .Epic {
