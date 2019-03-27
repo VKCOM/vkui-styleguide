@@ -3077,6 +3077,8 @@ body[scheme="client_dark"] {
   border: 1px solid transparent;
   margin: 0;
   padding: 0;
+  -webkit-user-select: none;
+          user-select: none;
   }
 
 .Button__in {
