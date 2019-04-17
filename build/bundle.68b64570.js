@@ -286,50 +286,20 @@ function classNames() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getClassname; });
-/* harmony import */ var _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
-var osname = Object(_lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* platform */ "e"])();
 function getClassname(base) {
   var _classNames;
 
-  return Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(base, (_classNames = {}, _defineProperty(_classNames, base + '--ios', osname === _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* IOS */ "b"]), _defineProperty(_classNames, base + '--android', osname === _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* ANDROID */ "a"]), _classNames));
+  return Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(base, (_classNames = {}, _defineProperty(_classNames, base + '--ios', _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* IS_PLATFORM_IOS */ "d"]), _defineProperty(_classNames, base + '--android', _lib_platform_js__WEBPACK_IMPORTED_MODULE_0__[/* IS_PLATFORM_ANDROID */ "c"]), _classNames));
 }
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ANDROID; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return IOS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return platform; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return IS_PLATFORM_IOS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return IS_PLATFORM_ANDROID; });
-var ANDROID = 'android';
-var IOS = 'ios';
-var ua;
-var platformName;
-function platform(useragent) {
-  if (!ua) {
-    ua = useragent || navigator && navigator.userAgent || '';
-  }
-
-  if (!platformName) {
-    platformName = /android/i.test(ua) ? ANDROID : IOS;
-  }
-
-  return platformName;
-}
-var osname = platform();
-var IS_PLATFORM_IOS = osname === IOS;
-var IS_PLATFORM_ANDROID = osname === ANDROID;
-
-/***/ }),
-/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -485,6 +455,35 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Styled; });
 
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ANDROID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return IOS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return platform; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return IS_PLATFORM_IOS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return IS_PLATFORM_ANDROID; });
+var ANDROID = 'android';
+var IOS = 'ios';
+var ua;
+var platformName;
+function platform(useragent) {
+  if (!ua) {
+    ua = useragent || navigator && navigator.userAgent || '';
+  }
+
+  if (!platformName) {
+    platformName = /android/i.test(ua) ? ANDROID : IOS;
+  }
+
+  return platformName;
+}
+var osname = platform();
+var IS_PLATFORM_IOS = osname === IOS;
+var IS_PLATFORM_ANDROID = osname === ANDROID;
 
 /***/ }),
 /* 7 */
@@ -1043,7 +1042,7 @@ var classNames = __webpack_require__(3);
 var getClassName = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./src/lib/platform.js
-var platform = __webpack_require__(5);
+var platform = __webpack_require__(6);
 
 // CONCATENATED MODULE: ./src/lib/offset.js
 function getOffsetRect(elem) {
@@ -1109,7 +1108,6 @@ var ts = function ts() {
 };
 
 var baseClassNames = Object(getClassName["a" /* default */])('Tappable');
-var osname = Object(platform["e" /* platform */])();
 var ACTIVE_DELAY = 70;
 var ACTIVE_EFFECT_DELAY = 600;
 var storage = {};
@@ -1153,7 +1151,7 @@ function (_Component) {
         return deactivateOtherInstances();
       }
 
-      if (osname === platform["a" /* ANDROID */]) {
+      if (platform["c" /* IS_PLATFORM_ANDROID */]) {
         _this.onDown(originalEvent);
       }
 
@@ -1217,7 +1215,7 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDown", function (e) {
-      if (osname === platform["a" /* ANDROID */]) {
+      if (platform["c" /* IS_PLATFORM_ANDROID */]) {
         var _getOffsetRect = getOffsetRect(_this.container),
             top = _getOffsetRect.top,
             left = _getOffsetRect.left;
@@ -1340,7 +1338,7 @@ function (_Component) {
 
       return react_default.a.createElement(Component, _extends({}, restProps, {
         className: classes
-      }, props), osname === platform["a" /* ANDROID */] && react_default.a.createElement("span", {
+      }, props), platform["c" /* IS_PLATFORM_ANDROID */] && react_default.a.createElement("span", {
         className: "Tappable__waves"
       }, Object.keys(clicks).map(function (k) {
         return react_default.a.createElement("span", {
@@ -2858,7 +2856,7 @@ var Text = __webpack_require__(28);
 var Para = __webpack_require__(43);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Heading/index.js + 1 modules
 var Heading = __webpack_require__(42);
@@ -4082,7 +4080,7 @@ var classnames = __webpack_require__(13);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Code/CodeRenderer.js
 
@@ -4150,7 +4148,7 @@ var classnames = __webpack_require__(13);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Link/LinkRenderer.js
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -4218,7 +4216,7 @@ var prop_types = __webpack_require__(2);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/classnames/index.js
 var classnames = __webpack_require__(13);
@@ -4369,7 +4367,7 @@ exports.default = _default;
 /* 30 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.21.0","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.8","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.21.1","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.1.8","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 31 */
@@ -4511,7 +4509,7 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 var Code = __webpack_require__(26);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Type/TypeRenderer.js
 
@@ -4664,7 +4662,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 /* harmony import */ var _lib_transitionEvents__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(15);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -4698,7 +4696,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* platform */ "e"])();
 var baseClassNames = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])('PopoutWrapper');
 
 var PopoutWrapper =
@@ -4774,7 +4771,7 @@ function (_React$Component) {
         elem.removeEventListener(eventName, eventHandler);
         elem.addEventListener(eventName, eventHandler);
       } else {
-        this.animationFinishTimeout = setTimeout(eventHandler.bind(this), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* ANDROID */ "a"] ? 300 : 600);
+        this.animationFinishTimeout = setTimeout(eventHandler.bind(this), _lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* IS_PLATFORM_ANDROID */ "c"] ? 300 : 600);
       }
     }
   }, {
@@ -5011,7 +5008,7 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 var Code = __webpack_require__(26);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/classnames/index.js
 var classnames = __webpack_require__(13);
@@ -5261,7 +5258,7 @@ var classnames = __webpack_require__(13);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Heading/HeadingRenderer.js
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -5347,7 +5344,7 @@ var prop_types = __webpack_require__(2);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/ParaRenderer.js
 
@@ -5495,7 +5492,7 @@ var prop_types = __webpack_require__(2);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Markdown/index.js + 20 modules
 var Markdown = __webpack_require__(16);
@@ -5737,7 +5734,7 @@ var transitionEvents = __webpack_require__(15);
 var getClassName = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./src/lib/platform.js
-var platform = __webpack_require__(5);
+var platform = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./src/components/Touch/Touch.js
 var Touch = __webpack_require__(19);
@@ -5797,7 +5794,6 @@ function View_defineProperty(obj, key, value) { if (key in obj) { Object.defineP
 
 
 
-var osname = Object(platform["e" /* platform */])();
 var baseClassNames = Object(getClassName["a" /* default */])('View');
 var transitionStartEventName = 'VKUI:View:transition-start';
 var transitionEndEventName = 'VKUI:View:transition-end';
@@ -5876,13 +5872,13 @@ function (_Component) {
     });
 
     View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMoveX", function (e) {
-      if (osname === platform["b" /* IOS */] && !_this.context.isWebView && (e.startX <= 70 || e.startX >= _this.window.innerWidth - 70) && !_this.state.browserSwipe) {
+      if (platform["d" /* IS_PLATFORM_IOS */] && !_this.context.isWebView && (e.startX <= 70 || e.startX >= _this.window.innerWidth - 70) && !_this.state.browserSwipe) {
         _this.setState({
           browserSwipe: true
         });
       }
 
-      if (osname === platform["b" /* IOS */] && _this.context.isWebView && _this.props.onSwipeBack) {
+      if (platform["d" /* IS_PLATFORM_IOS */] && _this.context.isWebView && _this.props.onSwipeBack) {
         if (_this.state.animated && e.startX <= 70) {
           return;
         }
@@ -6088,7 +6084,7 @@ function (_Component) {
         elem.removeEventListener(eventName, eventHandler);
         elem.addEventListener(eventName, eventHandler);
       } else {
-        setTimeout(eventHandler.bind(this), osname === platform["a" /* ANDROID */] ? 300 : 600);
+        setTimeout(eventHandler.bind(this), platform["c" /* IS_PLATFORM_ANDROID */] ? 300 : 600);
       }
     }
   }, {
@@ -6099,7 +6095,7 @@ function (_Component) {
         elem.removeEventListener(eventName, eventHandler);
         elem.addEventListener(eventName, eventHandler);
       } else {
-        setTimeout(eventHandler.bind(this), osname === platform["a" /* ANDROID */] ? 300 : 600);
+        setTimeout(eventHandler.bind(this), platform["c" /* IS_PLATFORM_ANDROID */] ? 300 : 600);
       }
     }
   }, {
@@ -6274,7 +6270,7 @@ function (_Component) {
         onEnd: this.onEnd
       }, header && react_default.a.createElement("div", {
         className: "View__header"
-      }, osname === platform["b" /* IOS */] && react_default.a.createElement("div", {
+      }, platform["d" /* IS_PLATFORM_IOS */] && react_default.a.createElement("div", {
         className: "View__header-scrolltop",
         onClick: this.onScrollTop
       }), react_default.a.createElement("div", {
@@ -6309,7 +6305,7 @@ function (_Component) {
           className: "PanelHeader__left-in",
           id: "header-left-".concat(panelId),
           style: headerSwipeStyles.left
-        }), osname === platform["b" /* IOS */] && react_default.a.createElement("div", {
+        }), platform["d" /* IS_PLATFORM_IOS */] && react_default.a.createElement("div", {
           className: "PanelHeader__addon",
           id: "header-addon-".concat(panelId),
           style: headerSwipeStyles.icon
@@ -7623,7 +7619,7 @@ var Argument = __webpack_require__(45);
 var Heading = __webpack_require__(42);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/ArgumentsRenderer.js
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -7704,7 +7700,7 @@ var prop_types = __webpack_require__(2);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Table/TableRenderer.js
 
@@ -9227,7 +9223,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9254,7 +9250,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* platform */ "e"])();
 var baseClassNames = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('PanelHeader');
 
 var PanelHeader =
@@ -9313,7 +9308,7 @@ function (_React$Component) {
         className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-bg', (_classNames = {}, _defineProperty(_classNames, "PanelHeader-bg--".concat(theme), true), _defineProperty(_classNames, 'PanelHeader-bg--tp', transparent), _defineProperty(_classNames, "PanelHeader-bg--no-shadow", noShadow || ['bright_light', 'space_gray'].indexOf(this.context.scheme) >= 0), _classNames))
       }), this.bgNode), react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-left-in', (_classNames2 = {}, _defineProperty(_classNames2, "PanelHeader-left-in--".concat(theme), true), _defineProperty(_classNames2, 'PanelHeader-left-in--tp', transparent), _classNames2))
-      }, left), this.leftNode), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] && react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, left), this.leftNode), _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_IOS */ "d"] && react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-addon', (_classNames3 = {}, _defineProperty(_classNames3, "PanelHeader-addon--".concat(theme), true), _defineProperty(_classNames3, 'PanelHeader-addon--tp', transparent), _classNames3))
       }, addon), this.addonNode), react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.createPortal(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('PanelHeader-content', (_classNames4 = {}, _defineProperty(_classNames4, "PanelHeader-content--".concat(theme), true), _defineProperty(_classNames4, 'PanelHeader-content--tp', transparent), _classNames4))
@@ -33789,7 +33784,7 @@ var FixedLayout = __webpack_require__(39);
 var classNames = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./src/lib/platform.js
-var platform = __webpack_require__(5);
+var platform = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./src/helpers/getClassName.js
 var getClassName = __webpack_require__(4);
@@ -33896,9 +33891,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var baseClassName = Object(getClassName["a" /* default */])('PullToRefresh');
-var osname = Object(platform["e" /* platform */])();
-var isAndroid = osname === platform["a" /* ANDROID */];
-var isIOS = osname === platform["b" /* IOS */];
 
 function cancelEvent(event) {
   if (!event) return false;
@@ -33965,7 +33957,7 @@ function (_PureComponent) {
           contentShift: (currentY + 10) * 2.3
         });
 
-        if (progress > 85 && !refreshing && isIOS) {
+        if (progress > 85 && !refreshing && platform["d" /* IS_PLATFORM_IOS */]) {
           _this.runRefreshing();
         }
       } else if (isY && pageYOffset === 0 && shiftY > 0 && !refreshing && touchDown) {
@@ -34013,11 +34005,11 @@ function (_PureComponent) {
     });
 
     _this.params = {
-      start: isAndroid ? -40 : -10,
-      max: isAndroid ? 80 : 50,
-      maxY: isAndroid ? 80 : 400,
-      refreshing: isAndroid ? 50 : 36,
-      positionMultiplier: isAndroid ? 1 : 0.21
+      start: platform["c" /* IS_PLATFORM_ANDROID */] ? -40 : -10,
+      max: platform["c" /* IS_PLATFORM_ANDROID */] ? 80 : 50,
+      maxY: platform["c" /* IS_PLATFORM_ANDROID */] ? 80 : 400,
+      refreshing: platform["c" /* IS_PLATFORM_ANDROID */] ? 50 : 36,
+      positionMultiplier: platform["c" /* IS_PLATFORM_ANDROID */] ? 1 : 0.21
     };
     _this.state = {
       watching: false,
@@ -34060,7 +34052,7 @@ function (_PureComponent) {
       if (!this.state.refreshing && this.props.onRefresh) {
         this.setState({
           refreshing: true,
-          spinnerY: isAndroid ? this.params.refreshing : this.state.spinnerY
+          spinnerY: platform["c" /* IS_PLATFORM_ANDROID */] ? this.params.refreshing : this.state.spinnerY
         });
         this.props.onRefresh();
       }
@@ -34117,7 +34109,7 @@ function (_PureComponent) {
         className: "PullToRefresh__content",
         ref: this._contentElement,
         style: {
-          transform: refreshing && !touchDown && isIOS ? "translate3d(0, 100px, 0)" : isIOS && contentShift ? "translate3d(0, ".concat(contentShift, "px, 0)") : ''
+          transform: refreshing && !touchDown && platform["d" /* IS_PLATFORM_IOS */] ? "translate3d(0, 100px, 0)" : platform["d" /* IS_PLATFORM_IOS */] && contentShift ? "translate3d(0, ".concat(contentShift, "px, 0)") : ''
         }
       }, children));
     }
@@ -34230,7 +34222,7 @@ function getRandomUser() {
   return user;
 }
 // EXTERNAL MODULE: ./src/lib/platform.js
-var platform = __webpack_require__(5);
+var platform = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/cancel.js
 var cancel = __webpack_require__(29);
@@ -34450,7 +34442,7 @@ var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
 
 // EXTERNAL MODULE: ./src/lib/platform.js
-var platform = __webpack_require__(5);
+var platform = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
 var prop_types = __webpack_require__(1);
@@ -34872,7 +34864,6 @@ function Search_defineProperty(obj, key, value) { if (key in obj) { Object.defin
 
 
 
-var osname = Object(platform["e" /* platform */])();
 
 var Search_Search =
 /*#__PURE__*/
@@ -34898,7 +34889,7 @@ function (_React$Component) {
           before = _this$props2.before,
           androidProps = Search_objectWithoutProperties(_this$props2, ["after", "before"]);
 
-      if (osname === platform["b" /* IOS */]) {
+      if (platform["d" /* IS_PLATFORM_IOS */]) {
         return react_default.a.createElement(SearchIOS_SearchIOS, iosProps);
       } else {
         return react_default.a.createElement(SearchAndroid_SearchAndroid, androidProps);
@@ -35010,7 +35001,7 @@ var prop_types = __webpack_require__(2);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(6);
+var Styled = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Editor/EditorLoaderRenderer.js
 
@@ -43942,7 +43933,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _HeaderButton_HeaderButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
 /* harmony import */ var _vkontakte_icons_dist_24_write__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(73);
 /* harmony import */ var _vkontakte_icons_dist_24_write__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_24_write__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _vkontakte_icons_dist_24_done__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(46);
@@ -44062,7 +44053,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HeaderButton_HeaderButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
 /* harmony import */ var _vkontakte_icons_dist_24_done__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(46);
 /* harmony import */ var _vkontakte_icons_dist_24_done__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_24_done__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -44165,7 +44156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vkontakte_icons_dist_24_cancel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
 /* harmony import */ var _vkontakte_icons_dist_24_cancel__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_24_cancel__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _HeaderButton_HeaderButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(22);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -44253,7 +44244,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vkontakte_icons_dist_24_back__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(47);
 /* harmony import */ var _vkontakte_icons_dist_24_back__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_24_back__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _HeaderButton_HeaderButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(22);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
@@ -44308,6 +44299,10 @@ module.exports = {
             'type': { 'name': 'number' },
             'required': false,
             'description': '',
+            'defaultValue': {
+                'value': '100',
+                'computed': false
+            },
             'tags': {},
             'name': 'height'
         }],
@@ -44343,11 +44338,14 @@ var PanelSpinner = function PanelSpinner(_ref) {
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Spinner_Spinner__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({}, restProps, {
     style: {
-      height: height || 100
+      height: height
     }
   }));
 };
 
+PanelSpinner.defaultProps = {
+  height: 100
+};
 PanelSpinner.propTypes = {
   height: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
 };
@@ -45809,7 +45807,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(54);
 /* harmony import */ var _vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_6__);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -45825,7 +45823,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* platform */ "e"])();
 var baseClassName = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('Checkbox');
 
 var Checkbox = function Checkbox(_ref) {
@@ -45840,7 +45837,7 @@ var Checkbox = function Checkbox(_ref) {
     className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className),
     style: style,
     disabled: restProps.disabled,
-    activeEffectDelay: osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] ? 100 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* ACTIVE_EFFECT_DELAY */ "a"],
+    activeEffectDelay: _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_IOS */ "d"] ? 100 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* ACTIVE_EFFECT_DELAY */ "a"],
     getRootRef: getRootRef
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({}, restProps, {
     type: "checkbox",
@@ -45956,7 +45953,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -45969,7 +45966,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* platform */ "e"])();
 var baseClassName = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('Radio');
 
 var Radio = function Radio(_ref) {
@@ -45985,7 +45981,7 @@ var Radio = function Radio(_ref) {
     component: "label",
     style: style,
     className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, className),
-    activeEffectDelay: osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] ? 100 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* ACTIVE_EFFECT_DELAY */ "a"],
+    activeEffectDelay: _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_IOS */ "d"] ? 100 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_2__[/* ACTIVE_EFFECT_DELAY */ "a"],
     disabled: restProps.disabled,
     getRootRef: getRootRef
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({}, restProps, {
@@ -47666,7 +47662,7 @@ module.exports = {
             'required': false,
             'description': 'Значения white и gray устарели. Они будут удалены в следующей мажорной версии.\nДля Android актуален только header',
             'defaultValue': {
-                'value': 'osname === IOS ? \'light\' : \'header\'',
+                'value': 'IS_PLATFORM_IOS ? \'light\' : \'header\'',
                 'computed': false
             },
             'tags': {},
@@ -47739,7 +47735,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _FixedLayout_FixedLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39);
 /* harmony import */ var _Tabs_Tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(94);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47765,7 +47761,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* platform */ "e"])();
 /**
  * @deprecated Для отрисовки фиксированных табов используйте связку `Tabs` и `FixedLayout`.
  * Этот компонент устарел и будет удален в 3.0.0.
@@ -47823,7 +47818,7 @@ _defineProperty(FixedTabs, "propTypes", {
 });
 
 _defineProperty(FixedTabs, "defaultProps", {
-  theme: osname === _lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* IOS */ "b"] ? 'light' : 'header',
+  theme: _lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* IS_PLATFORM_IOS */ "d"] ? 'light' : 'header',
   vertical: 'top'
 });
 
@@ -47909,7 +47904,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -47942,7 +47937,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* platform */ "e"])();
 var baseClassName = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('TabsItem');
 
 var TabsItem =
@@ -47970,7 +47964,7 @@ function (_React$Component) {
         className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassName, {
           'TabsItem--selected': selected
         }, className),
-        activeEffectDelay: osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] ? 0 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_3__[/* ACTIVE_EFFECT_DELAY */ "a"]
+        activeEffectDelay: _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_IOS */ "d"] ? 0 : _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_3__[/* ACTIVE_EFFECT_DELAY */ "a"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "TabsItem__in"
       }, children), after && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -50353,7 +50347,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(14);
 /* harmony import */ var _Touch_Touch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(19);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6);
 /* harmony import */ var _vkontakte_icons_dist_24_chevron__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(139);
 /* harmony import */ var _vkontakte_icons_dist_24_chevron__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_vkontakte_icons_dist_24_chevron__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(54);
@@ -50402,7 +50396,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* platform */ "e"])();
 var baseClassNames = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('Cell');
 
 var Cell =
@@ -50614,12 +50607,12 @@ function (_Component) {
         className: "Cell__checkbox"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Cell__before"
-      }, selectable && osname === _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IOS */ "b"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, selectable && _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IS_PLATFORM_IOS */ "d"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Cell__checkbox-marker"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_8___default.a, null)), removable && osname === _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IOS */ "b"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_8___default.a, null)), removable && _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IS_PLATFORM_IOS */ "d"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Cell__remove-marker",
         onClick: this.activateRemove
-      }), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* ANDROID */ "a"] && draggable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Touch_Touch__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
+      }), _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IS_PLATFORM_ANDROID */ "c"] && draggable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Touch_Touch__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
         onStart: this.onDragStart,
         onMoveY: this.onDragMove,
         onEnd: this.onDragEnd,
@@ -50638,19 +50631,19 @@ function (_Component) {
         className: "Cell__indicator"
       }, indicator), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Cell__aside"
-      }, asideContent, selectable && osname === _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* ANDROID */ "a"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, asideContent, selectable && _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IS_PLATFORM_ANDROID */ "c"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Cell__checkbox-marker"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_8___default.a, null)), removable && osname === _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* ANDROID */ "a"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_16_done__WEBPACK_IMPORTED_MODULE_8___default.a, null)), removable && _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IS_PLATFORM_ANDROID */ "c"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Cell__remove-marker",
         onClick: this.onRemoveClick
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_cancel__WEBPACK_IMPORTED_MODULE_9___default.a, null)), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IOS */ "b"] && expandable && !draggable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_chevron__WEBPACK_IMPORTED_MODULE_7___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_cancel__WEBPACK_IMPORTED_MODULE_9___default.a, null)), _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IS_PLATFORM_IOS */ "d"] && expandable && !draggable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_chevron__WEBPACK_IMPORTED_MODULE_7___default.a, {
         className: "Cell__chevron"
-      }), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IOS */ "b"] && draggable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Touch_Touch__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
+      }), _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IS_PLATFORM_IOS */ "d"] && draggable && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Touch_Touch__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
         className: "Cell__dragger",
         onStart: this.onDragStart,
         onMoveY: this.onDragMove,
         onEnd: this.onDragEnd
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_reorder_ios__WEBPACK_IMPORTED_MODULE_11___default.a, null)))), removable && osname === _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IOS */ "b"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_reorder_ios__WEBPACK_IMPORTED_MODULE_11___default.a, null)))), removable && _lib_platform__WEBPACK_IMPORTED_MODULE_6__[/* IS_PLATFORM_IOS */ "d"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         ref: this.getRemoveRef,
         className: "Cell__remove",
         onClick: this.onRemoveClick,
@@ -52233,7 +52226,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PopoutWrapper_PopoutWrapper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _lib_transitionEvents__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(15);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -52268,7 +52261,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* platform */ "e"])();
 var baseClassNames = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('ActionSheet');
 
 var ActionSheet =
@@ -52339,7 +52331,7 @@ function (_React$Component) {
         this.el.removeEventListener(eventName, eventHandler);
         this.el.addEventListener(eventName, eventHandler);
       } else {
-        setTimeout(eventHandler.bind(this), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* ANDROID */ "a"] ? 200 : 300);
+        setTimeout(eventHandler.bind(this), _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_ANDROID */ "c"] ? 200 : 300);
       }
     }
   }, {
@@ -52357,7 +52349,7 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PopoutWrapper_PopoutWrapper__WEBPACK_IMPORTED_MODULE_2__["default"], {
         closing: this.state.closing,
-        v: osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] ? 'bottom' : 'center',
+        v: _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_IOS */ "d"] ? 'bottom' : 'center',
         h: "center",
         className: className,
         style: style,
@@ -52368,7 +52360,7 @@ function (_React$Component) {
         className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(baseClassNames, {
           'ActionSheet--closing': this.state.closing
         })
-      }), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IOS */ "b"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+      }), _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_IOS */ "d"] && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "ActionSheet__header"
       }, title && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ActionSheet__title"
@@ -53631,7 +53623,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 /* harmony import */ var _Tappable_Tappable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -53649,7 +53641,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* platform */ "e"])();
 var baseClassNames = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('PanelHeaderContent');
 
 var PanelHeaderContent = function PanelHeaderContent(_ref) {
@@ -53670,7 +53661,7 @@ var PanelHeaderContent = function PanelHeaderContent(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", _extends({}, rootProps, {
     className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(baseClassNames, className),
     style: style
-  }), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* ANDROID */ "a"] && before && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), _lib_platform__WEBPACK_IMPORTED_MODULE_4__[/* IS_PLATFORM_ANDROID */ "c"] && before && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "PanelHeaderContent__before"
   }, before), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InComponent, _extends({}, inProps, {
     className: "PanelHeaderContent__in",
@@ -54341,7 +54332,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_classNames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _lib_transitionEvents__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
-/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+/* harmony import */ var _lib_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
@@ -54370,7 +54361,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var osname = Object(_lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* platform */ "e"])();
 var baseClassName = Object(_helpers_getClassName__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])('Root');
 
 var Root =
@@ -54481,7 +54471,7 @@ function (_React$Component) {
         elem.removeEventListener(eventName, eventHandler);
         elem.addEventListener(eventName, eventHandler);
       } else {
-        setTimeout(eventHandler.bind(this), osname === _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* ANDROID */ "a"] ? 300 : 600);
+        setTimeout(eventHandler.bind(this), _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_ANDROID */ "c"] ? 300 : 600);
       }
     }
   }, {
