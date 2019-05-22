@@ -4368,7 +4368,7 @@ exports.default = _default;
 /* 30 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.21.3","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.21.4","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 31 */
@@ -44503,13 +44503,6 @@ module.exports = {
     'description': '',
     'methods': [],
     'displayName': 'PanelHeaderBack',
-    'props': [{
-            'type': { 'name': 'func' },
-            'required': true,
-            'description': '',
-            'tags': {},
-            'name': 'onClick'
-        }],
     'doclets': {},
     'examples': __webpack_require__(212)
 }
@@ -44539,13 +44532,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
-
-var PanelHeaderBack = function PanelHeaderBack(_ref) {
+var PanelHeaderBack = react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(function (_ref) {
   var restProps = _extends({}, _ref);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_HeaderButton_HeaderButton__WEBPACK_IMPORTED_MODULE_4__["default"], restProps, _lib_platform__WEBPACK_IMPORTED_MODULE_5__[/* IS_PLATFORM_ANDROID */ "c"] ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_24_back__WEBPACK_IMPORTED_MODULE_3___default.a, null) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_vkontakte_icons_dist_28_chevron_back__WEBPACK_IMPORTED_MODULE_2___default.a, null));
-};
-
+});
 PanelHeaderBack.propTypes = {
   onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
 };
@@ -44566,7 +44557,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'markdown',
-        'content': 'Этот компонент - обёртка над `<Spinner />` с высотой 100 пикселей. Удобно использовать его во время загрузки данных.\n\n```js\n<span class="hljs-keyword">import</span> PanelSpinner <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui/dist/components/PanelSpinner/PanelSpinner\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Panel</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span> <span class="hljs-attr">left</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">PanelHeaderBack</span> /&gt;</span>}&gt;Заголовок панели<span class="hljs-tag">&lt;/<span class="hljs-name">PanelHeader</span>&gt;</span>\n\n  {loading ? <span class="hljs-tag">&lt;<span class="hljs-name">PanelSpinner</span> /&gt;</span> : <span class="hljs-tag">&lt;<span class="hljs-name">Group</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Информация"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">Group}</span>\n&lt;/<span class="hljs-attr">Panel</span>&gt;</span></span>\n```'
+        'content': 'Этот компонент - обёртка над `<Spinner />` с заданными отступами и размером. Удобно использовать его во время загрузки данных.\n\n```js\n<span class="hljs-keyword">import</span> PanelSpinner <span class="hljs-keyword">from</span> <span class="hljs-string">\'@vkontakte/vkui/dist/components/PanelSpinner/PanelSpinner\'</span>;\n\n<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Panel</span>&gt;</span>\n  <span class="hljs-tag">&lt;<span class="hljs-name">PanelHeader</span> <span class="hljs-attr">left</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">PanelHeaderBack</span> /&gt;</span>}&gt;Заголовок панели<span class="hljs-tag">&lt;/<span class="hljs-name">PanelHeader</span>&gt;</span>\n\n  {loading ? <span class="hljs-tag">&lt;<span class="hljs-name">PanelSpinner</span> /&gt;</span> : <span class="hljs-tag">&lt;<span class="hljs-name">Group</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Информация"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">Group}</span>\n&lt;/<span class="hljs-attr">Panel</span>&gt;</span></span>\n```'
     }]
 	
 
@@ -44581,17 +44572,6 @@ module.exports = {
     'description': '',
     'methods': [],
     'displayName': 'PanelSpinner',
-    'props': [{
-            'type': { 'name': 'number' },
-            'required': false,
-            'description': '',
-            'defaultValue': {
-                'value': '100',
-                'computed': false
-            },
-            'tags': {},
-            'name': 'height'
-        }],
     'doclets': {},
     'examples': __webpack_require__(215)
 }
@@ -44617,20 +44597,20 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
-
-var PanelSpinner = function PanelSpinner(_ref) {
+var PanelSpinner = react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(function (_ref) {
   var height = _ref.height,
       restProps = _objectWithoutProperties(_ref, ["height"]);
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Spinner_Spinner__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({}, restProps, {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Spinner_Spinner__WEBPACK_IMPORTED_MODULE_2__["default"], _extends({
+    size: "small"
+  }, restProps, {
     style: {
       height: height
     }
   }));
-};
-
+});
 PanelSpinner.defaultProps = {
-  height: 100
+  height: 96
 };
 PanelSpinner.propTypes = {
   height: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number
