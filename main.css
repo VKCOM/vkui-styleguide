@@ -3711,6 +3711,10 @@ body[scheme="space_gray"] {
     color: var(--text_secondary);
     padding: 12px 16px 8px;
     }
+.Panel__in-before + .Group--android {
+  margin-top: 0;
+  padding-top: 8px;
+  }
 .Cell {
   position: relative;
   margin: 0;
@@ -5907,7 +5911,8 @@ body[scheme="space_gray"] {
     position: relative;
     z-index: 2;
     }
-.Select select:disabled ~ .Select__container {
+.Select--disabled .Select__container,
+  .Select select:disabled ~ .Select__container {
     opacity: .6;
     }
 .Select:not(.Select--multiline) .Select__title {

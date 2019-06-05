@@ -4368,7 +4368,7 @@ exports.default = _default;
 /* 30 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.21.4","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-bundle-analyzer":"^2.9.2","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.21.5","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.6.0","react":"^16.6.0","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 31 */
@@ -5930,6 +5930,7 @@ var baseClassNames = Object(getClassName["a" /* default */])('View');
 var transitionStartEventName = 'VKUI:View:transition-start';
 var transitionEndEventName = 'VKUI:View:transition-end';
 var scrollsCache = {};
+var swipeBackExcludedTags = ['input', 'textarea'];
 
 var View_View =
 /*#__PURE__*/
@@ -6004,6 +6005,10 @@ function (_Component) {
     });
 
     View_defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMoveX", function (e) {
+      if (swipeBackExcludedTags.indexOf(e.originalEvent.target.tagName.toLowerCase()) > -1) {
+        return;
+      }
+
       if (platform["d" /* IS_PLATFORM_IOS */] && !_this.context.isWebView && (e.startX <= 70 || e.startX >= _this.window.innerWidth - 70) && !_this.state.browserSwipe) {
         _this.setState({
           browserSwipe: true
@@ -45232,7 +45237,7 @@ module.exports = [
     },
     {
         'type': 'code',
-        'content': '  class Example extends React.Component {\n\n    constructor(props) {\n      super(props);\n      this.state = {\n        country: \'\',\n        activeView: \'profile\'\n      }\n    }\n\n    render () {\n      return (\n        <Root activeView={this.state.activeView}>\n          <View activePanel="profile" id="profile">\n            <Panel id="profile" theme="white">\n              <PanelHeader>\n                Профиль\n              </PanelHeader>\n              <FormLayout>\n                <SelectMimicry\n                  top="Выберите страну"\n                  placeholder="Не выбрана"\n                  onClick={() => this.setState({ activeView: \'countries\' })}\n                >{this.state.country}</SelectMimicry>\n              </FormLayout>\n            </Panel>\n          </View>\n          <View activePanel="countries" id="countries">\n            <Panel id="countries">\n              <PanelHeader>\n                Выбор страны\n              </PanelHeader>\n              <Group>\n                <List>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Россия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Россия\' ? <Icon24Done fill="var(--accent)" /> : null}\n                  >\n                    Россия\n                  </Cell>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Италия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Италия\' ? <Icon24Done fill="var(--accent)" /> : null}\n                  >\n                    Италия\n                  </Cell>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Англия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Англия\' ? <Icon24Done fill="var(--accent)" /> : null}\n                  >\n                    Англия\n                  </Cell>\n                </List>\n              </Group>\n            </Panel>\n          </View>\n        </Root>\n      )\n    }\n  }\n\n  <Example />',
+        'content': '  class Example extends React.Component {\n\n    constructor(props) {\n      super(props);\n      this.state = {\n        country: \'\',\n        activeView: \'profile\'\n      }\n    }\n\n    render () {\n      return (\n        <Root activeView={this.state.activeView}>\n          <View activePanel="profile" id="profile">\n            <Panel id="profile" theme="white">\n              <PanelHeader>\n                Профиль\n              </PanelHeader>\n              <FormLayout>\n                <SelectMimicry\n                  top="Выберите страну"\n                  placeholder="Не выбрана"\n                  onClick={() => this.setState({ activeView: \'countries\' })}\n                >{this.state.country}</SelectMimicry>\n\n                <SelectMimicry\n                  top="Выберите город"\n                  placeholder="Не выбран"\n                  disabled\n                />\n              </FormLayout>\n            </Panel>\n          </View>\n          <View activePanel="countries" id="countries">\n            <Panel id="countries">\n              <PanelHeader>\n                Выбор страны\n              </PanelHeader>\n              <Group>\n                <List>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Россия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Россия\' ? <Icon24Done fill="var(--accent)" /> : null}\n                  >\n                    Россия\n                  </Cell>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Италия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Италия\' ? <Icon24Done fill="var(--accent)" /> : null}\n                  >\n                    Италия\n                  </Cell>\n                  <Cell\n                    onClick={() => this.setState({ country: \'Англия\', activeView: \'profile\' })}\n                    asideContent={this.state.country === \'Англия\' ? <Icon24Done fill="var(--accent)" /> : null}\n                  >\n                    Англия\n                  </Cell>\n                </List>\n              </Group>\n            </Panel>\n          </View>\n        </Root>\n      )\n    }\n  }\n\n  <Example />',
         'settings': {},
         'evalInContext': evalInContext
     }
@@ -45287,6 +45292,13 @@ module.exports = {
             'description': '',
             'tags': {},
             'name': 'className'
+        },
+        {
+            'type': { 'name': 'bool' },
+            'required': false,
+            'description': '',
+            'tags': {},
+            'name': 'disabled'
         },
         {
             'type': { 'name': 'func' },
@@ -45386,18 +45398,22 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var SelectMimicry = function SelectMimicry(_ref) {
   var className = _ref.className,
+      tabIndex = _ref.tabIndex,
       placeholder = _ref.placeholder,
       children = _ref.children,
       alignment = _ref.alignment,
       status = _ref.status,
       getRootRef = _ref.getRootRef,
       multiline = _ref.multiline,
-      restProps = _objectWithoutProperties(_ref, ["className", "placeholder", "children", "alignment", "status", "getRootRef", "multiline"]);
+      disabled = _ref.disabled,
+      restProps = _objectWithoutProperties(_ref, ["className", "tabIndex", "placeholder", "children", "alignment", "status", "getRootRef", "multiline", "disabled"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FormField_FormField__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], _extends({}, restProps, {
+    tabIndex: disabled ? null : tabIndex,
     className: Object(_lib_classNames__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])('Select', 'Select--mimicry', _defineProperty({
       'Select--not-selected': !children,
-      'Select--multiline': multiline
+      'Select--multiline': multiline,
+      'Select--disabled': disabled
     }, "Select--align-".concat(alignment), alignment), className),
     getRootRef: getRootRef,
     status: status
@@ -45417,6 +45433,7 @@ SelectMimicry.propTypes = {
   alignment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['left', 'center', 'top']),
   getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   multiline: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+  disabled: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   status: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['default', 'error', 'valid'])
 };
 SelectMimicry.defaultProps = {
@@ -46634,7 +46651,7 @@ var evalInContext = evalInContextBase.bind(null, "var React = require('react');"
 
 module.exports = [{
         'type': 'code',
-        'content': '  class Example extends React.Component {\n\n    constructor (props) {\n      super(props);\n\n      this.state = {\n        value1: 24.4234,\n        value2: 0.2,\n        value3: 20,\n        value4: [10, 20]\n      };\n    }\n\n    options () {\n      let options = [];\n      for (let i = 0; i <= 10; i += 2) {\n        options.push(<option value={`${i / 10}`} key={`${i}`}>{i / 10}</option>)\n      }\n      return options;\n    }\n\n    render() {\n      return (\n        <View activePanel="slider">\n          <Panel id="slider" theme="white">\n            <PanelHeader>Slider</PanelHeader>\n            <FormLayout>\n              <Slider\n                min={10}\n                max={30}\n                value={Number(this.state.value1)}\n                onChange={value1 => this.setState({value1})}\n                top="Simple [10, 30]"\n              />\n              <Input value={String(this.state.value1)} onChange={e => this.setState({ value1: e.target.value })} />\n              <Slider\n                step={0.2}\n                min={0}\n                max={1}\n                value={Number(this.state.value2)}\n                onChange={value2 => this.setState({value2})}\n                top="Step [0, 1]"\n              />\n              <Select onChange={e => this.setState({ value2: e.target.value })} value={String(this.state.value2)}>\n                {this.options()}\n              </Select>\n              <Slider\n                onChange={value3 => this.setState({value3})}\n                defaultValue={this.state.value3}\n                top="Uncontrolled"\n                bottom={`${this.state.value3}`}\n              />\n            </FormLayout>\n          </Panel>\n        </View>\n      );\n    }\n  }\n\n  <Example />',
+        'content': '  class Example extends React.Component {\n\n    constructor (props) {\n      super(props);\n\n      this.state = {\n        value1: 24.4234,\n        value2: 0.2,\n        value3: 20,\n        value4: [10, 20]\n      };\n    }\n\n    options () {\n      let options = [];\n      for (let i = 0; i <= 10; i += 2) {\n        options.push(<option value={`${i / 10}`} key={`${i}`}>{i / 10}</option>)\n      }\n      return options;\n    }\n\n    render() {\n      return (\n        <View activePanel="slider">\n          <Panel id="slider" theme="white">\n            <PanelHeader>Slider</PanelHeader>\n            <FormLayout>\n              <Slider\n                min={10}\n                max={30}\n                value={Number(this.state.value1)}\n                onChange={value1 => this.setState({value1})}\n                top="Simple [10, 30]"\n              />\n              <Input value={String(this.state.value1)} onChange={e => this.setState({ value1: e.target.value })} type="number"/>\n              <Slider\n                step={0.2}\n                min={0}\n                max={1}\n                value={Number(this.state.value2)}\n                onChange={value2 => this.setState({value2})}\n                top="Step [0, 1]"\n              />\n              <Select onChange={e => this.setState({ value2: e.target.value })} value={String(this.state.value2)}>\n                {this.options()}\n              </Select>\n              <Slider\n                onChange={value3 => this.setState({value3})}\n                defaultValue={this.state.value3}\n                top="Uncontrolled"\n                bottom={`${this.state.value3}`}\n              />\n            </FormLayout>\n          </Panel>\n        </View>\n      );\n    }\n  }\n\n  <Example />',
         'settings': {},
         'evalInContext': evalInContext
     }]
