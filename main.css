@@ -4429,7 +4429,7 @@ body[scheme="space_gray"] {
         }
 .Search--ios.Search--has-after .Search__input {
         border-radius: 16px 0 0 16px;
-        padding-right: 32px;
+        padding-right: 16px;
         }
 .Search--ios .Search__after-width {
         font-size: 17px;
@@ -4516,7 +4516,7 @@ body[scheme="space_gray"] {
         right: calc(100% - 1px);
         display: block;
         height: 100%;
-        width: 33px;
+        width: 16px;
         content: '';
         pointer-events: none;
         }
@@ -4533,7 +4533,7 @@ body[scheme="space_gray"] {
         right: 100%;
         display: block;
         height: 100%;
-        width: 33px;
+        width: 16px;
         content: '';
         top: 0;
         border-radius: 0 16px 16px 0;
@@ -5341,6 +5341,79 @@ body[scheme="space_gray"] {
 .Counter--android .Counter__in {
     font-weight: 500;
     }
+.UsersStack {
+  display: flex;
+  align-items: center;
+  color: #909499;
+  color: var(--text_secondary);
+}
+.UsersStack--v {
+  flex-direction: column;
+  justify-content: center;
+}
+.UsersStack--ios {
+  padding: 8px 12px;
+}
+.UsersStack--android {
+  padding: 8px 16px;
+}
+.UsersStack__photos {
+  display: flex;
+}
+.UsersStack__photo {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.UsersStack__photo--others {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: #99a2ad;
+  background: var(--content_placeholder_icon);
+}
+.UsersStack__photo + .UsersStack__photo {
+  margin-left: -2px;
+}
+.UsersStack--size-s .UsersStack__photo {
+  width: 24px;
+  height: 24px;
+}
+.UsersStack--size-s .UsersStack__photo + .UsersStack__photo {
+  -webkit-clip-path: url(#users_stack_mask_24_left);
+          clip-path: url(#users_stack_mask_24_left);
+}
+.UsersStack--size-m .UsersStack__photo {
+  width: 32px;
+  height: 32px;
+}
+.UsersStack--size-m .UsersStack__photo + .UsersStack__photo {
+  -webkit-clip-path: url(#users_stack_mask_32_left);
+          clip-path: url(#users_stack_mask_32_left);
+}
+.UsersStack--with-others.UsersStack--size-m .UsersStack__photo {
+  -webkit-clip-path: url(#users_stack_mask_32_right);
+          clip-path: url(#users_stack_mask_32_right);
+}
+.UsersStack--with-others.UsersStack--size-m .UsersStack__photo:last-child {
+  -webkit-clip-path: none;
+          clip-path: none;
+}
+.UsersStack__text {
+  min-width: 0;
+  flex: 1;
+  margin: 0 0 0 8px;
+  font-size: 13px;
+  line-height: 16px;
+}
+.UsersStack--v .UsersStack__text {
+  margin: 8px 0 0;
+  text-align: center;
+}
 /* Forms */
 .FormLayout {
   position: relative;
