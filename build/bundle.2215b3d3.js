@@ -1304,7 +1304,15 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (container) {
       _this.container = container;
-      _this.props.getRootRef && _this.props.getRootRef(container);
+      var getRootRef = _this.props.getRootRef;
+
+      if (getRootRef) {
+        if (typeof getRootRef === 'function') {
+          getRootRef(container);
+        } else {
+          getRootRef.current = container;
+        }
+      }
     });
 
     _this.id = Math.round(Math.random() * 1e8).toString(16);
@@ -1392,7 +1400,9 @@ _defineProperty(Tappable_Tappable, "propTypes", {
   activeEffectDelay: prop_types_default.a.number,
   stopPropagation: prop_types_default.a.bool,
   disabled: prop_types_default.a.bool,
-  getRootRef: prop_types_default.a.func
+  getRootRef: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.shape({
+    current: prop_types_default.a.instanceOf(Element)
+  })])
 });
 
 _defineProperty(Tappable_Tappable, "defaultProps", {
@@ -3635,7 +3645,15 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (container) {
       _this.container = container;
-      _this.props.getRootRef && _this.props.getRootRef(container);
+      var getRootRef = _this.props.getRootRef;
+
+      if (getRootRef) {
+        if (typeof getRootRef === 'function') {
+          getRootRef(container);
+        } else {
+          getRootRef.current = container;
+        }
+      }
     });
 
     return _this;
@@ -3755,7 +3773,9 @@ _defineProperty(Touch, "propTypes", {
   component: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
   onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node
+  })])
 });
 
 _defineProperty(Touch, "defaultProps", {
@@ -4368,7 +4388,7 @@ exports.default = _default;
 /* 30 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.21.8","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.21.9","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","react-docgen":"^2.20.0","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0","react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.1"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 31 */
@@ -4483,7 +4503,9 @@ FormField.propTypes = {
   style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   top: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
   bottom: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
   status: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['default', 'error', 'valid'])
 };
 FormField.defaultProps = {
@@ -5044,12 +5066,17 @@ function (_React$Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (el) {
-      if (_this.props.getRootRef) {
-        _this.props.getRootRef(el);
-      }
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (element) {
+      _this.el = element;
+      var getRootRef = _this.props.getRootRef;
 
-      _this.el = el;
+      if (getRootRef) {
+        if (typeof getRootRef === 'function') {
+          getRootRef(element);
+        } else {
+          getRootRef.current = element;
+        }
+      }
     });
 
     return _this;
@@ -5105,7 +5132,9 @@ _defineProperty(FixedLayout, "propTypes", {
   children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.node,
   style: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object,
   className: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.instanceOf(Element)
+  })]),
   vertical: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOf(['top', 'bottom']),
 
   /**
@@ -7167,7 +7196,15 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (container) {
       _this.container = container;
-      _this.props.getRootRef && _this.props.getRootRef(container);
+      var getRootRef = _this.props.getRootRef;
+
+      if (getRootRef) {
+        if (typeof getRootRef === 'function') {
+          getRootRef(container);
+        } else {
+          getRootRef.current = container;
+        }
+      }
     });
 
     _this.state = {
@@ -7306,7 +7343,9 @@ _defineProperty(Slider, "propTypes", {
   defaultValue: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })])
 });
 
 _defineProperty(Slider, "defaultProps", {
@@ -8085,7 +8124,9 @@ Avatar.propTypes = {
   className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
   type: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['default', 'image', 'app']),
   children: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.instanceOf(Element)
+  })])
 };
 Avatar.defaultProps = {
   size: 48,
@@ -9197,7 +9238,9 @@ _defineProperty(Tabs, "propTypes", {
    */
   type: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['default', 'buttons']),
   style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })])
 });
 
 _defineProperty(Tabs, "defaultProps", {
@@ -9263,7 +9306,9 @@ Header.propTypes = {
   aside: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
   children: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
   style: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.instanceOf(Element)
+  })])
 };
 Header.defaultProps = {
   level: '1'
@@ -9309,7 +9354,9 @@ Div.propTypes = {
   style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })])
 };
 
 /***/ }),
@@ -9565,12 +9612,24 @@ function (_React$Component) {
   _createClass(PanelHeader, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.leftNode = this.document.getElementById('header-left-' + this.context.panel);
-      this.addonNode = this.document.getElementById('header-addon-' + this.context.panel);
-      this.titleNode = this.document.getElementById('header-title-' + this.context.panel);
-      this.rightNode = this.document.getElementById('header-right-' + this.context.panel);
-      this.bgNode = this.document.getElementById('header-bg-' + this.context.panel);
-      this.props.getRef && this.props.getRef(this.document.getElementById("panel-header-".concat(this.context.panel)));
+      var panelId = this.context.panel;
+      this.leftNode = this.document.getElementById('header-left-' + panelId);
+      this.addonNode = this.document.getElementById('header-addon-' + panelId);
+      this.titleNode = this.document.getElementById('header-title-' + panelId);
+      this.rightNode = this.document.getElementById('header-right-' + panelId);
+      this.bgNode = this.document.getElementById('header-bg-' + panelId);
+      var getRef = this.props.getRef;
+
+      if (getRef) {
+        var element = this.document.getElementById("panel-header-".concat(panelId));
+
+        if (typeof getRef === 'function') {
+          getRef(element);
+        } else {
+          getRef.current = element;
+        }
+      }
+
       this.setState({
         ready: true
       });
@@ -9637,7 +9696,9 @@ _defineProperty(PanelHeader, "propTypes", {
    */
   transparent: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
   noShadow: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
-  getRef: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func
+  getRef: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.instanceOf(Element)
+  })])
 });
 
 _defineProperty(PanelHeader, "defaultProps", {
@@ -34830,8 +34891,16 @@ function (_React$Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputRef", function (el) {
-      return _this.props.getRef && _this.props.getRef(el);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputRef", function (element) {
+      var getRef = _this.props.getRef;
+
+      if (getRef) {
+        if (typeof getRef === 'function') {
+          getRef(element);
+        } else {
+          getRef.current = element;
+        }
+      }
     });
 
     var state = {
@@ -34926,7 +34995,9 @@ _defineProperty(SearchIOS_SearchIOS, "propTypes", {
   onBlur: prop_types_default.a.func,
   placeholder: prop_types_default.a.node,
   theme: prop_types_default.a.oneOf(['header', 'default']),
-  getRef: prop_types_default.a.func
+  getRef: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.shape({
+    current: prop_types_default.a.instanceOf(Element)
+  })])
 });
 
 _defineProperty(SearchIOS_SearchIOS, "defaultProps", {
@@ -35026,9 +35097,17 @@ function (_React$Component) {
       }
     });
 
-    SearchAndroid_defineProperty(SearchAndroid_assertThisInitialized(SearchAndroid_assertThisInitialized(_this)), "inputRef", function (el) {
-      _this.inputEl = el;
-      _this.props.getRef && _this.props.getRef(el);
+    SearchAndroid_defineProperty(SearchAndroid_assertThisInitialized(SearchAndroid_assertThisInitialized(_this)), "inputRef", function (element) {
+      _this.inputEl = element;
+      var getRef = _this.props.getRef;
+
+      if (getRef) {
+        if (typeof getRef === 'function') {
+          getRef(element);
+        } else {
+          getRef.current = element;
+        }
+      }
     });
 
     var state = {};
@@ -35109,7 +35188,9 @@ SearchAndroid_defineProperty(SearchAndroid_SearchAndroid, "propTypes", {
   onClose: prop_types_default.a.func,
   placeholder: prop_types_default.a.node,
   theme: prop_types_default.a.oneOf(['header', 'default']),
-  getRef: prop_types_default.a.func,
+  getRef: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.shape({
+    current: prop_types_default.a.instanceOf(Element)
+  })]),
   autoFocus: prop_types_default.a.bool
 });
 
@@ -35193,7 +35274,9 @@ function (_React$Component) {
 
 Search_defineProperty(Search_Search, "propTypes", {
   className: prop_types_default.a.string,
-  getRef: prop_types_default.a.func,
+  getRef: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.shape({
+    current: prop_types_default.a.instanceOf(Element)
+  })]),
 
   /**
    * iOS only. Текст кнопки "отмена", которая чистит текстовое поле и убирает фокус.
@@ -44714,14 +44797,44 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
             'name': 'getRef'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -44850,8 +44963,12 @@ File.propTypes = {
    * @ignore
    */
   before: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any,
-  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
 
   /**
    * @deprecated Используйте `children`. Свойство `label` будет удалено в 3.0.0
@@ -44923,14 +45040,44 @@ module.exports = {
             'name': 'defaultValue'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
             'name': 'getRef'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -45070,7 +45217,15 @@ function (_PureComponent) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (element) {
       _this.element = element;
-      _this.props.getRef && _this.props.getRef(element);
+      var getRef = _this.props.getRef;
+
+      if (getRef) {
+        if (typeof getRef === 'function') {
+          getRef(element);
+        } else {
+          getRef.current = element;
+        }
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "resize", function () {
@@ -45205,8 +45360,12 @@ _defineProperty(Textarea, "propTypes", {
   onChange: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   onResize: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
   status: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['default', 'error', 'valid'])
 });
 
@@ -45303,7 +45462,22 @@ module.exports = {
             'name': 'disabled'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -45433,7 +45607,9 @@ SelectMimicry.propTypes = {
   tabIndex: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
   placeholder: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   alignment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['left', 'center', 'top']),
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
   multiline: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   disabled: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
   status: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['default', 'error', 'valid'])
@@ -45531,14 +45707,44 @@ module.exports = {
             'name': 'defaultValue'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
             'name': 'getRef'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -45696,9 +45902,17 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (el) {
-      _this.selectEl = el;
-      _this.props.getRef && _this.props.getRef(el);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRef", function (element) {
+      _this.selectEl = element;
+      var getRef = _this.props.getRef;
+
+      if (getRef) {
+        if (typeof getRef === 'function') {
+          getRef(element);
+        } else {
+          getRef.current = element;
+        }
+      }
     });
 
     var state = {
@@ -45787,8 +46001,12 @@ _defineProperty(Select, "propTypes", {
   defaultValue: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.any,
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
   placeholder: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
   alignment: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['left', 'center', 'top']),
   status: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['default', 'error', 'valid'])
 });
@@ -45870,14 +46088,44 @@ module.exports = {
             'name': 'defaultValue'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
             'name': 'getRef'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -46003,8 +46251,12 @@ Input.propTypes = {
    * Значение `verified` устарело и будет удалено в 3.0.0. Используйте вместо него `valid`
    */
   status: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['default', 'error', 'verified', 'valid']),
-  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
 };
 Input.defaultProps = {
@@ -46060,7 +46312,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -46140,7 +46407,9 @@ Checkbox.propTypes = {
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
   style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })])
 };
 /* harmony default export */ __webpack_exports__["default"] = (Checkbox);
 
@@ -46199,14 +46468,44 @@ module.exports = {
             'name': 'description'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
             'name': 'getRef'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -46289,8 +46588,12 @@ Radio.propTypes = {
   description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
   style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })])
 };
 /* harmony default export */ __webpack_exports__["default"] = (Radio);
 
@@ -46686,7 +46989,22 @@ module.exports = {
             'name': 'defaultValue'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -47105,7 +47423,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -47210,7 +47543,9 @@ FormLayout.propTypes = {
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   TagName: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
   onSubmit: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })])
 };
 FormLayout.defaultProps = {
   status: 'default',
@@ -47513,7 +47848,21 @@ module.exports = {
             'name': 'component'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'node',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -48715,7 +49064,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -48859,7 +49223,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -48949,7 +49328,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -49026,7 +49420,9 @@ Progress.propTypes = {
   style: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
   className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
   value: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.instanceOf(Element)
+  })])
 };
 Progress.defaultProps = {
   value: 0
@@ -50160,7 +50556,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -50423,14 +50834,44 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
             'name': 'getRef'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -50496,8 +50937,12 @@ var Switch = function Switch(_ref) {
 Switch.propTypes = {
   style: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })])
 };
 /* harmony default export */ __webpack_exports__["default"] = (Switch);
 
@@ -50879,7 +51324,22 @@ module.exports = {
             'name': 'expandable'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -51135,9 +51595,17 @@ function (_Component) {
       return _this.removeButton = el;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRootRef", function (el) {
-      _this.rootEl = el;
-      _this.props.getRootRef && _this.props.getRootRef(el);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getRootRef", function (element) {
+      _this.rootEl = element;
+      var getRootRef = _this.props.getRootRef;
+
+      if (getRootRef) {
+        if (typeof getRootRef === 'function') {
+          getRootRef(element);
+        } else {
+          getRootRef.current = element;
+        }
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDragStart", function () {
@@ -51378,7 +51846,9 @@ _defineProperty(Cell, "propTypes", {
    * Контейнер для дополнительного содержимого под `children`.
    */
   description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })]),
 
   /**
    * Контейнер для произвольного содержимого под `description`. Рисуется только если передать `size="l"`.
@@ -51514,7 +51984,22 @@ module.exports = {
             'name': 'description'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -51596,7 +52081,9 @@ Group.propTypes = {
   description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
   children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
   className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.instanceOf(Element)
+  })])
 };
 Group.defaultProps = {
   title: null,
@@ -51659,7 +52146,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -51765,7 +52267,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -51818,7 +52335,9 @@ Link.propTypes = {
   children: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
   className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
   Component: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.any,
-  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func
+  getRootRef: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func, prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.shape({
+    current: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.instanceOf(Element)
+  })])
 };
 Link.defaultProps = {
   Component: 'a'
@@ -51879,7 +52398,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -52637,6 +53171,7 @@ function (_Component) {
 
       var closing = this.state.closing;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PopoutWrapper_PopoutWrapper__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        className: className,
         closing: closing,
         style: style,
         onClick: this.onClose
@@ -53430,7 +53965,22 @@ module.exports = {
             'name': 'className'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},
@@ -54466,7 +55016,22 @@ module.exports = {
             'name': 'children'
         },
         {
-            'type': { 'name': 'func' },
+            'type': {
+                'name': 'union',
+                'value': [
+                    { 'name': 'func' },
+                    {
+                        'name': 'shape',
+                        'value': {
+                            'current': {
+                                'name': 'instanceOf',
+                                'value': 'Element',
+                                'required': false
+                            }
+                        }
+                    }
+                ]
+            },
             'required': false,
             'description': '',
             'tags': {},

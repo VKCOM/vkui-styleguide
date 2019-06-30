@@ -4741,6 +4741,9 @@ body[scheme="space_gray"] {
  */
 .Search--android.Search--default {
   padding: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .08), 0 4px 4px rgba(0, 0, 0, .16);
+  position: relative;
+  z-index: 2;
   }
 .Search--android.Search--default .Search__container {
   background-color: #28436e;
@@ -5820,7 +5823,7 @@ body[scheme="space_gray"] {
       height: 20px;
       border: 2px solid #aaaeb3;
       border: 2px solid var(--icon_secondary);
-      margin: 2px 18px 2px 2px;
+      margin: 2px 14px 2px 2px;
       transition: border-color .5s cubic-bezier(.36, .66, .04, 1);
       transition: border-color .5s var(--ios-easing);
       }
