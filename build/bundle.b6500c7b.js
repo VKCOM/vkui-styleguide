@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "build/" + ({}[chunkId]||chunkId) + "." + {"0":"8c244d1d"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "build/" + ({}[chunkId]||chunkId) + "." + {"0":"62758a68"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -4541,7 +4541,7 @@ exports.default = _default;
 /* 31 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.22.2","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","@vkontakte/icons":"^1.4.5","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.8.6","react-docgen":"^2.20.0","react-dom":"^16.8.6","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.5"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.22.3","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","@vkontakte/icons":"^1.4.5","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.8.6","react-docgen":"^2.20.0","react-dom":"^16.8.6","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.5"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 32 */
@@ -35135,355 +35135,6 @@ function toComment(sourceMap) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./src/styles/styles.css
-var styles = __webpack_require__(540);
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(0);
-
-// CONCATENATED MODULE: ./styleguide/utils.js
-window.uaList = {
-  ios: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
-  android: 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36'
-};
-Object.defineProperty(navigator, 'userAgent', {
-  get: function get() {
-    return window.localStorage.getItem('vkui-styleguide:ua') || window.uaList.ios;
-  }
-});
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-var testStrings = ['Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.', 'Переписали правилами по всей свой буквенных единственное жизни пустился!', 'Которой реторический, текстами речью маленький обеспечивает пор они знаках свой текстов но!', 'Семантика по всей ведущими несколько за, выйти эта, lorem свой рукописи на берегу свое обеспечивает, злых коварный?', 'Путь не сих переулка сбить моей, напоивший, над продолжил необходимыми, снова журчит за грамматики злых.', 'По всей подпоясал, безопасную рыбного деревни послушавшись свое маленький текстов.', 'Сбить свою несколько маленький взобравшись.', 'Подпоясал осталось своего, до это свой реторический всеми агенство.', 'Назад океана, коварных они моей дороге но рукописи которое заманивший власти проектах текст себя текста то великий решила взобравшись большой приставка?', 'Свой там, переписывается семь, напоивший буквенных необходимыми если первую предложения своих?', 'Живет взобравшись лучше безорфографичный текстов пояс заманивший родного не она одна он дороге дал алфавит заголовок мир последний', 'Напоивший продолжил сих свой буквенных власти диких составитель, правилами lorem.', 'Что образ прямо ipsum от всех назад предупреждал наш точках.', 'Живет всеми но текстов рекламных грамматики залетают все вершину последний. Запятой его там, великий она это?', 'Рот языкового скатился, злых, жаренные вопрос снова он единственное журчит меня одна дорогу залетают повстречался толку страна вершину.'];
-var testUsers = [{
-  'name': 'Катя Лебедева',
-  'photo': 'https://sun9-13.userapi.com/c846216/v846216067/c640b/QKvJtUOHEWk.jpg?ava=1'
-}, {
-  'name': 'Антон Циварев',
-  'photo': 'https://pp.userapi.com/c830708/v830708352/1c50b4/Nl8LPuMRj5k.jpg?ava=1'
-}, {
-  'name': 'Настя Семенюк',
-  'photo': 'https://sun9-22.userapi.com/c852132/v852132805/8c0d8/N9WQym0ZEyc.jpg?ava=1'
-}, {
-  'name': 'Тимофей Чаптыков',
-  'photo': 'https://pp.userapi.com/c845121/v845121950/63c01/svMMPOmI5SM.jpg?ava=1'
-}, {
-  'name': 'Павел Князев',
-  'photo': 'https://pp.userapi.com/c844521/v844521213/83b9f/uYAH_OJZisM.jpg?ava=1'
-}, {
-  'name': 'Igor Fedorov',
-  'photo': 'https://sun9-22.userapi.com/c851320/v851320261/7159d/VPN91nn0cHY.jpg?ava=1'
-}, {
-  'name': 'Artur Stambultsian',
-  'photo': 'https://pp.userapi.com/c845324/v845324995/12912f/FyWbKh6vuqs.jpg?ava=1'
-}, {
-  'name': 'Кирилл Аверьянов',
-  'photo': 'https://pp.userapi.com/c850636/v850636435/1c3d7/7IYTKs2elVM.jpg?ava=1'
-}, {
-  'name': 'Коля Борисов',
-  'photo': 'https://pp.userapi.com/c850128/v850128006/86340/1IV4iSrVWQY.jpg?ava=1'
-}, {
-  'name': 'Михаил Лихачёв',
-  'photo': 'https://pp.userapi.com/c840524/v840524444/1f9cd/Q7m20gtLBUw.jpg?ava=1'
-}];
-var prevIndex = 0;
-function getRandomUser() {
-  prevIndex++;
-  if (prevIndex >= testUsers.length - 1) prevIndex = 0;
-  var user = testUsers[prevIndex];
-  user.id = getRandomInt(1, 20e8);
-  return user;
-}
-var importantCountries = [{
-  id: 1,
-  title: 'Россия'
-}, {
-  id: 2,
-  title: 'Украина'
-}, {
-  id: 3,
-  title: 'Беларусь'
-}, {
-  id: 4,
-  title: 'Казахстан'
-}, {
-  id: 5,
-  title: 'Азербайджан'
-}, {
-  id: 6,
-  title: 'Армения'
-}, {
-  id: 7,
-  title: 'Грузия'
-}, {
-  id: 8,
-  title: 'Израиль'
-}, {
-  id: 9,
-  title: 'США'
-}, {
-  id: 65,
-  title: 'Германия'
-}, {
-  id: 11,
-  title: 'Кыргызстан'
-}, {
-  id: 12,
-  title: 'Латвия'
-}, {
-  id: 13,
-  title: 'Литва'
-}, {
-  id: 14,
-  title: 'Эстония'
-}, {
-  id: 15,
-  title: 'Молдова'
-}, {
-  id: 16,
-  title: 'Таджикистан'
-}, {
-  id: 17,
-  title: 'Туркменистан'
-}, {
-  id: 18,
-  title: 'Узбекистан'
-}];
-// EXTERNAL MODULE: ./src/lib/platform.js
-var platform = __webpack_require__(5);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/cancel.js
-var cancel = __webpack_require__(30);
-var cancel_default = /*#__PURE__*/__webpack_require__.n(cancel);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/16/add.js
-var add = __webpack_require__(195);
-var add_default = /*#__PURE__*/__webpack_require__.n(add);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/camera.js
-var camera = __webpack_require__(194);
-var camera_default = /*#__PURE__*/__webpack_require__.n(camera);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/shuffle.js
-var shuffle = __webpack_require__(193);
-var shuffle_default = /*#__PURE__*/__webpack_require__.n(shuffle);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/back.js
-var back = __webpack_require__(48);
-var back_default = /*#__PURE__*/__webpack_require__.n(back);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/search.js
-var search = __webpack_require__(79);
-var search_default = /*#__PURE__*/__webpack_require__.n(search);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/add.js
-var _24_add = __webpack_require__(192);
-var _24_add_default = /*#__PURE__*/__webpack_require__.n(_24_add);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/chevron_back.js
-var chevron_back = __webpack_require__(78);
-var chevron_back_default = /*#__PURE__*/__webpack_require__.n(chevron_back);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/story.js
-var story = __webpack_require__(191);
-var story_default = /*#__PURE__*/__webpack_require__.n(story);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/more_vertical.js
-var more_vertical = __webpack_require__(190);
-var more_vertical_default = /*#__PURE__*/__webpack_require__.n(more_vertical);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/done.js
-var done = __webpack_require__(47);
-var done_default = /*#__PURE__*/__webpack_require__.n(done);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/services.js
-var services = __webpack_require__(189);
-var services_default = /*#__PURE__*/__webpack_require__.n(services);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/info.js
-var info = __webpack_require__(188);
-var info_default = /*#__PURE__*/__webpack_require__.n(info);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/user.js
-var user = __webpack_require__(77);
-var user_default = /*#__PURE__*/__webpack_require__.n(user);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/document.js
-var _24_document = __webpack_require__(187);
-var document_default = /*#__PURE__*/__webpack_require__.n(_24_document);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/16/like.js
-var like = __webpack_require__(186);
-var like_default = /*#__PURE__*/__webpack_require__.n(like);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/16/dropdown.js
-var dropdown = __webpack_require__(185);
-var dropdown_default = /*#__PURE__*/__webpack_require__.n(dropdown);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/phone.js
-var phone = __webpack_require__(184);
-var phone_default = /*#__PURE__*/__webpack_require__.n(phone);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/users.js
-var users = __webpack_require__(183);
-var users_default = /*#__PURE__*/__webpack_require__.n(users);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/settings.js
-var settings = __webpack_require__(182);
-var settings_default = /*#__PURE__*/__webpack_require__.n(settings);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/privacy.js
-var privacy = __webpack_require__(181);
-var privacy_default = /*#__PURE__*/__webpack_require__.n(privacy);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/write.js
-var write = __webpack_require__(76);
-var write_default = /*#__PURE__*/__webpack_require__.n(write);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/more_horizontal.js
-var more_horizontal = __webpack_require__(180);
-var more_horizontal_default = /*#__PURE__*/__webpack_require__.n(more_horizontal);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/logo_vk.js
-var logo_vk = __webpack_require__(179);
-var logo_vk_default = /*#__PURE__*/__webpack_require__.n(logo_vk);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/newsfeed.js
-var newsfeed = __webpack_require__(178);
-var newsfeed_default = /*#__PURE__*/__webpack_require__.n(newsfeed);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/search.js
-var _28_search = __webpack_require__(177);
-var _28_search_default = /*#__PURE__*/__webpack_require__.n(_28_search);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/notifications.js
-var notifications = __webpack_require__(176);
-var notifications_default = /*#__PURE__*/__webpack_require__.n(notifications);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/messages.js
-var messages = __webpack_require__(175);
-var messages_default = /*#__PURE__*/__webpack_require__.n(messages);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/more.js
-var more = __webpack_require__(174);
-var more_default = /*#__PURE__*/__webpack_require__.n(more);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/message.js
-var message = __webpack_require__(173);
-var message_default = /*#__PURE__*/__webpack_require__.n(message);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/favorite.js
-var favorite = __webpack_require__(172);
-var favorite_default = /*#__PURE__*/__webpack_require__.n(favorite);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/dismiss.js
-var dismiss = __webpack_require__(75);
-var dismiss_default = /*#__PURE__*/__webpack_require__.n(dismiss);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/56/notification_outline.js
-var notification_outline = __webpack_require__(171);
-var notification_outline_default = /*#__PURE__*/__webpack_require__.n(notification_outline);
-
-// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/56/money_transfer_outline.js
-var money_transfer_outline = __webpack_require__(170);
-var money_transfer_outline_default = /*#__PURE__*/__webpack_require__.n(money_transfer_outline);
-
-// EXTERNAL MODULE: ./package.json
-var package_0 = __webpack_require__(31);
-
-// CONCATENATED MODULE: ./styleguide/setup.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-window.osname = Object(platform["e" /* platform */])();
-window.IOS = platform["b" /* IOS */];
-window.ANDROID = platform["a" /* ANDROID */];
-window.IS_PLATFORM_IOS = platform["d" /* IS_PLATFORM_IOS */];
-window.IS_PLATFORM_ANDROID = platform["c" /* IS_PLATFORM_ANDROID */];
-window.schemeId = window.localStorage.getItem('vkui-styleguide:schemeId') || package_0.defaultSchemeId;
-window.Icon24Cancel = cancel_default.a;
-window.Icon16Add = add_default.a;
-window.Icon24Camera = camera_default.a;
-window.Icon24Shuffle = shuffle_default.a;
-window.Icon24Back = back_default.a;
-window.Icon24Search = search_default.a;
-window.Icon24Add = _24_add_default.a;
-window.Icon28ChevronBack = chevron_back_default.a;
-window.Icon24Story = story_default.a;
-window.Icon24MoreVertical = more_vertical_default.a;
-window.Icon24Done = done_default.a;
-window.Icon24Services = services_default.a;
-window.Icon24About = info_default.a;
-window.Icon28User = user_default.a;
-window.Icon24Document = document_default.a;
-window.Icon16Like = like_default.a;
-window.Icon16Dropdown = dropdown_default.a;
-window.Icon24Phone = phone_default.a;
-window.Icon24Users = users_default.a;
-window.Icon24Settings = settings_default.a;
-window.Icon24User = user_default.a;
-window.Icon24Privacy = privacy_default.a;
-window.Icon24MoreHorizontal = more_horizontal_default.a;
-window.Icon24Write = write_default.a;
-window.Icon24LogoVk = logo_vk_default.a;
-window.Icon28Newsfeed = newsfeed_default.a;
-window.Icon28Search = _28_search_default.a;
-window.Icon28Notifications = notifications_default.a;
-window.Icon28Messages = messages_default.a;
-window.Icon28More = more_default.a;
-window.Icon24Message = message_default.a;
-window.Icon24Favorite = favorite_default.a;
-window.Icon24Dismiss = dismiss_default.a;
-window.Icon56NotificationOutline = notification_outline_default.a;
-window.Icon56MoneyTransferOutline = money_transfer_outline_default.a;
-window.getRandomInt = getRandomInt;
-window.getRandomUser = getRandomUser;
-window.importantCountries = importantCountries;
-
-/***/ }),
-/* 199 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(0);
 var react_default = /*#__PURE__*/__webpack_require__.n(react);
@@ -35872,6 +35523,355 @@ _defineProperty(PullToRefresh_PullToRefresh, "contextTypes", {
 });
 
 
+
+/***/ }),
+/* 199 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./src/styles/styles.css
+var styles = __webpack_require__(540);
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(0);
+
+// CONCATENATED MODULE: ./styleguide/utils.js
+window.uaList = {
+  ios: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  android: 'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Mobile Safari/537.36'
+};
+Object.defineProperty(navigator, 'userAgent', {
+  get: function get() {
+    return window.localStorage.getItem('vkui-styleguide:ua') || window.uaList.ios;
+  }
+});
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+var testStrings = ['Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.', 'Переписали правилами по всей свой буквенных единственное жизни пустился!', 'Которой реторический, текстами речью маленький обеспечивает пор они знаках свой текстов но!', 'Семантика по всей ведущими несколько за, выйти эта, lorem свой рукописи на берегу свое обеспечивает, злых коварный?', 'Путь не сих переулка сбить моей, напоивший, над продолжил необходимыми, снова журчит за грамматики злых.', 'По всей подпоясал, безопасную рыбного деревни послушавшись свое маленький текстов.', 'Сбить свою несколько маленький взобравшись.', 'Подпоясал осталось своего, до это свой реторический всеми агенство.', 'Назад океана, коварных они моей дороге но рукописи которое заманивший власти проектах текст себя текста то великий решила взобравшись большой приставка?', 'Свой там, переписывается семь, напоивший буквенных необходимыми если первую предложения своих?', 'Живет взобравшись лучше безорфографичный текстов пояс заманивший родного не она одна он дороге дал алфавит заголовок мир последний', 'Напоивший продолжил сих свой буквенных власти диких составитель, правилами lorem.', 'Что образ прямо ipsum от всех назад предупреждал наш точках.', 'Живет всеми но текстов рекламных грамматики залетают все вершину последний. Запятой его там, великий она это?', 'Рот языкового скатился, злых, жаренные вопрос снова он единственное журчит меня одна дорогу залетают повстречался толку страна вершину.'];
+var testUsers = [{
+  'name': 'Катя Лебедева',
+  'photo': 'https://sun9-13.userapi.com/c846216/v846216067/c640b/QKvJtUOHEWk.jpg?ava=1'
+}, {
+  'name': 'Антон Циварев',
+  'photo': 'https://pp.userapi.com/c830708/v830708352/1c50b4/Nl8LPuMRj5k.jpg?ava=1'
+}, {
+  'name': 'Настя Семенюк',
+  'photo': 'https://sun9-22.userapi.com/c852132/v852132805/8c0d8/N9WQym0ZEyc.jpg?ava=1'
+}, {
+  'name': 'Тимофей Чаптыков',
+  'photo': 'https://pp.userapi.com/c845121/v845121950/63c01/svMMPOmI5SM.jpg?ava=1'
+}, {
+  'name': 'Павел Князев',
+  'photo': 'https://pp.userapi.com/c844521/v844521213/83b9f/uYAH_OJZisM.jpg?ava=1'
+}, {
+  'name': 'Igor Fedorov',
+  'photo': 'https://sun9-22.userapi.com/c851320/v851320261/7159d/VPN91nn0cHY.jpg?ava=1'
+}, {
+  'name': 'Artur Stambultsian',
+  'photo': 'https://pp.userapi.com/c845324/v845324995/12912f/FyWbKh6vuqs.jpg?ava=1'
+}, {
+  'name': 'Кирилл Аверьянов',
+  'photo': 'https://pp.userapi.com/c850636/v850636435/1c3d7/7IYTKs2elVM.jpg?ava=1'
+}, {
+  'name': 'Коля Борисов',
+  'photo': 'https://pp.userapi.com/c850128/v850128006/86340/1IV4iSrVWQY.jpg?ava=1'
+}, {
+  'name': 'Михаил Лихачёв',
+  'photo': 'https://pp.userapi.com/c840524/v840524444/1f9cd/Q7m20gtLBUw.jpg?ava=1'
+}];
+var prevIndex = 0;
+function getRandomUser() {
+  prevIndex++;
+  if (prevIndex >= testUsers.length - 1) prevIndex = 0;
+  var user = testUsers[prevIndex];
+  user.id = getRandomInt(1, 20e8);
+  return user;
+}
+var importantCountries = [{
+  id: 1,
+  title: 'Россия'
+}, {
+  id: 2,
+  title: 'Украина'
+}, {
+  id: 3,
+  title: 'Беларусь'
+}, {
+  id: 4,
+  title: 'Казахстан'
+}, {
+  id: 5,
+  title: 'Азербайджан'
+}, {
+  id: 6,
+  title: 'Армения'
+}, {
+  id: 7,
+  title: 'Грузия'
+}, {
+  id: 8,
+  title: 'Израиль'
+}, {
+  id: 9,
+  title: 'США'
+}, {
+  id: 65,
+  title: 'Германия'
+}, {
+  id: 11,
+  title: 'Кыргызстан'
+}, {
+  id: 12,
+  title: 'Латвия'
+}, {
+  id: 13,
+  title: 'Литва'
+}, {
+  id: 14,
+  title: 'Эстония'
+}, {
+  id: 15,
+  title: 'Молдова'
+}, {
+  id: 16,
+  title: 'Таджикистан'
+}, {
+  id: 17,
+  title: 'Туркменистан'
+}, {
+  id: 18,
+  title: 'Узбекистан'
+}];
+// EXTERNAL MODULE: ./src/lib/platform.js
+var platform = __webpack_require__(5);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/cancel.js
+var cancel = __webpack_require__(30);
+var cancel_default = /*#__PURE__*/__webpack_require__.n(cancel);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/16/add.js
+var add = __webpack_require__(195);
+var add_default = /*#__PURE__*/__webpack_require__.n(add);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/camera.js
+var camera = __webpack_require__(194);
+var camera_default = /*#__PURE__*/__webpack_require__.n(camera);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/shuffle.js
+var shuffle = __webpack_require__(193);
+var shuffle_default = /*#__PURE__*/__webpack_require__.n(shuffle);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/back.js
+var back = __webpack_require__(48);
+var back_default = /*#__PURE__*/__webpack_require__.n(back);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/search.js
+var search = __webpack_require__(79);
+var search_default = /*#__PURE__*/__webpack_require__.n(search);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/add.js
+var _24_add = __webpack_require__(192);
+var _24_add_default = /*#__PURE__*/__webpack_require__.n(_24_add);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/chevron_back.js
+var chevron_back = __webpack_require__(78);
+var chevron_back_default = /*#__PURE__*/__webpack_require__.n(chevron_back);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/story.js
+var story = __webpack_require__(191);
+var story_default = /*#__PURE__*/__webpack_require__.n(story);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/more_vertical.js
+var more_vertical = __webpack_require__(190);
+var more_vertical_default = /*#__PURE__*/__webpack_require__.n(more_vertical);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/done.js
+var done = __webpack_require__(47);
+var done_default = /*#__PURE__*/__webpack_require__.n(done);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/services.js
+var services = __webpack_require__(189);
+var services_default = /*#__PURE__*/__webpack_require__.n(services);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/info.js
+var info = __webpack_require__(188);
+var info_default = /*#__PURE__*/__webpack_require__.n(info);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/user.js
+var user = __webpack_require__(77);
+var user_default = /*#__PURE__*/__webpack_require__.n(user);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/document.js
+var _24_document = __webpack_require__(187);
+var document_default = /*#__PURE__*/__webpack_require__.n(_24_document);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/16/like.js
+var like = __webpack_require__(186);
+var like_default = /*#__PURE__*/__webpack_require__.n(like);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/16/dropdown.js
+var dropdown = __webpack_require__(185);
+var dropdown_default = /*#__PURE__*/__webpack_require__.n(dropdown);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/phone.js
+var phone = __webpack_require__(184);
+var phone_default = /*#__PURE__*/__webpack_require__.n(phone);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/users.js
+var users = __webpack_require__(183);
+var users_default = /*#__PURE__*/__webpack_require__.n(users);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/settings.js
+var settings = __webpack_require__(182);
+var settings_default = /*#__PURE__*/__webpack_require__.n(settings);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/privacy.js
+var privacy = __webpack_require__(181);
+var privacy_default = /*#__PURE__*/__webpack_require__.n(privacy);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/write.js
+var write = __webpack_require__(76);
+var write_default = /*#__PURE__*/__webpack_require__.n(write);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/more_horizontal.js
+var more_horizontal = __webpack_require__(180);
+var more_horizontal_default = /*#__PURE__*/__webpack_require__.n(more_horizontal);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/logo_vk.js
+var logo_vk = __webpack_require__(179);
+var logo_vk_default = /*#__PURE__*/__webpack_require__.n(logo_vk);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/newsfeed.js
+var newsfeed = __webpack_require__(178);
+var newsfeed_default = /*#__PURE__*/__webpack_require__.n(newsfeed);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/search.js
+var _28_search = __webpack_require__(177);
+var _28_search_default = /*#__PURE__*/__webpack_require__.n(_28_search);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/notifications.js
+var notifications = __webpack_require__(176);
+var notifications_default = /*#__PURE__*/__webpack_require__.n(notifications);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/messages.js
+var messages = __webpack_require__(175);
+var messages_default = /*#__PURE__*/__webpack_require__.n(messages);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/28/more.js
+var more = __webpack_require__(174);
+var more_default = /*#__PURE__*/__webpack_require__.n(more);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/message.js
+var message = __webpack_require__(173);
+var message_default = /*#__PURE__*/__webpack_require__.n(message);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/favorite.js
+var favorite = __webpack_require__(172);
+var favorite_default = /*#__PURE__*/__webpack_require__.n(favorite);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/24/dismiss.js
+var dismiss = __webpack_require__(75);
+var dismiss_default = /*#__PURE__*/__webpack_require__.n(dismiss);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/56/notification_outline.js
+var notification_outline = __webpack_require__(171);
+var notification_outline_default = /*#__PURE__*/__webpack_require__.n(notification_outline);
+
+// EXTERNAL MODULE: ./node_modules/@vkontakte/icons/dist/56/money_transfer_outline.js
+var money_transfer_outline = __webpack_require__(170);
+var money_transfer_outline_default = /*#__PURE__*/__webpack_require__.n(money_transfer_outline);
+
+// EXTERNAL MODULE: ./package.json
+var package_0 = __webpack_require__(31);
+
+// CONCATENATED MODULE: ./styleguide/setup.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.osname = Object(platform["e" /* platform */])();
+window.IOS = platform["b" /* IOS */];
+window.ANDROID = platform["a" /* ANDROID */];
+window.IS_PLATFORM_IOS = platform["d" /* IS_PLATFORM_IOS */];
+window.IS_PLATFORM_ANDROID = platform["c" /* IS_PLATFORM_ANDROID */];
+window.schemeId = window.localStorage.getItem('vkui-styleguide:schemeId') || package_0.defaultSchemeId;
+window.Icon24Cancel = cancel_default.a;
+window.Icon16Add = add_default.a;
+window.Icon24Camera = camera_default.a;
+window.Icon24Shuffle = shuffle_default.a;
+window.Icon24Back = back_default.a;
+window.Icon24Search = search_default.a;
+window.Icon24Add = _24_add_default.a;
+window.Icon28ChevronBack = chevron_back_default.a;
+window.Icon24Story = story_default.a;
+window.Icon24MoreVertical = more_vertical_default.a;
+window.Icon24Done = done_default.a;
+window.Icon24Services = services_default.a;
+window.Icon24About = info_default.a;
+window.Icon28User = user_default.a;
+window.Icon24Document = document_default.a;
+window.Icon16Like = like_default.a;
+window.Icon16Dropdown = dropdown_default.a;
+window.Icon24Phone = phone_default.a;
+window.Icon24Users = users_default.a;
+window.Icon24Settings = settings_default.a;
+window.Icon24User = user_default.a;
+window.Icon24Privacy = privacy_default.a;
+window.Icon24MoreHorizontal = more_horizontal_default.a;
+window.Icon24Write = write_default.a;
+window.Icon24LogoVk = logo_vk_default.a;
+window.Icon28Newsfeed = newsfeed_default.a;
+window.Icon28Search = _28_search_default.a;
+window.Icon28Notifications = notifications_default.a;
+window.Icon28Messages = messages_default.a;
+window.Icon28More = more_default.a;
+window.Icon24Message = message_default.a;
+window.Icon24Favorite = favorite_default.a;
+window.Icon24Dismiss = dismiss_default.a;
+window.Icon56NotificationOutline = notification_outline_default.a;
+window.Icon56MoneyTransferOutline = money_transfer_outline_default.a;
+window.getRandomInt = getRandomInt;
+window.getRandomUser = getRandomUser;
+window.importantCountries = importantCountries;
 
 /***/ }),
 /* 200 */
@@ -56693,7 +56693,9 @@ var PanelHeaderContent = function PanelHeaderContent(_ref) {
     className: "PanelHeaderContent__status"
   }, status), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "PanelHeaderContent__children"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, children), aside && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "PanelHeaderContent__children-in"
+  }, children), aside && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "PanelHeaderContent__aside"
   }, aside))));
 };
@@ -58187,7 +58189,7 @@ module.exports = {
                             'filepath': '../src/components/PullToRefresh/PullToRefresh.js',
                             'slug': 'pulltorefresh',
                             'pathLine': '../src/components/PullToRefresh/PullToRefresh.js',
-                            'module': __webpack_require__(199),
+                            'module': __webpack_require__(198),
                             'props': __webpack_require__(266),
                             'hasExamples': true,
                             'metadata': {}
@@ -67785,7 +67787,7 @@ unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_Y
 /* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(198);
+__webpack_require__(199);
 __webpack_require__(536);
 module.exports = __webpack_require__(201);
 
