@@ -613,7 +613,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { keys.push.apply(keys, Object.getOwnPropertySymbols(object)); } if (enumerableOnly) keys = keys.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -681,13 +683,20 @@ var _browserSprite = _interopRequireDefault(__webpack_require__(537));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var spriteNodeId = '__SVG_SPRITE_NODE__';
-var browserSprite = new _browserSprite.default({
-  attrs: {
-    id: spriteNodeId
-  }
-});
-browserSprite.mount();
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+var browserSprite;
+
+if (canUseDOM) {
+  browserSprite = new _browserSprite.default({
+    attrs: {
+      id: '__SVG_SPRITE_NODE__'
+    }
+  });
+  browserSprite.mount();
+} else {
+  browserSprite = null;
+}
+
 var _default = browserSprite;
 exports.default = _default;
 
@@ -4504,38 +4513,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'cancel_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="cancel_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M18.3 5.7a.99.99 0 0 0-1.4 0L12 10.6 7.1 5.7a.99.99 0 0 0-1.4 1.4l4.9 4.9-4.9 4.9a.99.99 0 0 0 1.4 1.4l4.9-4.9 4.9 4.9a.99.99 0 0 0 1.4-1.4L13.4 12l4.9-4.9a.99.99 0 0 0 0-1.4z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -4546,7 +4555,7 @@ exports.default = _default;
 /* 31 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.23.1","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#v2.1.9","@vkontakte/icons":"^1.4.5","@vkontakte/vkui-connect":"^1.1.2","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.8.6","react-docgen":"^2.20.0","react-dom":"^16.8.6","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.1.2","prop-types":"^15.6.1","@vkontakte/icons":"^1.4.5"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.23.2","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.2","@vkontakte/icons":"^1.6.0","@vkontakte/vkui-connect":"^1.3.0","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.8.6","react-docgen":"^2.20.0","react-dom":"^16.8.6","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.3.0","prop-types":"^15.6.1","@vkontakte/icons":"^1.6.0"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 32 */
@@ -5780,38 +5789,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'done_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="done_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M9 16.2l-3.5-3.5a.99.99 0 1 0-1.4 1.4l4.193 4.193a1 1 0 0 0 1.414 0L20.3 7.7a.99.99 0 0 0-1.4-1.4L9 16.2z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -5830,38 +5839,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'back_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="back_24"><g fill="none" fill-rule="evenodd"><path d="M24 0H0v24h24z" /><path d="M7.8 11l4.9-4.9a.99.99 0 0 0-1.4-1.4l-6.593 6.593a1 1 0 0 0 0 1.414L11.3 19.3a.99.99 0 0 0 1.4-1.4L7.8 13H20a1 1 0 0 0 0-2H7.8z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -7520,38 +7529,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 16 16';
 var id = 'done_16';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="done_16"><g fill="none" fill-rule="evenodd"><path d="M0 0h16v16H0z" /><path d="M6 10.2L3.5 7.7a.99.99 0 1 0-1.4 1.4l3.193 3.193a1 1 0 0 0 1.414 0L14.3 4.7a.99.99 0 0 0-1.4-1.4L6 10.2z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 16;
-var height = 16;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 16,
+    height: !isNaN(props.height) ? +props.height : 16
   }));
 }
 
@@ -8153,38 +8162,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'dropdown_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="dropdown_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M12 14.198L6.64 9.732a1 1 0 1 0-1.28 1.536l6 5a1 1 0 0 0 1.28 0l6-5a1 1 0 1 0-1.28-1.536L12 14.198z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -8313,7 +8322,7 @@ module.exports = {
 /* 74 */
 /***/ (function(module) {
 
-module.exports = {"client_dark":{"appearance":"dark","colors":{"accent":{"color_identifier":"sky_300"},"action_sheet_action_foreground":{"color_identifier":"white"},"action_sheet_separator":{"color_identifier":"white_alpha12"},"activity_indicator_tint":{"color_identifier":"gray_600"},"attach_picker_tab_active_background":{"color_identifier":"gray_100"},"attach_picker_tab_active_icon":{"color_identifier":"gray_900"},"attach_picker_tab_active_text":{"color_identifier":"gray_100"},"attach_picker_tab_inactive_background":{"color_identifier":"gray_800"},"attach_picker_tab_inactive_icon":{"color_identifier":"gray_100"},"attach_picker_tab_inactive_text":{"color_identifier":"gray_500"},"background_content":{"color_identifier":"gray_900"},"background_highlighted":{"color_identifier":"white_alpha12"},"background_keyboard":{"color_identifier":"gray_800"},"background_light":{"color_identifier":"gray_850"},"background_page":{"color_identifier":"gray_1000"},"background_suggestions":{"color_identifier":"gray_800"},"button_bot_shadow":{"color_identifier":"gray_900"},"button_commerce_background":{"color_identifier":"green"},"button_commerce_foreground":{"color_identifier":"white"},"button_muted_background":{"color_identifier":"gray_800"},"button_muted_foreground":{"color_identifier":"gray_100"},"button_outline_border":{"color_identifier":"gray_100"},"button_outline_foreground":{"color_identifier":"gray_100"},"button_primary_background":{"color_identifier":"gray_100"},"button_primary_foreground":{"color_identifier":"gray_900"},"button_secondary_background":{"color_identifier":"gray_700"},"button_secondary_foreground":{"color_identifier":"gray_100"},"button_tertiary_background":{"color_identifier":"clear"},"button_tertiary_foreground":{"color_identifier":"gray_100"},"cell_button_foreground":{"color_identifier":"gray_100"},"content_placeholder_icon":{"color_identifier":"gray_300"},"content_placeholder_text":{"color_identifier":"gray_300"},"content_tint_background":{"color_identifier":"gray_850"},"content_tint_foreground":{"color_identifier":"gray_400"},"control_background":{"color_identifier":"gray_700"},"control_foreground":{"color_identifier":"gray_100"},"control_tint":{"color_identifier":"gray_900"},"control_tint_muted":{"color_identifier":"gray_400"},"counter_primary_background":{"color_identifier":"sky_300"},"counter_primary_text":{"color_identifier":"white"},"counter_secondary_background":{"color_identifier":"gray_500"},"counter_secondary_text":{"color_identifier":"gray_900"},"destructive":{"color_identifier":"red_light"},"field_background":{"color_identifier":"gray_850"},"field_border":{"color_identifier":"white_alpha12"},"field_error_background":{"color_identifier":"red_dark"},"field_error_border":{"color_identifier":"red_light"},"field_valid_border":{"color_identifier":"green"},"field_text_placeholder":{"color_identifier":"gray_500"},"float_button_background":{"color_identifier":"gray_700"},"float_button_background_highlighted":{"color_identifier":"gray_1000"},"float_button_foreground":{"color_identifier":"gray_300"},"float_button_border":{"color_identifier":"black_alpha12"},"header_alternate_background":{"color_identifier":"gray_800"},"header_alternate_tab_active_indicator":{"color_identifier":"gray_100"},"header_alternate_tab_active_text":{"color_identifier":"gray_100"},"header_alternate_tab_inactive_text":{"color_identifier":"gray_500"},"header_background":{"color_identifier":"gray_800"},"header_background_before_blur":{"color_identifier":"gray_950"},"header_background_before_blur_alternate":{"color_identifier":"gray_950"},"header_search_field_background":{"color_identifier":"gray_700"},"header_search_field_tint":{"color_identifier":"gray_300"},"header_tab_active_background":{"color_identifier":"gray_600"},"header_tab_active_text":{"color_identifier":"gray_100"},"header_tab_active_indicator":{"color_identifier":"gray_100"},"header_tab_inactive_text":{"color_identifier":"gray_500"},"header_text":{"color_identifier":"gray_100"},"header_text_alternate":{"color_identifier":"gray_100"},"header_text_secondary":{"color_identifier":"white_alpha60"},"header_tint":{"color_identifier":"gray_100"},"header_tint_alternate":{"color_identifier":"gray_100"},"icon_alpha_placeholder":{"color_identifier":"gray_100"},"icon_medium":{"color_identifier":"gray_400"},"icon_outline_medium":{"color_identifier":"gray_300"},"icon_outline_secondary":{"color_identifier":"gray_400"},"icon_secondary":{"color_identifier":"gray_500"},"icon_tertiary":{"color_identifier":"gray_700"},"im_attach_tint":{"color_identifier":"sky_300"},"im_bubble_border_alternate":{"color_identifier":"clear"},"im_bubble_border_alternate_highlighted":{"color_identifier":"clear"},"im_bubble_button_background":{"color_identifier":"gray_750"},"im_bubble_button_foreground":{"color_identifier":"gray_100"},"im_bubble_incoming":{"color_identifier":"gray_800"},"im_bubble_incoming_alternate":{"color_identifier":"gray_800"},"im_bubble_incoming_alternate_highlighted":{"color_identifier":"gray_600"},"im_bubble_incoming_highlighted":{"color_identifier":"gray_600"},"im_bubble_gift_background":{"color_identifier":"gold_400"},"im_bubble_gift_text":{"color_identifier":"gold_100"},"im_bubble_gift_text_secondary":{"color_identifier":"gold_200"},"im_bubble_outgoing":{"color_identifier":"gray_700"},"im_bubble_outgoing_alternate":{"color_identifier":"gray_700"},"im_bubble_outgoing_highlighted":{"color_identifier":"gray_600"},"im_bubble_outgoing_alternate_highlighted":{"color_identifier":"gray_500"},"im_bubble_wallpaper_incoming":{"color_identifier":"gray_800"},"im_bubble_wallpaper_incoming_highlighted":{"color_identifier":"gray_600"},"im_bubble_wallpaper_incoming_border":{"color_identifier":"gray_900"},"im_bubble_wallpaper_outgoing":{"color_identifier":"gray_700"},"im_bubble_wallpaper_outgoing_highlighted":{"color_identifier":"gray_600"},"im_bubble_wallpaper_outgoing_border":{"color_identifier":"gray_800"},"im_forward_line_tint":{"color_identifier":"white"},"im_reply_sender_text":{"color_identifier":"white"},"im_reply_separator":{"color_identifier":"white"},"im_toolbar_voice_msg_background":{"color_identifier":"gray_700"},"im_toolbar_separator":{"color_identifier":"gray_300"},"image_border":{"color_identifier":"white_alpha8"},"input_background":{"color_identifier":"gray_700"},"input_border":{"color_identifier":"gray_700"},"landing_background":{"color_identifier":"gray_900"},"landing_field_background":{"color_identifier":"gray_850"},"landing_field_border":{"color_identifier":"white_alpha12"},"landing_field_placeholder":{"color_identifier":"gray_300"},"landing_login_button_background":{"color_identifier":"gray_100"},"landing_login_button_foreground":{"color_identifier":"gray_900"},"landing_primary_button_background":{"color_identifier":"gray_100"},"landing_primary_button_foreground":{"color_identifier":"gray_900"},"landing_tertiary_button_background":{"color_identifier":"clear"},"landing_tertiary_button_foreground":{"color_identifier":"gray_500"},"landing_text_primary":{"color_identifier":"gray_100"},"landing_text_title":{"color_identifier":"white"},"landing_text_secondary":{"color_identifier":"gray_500"},"landing_secondary_button_background":{"color_identifier":"white_alpha15"},"landing_secondary_button_foreground":{"color_identifier":"white"},"landing_snippet_border":{"color_identifier":"clear"},"like_text_tint":{"color_identifier":"red_light"},"link_alternate":{"color_identifier":"sky_300"},"loader_background":{"color_identifier":"gray_900"},"loader_tint":{"color_identifier":"gray_500"},"loader_track_fill":{"color_identifier":"gray_700"},"loader_track_value_fill":{"color_identifier":"sky_300"},"media_overlay_button_background":{"color_identifier":"white"},"media_overlay_button_foreground":{"color_identifier":"gray_800"},"modal_card_background":{"color_identifier":"gray_800"},"modal_card_border":{"color_identifier":"white_alpha12"},"modal_card_header_close":{"color_identifier":"white"},"music_playback_icon":{"color_identifier":"white"},"feed_recommended_friend_promo_background":{"color_identifier":"steel_gray_500"},"overlay_status_background":{"color_identifier":"gray_900"},"overlay_status_foreground":{"color_identifier":"gray_100"},"overlay_status_icon":{"color_identifier":"gray_50"},"placeholder_icon_background":{"color_identifier":"white_alpha8"},"placeholder_icon_foreground_primary":{"color_identifier":"gray_400"},"placeholder_icon_foreground_secondary":{"color_identifier":"gray_600"},"placeholder_icon_tint":{"color_identifier":"white"},"poll_option_background":{"color_identifier":"white"},"search_bar_background":{"color_identifier":"gray_900"},"search_bar_field_background":{"color_identifier":"gray_700"},"search_bar_field_tint":{"color_identifier":"gray_300"},"search_bar_segmented_control_tint":{"color_identifier":"gray_400"},"segmented_control_bar_background":{"color_identifier":"gray_900"},"segmented_control_tint":{"color_identifier":"gray_500"},"selection_off_icon":{"color_identifier":"gray_700"},"separator_alpha":{"color_identifier":"white_alpha15"},"separator_alternate":{"color_identifier":"gray_850"},"separator_common":{"color_identifier":"gray_750"},"snippet_background":{"color_identifier":"gray_800"},"snippet_border":{"color_identifier":"white_alpha15"},"snippet_icon_tertiary":{"color_identifier":"gray_600"},"splashscreen_icon":{"color_identifier":"gray_800"},"statusbar_alternate_legacy_background":{"color_identifier":"clear"},"stories_skeleton_loader_background":{"color_identifier":"gray_700"},"switch_ios_off_border":{"color_identifier":"gray_800"},"tabbar_active_icon":{"color_identifier":"white"},"tabbar_background":{"color_identifier":"gray_800"},"tabbar_inactive_icon":{"color_identifier":"gray_500"},"tabbar_tablet_active_icon":{"color_identifier":"sky_300"},"tabbar_tablet_background":{"color_identifier":"gray_850"},"tabbar_tablet_inactive_icon":{"color_identifier":"gray_500"},"tabbar_tablet_text_primary":{"color_identifier":"gray_100"},"tabbar_tablet_text_secondary":{"color_identifier":"gray_500"},"toolbar_attach_background_from":{"color_identifier":"gray_500"},"toolbar_attach_background_to":{"color_identifier":"gray_600"},"text_action_counter":{"color_identifier":"gray_300"},"text_link":{"color_identifier":"sky_300"},"text_link_hightlighted_background":{"color_identifier":"sky_300"},"text_muted":{"color_identifier":"gray_200"},"text_name":{"color_identifier":"gray_100"},"text_placeholder":{"color_identifier":"gray_300"},"text_primary":{"color_identifier":"gray_100"},"text_secondary":{"color_identifier":"gray_500"},"text_subhead":{"color_identifier":"gray_400"},"text_tertiary":{"color_identifier":"gray_600"},"icon_name":{"color_identifier":"gray_300"},"panel_tab_active_background":{"color_identifier":"gray_700"},"panel_tab_active_text":{"color_identifier":"gray_100"},"panel_tab_inactive_text":{"color_identifier":"gray_500"},"im_service_message_text":{"color_identifier":"steel_gray_400"},"writebar_icon":{"color_identifier":"gray_400"}}},"client_light":{"appearance":"light","colors":{"accent":{"color_identifier":"blue_300"},"action_sheet_action_foreground":{"color_identifier":"azure_A100"},"action_sheet_separator":{"color_identifier":"black_alpha12"},"activity_indicator_tint":{"color_identifier":"steel_gray_200"},"attach_picker_tab_active_background":{"color_identifier":"blue_400"},"attach_picker_tab_active_icon":{"color_identifier":"white"},"attach_picker_tab_active_text":{"color_identifier":"blue_400"},"attach_picker_tab_inactive_background":{"color_identifier":"gray_200"},"attach_picker_tab_inactive_icon":{"color_identifier":"white"},"attach_picker_tab_inactive_text":{"color_identifier":"gray_400"},"background_content":{"color_identifier":"white"},"background_highlighted":{"color_identifier":"black_alpha12"},"background_keyboard":{"color_identifier":"gray_100"},"background_light":{"color_identifier":"gray_20"},"background_page":{"color_identifier":"gray_50"},"background_suggestions":{"color_identifier":"white"},"button_bot_shadow":{"color_identifier":"gray_200"},"button_commerce_background":{"color_identifier":"green"},"button_commerce_foreground":{"color_identifier":"white"},"button_muted_background":{"color_identifier":"gray_40"},"button_muted_foreground":{"color_identifier":"blue_400"},"button_outline_border":{"color_identifier":"blue_300"},"button_outline_foreground":{"color_identifier":"blue_300"},"button_primary_background":{"color_identifier":"blue_400"},"button_primary_foreground":{"color_identifier":"white"},"button_secondary_background":{"color_identifier":"black_blue45_alpha10"},"button_secondary_foreground":{"color_identifier":"blue_600"},"button_tertiary_background":{"color_identifier":"clear"},"button_tertiary_foreground":{"color_identifier":"blue_400"},"cell_button_foreground":{"color_identifier":"blue_300"},"content_placeholder_icon":{"color_identifier":"steel_gray_300"},"content_placeholder_text":{"color_identifier":"steel_gray_400"},"content_tint_background":{"color_identifier":"gray_A40"},"content_tint_foreground":{"color_identifier":"gray_450"},"control_background":{"color_identifier":"gray_50"},"control_foreground":{"color_identifier":"blue_400"},"control_tint":{"color_identifier":"white"},"control_tint_muted":{"color_identifier":"gray_500"},"counter_primary_background":{"color_identifier":"blue_300"},"counter_primary_text":{"color_identifier":"white"},"counter_secondary_background":{"color_identifier":"gray_300"},"counter_secondary_text":{"color_identifier":"white"},"destructive":{"color_identifier":"red"},"field_background":{"color_identifier":"gray_40"},"field_border":{"color_identifier":"black_alpha12"},"field_error_background":{"color_identifier":"pink_light"},"field_error_border":{"color_identifier":"red"},"field_valid_border":{"color_identifier":"green"},"field_text_placeholder":{"color_identifier":"gray_400"},"float_button_background":{"color_identifier":"gray_A40"},"float_button_background_highlighted":{"color_identifier":"gray_50"},"float_button_foreground":{"color_identifier":"steel_gray_300"},"float_button_border":{"color_identifier":"black_alpha05"},"header_alternate_background":{"color_identifier":"white"},"header_alternate_tab_active_indicator":{"color_identifier":"blue_300"},"header_alternate_tab_active_text":{"color_identifier":"blue_300"},"header_alternate_tab_inactive_text":{"color_identifier":"gray_400"},"header_background":{"color_identifier":"blue_400"},"header_background_before_blur":{"color_identifier":"blue_A400"},"header_background_before_blur_alternate":{"color_identifier":"white"},"header_search_field_background":{"color_identifier":"blue_A800"},"header_search_field_tint":{"color_identifier":"blue_overlight_3"},"header_tab_active_background":{"color_identifier":"blue_overlight_1_alpha32"},"header_tab_active_text":{"color_identifier":"white"},"header_tab_active_indicator":{"color_identifier":"white"},"header_tab_inactive_text":{"color_identifier":"blue_overlight_2_alpha80"},"header_text":{"color_identifier":"white"},"header_text_alternate":{"color_identifier":"black"},"header_text_secondary":{"color_identifier":"white_alpha60"},"header_tint":{"color_identifier":"white"},"header_tint_alternate":{"color_identifier":"blue_300"},"icon_alpha_placeholder":{"color_identifier":"white"},"icon_medium":{"color_identifier":"gray_400"},"icon_outline_medium":{"color_identifier":"steel_gray_400"},"icon_outline_secondary":{"color_identifier":"steel_gray_300"},"icon_secondary":{"color_identifier":"gray_300"},"icon_tertiary":{"color_identifier":"gray_200"},"im_attach_tint":{"color_identifier":"blue_400"},"im_bubble_border_alternate":{"color_identifier":"gray_100"},"im_bubble_border_alternate_highlighted":{"color_identifier":"gray_A150"},"im_bubble_button_background":{"color_identifier":"black_blue45_alpha10"},"im_bubble_button_foreground":{"color_identifier":"blue_600"},"im_bubble_incoming":{"color_identifier":"gray_50"},"im_bubble_incoming_alternate":{"color_identifier":"white"},"im_bubble_incoming_alternate_highlighted":{"color_identifier":"gray_20"},"im_bubble_incoming_highlighted":{"color_identifier":"gray_A150"},"im_bubble_gift_background":{"color_identifier":"gold_200"},"im_bubble_gift_text":{"color_identifier":"gold_500"},"im_bubble_gift_text_secondary":{"color_identifier":"gold_400"},"im_bubble_outgoing":{"color_identifier":"white_blue20"},"im_bubble_outgoing_alternate":{"color_identifier":"white"},"im_bubble_outgoing_highlighted":{"color_identifier":"white_blue32"},"im_bubble_outgoing_alternate_highlighted":{"color_identifier":"gray_20"},"im_bubble_wallpaper_incoming":{"color_identifier":"white"},"im_bubble_wallpaper_incoming_highlighted":{"color_identifier":"gray_50"},"im_bubble_wallpaper_incoming_border":{"color_identifier":"black_blue45_alpha10"},"im_bubble_wallpaper_outgoing":{"color_identifier":"white_blue20"},"im_bubble_wallpaper_outgoing_highlighted":{"color_identifier":"white_blue32"},"im_bubble_wallpaper_outgoing_border":{"color_identifier":"black_blue45_alpha10"},"im_forward_line_tint":{"color_identifier":"blue_600"},"im_reply_sender_text":{"color_identifier":"blue_400"},"im_reply_separator":{"color_identifier":"blue_400"},"im_toolbar_voice_msg_background":{"color_identifier":"steel_gray_300"},"im_toolbar_separator":{"color_identifier":"black_blue24"},"image_border":{"color_identifier":"black_alpha8"},"input_background":{"color_identifier":"gray_40"},"input_border":{"color_identifier":"gray_100"},"landing_background":{"color_identifier":"blue_300"},"landing_field_background":{"color_identifier":"white"},"landing_field_border":{"color_identifier":"black_alpha12"},"landing_field_placeholder":{"color_identifier":"steel_gray_400"},"landing_login_button_background":{"color_identifier":"black_blue24_alpha24"},"landing_login_button_foreground":{"color_identifier":"white"},"landing_primary_button_background":{"color_identifier":"white"},"landing_primary_button_foreground":{"color_identifier":"gray_800"},"landing_tertiary_button_background":{"color_identifier":"clear"},"landing_tertiary_button_foreground":{"color_identifier":"blue_overlight_2_alpha80"},"landing_text_primary":{"color_identifier":"white"},"landing_text_title":{"color_identifier":"white"},"landing_text_secondary":{"color_identifier":"white_alpha60"},"landing_secondary_button_background":{"color_identifier":"white_alpha15"},"landing_secondary_button_foreground":{"color_identifier":"white"},"landing_snippet_border":{"color_identifier":"clear"},"like_text_tint":{"color_identifier":"red_nice"},"link_alternate":{"color_identifier":"blue_400"},"loader_background":{"color_identifier":"gray_50"},"loader_tint":{"color_identifier":"gray_500"},"loader_track_fill":{"color_identifier":"gray_100"},"loader_track_value_fill":{"color_identifier":"blue_300"},"media_overlay_button_background":{"color_identifier":"white"},"media_overlay_button_foreground":{"color_identifier":"gray_800"},"modal_card_background":{"color_identifier":"white"},"modal_card_border":{"color_identifier":"clear"},"modal_card_header_close":{"color_identifier":"black"},"music_playback_icon":{"color_identifier":"black"},"feed_recommended_friend_promo_background":{"color_identifier":"blue_300"},"overlay_status_background":{"color_identifier":"gray_50"},"overlay_status_foreground":{"color_identifier":"steel_gray_500"},"overlay_status_icon":{"color_identifier":"steel_gray_400"},"placeholder_icon_background":{"color_identifier":"black_blue24_alpha8"},"placeholder_icon_foreground_primary":{"color_identifier":"steel_gray_300"},"placeholder_icon_foreground_secondary":{"color_identifier":"steel_gray_200"},"placeholder_icon_tint":{"color_identifier":"black_blue24"},"poll_option_background":{"color_identifier":"blue_600"},"search_bar_background":{"color_identifier":"gray_50"},"search_bar_field_background":{"color_identifier":"white"},"search_bar_field_tint":{"color_identifier":"steel_gray_300"},"search_bar_segmented_control_tint":{"color_identifier":"steel_gray_400"},"segmented_control_bar_background":{"color_identifier":"clear"},"segmented_control_tint":{"color_identifier":"steel_gray_300"},"selection_off_icon":{"color_identifier":"gray_200"},"separator_alpha":{"color_identifier":"black_alpha15"},"separator_alternate":{"color_identifier":"gray_100"},"separator_common":{"color_identifier":"gray_A150"},"snippet_background":{"color_identifier":"white"},"snippet_border":{"color_identifier":"black_alpha15"},"snippet_icon_tertiary":{"color_identifier":"gray_200"},"splashscreen_icon":{"color_identifier":"gray_100"},"statusbar_alternate_legacy_background":{"color_identifier":"black_alpha20"},"stories_skeleton_loader_background":{"color_identifier":"gray_200"},"switch_ios_off_border":{"color_identifier":"gray_100"},"tabbar_active_icon":{"color_identifier":"azure_350"},"tabbar_background":{"color_identifier":"gray_20"},"tabbar_inactive_icon":{"color_identifier":"steel_gray_300"},"tabbar_tablet_active_icon":{"color_identifier":"sky_300"},"tabbar_tablet_background":{"color_identifier":"charcoal"},"tabbar_tablet_inactive_icon":{"color_identifier":"steel_gray_200"},"tabbar_tablet_text_primary":{"color_identifier":"gray_50"},"tabbar_tablet_text_secondary":{"color_identifier":"white_alpha60"},"toolbar_attach_background_from":{"color_identifier":"steel_gray_150"},"toolbar_attach_background_to":{"color_identifier":"steel_gray_250"},"text_action_counter":{"color_identifier":"steel_gray_400"},"text_link":{"color_identifier":"blue_A500"},"text_link_hightlighted_background":{"color_identifier":"black"},"text_muted":{"color_identifier":"gray_800"},"text_name":{"color_identifier":"blue_600"},"text_placeholder":{"color_identifier":"steel_gray_400"},"text_primary":{"color_identifier":"black"},"text_secondary":{"color_identifier":"gray_400"},"text_subhead":{"color_identifier":"gray_500"},"text_tertiary":{"color_identifier":"gray_300"},"icon_name":{"color_identifier":"blue_200_muted"},"panel_tab_active_background":{"color_identifier":"gray_50"},"panel_tab_active_text":{"color_identifier":"gray_600"},"panel_tab_inactive_text":{"color_identifier":"gray_500"},"im_service_message_text":{"color_identifier":"steel_gray_400"},"writebar_icon":{"color_identifier":"steel_gray_300"}}},"space_gray":{"appearance":"dark","colors":{"accent":{"color_identifier":"sky_300"},"action_sheet_action_foreground":{"color_identifier":"white"},"action_sheet_separator":{"color_identifier":"white_alpha12"},"activity_indicator_tint":{"color_identifier":"gray_600"},"attach_picker_tab_active_background":{"color_identifier":"gray_100"},"attach_picker_tab_active_icon":{"color_identifier":"gray_900"},"attach_picker_tab_active_text":{"color_identifier":"gray_100"},"attach_picker_tab_inactive_background":{"color_identifier":"gray_800"},"attach_picker_tab_inactive_icon":{"color_identifier":"gray_100"},"attach_picker_tab_inactive_text":{"color_identifier":"gray_500"},"background_content":{"color_identifier":"gray_900"},"background_highlighted":{"color_identifier":"white_alpha12"},"background_keyboard":{"color_identifier":"gray_800"},"background_light":{"color_identifier":"gray_850"},"background_page":{"color_identifier":"gray_1000"},"background_suggestions":{"color_identifier":"gray_800"},"button_bot_shadow":{"color_identifier":"gray_900"},"button_commerce_background":{"color_identifier":"green"},"button_commerce_foreground":{"color_identifier":"white"},"button_muted_background":{"color_identifier":"gray_800"},"button_muted_foreground":{"color_identifier":"gray_100"},"button_outline_border":{"color_identifier":"gray_100"},"button_outline_foreground":{"color_identifier":"gray_100"},"button_primary_background":{"color_identifier":"gray_100"},"button_primary_foreground":{"color_identifier":"gray_900"},"button_secondary_background":{"color_identifier":"gray_700"},"button_secondary_foreground":{"color_identifier":"gray_100"},"button_tertiary_background":{"color_identifier":"clear"},"button_tertiary_foreground":{"color_identifier":"gray_100"},"cell_button_foreground":{"color_identifier":"gray_100"},"content_placeholder_icon":{"color_identifier":"gray_300"},"content_placeholder_text":{"color_identifier":"gray_300"},"content_tint_background":{"color_identifier":"gray_850"},"content_tint_foreground":{"color_identifier":"gray_400"},"control_background":{"color_identifier":"gray_700"},"control_foreground":{"color_identifier":"gray_100"},"control_tint":{"color_identifier":"gray_900"},"control_tint_muted":{"color_identifier":"gray_400"},"counter_primary_background":{"color_identifier":"white"},"counter_primary_text":{"color_identifier":"gray_900"},"counter_secondary_background":{"color_identifier":"gray_500"},"counter_secondary_text":{"color_identifier":"gray_900"},"destructive":{"color_identifier":"red_light"},"field_background":{"color_identifier":"gray_850"},"field_border":{"color_identifier":"white_alpha12"},"field_error_background":{"color_identifier":"red_dark"},"field_error_border":{"color_identifier":"red_light"},"field_valid_border":{"color_identifier":"green"},"field_text_placeholder":{"color_identifier":"gray_500"},"float_button_background":{"color_identifier":"gray_700"},"float_button_background_highlighted":{"color_identifier":"gray_1000"},"float_button_foreground":{"color_identifier":"gray_300"},"float_button_border":{"color_identifier":"black_alpha12"},"header_alternate_background":{"color_identifier":"gray_800"},"header_alternate_tab_active_indicator":{"color_identifier":"gray_100"},"header_alternate_tab_active_text":{"color_identifier":"gray_100"},"header_alternate_tab_inactive_text":{"color_identifier":"gray_500"},"header_background":{"color_identifier":"gray_900"},"header_background_before_blur":{"color_identifier":"gray_A970"},"header_background_before_blur_alternate":{"color_identifier":"gray_A970"},"header_search_field_background":{"color_identifier":"gray_700"},"header_search_field_tint":{"color_identifier":"gray_300"},"header_tab_active_background":{"color_identifier":"gray_600"},"header_tab_active_text":{"color_identifier":"white"},"header_tab_active_indicator":{"color_identifier":"white"},"header_tab_inactive_text":{"color_identifier":"gray_500"},"header_text":{"color_identifier":"gray_100"},"header_text_alternate":{"color_identifier":"gray_100"},"header_text_secondary":{"color_identifier":"white_alpha60"},"header_tint":{"color_identifier":"gray_100"},"header_tint_alternate":{"color_identifier":"gray_100"},"icon_alpha_placeholder":{"color_identifier":"gray_100"},"icon_medium":{"color_identifier":"gray_400"},"icon_outline_medium":{"color_identifier":"gray_300"},"icon_outline_secondary":{"color_identifier":"gray_400"},"icon_secondary":{"color_identifier":"gray_500"},"icon_tertiary":{"color_identifier":"gray_700"},"im_attach_tint":{"color_identifier":"white"},"im_bubble_border_alternate":{"color_identifier":"clear"},"im_bubble_border_alternate_highlighted":{"color_identifier":"clear"},"im_bubble_button_background":{"color_identifier":"gray_750"},"im_bubble_button_foreground":{"color_identifier":"gray_100"},"im_bubble_incoming":{"color_identifier":"gray_800"},"im_bubble_incoming_alternate":{"color_identifier":"gray_800"},"im_bubble_incoming_alternate_highlighted":{"color_identifier":"gray_600"},"im_bubble_incoming_highlighted":{"color_identifier":"gray_600"},"im_bubble_gift_background":{"color_identifier":"gold_400"},"im_bubble_gift_text":{"color_identifier":"gold_100"},"im_bubble_gift_text_secondary":{"color_identifier":"gold_200"},"im_bubble_outgoing":{"color_identifier":"gray_700"},"im_bubble_outgoing_alternate":{"color_identifier":"gray_700"},"im_bubble_outgoing_highlighted":{"color_identifier":"gray_600"},"im_bubble_outgoing_alternate_highlighted":{"color_identifier":"gray_500"},"im_bubble_wallpaper_incoming":{"color_identifier":"gray_800"},"im_bubble_wallpaper_incoming_highlighted":{"color_identifier":"gray_600"},"im_bubble_wallpaper_incoming_border":{"color_identifier":"gray_900"},"im_bubble_wallpaper_outgoing":{"color_identifier":"gray_700"},"im_bubble_wallpaper_outgoing_highlighted":{"color_identifier":"gray_600"},"im_bubble_wallpaper_outgoing_border":{"color_identifier":"gray_800"},"im_forward_line_tint":{"color_identifier":"white"},"im_reply_sender_text":{"color_identifier":"white"},"im_reply_separator":{"color_identifier":"white"},"im_toolbar_voice_msg_background":{"color_identifier":"gray_700"},"im_toolbar_separator":{"color_identifier":"gray_300"},"image_border":{"color_identifier":"white_alpha8"},"input_background":{"color_identifier":"gray_800"},"input_border":{"color_identifier":"gray_800"},"landing_background":{"color_identifier":"gray_900"},"landing_field_background":{"color_identifier":"gray_850"},"landing_field_border":{"color_identifier":"clear"},"landing_field_placeholder":{"color_identifier":"gray_300"},"landing_login_button_background":{"color_identifier":"gray_100"},"landing_login_button_foreground":{"color_identifier":"gray_900"},"landing_primary_button_background":{"color_identifier":"gray_100"},"landing_primary_button_foreground":{"color_identifier":"gray_900"},"landing_tertiary_button_background":{"color_identifier":"clear"},"landing_tertiary_button_foreground":{"color_identifier":"white"},"landing_text_primary":{"color_identifier":"gray_100"},"landing_text_title":{"color_identifier":"white"},"landing_text_secondary":{"color_identifier":"gray_500"},"landing_secondary_button_background":{"color_identifier":"white_alpha15"},"landing_secondary_button_foreground":{"color_identifier":"white"},"landing_snippet_border":{"color_identifier":"white_alpha15"},"like_text_tint":{"color_identifier":"red_light"},"link_alternate":{"color_identifier":"white"},"loader_background":{"color_identifier":"gray_900"},"loader_tint":{"color_identifier":"gray_500"},"loader_track_fill":{"color_identifier":"gray_700"},"loader_track_value_fill":{"color_identifier":"white"},"media_overlay_button_background":{"color_identifier":"white"},"media_overlay_button_foreground":{"color_identifier":"gray_800"},"modal_card_background":{"color_identifier":"gray_800"},"modal_card_border":{"color_identifier":"white_alpha12"},"modal_card_header_close":{"color_identifier":"white"},"music_playback_icon":{"color_identifier":"white"},"feed_recommended_friend_promo_background":{"color_identifier":"steel_gray_500"},"overlay_status_background":{"color_identifier":"gray_900"},"overlay_status_foreground":{"color_identifier":"gray_100"},"overlay_status_icon":{"color_identifier":"gray_50"},"placeholder_icon_background":{"color_identifier":"white_alpha8"},"placeholder_icon_foreground_primary":{"color_identifier":"gray_400"},"placeholder_icon_foreground_secondary":{"color_identifier":"gray_600"},"placeholder_icon_tint":{"color_identifier":"white"},"poll_option_background":{"color_identifier":"white"},"search_bar_background":{"color_identifier":"clear"},"search_bar_field_background":{"color_identifier":"gray_700"},"search_bar_field_tint":{"color_identifier":"gray_300"},"search_bar_segmented_control_tint":{"color_identifier":"gray_400"},"segmented_control_bar_background":{"color_identifier":"gray_900"},"segmented_control_tint":{"color_identifier":"gray_500"},"selection_off_icon":{"color_identifier":"gray_700"},"separator_alpha":{"color_identifier":"white_alpha15"},"separator_alternate":{"color_identifier":"gray_850"},"separator_common":{"color_identifier":"gray_750"},"snippet_background":{"color_identifier":"gray_800"},"snippet_border":{"color_identifier":"white_alpha15"},"snippet_icon_tertiary":{"color_identifier":"gray_600"},"splashscreen_icon":{"color_identifier":"gray_800"},"statusbar_alternate_legacy_background":{"color_identifier":"clear"},"stories_skeleton_loader_background":{"color_identifier":"gray_700"},"switch_ios_off_border":{"color_identifier":"gray_800"},"tabbar_active_icon":{"color_identifier":"white"},"tabbar_background":{"color_identifier":"gray_800"},"tabbar_inactive_icon":{"color_identifier":"gray_500"},"tabbar_tablet_active_icon":{"color_identifier":"sky_300"},"tabbar_tablet_background":{"color_identifier":"gray_850"},"tabbar_tablet_inactive_icon":{"color_identifier":"gray_500"},"tabbar_tablet_text_primary":{"color_identifier":"gray_100"},"tabbar_tablet_text_secondary":{"color_identifier":"gray_500"},"toolbar_attach_background_from":{"color_identifier":"gray_500"},"toolbar_attach_background_to":{"color_identifier":"gray_600"},"text_action_counter":{"color_identifier":"gray_300"},"text_link":{"color_identifier":"sky_300"},"text_link_hightlighted_background":{"color_identifier":"sky_300"},"text_muted":{"color_identifier":"gray_200"},"text_name":{"color_identifier":"gray_100"},"text_placeholder":{"color_identifier":"gray_300"},"text_primary":{"color_identifier":"gray_100"},"text_secondary":{"color_identifier":"gray_500"},"text_subhead":{"color_identifier":"gray_400"},"text_tertiary":{"color_identifier":"gray_600"},"icon_name":{"color_identifier":"gray_300"},"panel_tab_active_background":{"color_identifier":"gray_700"},"panel_tab_active_text":{"color_identifier":"gray_100"},"panel_tab_inactive_text":{"color_identifier":"gray_500"},"im_service_message_text":{"color_identifier":"gray_500"},"writebar_icon":{"color_identifier":"gray_400"}}},"bright_light":{"appearance":"light","colors":{"accent":{"color_identifier":"azure_300"},"action_sheet_action_foreground":{"color_identifier":"azure_300"},"action_sheet_separator":{"color_identifier":"black_alpha12"},"activity_indicator_tint":{"color_identifier":"steel_gray_200"},"attach_picker_tab_active_background":{"color_identifier":"blue_400"},"attach_picker_tab_active_icon":{"color_identifier":"white"},"attach_picker_tab_active_text":{"color_identifier":"blue_400"},"attach_picker_tab_inactive_background":{"color_identifier":"gray_200"},"attach_picker_tab_inactive_icon":{"color_identifier":"white"},"attach_picker_tab_inactive_text":{"color_identifier":"gray_400"},"background_content":{"color_identifier":"white"},"background_highlighted":{"color_identifier":"black_alpha12"},"background_keyboard":{"color_identifier":"gray_100"},"background_light":{"color_identifier":"gray_20"},"background_page":{"color_identifier":"gray_50"},"background_suggestions":{"color_identifier":"white"},"button_bot_shadow":{"color_identifier":"gray_200"},"button_commerce_background":{"color_identifier":"green"},"button_commerce_foreground":{"color_identifier":"white"},"button_muted_background":{"color_identifier":"gray_40"},"button_muted_foreground":{"color_identifier":"blue_400"},"button_outline_border":{"color_identifier":"blue_300"},"button_outline_foreground":{"color_identifier":"blue_300"},"button_primary_background":{"color_identifier":"azure_A400"},"button_primary_foreground":{"color_identifier":"white"},"button_secondary_background":{"color_identifier":"black_blue45_alpha10"},"button_secondary_foreground":{"color_identifier":"azure_A400"},"button_tertiary_background":{"color_identifier":"clear"},"button_tertiary_foreground":{"color_identifier":"azure_A400"},"cell_button_foreground":{"color_identifier":"blue_300"},"content_placeholder_icon":{"color_identifier":"steel_gray_300"},"content_placeholder_text":{"color_identifier":"steel_gray_400"},"content_tint_background":{"color_identifier":"gray_A40"},"content_tint_foreground":{"color_identifier":"gray_450"},"control_background":{"color_identifier":"gray_50"},"control_foreground":{"color_identifier":"blue_400"},"control_tint":{"color_identifier":"white"},"control_tint_muted":{"color_identifier":"gray_500"},"counter_primary_background":{"color_identifier":"azure_300"},"counter_primary_text":{"color_identifier":"white"},"counter_secondary_background":{"color_identifier":"steel_gray_250"},"counter_secondary_text":{"color_identifier":"white"},"destructive":{"color_identifier":"red"},"field_background":{"color_identifier":"gray_40"},"field_border":{"color_identifier":"black_alpha12"},"field_error_background":{"color_identifier":"pink_light"},"field_error_border":{"color_identifier":"red"},"field_valid_border":{"color_identifier":"green"},"field_text_placeholder":{"color_identifier":"gray_400"},"float_button_background":{"color_identifier":"gray_A40"},"float_button_background_highlighted":{"color_identifier":"gray_50"},"float_button_foreground":{"color_identifier":"steel_gray_300"},"float_button_border":{"color_identifier":"black_alpha05"},"header_alternate_background":{"color_identifier":"white"},"header_alternate_tab_active_indicator":{"color_identifier":"azure_300"},"header_alternate_tab_active_text":{"color_identifier":"azure_300"},"header_alternate_tab_inactive_text":{"color_identifier":"steel_gray_300"},"header_background":{"color_identifier":"white"},"header_background_before_blur":{"color_identifier":"white"},"header_background_before_blur_alternate":{"color_identifier":"white"},"header_search_field_background":{"color_identifier":"gray_A40"},"header_search_field_tint":{"color_identifier":"steel_gray_400"},"header_tab_active_background":{"color_identifier":"blue_overlight_1_alpha32"},"header_tab_active_text":{"color_identifier":"azure_A400"},"header_tab_active_indicator":{"color_identifier":"azure_A400"},"header_tab_inactive_text":{"color_identifier":"steel_gray_350"},"header_text":{"color_identifier":"azure_300"},"header_text_alternate":{"color_identifier":"azure_300"},"header_text_secondary":{"color_identifier":"steel_gray_400"},"header_tint":{"color_identifier":"azure_300"},"header_tint_alternate":{"color_identifier":"blue_300"},"icon_alpha_placeholder":{"color_identifier":"white"},"icon_medium":{"color_identifier":"steel_gray_400"},"icon_outline_medium":{"color_identifier":"steel_gray_400"},"icon_outline_secondary":{"color_identifier":"steel_gray_250"},"icon_secondary":{"color_identifier":"steel_gray_250"},"icon_tertiary":{"color_identifier":"gray_200"},"im_attach_tint":{"color_identifier":"azure_A400"},"im_bubble_border_alternate":{"color_identifier":"gray_100"},"im_bubble_border_alternate_highlighted":{"color_identifier":"gray_A150"},"im_bubble_button_background":{"color_identifier":"black_blue45_alpha10"},"im_bubble_button_foreground":{"color_identifier":"blue_600"},"im_bubble_incoming":{"color_identifier":"gray_50"},"im_bubble_incoming_alternate":{"color_identifier":"white"},"im_bubble_incoming_alternate_highlighted":{"color_identifier":"gray_20"},"im_bubble_incoming_highlighted":{"color_identifier":"gray_A150"},"im_bubble_gift_background":{"color_identifier":"gold_200"},"im_bubble_gift_text":{"color_identifier":"gold_500"},"im_bubble_gift_text_secondary":{"color_identifier":"gold_400"},"im_bubble_outgoing":{"color_identifier":"white_blue20"},"im_bubble_outgoing_alternate":{"color_identifier":"white"},"im_bubble_outgoing_highlighted":{"color_identifier":"white_blue32"},"im_bubble_outgoing_alternate_highlighted":{"color_identifier":"gray_20"},"im_bubble_wallpaper_incoming":{"color_identifier":"white"},"im_bubble_wallpaper_incoming_highlighted":{"color_identifier":"gray_50"},"im_bubble_wallpaper_incoming_border":{"color_identifier":"black_blue45_alpha10"},"im_bubble_wallpaper_outgoing":{"color_identifier":"white_blue20"},"im_bubble_wallpaper_outgoing_highlighted":{"color_identifier":"white_blue32"},"im_bubble_wallpaper_outgoing_border":{"color_identifier":"black_blue45_alpha10"},"im_forward_line_tint":{"color_identifier":"blue_600"},"im_reply_sender_text":{"color_identifier":"azure_A400"},"im_reply_separator":{"color_identifier":"azure_A400"},"im_toolbar_voice_msg_background":{"color_identifier":"steel_gray_300"},"im_toolbar_separator":{"color_identifier":"black_blue24"},"image_border":{"color_identifier":"black_alpha8"},"input_background":{"color_identifier":"gray_40"},"input_border":{"color_identifier":"gray_100"},"landing_background":{"color_identifier":"white"},"landing_field_background":{"color_identifier":"gray_40"},"landing_field_border":{"color_identifier":"clear"},"landing_field_placeholder":{"color_identifier":"steel_gray_400"},"landing_login_button_background":{"color_identifier":"azure_300"},"landing_login_button_foreground":{"color_identifier":"white"},"landing_primary_button_background":{"color_identifier":"azure_300"},"landing_primary_button_foreground":{"color_identifier":"white"},"landing_tertiary_button_background":{"color_identifier":"clear"},"landing_tertiary_button_foreground":{"color_identifier":"azure_300"},"landing_text_primary":{"color_identifier":"black"},"landing_text_title":{"color_identifier":"azure_300"},"landing_text_secondary":{"color_identifier":"steel_gray_400"},"landing_secondary_button_background":{"color_identifier":"black_blue45_alpha10"},"landing_secondary_button_foreground":{"color_identifier":"azure_A400"},"landing_snippet_border":{"color_identifier":"black_alpha15"},"like_text_tint":{"color_identifier":"red_nice"},"link_alternate":{"color_identifier":"azure_A400"},"loader_background":{"color_identifier":"gray_50"},"loader_tint":{"color_identifier":"gray_500"},"loader_track_fill":{"color_identifier":"gray_100"},"loader_track_value_fill":{"color_identifier":"blue_300"},"media_overlay_button_background":{"color_identifier":"white"},"media_overlay_button_foreground":{"color_identifier":"gray_800"},"modal_card_background":{"color_identifier":"white"},"modal_card_border":{"color_identifier":"clear"},"modal_card_header_close":{"color_identifier":"black"},"music_playback_icon":{"color_identifier":"black"},"feed_recommended_friend_promo_background":{"color_identifier":"blue_300"},"overlay_status_background":{"color_identifier":"gray_50"},"overlay_status_foreground":{"color_identifier":"steel_gray_500"},"overlay_status_icon":{"color_identifier":"steel_gray_400"},"placeholder_icon_background":{"color_identifier":"black_blue24_alpha8"},"placeholder_icon_foreground_primary":{"color_identifier":"steel_gray_300"},"placeholder_icon_foreground_secondary":{"color_identifier":"steel_gray_200"},"placeholder_icon_tint":{"color_identifier":"black_blue24"},"poll_option_background":{"color_identifier":"blue_600"},"search_bar_background":{"color_identifier":"clear"},"search_bar_field_background":{"color_identifier":"gray_A40"},"search_bar_field_tint":{"color_identifier":"steel_gray_400"},"search_bar_segmented_control_tint":{"color_identifier":"steel_gray_400"},"segmented_control_bar_background":{"color_identifier":"clear"},"segmented_control_tint":{"color_identifier":"steel_gray_300"},"selection_off_icon":{"color_identifier":"steel_gray_150"},"separator_alpha":{"color_identifier":"black_alpha15"},"separator_alternate":{"color_identifier":"gray_100"},"separator_common":{"color_identifier":"gray_A150"},"snippet_background":{"color_identifier":"white"},"snippet_border":{"color_identifier":"black_alpha15"},"snippet_icon_tertiary":{"color_identifier":"gray_200"},"splashscreen_icon":{"color_identifier":"gray_100"},"statusbar_alternate_legacy_background":{"color_identifier":"black_alpha20"},"stories_skeleton_loader_background":{"color_identifier":"gray_200"},"switch_ios_off_border":{"color_identifier":"gray_100"},"tabbar_active_icon":{"color_identifier":"azure_350"},"tabbar_background":{"color_identifier":"gray_20"},"tabbar_inactive_icon":{"color_identifier":"steel_gray_300"},"tabbar_tablet_active_icon":{"color_identifier":"azure_350"},"tabbar_tablet_background":{"color_identifier":"gray_20"},"tabbar_tablet_inactive_icon":{"color_identifier":"steel_gray_300"},"tabbar_tablet_text_primary":{"color_identifier":"black"},"tabbar_tablet_text_secondary":{"color_identifier":"gray_400"},"toolbar_attach_background_from":{"color_identifier":"steel_gray_150"},"toolbar_attach_background_to":{"color_identifier":"steel_gray_250"},"text_action_counter":{"color_identifier":"steel_gray_400"},"text_link":{"color_identifier":"azure_A400"},"text_link_hightlighted_background":{"color_identifier":"black"},"text_muted":{"color_identifier":"gray_800"},"text_name":{"color_identifier":"azure_A400"},"text_placeholder":{"color_identifier":"steel_gray_400"},"text_primary":{"color_identifier":"black"},"text_secondary":{"color_identifier":"steel_gray_400"},"text_subhead":{"color_identifier":"steel_gray_500"},"text_tertiary":{"color_identifier":"steel_gray_300"},"icon_name":{"color_identifier":"blue_200_muted"},"panel_tab_active_background":{"color_identifier":"gray_50"},"panel_tab_active_text":{"color_identifier":"gray_600"},"panel_tab_inactive_text":{"color_identifier":"gray_500"},"im_service_message_text":{"color_identifier":"steel_gray_400"},"writebar_icon":{"color_identifier":"azure_300"}}}};
+module.exports = {"client_dark":{"appearance":"dark","colors":{"accent":{"color_identifier":"sky_300"},"action_sheet_action_foreground":{"color_identifier":"white"},"action_sheet_separator":{"color_identifier":"white_alpha12"},"activity_indicator_tint":{"color_identifier":"gray_600"},"attach_picker_tab_active_background":{"color_identifier":"gray_100"},"attach_picker_tab_active_icon":{"color_identifier":"gray_900"},"attach_picker_tab_active_text":{"color_identifier":"gray_100"},"attach_picker_tab_inactive_background":{"color_identifier":"gray_800"},"attach_picker_tab_inactive_icon":{"color_identifier":"gray_100"},"attach_picker_tab_inactive_text":{"color_identifier":"gray_500"},"background_content":{"color_identifier":"gray_900"},"background_highlighted":{"color_identifier":"white_alpha12"},"background_keyboard":{"color_identifier":"gray_800"},"background_light":{"color_identifier":"gray_850"},"background_page":{"color_identifier":"gray_1000"},"background_suggestions":{"color_identifier":"gray_800"},"button_bot_shadow":{"color_identifier":"gray_900"},"button_commerce_background":{"color_identifier":"green"},"button_commerce_foreground":{"color_identifier":"white"},"button_muted_background":{"color_identifier":"gray_800"},"button_muted_foreground":{"color_identifier":"gray_100"},"button_outline_border":{"color_identifier":"gray_100"},"button_outline_foreground":{"color_identifier":"gray_100"},"button_primary_background":{"color_identifier":"gray_100"},"button_primary_foreground":{"color_identifier":"gray_900"},"button_secondary_background":{"color_identifier":"gray_700"},"button_secondary_foreground":{"color_identifier":"gray_100"},"button_tertiary_background":{"color_identifier":"clear"},"button_tertiary_foreground":{"color_identifier":"gray_100"},"cell_button_foreground":{"color_identifier":"gray_100"},"content_placeholder_icon":{"color_identifier":"gray_300"},"content_placeholder_text":{"color_identifier":"gray_300"},"content_tint_background":{"color_identifier":"gray_850"},"content_tint_foreground":{"color_identifier":"gray_400"},"control_background":{"color_identifier":"gray_700"},"control_foreground":{"color_identifier":"gray_100"},"control_tint":{"color_identifier":"gray_900"},"control_tint_muted":{"color_identifier":"gray_400"},"counter_primary_background":{"color_identifier":"sky_300"},"counter_primary_text":{"color_identifier":"white"},"counter_prominent_background":{"color_identifier":"red_nice"},"counter_prominent_text":{"color_identifier":"white"},"counter_secondary_background":{"color_identifier":"gray_500"},"counter_secondary_text":{"color_identifier":"gray_900"},"destructive":{"color_identifier":"red_light"},"field_background":{"color_identifier":"gray_850"},"field_border":{"color_identifier":"white_alpha12"},"field_error_background":{"color_identifier":"red_dark"},"field_error_border":{"color_identifier":"red_light"},"field_valid_border":{"color_identifier":"green"},"field_text_placeholder":{"color_identifier":"gray_500"},"float_button_background":{"color_identifier":"gray_700"},"float_button_background_highlighted":{"color_identifier":"gray_600"},"float_button_foreground":{"color_identifier":"gray_300"},"float_button_border":{"color_identifier":"black_alpha12"},"header_alternate_background":{"color_identifier":"gray_800"},"header_alternate_tab_active_indicator":{"color_identifier":"gray_100"},"header_alternate_tab_active_text":{"color_identifier":"gray_100"},"header_alternate_tab_inactive_text":{"color_identifier":"gray_500"},"header_background":{"color_identifier":"gray_800"},"header_background_before_blur":{"color_identifier":"gray_950"},"header_background_before_blur_alternate":{"color_identifier":"gray_950"},"header_search_field_background":{"color_identifier":"gray_700"},"header_search_field_tint":{"color_identifier":"gray_300"},"header_tab_active_background":{"color_identifier":"gray_600"},"header_tab_active_text":{"color_identifier":"gray_100"},"header_tab_active_indicator":{"color_identifier":"gray_100"},"header_tab_inactive_text":{"color_identifier":"gray_500"},"header_text":{"color_identifier":"gray_100"},"header_text_alternate":{"color_identifier":"gray_100"},"header_text_secondary":{"color_identifier":"white_alpha60"},"header_tint":{"color_identifier":"gray_100"},"header_tint_alternate":{"color_identifier":"gray_100"},"icon_alpha_placeholder":{"color_identifier":"gray_100"},"icon_medium":{"color_identifier":"gray_400"},"icon_outline_medium":{"color_identifier":"gray_300"},"icon_outline_secondary":{"color_identifier":"gray_400"},"icon_secondary":{"color_identifier":"gray_500"},"icon_tertiary":{"color_identifier":"gray_700"},"im_attach_tint":{"color_identifier":"sky_300"},"im_bubble_border_alternate":{"color_identifier":"clear"},"im_bubble_border_alternate_highlighted":{"color_identifier":"clear"},"im_bubble_button_background":{"color_identifier":"gray_700"},"im_bubble_button_background_highlighted":{"color_identifier":"gray_500"},"im_bubble_button_foreground":{"color_identifier":"gray_100"},"im_bubble_incoming":{"color_identifier":"gray_800"},"im_bubble_incoming_alternate":{"color_identifier":"gray_800"},"im_bubble_incoming_alternate_highlighted":{"color_identifier":"gray_600"},"im_bubble_incoming_highlighted":{"color_identifier":"gray_600"},"im_bubble_gift_background":{"color_identifier":"gold_400"},"im_bubble_gift_text":{"color_identifier":"gold_100"},"im_bubble_gift_text_secondary":{"color_identifier":"gold_200"},"im_bubble_outgoing":{"color_identifier":"gray_700"},"im_bubble_outgoing_alternate":{"color_identifier":"gray_700"},"im_bubble_outgoing_highlighted":{"color_identifier":"gray_600"},"im_bubble_outgoing_alternate_highlighted":{"color_identifier":"gray_500"},"im_bubble_wallpaper_button_background":{"color_identifier":"gray_700"},"im_bubble_wallpaper_button_background_highlighted":{"color_identifier":"gray_500"},"im_bubble_wallpaper_button_foreground":{"color_identifier":"gray_100"},"im_bubble_wallpaper_incoming":{"color_identifier":"gray_800"},"im_bubble_wallpaper_incoming_highlighted":{"color_identifier":"gray_600"},"im_bubble_wallpaper_incoming_border":{"color_identifier":"gray_900"},"im_bubble_wallpaper_outgoing":{"color_identifier":"gray_700"},"im_bubble_wallpaper_outgoing_highlighted":{"color_identifier":"gray_600"},"im_bubble_wallpaper_outgoing_border":{"color_identifier":"gray_800"},"im_forward_line_tint":{"color_identifier":"white"},"im_reply_sender_text":{"color_identifier":"white"},"im_reply_separator":{"color_identifier":"white"},"im_toolbar_voice_msg_background":{"color_identifier":"gray_700"},"im_toolbar_separator":{"color_identifier":"gray_300"},"image_border":{"color_identifier":"white_alpha8"},"input_background":{"color_identifier":"gray_700"},"input_border":{"color_identifier":"gray_700"},"landing_background":{"color_identifier":"gray_900"},"landing_field_background":{"color_identifier":"gray_850"},"landing_field_border":{"color_identifier":"white_alpha12"},"landing_field_placeholder":{"color_identifier":"gray_300"},"landing_login_button_background":{"color_identifier":"gray_100"},"landing_login_button_foreground":{"color_identifier":"gray_900"},"landing_primary_button_background":{"color_identifier":"gray_100"},"landing_primary_button_foreground":{"color_identifier":"gray_900"},"landing_tertiary_button_background":{"color_identifier":"clear"},"landing_tertiary_button_foreground":{"color_identifier":"gray_500"},"landing_text_primary":{"color_identifier":"gray_100"},"landing_text_title":{"color_identifier":"white"},"landing_text_secondary":{"color_identifier":"gray_500"},"landing_secondary_button_background":{"color_identifier":"white_alpha15"},"landing_secondary_button_foreground":{"color_identifier":"white"},"landing_snippet_border":{"color_identifier":"clear"},"like_text_tint":{"color_identifier":"red_light"},"link_alternate":{"color_identifier":"sky_300"},"loader_background":{"color_identifier":"gray_900"},"loader_tint":{"color_identifier":"gray_500"},"loader_track_fill":{"color_identifier":"gray_700"},"loader_track_value_fill":{"color_identifier":"sky_300"},"media_overlay_button_background":{"color_identifier":"white"},"media_overlay_button_foreground":{"color_identifier":"gray_800"},"modal_card_background":{"color_identifier":"gray_800"},"modal_card_border":{"color_identifier":"white_alpha12"},"modal_card_header_close":{"color_identifier":"white"},"music_playback_icon":{"color_identifier":"white"},"feed_recommended_friend_promo_background":{"color_identifier":"steel_gray_500"},"overlay_status_background":{"color_identifier":"gray_900"},"overlay_status_foreground":{"color_identifier":"gray_100"},"overlay_status_icon":{"color_identifier":"gray_50"},"placeholder_icon_background":{"color_identifier":"white_alpha8"},"placeholder_icon_foreground_primary":{"color_identifier":"gray_400"},"placeholder_icon_foreground_secondary":{"color_identifier":"gray_600"},"placeholder_icon_tint":{"color_identifier":"white"},"poll_option_background":{"color_identifier":"white"},"search_bar_background":{"color_identifier":"gray_900"},"search_bar_field_background":{"color_identifier":"gray_700"},"search_bar_field_tint":{"color_identifier":"gray_300"},"search_bar_segmented_control_tint":{"color_identifier":"gray_400"},"segmented_control_bar_background":{"color_identifier":"gray_900"},"segmented_control_tint":{"color_identifier":"gray_500"},"selection_off_icon":{"color_identifier":"gray_700"},"separator_alpha":{"color_identifier":"white_alpha15"},"separator_alternate":{"color_identifier":"gray_850"},"separator_common":{"color_identifier":"gray_750"},"snippet_background":{"color_identifier":"gray_800"},"snippet_border":{"color_identifier":"white_alpha15"},"snippet_icon_tertiary":{"color_identifier":"gray_600"},"splashscreen_icon":{"color_identifier":"gray_800"},"statusbar_alternate_legacy_background":{"color_identifier":"clear"},"stories_create_button_background_from":{"color_identifier":"gray_750"},"stories_create_button_background_to":{"color_identifier":"gray_750"},"stories_create_button_foreground":{"color_identifier":"gray_200"},"stories_skeleton_loader_background":{"color_identifier":"gray_700"},"stories_create_button_icon_background":{"color_identifier":"gray_700"},"switch_ios_off_border":{"color_identifier":"gray_800"},"tabbar_active_icon":{"color_identifier":"white"},"tabbar_background":{"color_identifier":"gray_800"},"tabbar_inactive_icon":{"color_identifier":"gray_500"},"tabbar_tablet_active_icon":{"color_identifier":"sky_300"},"tabbar_tablet_background":{"color_identifier":"gray_850"},"tabbar_tablet_inactive_icon":{"color_identifier":"gray_500"},"tabbar_tablet_text_primary":{"color_identifier":"gray_100"},"tabbar_tablet_text_secondary":{"color_identifier":"gray_500"},"toolbar_attach_background_from":{"color_identifier":"gray_500"},"toolbar_attach_background_to":{"color_identifier":"gray_600"},"text_action_counter":{"color_identifier":"gray_300"},"text_link":{"color_identifier":"sky_300"},"text_link_hightlighted_background":{"color_identifier":"sky_300"},"text_muted":{"color_identifier":"gray_200"},"text_name":{"color_identifier":"gray_100"},"text_placeholder":{"color_identifier":"gray_300"},"text_primary":{"color_identifier":"gray_100"},"text_secondary":{"color_identifier":"gray_500"},"text_subhead":{"color_identifier":"gray_400"},"text_tertiary":{"color_identifier":"gray_600"},"icon_name":{"color_identifier":"gray_300"},"panel_tab_active_background":{"color_identifier":"gray_700"},"panel_tab_active_text":{"color_identifier":"gray_100"},"panel_tab_inactive_text":{"color_identifier":"gray_500"},"im_service_message_text":{"color_identifier":"steel_gray_400"},"writebar_icon":{"color_identifier":"gray_400"},"dynamic_blue":{"color_identifier":"blue_300"},"dynamic_gray":{"color_identifier":"steel_gray_250"},"dynamic_red":{"color_identifier":"red_nice"},"dynamic_green":{"color_identifier":"green"},"dynamic_orange":{"color_identifier":"orange"},"dynamic_violet":{"color_identifier":"violet_light"}}},"client_light":{"appearance":"light","colors":{"accent":{"color_identifier":"blue_300"},"action_sheet_action_foreground":{"color_identifier":"azure_A100"},"action_sheet_separator":{"color_identifier":"black_alpha12"},"activity_indicator_tint":{"color_identifier":"steel_gray_200"},"attach_picker_tab_active_background":{"color_identifier":"blue_400"},"attach_picker_tab_active_icon":{"color_identifier":"white"},"attach_picker_tab_active_text":{"color_identifier":"blue_400"},"attach_picker_tab_inactive_background":{"color_identifier":"gray_200"},"attach_picker_tab_inactive_icon":{"color_identifier":"white"},"attach_picker_tab_inactive_text":{"color_identifier":"gray_400"},"background_content":{"color_identifier":"white"},"background_highlighted":{"color_identifier":"black_alpha12"},"background_keyboard":{"color_identifier":"gray_100"},"background_light":{"color_identifier":"gray_20"},"background_page":{"color_identifier":"gray_50"},"background_suggestions":{"color_identifier":"white"},"button_bot_shadow":{"color_identifier":"gray_200"},"button_commerce_background":{"color_identifier":"green"},"button_commerce_foreground":{"color_identifier":"white"},"button_muted_background":{"color_identifier":"gray_40"},"button_muted_foreground":{"color_identifier":"blue_400"},"button_outline_border":{"color_identifier":"blue_300"},"button_outline_foreground":{"color_identifier":"blue_300"},"button_primary_background":{"color_identifier":"blue_400"},"button_primary_foreground":{"color_identifier":"white"},"button_secondary_background":{"color_identifier":"black_blue45_alpha10"},"button_secondary_foreground":{"color_identifier":"blue_600"},"button_tertiary_background":{"color_identifier":"clear"},"button_tertiary_foreground":{"color_identifier":"blue_400"},"cell_button_foreground":{"color_identifier":"blue_300"},"content_placeholder_icon":{"color_identifier":"steel_gray_300"},"content_placeholder_text":{"color_identifier":"steel_gray_400"},"content_tint_background":{"color_identifier":"gray_A40"},"content_tint_foreground":{"color_identifier":"gray_450"},"control_background":{"color_identifier":"gray_50"},"control_foreground":{"color_identifier":"blue_400"},"control_tint":{"color_identifier":"white"},"control_tint_muted":{"color_identifier":"gray_500"},"counter_primary_background":{"color_identifier":"blue_300"},"counter_primary_text":{"color_identifier":"white"},"counter_prominent_background":{"color_identifier":"red_nice"},"counter_prominent_text":{"color_identifier":"white"},"counter_secondary_background":{"color_identifier":"gray_300"},"counter_secondary_text":{"color_identifier":"white"},"destructive":{"color_identifier":"red"},"field_background":{"color_identifier":"gray_40"},"field_border":{"color_identifier":"black_alpha12"},"field_error_background":{"color_identifier":"pink_light"},"field_error_border":{"color_identifier":"red"},"field_valid_border":{"color_identifier":"green"},"field_text_placeholder":{"color_identifier":"gray_400"},"float_button_background":{"color_identifier":"gray_A40"},"float_button_background_highlighted":{"color_identifier":"gray_50"},"float_button_foreground":{"color_identifier":"steel_gray_300"},"float_button_border":{"color_identifier":"black_alpha05"},"header_alternate_background":{"color_identifier":"white"},"header_alternate_tab_active_indicator":{"color_identifier":"blue_300"},"header_alternate_tab_active_text":{"color_identifier":"blue_300"},"header_alternate_tab_inactive_text":{"color_identifier":"gray_400"},"header_background":{"color_identifier":"blue_400"},"header_background_before_blur":{"color_identifier":"blue_A400"},"header_background_before_blur_alternate":{"color_identifier":"white"},"header_search_field_background":{"color_identifier":"blue_A800"},"header_search_field_tint":{"color_identifier":"blue_overlight_3"},"header_tab_active_background":{"color_identifier":"blue_overlight_1_alpha32"},"header_tab_active_text":{"color_identifier":"white"},"header_tab_active_indicator":{"color_identifier":"white"},"header_tab_inactive_text":{"color_identifier":"blue_overlight_2_alpha80"},"header_text":{"color_identifier":"white"},"header_text_alternate":{"color_identifier":"black"},"header_text_secondary":{"color_identifier":"white_alpha60"},"header_tint":{"color_identifier":"white"},"header_tint_alternate":{"color_identifier":"blue_300"},"icon_alpha_placeholder":{"color_identifier":"white"},"icon_medium":{"color_identifier":"gray_400"},"icon_outline_medium":{"color_identifier":"steel_gray_400"},"icon_outline_secondary":{"color_identifier":"steel_gray_300"},"icon_secondary":{"color_identifier":"gray_300"},"icon_tertiary":{"color_identifier":"gray_200"},"im_attach_tint":{"color_identifier":"blue_400"},"im_bubble_border_alternate":{"color_identifier":"gray_100"},"im_bubble_border_alternate_highlighted":{"color_identifier":"gray_A150"},"im_bubble_button_background":{"color_identifier":"gray_20"},"im_bubble_button_background_highlighted":{"color_identifier":"gray_A150"},"im_bubble_button_foreground":{"color_identifier":"black"},"im_bubble_incoming":{"color_identifier":"gray_50"},"im_bubble_incoming_alternate":{"color_identifier":"white"},"im_bubble_incoming_alternate_highlighted":{"color_identifier":"gray_20"},"im_bubble_incoming_highlighted":{"color_identifier":"gray_A150"},"im_bubble_gift_background":{"color_identifier":"gold_200"},"im_bubble_gift_text":{"color_identifier":"gold_500"},"im_bubble_gift_text_secondary":{"color_identifier":"gold_400"},"im_bubble_outgoing":{"color_identifier":"white_blue20"},"im_bubble_outgoing_alternate":{"color_identifier":"white"},"im_bubble_outgoing_highlighted":{"color_identifier":"white_blue32"},"im_bubble_outgoing_alternate_highlighted":{"color_identifier":"gray_20"},"im_bubble_wallpaper_button_background":{"color_identifier":"gray_40"},"im_bubble_wallpaper_button_background_highlighted":{"color_identifier":"gray_100"},"im_bubble_wallpaper_button_foreground":{"color_identifier":"black"},"im_bubble_wallpaper_incoming":{"color_identifier":"white"},"im_bubble_wallpaper_incoming_highlighted":{"color_identifier":"gray_50"},"im_bubble_wallpaper_incoming_border":{"color_identifier":"black_blue45_alpha10"},"im_bubble_wallpaper_outgoing":{"color_identifier":"white_blue20"},"im_bubble_wallpaper_outgoing_highlighted":{"color_identifier":"white_blue32"},"im_bubble_wallpaper_outgoing_border":{"color_identifier":"black_blue45_alpha10"},"im_forward_line_tint":{"color_identifier":"blue_600"},"im_reply_sender_text":{"color_identifier":"blue_400"},"im_reply_separator":{"color_identifier":"blue_400"},"im_toolbar_voice_msg_background":{"color_identifier":"steel_gray_300"},"im_toolbar_separator":{"color_identifier":"black_blue24"},"image_border":{"color_identifier":"black_alpha8"},"input_background":{"color_identifier":"gray_40"},"input_border":{"color_identifier":"gray_100"},"landing_background":{"color_identifier":"blue_300"},"landing_field_background":{"color_identifier":"white"},"landing_field_border":{"color_identifier":"black_alpha12"},"landing_field_placeholder":{"color_identifier":"steel_gray_400"},"landing_login_button_background":{"color_identifier":"black_blue24_alpha24"},"landing_login_button_foreground":{"color_identifier":"white"},"landing_primary_button_background":{"color_identifier":"white"},"landing_primary_button_foreground":{"color_identifier":"gray_800"},"landing_tertiary_button_background":{"color_identifier":"clear"},"landing_tertiary_button_foreground":{"color_identifier":"blue_overlight_2_alpha80"},"landing_text_primary":{"color_identifier":"white"},"landing_text_title":{"color_identifier":"white"},"landing_text_secondary":{"color_identifier":"white_alpha60"},"landing_secondary_button_background":{"color_identifier":"white_alpha15"},"landing_secondary_button_foreground":{"color_identifier":"white"},"landing_snippet_border":{"color_identifier":"clear"},"like_text_tint":{"color_identifier":"red_nice"},"link_alternate":{"color_identifier":"blue_400"},"loader_background":{"color_identifier":"gray_50"},"loader_tint":{"color_identifier":"gray_500"},"loader_track_fill":{"color_identifier":"gray_100"},"loader_track_value_fill":{"color_identifier":"blue_300"},"media_overlay_button_background":{"color_identifier":"white"},"media_overlay_button_foreground":{"color_identifier":"gray_800"},"modal_card_background":{"color_identifier":"white"},"modal_card_border":{"color_identifier":"clear"},"modal_card_header_close":{"color_identifier":"black"},"music_playback_icon":{"color_identifier":"black"},"feed_recommended_friend_promo_background":{"color_identifier":"blue_300"},"overlay_status_background":{"color_identifier":"gray_50"},"overlay_status_foreground":{"color_identifier":"steel_gray_500"},"overlay_status_icon":{"color_identifier":"steel_gray_400"},"placeholder_icon_background":{"color_identifier":"black_blue24_alpha8"},"placeholder_icon_foreground_primary":{"color_identifier":"steel_gray_300"},"placeholder_icon_foreground_secondary":{"color_identifier":"steel_gray_200"},"placeholder_icon_tint":{"color_identifier":"black_blue24"},"poll_option_background":{"color_identifier":"blue_600"},"search_bar_background":{"color_identifier":"gray_50"},"search_bar_field_background":{"color_identifier":"white"},"search_bar_field_tint":{"color_identifier":"steel_gray_300"},"search_bar_segmented_control_tint":{"color_identifier":"steel_gray_400"},"segmented_control_bar_background":{"color_identifier":"clear"},"segmented_control_tint":{"color_identifier":"steel_gray_300"},"selection_off_icon":{"color_identifier":"gray_200"},"separator_alpha":{"color_identifier":"black_alpha15"},"separator_alternate":{"color_identifier":"gray_100"},"separator_common":{"color_identifier":"gray_A150"},"snippet_background":{"color_identifier":"white"},"snippet_border":{"color_identifier":"black_alpha15"},"snippet_icon_tertiary":{"color_identifier":"gray_200"},"splashscreen_icon":{"color_identifier":"gray_100"},"statusbar_alternate_legacy_background":{"color_identifier":"black_alpha20"},"stories_create_button_background_from":{"color_identifier":"gray_40"},"stories_create_button_background_to":{"color_identifier":"gray_100"},"stories_create_button_foreground":{"color_identifier":"steel_gray_500"},"stories_skeleton_loader_background":{"color_identifier":"gray_200"},"stories_create_button_icon_background":{"color_identifier":"white"},"switch_ios_off_border":{"color_identifier":"gray_100"},"tabbar_active_icon":{"color_identifier":"azure_350"},"tabbar_background":{"color_identifier":"gray_20"},"tabbar_inactive_icon":{"color_identifier":"steel_gray_300"},"tabbar_tablet_active_icon":{"color_identifier":"sky_300"},"tabbar_tablet_background":{"color_identifier":"charcoal"},"tabbar_tablet_inactive_icon":{"color_identifier":"steel_gray_200"},"tabbar_tablet_text_primary":{"color_identifier":"gray_50"},"tabbar_tablet_text_secondary":{"color_identifier":"white_alpha60"},"toolbar_attach_background_from":{"color_identifier":"steel_gray_150"},"toolbar_attach_background_to":{"color_identifier":"steel_gray_250"},"text_action_counter":{"color_identifier":"steel_gray_400"},"text_link":{"color_identifier":"blue_A500"},"text_link_hightlighted_background":{"color_identifier":"black"},"text_muted":{"color_identifier":"gray_800"},"text_name":{"color_identifier":"blue_600"},"text_placeholder":{"color_identifier":"steel_gray_400"},"text_primary":{"color_identifier":"black"},"text_secondary":{"color_identifier":"gray_400"},"text_subhead":{"color_identifier":"gray_500"},"text_tertiary":{"color_identifier":"gray_300"},"icon_name":{"color_identifier":"blue_200_muted"},"panel_tab_active_background":{"color_identifier":"gray_50"},"panel_tab_active_text":{"color_identifier":"gray_600"},"panel_tab_inactive_text":{"color_identifier":"gray_500"},"im_service_message_text":{"color_identifier":"steel_gray_400"},"writebar_icon":{"color_identifier":"steel_gray_300"},"dynamic_blue":{"color_identifier":"blue_300"},"dynamic_gray":{"color_identifier":"steel_gray_250"},"dynamic_red":{"color_identifier":"red_nice"},"dynamic_green":{"color_identifier":"green"},"dynamic_orange":{"color_identifier":"orange"},"dynamic_violet":{"color_identifier":"violet"}}},"space_gray":{"appearance":"dark","colors":{"accent":{"color_identifier":"sky_300"},"action_sheet_action_foreground":{"color_identifier":"white"},"action_sheet_separator":{"color_identifier":"white_alpha12"},"activity_indicator_tint":{"color_identifier":"gray_600"},"attach_picker_tab_active_background":{"color_identifier":"gray_100"},"attach_picker_tab_active_icon":{"color_identifier":"gray_900"},"attach_picker_tab_active_text":{"color_identifier":"gray_100"},"attach_picker_tab_inactive_background":{"color_identifier":"gray_800"},"attach_picker_tab_inactive_icon":{"color_identifier":"gray_100"},"attach_picker_tab_inactive_text":{"color_identifier":"gray_500"},"background_content":{"color_identifier":"gray_900"},"background_highlighted":{"color_identifier":"white_alpha12"},"background_keyboard":{"color_identifier":"gray_800"},"background_light":{"color_identifier":"gray_850"},"background_page":{"color_identifier":"gray_1000"},"background_suggestions":{"color_identifier":"gray_800"},"button_bot_shadow":{"color_identifier":"gray_900"},"button_commerce_background":{"color_identifier":"green"},"button_commerce_foreground":{"color_identifier":"white"},"button_muted_background":{"color_identifier":"gray_800"},"button_muted_foreground":{"color_identifier":"gray_100"},"button_outline_border":{"color_identifier":"gray_100"},"button_outline_foreground":{"color_identifier":"gray_100"},"button_primary_background":{"color_identifier":"gray_100"},"button_primary_foreground":{"color_identifier":"gray_900"},"button_secondary_background":{"color_identifier":"gray_700"},"button_secondary_foreground":{"color_identifier":"gray_100"},"button_tertiary_background":{"color_identifier":"clear"},"button_tertiary_foreground":{"color_identifier":"gray_100"},"cell_button_foreground":{"color_identifier":"gray_100"},"content_placeholder_icon":{"color_identifier":"gray_300"},"content_placeholder_text":{"color_identifier":"gray_300"},"content_tint_background":{"color_identifier":"gray_850"},"content_tint_foreground":{"color_identifier":"gray_400"},"control_background":{"color_identifier":"gray_700"},"control_foreground":{"color_identifier":"gray_100"},"control_tint":{"color_identifier":"gray_900"},"control_tint_muted":{"color_identifier":"gray_400"},"counter_primary_background":{"color_identifier":"white"},"counter_primary_text":{"color_identifier":"gray_900"},"counter_prominent_background":{"color_identifier":"red_nice"},"counter_prominent_text":{"color_identifier":"white"},"counter_secondary_background":{"color_identifier":"gray_500"},"counter_secondary_text":{"color_identifier":"gray_900"},"destructive":{"color_identifier":"red_light"},"field_background":{"color_identifier":"gray_850"},"field_border":{"color_identifier":"white_alpha12"},"field_error_background":{"color_identifier":"red_dark"},"field_error_border":{"color_identifier":"red_light"},"field_valid_border":{"color_identifier":"green"},"field_text_placeholder":{"color_identifier":"gray_500"},"float_button_background":{"color_identifier":"gray_700"},"float_button_background_highlighted":{"color_identifier":"gray_600"},"float_button_foreground":{"color_identifier":"gray_300"},"float_button_border":{"color_identifier":"black_alpha12"},"header_alternate_background":{"color_identifier":"gray_800"},"header_alternate_tab_active_indicator":{"color_identifier":"gray_100"},"header_alternate_tab_active_text":{"color_identifier":"gray_100"},"header_alternate_tab_inactive_text":{"color_identifier":"gray_500"},"header_background":{"color_identifier":"gray_900"},"header_background_before_blur":{"color_identifier":"gray_A970"},"header_background_before_blur_alternate":{"color_identifier":"gray_A970"},"header_search_field_background":{"color_identifier":"gray_700"},"header_search_field_tint":{"color_identifier":"gray_300"},"header_tab_active_background":{"color_identifier":"gray_600"},"header_tab_active_text":{"color_identifier":"white"},"header_tab_active_indicator":{"color_identifier":"white"},"header_tab_inactive_text":{"color_identifier":"gray_500"},"header_text":{"color_identifier":"gray_100"},"header_text_alternate":{"color_identifier":"gray_100"},"header_text_secondary":{"color_identifier":"white_alpha60"},"header_tint":{"color_identifier":"gray_100"},"header_tint_alternate":{"color_identifier":"gray_100"},"icon_alpha_placeholder":{"color_identifier":"gray_100"},"icon_medium":{"color_identifier":"gray_400"},"icon_outline_medium":{"color_identifier":"gray_300"},"icon_outline_secondary":{"color_identifier":"gray_400"},"icon_secondary":{"color_identifier":"gray_500"},"icon_tertiary":{"color_identifier":"gray_700"},"im_attach_tint":{"color_identifier":"white"},"im_bubble_border_alternate":{"color_identifier":"clear"},"im_bubble_border_alternate_highlighted":{"color_identifier":"clear"},"im_bubble_button_background":{"color_identifier":"gray_700"},"im_bubble_button_background_highlighted":{"color_identifier":"gray_500"},"im_bubble_button_foreground":{"color_identifier":"gray_100"},"im_bubble_incoming":{"color_identifier":"gray_800"},"im_bubble_incoming_alternate":{"color_identifier":"gray_800"},"im_bubble_incoming_alternate_highlighted":{"color_identifier":"gray_600"},"im_bubble_incoming_highlighted":{"color_identifier":"gray_600"},"im_bubble_gift_background":{"color_identifier":"gold_400"},"im_bubble_gift_text":{"color_identifier":"gold_100"},"im_bubble_gift_text_secondary":{"color_identifier":"gold_200"},"im_bubble_outgoing":{"color_identifier":"gray_700"},"im_bubble_outgoing_alternate":{"color_identifier":"gray_700"},"im_bubble_outgoing_highlighted":{"color_identifier":"gray_600"},"im_bubble_outgoing_alternate_highlighted":{"color_identifier":"gray_500"},"im_bubble_wallpaper_button_background":{"color_identifier":"gray_700"},"im_bubble_wallpaper_button_background_highlighted":{"color_identifier":"gray_500"},"im_bubble_wallpaper_button_foreground":{"color_identifier":"gray_100"},"im_bubble_wallpaper_incoming":{"color_identifier":"gray_800"},"im_bubble_wallpaper_incoming_highlighted":{"color_identifier":"gray_600"},"im_bubble_wallpaper_incoming_border":{"color_identifier":"gray_900"},"im_bubble_wallpaper_outgoing":{"color_identifier":"gray_700"},"im_bubble_wallpaper_outgoing_highlighted":{"color_identifier":"gray_600"},"im_bubble_wallpaper_outgoing_border":{"color_identifier":"gray_800"},"im_forward_line_tint":{"color_identifier":"white"},"im_reply_sender_text":{"color_identifier":"white"},"im_reply_separator":{"color_identifier":"white"},"im_toolbar_voice_msg_background":{"color_identifier":"gray_700"},"im_toolbar_separator":{"color_identifier":"gray_300"},"image_border":{"color_identifier":"white_alpha8"},"input_background":{"color_identifier":"gray_800"},"input_border":{"color_identifier":"gray_800"},"landing_background":{"color_identifier":"gray_900"},"landing_field_background":{"color_identifier":"gray_850"},"landing_field_border":{"color_identifier":"clear"},"landing_field_placeholder":{"color_identifier":"gray_300"},"landing_login_button_background":{"color_identifier":"gray_100"},"landing_login_button_foreground":{"color_identifier":"gray_900"},"landing_primary_button_background":{"color_identifier":"gray_100"},"landing_primary_button_foreground":{"color_identifier":"gray_900"},"landing_tertiary_button_background":{"color_identifier":"clear"},"landing_tertiary_button_foreground":{"color_identifier":"white"},"landing_text_primary":{"color_identifier":"gray_100"},"landing_text_title":{"color_identifier":"white"},"landing_text_secondary":{"color_identifier":"gray_500"},"landing_secondary_button_background":{"color_identifier":"white_alpha15"},"landing_secondary_button_foreground":{"color_identifier":"white"},"landing_snippet_border":{"color_identifier":"white_alpha15"},"like_text_tint":{"color_identifier":"red_light"},"link_alternate":{"color_identifier":"white"},"loader_background":{"color_identifier":"gray_900"},"loader_tint":{"color_identifier":"gray_500"},"loader_track_fill":{"color_identifier":"gray_700"},"loader_track_value_fill":{"color_identifier":"white"},"media_overlay_button_background":{"color_identifier":"white"},"media_overlay_button_foreground":{"color_identifier":"gray_800"},"modal_card_background":{"color_identifier":"gray_800"},"modal_card_border":{"color_identifier":"white_alpha12"},"modal_card_header_close":{"color_identifier":"white"},"music_playback_icon":{"color_identifier":"white"},"feed_recommended_friend_promo_background":{"color_identifier":"steel_gray_500"},"overlay_status_background":{"color_identifier":"gray_900"},"overlay_status_foreground":{"color_identifier":"gray_100"},"overlay_status_icon":{"color_identifier":"gray_50"},"placeholder_icon_background":{"color_identifier":"white_alpha8"},"placeholder_icon_foreground_primary":{"color_identifier":"gray_400"},"placeholder_icon_foreground_secondary":{"color_identifier":"gray_600"},"placeholder_icon_tint":{"color_identifier":"white"},"poll_option_background":{"color_identifier":"white"},"search_bar_background":{"color_identifier":"clear"},"search_bar_field_background":{"color_identifier":"gray_700"},"search_bar_field_tint":{"color_identifier":"gray_300"},"search_bar_segmented_control_tint":{"color_identifier":"gray_400"},"segmented_control_bar_background":{"color_identifier":"gray_900"},"segmented_control_tint":{"color_identifier":"gray_500"},"selection_off_icon":{"color_identifier":"gray_700"},"separator_alpha":{"color_identifier":"white_alpha15"},"separator_alternate":{"color_identifier":"gray_850"},"separator_common":{"color_identifier":"gray_750"},"snippet_background":{"color_identifier":"gray_800"},"snippet_border":{"color_identifier":"white_alpha15"},"snippet_icon_tertiary":{"color_identifier":"gray_600"},"splashscreen_icon":{"color_identifier":"gray_800"},"statusbar_alternate_legacy_background":{"color_identifier":"clear"},"stories_create_button_background_from":{"color_identifier":"gray_750"},"stories_create_button_background_to":{"color_identifier":"gray_750"},"stories_create_button_foreground":{"color_identifier":"gray_200"},"stories_skeleton_loader_background":{"color_identifier":"gray_700"},"stories_create_button_icon_background":{"color_identifier":"gray_700"},"switch_ios_off_border":{"color_identifier":"gray_800"},"tabbar_active_icon":{"color_identifier":"white"},"tabbar_background":{"color_identifier":"gray_800"},"tabbar_inactive_icon":{"color_identifier":"gray_500"},"tabbar_tablet_active_icon":{"color_identifier":"sky_300"},"tabbar_tablet_background":{"color_identifier":"gray_850"},"tabbar_tablet_inactive_icon":{"color_identifier":"gray_500"},"tabbar_tablet_text_primary":{"color_identifier":"gray_100"},"tabbar_tablet_text_secondary":{"color_identifier":"gray_500"},"toolbar_attach_background_from":{"color_identifier":"gray_500"},"toolbar_attach_background_to":{"color_identifier":"gray_600"},"text_action_counter":{"color_identifier":"gray_300"},"text_link":{"color_identifier":"sky_300"},"text_link_hightlighted_background":{"color_identifier":"sky_300"},"text_muted":{"color_identifier":"gray_200"},"text_name":{"color_identifier":"gray_100"},"text_placeholder":{"color_identifier":"gray_300"},"text_primary":{"color_identifier":"gray_100"},"text_secondary":{"color_identifier":"gray_500"},"text_subhead":{"color_identifier":"gray_400"},"text_tertiary":{"color_identifier":"gray_600"},"icon_name":{"color_identifier":"gray_300"},"panel_tab_active_background":{"color_identifier":"gray_700"},"panel_tab_active_text":{"color_identifier":"gray_100"},"panel_tab_inactive_text":{"color_identifier":"gray_500"},"im_service_message_text":{"color_identifier":"gray_500"},"writebar_icon":{"color_identifier":"gray_400"},"dynamic_blue":{"color_identifier":"azure_300"},"dynamic_gray":{"color_identifier":"steel_gray_250"},"dynamic_red":{"color_identifier":"red_nice"},"dynamic_green":{"color_identifier":"green"},"dynamic_orange":{"color_identifier":"orange"},"dynamic_violet":{"color_identifier":"violet_light"}}},"bright_light":{"appearance":"light","colors":{"accent":{"color_identifier":"azure_300"},"action_sheet_action_foreground":{"color_identifier":"azure_300"},"action_sheet_separator":{"color_identifier":"black_alpha12"},"activity_indicator_tint":{"color_identifier":"steel_gray_200"},"attach_picker_tab_active_background":{"color_identifier":"azure_A400"},"attach_picker_tab_active_icon":{"color_identifier":"white"},"attach_picker_tab_active_text":{"color_identifier":"azure_A400"},"attach_picker_tab_inactive_background":{"color_identifier":"gray_40"},"attach_picker_tab_inactive_icon":{"color_identifier":"steel_gray_400"},"attach_picker_tab_inactive_text":{"color_identifier":"steel_gray_400"},"background_content":{"color_identifier":"white"},"background_highlighted":{"color_identifier":"black_alpha12"},"background_keyboard":{"color_identifier":"gray_100"},"background_light":{"color_identifier":"gray_20"},"background_page":{"color_identifier":"gray_50"},"background_suggestions":{"color_identifier":"white"},"button_bot_shadow":{"color_identifier":"gray_200"},"button_commerce_background":{"color_identifier":"green"},"button_commerce_foreground":{"color_identifier":"white"},"button_muted_background":{"color_identifier":"gray_40"},"button_muted_foreground":{"color_identifier":"blue_400"},"button_outline_border":{"color_identifier":"blue_300"},"button_outline_foreground":{"color_identifier":"blue_300"},"button_primary_background":{"color_identifier":"azure_A400"},"button_primary_foreground":{"color_identifier":"white"},"button_secondary_background":{"color_identifier":"black_blue45_alpha10"},"button_secondary_foreground":{"color_identifier":"azure_A400"},"button_tertiary_background":{"color_identifier":"clear"},"button_tertiary_foreground":{"color_identifier":"azure_A400"},"cell_button_foreground":{"color_identifier":"blue_300"},"content_placeholder_icon":{"color_identifier":"steel_gray_300"},"content_placeholder_text":{"color_identifier":"steel_gray_400"},"content_tint_background":{"color_identifier":"gray_A40"},"content_tint_foreground":{"color_identifier":"gray_450"},"control_background":{"color_identifier":"gray_50"},"control_foreground":{"color_identifier":"blue_400"},"control_tint":{"color_identifier":"white"},"control_tint_muted":{"color_identifier":"gray_500"},"counter_primary_background":{"color_identifier":"azure_300"},"counter_primary_text":{"color_identifier":"white"},"counter_prominent_background":{"color_identifier":"red_nice"},"counter_prominent_text":{"color_identifier":"white"},"counter_secondary_background":{"color_identifier":"steel_gray_250"},"counter_secondary_text":{"color_identifier":"white"},"destructive":{"color_identifier":"red"},"field_background":{"color_identifier":"gray_40"},"field_border":{"color_identifier":"black_alpha12"},"field_error_background":{"color_identifier":"pink_light"},"field_error_border":{"color_identifier":"red"},"field_valid_border":{"color_identifier":"green"},"field_text_placeholder":{"color_identifier":"gray_400"},"float_button_background":{"color_identifier":"gray_A40"},"float_button_background_highlighted":{"color_identifier":"gray_50"},"float_button_foreground":{"color_identifier":"steel_gray_300"},"float_button_border":{"color_identifier":"black_alpha05"},"header_alternate_background":{"color_identifier":"white"},"header_alternate_tab_active_indicator":{"color_identifier":"azure_300"},"header_alternate_tab_active_text":{"color_identifier":"azure_300"},"header_alternate_tab_inactive_text":{"color_identifier":"steel_gray_300"},"header_background":{"color_identifier":"white"},"header_background_before_blur":{"color_identifier":"white"},"header_background_before_blur_alternate":{"color_identifier":"white"},"header_search_field_background":{"color_identifier":"gray_A40"},"header_search_field_tint":{"color_identifier":"steel_gray_400"},"header_tab_active_background":{"color_identifier":"blue_overlight_1_alpha32"},"header_tab_active_text":{"color_identifier":"azure_A400"},"header_tab_active_indicator":{"color_identifier":"azure_A400"},"header_tab_inactive_text":{"color_identifier":"steel_gray_350"},"header_text":{"color_identifier":"black"},"header_text_alternate":{"color_identifier":"black"},"header_text_secondary":{"color_identifier":"steel_gray_400"},"header_tint":{"color_identifier":"azure_300"},"header_tint_alternate":{"color_identifier":"azure_300"},"icon_alpha_placeholder":{"color_identifier":"white"},"icon_medium":{"color_identifier":"steel_gray_400"},"icon_outline_medium":{"color_identifier":"steel_gray_400"},"icon_outline_secondary":{"color_identifier":"steel_gray_250"},"icon_secondary":{"color_identifier":"steel_gray_250"},"icon_tertiary":{"color_identifier":"gray_200"},"im_attach_tint":{"color_identifier":"azure_A400"},"im_bubble_border_alternate":{"color_identifier":"gray_100"},"im_bubble_border_alternate_highlighted":{"color_identifier":"gray_A150"},"im_bubble_button_background":{"color_identifier":"gray_20"},"im_bubble_button_background_highlighted":{"color_identifier":"gray_A150"},"im_bubble_button_foreground":{"color_identifier":"black"},"im_bubble_incoming":{"color_identifier":"gray_50"},"im_bubble_incoming_alternate":{"color_identifier":"white"},"im_bubble_incoming_alternate_highlighted":{"color_identifier":"gray_20"},"im_bubble_incoming_highlighted":{"color_identifier":"gray_A150"},"im_bubble_gift_background":{"color_identifier":"gold_200"},"im_bubble_gift_text":{"color_identifier":"gold_500"},"im_bubble_gift_text_secondary":{"color_identifier":"gold_400"},"im_bubble_outgoing":{"color_identifier":"white_blue20"},"im_bubble_outgoing_alternate":{"color_identifier":"white"},"im_bubble_outgoing_highlighted":{"color_identifier":"white_blue32"},"im_bubble_outgoing_alternate_highlighted":{"color_identifier":"gray_20"},"im_bubble_wallpaper_button_background":{"color_identifier":"gray_40"},"im_bubble_wallpaper_button_background_highlighted":{"color_identifier":"gray_100"},"im_bubble_wallpaper_button_foreground":{"color_identifier":"black"},"im_bubble_wallpaper_incoming":{"color_identifier":"white"},"im_bubble_wallpaper_incoming_highlighted":{"color_identifier":"gray_50"},"im_bubble_wallpaper_incoming_border":{"color_identifier":"black_blue45_alpha10"},"im_bubble_wallpaper_outgoing":{"color_identifier":"white_blue20"},"im_bubble_wallpaper_outgoing_highlighted":{"color_identifier":"white_blue32"},"im_bubble_wallpaper_outgoing_border":{"color_identifier":"black_blue45_alpha10"},"im_forward_line_tint":{"color_identifier":"blue_600"},"im_reply_sender_text":{"color_identifier":"azure_A400"},"im_reply_separator":{"color_identifier":"azure_A400"},"im_toolbar_voice_msg_background":{"color_identifier":"steel_gray_300"},"im_toolbar_separator":{"color_identifier":"black_blue24"},"image_border":{"color_identifier":"black_alpha8"},"input_background":{"color_identifier":"gray_40"},"input_border":{"color_identifier":"gray_100"},"landing_background":{"color_identifier":"white"},"landing_field_background":{"color_identifier":"gray_40"},"landing_field_border":{"color_identifier":"clear"},"landing_field_placeholder":{"color_identifier":"steel_gray_400"},"landing_login_button_background":{"color_identifier":"azure_300"},"landing_login_button_foreground":{"color_identifier":"white"},"landing_primary_button_background":{"color_identifier":"azure_300"},"landing_primary_button_foreground":{"color_identifier":"white"},"landing_tertiary_button_background":{"color_identifier":"clear"},"landing_tertiary_button_foreground":{"color_identifier":"azure_300"},"landing_text_primary":{"color_identifier":"black"},"landing_text_title":{"color_identifier":"azure_300"},"landing_text_secondary":{"color_identifier":"steel_gray_400"},"landing_secondary_button_background":{"color_identifier":"black_blue45_alpha10"},"landing_secondary_button_foreground":{"color_identifier":"azure_A400"},"landing_snippet_border":{"color_identifier":"black_alpha15"},"like_text_tint":{"color_identifier":"red_nice"},"link_alternate":{"color_identifier":"azure_A400"},"loader_background":{"color_identifier":"gray_50"},"loader_tint":{"color_identifier":"gray_500"},"loader_track_fill":{"color_identifier":"gray_100"},"loader_track_value_fill":{"color_identifier":"blue_300"},"media_overlay_button_background":{"color_identifier":"white"},"media_overlay_button_foreground":{"color_identifier":"gray_800"},"modal_card_background":{"color_identifier":"white"},"modal_card_border":{"color_identifier":"clear"},"modal_card_header_close":{"color_identifier":"black"},"music_playback_icon":{"color_identifier":"black"},"feed_recommended_friend_promo_background":{"color_identifier":"blue_300"},"overlay_status_background":{"color_identifier":"gray_50"},"overlay_status_foreground":{"color_identifier":"steel_gray_500"},"overlay_status_icon":{"color_identifier":"steel_gray_400"},"placeholder_icon_background":{"color_identifier":"black_blue24_alpha8"},"placeholder_icon_foreground_primary":{"color_identifier":"steel_gray_300"},"placeholder_icon_foreground_secondary":{"color_identifier":"steel_gray_200"},"placeholder_icon_tint":{"color_identifier":"black_blue24"},"poll_option_background":{"color_identifier":"blue_600"},"search_bar_background":{"color_identifier":"clear"},"search_bar_field_background":{"color_identifier":"gray_A40"},"search_bar_field_tint":{"color_identifier":"steel_gray_400"},"search_bar_segmented_control_tint":{"color_identifier":"steel_gray_400"},"segmented_control_bar_background":{"color_identifier":"clear"},"segmented_control_tint":{"color_identifier":"steel_gray_300"},"selection_off_icon":{"color_identifier":"steel_gray_150"},"separator_alpha":{"color_identifier":"black_alpha15"},"separator_alternate":{"color_identifier":"gray_100"},"separator_common":{"color_identifier":"gray_A150"},"snippet_background":{"color_identifier":"white"},"snippet_border":{"color_identifier":"black_alpha15"},"snippet_icon_tertiary":{"color_identifier":"gray_200"},"splashscreen_icon":{"color_identifier":"gray_100"},"statusbar_alternate_legacy_background":{"color_identifier":"black_alpha20"},"stories_create_button_background_from":{"color_identifier":"gray_40"},"stories_create_button_background_to":{"color_identifier":"gray_100"},"stories_create_button_foreground":{"color_identifier":"steel_gray_500"},"stories_skeleton_loader_background":{"color_identifier":"gray_200"},"switch_ios_off_border":{"color_identifier":"gray_100"},"stories_create_button_icon_background":{"color_identifier":"white"},"tabbar_active_icon":{"color_identifier":"azure_350"},"tabbar_background":{"color_identifier":"gray_20"},"tabbar_inactive_icon":{"color_identifier":"steel_gray_300"},"tabbar_tablet_active_icon":{"color_identifier":"azure_350"},"tabbar_tablet_background":{"color_identifier":"gray_20"},"tabbar_tablet_inactive_icon":{"color_identifier":"steel_gray_300"},"tabbar_tablet_text_primary":{"color_identifier":"black"},"tabbar_tablet_text_secondary":{"color_identifier":"gray_400"},"toolbar_attach_background_from":{"color_identifier":"steel_gray_150"},"toolbar_attach_background_to":{"color_identifier":"steel_gray_250"},"text_action_counter":{"color_identifier":"steel_gray_400"},"text_link":{"color_identifier":"azure_A400"},"text_link_hightlighted_background":{"color_identifier":"black"},"text_muted":{"color_identifier":"gray_800"},"text_name":{"color_identifier":"azure_A400"},"text_placeholder":{"color_identifier":"steel_gray_400"},"text_primary":{"color_identifier":"black"},"text_secondary":{"color_identifier":"steel_gray_400"},"text_subhead":{"color_identifier":"steel_gray_500"},"text_tertiary":{"color_identifier":"steel_gray_300"},"icon_name":{"color_identifier":"blue_200_muted"},"panel_tab_active_background":{"color_identifier":"gray_50"},"panel_tab_active_text":{"color_identifier":"gray_600"},"panel_tab_inactive_text":{"color_identifier":"gray_500"},"im_service_message_text":{"color_identifier":"steel_gray_400"},"writebar_icon":{"color_identifier":"azure_300"},"dynamic_blue":{"color_identifier":"azure_300"},"dynamic_gray":{"color_identifier":"steel_gray_250"},"dynamic_red":{"color_identifier":"red_nice"},"dynamic_green":{"color_identifier":"green"},"dynamic_orange":{"color_identifier":"orange"},"dynamic_violet":{"color_identifier":"violet"}}}};
 
 /***/ }),
 /* 75 */
@@ -8327,38 +8336,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'dismiss_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="dismiss_24"><g fill="currentColor" fill-rule="nonzero"><circle opacity=".12" cx="12" cy="12" r="12" /><path d="M12 10.727l3.464-3.463a.9.9 0 1 1 1.272 1.272L13.273 12l3.463 3.464a.9.9 0 1 1-1.272 1.272L12 13.273l-3.464 3.463a.9.9 0 1 1-1.272-1.272L10.727 12 7.264 8.536a.9.9 0 0 1 1.272-1.272L12 10.727z" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -8377,38 +8386,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'write_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="write_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M14.188 6.273l3.54 3.54-8.624 8.622a6.674 6.674 0 0 1-2.77 1.664l-2.903.886a.334.334 0 0 1-.416-.416l.886-2.902a6.674 6.674 0 0 1 1.664-2.771l8.623-8.623zm1.061-1.06l1.769-1.77a1.5 1.5 0 0 1 2.121 0l1.418 1.419a1.5 1.5 0 0 1 0 2.121L18.79 8.752l-3.54-3.54z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -8427,38 +8436,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'user_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="user_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M16 8c0-2.21-1.79-4-4-4S8 5.79 8 8s1.79 4 4 4 4-1.79 4-4zM4 18v.995C4 19.55 4.45 20 5.005 20h13.99C19.55 20 20 19.55 20 18.995V18c0-3.5-5.33-4.5-8-4.5s-8 1-8 4.5z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -8477,38 +8486,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 20 28';
 var id = 'chevron_back_28';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 28" id="chevron_back_28"><g fill="none" fill-rule="evenodd"><path d="M0 0h20v28H0z" /><path d="M4.56 12.94L13 4.5a1.414 1.414 0 0 1 2 2L7.5 14l7.5 7.5a1.414 1.414 0 0 1-2 2l-8.44-8.44a1.5 1.5 0 0 1 0-2.12z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 20;
-var height = 28;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 20,
+    height: !isNaN(props.height) ? +props.height : 28
   }));
 }
 
@@ -8527,38 +8536,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'search_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="search_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M16.535 15.12l4.172 4.173a1 1 0 0 1-1.414 1.414l-4.172-4.172a7.25 7.25 0 1 1 1.414-1.414zM10.75 16a5.25 5.25 0 1 0 0-10.5 5.25 5.25 0 0 0 0 10.5z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -8567,26 +8576,31 @@ exports.default = _default;
 
 /***/ }),
 /* 80 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-(function(window) {
-  var FUNCTION = 'function';
-  var UNDEFINED = 'undefined';
+(function() {
+  function isFunction(object) {
+    return typeof object === 'function';
+  }
+
   var subscribers = [];
-  var isWeb = typeof window !== UNDEFINED && !window.AndroidBridge && !window.webkit;
+  var webFrameId = null;
+  var connectVersion = '1.2.0';
+
+  var isClient = typeof window !== 'undefined';
+  var isWeb = isClient && !window.AndroidBridge && !window.webkit;
   var eventType = isWeb ? 'message' : 'VKWebAppEvent';
 
-  if (typeof window !== UNDEFINED) {
-
-    //polyfill
+  if (isClient) {
+    // polyfill
     if (!window.CustomEvent) {
       (function() {
         function CustomEvent(event, params) {
-          params = params || {bubbles: false, cancelable: false, detail: undefined};
+          params = params || { bubbles: false, cancelable: false, detail: undefined };
           var evt = document.createEvent('CustomEvent');
           evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
           return evt;
-        };
+        }
 
         CustomEvent.prototype = window.Event.prototype;
 
@@ -8596,21 +8610,32 @@ exports.default = _default;
 
     window.addEventListener(eventType, function() {
       var args = Array.prototype.slice.call(arguments);
+      var _subscribers = subscribers.slice();
       if (isWeb) {
-        subscribers.forEach(function(fn) {
-          fn({
-            detail: args[0].data
+        if (Object.prototype.hasOwnProperty.call(args[0].data, 'webFrameId')) {
+          delete args[0].data.webFrameId;
+        }
+        if (Object.prototype.hasOwnProperty.call(args[0].data, 'connectVersion')) {
+          delete args[0].data.connectVersion;
+        }
+        if (args[0].data.type && args[0].data.type === 'VKWebAppSettings') {
+          webFrameId = args[0].data.frameId;
+        } else {
+          _subscribers.forEach(function(fn) {
+            fn({
+              detail: args[0].data
+            });
           });
-        });
+        }
       } else {
-        subscribers.forEach(function(fn) {
+        _subscribers.forEach(function(fn) {
           fn.apply(null, args);
         });
       }
     });
   }
 
-  module.exports = {
+  var vkuiConnect = {
     /**
      * Sends a message to native client
      *
@@ -8626,15 +8651,14 @@ exports.default = _default;
         params = {};
       }
 
-      var isClient = typeof window !== UNDEFINED;
       var androidBridge = isClient && window.AndroidBridge;
       var iosBridge = isClient && window.webkit && window.webkit.messageHandlers;
       var isDesktop = !androidBridge && !iosBridge;
 
-      if (androidBridge && typeof androidBridge[handler] == FUNCTION) {
+      if (androidBridge && isFunction(androidBridge[handler])) {
         androidBridge[handler](JSON.stringify(params));
       }
-      if (iosBridge && iosBridge[handler] && typeof iosBridge[handler].postMessage == FUNCTION) {
+      if (iosBridge && iosBridge[handler] && isFunction(iosBridge[handler].postMessage)) {
         iosBridge[handler].postMessage(params);
       }
 
@@ -8642,7 +8666,9 @@ exports.default = _default;
         parent.postMessage({
           handler: handler,
           params: params,
-          type: 'vk-connect'
+          type: 'vk-connect',
+          webFrameId: webFrameId,
+          connectVersion
         }, '*');
       }
     },
@@ -8676,41 +8702,49 @@ exports.default = _default;
      * @returns {boolean}
      */
     supports: function supports(handler) {
-
-      var isClient = typeof window !== UNDEFINED;
       var androidBridge = isClient && window.AndroidBridge;
       var iosBridge = isClient && window.webkit && window.webkit.messageHandlers;
       var desktopEvents = [
-        "VKWebAppGetAuthToken",
-        "VKWebAppCallAPIMethod",
-        "VKWebAppGetGeodata",
-        "VKWebAppGetUserInfo",
-        "VKWebAppGetPhoneNumber",
-        "VKWebAppGetClientVersion",
-        "VKWebAppOpenPayForm",
-        "VKWebAppShare",
-        "VKWebAppAllowNotifications",
-        "VKWebAppDenyNotifications",
-        "VKWebAppShowWallPostBox",
-        "VKWebAppGetEmail",
-        "VKWebAppAllowMessagesFromGroup",
-        "VKWebAppJoinGroup",
-        "VKWebAppOpenApp",
-        "VKWebAppSetLocation",
-        "VKWebAppScroll",
-        "VKWebAppResizeWindow",
+        'VKWebAppInit',
+        'VKWebAppGetCommunityAuthToken',
+        'VKWebAppAddToCommunity',
+        'VKWebAppGetUserInfo',
+        'VKWebAppSetLocation',
+        'VKWebAppGetClientVersion',
+        'VKWebAppGetPhoneNumber',
+        'VKWebAppGetEmail',
+        'VKWebAppGetGeodata',
+        'VKWebAppSetTitle',
+        'VKWebAppGetAuthToken',
+        'VKWebAppCallAPIMethod',
+        'VKWebAppJoinGroup',
+        'VKWebAppAllowMessagesFromGroup',
+        'VKWebAppDenyNotifications',
+        'VKWebAppAllowNotifications',
+        'VKWebAppOpenPayForm',
+        'VKWebAppOpenApp',
+        'VKWebAppShare',
+        'VKWebAppShowWallPostBox',
+        'VKWebAppScroll',
+        'VKWebAppResizeWindow',
+        'VKWebAppShowOrderBox',
+        'VKWebAppShowLeaderBoardBox',
+        'VKWebAppShowInviteBox',
+        'VKWebAppShowRequestBox'
       ];
 
-      if (androidBridge && typeof androidBridge[handler] == FUNCTION) return true;
-
-      if (iosBridge && iosBridge[handler] && typeof iosBridge[handler].postMessage == FUNCTION) return true;
-
+      if (androidBridge && isFunction(androidBridge[handler])) return true;
+      if (iosBridge && iosBridge[handler] && isFunction(iosBridge[handler].postMessage)) return true;
       if (!iosBridge && !androidBridge && ~desktopEvents.indexOf(handler)) return true;
 
       return false;
     }
   };
-})(window);
+
+  if (true) {
+    module.exports = vkuiConnect;
+  } else { var root; }
+})();
 
 
 /***/ }),
@@ -13923,38 +13957,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 16 16';
 var id = 'search_16';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="search_16"><g fill="none" fill-rule="evenodd"><path d="M0 0h16v16H0z" /><path d="M14.743 13.574L10.91 9.74a5.426 5.426 0 0 0 1.05-3.232A5.532 5.532 0 0 0 6.46 1 5.436 5.436 0 0 0 1 6.468a5.532 5.532 0 0 0 5.5 5.508 5.408 5.408 0 0 0 3.242-1.061l.004-.003 3.83 3.831a.826.826 0 1 0 1.167-1.169zm-8.247-2.696a4.425 4.425 0 0 1-4.4-4.406 4.35 4.35 0 0 1 4.368-4.374 4.426 4.426 0 0 1 4.4 4.406 4.35 4.35 0 0 1-4.368 4.374z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 16;
-var height = 16;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 16,
+    height: !isNaN(props.height) ? +props.height : 16
   }));
 }
 
@@ -13973,38 +14007,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'reorder_ios_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="reorder_ios_24"><g fill="none" fill-rule="evenodd"><path opacity=".1" d="M0 0h24v24H0z" /><path d="M2.75 7h18.5a.75.75 0 1 1 0 1.5H2.75a.75.75 0 0 1 0-1.5zm0 4h18.5a.75.75 0 1 1 0 1.5H2.75a.75.75 0 1 1 0-1.5zm0 4h18.5a.75.75 0 1 1 0 1.5H2.75a.75.75 0 1 1 0-1.5z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -14023,38 +14057,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'reorder_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="reorder_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M21 18a1 1 0 0 1-1 1H4a1 1 0 0 1 0-2h16a1 1 0 0 1 1 1zm0-4a1 1 0 0 1-1 1H4a1 1 0 0 1 0-2h16a1 1 0 0 1 1 1zm0-4a1 1 0 0 1-1 1H4a1 1 0 0 1 0-2h16a1 1 0 0 1 1 1zM3 6a1 1 0 0 1 1-1h16a1 1 0 0 1 0 2H4a1 1 0 0 1-1-1z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -14073,38 +14107,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 16 24';
 var id = 'chevron_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24" id="chevron_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h16v24H0z" /><path d="M4.706 7.706a1 1 0 0 1 0-1.412l.088-.088a.997.997 0 0 1 1.414.002l5.084 5.084a.998.998 0 0 1 0 1.416l-5.084 5.084a1.002 1.002 0 0 1-1.414.002l-.088-.088a.995.995 0 0 1 0-1.412L9 12 4.706 7.706z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 16;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 16,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -14123,38 +14157,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 16 16';
 var id = 'spinner_16';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="spinner_16"><path d="M8 16a1 1 0 1 1 0-2 6 6 0 1 0-5.7-4.12 1 1 0 1 1-1.9.626A8 8 0 1 1 8 16z" fill="currentColor" fill-rule="nonzero" /></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 16;
-var height = 16;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 16,
+    height: !isNaN(props.height) ? +props.height : 16
   }));
 }
 
@@ -14173,38 +14207,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 44 44';
 var id = 'spinner_44';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="spinner_44"><path d="M22 44a1.5 1.5 0 0 1 0-3c10.493 0 19-8.507 19-19S32.493 3 22 3 3 11.507 3 22c0 2.208.376 4.363 1.103 6.397a1.5 1.5 0 1 1-2.825 1.01A21.964 21.964 0 0 1 0 22C0 9.85 9.85 0 22 0s22 9.85 22 22-9.85 22-22 22z" fill="currentColor" fill-rule="nonzero" /></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 44;
-var height = 44;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 44,
+    height: !isNaN(props.height) ? +props.height : 44
   }));
 }
 
@@ -14223,38 +14257,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 32 32';
 var id = 'spinner_32';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="spinner_32"><path d="M16 32a1.5 1.5 0 0 1 0-3c7.18 0 13-5.82 13-13S23.18 3 16 3 3 8.82 3 16c0 1.557.273 3.074.8 4.502A1.5 1.5 0 1 1 .986 21.54 15.97 15.97 0 0 1 0 16C0 7.163 7.163 0 16 0s16 7.163 16 16-7.163 16-16 16z" fill="currentColor" fill-rule="nonzero" /></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 32;
-var height = 32;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 32,
+    height: !isNaN(props.height) ? +props.height : 32
   }));
 }
 
@@ -14273,38 +14307,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'spinner_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="spinner_24"><path d="M12 24a1.25 1.25 0 1 1 0-2.5A9.5 9.5 0 1 0 2.5 12c0 1.1.187 2.175.548 3.188a1.25 1.25 0 0 1-2.355.84A11.981 11.981 0 0 1 0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z" fill="currentColor" fill-rule="nonzero" /></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -32540,38 +32574,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 56 56';
 var id = 'money_transfer_outline_56';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" id="money_transfer_outline_56"><g fill="none" fill-rule="evenodd"><path d="M0 0h56v56H0z" /><path d="M44.879 39l-5.44-5.44a1.5 1.5 0 0 1 2.122-2.12l8 8a1.5 1.5 0 0 1 0 2.12l-8 8a1.5 1.5 0 0 1-2.122-2.12L44.88 42H13.692c-2.675 0-3.645-.278-4.623-.801a5.452 5.452 0 0 1-2.268-2.268C6.278 37.953 6 36.983 6 34.308V15.692c0-2.675.278-3.645.801-4.623A5.452 5.452 0 0 1 9.07 8.801C10.047 8.278 11.017 8 13.692 8h28.616c2.675 0 3.645.278 4.623.801a5.452 5.452 0 0 1 2.268 2.268c.523.978.801 1.948.801 4.623V32.5a1.5 1.5 0 0 1-3 0V21H9v14.154c0 1.337.14 1.822.4 2.311.262.49.646.873 1.135 1.134.489.262.974.401 2.31.401H44.88zM47 18v-3.154c0-1.337-.14-1.822-.4-2.311a2.726 2.726 0 0 0-1.135-1.134c-.489-.262-.974-.401-2.31-.401h-30.31c-1.336 0-1.821.14-2.31.4A2.726 2.726 0 0 0 9.4 12.536c-.262.489-.401.974-.401 2.31V18h38z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 56;
-var height = 56;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 56,
+    height: !isNaN(props.height) ? +props.height : 56
   }));
 }
 
@@ -32590,38 +32624,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 56 56';
 var id = 'notification_outline_56';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" id="notification_outline_56"><g fill="none" fill-rule="evenodd"><path d="M0 0h56v56H0z" /><path d="M36.42 42c-1.221 4.555-4.113 7-8.42 7-4.307 0-7.199-2.445-8.42-7H14c-3.15 0-5.153-1.053-6.032-2.92a4.852 4.852 0 0 1-.414-1.442 6.586 6.586 0 0 1-.054-.962c0-2.064.805-3.422 2.864-5.81.548-.634.407-.47.543-.631 1.15-1.356 1.593-2.15 1.593-2.92v-3.657C12.5 14.358 19.23 7 28.01 7c8.775 0 15.49 7.355 15.49 16.662l-.01 3.654c.001.77.445 1.564 1.596 2.918.137.16-.005-.003.544.632 2.063 2.387 2.87 3.746 2.87 5.81a6.1 6.1 0 0 1-.062.978 4.853 4.853 0 0 1-.473 1.51C47.045 40.975 45.06 42 42 42h-5.58zm-3.134 0H22.714c.942 2.753 2.639 4 5.286 4s4.344-1.247 5.286-4zm7.205-14.686l.009-3.656C40.5 15.954 35.064 10 28.01 10c-7.06 0-12.51 5.958-12.51 13.658v3.656c0 1.7-.722 2.995-2.305 4.861l-.281.33-.278.322c-1.597 1.85-2.136 2.76-2.136 3.85 0 .52.04.821.183 1.126C11.021 38.522 11.931 39 14 39h28c2.004 0 2.926-.476 3.291-1.195.163-.32.209-.635.209-1.129 0-1.088-.54-1.997-2.14-3.848l-.278-.323a56.214 56.214 0 0 1-.282-.329c-1.586-1.866-2.31-3.16-2.31-4.862z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 56;
-var height = 56;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 56,
+    height: !isNaN(props.height) ? +props.height : 56
   }));
 }
 
@@ -32640,38 +32674,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'favorite_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="favorite_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M15.343 8.485l4.43.425c1.541.148 2.014 1.653.824 2.643l-3.468 2.882 1.287 4.695c.423 1.542-.889 2.475-2.202 1.547L12 17.701l-4.214 2.976c-1.308.925-2.625-.005-2.202-1.547l1.287-4.695-3.468-2.882c-1.195-.994-.724-2.495.824-2.643l4.429-.425 1.95-4.499c.612-1.408 2.177-1.408 2.787 0l1.95 4.499z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -32690,38 +32724,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'message_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="message_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M9.23 19.2c-1.051.934-2.803 1.709-5.255 2.324a.428.428 0 0 1-.478-.625c.894-1.602 1.425-2.885 1.593-3.847C3.486 15.613 2.5 13.656 2.5 11.5c0-4.418 4.141-8 9.25-8S21 7.082 21 11.5s-4.141 8-9.25 8c-.874 0-1.719-.105-2.52-.3z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -32740,38 +32774,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 28 28';
 var id = 'more_28';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" id="more_28"><g fill="none" fill-rule="evenodd"><path d="M0 0h28v28H0z" /><path d="M5.5 8a1 1 0 1 1 0-2h17a1 1 0 0 1 0 2h-17zm0 7a1 1 0 0 1 0-2h17a1 1 0 0 1 0 2h-17zm0 7a1 1 0 0 1 0-2h17a1 1 0 0 1 0 2h-17z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 28;
-var height = 28;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 28,
+    height: !isNaN(props.height) ? +props.height : 28
   }));
 }
 
@@ -32790,38 +32824,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 28 28';
 var id = 'messages_28';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" id="messages_28"><g fill="none" fill-rule="evenodd"><path d="M0 0h28v28H0z" /><path d="M3.952 25.001a1.434 1.434 0 0 1-1.363-2.023c.911-2.015 1.413-3.498 1.514-4.379C3.062 17.073 2.5 15.323 2.5 13.5c0-5.56 5.18-10 11.5-10s11.5 4.44 11.5 10-5.18 10-11.5 10c-1.355 0-2.678-.204-3.924-.597-1.402 1.306-3.458 1.994-6.124 2.098zm5.085-3.9a1 1 0 0 1 1.111-.287c1.202.45 2.506.686 3.852.686 5.278 0 9.5-3.619 9.5-8s-4.222-8-9.5-8-9.5 3.619-9.5 8c0 1.508.497 2.955 1.426 4.213a1 1 0 0 1 .196.598c-.004 1.047-.45 2.567-1.33 4.627 1.987-.208 3.388-.831 4.245-1.837z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 28;
-var height = 28;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 28,
+    height: !isNaN(props.height) ? +props.height : 28
   }));
 }
 
@@ -32840,38 +32874,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 28 28';
 var id = 'notifications_28';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" id="notifications_28"><g fill="none" fill-rule="evenodd"><path d="M0 0h28v28H0z" /><path d="M19.995 13.907L20 12.08C20 8.36 17.389 5.5 14.005 5.5 10.618 5.5 8 8.362 8 12.079v1.828c0 .928-.384 1.617-1.212 2.592a44.99 44.99 0 0 1-.28.328c-.76.88-1.008 1.298-1.008 1.761 0 .226.016.347.068.457.124.264.488.455 1.432.455h14c.914 0 1.286-.192 1.423-.46.059-.117.077-.241.077-.452 0-.463-.248-.88-1.009-1.76l-.282-.328c-.828-.976-1.214-1.665-1.214-2.593zM18.4 21.5C17.731 23.764 16.213 25 14 25s-3.731-1.236-4.4-3.5H7c-1.665 0-2.758-.574-3.242-1.604-.21-.446-.258-.809-.258-1.308 0-1.113.425-1.83 1.493-3.068.139-.16.203-.235.27-.314.539-.635.737-.99.737-1.299V12.08C6 7.296 9.472 3.5 14.005 3.5 18.535 3.5 22 7.294 22 12.081l-.005 1.827c0 .307.2.663.739 1.297.067.08.13.154.27.314 1.07 1.239 1.496 1.955 1.496 3.07 0 .5-.057.89-.294 1.357C23.7 20.94 22.618 21.5 21 21.5h-2.6zm-2.12 0H11.72c.451 1.043 1.178 1.5 2.28 1.5 1.102 0 1.829-.457 2.28-1.5z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 28;
-var height = 28;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 28,
+    height: !isNaN(props.height) ? +props.height : 28
   }));
 }
 
@@ -32890,38 +32924,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 28 28';
 var id = 'search_28';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" id="search_28"><g fill="none" fill-rule="evenodd"><path d="M0 0h28v28H0z" /><path d="M20.522 18.966l3.756 3.756a1.1 1.1 0 1 1-1.556 1.556l-3.756-3.756A9.56 9.56 0 0 1 13 22.6a9.6 9.6 0 1 1 9.6-9.6 9.56 9.56 0 0 1-2.078 5.966zM13 20.4a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 28;
-var height = 28;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 28,
+    height: !isNaN(props.height) ? +props.height : 28
   }));
 }
 
@@ -32940,38 +32974,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 28 28';
 var id = 'newsfeed_28';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" id="newsfeed_28"><g fill="none" fill-rule="evenodd"><path d="M0 0h28v28H0z" /><path d="M22.5 9v-.654c0-1.068-.073-1.449-.283-1.84a1.726 1.726 0 0 0-.723-.723c-.391-.21-.772-.283-1.84-.283H8.346c-1.068 0-1.449.073-1.84.283-.314.168-.555.409-.723.723-.21.391-.283.772-.283 1.84V9h17zm0 2h-17v8.654c0 1.068.073 1.449.283 1.84.168.314.409.555.723.723.391.21.772.283 1.84.283h11.308c1.068 0 1.449-.073 1.84-.283.314-.168.555-.409.723-.723.21-.391.283-.772.283-1.84V11zM8.346 3.5h11.308c1.37 0 2.063.134 2.783.519.663.355 1.19.881 1.544 1.544.385.72.519 1.413.519 2.783v11.308c0 1.37-.134 2.063-.519 2.783a3.726 3.726 0 0 1-1.544 1.544c-.72.385-1.413.519-2.783.519H8.346c-1.37 0-2.063-.134-2.783-.519a3.726 3.726 0 0 1-1.544-1.544c-.385-.72-.519-1.413-.519-2.783V8.346c0-1.37.134-2.063.519-2.783A3.726 3.726 0 0 1 5.563 4.02c.72-.385 1.413-.519 2.783-.519z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 28;
-var height = 28;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 28,
+    height: !isNaN(props.height) ? +props.height : 28
   }));
 }
 
@@ -32990,38 +33024,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'logo_vk_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="logo_vk_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M21.461 6.726c.092-.465-.11-.726-.586-.726h-2.4c-.55 0-.752.242-.917.596 0 0-1.272 2.947-2.851 4.717-.507.573-.596.745-.876.745-.226 0-.33-.191-.33-.708V6.826c0-.633-.072-.826-.586-.826H9.094c-.295 0-.492.163-.492.4 0 .596.898.73.898 2.346v3.332c0 .67-.037.931-.348.931-.825 0-2.966-2.869-4.066-6.146C4.866 6.193 4.63 6 4.004 6H1.61a.587.587 0 0 0-.61.603c0 .651.751 3.668 3.702 7.708 1.979 2.718 4.75 4.189 7.095 4.189 1.43 0 1.704-.252 1.704-.867v-2.085c0-.521.202-.745.495-.745.33 0 .816.118 2.177 1.481 1.612 1.564 1.722 2.216 2.602 2.216h2.693c.275 0 .532-.13.532-.596 0-.614-.788-1.713-1.997-3.016-.495-.67-1.302-1.396-1.558-1.731-.367-.392-.257-.615 0-1.025 0 0 2.741-4.103 3.016-5.406z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33040,38 +33074,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'more_horizontal_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="more_horizontal_24"><g fill="none" fill-rule="evenodd"><path d="M24 0H0v24h24z" /><path d="M18 10c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm-6 4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-6 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33090,38 +33124,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'privacy_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="privacy_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M5.995 5.18c.657 0 1.009.537 1.009 1.194v5.491c0 .216.253.395.47.395.223 0 .511-.18.511-.395V3.989c0-.66.33-1.192.99-1.192.658 0 1.021.531 1.021 1.192v7.079c0 .219.29.395.506.395.222 0 .495-.176.495-.395V3.19c0-.656.314-1.191.976-1.191.66 0 1.036.535 1.036 1.192v7.876c0 .219.242.395.464.395.216 0 .52-.176.52-.395V4.786c0-.661.319-1.177.975-1.177.66 0 1.022.516 1.022 1.176v10.729l2.286-2.676c.331-.447 1.004-.681 1.653-.257.337.197.859.81.194 1.678 0 0-2.444 3.088-3.803 4.738-1.295 1.654-3.81 2.503-5.514 2.503C5.248 21.5 5 17.712 5 16.43V6.374c0-.657.334-1.193.995-1.193" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33140,38 +33174,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'settings_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="settings_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M9.127 5.052c1.256-.72 1.473-1.469 1.623-2.219.167-.833.417-.833.833-.833h.834c.416 0 .583 0 .833.833.225.751.383 1.502 1.631 2.223 1.397.379 2.08.002 2.717-.422.707-.471.884-.294 1.178 0l.59.59c.294.294.412.412 0 1.178-.372.69-.791 1.333-.418 2.725.72 1.256 1.469 1.473 2.219 1.623.833.167.833.417.833.833v.834c0 .416 0 .583-.833.833-.751.225-1.502.383-2.223 1.631-.379 1.397-.002 2.08.422 2.717.471.707.294.884 0 1.178l-.59.59c-.294.294-.412.412-1.178 0-.69-.372-1.333-.791-2.725-.418-1.256.72-1.473 1.469-1.623 2.219-.167.833-.417.833-.833.833h-.834c-.416 0-.583 0-.833-.833-.225-.751-.383-1.502-1.631-2.223-1.397-.379-2.08-.002-2.717.422-.707.471-.884.294-1.178 0l-.59-.59c-.294-.294-.412-.412 0-1.178.372-.69.791-1.333.418-2.725-.72-1.256-1.469-1.473-2.219-1.623C2 13.083 2 12.833 2 12.417v-.834c0-.416 0-.583.833-.833.751-.225 1.502-.383 2.223-1.631.379-1.397.002-2.08-.422-2.717-.471-.707-.294-.884 0-1.178l.59-.59c.294-.294.412-.412 1.178 0 .69.372 1.333.791 2.725.418zM12 16.75a4.75 4.75 0 1 0 0-9.5 4.75 4.75 0 0 0 0 9.5z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33190,38 +33224,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'users_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="users_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M14.829 12.724A11.034 11.034 0 0 1 17 12.5c2.294 0 6.5.857 6.5 4.286 0 1.5-.382 1.714-1.147 1.714h-6.09c.158-.489.237-1.062.237-1.714 0-1.723-.631-3.067-1.671-4.062zM1.5 16.786C1.5 13.357 5.706 12.5 8 12.5c2.294 0 6.5.857 6.5 4.286 0 1.5-.382 1.714-1.147 1.714H2.647c-.765 0-1.147-.214-1.147-1.714zM11 8a3 3 0 1 1-6 0 3 3 0 1 1 6 0zm9 0a3 3 0 1 1-6 0 3 3 0 1 1 6 0z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33240,38 +33274,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'phone_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="phone_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M14.612 14.759c1.354-1.354 3.486-1.48 4.903-.287l1.025.863c1.168.983 1.287 2.757.263 3.96a3.318 3.318 0 0 1-2.195 1.133c-3.273.44-6.707-1.137-10.303-4.733C4.71 12.1 3.131 8.665 3.572 5.392a3.25 3.25 0 0 1 .159-.752c.19-.56.527-1.058.974-1.443 1.204-1.024 2.976-.906 3.96.264l.862 1.024c1.194 1.416 1.07 3.55-.284 4.903l-.736.735a.712.712 0 0 0-.164.748c.267.732.95 1.645 2.046 2.74 1.096 1.097 2.01 1.78 2.74 2.048.26.095.553.03.749-.166l.734-.734z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33290,38 +33324,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 16 12';
 var id = 'dropdown_16';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12" id="dropdown_16"><g fill="none" fill-rule="evenodd"><path d="M0 0h16v12H0z" /><path d="M4.454 3.691A.9.9 0 1 0 3.346 5.11l4.096 3.203a.9.9 0 0 0 1.109 0l4.1-3.203a.9.9 0 1 0-1.108-1.418L7.997 6.46l-3.543-2.77z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 16;
-var height = 12;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 16,
+    height: !isNaN(props.height) ? +props.height : 12
   }));
 }
 
@@ -33340,38 +33374,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 16 16';
 var id = 'like_16';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="like_16"><g fill="none" fill-rule="evenodd"><path d="M0 0h16v16H0z" /><path d="M11.079 2.5A3.921 3.921 0 0 1 15 6.421c0 2.187-.876 3.283-4.593 6.174l-1.69 1.315a1.167 1.167 0 0 1-1.433 0l-1.691-1.315C1.876 9.705 1 8.608 1 6.421A3.921 3.921 0 0 1 4.921 2.5c1.16 0 2.191.546 3.079 1.603C8.888 3.046 9.919 2.5 11.079 2.5z" fill="currentColor" fill-rule="nonzero" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 16;
-var height = 16;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 16,
+    height: !isNaN(props.height) ? +props.height : 16
   }));
 }
 
@@ -33390,38 +33424,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'document_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="document_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M4 5v13a3 3 0 0 0 3 3l11 .002A3 3 0 0 0 21 18l-.01-9.172a2 2 0 0 0-.585-1.413l-4.83-4.83A2 2 0 0 0 14.163 2H7a3 3 0 0 0-3 3zm10.012-.988l3.976 3.976a.3.3 0 0 1-.212.512H14a.5.5 0 0 1-.5-.5V4.224a.3.3 0 0 1 .512-.212z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33440,38 +33474,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'info_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="info_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14v-4a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0zm-.25-7.75v-.5a1 1 0 0 1 1-1h.5a1 1 0 0 1 1 1v.5a1 1 0 0 1-1 1h-.5a1 1 0 0 1-1-1z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33490,38 +33524,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'services_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="services_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M14.5 21h5a1.5 1.5 0 0 0 1.5-1.5v-5a1.5 1.5 0 0 0-1.5-1.5h-5a1.5 1.5 0 0 0-1.5 1.5v5a1.5 1.5 0 0 0 1.5 1.5zM11 19.5v-5A1.5 1.5 0 0 0 9.5 13h-5A1.5 1.5 0 0 0 3 14.5v5A1.5 1.5 0 0 0 4.5 21h5a1.5 1.5 0 0 0 1.5-1.5zM4.5 11h5A1.5 1.5 0 0 0 11 9.5v-5A1.5 1.5 0 0 0 9.5 3h-5A1.5 1.5 0 0 0 3 4.5v5A1.5 1.5 0 0 0 4.5 11zm7.56-2.6l3.54 3.54a1.5 1.5 0 0 0 2.12 0l3.54-3.538a1.5 1.5 0 0 0 0-2.123l-3.54-3.531a1.5 1.5 0 0 0-2.12 0l-3.54 3.531a1.5 1.5 0 0 0 0 2.123z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33540,38 +33574,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 12 24';
 var id = 'more_vertical_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" id="more_vertical_24"><g fill="none" fill-rule="evenodd"><path d="M12 0H0v24h12z" /><path d="M6 16c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0-2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 12;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 12,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33590,38 +33624,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'story_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="story_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M8.128 3h7.744c1.783 0 2.43.186 3.082.534.652.349 1.163.86 1.512 1.512.348.652.534 1.299.534 3.082v7.744c0 1.783-.186 2.43-.534 3.082a3.635 3.635 0 0 1-1.512 1.512c-.652.348-1.299.534-3.082.534H8.128c-1.783 0-2.43-.186-3.082-.534a3.635 3.635 0 0 1-1.512-1.512C3.186 18.302 3 17.655 3 15.872V8.128c0-1.783.186-2.43.534-3.082a3.635 3.635 0 0 1 1.512-1.512C5.698 3.186 6.345 3 8.128 3zm-1.125 9.003c0 2.76 2.24 5 5 5s5-2.24 5-5-2.24-5-5-5-5 2.24-5 5zM8.8 12a3.2 3.2 0 1 1 6.4 0 3.2 3.2 0 0 1-6.4 0z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33640,38 +33674,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'add_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="add_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M13 11h6.5a1 1 0 0 1 0 2H13v6.5a1 1 0 0 1-2 0V13H4.5a1 1 0 0 1 0-2H11V4.5a1 1 0 0 1 2 0V11z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33690,38 +33724,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'shuffle_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="shuffle_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M19 15v-1.233a.502.502 0 0 1 .808-.4l2.92 2.234a.502.502 0 0 1 0 .798l-2.92 2.233a.502.502 0 0 1-.808-.399V17h-3.5c-1.702 0-2.746-.844-4.5-3.262C9.246 16.156 8.202 17 6.5 17H4a1 1 0 0 1 0-2h2.5c.893 0 1.706-.763 3.282-3C8.206 9.763 7.392 9 6.5 9H4a1 1 0 1 1 0-2h2.5c1.702 0 2.746.844 4.5 3.262C12.754 7.844 13.798 7 15.5 7H19V5.767a.502.502 0 0 1 .808-.4l2.92 2.234a.502.502 0 0 1 0 .798l-2.92 2.233a.502.502 0 0 1-.808-.399V9h-3.5c-.893 0-1.706.763-3.282 3 1.576 2.237 2.39 3 3.282 3H19z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33740,38 +33774,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 24 24';
 var id = 'camera_24';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="camera_24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" /><path d="M9.629 3.5h4.742c.69 0 1.094.2 1.49.666l.718.888c.364.45 1.105.946 1.785.946h.454C21 6 22 7.333 22 9.556v6.888C22 18.408 20.372 20 18.364 20H5.636C3.628 20 2 18.408 2 16.444V9.556C2 7.333 3 6 5.182 6h.454c.68 0 1.42-.497 1.785-.946.363-.448.697-.864.718-.888.396-.465.8-.666 1.49-.666zM7 12.5c0 2.76 2.24 5 5 5s5-2.24 5-5-2.24-5-5-5-5 2.24-5 5zm1.6 0a3.4 3.4 0 1 1 6.8 0 3.4 3.4 0 0 1-6.8 0z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 24;
-var height = 24;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 24,
+    height: !isNaN(props.height) ? +props.height : 24
   }));
 }
 
@@ -33790,38 +33824,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _react = _interopRequireDefault(__webpack_require__(0));
+
 var _browserSymbol = _interopRequireDefault(__webpack_require__(12));
+
+var _es6ObjectAssign = __webpack_require__(9);
 
 var _sprite = _interopRequireDefault(__webpack_require__(11));
 
 var _SvgIcon = _interopRequireDefault(__webpack_require__(10));
-
-var _react = _interopRequireDefault(__webpack_require__(0));
-
-var _es6ObjectAssign = _interopRequireDefault(__webpack_require__(9));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var viewBox = '0 0 16 16';
 var id = 'add_16';
 var content = '<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="add_16"><g fill="none" fill-rule="evenodd"><path d="M0 0h16v16H0z" /><path d="M9 9v4a1 1 0 0 1-2 0V9H3a1 1 0 1 1 0-2h4V3a1 1 0 1 1 2 0v4h4a1 1 0 0 1 0 2H9z" fill="currentColor" /></g></symbol>';
-var browserSymbol = new _browserSymbol.default({
-  id: id,
-  viewBox: viewBox,
-  content: content
-});
 
-_sprite.default.add(browserSymbol);
+if (_sprite.default) {
+  var browserSymbol = new _browserSymbol.default({
+    id: id,
+    viewBox: viewBox,
+    content: content
+  });
 
-var width = 16;
-var height = 16;
+  _sprite.default.add(browserSymbol);
+}
 
 function Icon(props) {
-  return _react.default.createElement(_SvgIcon.default, _es6ObjectAssign.default.assign({}, props, {
-    width: width,
-    height: height,
+  return _react.default.createElement(_SvgIcon.default, (0, _es6ObjectAssign.assign)({}, props, {
     viewBox: viewBox,
-    id: id
+    id: id,
+    width: !isNaN(props.width) ? +props.width : 16,
+    height: !isNaN(props.height) ? +props.height : 16
   }));
 }
 
