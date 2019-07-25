@@ -2626,6 +2626,9 @@ body[scheme="space_gray"] {
     padding-bottom: 20px;
     margin-bottom: -20px;
     }
+.HorizontalScroll__in::-webkit-scrollbar {
+    display: none;
+  }
 .InnerScroll {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -3393,6 +3396,7 @@ body[scheme="space_gray"] {
   padding: 8px;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
+  box-sizing: border-box;
 }
 .ModalCard--ios .ModalCard__in {
   transition: -webkit-transform 340ms cubic-bezier(.36, .66, .04, 1);
@@ -4009,22 +4013,15 @@ body[scheme="space_gray"] {
 /*
   iOS
  */
-.Button--ios {}
-.Button--ios.Button--sz-m {
-  border-radius: 15px;
-  }
-.Button--ios.Button--sz-l {
-  border-radius: 18px;
-  }
-.Button--ios.Button--sz-xl {
+.Button--ios {
   border-radius: 10px;
-  }
+}
 /*
   Android
  */
 .Button--android {
   border-radius: 8px;
-  }
+}
 /**
  * Counter
  */
@@ -5563,18 +5560,19 @@ body[scheme="space_gray"] {
   height: 32px;
   border: 1px solid;
   font-size: 14px;
+  line-height: 18px;
   padding: 0 12px;
   }
 .Tabs--ios.Tabs--default .TabsItem:not(:first-child) {
   border-left: none;
   }
 .Tabs--ios.Tabs--default .TabsItem:last-child {
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   }
 .Tabs--ios.Tabs--default .TabsItem:first-child {
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   }
 .Tabs--ios.Tabs--default.Tabs--light .TabsItem {
   border-color: #99a2ad;
@@ -5614,11 +5612,12 @@ body[scheme="space_gray"] {
   color: var(--header_background);
   }
 .Tabs--ios.Tabs--buttons .TabsItem {
-  height: 32px;
-  border-radius: 16px;
+  height: 30px;
+  border-radius: 10px;
   box-sizing: border-box;
   padding: 0 16px;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 500;
   }
 /* Для случая, когда внутри Tabs нет HorizontalScroll */
