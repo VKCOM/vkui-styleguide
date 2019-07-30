@@ -5993,7 +5993,16 @@ body[scheme="space_gray"] {
     display: block;
     }
 .FormLayout__row-top {
+    font-size: 14px;
     line-height: 18px;
+    color: #909499;
+    color: var(--text_secondary);
+    }
+.FormLayout__row-bottom {
+    font-size: 13px;
+    line-height: 16px;
+    color: #909499;
+    color: var(--text_secondary);
     }
 .FormLayout__submit {
     position: absolute;
@@ -6039,16 +6048,10 @@ body[scheme="space_gray"] {
       margin-right: 26px;
       }
 .FormLayout--ios .FormLayout__row-top {
-      color: #909499;
-      color: var(--text_secondary);
       padding: 2px 12px 8px;
-      font-size: 14px;
       }
 .FormLayout--ios .FormLayout__row-bottom {
-      color: #909499;
-      color: var(--text_secondary);
       padding: 8px 12px 0;
-      font-size: 13px;
       }
 .FormLayout--android {}
 .FormLayout--android .FormLayout__row {
@@ -6081,16 +6084,10 @@ body[scheme="space_gray"] {
       margin-right: 30px;
       }
 .FormLayout--android .FormLayout__row-top {
-      color: #909499;
-      color: var(--text_secondary);
       padding: 2px 16px 8px;
-      font-size: 14px;
       }
 .FormLayout--android .FormLayout__row-bottom {
       padding: 8px 16px 0;
-      font-size: 13px;
-      color: #909499;
-      color: var(--text_secondary);
       }
 .FormLayout__row--s-error .FormLayout__row-bottom {
       color: #e64646;
@@ -6112,7 +6109,7 @@ body[scheme="space_gray"] {
   }
 .FormStatus {
   border-radius: 10px;
-  padding: 12px;
+  padding: 14px 12px;
   background: #f2f3f5;
   background: var(--field_background);
   color: #000000;
@@ -6128,13 +6125,14 @@ body[scheme="space_gray"] {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.25;
+    margin-top: -2px;
     }
 .FormStatus__title:not(:last-child) {
     margin-bottom: 2px;
     }
 .FormStatus__content {
     font-size: 13px;
-    line-height: 1.23;
+    line-height: 16px;
     }
 .FormStatus__content b {
       font-weight: 500;
