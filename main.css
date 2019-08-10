@@ -5985,6 +5985,34 @@ body[scheme="space_gray"] {
   margin: 8px 0 0;
   text-align: center;
 }
+.Separator {}
+.Separator__in {
+  height: 1px;
+  background: #d7d8d9;
+  background: var(--separator_common);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .Separator__in {
+    -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx) {
+  .Separator__in {
+    -webkit-transform: scaleY(.32);
+            transform: scaleY(.32);
+  }
+}
+.Separator:not(.Separator--wide).Separator--ios .Separator__in {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.Separator:not(.Separator--wide).Separator--android .Separator__in {
+  margin-left: 16px;
+  margin-right: 16px;
+}
 /* Forms */
 .FormLayout {
   position: relative;
