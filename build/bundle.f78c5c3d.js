@@ -4555,7 +4555,7 @@ exports.default = _default;
 /* 31 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.24.0","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.2","@vkontakte/icons":"^1.7.0","@vkontakte/vkui-connect":"^1.4.0","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.8.6","react-docgen":"^2.20.0","react-dom":"^16.8.6","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.4.0","prop-types":"^15.6.1","@vkontakte/icons":"^1.6.0"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.24.1","main":"dist/vkui.js","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.2.0","@babel/preset-react":"^7.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.2","@vkontakte/icons":"^1.7.0","@vkontakte/vkui-connect":"^1.4.0","autoprefixer":"^7.2.3","babel-eslint":"^8.2.3","babel-loader":"^8.0.4","css-loader":"^2.0.1","eslint":"^4.19.1","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^3.3.0","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^2.0.0","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.8.6","react-docgen":"^2.20.0","react-dom":"^16.8.6","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vkui-connect":"^1.4.0","prop-types":"^15.6.1","@vkontakte/icons":"^1.6.0"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","dev":"NODE_ENV=development webpack --watch","dev:babel":"babel src --out-dir dist --source-maps --watch","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","build":"NODE_ENV=production webpack && babel src --out-dir dist --source-maps && cp ./src/styles/client_light.css ./dist/default_scheme.css","clear":"rm -rf dist/*","test":"eslint . && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 32 */
@@ -34942,6 +34942,8 @@ var transitionEvents = __webpack_require__(14);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TYPE_PAGE", function() { return TYPE_PAGE; });
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -35112,6 +35114,7 @@ function (_Component) {
           state.settlingHeight = modalProps.settlingHeight;
         }
 
+        state.dynamicContentHeight = !!modalProps.dynamicContentHeight;
         state.onClose = Modal.props.onClose;
         state.id = Modal.props.id;
         acc[state.id] = state;
@@ -35132,6 +35135,18 @@ function (_Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       var _this2 = this;
+
+      var _this$state = this.state,
+          activeModal = _this$state.activeModal,
+          switching = _this$state.switching;
+
+      if (activeModal && this.modalsState[activeModal] && !switching && this.props.children !== prevProps.children) {
+        var modalState = this.modalsState[activeModal];
+
+        if (modalState && modalState.type === TYPE_PAGE && modalState.dynamicContentHeight) {
+          this.checkPageContentHeight();
+        }
+      }
 
       if (this.props.activeModal !== prevProps.activeModal && !this.state.switching) {
         var nextModal = this.props.activeModal;
@@ -35258,7 +35273,7 @@ function (_Component) {
     value: function initPageModal(modalState, modalElement) {
       var contentElement = modalElement.querySelector('.ModalPage__content');
       var contentHeight = contentElement.firstChild.offsetHeight;
-      modalState.isExpandable = contentHeight > contentElement.clientHeight;
+      modalState.expandable = contentHeight > contentElement.clientHeight;
       modalState.modalElement = modalElement;
       modalState.innerElement = modalElement.querySelector('.ModalPage__in-wrap');
       modalState.headerElement = modalElement.querySelector('.ModalPage__header');
@@ -35267,12 +35282,11 @@ function (_Component) {
       var collapsed;
       var translateYFrom;
       var translateY;
-      var translateYAbs;
       var expandedRange;
       var collapsedRange;
       var hiddenRange;
 
-      if (modalState.isExpandable) {
+      if (modalState.expandable) {
         translateYFrom = 100 - modalState.settlingHeight;
         var shiftHalf = translateYFrom / 2;
         var visiblePart = 100 - translateYFrom;
@@ -35281,19 +35295,15 @@ function (_Component) {
         hiddenRange = [translateYFrom + visiblePart / 4, 100];
         collapsed = true;
         translateY = translateYFrom;
-        translateYAbs = translateYFrom;
       } else {
-        translateYFrom = 0;
-        expandedRange = [0, 25];
-        collapsedRange = [25, 25];
-        hiddenRange = [25, 100];
-        collapsed = false;
-        translateY = 0;
         var headerHeight = modalState.headerElement.offsetHeight;
-        modalState.height = contentHeight + headerHeight + (this.props.insets.bottom || 0);
-        modalState.innerElement.style.height = modalState.height + 'px'; // Абсолютный сдвиг фиксированной страницы
-
-        translateYAbs = 100 - modalState.height / modalState.innerElement.parentNode.offsetHeight * 100;
+        var height = contentHeight + headerHeight + (this.props.insets.bottom || 0);
+        translateYFrom = 100 - height / modalState.innerElement.parentNode.offsetHeight * 100;
+        translateY = translateYFrom;
+        expandedRange = [translateY, translateY + 25];
+        collapsedRange = [translateY + 25, translateY + 25];
+        hiddenRange = [translateY + 25, translateY + 100];
+        collapsed = false;
       }
 
       modalState.expandedRange = expandedRange;
@@ -35301,7 +35311,6 @@ function (_Component) {
       modalState.hiddenRange = hiddenRange;
       modalState.translateY = translateY;
       modalState.translateYFrom = translateYFrom;
-      modalState.translateYAbs = translateYAbs;
       modalState.collapsed = collapsed;
     }
   }, {
@@ -35310,6 +35319,32 @@ function (_Component) {
       modalState.modalElement = modalElement;
       modalState.innerElement = modalElement.querySelector('.ModalCard__in');
       modalState.translateY = 0;
+    }
+  }, {
+    key: "checkPageContentHeight",
+    value: function checkPageContentHeight() {
+      var activeModal = this.state.activeModal;
+      var modalElement = this.pickModal(activeModal);
+      var modalState = this.modalsState[activeModal];
+
+      var prevModalState = _objectSpread({}, modalState);
+
+      this.initPageModal(modalState, modalElement);
+
+      var currentModalState = _objectSpread({}, modalState);
+
+      var diff = Object.keys(currentModalState).reduce(function (acc, key) {
+        if (prevModalState[key] !== currentModalState[key]) {
+          acc[key] = currentModalState[key];
+        }
+
+        return acc;
+      }, {});
+
+      if (Object.keys(diff).length) {
+        this.animateTranslate(modalState);
+        this.animatePageHeader(modalState);
+      }
     }
   }, {
     key: "closeActiveModal",
@@ -35341,7 +35376,7 @@ function (_Component) {
       }
 
       originalEvent.stopPropagation();
-      var isExpandable = modalState.isExpandable,
+      var expandable = modalState.expandable,
           contentScrolled = modalState.contentScrolled,
           collapsed = modalState.collapsed,
           expanded = modalState.expanded;
@@ -35360,9 +35395,9 @@ function (_Component) {
         modalState.touchMovePositive = shiftY > 0;
       }
 
-      if (!modalState.isExpandable || collapsed || expanded && modalState.touchMovePositive && modalState.touchStartContentScrollTop === 0 || originalEvent.target.closest('.ModalPage__header')) {
+      if (!modalState.expandable || collapsed || expanded && modalState.touchMovePositive && modalState.touchStartContentScrollTop === 0 || originalEvent.target.closest('.ModalPage__header')) {
         originalEvent.preventDefault();
-        if (!isExpandable && shiftY < 0) return;
+        if (!expandable && shiftY < 0) return;
         !this.state.dragging && this.setState({
           dragging: true
         });
@@ -35417,7 +35452,7 @@ function (_Component) {
         translateY = rangeTranslate(translateY + expectTranslateY);
 
         if (numberInRange(translateY, modalState.expandedRange)) {
-          translateY = 0;
+          translateY = modalState.expandedRange[0];
         } else if (numberInRange(translateY, modalState.collapsedRange)) {
           translateY = modalState.translateYFrom;
         } else if (numberInRange(translateY, modalState.hiddenRange)) {
@@ -35506,9 +35541,9 @@ function (_Component) {
     value: function switchPrevNext() {
       var _this5 = this;
 
-      var _this$state = this.state,
-          prevModal = _this$state.prevModal,
-          nextModal = _this$state.nextModal;
+      var _this$state2 = this.state,
+          prevModal = _this$state2.prevModal,
+          nextModal = _this$state2.nextModal;
       var prevModalState = this.modalsState[prevModal];
       var nextModalState = this.modalsState[nextModal];
 
@@ -35536,8 +35571,8 @@ function (_Component) {
         this.activeTransitions += 1;
         this.waitTransitionFinish(prevModalState, this.prevNextSwitchEndHandler);
 
-        if (prevIsPage && prevModalState.translateY <= nextModalState.translateYAbs && !this.state.isBack) {
-          this.animateTranslate(prevModalState, nextModalState.translateYAbs + 10);
+        if (prevIsPage && prevModalState.translateY <= nextModalState.translateYFrom && !this.state.isBack) {
+          this.animateTranslate(prevModalState, nextModalState.translateYFrom + 10);
         } else {
           this.animateTranslate(prevModalState, 100);
         }
@@ -35575,7 +35610,7 @@ function (_Component) {
         }
       });
 
-      if (modalState.type === TYPE_PAGE && modalState.isExpandable) {
+      if (modalState.type === TYPE_PAGE && modalState.expandable) {
         this.animatePageHeader(modalState, currentPercent);
       }
     }
@@ -35644,15 +35679,15 @@ function (_Component) {
     value: function render() {
       var _this7 = this;
 
-      var _this$state2 = this.state,
-          prevModal = _this$state2.prevModal,
-          activeModal = _this$state2.activeModal,
-          nextModal = _this$state2.nextModal,
-          visibleModals = _this$state2.visibleModals,
-          animated = _this$state2.animated,
-          touchDown = _this$state2.touchDown,
-          dragging = _this$state2.dragging,
-          switching = _this$state2.switching;
+      var _this$state3 = this.state,
+          prevModal = _this$state3.prevModal,
+          activeModal = _this$state3.activeModal,
+          nextModal = _this$state3.nextModal,
+          visibleModals = _this$state3.visibleModals,
+          animated = _this$state3.animated,
+          touchDown = _this$state3.touchDown,
+          dragging = _this$state3.dragging,
+          switching = _this$state3.switching;
       if (!activeModal && !prevModal && !nextModal && !animated) return null;
       return react_default.a.createElement(Touch["TouchRootContext"].Provider, {
         value: true
@@ -35685,7 +35720,7 @@ function (_Component) {
             'ModalRoot__modal--prev': modalId === prevModal,
             'ModalRoot__modal--next': modalId === nextModal,
             'ModalRoot__modal--dragging': dragging,
-            'ModalRoot__modal--expandable': isPage && modalState.isExpandable,
+            'ModalRoot__modal--expandable': isPage && modalState.expandable,
             'ModalRoot__modal--expanded': isPage && modalState.expanded,
             'ModalRoot__modal--collapsed': isPage && modalState.collapsed
           })
@@ -54773,6 +54808,13 @@ module.exports = {
             'name': 'children'
         },
         {
+            'type': { 'name': 'bool' },
+            'required': false,
+            'description': 'Если высота контента в модальной странице может поменяться, нужно установить это свойство',
+            'tags': {},
+            'name': 'dynamicContentHeight'
+        },
+        {
             'type': { 'name': 'number' },
             'required': false,
             'description': 'Процент, на который изначально будет открыта модальная страница',
@@ -54883,6 +54925,11 @@ _defineProperty(ModalPage, "propTypes", {
    * Процент, на который изначально будет открыта модальная страница
    */
   settlingHeight: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.number,
+
+  /**
+   * Если высота контента в модальной странице может поменяться, нужно установить это свойство
+   */
+  dynamicContentHeight: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
 
   /**
    * @ignore
