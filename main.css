@@ -3587,8 +3587,6 @@ body[scheme="space_gray"] {
   overflow-y: hidden;
   overflow-x: hidden;
   box-sizing: border-box;
-  padding-bottom: 0px;
-  padding-bottom: var(--safe-area-inset-bottom);
 }
 .ModalRoot__modal--expandable .ModalPage__content {
   overflow-y: scroll;
@@ -3596,6 +3594,8 @@ body[scheme="space_gray"] {
 }
 .ModalPage__content-in {
   position: relative;
+  padding-bottom: 0px;
+  padding-bottom: var(--safe-area-inset-bottom);
 }
 .ModalRoot__modal--collapsed .ModalPage__content,
 .ModalRoot__modal--dragging .ModalPage__content {
@@ -4153,14 +4153,14 @@ body[scheme="space_gray"] {
       white-space: nowrap;
       text-overflow: ellipsis;
     }
-.Header--level-1 .Header__content {
+.Header--level-primary .Header__content {
       color: #000000;
       color: var(--text_primary);
       font-size: 17px;
       line-height: 20px;
       font-weight: 500;
       }
-.Header--level-2 .Header__content {
+.Header--level-secondary .Header__content {
       color: #909499;
       color: var(--text_secondary);
       font-size: 13px;
@@ -4182,10 +4182,10 @@ body[scheme="space_gray"] {
 .Header--ios .Header__aside {
     font-size: 15px;
     }
-.Header--ios.Header--level-1 .Header__content {
+.Header--ios.Header--level-primary .Header__content {
     padding: 14px 0;
     }
-.Header--ios.Header--level-2 .Header__content {
+.Header--ios.Header--level-secondary .Header__content {
     padding: 15px 0 14px;
     }
 .Header--android {
@@ -4195,10 +4195,10 @@ body[scheme="space_gray"] {
     font-size: 14px;
     font-weight: 500;
     }
-.Header--android.Header--level-1 .Header__content {
+.Header--android.Header--level-primary .Header__content {
     padding: 18px 0;
     }
-.Header--android.Header--level-2 .Header__content {
+.Header--android.Header--level-secondary .Header__content {
     padding: 15px 0 14px;
     }
 .Group {
