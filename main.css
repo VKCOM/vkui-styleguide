@@ -1,4 +1,3 @@
-/* Файл, который содержит стили со всеми темами и компонентами */
 /* stylelint-disable */
 /*
 * Этот файл сгенерирован автоматически. Не надо править его руками.
@@ -6663,23 +6662,23 @@ div#root {
   -webkit-text-size-adjust: 100%;
   font-family: -apple-system, Roboto, Helvetica Neue, Arial;
   font-family: var(--font-common);
-}
+  }
 body {
   overflow-x: hidden;
-}
+  }
 input,
 textarea,
 select,
 button {
   font-family: inherit;
-}
+  }
 #root {
   -webkit-user-select: none;
           user-select: none;
-}
+  }
 a:focus {
   outline: none;
-}
+  }
 
 [class*=rsg--para] > [class*=rsg--code],
 [class*=rsg--li] > [class*=rsg--code] {
