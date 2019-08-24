@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "build/" + ({}[chunkId]||chunkId) + "." + {"0":"f8fd4113"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "build/" + ({}[chunkId]||chunkId) + "." + {"0":"008ef1af"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -3228,7 +3228,7 @@ var Link = __webpack_require__(28);
 var Text = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/index.js + 1 modules
-var Para = __webpack_require__(44);
+var Para = __webpack_require__(45);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
 var Styled = __webpack_require__(7);
@@ -4564,7 +4564,7 @@ exports.default = _default;
 /* 31 */
 /***/ (function(module) {
 
-module.exports = {"name":"@vkontakte/vkui","version":"2.26.0","main":"dist/index.js","typings":"dist/index.d.ts","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.5.5","@babel/preset-react":"^7.0.0","@babel/preset-typescript":"^7.3.3","@types/node":"^12.7.2","@types/react":"^16.9.2","@types/react-dom":"^16.8.5","@typescript-eslint/eslint-plugin":"^2.0.0","@typescript-eslint/parser":"^2.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.2","@vkontakte/icons":"^1.7.0","@vkontakte/vk-connect":"^1.5.5","autoprefixer":"^7.2.3","babel-loader":"^8.0.4","concurrently":"^4.1.2","css-loader":"^3.2.0","declaration-bundler-webpack-plugin":"^1.0.3","eslint":"^5.16.0","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^4.2.1","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^4.0.1","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"^3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.8.6","react-docgen":"^2.20.0","react-docgen-typescript":"^1.12.5","react-dom":"^16.8.6","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","source-map-loader":"^0.2.4","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","ts-loader":"^6.0.4","typescript":"^3.5.3","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vk-connect":"^1.5.5","prop-types":"^15.6.1","@vkontakte/icons":"^1.6.0"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","dev":"npm run clear && concurrently \"npm:tsc-dev\" \"npm:babel-dev\" \"npm:postcss-dev\"","postcss-dev":"postcss src/styles/styles.css --output dist/vkui.css --watch --verbose --no-map","babel-dev":"babel src/ --out-dir dist/ --extensions .tsx,.jsx,.ts,.js --watch","tsc-dev":"tsc --noEmit --watch --preserveWatchOutput","build":"npm run tsc && npm run babel && webpack && npm run postcss && cp ./src/styles/client_light.css ./dist/default_scheme.css","postcss":"postcss src/styles/styles.css --output dist/vkui.css","babel":"babel src/ --out-dir dist/ --source-maps --extensions .tsx,.jsx,.ts,.js","tsc":"tsc --emitDeclarationOnly --declaration","clear":"rm -rf dist/*","test":"eslint --ext .tsx,.jsx,.ts,.js src/ && stylelint './src/**/*.css'"},"pre-commit":["test"]};
+module.exports = {"name":"@vkontakte/vkui","version":"2.26.1","main":"dist/index.js","typings":"dist/index.d.ts","license":"MIT","description":"VKUI library","repository":"https://github.com/VKCOM/VKUI","homepage":"https://vkcom.github.io/vkui-styleguide","defaultSchemeId":"client_light","devDependencies":{"@babel/cli":"^7.2.0","@babel/core":"^7.2.2","@babel/plugin-proposal-class-properties":"^7.2.1","@babel/plugin-proposal-object-rest-spread":"^7.2.0","@babel/preset-env":"^7.5.5","@babel/preset-react":"^7.0.0","@babel/preset-typescript":"^7.3.3","@types/node":"^12.7.2","@types/react":"^16.9.2","@types/react-dom":"^16.8.5","@typescript-eslint/eslint-plugin":"^2.0.0","@typescript-eslint/parser":"^2.0.0","@vkontakte/appearance":"git@github.com:VKCOM/Appearance.git#2.2","@vkontakte/icons":"^1.7.0","@vkontakte/vk-connect":"^1.5.5","autoprefixer":"^7.2.3","babel-loader":"^8.0.4","concurrently":"^4.1.2","css-loader":"^3.2.0","declaration-bundler-webpack-plugin":"^1.0.3","eslint":"^5.16.0","eslint-config-semistandard":"^7.0.0","eslint-config-standard":"^6.0.1","eslint-plugin-promise":"^4.2.1","eslint-plugin-react":"^7.9.1","eslint-plugin-standard":"^4.0.1","mini-css-extract-plugin":"^0.4.0","postcss":"^7.0.7","postcss-custom-properties":"^8.0.9","postcss-import":"^12.0.1","postcss-loader":"^3.0.0","pre-commit":"^1.2.2","prop-types":"^15.6.1","react":"^16.8.6","react-docgen":"^2.20.0","react-docgen-typescript":"^1.12.5","react-dom":"^16.8.6","react-frame-component":"^3.0.0","react-styleguidist":"^7.0.17","source-map-loader":"^0.2.4","stylelint":"^9.3.0","stylelint-config-standard":"^16.0.0","ts-loader":"^6.0.4","typescript":"^3.5.3","webpack":"^4.12.0","webpack-cli":"^3.0.3","webpack-merge":"^4.0.0"},"bin":{"generate_scheme":"./tasks/generate_scheme.js"},"peerDependencies":{"react-dom":"^16.8.6","react":"^16.8.6","@vkontakte/vk-connect":"^1.5.5","prop-types":"^15.6.1","@vkontakte/icons":"^1.6.0"},"scripts":{"release":"./tasks/release.sh","prepublishOnly":"npm run clear && npm run build","styleguide":"NODE_ENV=development styleguidist server --config=styleguide/config.js","styleguide:build":"NODE_ENV=production styleguidist build --config=styleguide/config.js","dev":"npm run clear && concurrently \"npm:tsc-dev\" \"npm:babel-dev\" \"npm:postcss-dev\"","postcss-dev":"postcss src/styles/styles.css --output dist/vkui.css --watch --verbose --no-map","babel-dev":"babel src/ --out-dir dist/ --extensions .tsx,.jsx,.ts,.js --watch","tsc-dev":"tsc --noEmit --watch --preserveWatchOutput","build":"npm run tsc && npm run babel && webpack && npm run postcss && cp ./src/styles/client_light.css ./dist/default_scheme.css","postcss":"postcss src/styles/styles.css --output dist/vkui.css","babel":"babel src/ --out-dir dist/ --source-maps --extensions .tsx,.jsx,.ts,.js","tsc":"tsc --emitDeclarationOnly --declaration","clear":"rm -rf dist/*","test":"eslint --ext .tsx,.jsx,.ts,.js src/ && stylelint './src/**/*.css'"},"pre-commit":["test"]};
 
 /***/ }),
 /* 32 */
@@ -5555,69 +5555,6 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 var prop_types = __webpack_require__(0);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(7);
-
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/ParaRenderer.js
-
-
-
-
-var styles = function styles(_ref) {
-	var space = _ref.space,
-	    color = _ref.color,
-	    fontFamily = _ref.fontFamily;
-	return {
-		para: {
-			marginTop: 0,
-			marginBottom: space[2],
-			color: color.base,
-			fontFamily: fontFamily.base,
-			fontSize: 'inherit',
-			lineHeight: 1.5
-		}
-	};
-};
-
-function ParaRenderer(_ref2) {
-	var classes = _ref2.classes,
-	    semantic = _ref2.semantic,
-	    children = _ref2.children;
-
-	var Tag = semantic || 'div';
-
-	return react_default.a.createElement(
-		Tag,
-		{ className: classes.para },
-		children
-	);
-}
-
-ParaRenderer.propTypes = {
-	classes: prop_types_default.a.object.isRequired,
-	semantic: prop_types_default.a.oneOf(['p']),
-	children: prop_types_default.a.node.isRequired
-};
-
-/* harmony default export */ var Para_ParaRenderer = (Object(Styled["a" /* default */])(styles)(ParaRenderer));
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/index.js
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Para_ParaRenderer; });
-
-
-/***/ }),
-/* 45 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(1);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(0);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Markdown/index.js + 20 modules
 var Markdown = __webpack_require__(16);
 
@@ -5687,6 +5624,69 @@ JsDoc.propTypes = {
 };
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/JsDoc/index.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return JsDoc; });
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(1);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(0);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
+var Styled = __webpack_require__(7);
+
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/ParaRenderer.js
+
+
+
+
+var styles = function styles(_ref) {
+	var space = _ref.space,
+	    color = _ref.color,
+	    fontFamily = _ref.fontFamily;
+	return {
+		para: {
+			marginTop: 0,
+			marginBottom: space[2],
+			color: color.base,
+			fontFamily: fontFamily.base,
+			fontSize: 'inherit',
+			lineHeight: 1.5
+		}
+	};
+};
+
+function ParaRenderer(_ref2) {
+	var classes = _ref2.classes,
+	    semantic = _ref2.semantic,
+	    children = _ref2.children;
+
+	var Tag = semantic || 'div';
+
+	return react_default.a.createElement(
+		Tag,
+		{ className: classes.para },
+		children
+	);
+}
+
+ParaRenderer.propTypes = {
+	classes: prop_types_default.a.object.isRequired,
+	semantic: prop_types_default.a.oneOf(['p']),
+	children: prop_types_default.a.node.isRequired
+};
+
+/* harmony default export */ var Para_ParaRenderer = (Object(Styled["a" /* default */])(styles)(ParaRenderer));
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/index.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Para_ParaRenderer; });
 
 
 /***/ }),
@@ -7934,93 +7934,6 @@ var react_default = /*#__PURE__*/__webpack_require__.n(react);
 var prop_types = __webpack_require__(0);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/index.js + 1 modules
-var Argument = __webpack_require__(46);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Heading/index.js + 1 modules
-var Heading = __webpack_require__(43);
-
-// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
-var Styled = __webpack_require__(7);
-
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/ArgumentsRenderer.js
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-
-
-
-
-
-
-var styles = function styles(_ref) {
-	var space = _ref.space;
-	return {
-		root: {
-			marginBottom: space[2],
-			fontSize: 'inherit'
-		},
-		headingWrapper: {
-			marginBottom: space[0]
-		}
-	};
-};
-
-function ArgumentsRenderer(_ref2) {
-	var classes = _ref2.classes,
-	    args = _ref2.args,
-	    heading = _ref2.heading;
-
-	if (args.length === 0) {
-		return null;
-	}
-
-	return react_default.a.createElement(
-		'div',
-		{ className: classes.root },
-		heading && react_default.a.createElement(
-			'div',
-			{ className: classes.headingWrapper },
-			react_default.a.createElement(
-				Heading["a" /* default */],
-				{ level: 5 },
-				'Arguments'
-			)
-		),
-		args.map(function (arg) {
-			return react_default.a.createElement(Argument["a" /* default */], _extends({ key: arg.name }, arg));
-		})
-	);
-}
-
-ArgumentsRenderer.propTypes = {
-	classes: prop_types_default.a.object.isRequired,
-	args: prop_types_default.a.arrayOf(prop_types_default.a.shape({
-		name: prop_types_default.a.string.isRequired,
-		type: prop_types_default.a.object,
-		description: prop_types_default.a.string
-	})).isRequired,
-	heading: prop_types_default.a.bool
-};
-
-/* harmony default export */ var Arguments_ArgumentsRenderer = (Object(Styled["a" /* default */])(styles)(ArgumentsRenderer));
-// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/index.js
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Arguments_ArgumentsRenderer; });
-
-
-/***/ }),
-/* 69 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(1);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(0);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
 var Styled = __webpack_require__(7);
 
@@ -8133,6 +8046,93 @@ TableRenderer.propTypes = {
 /* harmony default export */ var Table_TableRenderer = (Object(Styled["a" /* default */])(styles)(TableRenderer));
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Table/index.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Table_TableRenderer; });
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(1);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(0);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Argument/index.js + 1 modules
+var Argument = __webpack_require__(46);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Heading/index.js + 1 modules
+var Heading = __webpack_require__(43);
+
+// EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Styled/index.js + 3 modules
+var Styled = __webpack_require__(7);
+
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/ArgumentsRenderer.js
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+
+
+
+
+var styles = function styles(_ref) {
+	var space = _ref.space;
+	return {
+		root: {
+			marginBottom: space[2],
+			fontSize: 'inherit'
+		},
+		headingWrapper: {
+			marginBottom: space[0]
+		}
+	};
+};
+
+function ArgumentsRenderer(_ref2) {
+	var classes = _ref2.classes,
+	    args = _ref2.args,
+	    heading = _ref2.heading;
+
+	if (args.length === 0) {
+		return null;
+	}
+
+	return react_default.a.createElement(
+		'div',
+		{ className: classes.root },
+		heading && react_default.a.createElement(
+			'div',
+			{ className: classes.headingWrapper },
+			react_default.a.createElement(
+				Heading["a" /* default */],
+				{ level: 5 },
+				'Arguments'
+			)
+		),
+		args.map(function (arg) {
+			return react_default.a.createElement(Argument["a" /* default */], _extends({ key: arg.name }, arg));
+		})
+	);
+}
+
+ArgumentsRenderer.propTypes = {
+	classes: prop_types_default.a.object.isRequired,
+	args: prop_types_default.a.arrayOf(prop_types_default.a.shape({
+		name: prop_types_default.a.string.isRequired,
+		type: prop_types_default.a.object,
+		description: prop_types_default.a.string
+	})).isRequired,
+	heading: prop_types_default.a.bool
+};
+
+/* harmony default export */ var Arguments_ArgumentsRenderer = (Object(Styled["a" /* default */])(styles)(ArgumentsRenderer));
+// CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/index.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "a", function() { return Arguments_ArgumentsRenderer; });
 
 
 /***/ }),
@@ -12248,16 +12248,16 @@ function isnan (val) {
 /* harmony import */ var react_group__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_group__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var javascript_stringify__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(159);
 /* harmony import */ var javascript_stringify__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(javascript_stringify__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var rsg_components_Arguments__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(68);
+/* harmony import */ var rsg_components_Arguments__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(69);
 /* harmony import */ var rsg_components_Argument__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(46);
 /* harmony import */ var rsg_components_Code__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(27);
-/* harmony import */ var rsg_components_JsDoc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(45);
+/* harmony import */ var rsg_components_JsDoc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(44);
 /* harmony import */ var rsg_components_Markdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(16);
 /* harmony import */ var rsg_components_Name__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(41);
 /* harmony import */ var rsg_components_Type__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(35);
 /* harmony import */ var rsg_components_Text__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(29);
-/* harmony import */ var rsg_components_Para__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(44);
-/* harmony import */ var rsg_components_Table__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(69);
+/* harmony import */ var rsg_components_Para__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(45);
+/* harmony import */ var rsg_components_Table__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(68);
 /* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(17);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -34426,6 +34426,405 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 // EXTERNAL MODULE: ./src/components/Touch/Touch.js
 var Touch = __webpack_require__(15);
 
+// EXTERNAL MODULE: ./src/components/FixedLayout/FixedLayout.js
+var FixedLayout = __webpack_require__(40);
+
+// EXTERNAL MODULE: ./src/lib/classNames.ts
+var classNames = __webpack_require__(2);
+
+// EXTERNAL MODULE: ./src/lib/platform.ts
+var platform = __webpack_require__(4);
+
+// EXTERNAL MODULE: ./src/helpers/getClassName.ts
+var getClassName = __webpack_require__(3);
+
+// CONCATENATED MODULE: ./src/components/PullToRefresh/PullToRefreshSpinner.js
+
+
+
+
+function calcStrokeDashOffset(value, radius) {
+  var progress = value / 100;
+  return 2 * Math.PI * radius * (1 - progress);
+}
+
+var PullToRefreshSpinner = react_default.a.memo(function (_ref) {
+  var on = _ref.on,
+      progress = _ref.progress,
+      size = _ref.size,
+      strokeWidth = _ref.strokeWidth,
+      style = _ref.style;
+  var radius = 0.5 * size - 0.5 * strokeWidth;
+  var dasharray = 2 * Math.PI * radius;
+  var circleCenter = 0.5 * size;
+  var dashoffset = calcStrokeDashOffset(on ? 80 : progress, radius);
+  return react_default.a.createElement("div", {
+    className: Object(classNames["a" /* default */])('PullToRefresh__spinner', {
+      'PullToRefresh__spinner--on': on
+    }),
+    style: style
+  }, react_default.a.createElement("svg", {
+    className: "PullToRefresh__spinner-self",
+    style: {
+      width: size,
+      height: size
+    },
+    viewBox: "0 0 ".concat(size, " ").concat(size),
+    xmlns: "http://www.w3.org/2000/svg"
+  }, react_default.a.createElement("g", {
+    style: {
+      width: size,
+      height: size,
+      transformOrigin: "".concat(circleCenter, "px ").concat(circleCenter, "px")
+    }
+  }, react_default.a.createElement("circle", {
+    className: "PullToRefresh__spinner-path",
+    fill: "none",
+    strokeDasharray: dasharray,
+    strokeDashoffset: dashoffset,
+    strokeWidth: strokeWidth,
+    strokeLinecap: "round",
+    cx: circleCenter,
+    cy: circleCenter,
+    r: radius
+  }))));
+});
+PullToRefreshSpinner.propTypes = {
+  size: prop_types_default.a.number,
+  strokeWidth: prop_types_default.a.number,
+  on: prop_types_default.a.bool,
+  progress: prop_types_default.a.number,
+  style: prop_types_default.a.object
+};
+PullToRefreshSpinner.defaultProps = {
+  size: 24,
+  strokeWidth: 2.5,
+  on: true,
+  progress: null
+};
+/* harmony default export */ var PullToRefresh_PullToRefreshSpinner = (PullToRefreshSpinner);
+// CONCATENATED MODULE: ./src/components/PullToRefresh/PullToRefresh.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PullToRefresh_PullToRefresh; });
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+var baseClassName = Object(getClassName["a" /* default */])('PullToRefresh');
+
+function cancelEvent(event) {
+  if (!event) return false;
+
+  while (event.originalEvent) {
+    event = event.originalEvent;
+  }
+
+  if (event.preventDefault) event.preventDefault();
+  if (event.stopPropagation) event.stopPropagation();
+  return false;
+}
+
+var PullToRefresh_PullToRefresh =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inherits(PullToRefresh, _PureComponent);
+
+  function PullToRefresh(props) {
+    var _this;
+
+    _classCallCheck(this, PullToRefresh);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PullToRefresh).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "onTouchStart", function (e) {
+      if (_this.state.refreshing) cancelEvent(e);
+
+      _this.setState({
+        touchDown: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onWindowTouchMove", function (e) {
+      if (_this.state.refreshing) cancelEvent(e);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onTouchMove", function (e) {
+      var isY = e.isY,
+          shiftY = e.shiftY;
+      var _this$params = _this.params,
+          start = _this$params.start,
+          max = _this$params.max;
+      var pageYOffset = _this.window.pageYOffset;
+      var _this$state = _this.state,
+          refreshing = _this$state.refreshing,
+          watching = _this$state.watching,
+          touchDown = _this$state.touchDown;
+
+      if (watching && touchDown) {
+        cancelEvent(e);
+        var positionMultiplier = _this.params.positionMultiplier;
+        var shift = Math.max(0, shiftY - _this.state.touchY);
+        var currentY = Math.max(start, Math.min(_this.params.maxY, start + shift * positionMultiplier));
+        var progress = currentY > -10 ? Math.abs((currentY + 10) / max) * 80 : 0;
+
+        _this.setState({
+          spinnerY: currentY,
+          spinnerProgress: Math.min(80, Math.max(0, progress)),
+          canRefresh: progress > 80,
+          contentShift: (currentY + 10) * 2.3
+        });
+
+        if (progress > 85 && !refreshing && platform["d" /* IS_PLATFORM_IOS */]) {
+          _this.runRefreshing();
+        }
+      } else if (isY && pageYOffset === 0 && shiftY > 0 && !refreshing && touchDown) {
+        cancelEvent(e);
+
+        _this.setState({
+          watching: true,
+          touchY: shiftY,
+          spinnerY: start,
+          spinnerProgress: 0
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onTouchEnd", function () {
+      var _this$state2 = _this.state,
+          refreshing = _this$state2.refreshing,
+          canRefresh = _this$state2.canRefresh,
+          refreshingFinished = _this$state2.refreshingFinished;
+
+      _this.setState({
+        watching: false,
+        touchDown: false
+      }, function () {
+        if (canRefresh && !refreshing) {
+          _this.runRefreshing();
+        } else if (refreshing && refreshingFinished) {
+          _this.resetRefreshingState();
+        } else {
+          _this.setState({
+            spinnerY: refreshing ? _this.params.refreshing : _this.params.start,
+            spinnerProgress: 0,
+            contentShift: 0
+          });
+        }
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onRefreshingFinish", function () {
+      _this.setState({
+        refreshingFinished: true
+      }, function () {
+        !_this.state.touchDown && _this.resetRefreshingState();
+      });
+    });
+
+    _this.params = {
+      start: platform["c" /* IS_PLATFORM_ANDROID */] ? -45 : -10,
+      max: platform["c" /* IS_PLATFORM_ANDROID */] ? 80 : 50,
+      maxY: platform["c" /* IS_PLATFORM_ANDROID */] ? 80 : 400,
+      refreshing: platform["c" /* IS_PLATFORM_ANDROID */] ? 50 : 36,
+      positionMultiplier: platform["c" /* IS_PLATFORM_ANDROID */] ? 1 : 0.21
+    };
+    _this.state = {
+      watching: false,
+      refreshing: false,
+      canRefresh: false,
+      touchDown: false,
+      refreshingFinished: false,
+      touchY: 0,
+      spinnerY: _this.params.start,
+      spinnerProgress: 0,
+      contentShift: 0
+    };
+    _this.contentRef = react_default.a.createRef();
+    return _this;
+  }
+
+  _createClass(PullToRefresh, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.document.addEventListener('touchmove', this.onWindowTouchMove, {
+        cancelable: true,
+        passive: false
+      });
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.document.removeEventListener('touchmove', this.onWindowTouchMove);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.isFetching && !this.props.isFetching) {
+        this.onRefreshingFinish();
+      }
+    }
+  }, {
+    key: "runRefreshing",
+    value: function runRefreshing() {
+      if (!this.state.refreshing && this.props.onRefresh) {
+        this.setState({
+          refreshing: true,
+          spinnerY: platform["c" /* IS_PLATFORM_ANDROID */] ? this.params.refreshing : this.state.spinnerY
+        });
+        this.props.onRefresh();
+      }
+    }
+  }, {
+    key: "resetRefreshingState",
+    value: function resetRefreshingState() {
+      this.setState({
+        watching: false,
+        canRefresh: false,
+        refreshing: false,
+        refreshingFinished: false,
+        spinnerY: this.params.start,
+        spinnerProgress: 0,
+        contentShift: 0
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          children = _this$props.children,
+          className = _this$props.className,
+          onRefresh = _this$props.onRefresh,
+          isFetching = _this$props.isFetching,
+          restProps = _objectWithoutProperties(_this$props, ["children", "className", "onRefresh", "isFetching"]);
+
+      var _this$state3 = this.state,
+          watching = _this$state3.watching,
+          refreshing = _this$state3.refreshing,
+          spinnerY = _this$state3.spinnerY,
+          spinnerProgress = _this$state3.spinnerProgress,
+          canRefresh = _this$state3.canRefresh,
+          touchDown = _this$state3.touchDown,
+          contentShift = _this$state3.contentShift;
+      var spinnerTransform = "translate3d(0, ".concat(spinnerY, "px, 0)");
+      var contentTransform = refreshing && !touchDown && platform["d" /* IS_PLATFORM_IOS */] ? "translate3d(0, 100px, 0)" : platform["d" /* IS_PLATFORM_IOS */] && contentShift ? "translate3d(0, ".concat(contentShift, "px, 0)") : '';
+      return react_default.a.createElement(Touch["TouchRootContext"].Provider, {
+        value: true
+      }, react_default.a.createElement(Touch["default"], _extends({}, restProps, {
+        onStart: this.onTouchStart,
+        onMove: this.onTouchMove,
+        onEnd: this.onTouchEnd,
+        className: Object(classNames["a" /* default */])(baseClassName, className, {
+          'PullToRefresh--watching': watching,
+          'PullToRefresh--refreshing': refreshing
+        })
+      }), react_default.a.createElement(FixedLayout["default"], {
+        className: "PullToRefresh__controls"
+      }, react_default.a.createElement(PullToRefresh_PullToRefreshSpinner, {
+        style: {
+          transform: spinnerTransform,
+          WebkitTransform: spinnerTransform,
+          opacity: watching || refreshing || canRefresh ? 1 : 0
+        },
+        on: refreshing,
+        progress: refreshing ? null : spinnerProgress
+      })), react_default.a.createElement("div", {
+        className: "PullToRefresh__content",
+        ref: this.contentRef,
+        style: {
+          transform: contentTransform,
+          WebkitTransform: contentTransform
+        }
+      }, children)));
+    }
+  }, {
+    key: "document",
+    get: function get() {
+      return this.context.document || document;
+    }
+  }, {
+    key: "window",
+    get: function get() {
+      return this.context.window || window;
+    }
+  }, {
+    key: "scrollTop",
+    get: function get() {
+      return this.document.scrollingElement.scrollTop;
+    }
+  }]);
+
+  return PullToRefresh;
+}(react["PureComponent"]);
+
+_defineProperty(PullToRefresh_PullToRefresh, "propTypes", {
+  children: prop_types_default.a.node,
+  className: prop_types_default.a.string,
+
+  /**
+   * Будет вызвана для обновления контента
+   */
+  onRefresh: prop_types_default.a.func.isRequired,
+
+  /**
+   * Определяет, выполняется ли обновление. Для скрытия спиннера после получения контента необходимо передать `false`
+   */
+  isFetching: prop_types_default.a.bool
+});
+
+_defineProperty(PullToRefresh_PullToRefresh, "contextTypes", {
+  window: prop_types_default.a.any,
+  document: prop_types_default.a.any
+});
+
+
+
+/***/ }),
+/* 199 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(1);
+var react_default = /*#__PURE__*/__webpack_require__.n(react);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(0);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// EXTERNAL MODULE: ./src/components/Touch/Touch.js
+var Touch = __webpack_require__(15);
+
 // EXTERNAL MODULE: ./src/helpers/getClassName.ts
 var getClassName = __webpack_require__(3);
 
@@ -34658,7 +35057,9 @@ function (_Component) {
         var modalState = this.modalsState[activeModal];
 
         if (modalState && modalState.type === TYPE_PAGE && modalState.dynamicContentHeight) {
-          this.checkPageContentHeight();
+          requestAnimationFrame(function () {
+            return _this2.checkPageContentHeight();
+          });
         }
       }
 
@@ -35280,7 +35681,7 @@ _defineProperty(ModalRoot_ModalRoot, "contextTypes", {
 /* harmony default export */ var components_ModalRoot_ModalRoot = __webpack_exports__["default"] = (ModalRoot_ModalRoot);
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35645,405 +36046,6 @@ window.Icon24DoNotDisturb = do_not_disturb_default.a;
 window.getRandomInt = getRandomInt;
 window.getRandomUser = getRandomUser;
 window.importantCountries = importantCountries;
-
-/***/ }),
-/* 200 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(1);
-var react_default = /*#__PURE__*/__webpack_require__.n(react);
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(0);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
-// EXTERNAL MODULE: ./src/components/Touch/Touch.js
-var Touch = __webpack_require__(15);
-
-// EXTERNAL MODULE: ./src/components/FixedLayout/FixedLayout.js
-var FixedLayout = __webpack_require__(40);
-
-// EXTERNAL MODULE: ./src/lib/classNames.ts
-var classNames = __webpack_require__(2);
-
-// EXTERNAL MODULE: ./src/lib/platform.ts
-var platform = __webpack_require__(4);
-
-// EXTERNAL MODULE: ./src/helpers/getClassName.ts
-var getClassName = __webpack_require__(3);
-
-// CONCATENATED MODULE: ./src/components/PullToRefresh/PullToRefreshSpinner.js
-
-
-
-
-function calcStrokeDashOffset(value, radius) {
-  var progress = value / 100;
-  return 2 * Math.PI * radius * (1 - progress);
-}
-
-var PullToRefreshSpinner = react_default.a.memo(function (_ref) {
-  var on = _ref.on,
-      progress = _ref.progress,
-      size = _ref.size,
-      strokeWidth = _ref.strokeWidth,
-      style = _ref.style;
-  var radius = 0.5 * size - 0.5 * strokeWidth;
-  var dasharray = 2 * Math.PI * radius;
-  var circleCenter = 0.5 * size;
-  var dashoffset = calcStrokeDashOffset(on ? 80 : progress, radius);
-  return react_default.a.createElement("div", {
-    className: Object(classNames["a" /* default */])('PullToRefresh__spinner', {
-      'PullToRefresh__spinner--on': on
-    }),
-    style: style
-  }, react_default.a.createElement("svg", {
-    className: "PullToRefresh__spinner-self",
-    style: {
-      width: size,
-      height: size
-    },
-    viewBox: "0 0 ".concat(size, " ").concat(size),
-    xmlns: "http://www.w3.org/2000/svg"
-  }, react_default.a.createElement("g", {
-    style: {
-      width: size,
-      height: size,
-      transformOrigin: "".concat(circleCenter, "px ").concat(circleCenter, "px")
-    }
-  }, react_default.a.createElement("circle", {
-    className: "PullToRefresh__spinner-path",
-    fill: "none",
-    strokeDasharray: dasharray,
-    strokeDashoffset: dashoffset,
-    strokeWidth: strokeWidth,
-    strokeLinecap: "round",
-    cx: circleCenter,
-    cy: circleCenter,
-    r: radius
-  }))));
-});
-PullToRefreshSpinner.propTypes = {
-  size: prop_types_default.a.number,
-  strokeWidth: prop_types_default.a.number,
-  on: prop_types_default.a.bool,
-  progress: prop_types_default.a.number,
-  style: prop_types_default.a.object
-};
-PullToRefreshSpinner.defaultProps = {
-  size: 24,
-  strokeWidth: 2.5,
-  on: true,
-  progress: null
-};
-/* harmony default export */ var PullToRefresh_PullToRefreshSpinner = (PullToRefreshSpinner);
-// CONCATENATED MODULE: ./src/components/PullToRefresh/PullToRefresh.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PullToRefresh_PullToRefresh; });
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-
-
-
-var baseClassName = Object(getClassName["a" /* default */])('PullToRefresh');
-
-function cancelEvent(event) {
-  if (!event) return false;
-
-  while (event.originalEvent) {
-    event = event.originalEvent;
-  }
-
-  if (event.preventDefault) event.preventDefault();
-  if (event.stopPropagation) event.stopPropagation();
-  return false;
-}
-
-var PullToRefresh_PullToRefresh =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(PullToRefresh, _PureComponent);
-
-  function PullToRefresh(props) {
-    var _this;
-
-    _classCallCheck(this, PullToRefresh);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(PullToRefresh).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "onTouchStart", function (e) {
-      if (_this.state.refreshing) cancelEvent(e);
-
-      _this.setState({
-        touchDown: true
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onWindowTouchMove", function (e) {
-      if (_this.state.refreshing) cancelEvent(e);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onTouchMove", function (e) {
-      var isY = e.isY,
-          shiftY = e.shiftY;
-      var _this$params = _this.params,
-          start = _this$params.start,
-          max = _this$params.max;
-      var pageYOffset = _this.window.pageYOffset;
-      var _this$state = _this.state,
-          refreshing = _this$state.refreshing,
-          watching = _this$state.watching,
-          touchDown = _this$state.touchDown;
-
-      if (watching && touchDown) {
-        cancelEvent(e);
-        var positionMultiplier = _this.params.positionMultiplier;
-        var shift = Math.max(0, shiftY - _this.state.touchY);
-        var currentY = Math.max(start, Math.min(_this.params.maxY, start + shift * positionMultiplier));
-        var progress = currentY > -10 ? Math.abs((currentY + 10) / max) * 80 : 0;
-
-        _this.setState({
-          spinnerY: currentY,
-          spinnerProgress: Math.min(80, Math.max(0, progress)),
-          canRefresh: progress > 80,
-          contentShift: (currentY + 10) * 2.3
-        });
-
-        if (progress > 85 && !refreshing && platform["d" /* IS_PLATFORM_IOS */]) {
-          _this.runRefreshing();
-        }
-      } else if (isY && pageYOffset === 0 && shiftY > 0 && !refreshing && touchDown) {
-        cancelEvent(e);
-
-        _this.setState({
-          watching: true,
-          touchY: shiftY,
-          spinnerY: start,
-          spinnerProgress: 0
-        });
-      }
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onTouchEnd", function () {
-      var _this$state2 = _this.state,
-          refreshing = _this$state2.refreshing,
-          canRefresh = _this$state2.canRefresh,
-          refreshingFinished = _this$state2.refreshingFinished;
-
-      _this.setState({
-        watching: false,
-        touchDown: false
-      }, function () {
-        if (canRefresh && !refreshing) {
-          _this.runRefreshing();
-        } else if (refreshing && refreshingFinished) {
-          _this.resetRefreshingState();
-        } else {
-          _this.setState({
-            spinnerY: refreshing ? _this.params.refreshing : _this.params.start,
-            spinnerProgress: 0,
-            contentShift: 0
-          });
-        }
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onRefreshingFinish", function () {
-      _this.setState({
-        refreshingFinished: true
-      }, function () {
-        !_this.state.touchDown && _this.resetRefreshingState();
-      });
-    });
-
-    _this.params = {
-      start: platform["c" /* IS_PLATFORM_ANDROID */] ? -45 : -10,
-      max: platform["c" /* IS_PLATFORM_ANDROID */] ? 80 : 50,
-      maxY: platform["c" /* IS_PLATFORM_ANDROID */] ? 80 : 400,
-      refreshing: platform["c" /* IS_PLATFORM_ANDROID */] ? 50 : 36,
-      positionMultiplier: platform["c" /* IS_PLATFORM_ANDROID */] ? 1 : 0.21
-    };
-    _this.state = {
-      watching: false,
-      refreshing: false,
-      canRefresh: false,
-      touchDown: false,
-      refreshingFinished: false,
-      touchY: 0,
-      spinnerY: _this.params.start,
-      spinnerProgress: 0,
-      contentShift: 0
-    };
-    _this.contentRef = react_default.a.createRef();
-    return _this;
-  }
-
-  _createClass(PullToRefresh, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.document.addEventListener('touchmove', this.onWindowTouchMove, {
-        cancelable: true,
-        passive: false
-      });
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.document.removeEventListener('touchmove', this.onWindowTouchMove);
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      if (prevProps.isFetching && !this.props.isFetching) {
-        this.onRefreshingFinish();
-      }
-    }
-  }, {
-    key: "runRefreshing",
-    value: function runRefreshing() {
-      if (!this.state.refreshing && this.props.onRefresh) {
-        this.setState({
-          refreshing: true,
-          spinnerY: platform["c" /* IS_PLATFORM_ANDROID */] ? this.params.refreshing : this.state.spinnerY
-        });
-        this.props.onRefresh();
-      }
-    }
-  }, {
-    key: "resetRefreshingState",
-    value: function resetRefreshingState() {
-      this.setState({
-        watching: false,
-        canRefresh: false,
-        refreshing: false,
-        refreshingFinished: false,
-        spinnerY: this.params.start,
-        spinnerProgress: 0,
-        contentShift: 0
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          children = _this$props.children,
-          className = _this$props.className,
-          onRefresh = _this$props.onRefresh,
-          isFetching = _this$props.isFetching,
-          restProps = _objectWithoutProperties(_this$props, ["children", "className", "onRefresh", "isFetching"]);
-
-      var _this$state3 = this.state,
-          watching = _this$state3.watching,
-          refreshing = _this$state3.refreshing,
-          spinnerY = _this$state3.spinnerY,
-          spinnerProgress = _this$state3.spinnerProgress,
-          canRefresh = _this$state3.canRefresh,
-          touchDown = _this$state3.touchDown,
-          contentShift = _this$state3.contentShift;
-      var spinnerTransform = "translate3d(0, ".concat(spinnerY, "px, 0)");
-      var contentTransform = refreshing && !touchDown && platform["d" /* IS_PLATFORM_IOS */] ? "translate3d(0, 100px, 0)" : platform["d" /* IS_PLATFORM_IOS */] && contentShift ? "translate3d(0, ".concat(contentShift, "px, 0)") : '';
-      return react_default.a.createElement(Touch["TouchRootContext"].Provider, {
-        value: true
-      }, react_default.a.createElement(Touch["default"], _extends({}, restProps, {
-        onStart: this.onTouchStart,
-        onMove: this.onTouchMove,
-        onEnd: this.onTouchEnd,
-        className: Object(classNames["a" /* default */])(baseClassName, className, {
-          'PullToRefresh--watching': watching,
-          'PullToRefresh--refreshing': refreshing
-        })
-      }), react_default.a.createElement(FixedLayout["default"], {
-        className: "PullToRefresh__controls"
-      }, react_default.a.createElement(PullToRefresh_PullToRefreshSpinner, {
-        style: {
-          transform: spinnerTransform,
-          WebkitTransform: spinnerTransform,
-          opacity: watching || refreshing || canRefresh ? 1 : 0
-        },
-        on: refreshing,
-        progress: refreshing ? null : spinnerProgress
-      })), react_default.a.createElement("div", {
-        className: "PullToRefresh__content",
-        ref: this.contentRef,
-        style: {
-          transform: contentTransform,
-          WebkitTransform: contentTransform
-        }
-      }, children)));
-    }
-  }, {
-    key: "document",
-    get: function get() {
-      return this.context.document || document;
-    }
-  }, {
-    key: "window",
-    get: function get() {
-      return this.context.window || window;
-    }
-  }, {
-    key: "scrollTop",
-    get: function get() {
-      return this.document.scrollingElement.scrollTop;
-    }
-  }]);
-
-  return PullToRefresh;
-}(react["PureComponent"]);
-
-_defineProperty(PullToRefresh_PullToRefresh, "propTypes", {
-  children: prop_types_default.a.node,
-  className: prop_types_default.a.string,
-
-  /**
-   * Будет вызвана для обновления контента
-   */
-  onRefresh: prop_types_default.a.func.isRequired,
-
-  /**
-   * Определяет, выполняется ли обновление. Для скрытия спиннера после получения контента необходимо передать `false`
-   */
-  isFetching: prop_types_default.a.bool
-});
-
-_defineProperty(PullToRefresh_PullToRefresh, "contextTypes", {
-  window: prop_types_default.a.any,
-  document: prop_types_default.a.any
-});
-
-
 
 /***/ }),
 /* 201 */
@@ -36776,16 +36778,16 @@ var Markdown = __webpack_require__(16);
 var Argument = __webpack_require__(46);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Arguments/index.js + 1 modules
-var Arguments = __webpack_require__(68);
+var Arguments = __webpack_require__(69);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Name/index.js + 1 modules
 var Name = __webpack_require__(41);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/JsDoc/index.js + 1 modules
-var JsDoc = __webpack_require__(45);
+var JsDoc = __webpack_require__(44);
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Table/index.js + 1 modules
-var Table = __webpack_require__(69);
+var Table = __webpack_require__(68);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Methods/MethodsRenderer.js
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -43695,7 +43697,7 @@ function (_PreviewParent) {
 
 
 // EXTERNAL MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Para/index.js + 1 modules
-var Para = __webpack_require__(44);
+var Para = __webpack_require__(45);
 
 // CONCATENATED MODULE: ./node_modules/react-styleguidist/lib/rsg-components/Slot/Slot.js
 var Slot_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -53977,7 +53979,7 @@ module.exports = {
             'description': '',
             'name': 'after',
             'parent': {
-                'fileName': 'ui/src/components/Button/Button.tsx',
+                'fileName': 'VKUI/src/components/Button/Button.tsx',
                 'name': 'ButtonProps'
             },
             'required': false,
@@ -53989,7 +53991,7 @@ module.exports = {
             'description': '',
             'name': 'align',
             'parent': {
-                'fileName': 'ui/src/components/Button/Button.tsx',
+                'fileName': 'VKUI/src/components/Button/Button.tsx',
                 'name': 'ButtonProps'
             },
             'required': false,
@@ -54001,7 +54003,7 @@ module.exports = {
             'description': '',
             'name': 'before',
             'parent': {
-                'fileName': 'ui/src/components/Button/Button.tsx',
+                'fileName': 'VKUI/src/components/Button/Button.tsx',
                 'name': 'ButtonProps'
             },
             'required': false,
@@ -54013,7 +54015,7 @@ module.exports = {
             'description': '',
             'name': 'className',
             'parent': {
-                'fileName': 'ui/src/types/props.ts',
+                'fileName': 'VKUI/src/types/props.ts',
                 'name': 'HasClassName'
             },
             'required': false,
@@ -54025,7 +54027,7 @@ module.exports = {
             'description': '',
             'name': 'component',
             'parent': {
-                'fileName': 'ui/src/components/Button/Button.tsx',
+                'fileName': 'VKUI/src/components/Button/Button.tsx',
                 'name': 'ButtonProps'
             },
             'required': false,
@@ -54037,7 +54039,7 @@ module.exports = {
             'description': 'Значения `1`, `2`, `3`, `sell`, `buy` устарели. Маппинг на новые значения находится в\nстатическом методе `Button.mapOldLevel(level)`. Старые значения будут удалены в 3.0.0',
             'name': 'level',
             'parent': {
-                'fileName': 'ui/src/components/Button/Button.tsx',
+                'fileName': 'VKUI/src/components/Button/Button.tsx',
                 'name': 'ButtonProps'
             },
             'required': false,
@@ -54049,7 +54051,7 @@ module.exports = {
             'description': '',
             'name': 'size',
             'parent': {
-                'fileName': 'ui/src/components/Button/Button.tsx',
+                'fileName': 'VKUI/src/components/Button/Button.tsx',
                 'name': 'ButtonProps'
             },
             'required': false,
@@ -54061,7 +54063,7 @@ module.exports = {
             'description': '',
             'name': 'stretched',
             'parent': {
-                'fileName': 'ui/src/components/Button/Button.tsx',
+                'fileName': 'VKUI/src/components/Button/Button.tsx',
                 'name': 'ButtonProps'
             },
             'required': false,
@@ -54073,7 +54075,7 @@ module.exports = {
             'description': '',
             'name': 'style',
             'parent': {
-                'fileName': 'ui/src/types/props.ts',
+                'fileName': 'VKUI/src/types/props.ts',
                 'name': 'HasStyleObject'
             },
             'required': false,
@@ -54085,7 +54087,7 @@ module.exports = {
             'description': '',
             'name': 'type',
             'parent': {
-                'fileName': 'ui/src/components/Button/Button.tsx',
+                'fileName': 'VKUI/src/components/Button/Button.tsx',
                 'name': 'ButtonProps'
             },
             'required': false,
@@ -58217,7 +58219,7 @@ module.exports = {
                             'filepath': '../src/components/ModalRoot/ModalRoot.js',
                             'slug': 'modalroot',
                             'pathLine': '../src/components/ModalRoot/ModalRoot.js',
-                            'module': __webpack_require__(198),
+                            'module': __webpack_require__(199),
                             'props': __webpack_require__(335),
                             'hasExamples': true,
                             'metadata': {}
@@ -58452,7 +58454,7 @@ module.exports = {
                             'filepath': '../src/components/PullToRefresh/PullToRefresh.js',
                             'slug': 'pulltorefresh',
                             'pathLine': '../src/components/PullToRefresh/PullToRefresh.js',
-                            'module': __webpack_require__(200),
+                            'module': __webpack_require__(198),
                             'props': __webpack_require__(270),
                             'hasExamples': true,
                             'metadata': {}
@@ -68070,7 +68072,7 @@ unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_Y
 /* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(199);
+__webpack_require__(200);
 __webpack_require__(540);
 module.exports = __webpack_require__(202);
 
